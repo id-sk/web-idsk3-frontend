@@ -1,0 +1,20 @@
+.sidebar-link {
+    display: block;
+    padding: 8px; /* Corresponds to p-2 */
+    border-radius: 8px; /* Corresponds to rounded */
+    font-size: 1rem; /* Corresponds to text-sm */
+  
+    &:hover {
+      background-color: #FFF; /* Corresponds to hover:bg-gray-100 */
+    }
+  
+    &.active {
+      color: #0B4199; /* Corresponds to text-black */
+      font-weight: 600; /* Corresponds to font-semibold */
+    }
+  
+    &:not(.active) {
+      color: #000000; /* Corresponds to text-gray-500 */
+    }
+
+  }

@@ -1,0 +1,25 @@
+.search {
+    margin: .5rem !important;
+
+    button {
+        cursor: auto !important;
+    }
+
+}
+
+.small-screen-only {
+    display: block;
+  
+    @media (min-width: 720px) {
+      display: none;
+    }
+  }
+  
+  .large-screen-only {
+    display: none;
+  
+    @media (min-width: 720px) {
+      display: block;
+    }
+  }
+  

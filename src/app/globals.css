@@ -1,0 +1,49 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root * {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menu-button {
+  width: 8rem;
+  margin-left: '-0.35rem'
+}
+
+.component-page {
+  max-width: 58vw;
+}
+
+.go-up-btn {
+  margin-left: -0.75rem;
+}
+
+.basic-page {
+  max-width: 66vw;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}

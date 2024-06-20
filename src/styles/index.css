@@ -1,0 +1,233 @@
+@import '@eslovensko/idsk-react/dist/styles/idsk3_theme.css';
+/* @import '@skit-feedback/feedback-form/dist/styles/feedback.css'; */
+
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .idsk-page-layout__heading__title {
+    word-break: break-word;
+    @apply pb-0 relative z-10;
+  }
+  .idsk-page-layout__heading__title-gray {
+    @apply mb-6 before:-z-10 before:absolute before:h-[300%] before:w-[200vw] before:-translate-x-1/2 before:bg-neutral-90 before:bottom-0;
+  }
+  #secondary-navigation span,
+  #secondary-navigation-dropdown a {
+    @apply lowercase;
+  }
+  #secondary-navigation-body a {
+    @apply underline;
+  }
+  ul,
+  ol {
+    @apply ml-2;
+  }
+  .p-text ul,
+  .p-text ol {
+    @apply list-outside pl-4;
+  }
+  .p-text li > ul,
+  .p-text li > ol {
+    @apply ml-6;
+  }
+  .p-text ul {
+    @apply list-disc;
+  }
+  .idsk-accordion__content .p-text ul,
+  .idsk-accordion__content .p-text ol {
+    @apply pl-8;
+  }
+  .p-text ol {
+    @apply list-decimal;
+  }
+  .p-text a {
+    @apply text-primary underline hover:text-blue-600;
+  }
+  .p-text blockquote {
+    @apply p-4 my-4 border-l-4 bg-neutral-90 border-neutral-300 dark:border-neutral-500 dark:bg-neutral-800;
+  }
+  .p-text p {
+    @apply mt-3 first:mt-0 break-words;
+  }
+  .p-text-shrink p {
+    @apply mb-0;
+  }
+  .tooltip-from-drupal a {
+    @apply text-white underline hover:text-neutral-400;
+  }
+  .idsk-in-page-navigation .idsk-in-page-navigation__line {
+    @apply border-none tb2:border-solid pl-0 tb2:pl-5;
+  }
+  .idsk-in-page-navigation__list a.idsk-active > svg {
+    @apply absolute left-[1rem];
+  }
+  .idsk-text-signpost .idsk-loader__icon {
+    @apply cursor-pointer text-[1.5rem] h-[2rem] w-[2rem];
+  }
+  .idsk-star__icon {
+    @apply cursor-pointer text-[1.5rem] h-[1.5rem] w-[2rem];
+  }
+}
+.idsk-navigation__link--dropdown {
+  @apply border-b-[0.063rem];
+}
+/* .idsk-information-banner__wrapper {
+  @apply tb2:flex-nowrap flex-wrap;
+} */
+.idsk-information-banner__wrapper > button {
+  @apply whitespace-nowrap;
+}
+.feedback > .idsk-input__caption--error {
+  @apply -mt-4;
+}
+/* .signature-table > thead {
+  @apply tb2:grid hidden;
+} */
+.signature-table > tbody > tr {
+  @apply border rounded;
+}
+.signature-dialog > .idsk-dialog-wrapper > .idsk-dialog {
+  @apply mb-[4.5rem];
+}
+
+.idsk-menu-button > span {
+  @apply break-normal;
+}
+.idsk-search-container__buttons > .idsk-link-button > span {
+  @apply whitespace-normal;
+}
+
+.idsk-button {
+  @apply whitespace-normal break-normal;
+}
+/* .idsk-date-input__wrapper {
+  @apply tb1:flex flex-wrap;
+} */
+
+.idsk-modal-sidebar__close-button > .idsk-tooltip::after {
+  @apply mt-3;
+}
+
+.react-datepicker-popper {
+  @apply z-50;
+}
+
+h1,
+h2,
+h3,
+h4,
+div,
+p,
+a,
+span {
+  word-break: break-word;
+}
+
+main {
+  @apply print:overflow-hidden;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+abbr[data-tip] {
+  @apply inline-block font-bold underline decoration-dashed;
+}
+
+.react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grecaptcha-badge {
+  visibility: hidden;
+}
+
+.idsk-dropzone {
+  @apply p-0;
+}
+.idsk-searchbar__input-wrapper ul li {
+  @apply text-left;
+}
+
+.idsk-searchbar {
+  @apply text-ellipsis;
+}
+.idsk-navigation__link a {
+  @apply py-[0.938rem];
+}
+.idsk-navigation__link {
+  @apply border-y-[0.063rem];
+}
+/* .idsk-breadcrumbs__crumb span {
+  @apply p-[0.25rem] tb2:text-base text-sm;
+} */
+.loading-animation {
+  display: inline-block;
+  font-family: monospace;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
+}
+
+.idsk-notification-card__date {
+  @apply whitespace-nowrap pl-1;
+}
+
+@keyframes l {
+  to {
+    clip-path: inset(0 -1ch 0 0);
+  }
+}
+
+/* @screen dm1max {
+  .tooltip-from-drupal {
+    @apply !bottom-0 !right-0 !left-0 !top-auto w-full !m-0;
+  }
+} */
+
+@media print {
+  #__nettle_bot_widget_root {
+    @apply hidden;
+  }
+
+  header,
+  footer {
+    @apply hidden;
+  }
+
+  .node-article > .comment-form,
+  .comments,
+  .share-links {
+    @apply hidden;
+  }
+
+  .idsk-page-layout__heading__title > div {
+    @apply p-0;
+  }
+
+  .idsk-page-layout__heading {
+    @apply pb-0;
+  }
+
+  .idsk-page-layout__breadcrumbs {
+    @apply hidden;
+  }
+
+  .idsk-anchor-card {
+    @apply break-inside-avoid-page;
+  }
+  img {
+    @apply break-inside-avoid-page;
+  }
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
