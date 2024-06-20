@@ -12,7 +12,7 @@ import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons
 const BaseLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Navbar />
+      <Navbar sidebarData={basicRoutes} />
       <div className="h-screen flex">
         <Sidebar data={basicRoutes} />
         <main className="flex-1 p-5 overflow-y-auto no-scrollbar">

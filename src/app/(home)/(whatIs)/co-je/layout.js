@@ -11,7 +11,7 @@ import { idskRoutes } from "@/constants/constants.js";
 const WhatIsLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Navbar />
+      <Navbar sidebarData={idskRoutes} />
       <div className="h-screen flex">
         <Sidebar data={idskRoutes} />
         <main className="flex-1 p-5 overflow-y-auto no-scrollbar">

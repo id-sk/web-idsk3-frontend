@@ -13,7 +13,7 @@ import { scrollToTop } from "@/utils/scroll.js";
 const IdskLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen relative">
-      <Navbar />
+      <Navbar sidebarData={pageRoutes} />
       <div className="h-screen flex">
         <Sidebar data={pageRoutes} />
         <main className="flex-1 p-5 overflow-y-auto no-scrollbar">
