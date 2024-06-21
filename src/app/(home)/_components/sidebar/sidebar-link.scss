@@ -18,3 +18,16 @@
     }
 
   }
+
+  /* Hide the component by default */
+.aside-container {
+  display: none;
+}
+
+/* Use a media query to show the component on larger screens */
+@media (min-width: 1120px) { /* This corresponds to the 'lg' breakpoint in Tailwind */
+  .aside-container {
+      display: flex;
+      flex-direction: column;
+  }
+}

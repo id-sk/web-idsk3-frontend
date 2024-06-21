@@ -16,38 +16,62 @@ import Search from '../search/search';
 import { pageRoutes } from '@/constants/constants';
 import './navbar.scss'
 
-const Nav = ({ isMobileMenuOpen }) => {
+const Nav = ({ isMobileMenuOpen, sidebarData }) => {
   const pathname = usePathname();
+
+  const getParentPath = (path) => path.split('/')[1];
+
+  // .slice(1) to remove the first element which is the parent
+  const sidebarDataWithParent = sidebarData?.slice(1).map(element => {
+    return {
+      ...element,
+      parent: '/' + getParentPath(element.link)
+    }
+  });
+
+  const parentRoutes = [
+    { href: "/co-je", label: "Čo je IDSK" },
+    { href: "/komponenty", label: "Komponenty" },
+    { href: "/zaklady-principy", label: "Základy a princípy" },
+    { href: "/vzory", label: "Vzory" }
+  ];
+
+  const renderSubLinks = (parentHref) => (
+    sidebarDataWithParent
+      ?.filter(item => item.parent === parentHref)
+      ?.map(subItem => (
+        // todo: sidebarNavigationLink class doesn't seem to apply the font size
+        <div key={subItem.link} className="pl-4 sidebarNavigationLink">
+          <NavigationLink
+            href={subItem.link}
+            label={subItem.name}
+            selected={pathname === subItem.link}
+          />
+        </div>
+      ))
+  );
+
 
   return (
     isMobileMenuOpen && (
       <Navigation>
-        <NavigationLink
-          href="/co-je"
-          label="Čo je IDSK"
-          selected={pathname === '/co-je'}
-        />
-        <NavigationLink
-          href="/komponenty"
-          label="Komponenty"
-          selected={pathname === '/komponenty'}
-        />
-        <NavigationLink
-          href="/zaklady-principy"
-          label="Základy a princípy"
-          selected={pathname === '/zaklady-principy'}
-        />
-        <NavigationLink
-          href="/vzory"
-          label="Vzory"
-          selected={pathname === '/vzory'}
-        />
-      </Navigation>
+      {parentRoutes.map(parent => (
+        <React.Fragment key={parent.href}>
+          <NavigationLink
+            href={parent.href}
+            label={parent.label}
+            selected={pathname.startsWith(parent.href)}
+          />
+          {sidebarData && renderSubLinks(parent.href)}
+        </React.Fragment>
+      ))}
+    </Navigation>
+
     )
   )
 }
 
-const Navbar = () => {
+const Navbar = ({ sidebarData }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true)
 
   const router = useRouter();
@@ -69,7 +93,7 @@ const Navbar = () => {
             height: '68px',
           }}
         >
-          <Nav isMobileMenuOpen />
+          <Nav isMobileMenuOpen={isMobileMenuOpen}  />
         </div>
       }
       logo={
@@ -104,7 +128,7 @@ const Navbar = () => {
             toggleOpened={handleToggle}
             className='menu-button'
           />
-          <Nav isMobileMenuOpen={isMobileMenuOpen} />
+          <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
         </MenuMobile>
       }
       secondaryNavigation={
