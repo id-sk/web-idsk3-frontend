@@ -13,7 +13,7 @@ const PrincipyPage = () => {
                 <ol>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#uzitocnost"
+                            href="https://idsk2.gov.sk/uvod/principy#uzitocnost"
                             className="underline"
                             target="_blank"
                         >
@@ -22,7 +22,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#otvorenost"
+                            href="https://idsk2.gov.sk/uvod/principy#otvorenost"
                             className="underline"
                             target="_blank"
                         >
@@ -31,7 +31,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#realnost"
+                            href="https://idsk2.gov.sk/uvod/principy#realnost"
                             className="underline"
                             target="_blank"
                         >
@@ -40,7 +40,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#jednoduchost"
+                            href="https://idsk2.gov.sk/uvod/principy#jednoduchost"
                             className="underline"
                             target="_blank"
                         >
@@ -49,7 +49,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#agilita"
+                            href="https://idsk2.gov.sk/uvod/principy#agilita"
                             className="underline"
                             target="_blank"
                         >
@@ -58,7 +58,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#pristupnost"
+                            href="https://idsk2.gov.sk/uvod/principy#pristupnost"
                             className="underline"
                             target="_blank"
                         >
@@ -67,7 +67,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#kontext"
+                            href="https://idsk2.gov.sk/uvod/principy#kontext"
                             className="underline"
                             target="_blank"
                         >
@@ -76,7 +76,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#holistika"
+                            href="https://idsk2.gov.sk/uvod/principy#holistika"
                             className="underline"
                             target="_blank"
                         >
@@ -86,7 +86,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#konzistentnost"
+                            href="https://idsk2.gov.sk/uvod/principy#konzistentnost"
                             className="underline"
                             target="_blank"
                         >
@@ -95,7 +95,7 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk.gov.sk/uvod/principy#otvorenost2"
+                            href="https://idsk2.gov.sk/uvod/principy#otvorenost2"
                             className="underline"
                             target="_blank"
                         >

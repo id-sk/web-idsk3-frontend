@@ -12,7 +12,7 @@ const FooterResp = () => {
           <div className="flex flex-col w-[73%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow text-base tracking-wide leading-7 text-black max-md:mt-10 max-md:max-w-full">
               <div className="flex gap-5 max-md:flex-wrap">
-                <a href="https://idsk.gov.sk/ochrana-osobnych-udajov" className="underline">Ochrana osobných údajov</a>
+                <a href="https://idsk2.gov.sk/ochrana-osobnych-udajov" className="underline">Ochrana osobných údajov</a>
                 <a href="mailto:idsk@mirri.gov.sk" className="underline">Kontakt na prevádzkovateľa</a>
               </div>
               <p className="mt-5 leading-6 max-md:max-w-full">

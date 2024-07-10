@@ -77,7 +77,7 @@ const Navbar = ({ sidebarData }) => {
   const router = useRouter();
 
   const handleClick = () => {
-    router.push('https://idsk.gov.sk/');
+    router.push('https://idsk2.gov.sk/');
   };
 
   const handleToggle = () => {
