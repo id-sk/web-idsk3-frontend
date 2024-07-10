@@ -13,72 +13,64 @@ const PrincipyPage = () => {
                 <ol>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#uzitocnost"
+                            href="#uzitocnost"
                             className="underline"
-                            target="_blank"
                         >
                             Začnite potrebami používateľov (princíp užitočnosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#otvorenost"
+                            href="#stabilita"
                             className="underline"
-                            target="_blank"
                         >
                             Opätovne používajte a zdieľajte (princíp stability a otvorenosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#realnost"
+                            href="#realnost"
                             className="underline"
-                            target="_blank"
                         >
                             Inšpirujte sa realitou (princíp reálnosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#jednoduchost"
+                            href="#jednoduchost"
                             className="underline"
-                            target="_blank"
                         >
                             Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#agilita"
+                            href="#agilita"
                             className="underline"
-                            target="_blank"
                         >
                             Začnite v malom (princíp agility)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#pristupnost"
+                            href="#pristupnost"
                             className="underline"
-                            target="_blank"
                         >
                             ID-SK je pre každého (princíp prístupnosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#kontext"
+                            href="#kontext"
                             className="underline"
-                            target="_blank"
                         >
                             Rešpektovanie kontextu okolnosti použitia (princíp kontextu)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#holistika"
+                            href="#holistika"
                             className="underline"
-                            target="_blank"
                         >
                             Vytvárajte elektronické služby, nie webové stránky (princíp
                             holistického pohľadu)
@@ -86,25 +78,24 @@ const PrincipyPage = () => {
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#konzistentnost"
+                            href="#konzistentnost"
                             className="underline"
-                            target="_blank"
                         >
                             Buďte konzistentní (princíp konzistentnosti)
                         </a>
                     </li>
                     <li>
                         <a
-                            href="https://idsk2.gov.sk/uvod/principy#otvorenost2"
+                            href="#otvorenost"
                             className="underline"
-                            target="_blank"
                         >
                             Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)
                         </a>
                     </li>
                 </ol>
                 <br />
-                <span className="text-4xl font-black leading-10">
+                
+                <span id="uzitocnost" className="text-4xl font-black leading-10">
                     1. Začnite potrebami používateľov (princíp užitočnosti)
                 </span>
                 <br />
@@ -117,7 +108,7 @@ const PrincipyPage = () => {
                 užitočná.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="stabilita" className="text-4xl font-black leading-10">
                     2. Opätovne používajte a zdieľajte (princíp stability a otvorenosti)
                 </span>
                 <br />
@@ -128,7 +119,7 @@ const PrincipyPage = () => {
                 elektronických služieb.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="realnost" className="text-4xl font-black leading-10">
                     3. Inšpirujte sa realitou (princíp reálnosti)
                 </span>
                 <br />
@@ -144,7 +135,7 @@ const PrincipyPage = () => {
                 zapnutá.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="jednoduchost" lassName="text-4xl font-black leading-10">
                     4. Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)
                 </span>
                 <br />
@@ -155,7 +146,7 @@ const PrincipyPage = () => {
                 s názorom, ktorý zachováva existujúci stav.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="agilita" className="text-4xl font-black leading-10">
                     5. Začnite v malom (princíp agility)
                 </span>
                 <br />
@@ -167,7 +158,7 @@ const PrincipyPage = () => {
                 do rozvoja.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="pristupnost" className="text-4xl font-black leading-10">
                     6. ID-SK je pre každého (princíp prístupnosti)
                 </span>
                 <br />
@@ -182,7 +173,7 @@ const PrincipyPage = () => {
                 tieto osoby by mali tvoriť časť testovacej skupiny.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="kontext" className="text-4xl font-black leading-10">
                     7. Rešpektovanie kontextu okolnosti použitia (princíp kontextu)
                 </span>
                 <br />
@@ -193,7 +184,7 @@ const PrincipyPage = () => {
                 bude služba primárne vykonávať.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="holistika" className="text-4xl font-black leading-10">
                     8. Vytvárajte elektronické služby, nie webové stránky (princíp
                     holistického pohľadu)
                 </span>
@@ -206,7 +197,7 @@ const PrincipyPage = () => {
                 kvalitnejšiu službu.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="konzistentnost" className="text-4xl font-black leading-10">
                     9. Buďte konzistentní (princíp konzistentnosti)
                 </span>
                 <br />
@@ -221,7 +212,7 @@ const PrincipyPage = () => {
                 spôsobom využívania potrebných služieb.
                 <br />
                 <br />
-                <span className="text-4xl font-black leading-10">
+                <span id="otvorenost" className="text-4xl font-black leading-10">
                     10. Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)
                 </span>
                 <br />
