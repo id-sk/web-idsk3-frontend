@@ -1,6 +1,8 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const InfobarPage = () => {
     return (
@@ -11,6 +13,14 @@ const InfobarPage = () => {
             <p className="idsk-subtitle mb-16">
                 Informačná lišta slúži na oboznámenie alebo upozornenie použivateľa o nových informáciach v ramci používateľského rozhrania. Umiestnenie informačnej lište je zväčšia v hornej časti obsahu najmä kvôli vizuálne priorite.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/notification-banner/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie upozoňovacej informačnej lišty
             </h2>

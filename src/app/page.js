@@ -18,7 +18,7 @@ function ImageCard({ href, src, title, description, alt }) {
              quality={100}
              src={src}
              alt={alt}
-             className="w-full aspect-[1.15]"
+             className="w-full aspect-[1.5]"
           />
         </figure>
          <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
