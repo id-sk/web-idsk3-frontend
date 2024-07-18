@@ -135,7 +135,7 @@ const PrincipyPage = () => {
                 zapnutá.
                 <br />
                 <br />
-                <span id="jednoduchost" lassName="text-4xl font-black leading-10">
+                <span id="jednoduchost" className="text-4xl font-black leading-10">
                     4. Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)
                 </span>
                 <br />

@@ -47,7 +47,7 @@ export default function HomePage() {
                   <p className="mt-7 text-2xl tracking-normal leading-9 text-neutral-950 max-md:max-w-full">
                     Manuál, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
                   </p>
-                  <Link href="/co-je">
+                  <Link id"/co-je">
                     <button className="justify-center hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md">
                       Začnite s ID-SK
                     </button>
