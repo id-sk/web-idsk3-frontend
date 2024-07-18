@@ -51,7 +51,7 @@ const HeaderPage = () => {
             </h3>
             <p className="idsk-subtitle mb-4">
                 Hlavná sekcia je povinná časť každej hlavičky. Hlavná sekcia hlavičky je zložená z <b>loga</b> na ľavej strane
-                a <b>akčného panelu</b> na pravej strane. Logo v hlavičke sa riadi pravidlami pre domenové mená. V časti akčný panel sa nachádzajú
+                a <b>akčného panelu</b> na pravej strane. Logo v hlavičke sa riadi pravidlami pre doménové mená. V časti akčný panel sa nachádzajú
                 najviac dve tlačidlá a vyhľadávacie pole. Panel ponúka tiež variant po prihlásení koncového používateľa.
                 V tom prípade je na akčnom paneli zobrazené prihlasovacie meno koncového používateľa, za predpokladu,
                 že daný portál alebo webové sídlo poskytuje túto možnosť.
@@ -143,9 +143,9 @@ const HeaderPage = () => {
                 Pravidlá pre doménové mená
             </h3>
             <p className="idsk-subtitle mb-4">
-                Použitie variantu doménového mena pri responzívnej verzií slúži na efektívne využívanie úzkeho priestoru v hlavnej sekcii hlavičky na
-                mobilných zariadeniach. Pre správne používanie domenových mien sa odporúčajú definovať krátke textové názvy, ktoré reprezentujú dané
-                webové sídlo alebo OVM. Ukážky variantov sú uvedené na ilustráciách nižšie.
+                Použitie variantu doménového mena pri responzívnej verzii slúži na efektívne využívanie úzkeho priestoru v hlavnej sekcii hlavičky na
+                mobilných zariadeniach. Pre správne používanie doménových mien sa odporúčajú definovať krátke textové názvy, ktoré reprezentujú dané
+                webové sídlo alebo orgán verejnej moci. Ukážky variantov sú uvedené na ilustráciách nižšie.
             </p>
             <Image
                 src="/images/hlavicka/domenove-mena.png"
@@ -159,7 +159,7 @@ const HeaderPage = () => {
                 Ako nepoužívať hlavičku
             </h3>
             <p className="idsk-subtitle mb-4">
-                Neodporúča sa používať domenové meno z vyšším počtom znakov ako je 80 a ani kombináciu veľmi širokej verzie <b>loga</b> v kombinácii s textom.
+                Neodporúča sa používať doménové meno s vyšším počtom znakov ako je 80 a ani kombináciu veľmi širokej verzie <b>loga</b> v kombinácii s textom.
             </p>
             <Image
                 src="/images/hlavicka/ako-nepouzivat.png"
@@ -202,7 +202,7 @@ const HeaderPage = () => {
             </h3>
             <p className="idsk-subtitle mb-4">
                 Hlavná sekcia je povinná časť každej hlavičky. Hlavná sekcia hlavičky je zložená z <b>loga</b> na ľavej strane
-                a <b>akčného panelu</b> na pravej strane. Logo v hlavičke sa riadi pravidlami pre domenové mená. V akčnom paneli je vytvorený priestor pre zobrazenie ikony profilu a doplnkové nadradené akcie ako napríklad notifikácie, podpora atď.
+                a <b>akčného panelu</b> na pravej strane. Logo v hlavičke sa riadi pravidlami pre doménové mená. V akčnom paneli je vytvorený priestor pre zobrazenie ikony profilu a doplnkové nadradené akcie ako napríklad notifikácie, podpora atď.
             </p>
             <ol className='idsk-subtitle mb-4'>
                 <li>1. S navigáciou</li>
@@ -261,7 +261,7 @@ const HeaderPage = () => {
                 Pravidlá pre doménové mená
             </h3>
             <p className="idsk-subtitle mb-4">
-                Použitie variantu doménoveho mena pri responzívnej verzií slúži na efektívne využívanie úzkeho priestoru v hlavnej sekcii hlavičky na mobilných zariadeniach. Pre správne používanie domenových mien sa odporúčajú definovať krátke textové názvy, ktoré reprezentujú dané webové sídlo alebo OVM. Ukážky variantov sú uvedené na ilustráciách nižšie.
+                Použitie variantu doménového mena pri responzívnej verzii slúži na efektívne využívanie úzkeho priestoru v hlavnej sekcii hlavičky na mobilných zariadeniach. Pre správne používanie doménových mien sa odporúčajú definovať krátke textové názvy, ktoré reprezentujú dané webové sídlo alebo orgán verejnej moci. Ukážky variantov sú uvedené na ilustráciách nižšie.
             </p>
             <Image
                 src="/images/hlavicka/domenove-mena.png"
@@ -275,7 +275,7 @@ const HeaderPage = () => {
                 Ako nepoužívať hlavičku
             </h3>
             <p className="idsk-subtitle mb-4">
-                Neodporúča sa používať domenové meno z vyšším počtom znakov ako je 80 a ani kombináciu veľmi širokej verzie <b>loga</b> v kombinácii s textom.
+                Neodporúča sa používať doménové meno s vyšším počtom znakov ako je 80 a ani kombináciu veľmi širokej verzie <b>loga</b> v kombinácii s textom.
             </p>
             <Image
                 src="/images/hlavicka/ako-nepouzivat.png"
