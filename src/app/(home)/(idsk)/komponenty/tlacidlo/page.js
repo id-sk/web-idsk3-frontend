@@ -1,6 +1,8 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const ButtonPage = () => {
     return (
@@ -11,6 +13,14 @@ const ButtonPage = () => {
             <p className="idsk-subtitle mb-16">
                 Primárne tlačidlo predstavuje hlavné akčné prvky, ktoré majú najväčší vplyv na používateľskú interakciu. Tlačidlá sú obvykle umiestnené v dôležitých a strategických oblastiach rozhrania používateľa a majú významný vplyv na používateľskú skúsenosť.
             </p>
+            <div className="mb-10">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/button/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie primárnych tlačidiel
             </h2>
