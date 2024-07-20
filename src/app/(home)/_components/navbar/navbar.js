@@ -143,7 +143,7 @@ const Navbar = ({ sidebarData }) => {
           <div className="grid grid-cols-1 gap-4 tb2:grid-cols-2 tb2:gap-8">
             <div>
               <h3 className="idsk-text-body-1">
-                Doména gov.sk je oficálna
+                Doména gov.sk je oficiálna
               </h3>
               <p className="py-2.5">
                 Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk.{' '}
