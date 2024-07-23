@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-
 const NavigationBarPage = () => {
   return (
     <main className="mb-6 -my-8 -mx-6 px-1 flex self-center w-full max-md:max-w-full">

@@ -4,7 +4,7 @@ import { componentsData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
 import { ArticleCard } from "@eslovensko/idsk-react";
-
+import React from 'react';
 
 function ImageCard({ href, src, title, description, alt }) {
   return (
