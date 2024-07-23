@@ -1,6 +1,8 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
+import Link from 'next/link';
 
 const CheckboxPage = () => {
     return (
@@ -12,6 +14,14 @@ const CheckboxPage = () => {
                 Zaškrtávacie pole je interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek
                 z množiny možností. Používateľ označí zaškrtávacie pole kliknutím do štvorca a zruší označenie opätovným kliknutím.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/checkboxes/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie zaškrtávacieho poľa
             </h2>

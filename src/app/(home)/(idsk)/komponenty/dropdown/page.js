@@ -1,6 +1,8 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react';
 
 const DropdownPage = () => {
@@ -13,6 +15,14 @@ const DropdownPage = () => {
                 Komponent rozbaľovací zoznam sa zobrazuje po kliku na dátové rozbaľovacie pole alebo tlačidlo
                 s rozbaľovacou ikonou vpravo. Poskytuje zoznam akcií alebo možností, ktoré je možné použiť.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/checkboxes/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie rozbaľovacieho zoznamu
             </h2>
