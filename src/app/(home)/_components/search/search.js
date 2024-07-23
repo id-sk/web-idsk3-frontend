@@ -28,7 +28,6 @@ const Search = ({ pageDetails }) => {
 
   return (
     <section className="search">
-      <div className="small-screen-only">
         <SearchBar
           placeholder="Vyhľadať komponent..."
           searchbarSize="medium"
@@ -39,19 +38,6 @@ const Search = ({ pageDetails }) => {
           buttonDisabled
           label='Vyhľadať komponent'
         />
-      </div>
-      <div className="large-screen-only">
-        <SearchBar
-          placeholder="Vyhľadať komponent..."
-          searchbarSize="medium"
-          onChange={handleChange}
-          showCancelButton={searchField.length > 0}
-          onCancel={handleCancel}
-          cancelButtonAriaLabel='zrušiť'
-          buttonDisabled
-          label='Vyhľadať komponent'
-        />
-      </div>
       <Scroll length={filteredPages.length} searchLength={searchField.length}>
         <SearchList filteredPages={filteredPages} />
       </Scroll>
