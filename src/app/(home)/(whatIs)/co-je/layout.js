@@ -4,7 +4,7 @@ import { TextButton } from "@eslovensko/idsk-react";
 import FooterResp from "../../_components/footer/FooterResp.js";
 import Navbar from "../../_components/navbar/navbar.js";
 import Sidebar from "../../_components/sidebar/index.js";
-import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/src/assets/svgIcons/Navigation/arrow_upward.svg';
+import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
 import { idskRoutes } from "@/constants/constants.js";
 
 
