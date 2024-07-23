@@ -55,17 +55,17 @@ const Nav = ({ isMobileMenuOpen, sidebarData }) => {
   return (
     isMobileMenuOpen && (
       <Navigation>
-      {parentRoutes.map(parent => (
-        <React.Fragment key={parent.href}>
-          <NavigationLink
-            href={parent.href}
-            label={parent.label}
-            selected={pathname.startsWith(parent.href)}
-          />
-          {sidebarData && renderSubLinks(parent.href)}
-        </React.Fragment>
-      ))}
-    </Navigation>
+        {parentRoutes.map(parent => (
+          <React.Fragment key={parent.href}>
+            <NavigationLink
+              href={parent.href}
+              label={parent.label}
+              selected={pathname.startsWith(parent.href)}
+            />
+            {sidebarData && renderSubLinks(parent.href)}
+          </React.Fragment>
+        ))}
+      </Navigation>
 
     )
   )
@@ -73,6 +73,7 @@ const Nav = ({ isMobileMenuOpen, sidebarData }) => {
 
 const Navbar = ({ sidebarData }) => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true)
+  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
   const router = useRouter();
 
@@ -84,6 +85,10 @@ const Navbar = ({ sidebarData }) => {
     setIsMobileMenuOpen(!isMobileMenuOpen)
   };
 
+  const handleToggleLanguage = () => {
+    setIsLanguageMenuOpen(!isLanguageMenuOpen)
+  };
+
   return (
     <HeaderContainer
       fixed
@@ -93,7 +98,7 @@ const Navbar = ({ sidebarData }) => {
             height: '68px',
           }}
         >
-          <Nav isMobileMenuOpen={isMobileMenuOpen}  />
+          <Nav isMobileMenuOpen={isMobileMenuOpen} />
         </div>
       }
       logo={
@@ -120,6 +125,7 @@ const Navbar = ({ sidebarData }) => {
       mobileMenu={
         <MenuMobile
           opened
+          aria-label={isMobileMenuOpen ? 'Menu otvorené' : 'Menu zatvorené'}
         >
           <MenuButton
             closedTitle="Menu"
@@ -139,6 +145,8 @@ const Navbar = ({ sidebarData }) => {
           headingButton="verejnej správy"
           mobileHeading="SK"
           mobileHeadingButton="e-Gov"
+          aria-expanded={isLanguageMenuOpen ? true : false}
+          onClick={handleToggleLanguage}
         >
           <div className="grid grid-cols-1 gap-4 tb2:grid-cols-2 tb2:gap-8">
             <div>
