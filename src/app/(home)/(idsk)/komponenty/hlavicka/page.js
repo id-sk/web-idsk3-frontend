@@ -1,6 +1,8 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const HeaderPage = () => {
     return (
@@ -13,6 +15,14 @@ const HeaderPage = () => {
                 ktorý je postavený tak, aby používateľom poskytoval jednotný vizuálny, ale aj interakčný
                 zážitok naprieč celým ekosystémom štátu.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/header/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie hlavičky
             </h2>
