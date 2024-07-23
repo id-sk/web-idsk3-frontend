@@ -8,6 +8,7 @@ import React from 'react';
 const DropdownPage = () => {
     return (
         <div className="component-page">
+            <title>Rozbaľovací zoznam</title>
             <h1 className="my-8">
                 Rozbaľovací zoznam
             </h1>

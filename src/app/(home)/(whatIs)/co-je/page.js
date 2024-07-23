@@ -28,6 +28,7 @@ function ImageCard({ href, src, title, description, alt }) {
 const WhatIsPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[850px]">
+      <title>Čo je ID-SK</title>
       <header>
         <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
           Čo je ID-SK

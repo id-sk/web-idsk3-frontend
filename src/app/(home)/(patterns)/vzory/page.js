@@ -5,6 +5,7 @@ import React from "react";
 const Vzory404 = () => {
   return (
     <div className="flex flex-col pt-12 pb-8 max-w-[835px]">
+      <title>Vzory</title>
       <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
         Vzory
       </h1>

@@ -8,6 +8,7 @@ import React from 'react';
 const TextInputPage = () => {
     return (
         <div className="component-page">
+            <title>Textové pole</title>
             <h1 className="my-8">
                 Textové pole
             </h1>

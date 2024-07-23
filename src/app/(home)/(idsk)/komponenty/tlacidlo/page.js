@@ -8,6 +8,7 @@ import React from 'react';
 const ButtonPage = () => {
     return (
         <div className="component-page">
+            <title>Tlačidlo</title>
             <h1 className="my-8">
                 Tlačidlo - Primárne
             </h1>

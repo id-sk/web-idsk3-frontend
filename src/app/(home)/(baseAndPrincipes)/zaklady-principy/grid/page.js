@@ -5,6 +5,7 @@ import Image from 'next/image'
 const GridPage = () => {
     return (
         <div className="component-page">
+            <title>Grid</title>
             <h1 className="my-8">
                 Grid a responzívne zobrazenie
             </h1>

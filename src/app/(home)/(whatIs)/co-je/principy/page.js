@@ -6,6 +6,7 @@ import React from "react";
 const PrincipyPage = () => {
     return (
         <div className="flex flex-col self-stretch my-8 pb-2.5 leading-7">
+            <title>Princípy</title>
             <div className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
                 10 princípov vytvárania služieb podľa ID-SK
             </div>

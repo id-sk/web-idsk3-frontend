@@ -5,6 +5,7 @@ import Image from 'next/image'
 const ColorPage = () => {
     return (
         <div className="basic-page">
+            <title>Farebná paleta</title>
             <h1 className="my-8">
                 Farebná paleta
             </h1>

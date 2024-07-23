@@ -8,6 +8,7 @@ import React from 'react';
 const Accordion = () => {
     return (
         <div className="component-page">
+            <title>Akordeón</title>
             <h1 className="my-8">
                 Akordeón
             </h1>

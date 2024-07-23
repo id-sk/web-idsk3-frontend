@@ -13,6 +13,7 @@ const DeveloperPage = () => {
 
     return (
         <div className="component-page">
+            <title>Pre vývojárov</title>
             <h1 className="my-8">
                 Pre vývojárov
             </h1>

@@ -8,6 +8,7 @@ import React from 'react';
 const RadioPage = () => {
     return (
         <div className="component-page">
+            <title>Prepínacie pole</title>
             <h1 className="my-8">
                 Prepínacie pole
             </h1>

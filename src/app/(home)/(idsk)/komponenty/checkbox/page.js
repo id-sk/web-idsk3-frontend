@@ -8,6 +8,7 @@ import React from 'react';
 const CheckboxPage = () => {
     return (
         <div className="component-page">
+            <title>Zaškrtávacie pole</title>
             <h1 className="my-8">
                 Zaškrtávacie pole
             </h1>

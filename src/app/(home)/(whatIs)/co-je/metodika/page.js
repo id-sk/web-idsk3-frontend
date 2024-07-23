@@ -4,6 +4,7 @@
 const MetodikaPage = () => {
     return (
         <div className="component-page">
+            <title>Metodika</title>
             <h1 className="my-8">
                 Metodika User-centered Design
             </h1>
