@@ -2,13 +2,14 @@ import Link from 'next/link';
 import React from 'react';
 import './card.scss'
 
+
 const Card = ({ page }) => {
     return (
-        <div key={page.name}>
-            <Link className="idsk-dropdown__option" href={page.link}>
+        <li key={page.name} role="listitem">
+            <Link href={page.link} passHref className="idsk-dropdown__option">
                 {page.name}
             </Link>
-        </div>
+        </li>
     );
 }
 

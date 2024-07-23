@@ -5,7 +5,7 @@ import { pageRoutes } from "@/constants/constants.js";
 import FooterResp from "../../_components/footer/FooterResp.js";
 import React from 'react';
 import { TextButton } from "@eslovensko/idsk-react";
-import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
+import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/src/assets/svgIcons/Navigation/arrow_upward.svg';
 import Sidebar from "../../_components/sidebar/index.js";
 import { scrollToTop } from "@/utils/scroll.js";
 

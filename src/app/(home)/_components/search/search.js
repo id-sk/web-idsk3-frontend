@@ -35,7 +35,9 @@ const Search = ({ pageDetails }) => {
           onChange={handleChange}
           showCancelButton={searchField.length > 0}
           onCancel={handleCancel}
-          openable
+          cancelButtonAriaLabel='zrušiť'
+          buttonDisabled
+          label='Vyhľadať komponent'
         />
       </div>
       <div className="large-screen-only">
@@ -45,6 +47,9 @@ const Search = ({ pageDetails }) => {
           onChange={handleChange}
           showCancelButton={searchField.length > 0}
           onCancel={handleCancel}
+          cancelButtonAriaLabel='zrušiť'
+          buttonDisabled
+          label='Vyhľadať komponent'
         />
       </div>
       <Scroll length={filteredPages.length} searchLength={searchField.length}>
