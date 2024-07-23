@@ -5,6 +5,7 @@ import Image from 'next/image'
 const InfobarPage = () => {
     return (
         <div className="component-page">
+            <title>Informačná lišta</title>
             <h1 className="my-8">
                 Informačná lišta - Upozornenie
             </h1>

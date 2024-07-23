@@ -6,6 +6,7 @@ import React from "react";
 const UvodPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[835px]">
+      <title>Úvod</title>
       <header>
         <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
           Úvod

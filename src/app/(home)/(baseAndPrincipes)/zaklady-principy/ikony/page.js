@@ -5,6 +5,7 @@ import Image from 'next/image'
 const IconsPage = () => {
     return (
         <div className="component-page">
+            <title>Ikony</title>
             <h1 className="my-8">
                 Ikony
             </h1>

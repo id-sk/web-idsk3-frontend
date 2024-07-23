@@ -5,6 +5,7 @@ import Image from 'next/image'
 const TextInputPage = () => {
     return (
         <div className="component-page">
+            <title>Textové pole</title>
             <h1 className="my-8">
                 Textové pole
             </h1>

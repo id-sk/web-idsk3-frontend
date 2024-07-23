@@ -5,6 +5,7 @@ import React from "react";
 const NavigationBarPage = () => {
   return (
     <main className="mb-6 -my-8 -mx-6 px-1 flex self-center w-full max-md:max-w-full">
+      <title>Rázcestník</title>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <section className="flex flex-col ml-5 w-[60%] max-md:ml-0 max-md:w-full">
            {/* *Textovy* */}

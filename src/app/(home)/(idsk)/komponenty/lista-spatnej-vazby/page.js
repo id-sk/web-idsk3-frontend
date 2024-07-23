@@ -5,6 +5,7 @@ import Image from 'next/image'
 const BackBarPage = () => {
     return (
         <div className="component-page">
+            <title>Lišta spätnej väzby</title>
             <h1 className="my-8">
                 Lišta spätnej väzby
             </h1>

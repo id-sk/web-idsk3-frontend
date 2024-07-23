@@ -5,6 +5,7 @@ import Image from 'next/image';
 const BreadcrumbPage = () => {
     return (
         <div className="component-page">
+            <title>Omrvinková navigácia</title>
             <h1 className="my-8">
                 Omrvinková navigácia
             </h1>

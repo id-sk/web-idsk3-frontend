@@ -5,6 +5,7 @@ import Image from 'next/image'
 const TypografiaPage = () => {
     return (
         <div className="component-page">
+            <title>Typografia</title>
             <h1 className="my-8">
                 Typografia
             </h1>

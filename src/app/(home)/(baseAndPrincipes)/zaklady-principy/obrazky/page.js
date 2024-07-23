@@ -1,6 +1,7 @@
 const ImagesPage = () => {
     return (
         <div className="component-page">
+            <title>Obrázky</title>
             <h1 className="my-8">
                 Používanie obrázkov
             </h1>

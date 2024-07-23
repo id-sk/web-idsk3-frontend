@@ -6,6 +6,7 @@ import ArrowUpBtn from "@/app/(home)/_components/arrow-up-btn/arrow";
 const GithubPage = () => {
     return (
         <div className="pt-12 pb-8">
+            <title>Github</title>
             <header>
                 <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
                     Základy a princípy
@@ -19,7 +20,7 @@ const GithubPage = () => {
                 <ArrowUpBtn />
             </div>
         </div>
-        
+
     );
 }
 

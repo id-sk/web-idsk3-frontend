@@ -5,6 +5,7 @@ import Image from 'next/image'
 const MarginPage = () => {
     return (
         <div className="component-page">
+            <title>Medzery</title>
             <h1 className="my-8">
                 Medzery
             </h1>

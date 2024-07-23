@@ -5,6 +5,7 @@ import Image from 'next/image';
 const CardPage = () => {
     return (
         <div className="component-page">
+            <title>Kartička</title>
             <h1 className="my-8">
                 Kartička
             </h1>

@@ -5,6 +5,7 @@ import Image from 'next/image'
 const ButtonPage = () => {
     return (
         <div className="component-page">
+            <title>Tlačidlo</title>
             <h1 className="my-8">
                 Tlačidlo - Primárne
             </h1>

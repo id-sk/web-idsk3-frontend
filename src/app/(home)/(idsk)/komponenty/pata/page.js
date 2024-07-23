@@ -5,6 +5,7 @@ import Image from 'next/image'
 const FooterPage = () => {
     return (
         <div className="component-page">
+            <title>Päta</title>
             <h1 className="my-8">
                 Päta
             </h1>

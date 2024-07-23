@@ -5,6 +5,7 @@ import Image from 'next/image';
 const Accordion = () => {
     return (
         <div className="component-page">
+            <title>Akordeón</title>
             <h1 className="my-8">
                 Akordeón
             </h1>

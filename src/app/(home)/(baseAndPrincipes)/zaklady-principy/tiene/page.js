@@ -5,6 +5,7 @@ import Image from 'next/image'
 const ShadowsPage = () => {
     return (
         <div className="component-page">
+            <title>Tiene</title>
             <h1 className="my-8">
                 Tiene
             </h1>
