@@ -1,25 +1,29 @@
 .search {
-    margin: .5rem !important;
+  margin: .5rem !important;
 
-    button {
-        cursor: auto !important;
-    }
+  button {
+    cursor: auto !important;
+  }
+
+  .idsk-searchbar__button {
+    pointer-events: none;
+    background-color: rgb(18 109 255/var(--tw-bg-opacity));
+  }
 
 }
 
 .small-screen-only {
-    display: block;
-  
-    @media (min-width: 720px) {
-      display: none;
-    }
-  }
-  
-  .large-screen-only {
+  display: block;
+
+  @media (min-width: 720px) {
     display: none;
-  
-    @media (min-width: 720px) {
-      display: block;
-    }
   }
-  
+}
+
+.large-screen-only {
+  display: none;
+
+  @media (min-width: 720px) {
+    display: block;
+  }
+}
