@@ -1,6 +1,9 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const CardPage = () => {
     return (
@@ -11,6 +14,14 @@ const CardPage = () => {
             <p className="idsk-subtitle mb-16">
                 Primárna funkcia komponentu kartička je vizuálna reprezentácia obsahu článkov alebo podstránok. Prvky, ako sú text a obrázky, by mali byť na kartičke umiestnené spôsobom, ktorý jasne naznačuje ich hierarchiu.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/card/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie kartičky
             </h2>
