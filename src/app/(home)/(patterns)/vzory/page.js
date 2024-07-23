@@ -16,7 +16,7 @@ const Vzory404 = () => {
           height={550}
           quality={100}
           alt="404"
-          className="w-full aspect-[1.55]"
+          className="w-full aspect-[1.5]"
         />
         <div className="self-center mt-11 max-md:mt-10">
           Na časti <span className="font-bold">Vzory</span> pilne pracujeme,

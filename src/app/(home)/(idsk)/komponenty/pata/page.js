@@ -1,6 +1,9 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
+import Link from 'next/link';
+import React from 'react';
 
 const FooterPage = () => {
     return (
@@ -13,6 +16,14 @@ const FooterPage = () => {
                 Všetky stránky musia používať štandardizovanú pätičku. Pätička môže ale nemusí obsahovať štrukturované,
                 hyperlinkové odkazy na dôležitý obsah. Základnou variáciou je pätička bez sekundárdnej navigácie.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/footer/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie päty
             </h2>

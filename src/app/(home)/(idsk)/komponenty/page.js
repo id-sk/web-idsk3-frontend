@@ -3,7 +3,8 @@
 import { componentsData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
-
+import { ArticleCard } from "@eslovensko/idsk-react";
+import React from 'react';
 
 function ImageCard({ href, src, title, description, alt }) {
   return (
@@ -15,7 +16,7 @@ function ImageCard({ href, src, title, description, alt }) {
           quality={100}
           src={src}
           alt={alt}
-          className="w-full aspect-[1.15] object-cover"
+          className="w-full aspect-[1.5] object-cover"
         />
         <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
         <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-3">{description}</p>
@@ -36,6 +37,14 @@ const IdskPage = () => {
       <p className="mt-8 text-xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
       Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.{" "}
       </p>
+      <div className="mt-6">
+      <Link href={'https://komponenty.idsk3.gov.sk/components/'}>
+      <ArticleCard >
+        <h4>Kód komponentov</h4>
+        <p className="my-1">HTML verzia na prevzatie</p>
+      </ArticleCard>
+      </Link>
+      </div>
       <section className="px-1 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {componentsData.slice(0, 3).map((card, index) => (

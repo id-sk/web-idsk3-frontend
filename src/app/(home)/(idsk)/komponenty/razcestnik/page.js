@@ -1,6 +1,9 @@
-import Image from "next/image";
-import React from "react";
+'use client'
 
+import { ArticleCard } from "@eslovensko/idsk-react";
+import Image from "next/image";
+import Link from "next/link";
+import React from "react";
 
 const NavigationBarPage = () => {
   return (
@@ -17,6 +20,14 @@ const NavigationBarPage = () => {
               rozmiestnený na rôznych, samostatných podstránkach. Rázcestník je jedným z komponentov,
               ktoré navigujú používateľa k obsahu vašej stránky.
             </p>
+            <div className="mt-8">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/radios/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie textového rázcestníka</h2>
             <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.

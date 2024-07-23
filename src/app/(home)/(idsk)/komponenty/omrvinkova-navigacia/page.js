@@ -1,6 +1,9 @@
 'use client'
 
+import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
 
 const BreadcrumbPage = () => {
     return (
@@ -12,6 +15,14 @@ const BreadcrumbPage = () => {
             <p className="idsk-subtitle mb-16">
                 Omrviková navigácia je spôsob, ako používateľom umožniť rýchle a jednoduché navigovanie v rámci webovej stránky alebo aplikácie. Ide o typ navigácie, ktorý ukazuje používateľom aktuálnu polohu v hierarchii stránok a umožňuje im rýchlo sa vrátiť na predchádzajúce úrovne.
             </p>
+            <div className="mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/breadcrumbs/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie omrvinkovej navigácie
             </h2>
