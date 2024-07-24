@@ -156,9 +156,15 @@ const MetodikaPage = () => {
             <ul className='idsk-subtitle mb-4'>
                 <li>- sprioritizovaný zoznam identifikovaných problémov použiteľnosti podľa frekvencie a závažnosti,</li>
                 <li>- dokumentáciu meraných metrík pre kľúčové prípady použitia:</li>
-                <li>a. čas úlohy</li>
-                <li>b. chybovosť úlohy</li>
-                <li className='mb-4'>c. efektivita úlohy</li>
+                <ul type="a">
+                <li>čas úlohy</li>
+                </ul>
+                <ul type="b">
+                <li>chybovosť úlohy</li>
+                </ul>
+                <ul type="c">
+                <li className='mb-4'>efektivita úlohy</li>
+                </ul>
                 <li>- výsledok merania SUS skóre,</li>
                 <li>- scenár testovania,</li>
                 <li>- screener – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
