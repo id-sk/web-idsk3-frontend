@@ -61,7 +61,7 @@ export default function HomePage() {
                   width={100}
                   height={100}
                   quality={100}
-                  alt="undraw"
+                  alt=""
                 />
               </div>
             </div>
