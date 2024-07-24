@@ -31,9 +31,9 @@ const Accordion = () => {
                 to čo sa v danom akordeóne nachádza. Detailnejšie informácie o obsahu čo je umiestené
                 v akordeóne, dodefinujte v popise pod nadpisom. Akordeón najlepšie funguje pre jednoduché texty a odkazy. Nepoužívajte akordeón na obsah, ktorý je dôležitý pre všetkých používateľov.
             </p>
-            <p className="idsk-text-body my-4">
-                <b>Správanie komponentu:</b>
-            </p>
+            <h3 className="idsk-text-body my-4">
+                Správanie komponentu:
+            </h3>
             <p className="idsk-subtitle mb-8">
                 Klikateľný je riadok s nadpisom a ikonou po celej svojej dĺžke.
                 Sekcia obsahu sa rozbalí alebo zbalí kliknutím na príslušný riadok.
