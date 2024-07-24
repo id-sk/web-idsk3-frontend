@@ -70,10 +70,10 @@ export const basicRoutes = [
         "name": "Farebná paleta",
         "link": "/zaklady-principy/farebna-paleta"
     },
-    {
-        "name": "Ikony",
-        "link": "/zaklady-principy/ikony"
-    },
+    // {
+    //     "name": "Ikony",
+    //     "link": "/zaklady-principy/ikony"
+    // },
     {
         "name": "Tiene",
         "link": "/zaklady-principy/tiene"
