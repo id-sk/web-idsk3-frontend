@@ -68,9 +68,7 @@ const DeveloperPage = () => {
             <h3 className="mb-4">
                 Kroky k inštalácii
             </h3>
-            <p className="idsk-subtitle my-4">
-                <b>1. Stiahnite si zdroje</b>
-            </p>
+            <h2 className="idsk-subtitle my-4">1. Stiahnite si zdroje</h2>
             <p className="idsk-subtitle my-4">
                 Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov:
             </p>
@@ -78,9 +76,7 @@ const DeveloperPage = () => {
                 <li>- CSS a JS</li>
                 <li>- Assety</li>
             </ul>
-            <p className="idsk-subtitle my-4">
-                <b>2. Zahrňte zdroje</b>
-            </p>
+            <h2 className="idsk-subtitle my-4">2. Zahrňte zdroje</h2>
             <p className="idsk-subtitle my-4">
                 Skopírujte celý priečinok assets do rootu vašej služby.
                 Podľa nižšie uvedeného príkladu pridajte súbory CSS a JavaScript do šablóny HTML. Tento príklad predpokladá, že ste skopírovali šablóny so štýlmi a JavaScript súbory do /stylesheets a /javascript.
