@@ -52,7 +52,7 @@ const UvodPage = () => {
         Súčasťou manuálu je aj vzorový programový kód. Pozrite si, ako začať s
         vývojom.
       </p>
-      <h2 className="mt-8 text-4xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
+      <h2 className="mt-8 text-4xl sm:text-custom-24 sm:leading-custom-35 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
         Na čo slúži ID-SK a na čo nie
       </h2>
       <p className="mt-8 text-xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">

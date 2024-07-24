@@ -10,6 +10,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      lineHeight: {
+        'custom-16': '16px',  // This is the default, equivalent to 28px in most base font sizes
+        'custom-28': '28px',  // Custom line-height for 24px
+        'custom-19': '19px',  // Custom line-height for 32px
+        'custom-24': '24px',
+        'custom-26': '26px', 
+        'custom-35': '35px',  
+        // Add more custom line-height values as needed
+      },
+      fontSize: {
+        'custom-16': '16px',
+        'custom-19': '19px',
+        'custom-24': '24px',  // Custom font size of 16px
+      },
       colors: {
         'regal-blue': '#0B4199',
         'my-blue': '#126DFF',
@@ -23,6 +37,11 @@ module.exports = {
       spacing: {
         '15': '3.75rem',
       },
+    },
+  },
+  variants: {
+    extend: {
+      lineHeight: ['responsive'], // Ensure responsive variants are generated
     },
   },
   plugins: [

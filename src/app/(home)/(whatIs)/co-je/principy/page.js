@@ -10,7 +10,7 @@ const PrincipyPage = () => {
             <div className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
                 10 princípov vytvárania služieb podľa ID-SK
             </div>
-            <div className="mt-8 w-full text-xl tracking-wide text-black max-md:max-w-full">
+            <div className="mt-8 w-full  sm:text-custom-16 md: text-custom-19 tracking-wide text-black max-md:max-w-full">
                 <ol>
                     <li>
                         <a
@@ -96,7 +96,7 @@ const PrincipyPage = () => {
                 </ol>
                 <br />
                 
-                <span id="uzitocnost" className="text-4xl font-black leading-10">
+                <span id="uzitocnost" className="text-4xl font-black leading-custom-28">
                     1. Začnite potrebami používateľov (princíp užitočnosti)
                 </span>
                 <br />

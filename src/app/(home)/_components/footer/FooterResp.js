@@ -29,7 +29,7 @@ const FooterResp = () => {
       <Image
         src="/images/group.svg"
         alt="mirri"
-        width={300}
+        width={290}
         height={66}
         className="max-md:mt-5"
       />
