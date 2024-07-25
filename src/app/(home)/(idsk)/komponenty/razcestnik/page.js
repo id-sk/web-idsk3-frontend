@@ -11,8 +11,8 @@ const NavigationBarPage = () => {
       <title>Rázcestník</title>
       <div className="flex gap-5 max-md:flex-col max-md:gap-0">
         <section className="flex flex-col ml-5 w-[60%] max-md:ml-0 max-md:w-full">
-           {/* *Textovy* */}
-        <article className="flex flex-col grow pt-16 pb-8 max-md:mt-5 max-md:max-w-full">
+          {/* *Textovy* */}
+          <article className="flex flex-col grow pt-16 pb-8 max-md:mt-5 max-md:max-w-full">
             <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">Textový rázcestník</h1>
             <p className="mt-5 text-2xl tracking-normal leading-9 text-black max-md:max-w-full">
               Rázcestník má formu jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.
@@ -21,12 +21,12 @@ const NavigationBarPage = () => {
               ktoré navigujú používateľa k obsahu vašej stránky.
             </p>
             <div className="mt-8">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/radios/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
-                </Link>
+              <Link href={'https://komponenty.idsk3.gov.sk/components/signpost/'}>
+                <ArticleCard>
+                  <h4>Kód komponentu</h4>
+                  <p className="my-1">HTML verzia na prevzatie</p>
+                </ArticleCard>
+              </Link>
             </div>
             <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie textového rázcestníka</h2>
             <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
@@ -36,10 +36,15 @@ const NavigationBarPage = () => {
               Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov, musíte však dodržať pravidlá
               pre rozloženie stránky (grid).
             </p>
-            <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Varianty</h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
-              Komponent umožňuje použitie 3 variantov: <br />1. Základná <br />2. S linkom <br />3. S tagom
+            <h2 className="mt-8 mb-4">Varianty</h2>
+            <p className="idsk-subtitle mb-4">
+              Komponent umožňuje použitie 3 variantov:
             </p>
+            <ol className='idsk-subtitle mb-4'>
+              <li>1. Základná</li>
+              <li>2. S linkom </li>
+              <li>3. S tagom</li>
+            </ol>
           </article>
           <div className="my-2 w-[100%] h-[100%]">
             <Image
@@ -65,7 +70,7 @@ const NavigationBarPage = () => {
               className="w-full h-full"
             />
           </div>
-           {/* *Vertikalny* */}
+          {/* *Vertikalny* */}
           <article className="flex flex-col grow pt-12 pb-8 max-md:mt-5 max-md:max-w-full">
             <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">Vertikálny rázcestník</h1>
             <p className="mt-5 text-2xl tracking-normal leading-9 text-black max-md:max-w-full">
@@ -81,11 +86,16 @@ const NavigationBarPage = () => {
               Pri definovaní nadpisu a podnadpisu buďte struční a vecní.
               Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov, musíte však dodržať pravidlá pre rozloženie stránky (grid).
             </p>
-            <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Varianty</h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
-              Komponent umožňuje použitie 4 variantov: <br />1. S akciou <br />2. Vybraný stav <br />3. S ikonou
-              <br />4. S obrázkom
+            <h2 className="mt-8 mb-4">Varianty</h2>
+            <p className="idsk-subtitle mb-4">
+              Komponent umožňuje použitie 4 variantov:
             </p>
+            <ol className='idsk-subtitle mb-4'>
+              <li>1. S akciou</li>
+              <li>2. Vybraný stav</li>
+              <li>3. S ikonou</li>
+              <li>4. S obrázkom</li>
+            </ol>
           </article>
           <div className="my-2 w-[100%] h-[100%] ">
             <Image
@@ -112,10 +122,15 @@ const NavigationBarPage = () => {
               Pri definovaní nadpisu a podnadpisu buďte struční a vecní. Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov,
               musíte však dodržať pravidlá pre rozloženie stránky (grid).
             </p>
-            <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Varianty</h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
-              Komponent umožňuje použitie 3 variantov: <br />1. S ikonou <br />2. S šípkou <br />3. S ikonou a šípkou
+            <h2 className="mt-8 mb-4">Varianty</h2>
+            <p className="idsk-subtitle mb-4">
+              Komponent umožňuje použitie 4 variantov:
             </p>
+            <ol className='idsk-subtitle mb-4'>
+              <li>1. S ikonou</li>
+              <li>2. S šípkou</li>
+              <li>3. S ikonou a šípkou</li>
+            </ol>
           </article>
           <div className="my-2 w-[100%] h-[100%] ">
             <Image
