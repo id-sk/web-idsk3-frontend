@@ -17,7 +17,7 @@ const DropdownPage = () => {
                 s rozbaľovacou ikonou vpravo. Poskytuje zoznam akcií alebo možností, ktoré je možné použiť.
             </p>
             <div className="mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/checkboxes/'}>
+                <Link href={'https://komponenty.idsk3.gov.sk/components/dropdown/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>
                         <p className="my-1">HTML verzia na prevzatie</p>
