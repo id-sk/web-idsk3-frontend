@@ -17,7 +17,7 @@ const BackBarPage = () => {
                 zistiť od používateľov užitočnosť a relevantnosť publikovaného obsahu na webovom sídle.
             </p>
             <div className="mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/error-message/'}>
+                <Link href={'https://komponenty.idsk3.gov.sk/components/feedback-bar/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>
                         <p className="my-1">HTML verzia na prevzatie</p>
