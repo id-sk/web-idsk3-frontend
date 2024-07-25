@@ -21,7 +21,7 @@ const NavigationBarPage = () => {
               ktoré navigujú používateľa k obsahu vašej stránky.
             </p>
             <div className="mt-8">
-              <Link href={'https://komponenty.idsk3.gov.sk/components/radios/'}>
+              <Link href={'https://komponenty.idsk3.gov.sk/components/signpost/'}>
                 <ArticleCard>
                   <h4>Kód komponentu</h4>
                   <p className="my-1">HTML verzia na prevzatie</p>
