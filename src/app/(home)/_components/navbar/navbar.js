@@ -109,15 +109,12 @@ const Navbar = ({ sidebarData }) => {
                 src="/images/logotyp.svg"
                 alt=""
                 sizes="100vw"
-                style={{
-                  width: '2.5rem',
-                  height: '2.5rem',
-                }}
                 title="Slovensko.sk"
                 width={0}
                 height={0}
+                className="w-8 h-8 md:w-12 md:h-12"
               />
-              <h3 className='py-2'>Dizajn systém ID-SK</h3>
+              <h3 className='py-2 max-w-720px dizajn'>Dizajn systém ID-SK</h3>
             </header>
           </div>
         </a>
@@ -180,7 +177,7 @@ const Navbar = ({ sidebarData }) => {
         <PrimaryButton
           label="IDSK 2.0"
           onClick={handleClick}
-          className='mr-2'
+          className='mr-2 large-screen-only'
         />
       </div>
     </HeaderContainer>
