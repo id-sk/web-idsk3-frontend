@@ -1,16 +1,20 @@
 'use client'
 import { scrollToTop } from "@/utils/scroll.js";
-import { TextButton } from "@eslovensko/idsk-react";
+import { SkipLink, TextButton } from "@eslovensko/idsk-react";
 import FooterResp from "../../_components/footer/FooterResp.js";
 import Navbar from "../../_components/navbar/navbar.js";
 import Sidebar from "../../_components/sidebar/index.js";
 import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
 import { idskRoutes } from "@/constants/constants.js";
+import { handleSkip } from "@/utils/skip.js";
 
 
 const WhatIsLayout = ({ children }) => {
   return (
     <div className="flex flex-col min-h-screen relative">
+      <SkipLink onClick={handleSkip}>
+        Preskočiť na hlavný obsah
+      </SkipLink>
       <Navbar sidebarData={idskRoutes} />
       <div className="h-screen flex">
         <Sidebar data={idskRoutes} />
