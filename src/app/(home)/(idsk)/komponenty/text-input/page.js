@@ -281,17 +281,17 @@ const TextInputPage = () => {
             <p className="idsk-subtitle mb-8">
                 Prehľad o chybách sa musí nachádzať v hornej časti stránky tak, aby bol viditeľný, keď sa stránka aktualizuje a pomocná technológia ju vedela ihneď prečítať .
             </p>
-            <p className="idsk-subtitle">
-                <b>Pýtajte sa jednu otázku na jednu stránku</b>
-            </p>
+            <h3 className="idsk-subtitle">
+                Pýtajte sa jednu otázku na jednu stránku
+            </h3>
             <p className="idsk-subtitle mb-8">
                 Pre používateľov môže byť ťažké zorientovať sa na stránke po zobrazení chyby, najmä, ak sa na nej vyskytlo viacero chýb súčasne.
                 Zjednodušte formuláre ich prepísaním, ak je to možné, rozdeľujte dlhé formuláre na niekoľko stránok, pričom na každej z nich sa pýtajte jednu otázku.
                 Pri štruktúrovaní formulára zvážte aj kontext. Ak spolu žiadané informácie súvisia, je možné ich umiestniť na stránke viac, napríklad meno, priezvisko a číslo občianského preukazu.
             </p>
-            <p className="idsk-subtitle">
-                <b>Zvýraznenie chýb vo formulároch</b>
-            </p>
+            <h3 className="idsk-subtitle">
+                Zvýraznenie chýb vo formulároch
+            </h3>
             <p className="idsk-subtitle mb-8">
                 Pre každú chybu:
                 Napíšte správu, ktorá pomôže používateľovi pochopiť, prečo sa chyba vyskytla a ako ju má odstrániť.
