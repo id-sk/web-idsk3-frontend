@@ -18,6 +18,20 @@ a {
   text-decoration: none;
 }
 
+* {
+  scrollbar-width: thin !important;
+  scrollbar-color: darkgray lightgray !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: darkgray !important;
+}
+
+::-webkit-scrollbar-track {
+  background: lightgray !important;
+}
+
+
 .menu-button {
   width: 8rem;
   margin-left: '-0.35rem'
