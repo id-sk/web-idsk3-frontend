@@ -1,117 +1,58 @@
 'use client'
 
-import Image from 'next/image'
+import React from 'react';
+import ColorGrid from '@/app/(home)/_components/paleta/ColorGrid';
+import ColorSection from '@/app/(home)/_components/paleta/ColorSection';
+import { primaryColors, secondaryColors, neutralColors, extendedPrimaryColors, alertColors, textColors, slovakColors } from "@/constants/data";
 
-const ColorPage = () => {
-    return (
-        <div className="basic-page">
-            <title>Farebná paleta</title>
-            <h1 className="my-8">
-                Farebná paleta
-            </h1>
-            <p className="idsk-subtitle mb-16">
-                Farebná paleta definuje základné farby, ktoré sú používané pre udržiavanie konzistentnosti vramci rozhrania. Navrhnuté farby su definované tak, aby splňali kontrastné pomery pre nevidiacich a slabozrakých. Farby sú rozdelené do základných skupín podľa účelu použitia.
-            </p>
-            <h2 className="mb-4">
-                Primárna paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Primárna paleta je sada základných farieb, ktoré sú použité v grafickom dizajne pre vytvorenie konzistentného a súdržného vizuálneho prejavu. Sú to farby, ktoré tvoria základ všetkých ďalších kombinácií a farebných schém v rámci dizajnu.
-            </p>
-            <Image
-                src="/images/farebna-paleta/primarna-paleta.png"
-                width={650}
-                height={125}
-                quality={100}
-                alt="primárna paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Primárna rozšírená paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Primárna rozšírená paleta sa používa na doplnenie a rozšírenie primárnej palety. Táto paleta obsahuje ďalšie farby, ktoré sú zvyčajne odvodené od farieb v primárnej palete a slúžia na vytváranie rozmanitých a zaujímavých kombinácií farieb v rámci dizajnu.
-            </p>
-            <Image
-                src="/images/farebna-paleta/primarna-rozsirena.png"
-                width={1265}
-                height={250}
-                quality={100}
-                alt="primárna rozšírená paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Neutrálna paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                V neutrálnej palete sú farby, ktoré majú nízku intenzitu a zvyčajne sú bezfarebné. Neutrálne farby zvyčajne zahŕňajú odtiene ako biela, čierna, šedá.
-            </p>
-            <Image
-                src="/images/farebna-paleta/neutralna.svg"
-                width={1265}
-                height={500}
-                quality={100}
-                alt="neutrálna paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Sekundárna paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Sekundárna paleta sa používa na doplnenie primárnej a rozšírenej palety, slúži na vytvorenie ďalších vizuálnych prvkov. Môže obsahovať aj úplne nové farby, ktoré sú prispôsobené potrebám daného projektu.
-            </p>
-            <Image
-                src="/images/farebna-paleta/sekundarna-paleta.svg"
-                width={1265}
-                height={500}
-                quality={100}
-                alt="sekundárna paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Upozornenia paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Farebná paleta upozornení je špecifickým súborom farieb, ktoré sa používajú na vytvorenie vizuálneho upozornenia pre určitý účel. Táto paleta farieb zvyčajne obsahuje farby, ktoré majú vysokú viditeľnosť a sú schopné prilákať pozornosť čitateľa.
-            </p>
-            <Image
-                src="/images/farebna-paleta/upozornenia.svg"
-                width={900}
-                height={125}
-                quality={100}
-                alt="upozornenia paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Textová paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Farebná paleta textov zvyčajne obsahuje súbor farieb, ktoré sa používajú na tvorbu textových elementov, ako sú nadpisy, popisy, označenia a odkazy.
-            </p>
-            <Image
-                src="/images/farebna-paleta/textova.svg"
-                width={1265}
-                height={250}
-                quality={100}
-                alt="textová paleta"
-                className='mb-12'
-            />
-            <h2 className="mb-4">
-                Slovenská paleta
-            </h2>
-            <p className="idsk-subtitle mb-8">
-                Slovenská paleta farieb obsahuje farby, ktoré sú špecifické pre Slovensko a symbolizujú trikolóru, používajú sa napríklad v logu.
-            </p>
-            <Image
-                src="/images/farebna-paleta/slovenska.svg"
-                width={1265}
-                height={250}
-                quality={100}
-                alt="slovenská paleta"
-                className='mb-12'
-            />
-        </div>
-    );
-}
+const ColorPalette = () => {
+  return (
+    <main className="flex flex-col -mx-0 my-8 max-w-[1200px]">
+      <h1 className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
+        Farebná paleta
+      </h1>
+      <p className="mt-5 w-full text-2xl tracking-normal leading-9 text-black max-md:max-w-full">
+        Farebná paleta definuje základné farby, ktoré sú používané pre udržiavanie konzistentnosti vramci rozhrania. Navrhnuté farby su definované tak, aby splňali kontrastné pomery pre nevidiacich a slabozrakých. Farby sú rozdelené do základných skupín podľa účelu použitia.
+      </p>
 
-export default ColorPage;
+      <ColorSection title="Primárna paleta" description="Primárna paleta je sada základných farieb, ktoré sú použité v grafickom dizajne pre vytvorenie konzistentného a súdržného vizuálneho prejavu. Sú to farby, ktoré tvoria základ všetkých ďalších kombinácií a farebných schém v rámci dizajnu.">
+      <ColorGrid colors={primaryColors} cardsPerRow={6} gap="1rem" rowGap="0.5rem" alignLeft={true} />
+      </ColorSection>
+      <ColorSection title="Primárna rozšírená paleta" description="Primárna rozšírená paleta sa používa na doplnenie a rozšírenie primárnej palety. Táto paleta obsahuje ďalšie farby, ktoré sú zvyčajne odvodené od farieb v primárnej palete a slúžia na vytváranie rozmanitých a zaujímavých kombinácií farieb v rámci dizajnu.">
+      <ColorGrid colors={extendedPrimaryColors} cardsPerRow={6} gap="1rem" rowGap="0.5rem" />
+      </ColorSection>
+
+      <ColorSection title="Neutrálna paleta" description="V neutrálnej palete sú farby, ktoré majú nízku intenzitu a zvyčajne sú bezfarebné. Neutrálne farby zvyčajne zahŕňajú odtiene ako biela, čierna, šedá.">
+        <ColorGrid 
+        colors={neutralColors}
+        cardsPerRow={6} gap="1.5rem" rowGap="0.5rem"/>
+      </ColorSection>
+
+      <ColorSection title="Sekundárna paleta" description="Sekundárna paleta sa používa na doplnenie primárnej a rozšírenej palety, slúži na vytvorenie ďalších vizuálnych prvkov. Môže obsahovať aj úplne nové farby, ktoré sú prispôsobené potrebám daného projektu.">
+        <ColorGrid 
+        colors={secondaryColors}
+        cardsPerRow={6} gap="1rem" rowGap="0.5rem" />
+      </ColorSection>
+
+      <ColorSection title="Upozornenia paleta" description="Farebná paleta upozornení je špecifickým súborom farieb, ktoré sa používajú na vytvorenie vizuálneho upozornenia pre určitý účel. Táto paleta farieb zvyčajne obsahuje farby, ktoré majú vysokú viditeľnosť a sú schopné prilákať pozornosť čitateľa.">
+        <ColorGrid 
+        colors={alertColors} 
+        cardsPerRow={6} gap="1rem" rowGap="0.5rem" />
+      </ColorSection>
+
+      <ColorSection title="Textová paleta" description="Farebná paleta textov zvyčajne obsahuje súbor farieb, ktoré sa používajú na tvorbu textových elementov, ako sú nadpisy, popisy, označenia a odkazy.">
+        <ColorGrid 
+        colors={textColors} 
+        cardsPerRow={6} gap="1rem" rowGap="0.5rem" />
+      </ColorSection>
+
+      <ColorSection title="Slovenská paleta" description="Slovenská paleta farieb obsahuje farby, ktoré sú špecifické pre Slovensko a symbolizujú trikolóru, používajú sa napríklad v logu.">
+        <ColorGrid 
+        colors={slovakColors} 
+        cardsPerRow={6} gap="1rem" rowGap="0.5rem" /> 
+      </ColorSection>
+    </main>
+  );
+};
+
+export default ColorPalette;

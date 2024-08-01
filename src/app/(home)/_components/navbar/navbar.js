@@ -109,7 +109,6 @@ const Navbar = ({ sidebarData }) => {
                 src="/images/logotyp.svg"
                 alt=""
                 sizes="100vw"
-                title="Slovensko.sk"
                 width={0}
                 height={0}
                 className="w-8 h-8 md:w-12 md:h-12"
