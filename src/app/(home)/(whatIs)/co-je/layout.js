@@ -18,7 +18,7 @@ const WhatIsLayout = ({ children }) => {
       <Navbar sidebarData={idskRoutes} />
       <div className="flex flex-1 h-full">
       <Sidebar data={idskRoutes} />
-        <main className="flex-1 p-5 overflow-hidden">
+        <main id="main-content" className="flex-1 p-5 overflow-hidden">
           <div className="relative h-auto overflow-auto">
           {children}
           </div>

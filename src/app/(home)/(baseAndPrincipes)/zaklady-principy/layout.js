@@ -19,7 +19,7 @@ const BaseLayout = ({ children }) => {
       <Navbar sidebarData={basicRoutes} />
       <div className="flex flex-1 h-full">
         <Sidebar data={basicRoutes} />
-        <main className="flex-1 p-5 overflow-hidden">
+        <main id="main-content" className="flex-1 p-5 overflow-hidden">
           <div className="relative h-auto overflow-auto">
           {children}
           </div>
