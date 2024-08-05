@@ -3,7 +3,7 @@
 import Navbar from "../../_components/navbar/navbar.js";
 import { pageRoutes } from "@/constants/constants.js";
 import FooterResp from "../../_components/footer/FooterResp.js";
-import React from 'react';
+import React from "react";
 import { SkipLink, TextButton } from "@eslovensko/idsk-react";
 import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
 import Sidebar from "../../_components/sidebar/index.js";
@@ -13,15 +13,18 @@ import { handleSkip } from "@/utils/skip.js";
 
 const IdskLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col relative">
       <SkipLink onClick={handleSkip}>
         Preskočiť na hlavný obsah
       </SkipLink>
       <Navbar sidebarData={pageRoutes} />
-      <div className="h-screen flex">
+      <div className="flex flex-1 h-full">
         <Sidebar data={pageRoutes} />
-        <main className="flex-1 p-5 overflow-y-auto no-scrollbar">
+        <main className="flex-1 p-5 overflow-hidden">
+          <div className="relative h-auto overflow-auto">
           {children}
+          
+          </div>
           <TextButton
             icon={<SvgArrowUp />}
             label="Naspäť hore"
@@ -30,7 +33,7 @@ const IdskLayout = ({ children }) => {
           />
         </main>
       </div>
-      <FooterResp />
+      <FooterResp className={`fixed bottom-0 w-full p-4 `} />
     </div>
   );
 };

@@ -156,3 +156,38 @@ export const slovakColors = [
   { name: 'Slovenská sivá', hex: '#DDDEDE', rgb: 'rgb(221, 222, 222)'},
 ];
 
+export const headlineData = [
+  { title: 'Headline 1', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black' },
+  { title: 'Headline 2', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold' },
+  { title: 'Headline 3', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold' },
+  { title: 'Headline 4', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold' },
+];
+
+export const subtitleData = [
+  { title: 'Subtitle', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular' },
+  { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold' },
+];
+
+export const bodyData = [
+  { title: 'Body', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular' },
+  { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Body 1', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular' },
+  { title: 'Body 1 bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
+];
+
+export const captionData = [
+  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular' },
+  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold' },
+  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
+];
+
+export const linkData = [
+  { title: 'Link L', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Regular' },
+  { title: 'Link L bold', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Link M', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular' },
+  { title: 'Link M bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Link S', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular' },
+  { title: 'Link S bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular' },
+];
+

@@ -7,7 +7,7 @@ import SidebarLink from "./sidebar-link.js";
 const Sidebar = ({ data }) => {
   return (
     <Wrapper>
-      <aside className="flex flex-col pb-8">
+      <aside className="h-full flex flex-col pb-8 sticky overflow-y-auto">
         <nav>
           <ul role="list" aria-live="polite" className="text-black">
             {data.map((item) => (

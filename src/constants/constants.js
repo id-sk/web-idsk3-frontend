@@ -54,6 +54,106 @@ export const pageRoutes = [
     {
         "name": "Zaškrtávacie pole",
         "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
+    },
+    {
+        "name": "Zaškrtávacie pole",
+        "link": "/komponenty/checkbox"
     }
 ];
 
@@ -65,6 +165,10 @@ export const basicRoutes = [
     {
         "name": "Typografia",
         "link": "/zaklady-principy/typografia"
+    },
+    {
+        "name": "Typogggggg",
+        "link": "/zaklady-principy/typo"
     },
     {
         "name": "Farebná paleta",
