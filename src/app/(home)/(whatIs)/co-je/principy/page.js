@@ -7,15 +7,17 @@ const PrincipyPage = () => {
     return (
         <div className="flex flex-col self-stretch my-8 pb-2.5 leading-7">
             <title>Princípy</title>
+            <header>
             <h1>
                 10 princípov vytvárania služieb podľa ID-SK
             </h1>
-            <div className="mt-8 w-full  sm:text-custom-16 md: text-custom-19 tracking-wide text-black max-md:max-w-full">
-                <ol>
+            </header>
+            <main id="main-content" role="main">
+            <div className="my-4 w-full  text-2xl leading-9 tracking-wide text-black max-md:max-w-full">
+                <ol className="list-decimal list-inside">
                     <li>
                         <a
                             href="#uzitocnost"
-                            className="underline"
                         >
                             Začnite potrebami používateľov (princíp užitočnosti)
                         </a>
@@ -23,7 +25,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#stabilita"
-                            className="underline"
                         >
                             Opätovne používajte a zdieľajte (princíp stability a otvorenosti)
                         </a>
@@ -31,7 +32,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#realnost"
-                            className="underline"
                         >
                             Inšpirujte sa realitou (princíp reálnosti)
                         </a>
@@ -39,7 +39,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#jednoduchost"
-                            className="underline"
                         >
                             Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)
                         </a>
@@ -47,7 +46,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#agilita"
-                            className="underline"
                         >
                             Začnite v malom (princíp agility)
                         </a>
@@ -55,7 +53,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#pristupnost"
-                            className="underline"
                         >
                             ID-SK je pre každého (princíp prístupnosti)
                         </a>
@@ -63,7 +60,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#kontext"
-                            className="underline"
                         >
                             Rešpektovanie kontextu okolnosti použitia (princíp kontextu)
                         </a>
@@ -71,7 +67,6 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#holistika"
-                            className="underline"
                         >
                             Vytvárajte elektronické služby, nie webové stránky (princíp
                             holistického pohľadu)
@@ -80,41 +75,44 @@ const PrincipyPage = () => {
                     <li>
                         <a
                             href="#konzistentnost"
-                            className="underline"
                         >
                             Buďte konzistentní (princíp konzistentnosti)
                         </a>
                     </li>
-                    <li>
+                    <li className="-mx-3">
                         <a
                             href="#otvorenost"
-                            className="underline"
                         >
                             Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)
                         </a>
                     </li>
                 </ol>
-                <br />
+                </div>
 
-                <h3 id="uzitocnost" className="mb-4">
+                <h3 id="uzitocnost" className="mt-8">
                     1. Začnite potrebami používateľov (princíp užitočnosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Dizajn služby začína identifikáciou potrieb používateľov. Ak neviete,
                 aké sú potreby používateľov, nepodarí sa vám vytvoriť správnu službu.
                 Nevychádzajte z domnienok. Používateľský prieskum, analýza dát a
                 informácie priamo od používateľov vám pomôžu vybudovať zázemie,
                 na ktorom môžete postaviť službu, ktorá bude spĺňať svoj účel a bude
                 užitočná.
-                <h3 id="stabilita" className="my-4">
+                </p>
+                <h3 id="stabilita" className="mt-8">
                     2. Opätovne používajte a zdieľajte (princíp stability a otvorenosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Platformy a registre je dôležité vytvárať tak, aby tvorili funkčný
                 nemenný základ, ktorý je opätovne použiteľný. Poskytovanie a vzájomné
                 zdieľanie zdrojov môže výrazne uľahčiť prácu ďalším tvorcom
                 elektronických služieb.
-                <h3 id="realnost" className="my-4">
+                </p>
+                <h3 id="realnost" className="mt-8">
                     3. Inšpirujte sa realitou (princíp reálnosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Pri vytváraní elektronických služieb môžete vychádzať zo spôsobov
                 používania existujúcich služieb v reálnom svete. Aby bola služba
                 kvalitná, pokračujte v jej dizajnovaní aj po jej dokončení, a to
@@ -124,24 +122,30 @@ const PrincipyPage = () => {
                 reálne používanie. Základným nástrojom každej elektronickej služby je
                 dátová analytika, ktorá by mala byť jednoducho čitateľná a neustále
                 zapnutá.
-                <h3 id="jednoduchost" className="my-4">
+                </p>
+                <h3 id="jednoduchost" className="mt-8">
                     4. Náročná tvorba vedie k jednoduchým službám (princíp jednoduchosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Elektronizácia je príležitosťou na zjednodušenie služieb používateľom.
                 Pri dizajne služieb vnímajte širší kontext, nielen existujúci postup.
                 Investujte čas do opätovného prepracovania procesov a neuspokojte sa
                 s názorom, ktorý zachováva existujúci stav.
-                <h3 id="agilita" className="my-4">
+                </p>
+                <h3 id="agilita" className="mt-8">
                     5. Začnite v malom (princíp agility)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Sprístupnite používateľom svoju službu čo najskôr a získajte spätnú
                 väzbu od koncových používateľov. Je lepšie rozvíjať službu postupne a
                 po malých častiach, ako spúšťať veľké celky. Znížite tým riziká a
                 získate cenné informácie, ktoré môžu ovplyvniť vaše ďalšie investície
                 do rozvoja.
-                <h3 id="pristupnost" className="my-4">
+                </p>
+                <h3 id="pristupnost" className="mt-8">
                     6. ID-SK je pre každého (princíp prístupnosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Prístupný dizajn je dobrý dizajn. Elektronické služby vytvorené podľa
                 ID-SK by mali byť inkluzívne, zrozumiteľné a jednoducho čitateľné. Je
                 potrebné si pripomínať, že elektronické služby sa vytvárajú s konkrétnym
@@ -150,25 +154,31 @@ const PrincipyPage = () => {
                 informačné technológie každý deň. Ľudia ktorí najviac potrebujú naše
                 služby sú často ľudia, ktorým sa zdá ich používanie najťažšie. Práve
                 tieto osoby by mali tvoriť časť testovacej skupiny.
-                <h3 id="kontext" className="my-4">
+                </p>
+                <h3 id="kontext" className="mt-8">
                     7. Rešpektovanie kontextu okolnosti použitia (princíp kontextu)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Pri tvorbe elektronických služieb je potrebné zohľadňovať okolnosti a
                 kontext, v ktorom ľudia služby budú používať. Dizajn musí adresovať
                 rozdielne potreby podľa času, miesta a zariadenia, v rámci ktorých sa
                 bude služba primárne vykonávať.
-                <h3 id="holistika" className="my-4">
+                </p>
+                <h3 id="holistika" className="mt-8">
                     8. Vytvárajte elektronické služby, nie webové stránky (princíp
                     holistického pohľadu)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Pri tvorbe služby vnímajte ich multikanálový kontext. Netvoríte len
                 webovú stránku, ale navrhujete zážitok používateľa naprieč rôznymi
                 digitálnymi aj nedigitálnymi kanálmi. Zohľadnite zistenia
                 zo zákazníckeho prieskumu aj v iných kanáloch, aby ste vytvorili
                 kvalitnejšiu službu.
-                <h3 id="konzistentnost" className="my-4">
+                </p>
+                <h3 id="konzistentnost" className="mt-8">
                     9. Buďte konzistentní (princíp konzistentnosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Princíp konzistentnosti spočíva v používaní rovnakého jazyka, výrazov
                 uvedených v slovníku a rovnakých dizajnových vzorov. Uplatňovaním tohto
                 princípu sa pri tvorbe služieb zabezpečí jednak vizuálna jednotnosť a
@@ -177,15 +187,19 @@ const PrincipyPage = () => {
                 používateľ nadobudne zručnosť v ich používaní. V takom prípade ich bude
                 používať opakovane a tieto služby budú pre neho skutočne efektívnym
                 spôsobom využívania potrebných služieb.
-                <h3 id="otvorenost" className="my-4">
+                </p>
+                <h3 id="otvorenost" className="mt-8">
                     10. Tvorte otvorene, zvýšite tým kvalitu (princíp otvorenosti)
                 </h3>
+                <p className="mt-8 text-custom-19">
                 Zdieľajte vaše návrhy, nápady, zámery, neúspechy a zdrojové kódy
                 s komunitou. Otvorenosť podporuje kreativitu a zlepšuje kvalitu výstupov
                 cez skorú spätnú väzbu. Keďže tvorba elektronických služieb je spravidla
                 financovaná z verejných zdrojov, nie je dôvod výstupy skrývať.
+                </p>
+                </main>
             </div>
-        </div>
+            
     );
 }
 

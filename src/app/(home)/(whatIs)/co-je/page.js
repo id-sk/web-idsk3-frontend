@@ -34,6 +34,7 @@ const WhatIsPage = () => {
           Čo je ID-SK
         </h1>
       </header>
+      <main id="main-content" role="main">
       <p className="mt-8 text-2xl leading-9 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (ID-SK) je dizajnový systém elektronických služieb a webových sídiel štátu. ID-SK má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní služieb. Je to manuál na tvorbu kvalitných elektronických služieb a webových sídiel na Slovensku.{" "}
       </p>
@@ -55,6 +56,7 @@ const WhatIsPage = () => {
           ))}
         </div>
       </section>
+      </main>
     </div>
   );
 }
