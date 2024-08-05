@@ -8,6 +8,7 @@ import { primaryColors, secondaryColors, neutralColors, extendedPrimaryColors, a
 const ColorPalette = () => {
   return (
     <main className="flex flex-col -mx-0 my-8 max-w-[1200px]">
+      <title>Farebná paleta</title>
       <h1 className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
         Farebná paleta
       </h1>
