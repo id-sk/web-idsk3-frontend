@@ -49,7 +49,7 @@ export const pageRoutes = [
     },
     {
         "name": "Prepínacie pole",
-        "link": "/komponenty/radio-button"
+        "link": "/komponenty/prepinacie-pole"
     },
     {
         "name": "Rázcestník - horizontálny",
