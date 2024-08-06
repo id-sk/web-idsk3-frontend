@@ -16,13 +16,14 @@ module.exports = {
         'custom-19': '19px',  // Custom line-height for 32px
         'custom-24': '24px',
         'custom-26': '26px', 
-        'custom-35': '35px',  
+        'custom-35': '35px',
+        'custom-45': '45px',  
         // Add more custom line-height values as needed
       },
       fontSize: {
         'custom-16': '16px',
         'custom-19': '19px',
-        'custom-24': '24px',  // Custom font size of 16px
+        'custom-24': '24px',  // Custom font size of 24px
       },
       colors: {
         'regal-blue': '#0B4199',
