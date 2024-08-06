@@ -19,10 +19,10 @@ export const pageRoutes = [
         "name": "Chyby a validície",
         "link": "/komponenty/chyby-validacie"
     },
-    {
+   /*  {
         "name": "Informačná lišta oznámenie",
         "link": "/komponenty/informacna-lista-oznamenie"
-    },
+    }, */
     {
         "name": "Informačná lišta upozornenie",
         "link": "/komponenty/informacna-lista-upozornenie"

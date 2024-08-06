@@ -101,7 +101,7 @@ const IdskPage = () => {
       </section>
       <section className="px-1 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(21, 24).map((card, index) => (
+          {componentsData.slice(21, 22).map((card, index) => (
             <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
               <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
             </div>
