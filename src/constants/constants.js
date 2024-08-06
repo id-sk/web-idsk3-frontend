@@ -8,8 +8,8 @@ export const pageRoutes = [
         "link": "/komponenty/akordeon"
     },
     {
-        "name": "Dropdown",
-        "link": "/komponenty/dropdown"
+        "name": "Rozbaľovací záznam",
+        "link": "/komponenty/rozbalovaci-zaznam"
     },
     {
         "name": "Hlavička",

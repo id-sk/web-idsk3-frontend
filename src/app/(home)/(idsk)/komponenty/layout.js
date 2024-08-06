@@ -11,6 +11,9 @@ import { scrollToTop } from "@/utils/scroll.js";
 import { handleSkip } from "@/utils/skip.js";
 
 
+const sortedPageRoutes = pageRoutes.sort((a, b) => a.name.localeCompare(b.name));
+
+
 const IdskLayout = ({ children }) => {
   return (
     <div className="flex flex-col relative">
@@ -19,7 +22,7 @@ const IdskLayout = ({ children }) => {
       </SkipLink>
       <Navbar sidebarData={pageRoutes} />
       <div className="flex flex-1 h-full">
-        <Sidebar data={pageRoutes} />
+        <Sidebar data={sortedPageRoutes} />
         <main id="main-content" className="flex-1 p-5 overflow-hidden">
           <div className="relative h-auto overflow-auto">
           {children} 

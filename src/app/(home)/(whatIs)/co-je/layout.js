@@ -9,6 +9,8 @@ import { idskRoutes } from "@/constants/constants.js";
 import { handleSkip } from "@/utils/skip.js";
 
 
+const sortedIdskRoutes = idskRoutes.sort((a, b) => a.name.localeCompare(b.name));
+
 const WhatIsLayout = ({ children }) => {
   return (
     <div className="flex flex-col relative">
@@ -17,7 +19,7 @@ const WhatIsLayout = ({ children }) => {
       </SkipLink>
       <Navbar sidebarData={idskRoutes} />
       <div className="flex flex-1 h-full">
-      <Sidebar data={idskRoutes} />
+      <Sidebar data={sortedIdskRoutes} />
         <main id="main-content" className="flex-1 p-5 overflow-hidden">
           <div className="relative h-auto overflow-auto">
           {children}
