@@ -35,7 +35,7 @@ export const componentsData = [
 ];
 
 export const whatIsData = [
-  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod o dizajn manuále ID-SK", description: "ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
+  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod do dizajnového manuálu ID-SK", description: "ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
   { href: "/co-je/principy", src: "/images/co-je-cards/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "10 princípov tvorby elektronických služieb podľa IDSK. Dizajn služby začína identifikáciou potrieb používateľov...", alt: ""},
   { href: "/co-je/metodika", src: "/images/co-je-cards/metodika-ucd.svg", title: "Metodika UCD", description: "Metodika user-centered dizajnu (UCD) zabezpečí zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa - občana.", alt: "" },
   { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému ID-SK", alt: ""},
@@ -43,7 +43,7 @@ export const whatIsData = [
 ];
 
 export const homePageData = [
-  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je ID-SK", description: "Jednotný dizajn manuál elektronických služieb Slovenska. „ID-SK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
+  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je ID-SK", description: "Jednotný dizajnový manuál elektronických služieb a webových sídiel Slovenska. „ID-SK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
   { href: "/co-je/principy", src: "/images/home-page/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "1. princíp – princíp užitočnosti – začnite potrebami používateľov. Dizajn služby začína identifikáciou potrieb používateľov. Nevychádzajte z domnienok.", alt: ""},
   { href: "/co-je/metodika", src: "/images/home-page/metodika-a-usmernenia.svg", title: "Metodika a usmernenia", description: "Elektronické služby štátu by mali byť pripravované metodikou User-Centered Design (UCD), aby sa zabezpečila zmysluplnosť a použiteľnosť služieb občanmi.", alt: ""},
   { href: "/zaklady-principy", src: "/images/home-page/zaklady-style-guide.svg", title: "Základy (Style guide)", description: "Súbor štýlov používateľského rozhrania a štandardov dizajnu pre komponenty. Typografia, farebná paleta, ikony, tiene, medzery, stĺpce, použitie obrázkov, ...", alt: ""},

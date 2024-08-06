@@ -24,7 +24,7 @@ function ImageCard({ href, src, title, description, alt }) {
           />
         </figure>
         <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black overflow-hidden">
+        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-5">
           {description}
         </p>
       </article>
