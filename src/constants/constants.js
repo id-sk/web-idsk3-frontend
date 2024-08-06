@@ -20,13 +20,12 @@ export const pageRoutes = [
         "link": "/komponenty/chyby-validacie"
     },
     {
-        "name": "Rozbaľovací záznam",
-        "link": "/komponenty/rozbalovaci-zaznam"
+        "name": "Informačná lišta oznámenie",
+        "link": "/komponenty/informacna-lista-oznamenie"
     },
-  
     {
-        "name": "Informačná lišta",
-        "link": "/komponenty/informacna-lista"
+        "name": "Informačná lišta upozornenie",
+        "link": "/komponenty/informacna-lista-upozornenie"
     },
     {
         "name": "Kartička",
@@ -45,24 +44,52 @@ export const pageRoutes = [
         "link": "/komponenty/pata"
     },
     {
+        "name": "Pole pre nahratie súboru",
+        "link": "/komponenty/nahratie-suboru"
+    },
+    {
         "name": "Prepínacie pole",
         "link": "/komponenty/radio-button"
     },
     {
-        "name": "Rázcestník",
-        "link": "/komponenty/razcestnik"
+        "name": "Rázcestník - horizontálny",
+        "link": "/komponenty/razcestnik-horizontalny"
+    },
+    {
+        "name": "Rázcestník - vertikálny",
+        "link": "/komponenty/razcestnik-vertikalny"
+    },
+    {
+        "name": "Rázcestník - textový",
+        "link": "/komponenty/razcestnik-textovy"
+    },
+    {
+        "name": "Rozbaľovací záznam",
+        "link": "/komponenty/rozbalovaci-zaznam"
     },
     {
         "name": "Textové pole",
-        "link": "/komponenty/text-input"
+        "link": "/komponenty/textove-pole"
     },
     {
-        "name": "Tlačidlo",
-        "link": "/komponenty/tlacidlo"
+        "name": "Textové pole - viacriadkové",
+        "link": "/komponenty/textove-pole-viacriadkove"
+    },
+    {
+        "name": "Tlačidlo - primárne",
+        "link": "/komponenty/tlacidlo-primarne"
+    },
+    {
+        "name": "Tlačidlo - sekundárne",
+        "link": "/komponenty/tlacidlo-sekundarne"
+    },
+    {
+        "name": "Tlačidlo - textové",
+        "link": "/komponenty/tlacidlo-textove"
     },
     {
         "name": "Zaškrtávacie pole",
-        "link": "/komponenty/checkbox"
+        "link": "/komponenty/zaskrtavacie-pole"
     }
 ];
 
