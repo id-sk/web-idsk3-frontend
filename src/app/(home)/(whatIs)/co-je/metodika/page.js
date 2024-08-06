@@ -6,10 +6,10 @@ const MetodikaPage = () => {
         <div className="component-page">
             <title>Metodika</title>
             <h1 className="my-8">
-                Metodika User-centered Design
+            <span lang="en">Metodika User-centered Design</span>
             </h1>
             <p className="idsk-subtitle mb-16">
-                Elektronické služby štátu by mali byť pripravované metodikou user-centered dizajnu (UCD), aby sa zabezpečila zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa – občana.
+                Elektronické služby štátu by mali byť pripravované metodikou <span lang="en">user-centered dizajnu (UCD)</span>, aby sa zabezpečila zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa – občana.
             </p>
             <p className="idsk-subtitle mb-4">
                 Na dodržanie user-centered prístupu je nutné rozdeliť prípravnú fázu projektu do 4 fáz:
@@ -17,7 +17,7 @@ const MetodikaPage = () => {
             <ol className='idsk-subtitle mb-4'>
                 <li>1. Úvodná analýza a výskum zákazníckych skupín.</li>
                 <li>2. Návrh navigácie, prototypu a testovanie.</li>
-                <li>3. Benchmarking používateľského rozhrania.</li>
+                <li>3. <span lang="en">Benchmarking</span> používateľského rozhrania.</li>
                 <li>4. Optimalizácia používateľského rozhrania.</li>
             </ol>
             <h2 className="mt-8 mb-4">
@@ -30,13 +30,13 @@ const MetodikaPage = () => {
                 Návrh navigácie prototypu a testovanie
             </h2>
             <p className="idsk-subtitle mb-8">
-                Realizované používateľské rozhranie musí byť tvorené v aktívnej kooperácii s koncovými používateľmi, aby projekt zabezpečil jeho úplnú použiteľnosť. Používatelia musia byť zapojení do tvorby informačnej architektúry a štruktúry navigácie. Tá by mala byť testovaná kvantitatívne so zapojením všetkých účastných cieľových skupín. Informačná architektúra musí zohľadňovať slovník, ktorý je definovaný v Jednotnom dizajn manuáli elektronických služieb.
+                Realizované používateľské rozhranie musí byť tvorené v aktívnej kooperácii s koncovými používateľmi, aby projekt zabezpečil jeho úplnú použiteľnosť. Používatelia musia byť zapojení do tvorby informačnej architektúry a štruktúry navigácie. Tá by mala byť testovaná kvantitatívne so zapojením všetkých účastných cieľových skupín. Informačná architektúra musí zohľadňovať slovník, ktorý je definovaný v tomto dizajnovom manuáli.
             </p>
             <p className="idsk-subtitle mb-8">
                 Prototyp elektronickej služby musí byť testovaný aspoň 3x počas jeho prípravy so zástupcami všetkých relevantných cieľových skupín metódou formatívneho testovania použiteľnosti, ideálne však na týždennej báze. Zistenia z testovania musia byť následne zapracované do prototypu. Grafický dizajn a frontend programový kód elektronickej služby musí zohľadňovať Jednotný dizajn manuál elektronických služieb.
             </p>
             <h2 className="mt-8 mb-4">
-                Benchmarking používateľského rozhrania
+            <span lang="en">Benchmarking</span> používateľského rozhrania
             </h2>
             <p className="idsk-subtitle mb-8">
                 Pred uvedením systému do plnej prevádzky musí byť systém otestovaný sumatívnym testovaním použiteľnosti s účasťou všetkých relevantných skupín. Počas testovania budú zdokumentované metriky použiteľnosti (čas úlohy, chybovosť úlohy, efektivita úlohy, SUS skóre) pre kľúčové prípady použitia. Zároveň bude vykonané testovanie prístupnosti systému zohľadňujúce štandardy pre prístupnosť webu WCAG 2.0 AA- Web Content Accessibility Guidelines 2.0.
@@ -133,7 +133,7 @@ const MetodikaPage = () => {
                 Prototyp
             </h3>
             <p className="idsk-subtitle mb-4">
-                Prototyp je skupina čiernobielych skíc používateľského rozhrania (wireframov) vo forme obrázkov, ktoré sú navzájom poprepájané tak, aby používateľom pripomínali skutočné používateľské rozhranie. Wireframy sú pritom pripravené takým spôsobom, aby zohľadňovali pravidlá definované v Jednotnom dizajn manuáli elektronických služieb.
+                Prototyp je skupina čiernobielych skíc používateľského rozhrania (wireframov) vo forme obrázkov, ktoré sú navzájom poprepájané tak, aby používateľom pripomínali skutočné používateľské rozhranie. Wireframy sú pritom pripravené takým spôsobom, aby zohľadňovali pravidlá definované v Jednotnom dizajnovom manuáli elektronických služieb.
             </p>
             <h3 className="mt-8">
                 Report formatívneho testovania
