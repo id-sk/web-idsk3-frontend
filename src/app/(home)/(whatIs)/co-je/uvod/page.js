@@ -68,16 +68,16 @@ const UvodPage = () => {
       <ul className="list-disc list-inside ml-4 text-custom-19">
         <li>responzívne - teda správne sa zobrazujú na rôznych veľkostiach obrazoviek;</li>
         <li>prístupné - sú použiteľné pre skupiny používateľov so zníženou motorickou alebo zrakovou schopnosťou;</li>
-        <li> použiteľné - implementujú základné heuristiky (best practice) použiteľnosti.</li>
+        <li> použiteľné - implementujú základné heuristiky <span lang="en">(best practice)</span>použiteľnosti.</li>
       </ul>
       <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
         ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu
         ID-SK nemá ambíciu nahradiť celý dizajnový proces. Je návodom a určuje
         štandardy a pravidlá pre zostavovanie používateľských rozhraní. Pomocou
         ID-SK vytvoríte kvalitné používateľské rozhranie, ale už nezabezpečíte,
-        aký používateľský zážitok (User Experience) bude služba poskytovať. Aby
+        aký používateľský zážitok <span lang="en">(User Experience)</span> bude služba poskytovať. Aby
         ste zabezpečili kvalitný používateľský zážitok, musíte do procesu tvorby
-        elektronickej služby zahrnúť metodiku UCD – User-centered Design.
+        elektronickej služby zahrnúť metodiku <span lang="en">UCD – User-centered Design.</span>
       </p>
       </main>
     </div>
