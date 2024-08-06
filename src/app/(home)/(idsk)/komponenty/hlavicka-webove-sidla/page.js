@@ -8,7 +8,7 @@ import React from 'react';
 const HeaderPage = () => {
     return (
         <div className="component-page">
-            <title>Hlavička</title>
+            <title>Hlavička - webové sídla</title>
             <h1 className="my-8">
                 Hlavička - webové sídla
             </h1>

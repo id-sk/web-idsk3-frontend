@@ -8,13 +8,22 @@ export const pageRoutes = [
         "link": "/komponenty/akordeon"
     },
     {
+        "name": "Hlavička - webové aplikácie",
+        "link": "/komponenty/hlavicka-webove-aplikacie"
+    },
+    {
+        "name": "Hlavička - webové sídla",
+        "link": "/komponenty/hlavicka-webove-sidla"
+    },
+    {
+        "name": "Chyby a validície",
+        "link": "/komponenty/chyby-validacie"
+    },
+    {
         "name": "Rozbaľovací záznam",
         "link": "/komponenty/rozbalovaci-zaznam"
     },
-    {
-        "name": "Hlavička",
-        "link": "/komponenty/hlavicka"
-    },
+  
     {
         "name": "Informačná lišta",
         "link": "/komponenty/informacna-lista"
