@@ -20,7 +20,7 @@ const UvodPage = () => {
         používateľského rozhrania. Jeho účelom je jednotný spôsob komunikácie s
         používateľom elektronických služieb v celej verejnej správe.
       </p>
-      <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
+      <p className="mt-8 text-custom-19 leading-7 tracking-wide  text-black max-md:mr-1 max-md:max-w-full">
         Požiadavka zjednotenia elektronických služieb vyplýva z Národnej
         koncepcie informatizácie verejnej správy z roku 2016. Bol navrhnutý v
         spolupráci s odbornou verejnosťou a pracovnými skupinami Komisie pre
