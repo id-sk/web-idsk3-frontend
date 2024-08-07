@@ -10,7 +10,7 @@ const ErrorValidationPage = () => {
     <h1 className="my-8">
         Chyby a validácie
     </h1>
-    <p className="text-custom-19 leading-7 mb-16">
+    <p className="text-2xl leading-9 mb-16">
         V tejto časti nájdete popísané pravidlá ako zobrazovať chyby a validácie v elektronickom formulári. V prípade, že používateľ zle vyplní formulár, zobrazí sa chyba a formulár nie je možné odoslať. Základné pravidlo pri zobrazovaní chýb a validácii je viditeľné zobraziť a vysvetliť chyby, ktoré nastali.
     </p>
     <h2 className="mb-4">
