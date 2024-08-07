@@ -16,7 +16,7 @@ export const pageRoutes = [
         "link": "/komponenty/hlavicka-webove-sidla"
     },
     {
-        "name": "Chyby a validície",
+        "name": "Chyby a validácie",
         "link": "/komponenty/chyby-validacie"
     },
    /*  {

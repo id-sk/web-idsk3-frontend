@@ -68,7 +68,7 @@ const InfobarWarningPage = () => {
                 className="mt-4 mb-12"
             />
             <p className="text-custom-19 leading-7 mb-4">
-                2. Variant - S pipisom/Bez popisu
+                2. Variant - S popisom/Bez popisu
             </p>
             <Image
                 src="/images/info-lista/s-nadpisom-bez.svg"
