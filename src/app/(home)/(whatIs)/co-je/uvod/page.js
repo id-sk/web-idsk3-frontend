@@ -13,7 +13,7 @@ const UvodPage = () => {
         </h1>
       </header>
       <main id="main-content" role="main">
-      <p className="mt-8 text-2xl tracking-wide leading-9 text-black max-md:mr-1 max-md:max-w-full">
+      <p className="mt-8 text-2xl tracking-wide leading-9 text-black max-md:max-w-full">
         ID-SK je súbor pravidiel tvorby obsahu a funkčnosti elektronických
         služieb v súlade s potrebami používateľov. Definuje komponenty, jednotné
         používanie výrazov, princípy, vzory a pravidlá pre tvorbu jednotného
