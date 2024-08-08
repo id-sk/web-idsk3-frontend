@@ -3,10 +3,10 @@
 
 const MetodikaPage = () => {
     return (
-        <div className="flex flex-col">
+        <div className="flex flex-col my-8 max-w-[1000px]">
             <title>Metodika</title>
             <header>
-            <h1 className="my-8">
+            <h1 className="">
                 Metodika <span lang="en">User-centered Design</span>
             </h1>
             </header>

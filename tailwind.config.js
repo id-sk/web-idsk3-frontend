@@ -33,6 +33,16 @@ module.exports = {
       spacing: {
         '15': '3.75rem',
       },
+      screens: {
+        'xs': '480px',  // Custom breakpoint for very small devices
+        'sm': '640px',  // Small devices
+        'md': '768px',  // Medium devices
+        'lg': '1024px', // Large devices
+        'xl': '1280px', // Extra-large devices
+        '2xl': '1536px', // Extra-extra-large devices
+        '3xl': '1920px', // Very large screens (e.g., large desktop monitors)
+        '4xl': '2560px'  // Ultra-large screens (e.g., large widescreens)
+    },
     },
   },
   variants: {
