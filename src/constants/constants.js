@@ -119,8 +119,8 @@ export const basicRoutes = [
         "link": "/zaklady-principy/medzery"
     },
     {
-        "name": "Grid",
-        "link": "/zaklady-principy/grid"
+        "name": "Rozloženie stránky",
+        "link": "/zaklady-principy/rozlozenie-stranky"
     },
     // {
     //     "name": "Použitie obrázkov",
