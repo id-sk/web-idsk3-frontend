@@ -13,7 +13,7 @@ const shadowData = [
   
 
 const ShadowSection = () => (
-  <div className="flex gap-5 justify-between py-5 pr-3 mt-10 text-custom-9.5 tracking-wide leading-custom-14 max-md:flex-wrap">
+  <div className="flex gap-5 justify-between py-5 pr-3 mt-10 text-custom-19 tracking-wide leading-7 max-md:flex-wrap">
     {shadowData.map((shadow, index) => (
       <ShadowCard key={index} title={shadow.title} shadowClass={shadow.shadowClass} />
     ))}
