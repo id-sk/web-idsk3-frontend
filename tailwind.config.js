@@ -12,7 +12,8 @@ module.exports = {
     extend: {
       lineHeight: { 
         'custom-14': '14px', // This is the default, equivalent to 28px in most base font sizes
-        'custom-28': '28px',  // Custom line-height for 24px
+        'custom-28': '28px',
+        'custom-18': '18px',  // Custom line-height for 24px
         'custom-19': '19px',  // Custom line-height for 32px
         'custom-24': '24px',
         'custom-26': '26px', 
