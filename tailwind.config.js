@@ -10,7 +10,8 @@ module.exports = {
   ],
   theme: {
     extend: {
-      lineHeight: {  // This is the default, equivalent to 28px in most base font sizes
+      lineHeight: { 
+        'custom-14': '14px', // This is the default, equivalent to 28px in most base font sizes
         'custom-28': '28px',  // Custom line-height for 24px
         'custom-19': '19px',  // Custom line-height for 32px
         'custom-24': '24px',
@@ -20,6 +21,7 @@ module.exports = {
         // Add more custom line-height values as needed
       },
       fontSize: {
+        'custom-9.5': '9.5px',
         'custom-19': '19px',
         'custom-24': '24px',  // Custom font size of 24px
       },
@@ -43,6 +45,22 @@ module.exports = {
         '3xl': '1920px', // Very large screens (e.g., large desktop monitors)
         '4xl': '2560px'  // Ultra-large screens (e.g., large widescreens)
     },
+    boxShadow: {
+      'lg-custom': '0px 12px 20px 0px rgba(26, 26, 26, 0.16)',
+      'md-custom': '0px 6px 16px 0px rgba(26, 26, 26, 0.24)',
+      'sm-custom': '0px 2px 4px 0px rgba(26, 26, 26, 0.20)',
+      'dialog-custom': '0px -4px 22px -5px rgba(0, 0, 0, 0.25)',
+      'header-custom': '0px 5px 10px -5px rgba(26, 26, 26, 0.20)',
+    },
+    borderRadius: {
+      'card': '10px',
+    },
+    borderColor: {
+      'neutral-n400': '#BDBDBD',
+    },
+    backgroundColor: {
+      'neutral-white': '#FFF',
+    }
     },
   },
   variants: {
