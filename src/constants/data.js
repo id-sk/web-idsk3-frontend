@@ -172,8 +172,8 @@ export const headlineData = [
 export const subtitleData = [
   { title: 'Subtitle', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
   { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold' },
-  { title: 'Subtitle 2', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold 2', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold' },
+  { title: 'Subtitle', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
+  { title: 'Subtitle bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold' },
 ];
 
 export const bodyData = [
