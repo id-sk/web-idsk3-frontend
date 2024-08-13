@@ -43,7 +43,7 @@ const TypographyPage = () => {
           <TypographySection title="Nadpisy" items={headlineData} />
           <TypographySection title="Podnadpisy" items={subtitleData} />
           <TypographySection title="Hlavný text" items={bodyData} />
-          <TypographySection className="items-end" title="Popis a tlačidlo" items={captionData} />
+          <TypographySection title="Popis a tlačidlo" items={captionData} />
           <LinkSection title="Hypertextové odkazy" items={linkData} />
         </main>
       );
