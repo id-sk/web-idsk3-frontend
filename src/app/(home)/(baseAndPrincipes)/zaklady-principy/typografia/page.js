@@ -19,7 +19,7 @@ const TypographyPage = () => {
             Typografia je súbor rôznych typov písma, ktoré sú odlišné v štýle, veľkosti, šírke riadkovania a vzdialenosti medzi písmenami. Pri definovaní typografie bola definovaná škálovateľnosť v podobe preddefinovaných štylov, ktorých úlohov je správne zobrazenie na rozličných zariadeniach. Ďalším dôvodom potreby škálovania je zabezpečenie správnej čitateľnosti a estetickej prijemnosti v rôznych častiach rozhrania.
           </p>
           <h2 className="text-4xl leading-custom-45 font-black text-neutral-500 mt-12">Typ písma</h2>
-          <section className="flex flex-wrap gap-10 justify-between items-start pr-16 mt-5 w-full max-md:pr-5 max-md:max-w-full">
+          <section className="flex flex-wrap gap-10 justify-between items-start pr-16 mt-8 w-full max-md:pr-5 max-md:max-w-full">
             <div className="flex flex-col min-w-[240px]">
               <h2 className="text-5xl font-black text-black leading-[48.3px]">Source sans pro</h2>
               <p className="text-custom-19 tracking-wide leading-7 text-neutral-500">Font family</p>
