@@ -2,7 +2,8 @@
 
 import React from 'react';
 
-const TypographyItem = ({ title, size, lineHeight, spacing, type }) => {
+
+const TypographyItem = ({ title, size, lineHeight, spacing, type, fontWeight }) => {
   return (
     <div className="py-5 border-t border-b border-neutral-200 max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col">
@@ -13,6 +14,7 @@ const TypographyItem = ({ title, size, lineHeight, spacing, type }) => {
               fontSize: size,
               lineHeight: lineHeight,
               letterSpacing: spacing,
+              fontWeight: fontWeight,
             }}
           >
             {title}
@@ -22,8 +24,8 @@ const TypographyItem = ({ title, size, lineHeight, spacing, type }) => {
           <p className="text-xs font-bold leading-4 text-neutral-500 max-md:mt-10">
             Veľkosť: {size}<br />
             Veľkosť riadku: {lineHeight}<br />
-            Medzery medzi odsekmi: {spacing}<br />
-            Typ: {type}
+            {/* Medzery medzi odsekmi: {spacing}<br /> */}
+            Rez písma: {type}
           </p>
         </div>
       </div>

@@ -3,6 +3,7 @@
 import React from 'react';
 import TypographyItem from './TypographyItem';
 
+
 const TypographyTable = ({ items }) => {
   const halfLength = Math.ceil(items.length / 2);
   const leftItems = items.slice(0, halfLength);
