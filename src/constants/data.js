@@ -7,35 +7,36 @@ export const baseData = [
   { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""},
   { href: "zaklady-principy/tiene", src: "/images/zaklady-principy-cards/Tiene.svg", title: "Tiene", description: "Typy tieňov a ich použitie na vizuálne rozlíšenie obsahu.", alt: "" },
   { href: "zaklady-principy/medzery", src: "/images/zaklady-principy-cards/Medzery.svg", title: "Medzery", description: "Medzery a ich rozmery.", alt: "" },
-  { href: "zaklady-principy/grid", src: "/images/zaklady-principy-cards/Grid.svg", title: "Grid", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""}
+  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""}
 ];
 
 export const componentsData = [
-  { href: "komponenty/hlavicka", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
-  { href: "komponenty/hlavicka", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
-  { href: "komponenty/pata", src: "/images/komponenty-cards/pata.svg", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
   { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.svg", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
-  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista-spatnej-vazby.svg", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
-  { href: "/komponenty/text-input", src: "/images/komponenty-cards/textove-pole.svg", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
-  { href: "/komponenty/text-input", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
-  { href: "/komponenty/text-input", src: "/images/komponenty-cards/pole-pre-nahratie-suboru.svg", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
-  { href: "/komponenty/radio-button", src: "/images/komponenty-cards/prepinacie-pole.svg", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
-  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo - Primárne", description: "Hlavné akčné prvky, ktoré majú najväčší vplyv na používateľskú interakciu.", alt: ""},
-  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},
-  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},
-  { href: "/komponenty/informacna-lista", src: "/images/komponenty-cards/info-lista-upozornenie.svg", title: "Inf.lišta - Upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},
-  { href: "/komponenty/informacna-lista", src: "/images/komponenty-cards/info-lista-oznamenie.svg", title: "Inf.lišta - Oznámenie", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
+  { href: "komponenty/hlavicka-webove-aplikacie", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
+  { href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
+  { href: "/komponenty/chyby-validacie", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Chyby a validácie", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
+  /* { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner - oznámenie", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""}, */
+  { href: "/komponenty/informacna-lista-upozornenie", src: "/images/komponenty-cards/info-banner-upozornenie.svg", title: "Informačný banner - upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},
   { href: "/komponenty/karticka", src: "/images/komponenty-cards/karticka.svg", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
-  { href: "/komponenty/checkbox", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Zaškrtávacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
-  { href: "/komponenty/dropdown", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovací zoznam", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},
-  { href: "/komponenty/text-input", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Chyby a validácie", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
-  { href: "/komponenty/razcestnik", src: commonSrc, title: "Vertikálny rázcestník", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},
-  { href: "/komponenty/razcestnik", src: commonSrc, title: "Horizontálny rázcestník", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
-  { href: "/komponenty/razcestnik", src: commonSrc, title: "Textový rázcestník", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""}
+  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista-spatnej-vazby.svg", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
+  { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/omrvinkova-navigacia.svg", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
+  { href: "komponenty/pata", src: "/images/komponenty-cards/pata.svg", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
+  { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/pole-pre-nahratie-suboru.svg", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
+  { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/prepinacie-pole.svg", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
+  { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/razcestnik-horizontalny.svg", title: "Rázcestník horizontálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
+  { href: "/komponenty/razcestnik-textovy", src:"/images/komponenty-cards/razcestnik-textovy.svg", title: "Rázcestník textový", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
+  { href: "/komponenty/razcestnik-vertikalny", src:"/images/komponenty-cards/razcestnik-vertikalny.svg", title: "Rázcestník vertikálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},
+  { href: "/komponenty/rozbalovaci-zoznam", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovací zoznam", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},  
+  { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/textove-pole.svg", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
+  { href: "/komponenty/tlacidlo-primarne", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo - Primárne", description: "Hlavné akčné prvky, ktoré majú najväčší vplyv na používateľskú interakciu.", alt: ""},
+  { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},
+  { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},
+  { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
+  { href: "/komponenty/zaskrtavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Zaškrtávacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
 ];
 
 export const whatIsData = [
-  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod o dizajn manuále ID-SK", description: "ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
+  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod do dizajnového manuálu ID-SK", description: "ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
   { href: "/co-je/principy", src: "/images/co-je-cards/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "10 princípov tvorby elektronických služieb podľa IDSK. Dizajn služby začína identifikáciou potrieb používateľov...", alt: ""},
   { href: "/co-je/metodika", src: "/images/co-je-cards/metodika-ucd.svg", title: "Metodika UCD", description: "Metodika user-centered dizajnu (UCD) zabezpečí zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa - občana.", alt: "" },
   { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému ID-SK", alt: ""},
@@ -43,7 +44,7 @@ export const whatIsData = [
 ];
 
 export const homePageData = [
-  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je ID-SK", description: "Jednotný dizajn manuál elektronických služieb Slovenska. „ID-SK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
+  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je ID-SK", description: "Jednotný dizajnový manuál elektronických služieb a webových sídiel Slovenska. „ID-SK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
   { href: "/co-je/principy", src: "/images/home-page/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "1. princíp – princíp užitočnosti – začnite potrebami používateľov. Dizajn služby začína identifikáciou potrieb používateľov. Nevychádzajte z domnienok.", alt: ""},
   { href: "/co-je/metodika", src: "/images/home-page/metodika-a-usmernenia.svg", title: "Metodika a usmernenia", description: "Elektronické služby štátu by mali byť pripravované metodikou User-Centered Design (UCD), aby sa zabezpečila zmysluplnosť a použiteľnosť služieb občanmi.", alt: ""},
   { href: "/zaklady-principy", src: "/images/home-page/zaklady-style-guide.svg", title: "Základy (Style guide)", description: "Súbor štýlov používateľského rozhrania a štandardov dizajnu pre komponenty. Typografia, farebná paleta, ikony, tiene, medzery, stĺpce, použitie obrázkov, ...", alt: ""},

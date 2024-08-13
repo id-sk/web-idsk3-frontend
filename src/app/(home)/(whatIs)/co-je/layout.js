@@ -11,15 +11,17 @@ import { handleSkip } from "@/utils/skip.js";
 
 const WhatIsLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen relative">
+    <div className="flex flex-col relative">
       <SkipLink onClick={handleSkip}>
         Preskočiť na hlavný obsah
       </SkipLink>
       <Navbar sidebarData={idskRoutes} />
-      <div className="h-screen flex">
-        <Sidebar data={idskRoutes} />
-        <main className="flex-1 p-5 overflow-y-auto no-scrollbar">
+      <div className="flex flex-1 h-full">
+      <Sidebar data={idskRoutes} />
+        <main id="main-content" className="flex-1 p-5 overflow-hidden">
+          <div className="relative h-auto overflow-auto">
           {children}
+          </div>
           <TextButton
             icon={<SvgArrowUp />}
             label="Naspäť hore"
@@ -28,7 +30,7 @@ const WhatIsLayout = ({ children }) => {
           />
         </main>
       </div>
-      <FooterResp />
+      <FooterResp className={`fixed bottom-0 w-full p-4 `} />
     </div>
   );
 };

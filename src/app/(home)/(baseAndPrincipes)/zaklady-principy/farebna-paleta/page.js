@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react';
-import ColorGrid from '@/app/(home)/_components/paleta/ColorGrid';
-import ColorSection from '@/app/(home)/_components/paleta/ColorSection';
+import ColorGrid from '@/app/(home)/_components/palette/ColorGrid';
+import ColorSection from '@/app/(home)/_components/palette/ColorSection';
 import { primaryColors, secondaryColors, neutralColors, extendedPrimaryColors, alertColors, textColors, slovakColors } from "@/constants/data";
 
 const ColorPalette = () => {
   return (
     <main className="flex flex-col -mx-0 my-8 max-w-[1200px]">
-       <title>Farebná paleta</title>
+      <title>Farebná paleta</title>
       <h1 className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
         Farebná paleta
       </h1>
