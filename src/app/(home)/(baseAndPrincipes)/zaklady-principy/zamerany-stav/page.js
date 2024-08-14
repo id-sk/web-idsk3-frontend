@@ -84,7 +84,7 @@ const FocusPage = () => {
         <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
           Pseudo triedy využívame na definovanie špeciálneho stavu prvku. CSS
           pseudo-trieda :focus slúži na štýlovanie komponentu, ktorý je aktuálne
-          zameraný pomocou klávesnice, teda je v stave "focus" (zameraný).
+          zameraný pomocou klávesnice, teda je v stave `focus` (zameraný).
           Typickým príkladom komponentu, ktorý môže byť v stave focus, je
           formulárový prvok, napríklad textové pole alebo tlačidlo.
         </p>
