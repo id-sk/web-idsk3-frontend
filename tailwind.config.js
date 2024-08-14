@@ -29,7 +29,16 @@ module.exports = {
       colors: {
         'regal-blue': '#0B4199',
         'my-blue': '#126DFF',
+        'custom-orange': '#D96E00',
+        'custom-white': '#FFF', 
       },
+    outline: {
+      'custom-orange': '2px solid #D96E00', // Custom outline style
+      'custom-white': '2px solid #FFF',     // Custom outline style
+    },
+    outlineOffset: {
+      '3': '3px', // Custom outline offset
+        },
       fontFamily: {
         'source-sans-pro': ['"Source Sans Pro"', 'sans-serif'],
       },

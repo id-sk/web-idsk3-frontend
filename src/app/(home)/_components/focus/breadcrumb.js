@@ -28,7 +28,7 @@ const BreadcrumbExample = () => {
             </div>
           )}
           {item.active ? (
-            <div className="flex flex-col gap-2.5 justify-center self-stretch p-0.5 my-auto text-base tracking-wide leading-6 text-black whitespace-nowrap rounded-md border-amber-600 border-solid border-[3px]">
+            <div className="flex flex-col gap-2.5 justify-center self-stretch p-0.5 my-auto text-base tracking-wide leading-6 text-black whitespace-nowrap rounded-md border-custom-orange border-solid border-[3px]">
               <div className="overflow-hidden self-stretch underline">
                 {item.label}
               </div>

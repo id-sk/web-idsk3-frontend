@@ -10,7 +10,7 @@ const TextAreaExample = () => {
         <span className="text-black">Názov textového poľa</span>
         <span className="text-neutral-500">(nepovinné)</span>
       </label>
-      <div className="flex flex-col gap-2.5 justify-center p-0.5 mt-2.5 w-full whitespace-nowrap rounded-md border-amber-600 border-solid border-[3px] max-md:max-w-full">
+      <div className="flex flex-col gap-2.5 justify-center p-0.5 mt-2.5 w-full whitespace-nowrap rounded-md border-custom-orange border-solid border-[3px] max-md:max-w-full">
         <div className="flex overflow-hidden flex-col pt-2.5 pr-1.5 pb-1.5 pl-4 w-full bg-white rounded-md border-2 border-solid border-neutral-700 max-md:max-w-full">
           <textarea className="flex-1 shrink gap-2.5 pr-2.5 w-full text-xl leading-none text-black max-md:max-w-full" />
           <div className="flex gap-2.5 items-end self-end mt-8 text-base text-right text-neutral-500">

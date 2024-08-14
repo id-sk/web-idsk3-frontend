@@ -11,8 +11,8 @@ const CrossExample = () => {
           Tento text slúži iba ako ukážka naplneného obsahu v danom komponente. Nepoužívať pri implementácii a dizajne.
         </p>
       </div>
-      <button className="flex flex-col gap-2.5 justify-center self-start p-0.5 mt-4 text-base font-bold tracking-wide text-center text-white whitespace-nowrap rounded-md border-amber-600 border-solid border-[3px]">
-        <div className="flex flex-col gap-2.5 justify-center items-center px-4 py-2 bg-blue-600 rounded-md">
+      <button className="flex flex-col gap-2.5 justify-center self-start p-0.5 mt-4 text-base font-bold tracking-wide text-center text-white whitespace-nowrap rounded-md border-custom-orange border-solid border-[3px]">
+        <div className="flex flex-col gap-2.5 justify-center items-center px-4 py-2 bg-my-blue rounded-md">
           <span className="overflow-hidden gap-2.5 self-stretch min-h-[24px]">
             Akcia
           </span>
