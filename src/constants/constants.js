@@ -89,7 +89,7 @@ export const pageRoutes = [
     },
     {
         "name": "Zaškrtávacie pole",
-        "link": "/komponenty/checkbox"
+        "link": "/komponenty/zaskrtavacie-pole"
     }
 ];
 
@@ -121,6 +121,10 @@ export const basicRoutes = [
     {
         "name": "Rozloženie stránky",
         "link": "/zaklady-principy/rozlozenie-stranky"
+    },
+    {
+        "name": "Zameraný stav (Focus)",
+        "link": "/zaklady-principy/zamerany-stav"
     },
     // {
     //     "name": "Použitie obrázkov",
