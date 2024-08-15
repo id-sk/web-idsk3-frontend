@@ -28,18 +28,18 @@ const NavigationBarPage = () => {
               </Link>
             </div>
             <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie textového rázcestníka</h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
+            <p className="mt-5 text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
               Použitím rázcestníka spolu s nadpisom a podnadpisom dáte používateľovi najavo, ktorý obsah
               (a ako) spolu na stránke súvisí. Pri definovaní nadpisu a podnadpisu buďte struční a vecní.
               Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov, musíte však dodržať pravidlá
               pre rozloženie stránky (grid).
             </p>
-            <h2 className="mt-8 mb-4">Varianty</h2>
-            <p className="idsk-subtitle mb-4">
+            <h2 className="mt-16 mb-4">Varianty</h2>
+            <p className="text-custom-19 tracking-wide leading-7 ">
               Komponent umožňuje použitie 3 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
               <li>1. Základná</li>
               <li>2. S linkom </li>
               <li>3. S tagom</li>
@@ -56,7 +56,7 @@ const NavigationBarPage = () => {
             />
           </div>
           <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Nastavenie</h2>
-          <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
+          <p className="mt-5 text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
             1. Variant rázcestníka s podnadpisom/bez podnadpisu
           </p>
           <div className="mt-5 w-[100%] h-[100%]">

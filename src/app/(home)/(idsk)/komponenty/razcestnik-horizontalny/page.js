@@ -19,20 +19,20 @@ const NavigationBarPage = () => {
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
             </p>
             <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie horizontálenho rázcestníka </h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
+            <p className="mt-5 text-custom-19 tracking-wide leading-7 max-md:max-w-full">
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
               Použitím rázcestníka spolu s nadpisom a podnadpisom dáte používateľovi najavo, ktorý obsah (a ako) spolu na stránke súvisí.
               Pri definovaní nadpisu a podnadpisu buďte struční a vecní. Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov,
-              musíte však dodržať pravidlá pre rozloženie stránky (grid).
+              musíte však dodržať pravidlá pre rozloženie stránky <span lang="en">(grid)</span>.
             </p>
             <h2 className="mt-8 mb-4">Varianty</h2>
-            <p className="idsk-subtitle mb-4">
-              Komponent umožňuje použitie 4 variantov:
+            <p className="text-custom-19 tracking-wide leading-7 ">
+            Komponent umožňuje použitie vzájomných kombinácií týchto variantov a stavov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
-              <li>1. S ikonou</li>
-              <li>2. S šípkou</li>
-              <li>3. S ikonou a šípkou</li>
+            <ol className='text-custom-19 tracking-wide leading-7 list-disc list-inside '>
+              <li>S ikonou</li>
+              <li>S šípkou</li>
+              <li>S ikonou a šípkou</li>
             </ol>
           </article>
           <div className="my-2 w-[100%] h-[100%] ">

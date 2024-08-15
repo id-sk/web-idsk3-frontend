@@ -28,15 +28,15 @@ const RadioPage = () => {
             <h2 className="mb-4">
                 Použitie prepínacieho poľa
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Komponent prepínacie pole umožňuje používateľom vybrať jednu z viacerých navrhovaných možností s cieľom vybrať iba jednu z možnosti.
                 Tento komponent sa najčastejšie využíva vo formulároch. Prepínacie pole je prevažne používané s popisom, ktorý objasňuje každú z možnosti,
                 aby bolo používateľovi jasné, ktorú z možnosti má zvoliť.
             </p>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Komponent funguje aj bez použitia skriptovacieho jazyka Javascript, pričom aplikovanie jazyka Javascript môže byť použité pre rozšírenú funcionalitu.
             </p>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 V prípade, že si koncový používateľ vyberá pomocou prepínacích polí z viac ako dvoch možností, prepínacie polia sa spravidla zarovnávajú pod seba,
                 ak nie sú prepínacie polia použité ako škály pri zbere spätnej väzby.
             </p>
@@ -50,10 +50,10 @@ const RadioPage = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 Komponent umožňuje použitie 3 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. Nezaškrtnutý</li>
                 <li>2. Zaškrtnutý</li>
             </ol>
@@ -65,10 +65,10 @@ const RadioPage = () => {
                 alt="varianty pola"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 Stavy komponentu:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. Aktívny stav</li>
                 <li>2. Neaktívny stav</li>
                 <li>3. Vybraný stav</li>
@@ -84,7 +84,7 @@ const RadioPage = () => {
             <h2 className="mt-8 mb-4">
                 Nastavenie
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 1. Variant prepínacieho poľa veľký/malý
             </p>
             <Image
@@ -95,7 +95,7 @@ const RadioPage = () => {
                 alt="variant velký / malý"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 2. Variant prepínacieho poľa s textom/bez textu
             </p>
             <Image

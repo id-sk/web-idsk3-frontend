@@ -28,13 +28,13 @@ const TextInputPage = () => {
             <h2 className="mb-4">
                 Použitie textového poľa
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="itext-custom-19 tracking-wide leading-7 mb-8">
                 Primárne použitie komponentu textového pole je vo formulároch. Veľkosť poľa zohľadňuje prípustný počet
                 znakov daného poľa. Je potrebné zabezpečiť, aby koncový používateľ mohol zadať potrebné údaje aj na menších
                 obrazovkách mobilných zariadení. Pri menších veľkostiach obrazoviek je vhodné škálovať polia na celú šírku obrazovky.
             </p>
             <Image
-                src="/images/textove-pole/pouzitie-textoveho-pola.png"
+                src="/images/textove-pole/pouzitie-textoveho-pola.svg"
                 width={1100}
                 height={250}
                 quality={100}
@@ -43,10 +43,10 @@ const TextInputPage = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 Komponent umožňuje použitie 5 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. Jednoduchý stav</li>
                 <li>2. Vybraný stav</li>
                 <li>3. Zameraný stav</li>
@@ -54,17 +54,17 @@ const TextInputPage = () => {
                 <li>5. Neaktívny stav</li>
             </ol>
             <Image
-                src="/images/textove-pole/vsetky-varianty.png"
+                src="/images/textove-pole/vsetky-varianty.svg"
                 width={1100}
                 height={250}
                 quality={100}
                 alt="varianty pola"
                 className="mt-4 mb-8"
             />
-            <h2 className="mt-8 mb-4">
+            <h2 className="mt-12 mb-4">
                 Nastavenie
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 1. Variant povinného/nepovinného dátového poľa
             </p>
             <Image
@@ -75,7 +75,7 @@ const TextInputPage = () => {
                 alt="variant povinného/nepovinného dátového poľa"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 2. Variant dátového poľa s rozbaľovačom/bez rozbaľovača
             </p>
             <Image
@@ -86,7 +86,7 @@ const TextInputPage = () => {
                 alt="variant dátového poľa s rozbaľovačom/bez rozbaľovača"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 3. Variant dátového poľa s podnadpisom/bez podnadpisu
             </p>
             <Image
@@ -97,7 +97,7 @@ const TextInputPage = () => {
                 alt="variant dátového poľa s podnadpisom/bez podnadpisu"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 4. Variant dátového poľa s popisom/bez popisu
             </p>
             <Image
@@ -108,7 +108,7 @@ const TextInputPage = () => {
                 alt="variant dátového poľa s popisom/bez popisu"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 5. Variant dátového poľa veľký/malý
             </p>
             <Image

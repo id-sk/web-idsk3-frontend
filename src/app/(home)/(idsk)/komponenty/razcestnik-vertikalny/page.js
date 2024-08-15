@@ -1,8 +1,6 @@
 'use client'
 
-import { ArticleCard } from "@eslovensko/idsk-react";
 import Image from "next/image";
-import Link from "next/link";
 import React from "react";
 
 const NavigationBarPage = () => {
@@ -19,7 +17,7 @@ const NavigationBarPage = () => {
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
             </p>
             <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie vertikálneho rázcestníka </h2>
-            <p className="mt-5 text-xl tracking-wide leading-7 text-black max-md:max-w-full">
+            <p className="mt-5 text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
               Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
               Použitím rázcestníka spolu s nadpisom a podnadpisom dáte používateľovi najavo,
               ktorý obsah (a ako) spolu na stránke súvisí.
@@ -27,14 +25,13 @@ const NavigationBarPage = () => {
               Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov, musíte však dodržať pravidlá pre rozloženie stránky (grid).
             </p>
             <h2 className="mt-8 mb-4">Varianty</h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
               Komponent umožňuje použitie 4 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
-              <li>1. S akciou</li>
-              <li>2. Vybraný stav</li>
-              <li>3. S ikonou</li>
-              <li>4. S obrázkom</li>
+            <ol className='text-custom-19 tracking-wide leading-7 list-disc list-inside mb-4'>
+              <li>S ikonou</li>
+              <li>S akciou</li>
+              <li>Vybraný stav</li>
             </ol>
           </article>
           <div className="my-2 w-[100%] h-[100%] ">
