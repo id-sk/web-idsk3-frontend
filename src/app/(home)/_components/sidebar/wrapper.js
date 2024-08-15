@@ -1,3 +1,5 @@
+'use client'
+
 export const Wrapper = ({ children }) => {
     return (
         <aside className="aside-container w-72 bg-white px-4 py-8 border-r-2 border-solid border-neutral-200 flex flex-col">

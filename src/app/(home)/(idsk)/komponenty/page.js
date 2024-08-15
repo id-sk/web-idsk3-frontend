@@ -3,7 +3,6 @@
 import { componentsData } from "@/constants/data";
 import Image from "next/image";
 import Link from "next/link";
-import { ArticleCard } from "@eslovensko/idsk-react";
 import React from 'react';
 
 function ImageCard({ href, src, title, description, alt }) {
@@ -37,14 +36,6 @@ const IdskPage = () => {
       <p className="mt-8 text-xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
       Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.{" "}
       </p>
-      <div className="mt-6">
-      <Link href={'https://komponenty.idsk3.gov.sk/components/'}>
-      <ArticleCard >
-        <h4>Kód komponentov</h4>
-        <p className="my-1">HTML verzia na prevzatie</p>
-      </ArticleCard>
-      </Link>
-      </div>
       <section className="px-1 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {componentsData.slice(0, 3).map((card, index) => (
@@ -93,6 +84,24 @@ const IdskPage = () => {
       <section className="px-1 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           {componentsData.slice(15, 18).map((card, index) => (
+            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
+              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="px-1 mt-10 w-full max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          {componentsData.slice(18, 21).map((card, index) => (
+            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
+              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
+            </div>
+          ))}
+        </div>
+      </section>
+      <section className="px-1 mt-10 w-full max-md:max-w-full">
+        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
+          {componentsData.slice(21, 22).map((card, index) => (
             <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
               <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
             </div>

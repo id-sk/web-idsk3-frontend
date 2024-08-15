@@ -8,16 +8,24 @@ export const pageRoutes = [
         "link": "/komponenty/akordeon"
     },
     {
-        "name": "Dropdown",
-        "link": "/komponenty/dropdown"
+        "name": "Hlavička - webové aplikácie",
+        "link": "/komponenty/hlavicka-webove-aplikacie"
     },
     {
-        "name": "Hlavička",
-        "link": "/komponenty/hlavicka"
+        "name": "Hlavička - webové sídla",
+        "link": "/komponenty/hlavicka-webove-sidla"
     },
     {
-        "name": "Informačná lišta",
-        "link": "/komponenty/informacna-lista"
+        "name": "Chyby a validácie",
+        "link": "/komponenty/chyby-validacie"
+    },
+   /*  {
+        "name": "Informačná lišta oznámenie",
+        "link": "/komponenty/informacna-lista-oznamenie"
+    }, */
+    {
+        "name": "Informačná lišta upozornenie",
+        "link": "/komponenty/informacna-lista-upozornenie"
     },
     {
         "name": "Kartička",
@@ -36,24 +44,52 @@ export const pageRoutes = [
         "link": "/komponenty/pata"
     },
     {
-        "name": "Prepínacie pole",
-        "link": "/komponenty/radio-button"
+        "name": "Pole pre nahratie súboru",
+        "link": "/komponenty/nahratie-suboru"
     },
     {
-        "name": "Rázcestník",
-        "link": "/komponenty/razcestnik"
+        "name": "Prepínacie pole",
+        "link": "/komponenty/prepinacie-pole"
+    },
+    {
+        "name": "Rázcestník - horizontálny",
+        "link": "/komponenty/razcestnik-horizontalny"
+    },
+    {
+        "name": "Rázcestník - vertikálny",
+        "link": "/komponenty/razcestnik-vertikalny"
+    },
+    {
+        "name": "Rázcestník - textový",
+        "link": "/komponenty/razcestnik-textovy"
+    },
+    {
+        "name": "Rozbaľovací zoznam",
+        "link": "/komponenty/rozbalovaci-zoznam"
     },
     {
         "name": "Textové pole",
-        "link": "/komponenty/text-input"
+        "link": "/komponenty/textove-pole"
     },
     {
-        "name": "Tlačidlo",
-        "link": "/komponenty/tlacidlo"
+        "name": "Textové pole - viacriadkové",
+        "link": "/komponenty/textove-pole-viacriadkove"
+    },
+    {
+        "name": "Tlačidlo - primárne",
+        "link": "/komponenty/tlacidlo-primarne"
+    },
+    {
+        "name": "Tlačidlo - sekundárne",
+        "link": "/komponenty/tlacidlo-sekundarne"
+    },
+    {
+        "name": "Tlačidlo - textové",
+        "link": "/komponenty/tlacidlo-textove"
     },
     {
         "name": "Zaškrtávacie pole",
-        "link": "/komponenty/checkbox"
+        "link": "/komponenty/zaskrtavacie-pole"
     }
 ];
 
@@ -83,8 +119,12 @@ export const basicRoutes = [
         "link": "/zaklady-principy/medzery"
     },
     {
-        "name": "Grid",
-        "link": "/zaklady-principy/grid"
+        "name": "Rozloženie stránky",
+        "link": "/zaklady-principy/rozlozenie-stranky"
+    },
+    {
+        "name": "Zameraný stav (Focus)",
+        "link": "/zaklady-principy/zamerany-stav"
     },
     // {
     //     "name": "Použitie obrázkov",

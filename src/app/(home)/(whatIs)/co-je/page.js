@@ -18,7 +18,7 @@ function ImageCard({ href, src, title, description, alt }) {
           className="w-full aspect-[1.5] object-cover"
         />
         <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-3">{description}</p>
+        <p className="mt-2.5 text-custom-19 tracking-wide leading-7 text-black line-clamp-2">{description}</p>
       </div>
     </Link>
   );
@@ -27,14 +27,15 @@ function ImageCard({ href, src, title, description, alt }) {
 
 const WhatIsPage = () => {
   return (
-    <div className="flex flex-col my-8 max-w-[850px]">
+    <div className="flex flex-col my-8 max-w-[1000px]">
       <title>Čo je ID-SK</title>
       <header>
         <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
           Čo je ID-SK
         </h1>
       </header>
-      <p className="mt-8 text-xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
+      <main id="main-content" role="main">
+      <p className="mt-8 text-2xl leading-9 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (ID-SK) je dizajnový systém elektronických služieb a webových sídiel štátu. ID-SK má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní služieb. Je to manuál na tvorbu kvalitných elektronických služieb a webových sídiel na Slovensku.{" "}
       </p>
       <section className="px-1 mt-10 w-full max-md:max-w-full">
@@ -55,6 +56,7 @@ const WhatIsPage = () => {
           ))}
         </div>
       </section>
+      </main>
     </div>
   );
 }
