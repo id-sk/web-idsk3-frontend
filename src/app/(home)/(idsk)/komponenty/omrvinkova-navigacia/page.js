@@ -26,7 +26,7 @@ const BreadcrumbPage = () => {
             <h2 className="mb-4">
                 Použitie omrvinkovej navigácie
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Pri navrhovaní omrvinkovej navigácie je dôležité zabezpečiť, aby bola zreteľná a jednoduchá na používanie. Omrviková navigácia sa zvyčajne skladá z horizontálneho reťazca odkazov, ktorý začína domovskou stránkou a postupne ukazuje každú úroveň hierarchie stránok, až k aktuálnej polohe používateľa. Omrvinková navigácia je umiestnená vždy pod komponentom hlavička tak
                 aby bola dostupná počas celej cesty používateľa rozhraním.
             </p>
@@ -41,10 +41,10 @@ const BreadcrumbPage = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mt-2 ">
                 Komponent umožňuje použitie 2 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-6'>
                 <li>1. Základný stav</li>
                 <li>2. Vybraný stav</li>
             </ol>

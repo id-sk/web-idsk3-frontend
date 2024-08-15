@@ -27,12 +27,12 @@ const BackBarPage = () => {
             <h2 className="mb-4">
                 Použitie lišty spätnej väzby
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Komponent lišta spätnej väzby slúži primárne pre vyjadrenie spokojnosti s informáciami získanými na stránke.
                 Vyjadrenie názoru spokojnosti je možné pomocou tlačidiel „Áno“ alebo „Nie“.  V prípade stlačenia možnosti „Nie“,
                 používateľovi je zobrazený krátky dotazník, ktorý umožňuje vyjadriť svoj názor alebo pohľad so získanými informácie. Pre zvýšenie pravdepodobnosti vyplnenia dotazníka používateľom sa odporúča použiť krátky a stručný dotazník.
             </p>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Lišta spätnej väzby používateľom poskytuje možnosť nahlásiť chyby. V prípade nájdenia chyby postačí kliknúť na <b>„Nahlásiť chybu“</b>
                 a následne vyplniť formulár s jej opisom. Môžete zvoliť typ chyby, napríklad gramatickú chybu alebo zastaraný obsah.
                 Odporúčame obmedziť popis na 350 znakov, aby popis chyby bol čo najviac relevantný.
@@ -44,7 +44,7 @@ const BackBarPage = () => {
                 quality={100}
                 alt="použitie spätnej väzby"
             />
-            <p className="idsk-subtitle my-8">
+            <p className="text-custom-19 tracking-wide leading-7 my-8">
                 V prípade stlačenia možnosti „Áno“, používateľ vyjadruje spokojnosť s informáciami, ktoré mu boli poskytnuté na danej stránke.
             </p>
             <Image
@@ -57,10 +57,10 @@ const BackBarPage = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 Komponent umožňuje použitie 2 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. S tlačidlom nahlásiť chybu</li>
                 <li>2. Bez tlačidla nahlásiť chybu</li>
             </ol>
