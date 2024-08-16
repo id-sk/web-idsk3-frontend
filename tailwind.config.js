@@ -30,11 +30,19 @@ module.exports = {
         'regal-blue': '#0B4199',
         'my-blue': '#126DFF',
         'custom-orange': '#D96E00',
-        'custom-white': '#FFF', 
+        'custom-white': '#FFF',
+        'neutral-n600': '#757575', 
+      },
+      borderColor: {
+        'neutral-n600': '#757575',
       },
     outline: {
-      'custom-orange': '2px solid #D96E00', // Custom outline style
+      'custom-orange': '2px solid #D96E00',
+      'orange': ['2px solid #D96E00', '3px'], // Custom outline style
       'custom-white': '2px solid #FFF',     // Custom outline style
+    },
+    outlineWidth: {
+      '3': '3px',
     },
     outlineOffset: {
       '3': '3px', // Custom outline offset

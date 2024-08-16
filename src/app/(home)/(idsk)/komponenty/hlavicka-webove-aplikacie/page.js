@@ -1,5 +1,6 @@
 'use client'
 
+import Card from '@/app/(home)/_components/article/article';
 import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -16,12 +17,12 @@ const HeaderAppPage = () => {
                 Hlavička pre webové aplikácie (elektronické služby) podporuje jednotný vizuálny zážitok používateľa naprieč rozhraniami ekosystému štátu. Využíva sa iba pre rozhrania, ktoré vyžadujú autentifikáciu používateľa, ako
                 sú elektronické služby, portály služieb a osobné zóny.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/header/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+                <Card  
+                title="Kód komponentu"
+                content="HTML verzia na prevzatie"
+                 />
                 </Link>
             </div>
             <h2 className="mb-4">

@@ -1,6 +1,6 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
+import Card from '@/app/(home)/_components/article/article';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -15,12 +15,12 @@ const Accordion = () => {
             <p className="idsk-subtitle mb-16">
                 Komponent Akordeón sa využíva v prípade potreby zobraziť prehľad sekcií alebo skryť prehľad sekcií súvisiaceho obsahu. Je vhodný najmä pre používateľov, ktorí potrebujú vykonávať podobné úlohy z jedného miesta. Akordeón je ideálne použiť pre jednoduchý obsah a odkazy.
             </p>
-            <div className="mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+            <div className="ml-2 mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/header/'}>
+                <Card  
+                title="Kód komponentu"
+                content="HTML verzia na prevzatie"
+                 />
                 </Link>
             </div>
             <h2 className="mb-4">
