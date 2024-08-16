@@ -79,7 +79,7 @@ const PrincipyPage = () => {
                                 Buďte konzistentní (princíp konzistentnosti)
                             </a>
                         </li>
-                        <li className="-mx-3">
+                        <li className="-mx-2">
                             <a
                                 href="#otvorenost"
                             >
