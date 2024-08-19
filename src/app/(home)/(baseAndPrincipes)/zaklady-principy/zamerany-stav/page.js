@@ -1,19 +1,7 @@
 'use client';
 
 import React from 'react';
-
-import BreadcrumbExample from '@/app/(home)/_components/focus/breadcrumb';
-import ButtonExample from '@/app/(home)/_components/focus/button';
-import CardExample from '@/app/(home)/_components/focus/card';
-import CheckboxExample from '@/app/(home)/_components/focus/checkbox';
 import Block from '@/app/(home)/_components/focus/block';
-import CrossExample from '@/app/(home)/_components/focus/cross';
-import FocusSection from '@/app/(home)/_components/focus/focusSection';
-import HeaderExample from '@/app/(home)/_components/focus/headerFocus';
-import HypertextExample from '@/app/(home)/_components/focus/hypertext';
-import RadioExample from '@/app/(home)/_components/focus/radio';
-import TextAreaExample from '@/app/(home)/_components/focus/textArea';
-import TextFieldExample from '@/app/(home)/_components/focus/textField';
 import Image from 'next/image';
 
 
@@ -162,20 +150,6 @@ const FocusPage = () => {
                 alt="zahlavie"
                 className='mt-8 mb-14'
             />
-        {/* <FocusSection
-          examples={[
-            { title: 'Hypertextový odkaz', component: <HypertextExample /> },
-            { title: 'Tlačidlo', component: <ButtonExample /> },
-            { title: 'Zaškrtávacie pole', component: <CheckboxExample /> },
-            { title: 'Prepínacie pole', component: <RadioExample /> },
-            { title: 'Textové pole', component: <TextFieldExample /> },
-            { title: 'Viacriadkové textové pole', component: <TextAreaExample /> },
-            { title: 'Kartička', component: <CardExample /> },
-            { title: 'Rázcestník', component: <CrossExample /> },
-            { title: 'Omrvinková navigácia', component: <BreadcrumbExample /> },
-            { title: 'Záhlavie (tmavé pozadie)', component: <HeaderExample /> },
-          ]}
-        /> */}
       </section>
       <section aria-labelledby="focus-pseudo-class">
         <h2 id="focus-pseudo-class" className="text-4xl leading-custom-45 font-black text-black mt-2">
