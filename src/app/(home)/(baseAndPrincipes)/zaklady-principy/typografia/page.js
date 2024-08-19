@@ -39,7 +39,7 @@ const TypographyPage = () => {
               </div>
             </div>
           </section>
-          <SizeInfo />
+{/*          <SizeInfo />*/}
           <TypographySection title="Nadpisy" items={headlineData} />
           <TypographySection title="Podnadpisy" items={subtitleData} />
           <TypographySection title="Hlavný text" items={bodyData} />
