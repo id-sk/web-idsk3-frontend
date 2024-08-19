@@ -14,6 +14,7 @@ import HypertextExample from '@/app/(home)/_components/focus/hypertext';
 import RadioExample from '@/app/(home)/_components/focus/radio';
 import TextAreaExample from '@/app/(home)/_components/focus/textArea';
 import TextFieldExample from '@/app/(home)/_components/focus/textField';
+import Image from 'next/image';
 
 
 const FocusPage = () => {
@@ -62,7 +63,106 @@ const FocusPage = () => {
         <h3 className="mt-8 text-2xl font-bold leading-custom-35 text-black max-md:max-w-full">
           Príklady použitia
         </h3>
-        <FocusSection
+        <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Hypertextový odkaz</h4>
+        <Image
+                src="/images/focus/hypertextovy-odkaz.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="hypertextovy odkaz"
+                className='mt-8 mb-16'
+            />
+        <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Tlačidlo</h4>
+          <Image
+                src="/images/focus/tlacidlo.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="tlacidlo"
+                className='mt-8 mb-16'
+            />
+             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Zaškrtávacie pole</h4>
+          <Image
+                src="/images/focus/zaskrtavacie-pole.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="zaskrtavacie pole"
+                className='mt-8 mb-16'
+            />
+             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Prepínacie pole</h4>
+          <Image
+                src="/images/focus/prepinacie-pole.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="prepinacie pole"
+                className='mt-8 mb-16'
+            />
+            <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Textové pole</h4>
+          <Image
+                src="/images/focus/textove-pole.svg"
+                width={500}
+                height={520}
+                quality={100}
+                alt="textove pole"
+                className='mt-8 mb-16'
+            />
+         <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Viacriadkové textové pole</h4>
+          <Image
+                src="/images/focus/viacriadkove-textove-pole.svg"
+                width={800}
+                height={520}
+                quality={100}
+                alt="viacriadkove textove pole"
+                className='mt-8 mb-16'
+            />
+              <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Viacriadkové textové pole</h4>
+          <Image
+                src="/images/focus/viacriadkove-textove-pole.svg"
+                width={800}
+                height={520}
+                quality={100}
+                alt="viacriadkove textove pole"
+                className='mt-8 mb-16'
+            />
+           <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Kartička</h4>
+          <Image
+                src="/images/focus/karticka.svg"
+                width={800}
+                height={520}
+                quality={100}
+                alt="karticka"
+                className='mt-8 mb-16'
+            />
+             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Rázcestník</h4>
+          <Image
+                src="/images/focus/razcestnik.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="razcestnik"
+                className='mt-8 mb-16'
+            />
+           <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Omrvinková navigácia</h4>
+          <Image
+                src="/images/focus/omrvinkova-navigacia.svg"
+                width={575}
+                height={520}
+                quality={100}
+                alt="omrvinkova navigacia"
+                className='mt-8 mb-16'
+            />
+             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Záhlavie</h4>
+          <Image
+                src="/images/focus/zahlavie.svg"
+                width={375}
+                height={520}
+                quality={100}
+                alt="zahlavie"
+                className='mt-8 mb-14'
+            />
+        {/* <FocusSection
           examples={[
             { title: 'Hypertextový odkaz', component: <HypertextExample /> },
             { title: 'Tlačidlo', component: <ButtonExample /> },
@@ -75,10 +175,10 @@ const FocusPage = () => {
             { title: 'Omrvinková navigácia', component: <BreadcrumbExample /> },
             { title: 'Záhlavie (tmavé pozadie)', component: <HeaderExample /> },
           ]}
-        />
+        /> */}
       </section>
       <section aria-labelledby="focus-pseudo-class">
-        <h2 id="focus-pseudo-class" className="text-4xl leading-custom-45 font-black text-black mt-8">
+        <h2 id="focus-pseudo-class" className="text-4xl leading-custom-45 font-black text-black mt-2">
           Pseudo trieda focus
         </h2>
         <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">

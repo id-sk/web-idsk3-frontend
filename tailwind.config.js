@@ -35,6 +35,10 @@ module.exports = {
       },
       borderColor: {
         'neutral-n600': '#757575',
+        'custom-orange': '#D96E00',
+      },
+      borderWidth: {
+        'custom': '3px',
       },
     outline: {
       'custom-orange': '2px solid #D96E00',
