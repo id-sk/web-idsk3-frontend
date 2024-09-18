@@ -1,8 +1,6 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
-import Link from 'next/link';
 import React from 'react';
 
 const TextInputPage = () => {
@@ -18,7 +16,7 @@ const TextInputPage = () => {
             <h2 className="mb-4">
                 Použitie viacriadkového textového poľa
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Viacriadkové textové pole je využívané zvyčajne pre zber väčšieho množstva informácii, ako napríklad zanechanie spätnej väzby. Pri výbere viacriadkového textového poľa je nutné určiť povinnosť textového poľa podľa zadefinovaných pravidiel. Počet možných zadaných znakov je zobrazený v pravom dolnom rohu textového poľa.
             </p>
             <Image
@@ -31,15 +29,15 @@ const TextInputPage = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7">
                 Komponent umožňuje použitie 5 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-8'>
                 <li>1. Jednoduchý stav</li>
                 <li>2. Vybraný stav</li>
                 <li>3. Zameraný stav</li>
-                <li>4. Chybový stav</li>
-                <li>5. Neaktívny stav</li>
+                <li>4. Neaktívny stav</li>
+                <li>5. Chybový stav</li>
             </ol>
             <Image
                 src="/images/textove-pole/viacriadkove/vsetky-varianty-viacriadkoveho.png"
@@ -52,7 +50,7 @@ const TextInputPage = () => {
             <h2 className="mt-8 mb-4">
                 Nastavenie
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 1. Variant povinného/nepovinného viacriadkového textového poľa
             </p>
             <Image
@@ -63,7 +61,7 @@ const TextInputPage = () => {
                 alt="variant povinného/nepovinného viacriadkového poľa"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 2. Variant viacriadkového textového poľa s popisom/bez popisu
             </p>
             <Image

@@ -1,6 +1,6 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
+import Card from '@/app/(home)/_components/article/article';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -15,26 +15,26 @@ const Accordion = () => {
             <p className="idsk-subtitle mb-16">
                 Komponent Akordeón sa využíva v prípade potreby zobraziť prehľad sekcií alebo skryť prehľad sekcií súvisiaceho obsahu. Je vhodný najmä pre používateľov, ktorí potrebujú vykonávať podobné úlohy z jedného miesta. Akordeón je ideálne použiť pre jednoduchý obsah a odkazy.
             </p>
-            <div className="mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+            <div className="ml-2 mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/header/'}>
+                <Card  
+                title="Kód komponentu"
+                content="HTML verzia na prevzatie"
+                 />
                 </Link>
             </div>
             <h2 className="mb-4">
                 Použitie Akordeónu
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-8">
                 Nadpis príslušnej lišty by mal byť v primeranej dĺžke, maximálne v 1 riadku a výstižne popisuje
                 to čo sa v danom akordeóne nachádza. Detailnejšie informácie o obsahu čo je umiestené
                 v akordeóne, dodefinujte v popise pod nadpisom. Akordeón najlepšie funguje pre jednoduché texty a odkazy. Nepoužívajte akordeón na obsah, ktorý je dôležitý pre všetkých používateľov.
             </p>
-            <h3 className="idsk-text-body my-4">
+            <h3 className=" my-4">
                 Správanie komponentu:
             </h3>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-8">
                 Klikateľný je riadok s nadpisom a ikonou po celej svojej dĺžke.
                 Sekcia obsahu sa rozbalí alebo zbalí kliknutím na príslušný riadok.
                 Rozbalenie ďalšej sekcie nemá vplyv na uzavretie iného, už otvoreného obsahu. Naraz môže byť otvorených viacero sekcií, používateľ si kliknutím sám určí, ktorú sekciu chce zbaliť alebo rozbaliť.
@@ -43,10 +43,10 @@ const Accordion = () => {
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-4">
                 Komponent umožňuje použitie 2 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-4'>
                 <li>1. Veľký akordeón</li>
                 <li>2. Malý akordeón</li>
             </ol>
@@ -59,9 +59,9 @@ const Accordion = () => {
                 className="mt-4 mb-8"
             />
             <h2 className="mt-8 mb-4">
-                Nastavenie
+                Nastavenie komponentu
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-4">
                 1. Variant akordeónu zatvorený/otvorený
             </p>
             <Image
@@ -72,7 +72,7 @@ const Accordion = () => {
                 alt="varianty päty"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full mb-4">
                 2. Variant akordeónu s popisom/bez popisu
             </p>
             <Image

@@ -13,6 +13,11 @@
   }
 }
 
+.focus-outline-orange:focus {
+  outline: 2px solid #D96E00;
+  outline-offset: 3px;
+}
+
 html,
 body {
   max-width: 100vw;

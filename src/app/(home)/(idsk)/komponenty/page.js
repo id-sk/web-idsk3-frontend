@@ -18,7 +18,7 @@ function ImageCard({ href, src, title, description, alt }) {
           className="w-full aspect-[1.5] object-cover"
         />
         <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-3">{description}</p>
+        <p className="mt-2.5 text-custom-19 tracking-wide leading-7 text-black line-clamp-3">{description}</p>
       </div>
     </Link>
   );
@@ -33,7 +33,7 @@ const IdskPage = () => {
           Zoznam Komponentov
         </h1>
       </header>
-      <p className="mt-8 text-xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
+      <p className="mt-8 text-2xl tracking-normal leading-9 text-black max-md:mr-1 max-md:max-w-full">
       Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.{" "}
       </p>
       <section className="px-1 mt-10 w-full max-md:max-w-full">

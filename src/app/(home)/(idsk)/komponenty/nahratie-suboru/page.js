@@ -1,11 +1,9 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image'
-import Link from 'next/link';
 import React from 'react';
 
-const TextInputPage = () => {
+const TextUploadPage = () => {
     return (
         <div className="component-page">
             <title>Pole pre nahratie súboru</title>
@@ -18,27 +16,20 @@ const TextInputPage = () => {
             <h2 className="mb-4">
                 Použitie poľa pre nahratie súboru
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 text-black mb-6">
                 Komponent pre nahratie súborov je grafický prvok, ktorý umožňuje užívateľom jednoducho nahrať súbory na server. Tento komponent obsahuje oblasť, na ktorú užívatelia môžu pretiahnuť súbory alebo majú možnosť kliknúť na tlačidlo pre výber súborov z ich počítača.
-
+            </p>
+            <p className="text-custom-19 tracking-wide leading-7 text-black mb-2">
                 Pole pre nahratie súboru môže byť použité pre rôzne typy súborov vrátane obrázkov, dokumentov alebo zvukových nahrávok. Po nahraní súborov je zobrazený náhľad nahratých súborov. Pri výskyte problému pri nahrávaní, je používateľ informovaný spolu so správou o type problému.
-
                 Druhý variant komponentu má rovnaké použitie ako variant prvý, ibaže tento je implemetovaný bez použitia skriptovacieho jazyka Javascript.
             </p>
-            <Image
-                src="/images/textove-pole/file-upload/pouzitie.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="použitie poľa pre nahratie súboru"
-            />
-            <h2 className="mt-8 mb-4">
+            <h2 className="mt-16 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black">
                 Komponent umožňuje použitie 2 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 text-black mb-8'>
                 <li>1. Pole pre nahratie súboru</li>
                 <li>2. Pole pre nahratie súboru bez javascriptu</li>
             </ol>
@@ -53,10 +44,10 @@ const TextInputPage = () => {
             <h2 className="mt-8 mb-4">
                 Nastavenie
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black mb-4">
                 Komponent pole pre nahratie súboru umožňuje použitie 4 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 text-black mb-4'>
                 <li>1. Nečinný</li>
                 <li>2. Aktivovaný</li>
                 <li>3. Nahratý</li>
@@ -70,10 +61,10 @@ const TextInputPage = () => {
                 alt="nastavenie pola pre nahratie súboru"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 text-black mb-4">
                 Pole pre nahratie súboru bez javascriptu poskytuje 3 varianty:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 text-black mb-4'>
                 <li>1. Základný</li>
                 <li>2. Nahrať súbor</li>
                 <li>3. Chyba</li>
@@ -90,4 +81,4 @@ const TextInputPage = () => {
     );
 }
 
-export default TextInputPage;
+export default TextUploadPage;

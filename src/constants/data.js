@@ -4,7 +4,7 @@ const commonDescription = "Lorem ipsum dolor sit amet, consectetur adipiscing el
 export const baseData = [
   { href: "zaklady-principy/typografia", src: "/images/zaklady-principy-cards/Typografia.svg", title: "Typografia", description: "Pravidlá pre použitie textových prvkov, typov a veľkostí písma.", alt: "" },
   { href: "zaklady-principy/farebna-paleta", src: "/images/zaklady-principy-cards/Farby.svg", title: "Farby", description: "Prehľad farebných paletiet pre grafické používateľské rozhranie.", alt: "" },
-  { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""},
+  /* { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""}, */
   { href: "zaklady-principy/tiene", src: "/images/zaklady-principy-cards/Tiene.svg", title: "Tiene", description: "Typy tieňov a ich použitie na vizuálne rozlíšenie obsahu.", alt: "" },
   { href: "zaklady-principy/medzery", src: "/images/zaklady-principy-cards/Medzery.svg", title: "Medzery", description: "Medzery a ich rozmery.", alt: "" },
   { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""}

@@ -26,47 +26,58 @@ const ButtonPage = () => {
             <h2 className="mb-4">
                 Použitie primárnych tlačidiel
             </h2>
-            <p className="idsk-subtitle mb-8">
+            <p className="text-custom-19 tracking-wide leading-7 mb-8">
                 Používajú sa na vykonanie hlavnej akcie na stránke. Snažte sa vyhnúť použitiu viacerých hlavných tlačidiel na jednej stránke. Viaceré tlačidlá môžu u používateľa vyvolať zmätenosť a problémy s výberom tlačidla k použitiu.
             </p>
             <h2 className="mt-8 mb-4">
                 Varianty
             </h2>
-            <p className="idsk-subtitle mb-4">
+            <p className="text-custom-19 tracking-wide leading-7 mb-4">
                 Komponent umožňuje použitie 3 variantov:
             </p>
-            <ol className='idsk-subtitle mb-4'>
+            <ol className='text-custom-19 tracking-wide leading-7 mb-8'>
                 <li>1. Základný typ</li>
                 <li>2. Úspešný typ</li>
                 <li>3. Upozorňovací typ</li>
             </ol>
             <Image
-                src="/images/button/primarne/varianty-primarnych-tlacidiel.png"
+                src="/images/button/primarne/varianty-primarnych-tlacidiel.svg"
                 width={1100}
                 height={250}
                 quality={100}
                 alt="varianty primárnych tlačidiel"
                 className="mt-4 mb-8"
             />
-            <h2 className="mt-8 mb-4">
+            <h2 className="mt-12 mb-8">
                 Nastavenie
             </h2>
-            <p className="idsk-subtitle mb-4">
-                1. Varianty tlačidla základný/s ikonou vľavo /s ikonou vprav
+            <p className="text-custom-19 tracking-wide leading-7 ">
+                Variatny tlačidla:
             </p>
+            <ol className='text-custom-19 tracking-wide leading-7 list-disc list-inside mb-4'>
+              <li>základný (bez ikony)</li>
+              <li>s ikonou vľavo</li>
+              <li>s ikonou vpravo</li>
+            </ol>
             <Image
-                src="/images/button/primarne/s-ikonou.png"
+                src="/images/button/primarne/s-ikonou.svg"
                 width={1100}
                 height={250}
                 quality={100}
                 alt="základný s ikonou vľavo s ikonou vprav"
                 className="mt-4 mb-8"
             />
-            <p className="idsk-subtitle mb-4">
-                2. Varianty tlačidla aktívny stav/vybraný stav/stlačený stav/neaktívny stav
+            <p className="text-custom-19 tracking-wide leading-7 ">
+                Stavy tlačidla:
             </p>
+            <ol className='text-custom-19 tracking-wide leading-7 list-disc list-inside mb-4'>
+              <li>aktívny</li>
+              <li>vybraný</li>
+              <li>stlačený</li>
+              <li>neaktívny</li>
+            </ol>
             <Image
-                src="/images/button/primarne/stav.png"
+                src="/images/button/primarne/stav.svg"
                 width={1100}
                 height={250}
                 quality={100}

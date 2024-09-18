@@ -21,7 +21,7 @@ const ColorCard = ({ name, hex, rgb, opacity }) => {
         style={{ ...colorStyle, height: '110px', backgroundColor: isMounted ? hex : 'transparent' }}
       ></div>
       <div className="flex flex-col p-2.5 bg-neutral-50" style={{ height: '80px', overflow: 'none' }}>
-        <div className="text-base font-bold tracking-wide leading-6">{name}</div>
+        <div className="text-base font-bold tracking-wide leading-6" lang="en">{name}</div>
         <div className="shrink-0 mt-1 h-px bg-black"></div>
         <div className="flex flex-col mt-1 text-xs tracking-wide leading-4 whitespace-nowrap">
           <div className="flex">

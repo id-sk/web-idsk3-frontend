@@ -1,6 +1,5 @@
 'use client'
 
-
 const MetodikaPage = () => {
     return (
         <div className="flex flex-col my-8 max-w-[1000px]">
