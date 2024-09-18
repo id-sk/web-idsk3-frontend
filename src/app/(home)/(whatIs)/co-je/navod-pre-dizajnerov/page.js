@@ -8,7 +8,9 @@ const DesignersPage = () => {
     const router = useRouter();
 
     const handleClick = () => {
-        router.push('https://www.figma.com/community/file/1400036861459768308');
+
+        router.push('https://www.figma.com/community/file/1400036861459768308/idsk-3');
+
     };
 
     return (
