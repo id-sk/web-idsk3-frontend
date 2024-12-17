@@ -21,7 +21,7 @@ const DeveloperPage = () => {
             </header>
             <main id="main-content" role="main">
             <p className="text-2xl leading-9 tracking-wide mb-12">
-                Ak budete chcieť vytvoriť elektronickú službu pomocou ID-SK, môžete využiť repozitár dostupný na GitHub-e. V repozitári nájdete hlavičku, pätičku a webové komponenty používateľského rozhrania pre elektronickú službu a webové sídlo.
+                Ak budete chcieť vytvoriť elektronickú službu pomocou ID-SK, môžete využiť <a href='https://github.com/id-sk/idsk3-frontend'>repozitár dostupný na GitHub-e</a>. V repozitári nájdete hlavičku, pätičku a webové komponenty používateľského rozhrania pre elektronickú službu a webové sídlo.
             </p>
             <PrimaryButton
                 label="GitHub knižnica ID-SK"
