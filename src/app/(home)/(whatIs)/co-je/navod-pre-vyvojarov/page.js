@@ -21,7 +21,7 @@ const DeveloperPage = () => {
             </header>
             <main id="main-content" role="main">
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pre použitie ID-SK vo vašom projekte môžete využiť <a href='https://github.com/id-sk/idsk3-frontend'>repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
+                Pre použitie ID-SK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
             </p>
             <PrimaryButton
                 label="GitHub knižnica ID-SK"
@@ -39,7 +39,7 @@ const DeveloperPage = () => {
                 1. Inštalácia ID-SK pomocou NPM
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy<a href=' https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions'>Node (NPM)</a>.
+                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy<a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
             </p>
             <h3 className="mb-4">
                 Ako postupovať pri inštalácii
@@ -51,7 +51,7 @@ const DeveloperPage = () => {
                 2. Inštalácia ID-SK z dist
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Môžete si tiež stiahnuť <a href='https://github.com/id-sk/idsk3-frontend/tree/main/dist'>skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
+                Môžete si tiež stiahnuť <a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist" className="underline">skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
             </p>
             <h3 className="mb-4">
                 Obmedzenia
@@ -66,7 +66,7 @@ const DeveloperPage = () => {
                 <li>prispôsobiť zostavu (napríklad prepísať farby alebo povoliť globálne štýly)</li>
                 <li>Použiť komponenty z Nunjucks šablón.</li>
             </ul>
-                    </br>
+                    
             <p className="text-custom-19 tracking-wide leading-7">
                 Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať ID-SK Frontend pomocou node package manager.
             </p>
@@ -78,8 +78,8 @@ const DeveloperPage = () => {
                 Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov:
             </p>
             <ul className='text-custom-19 tracking-wide leading-7 list-disc list-inside mb-4'>
-                <li><a href='https://github.com/id-sk/idsk3-frontend/tree/main/dist/%40id-sk'>CSS a JS</a></li>
-                <li><a href='https://github.com/id-sk/idsk3-frontend/tree/main/dist/assets'>Assety</a></li>
+                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/%40id-sk" className="underline">CSS a JS</a></li>
+                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/assets" className="underline">Assety</a></li>
             </ul>
             <h2 className="idsk-subtitle my-4">2. Zahrňte zdroje</h2>
             <p className="text-custom-19 tracking-wide leading-7 my-4">
