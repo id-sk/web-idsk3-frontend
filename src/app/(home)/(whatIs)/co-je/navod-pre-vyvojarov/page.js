@@ -39,7 +39,7 @@ const DeveloperPage = () => {
                 1. Inštalácia ID-SK pomocou NPM
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy<a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
+                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy <a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
             </p>
             <h3 className="mb-4">
                 Ako postupovať pri inštalácii
