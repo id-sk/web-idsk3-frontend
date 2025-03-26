@@ -22,41 +22,41 @@ const DeveloperPage = () => {
             <main id="main-content" role="main">
 
       <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pre použitie ID-SK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
+                Pre použitie IDSK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
 
             </p>
             <PrimaryButton
-                label="GitHub knižnica ID-SK"
+                label="GitHub knižnica IDSK"
                 onClick={handleClick}
                 className='my-4'
             />
             <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                Sú dva najčastejšie spôsoby, ako začať používať ID-SK Frontend vo vašej aplikácii:
+                Sú dva najčastejšie spôsoby, ako začať používať IDSK Frontend vo vašej aplikácii:
             </p>
             <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. Inštaláciou pomocou NPM (odporúčame)</li>
                 <li>2. Inštaláciou kompilovaných súborov</li>
             </ol>
             <h2 className="mb-6">
-                1. Inštalácia ID-SK pomocou NPM
+                1. Inštalácia IDSK pomocou NPM
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
 
-                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy <a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
+                Odporúčame nainštalovať si IDSK Frontend zo správcu balíčkov platformy <a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
 
             </p>
             <h3 className="mb-4">
                 Ako postupovať pri inštalácii
             </h3>
             <p className="text-custom-19 tracking-wide leading-7 my-8">
-                Návod nájdete na stránke Inštalácia ID-SK Frontend pomocou NPM.
+                Návod nájdete na stránke Inštalácia IDSK Frontend pomocou NPM.
             </p>
             <h2 className="mb-4">
-                2. Inštalácia ID-SK z dist
+                2. Inštalácia IDSK z dist
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
 
-                Môžete si tiež stiahnuť <a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist" className="underline">skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
+                Môžete si tiež stiahnuť <a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist" className="underline">skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajnového systému IDSK.
 
             </p>
             <h3 className="mb-4">
@@ -75,7 +75,7 @@ const DeveloperPage = () => {
                     
 
             <p className="text-custom-19 tracking-wide leading-7">
-                Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať ID-SK Frontend pomocou node package manager.
+                Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať IDSK Frontend pomocou node package manager.
             </p>
             <h3 className="my-6">
                 Kroky k inštalácii

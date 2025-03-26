@@ -28,15 +28,15 @@ function ImageCard({ href, src, title, description, alt }) {
 const WhatIsPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[1000px]">
-      <title>Čo je ID-SK</title>
+      <title>Čo je IDSK</title>
       <header>
         <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
-          Čo je ID-SK
+          Čo je IDSK
         </h1>
       </header>
       <main id="main-content" role="main">
       <p className="mt-8 text-2xl leading-9 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (ID-SK) je dizajnový systém elektronických služieb a webových sídiel štátu. ID-SK má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní služieb. Je to manuál na tvorbu kvalitných elektronických služieb a webových sídiel na Slovensku.{" "}
+        Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (IDSK) je dizajnový systém elektronických služieb a webových sídiel štátu. IDSK má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní služieb. Je to manuál na tvorbu kvalitných elektronických služieb a webových sídiel na Slovensku.{" "}
       </p>
       <section className="px-1 mt-10 w-full max-md:max-w-full">
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">

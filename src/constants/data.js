@@ -36,16 +36,16 @@ export const componentsData = [
 ];
 
 export const whatIsData = [
-  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod do dizajnového manuálu ID-SK", description: "ID-SK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
-  { href: "/co-je/principy", src: "/images/co-je-cards/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "10 princípov tvorby elektronických služieb podľa IDSK. Dizajn služby začína identifikáciou potrieb používateľov...", alt: ""},
+  { href: "/co-je/uvod", src: "/images/co-je-cards/co-je-id-sk.svg", title: "Úvod do dizajnového manuálu IDSK", description: "IDSK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
+  { href: "/co-je/principy", src: "/images/co-je-cards/10-principov-idsk.svg", title: "10 princípov IDSK", description: "10 princípov tvorby elektronických služieb podľa IDSK. Dizajn služby začína identifikáciou potrieb používateľov...", alt: ""},
   { href: "/co-je/metodika", src: "/images/co-je-cards/metodika-ucd.svg", title: "Metodika UCD", description: "Metodika user-centered dizajnu (UCD) zabezpečí zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa - občana.", alt: "" },
-  { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému ID-SK", alt: ""},
-  { href: "/co-je/navod-pre-vyvojarov", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Návody pre vývojárov", description: 'Ak budete chcieť vytvoriť elektronickú službu pomocou ID-SK, môžete využiť repozitár dostupný na GitHub-e.', alt: ""},
+  { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK", alt: ""},
+  { href: "/co-je/navod-pre-vyvojarov", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Návody pre vývojárov", description: 'Ak budete chcieť vytvoriť elektronickú službu pomocou IDSK, môžete využiť repozitár dostupný na GitHub-e.', alt: ""},
 ];
 
 export const homePageData = [
-  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je ID-SK", description: "Jednotný dizajnový manuál elektronických služieb a webových sídiel Slovenska. „ID-SK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
-  { href: "/co-je/principy", src: "/images/home-page/10-principov-idsk.svg", title: "10 princípov ID-SK", description: "1. princíp – princíp užitočnosti – začnite potrebami používateľov. Dizajn služby začína identifikáciou potrieb používateľov. Nevychádzajte z domnienok.", alt: ""},
+  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je IDSK", description: "Jednotný dizajnový manuál elektronických služieb a webových sídiel Slovenska. „IDSK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
+  { href: "/co-je/principy", src: "/images/home-page/10-principov-idsk.svg", title: "10 princípov IDSK", description: "1. princíp – princíp užitočnosti – začnite potrebami používateľov. Dizajn služby začína identifikáciou potrieb používateľov. Nevychádzajte z domnienok.", alt: ""},
   { href: "/co-je/metodika", src: "/images/home-page/metodika-a-usmernenia.svg", title: "Metodika a usmernenia", description: "Elektronické služby štátu by mali byť pripravované metodikou User-Centered Design (UCD), aby sa zabezpečila zmysluplnosť a použiteľnosť služieb občanmi.", alt: ""},
   { href: "/zaklady-principy", src: "/images/home-page/zaklady-style-guide.svg", title: "Základy (Style guide)", description: "Súbor štýlov používateľského rozhrania a štandardov dizajnu pre komponenty. Typografia, farebná paleta, ikony, tiene, medzery, stĺpce, použitie obrázkov, ...", alt: ""},
   { href: "/komponenty", src: "/images/home-page/komponenty.svg", title: "Komponenty", description: "Knižnica komponentov, ktoré sa používajú na tvorbu elektronických služieb a webových sídiel. Akordeón, Dátové polia, Hlavička, Päta, Tlačidlá, ...", alt: ""},
