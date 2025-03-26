@@ -9,7 +9,7 @@ const PrincipyPage = () => {
             <title>Princípy</title>
             <header>
                 <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
-                    10 princípov vytvárania služieb podľa ID-SK
+                    10 princípov vytvárania služieb podľa IDSK
                 </h1>
             </header>
             <main id="main-content" role="main">
@@ -54,7 +54,7 @@ const PrincipyPage = () => {
                             <a
                                 href="#pristupnost"
                             >
-                                ID-SK je pre každého (princíp prístupnosti)
+                                IDSK je pre každého (princíp prístupnosti)
                             </a>
                         </li>
                         <li>
@@ -142,11 +142,11 @@ const PrincipyPage = () => {
                     do rozvoja.
                 </p>
                 <h2 id="pristupnost" className="mt-8 text-4xl font-black text-black max-md:max-w-full">
-                    6. ID-SK je pre každého (princíp prístupnosti)
+                    6. IDSK je pre každého (princíp prístupnosti)
                 </h2>
                 <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
                     Prístupný dizajn je dobrý dizajn. Elektronické služby vytvorené podľa
-                    ID-SK by mali byť inkluzívne, zrozumiteľné a jednoducho čitateľné. Je
+                    IDSK by mali byť inkluzívne, zrozumiteľné a jednoducho čitateľné. Je
                     potrebné si pripomínať, že elektronické služby sa vytvárajú s konkrétnym
                     účelom, ako odpoveď na konkrétne potreby spoločnosti a na používanie
                     pre konkrétnych ľudí. Medzi používateľmi sú aj takí, ktorí nepoužívajú

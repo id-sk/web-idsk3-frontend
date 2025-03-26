@@ -20,14 +20,14 @@ const DesignersPage = () => {
                 Pre dizajnérov
             </h1>
             <p className="idsk-subtitle mb-16">
-                V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému ID-SK – knižnicu štýlov, komponentov či vzorov.
+                V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK – knižnicu štýlov, komponentov či vzorov.
 
                 Všetky súbory sú voľne prístupné na prepoužitie a pre prácu s nimi je nevyhnutné duplikovať súbory alebo skopírovať do nového súboru.
 
                 Pomocou týchto komponentov je možné vyskladať elektronickú v službu a/alebo webové sídlo v IDSK.
             </p>
             <PrimaryButton
-                label="Knižnica ID-SK"
+                label="Knižnica IDSK"
                 onClick={handleClick}
                 className='my-4 ml-1'
             />

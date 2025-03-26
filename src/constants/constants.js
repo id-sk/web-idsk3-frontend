@@ -162,5 +162,9 @@ export const idskRoutes = [
         "name": "Návod pre vývojárov",
         "link": "/co-je/navod-pre-vyvojarov"
     },
+    {
+        "name": "Spracovanie cookies",
+        "link": "/co-je/cookies-policy"
+    },
 ];
 

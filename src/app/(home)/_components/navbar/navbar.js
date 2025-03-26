@@ -113,7 +113,7 @@ const Navbar = ({ sidebarData }) => {
                 height={0}
                 className="w-8 h-8 md:w-12 md:h-12"
               />
-              <h3 className='py-2 max-w-720px dizajn'>Dizajn systém ID-SK</h3>
+              <h3 className='py-2 max-w-720px dizajn'>Dizajnový systém IDSK</h3>
             </header>
           </div>
         </a>
