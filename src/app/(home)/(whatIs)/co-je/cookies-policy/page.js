@@ -55,22 +55,6 @@ const SuboryCookies = () => {
         <b>DOBA UCHOVÁVANIA:</b>&emsp;Po skončení relácie (zavretí webovej stránky) sa neuchováva.<br/>
         <b>ÚČEL SPRACÚVANIA:</b>&emsp;Zvyšuje bezpečnosť webovej stránky. Je to tiež relačný súbor cookies.
       </p>
-      <table>
-      <thead>
-	      <tr>
-		      <th>NÁZOV COOKIES</th>
-		      <th>DOBA UCHOVÁVANIA<br />(od nav&scaron;t&iacute;venia webovej str&aacute;nky)</th>
-		      <th>ÚČEL SPRACÚVANIA</th>
-	      </tr>
-      </thead>
-      <tbody>
-	      <tr>
-		      <td>TS#</td>
-		      <td>Po skončení relácie (zavretí webovej stránky) sa neuchováva.</td>
-		      <td>Zvyšuje bezpečnosť webovej stránky. Je to tiež relačný súbor cookies.</td>
-	      </tr>
-      </tbody>
-      </table>
 
       <h2 className="mt-8 text-4xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
         6.	Kategórie osobných údajov
