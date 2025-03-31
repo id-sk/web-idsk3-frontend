@@ -18,10 +18,10 @@ const SuboryCookies = () => {
       <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky, Pribinova 25, 811 09 Bratislava, IČO: 50349287</p>
 
       <h2 className="mt-8 text-4xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">2.	Zodpovedná osoba pre oblasť osobných údajov MIRRI SR</h2>
-      <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">telefón: +421 2/2092 8425, e-mail: <a href="mailto:zodpovedna.osoba@mirri.gov.sk">zodpovedna.osoba@mirri.gov.sk</a></p>
+      <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">telefón: +421 2/2092 8425, e-mail: <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="underline">zodpovedna.osoba@mirri.gov.sk</a></p>
 
       <h2 className="mt-8 text-4xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">3.	Názov spracúvania</h2>
-      <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">Spracúvanie cookies na webovej stránke <a href="https://idsk.gov.sk">idsk.gov.sk</a>.</p>
+      <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">Spracúvanie cookies na webovej stránke <a href="https://idsk.gov.sk" class="underline">idsk.gov.sk</a>.</p>
 
       <h2 className="mt-8 text-4xl tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
         4.	Čo sú to cookies?
