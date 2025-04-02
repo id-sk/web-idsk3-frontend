@@ -171,8 +171,7 @@ const SuboryCookies = () => {
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       Dotknutá osoba je oprávnená podať žiadosť o výkon práv dotknutej osoby u prevádzkovateľa alebo 
-      u jeho zodpovednej osoby listom na adresu prevádzkovateľa, e-mailom na <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="text-my-blue underline">zodpovedna.osoba@mirri.gov.sk</a> 
-      alebo osobne na podateľni prevádzkovateľa.
+      u jeho zodpovednej osoby listom na adresu prevádzkovateľa, e-mailom na <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="text-my-blue underline">zodpovedna.osoba@mirri.gov.sk </a> alebo osobne na podateľni prevádzkovateľa.
       </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
@@ -184,10 +183,7 @@ const SuboryCookies = () => {
       Vášho webového prehliadača. Obvykle je potrebné kliknúť na tlačidlo „Nastavenia“ a následne na tlačidlo 
       „Súbory cookies a povolenia lokality“/„Ochrana súkromia a zabezpečenie“ a následne „Súbory cookies“.
       </p>
-      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky, 
-        Pribinova 25, 811 09 Bratislava, IČO: 50349287
-      </p>
+     
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       20.	Informácia o zmluvnej alebo zákonnej požiadavke
@@ -205,8 +201,7 @@ const SuboryCookies = () => {
       Ak sa dotknutá osoba domnieva, že pri spracúvaní osobných údajov boli porušené jej práva, má právo podať návrh na začatie konania 
       o ochrane osobných údajov <b>Úradu na ochranu osobných údajov SR</b> v súlade s ustanoveniami zákona č. 18/2018 Z. z. o ochrane osobných údajov 
       a o zmene a doplnení niektorých zákonov v znení neskorších predpisov: 
-      <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/" class="text-my-blue underline">
-       Návrh na začatie konania o ochrane osobných údajov</a>.      
+      <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/" class="text-my-blue underline"> Návrh na začatie konania o ochrane osobných údajov</a>.      
       </p>
       </main>
     </div>
