@@ -18,10 +18,10 @@ const SuboryCookies = () => {
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky, Pribinova 25, 811 09 Bratislava, IČO: 50349287</p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">2.	Zodpovedná osoba pre oblasť osobných údajov MIRRI SR</h2>
-      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">telefón: +421 2/2092 8425, e-mail: <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="underline">zodpovedna.osoba@mirri.gov.sk</a></p>
+      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">telefón: +421 2/2092 8425, e-mail: <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="text-my-blue underline">zodpovedna.osoba@mirri.gov.sk</a></p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">3.	Názov spracúvania</h2>
-      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">Spracúvanie cookies na webovej stránke <a href="https://idsk.gov.sk" class="underline">idsk.gov.sk</a>.</p>
+      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">Spracúvanie cookies na webovej stránke <a href="https://idsk.gov.sk" class="text-my-blue underline">idsk.gov.sk</a>.</p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         4.	Čo sú to cookies?
@@ -67,7 +67,7 @@ const SuboryCookies = () => {
         7.	Kategórie dotknutých osôb
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Dotknutými osobami sú fyzické osoby – návštevníci, používatelia webovej stránky <a href="https://idsk.gov.sk/">idsk.gov.sk</a>.
+        Dotknutými osobami sú fyzické osoby – návštevníci, používatelia webovej stránky <a href="https://idsk.gov.sk/" class="text-my-blue underline">idsk.gov.sk</a>.
       </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
@@ -171,7 +171,7 @@ const SuboryCookies = () => {
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       Dotknutá osoba je oprávnená podať žiadosť o výkon práv dotknutej osoby u prevádzkovateľa alebo 
-      u jeho zodpovednej osoby listom na adresu prevádzkovateľa, e-mailom na <a href="mailto:zodpovedna.osoba@mirri.gov.sk">zodpovedna.osoba@mirri.gov.sk</a> 
+      u jeho zodpovednej osoby listom na adresu prevádzkovateľa, e-mailom na <a href="mailto:zodpovedna.osoba@mirri.gov.sk" class="text-my-blue underline">zodpovedna.osoba@mirri.gov.sk</a> 
       alebo osobne na podateľni prevádzkovateľa.
       </p>
 
@@ -195,7 +195,7 @@ const SuboryCookies = () => {
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       Poskytovanie nevyhnutných osobných údajov je zákonnou požiadavkou: vyplýva zo zákonnej povinnosti prevádzkovateľa 
       podľa § 109 ods. 8 zákona č. 452/2021 Z. z. o elektronických komunikáciách v znení neskorších predpisov. 
-      V prípade neposkytnutia nevyhnutných osobných údajov nie je možné prehliadať webovú stránku <a href="https://idsk.gov.sk/">idsk.gov.sk</a>.
+      V prípade neposkytnutia nevyhnutných osobných údajov nie je možné prehliadať webovú stránku <a href="https://idsk.gov.sk/" class="text-my-blue underline">idsk.gov.sk</a>.
       </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
@@ -205,8 +205,8 @@ const SuboryCookies = () => {
       Ak sa dotknutá osoba domnieva, že pri spracúvaní osobných údajov boli porušené jej práva, má právo podať návrh na začatie konania 
       o ochrane osobných údajov <b>Úradu na ochranu osobných údajov SR</b> v súlade s ustanoveniami zákona č. 18/2018 Z. z. o ochrane osobných údajov 
       a o zmene a doplnení niektorých zákonov v znení neskorších predpisov: 
-      <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/">
-      Návrh na začatie konania o ochrane osobných údajov</a>.      
+      <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/" class="text-my-blue underline">
+       Návrh na začatie konania o ochrane osobných údajov</a>.      
       </p>
       </main>
     </div>

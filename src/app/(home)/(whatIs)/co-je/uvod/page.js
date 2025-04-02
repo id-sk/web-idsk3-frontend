@@ -66,8 +66,8 @@ const UvodPage = () => {
         sú:
       </p>
       <ul className="list-disc list-inside ml-4 text-custom-19">
-        <li>responzívne - teda správne sa zobrazujú na rôznych veľkostiach obrazoviek;</li>
-        <li>prístupné - sú použiteľné pre skupiny používateľov so zníženou motorickou alebo zrakovou schopnosťou;</li>
+        <li>responzívne - teda správne sa zobrazujú na rôznych veľkostiach obrazoviek,</li>
+        <li>prístupné - sú použiteľné pre skupiny používateľov so zníženou motorickou alebo zrakovou schopnosťou,</li>
         <li> použiteľné - implementujú základné heuristiky <span lang="en">(best practice)</span>použiteľnosti.</li>
       </ul>
       <p className="mt-8 text-custom-19 tracking-wide leading-7 text-black max-md:mr-1 max-md:max-w-full">
