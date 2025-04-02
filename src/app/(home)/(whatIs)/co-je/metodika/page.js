@@ -179,7 +179,7 @@ const MetodikaPage = () => {
                 Report testovania prístupnosti
             </h3>
             <p className="text-custom-19 leading-7 tracking-wide mb-4">
-                Report musí deklarovať splnenie požiadaviek podľa štandardu WCAG 2.0 AA a podľa výnosu Ministerstva financií Slovenskej republiky č. 55/2014 Z. z. o štandardoch pre informačné systémy verejnej správy.
+            Report deklaruje splnenie požiadaviek podľa štandardu prístupnosti a funkčnosti webových sídiel a mobilných aplikácií podľa vyhlášky Úradu podpredsedu vlády Slovenskej republiky pre investície a informatizáciu č. 78/2020 Z. z. o štandardoch pre informačné technológie verejnej správy.
             </p>
         </main>
      </div>
