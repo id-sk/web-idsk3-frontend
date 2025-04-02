@@ -17,10 +17,10 @@ const MetodikaPage = () => {
                 Na dodržanie user-centered prístupu je nutné rozdeliť prípravnú fázu projektu do 4 fáz:
             </p>
             <ol className='text-custom-19 leading-7 tracking-wide mb-4'>
-                <li>1. Úvodná analýza a výskum zákazníckych skupín.</li>
-                <li>2. Návrh navigácie, prototypu a testovanie.</li>
-                <li>3. <span lang="en">Benchmarking</span> používateľského rozhrania.</li>
-                <li>4. Optimalizácia používateľského rozhrania.</li>
+                <li>1. úvodná analýza a výskum zákazníckych skupín,</li>
+                <li>2. návrh navigácie, prototypu a testovanie,</li>
+                <li>3. <span lang="en">benchmarking</span> používateľského rozhrania,</li>
+                <li>4. optimalizácia používateľského rozhrania.</li>
             </ol>
             <h2 className="mt-8 mb-4">
                 Úvodná analýza a výskum zákazníckych skupín
@@ -41,14 +41,14 @@ const MetodikaPage = () => {
             <span lang="en">Benchmarking</span> používateľského rozhrania
             </h2>
             <p className="text-custom-19 leading-7 tracking-wide mb-8">
-                Pred uvedením systému do plnej prevádzky musí byť systém otestovaný sumatívnym testovaním použiteľnosti s účasťou všetkých relevantných skupín. Počas testovania budú zdokumentované metriky použiteľnosti (čas úlohy, chybovosť úlohy, efektivita úlohy, SUS skóre) pre kľúčové prípady použitia. Zároveň bude vykonané testovanie prístupnosti systému zohľadňujúce štandardy pre prístupnosť webu WCAG 2.0 AA- Web Content Accessibility Guidelines 2.0.
+                Pred uvedením systému do plnej prevádzky musí byť systém otestovaný sumatívnym testovaním použiteľnosti s účasťou všetkých relevantných skupín. Počas testovania budú zdokumentované metriky použiteľnosti (čas úlohy, chybovosť úlohy, efektivita úlohy, SUS skóre) pre kľúčové prípady použitia. Zároveň bude vykonané testovanie prístupnosti systému zohľadňujúce štandardy prístupnosti a funkčnosti webových sídiel a mobilných aplikácií podľa vyhlášky Úradu podpredsedu vlády Slovenskej republiky pre investície a informatizáciu č. 78/2020 Z. z. o štandardoch pre informačné technológie verejnej správy.
             </p>
             <p className="text-custom-19 leading-7 tracking-wide">
                 Používateľské rozhranie by malo spĺňať nasledovné kritéria:
             </p>
             <ul className='text-custom-19 leading-7 list-disc list-inside tracking-wide mb-4'>
-                <li>namerané SUS skóre je vyššie ako 50 bodov;</li>
-                <li>miera dokončenia kľúčových úloh je vyššia ako 80%;</li>
+                <li>namerané SUS skóre je vyššie ako 50 bodov,</li>
+                <li>miera dokončenia kľúčových úloh je vyššia ako 80%,</li>
                 <li>chybovosť kľúčových úloh je nižšia ako 40%.</li>
             </ul>
             <h2 className="mt-8 mb-4">
@@ -70,10 +70,10 @@ const MetodikaPage = () => {
                 Report zákazníckeho výskumuje  dokument, ktorý hĺbkovo analyzuje poznatky zozbierané kvalitatívnym výskumom (rozhovormi so zákazníkmi). Vyhodnocuje sa ním priorita potrieb budúcich používateľov, ich motivácie na používanie produktu, problémy, s ktorými sa aktuálne stretávajú a definuje ich znalostný kapitál. Pozostáva z častí:
             </p>
             <ul className='text-custom-19 leading-7 tracking-wide list-disc list-inside mb-4'>
-                <li>Metóda výskumu poznatkov</li>
-                <li>Kľúčové požiadavky zákazníkov na prínos systému</li>
-                <li>Zákaznícke cesty (customer journeys) (nie je nutné)</li>
-                <li>Zákaznícke persóny (nie je nutné)</li>
+                <li>Metóda výskumu poznatkov,</li>
+                <li>Kľúčové požiadavky zákazníkov na prínos systému,</li>
+                <li>Zákaznícke cesty (customer journeys) (nie je nutné),</li>
+                <li>Zákaznícke persóny (nie je nutné).</li>
             </ul>
             <h4 className="mt-8">
                 Metóda výskumu poznatkov
@@ -82,11 +82,11 @@ const MetodikaPage = () => {
                 Táto časť obsahuje:
             </p>
             <ul className='text-custom-19 leading-7 tracking-wide list-disc list-inside mb-4'>
-                <li>Použitú metodológiu</li>
-                <li>Scenár výskumu</li>
-                <li>Screener – zoznam špecifických kľúčových charakteristí slovených používateľov pre daný výskum</li>
-                <li>Priebeh oslovovania a naplnenie screeneru</li>
-                <li>Dátum vykonania výskumu</li>
+                <li>Použitú metodológiu,</li>
+                <li>Scenár výskumu,</li>
+                <li>Screener – zoznam špecifických kľúčových charakteristí slovených používateľov pre daný výskum,</li>
+                <li>Priebeh oslovovania a naplnenie screeneru,</li>
+                <li>Dátum vykonania výskumu.</li>
             </ul>
             <h4 className="mt-8">
                 Kľúčové požiadavky zákazníkov na prínos systému
@@ -95,10 +95,10 @@ const MetodikaPage = () => {
                 Táto časť pozostáva z:
             </p>
             <ul className='text-custom-19 leading-7 tracking-wide list-disc list-inside mb-4'>
-                <li>Opisu kľúčovej požiadavky</li>
-                <li>Rácio požiadavky opisujúcej poznatky z výskumu</li>
-                <li>Návrhu spôsobu validácie požiadavky kvantitatívnym výskumom</li>
-                <li>Konkrétnych návrhovriešení požiadavky v používateľskom rozhraní a ich prioritizáci</li>
+                <li>Opisu kľúčovej požiadavky,</li>
+                <li>Rácio požiadavky opisujúcej poznatky z výskumu,</li>
+                <li>Návrhu spôsobu validácie požiadavky kvantitatívnym výskumom,</li>
+                <li>Konkrétnych návrhovriešení požiadavky v používateľskom rozhraní a ich prioritizáci.</li>
             </ul>
             <h4 className="mt-8">
                 Zákaznícke cesty (customer journeys)
@@ -172,7 +172,7 @@ const MetodikaPage = () => {
                 <li>scenár testovania,</li>
                 <li>screener – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
                 <li>priebeh oslovovania a naplnenie screeneru,</li>
-                <li>dátum vykonania výskumu</li>
+                <li>dátum vykonania výskumu,</li>
                 <li>popis metodiky testovania.</li>
             </ul>
             <h3 className="mt-8">
