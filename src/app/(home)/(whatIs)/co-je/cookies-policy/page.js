@@ -51,7 +51,8 @@ const SuboryCookies = () => {
       </p>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         <b>Ministerstvo spracúva nasledujúce nevyhnutné cookies</b><br/>
-        <b>NÁZOV COOKIES:</b>&emsp;TS#<br/>
+
+          <b>NÁZOV COOKIES:</b>&emsp;TS#<br/>
         <b>DOBA UCHOVÁVANIA:</b>&emsp;Po skončení relácie (zavretí webovej stránky) sa neuchováva.<br/>
         <b>ÚČEL SPRACÚVANIA:</b>&emsp;Zvyšuje bezpečnosť webovej stránky. Je to tiež relačný súbor cookies.
       </p>

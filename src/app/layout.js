@@ -4,7 +4,7 @@ import '../styles/index.css'
 
 export const metadata = {
   title: "IDSK v3",
-  description: "ID-SK Frontend",
+  description: "IDSK Frontend",
 };
 
 export default function RootLayout({ children }) {

@@ -19,7 +19,7 @@ const FooterResp = () => {
               {/*<p className="mt-5 leading-6 max-md:max-w-full">Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies. <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline">Viac informácií o spracovaní súborov cookies</a>.</p>*/}
               <a href="https://idsk.gov.sk" className="mt-5 text-xl max-md:max-w-full">
                 <span className="text-base tracking-wide leading-6 text-black">Vytvorené v súlade s </span>
-                <span className="text-base tracking-wide leading-7 text-black underline"> ID-SK.</span>
+                <span className="text-base tracking-wide leading-7 text-black underline"> IDSK.</span>
               </a>
             </div>
           </div>

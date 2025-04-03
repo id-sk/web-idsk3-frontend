@@ -56,7 +56,7 @@ const FooterPage = () => {
                 <li>1. Hyperlinkové odkazy sú štrukturované do stĺpcov s min. 2 a max. 6 odkazmi na stĺpec.</li>
                 <li>2. Každý stĺpec by mal mať vlastný nadpis, ktorý zrozumiteľne a vecne zastreší linky v danom stĺpci.</li>
                 <li>3. Stĺpce nemusia obsahovať rovnaký počet linkov.</li>
-                <li>4. Štrukturujte navigáciu podľa platných ID-SK pravidiel rozloženia obsahu (tzv. grid)
+                <li>4. Štrukturujte navigáciu podľa platných IDSK pravidiel rozloženia obsahu (tzv. grid)
                     použite rozloženie stránky na tretiny alebo štvrtiny (nepoužívajte iné formy rozloženia).</li>
                 <li>5. Stĺpce s navigáciou môžete štrukturovať aj do niekoľkých riadkov, ak je to užitočné pre
                     naplnenie potrieb vašich používateľov.</li>
