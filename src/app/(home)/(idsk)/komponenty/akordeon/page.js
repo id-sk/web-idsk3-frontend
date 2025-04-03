@@ -16,7 +16,7 @@ const Accordion = () => {
                 Komponent Akordeón sa využíva v prípade potreby zobraziť prehľad sekcií alebo skryť prehľad sekcií súvisiaceho obsahu. Je vhodný najmä pre používateľov, ktorí potrebujú vykonávať podobné úlohy z jedného miesta. Akordeón je ideálne použiť pre jednoduchý obsah a odkazy.
             </p>
             <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/header/'}>
+                <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
                 <Card  
                 title="Kód komponentu"
                 content="HTML verzia na prevzatie"

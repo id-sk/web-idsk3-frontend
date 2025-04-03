@@ -22,8 +22,7 @@ const DeveloperPage = () => {
             <main id="main-content" role="main">
 
       <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pre použitie IDSK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
-
+                Pre použitie ID-SK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="text-my-blue underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
             </p>
             <PrimaryButton
                 label="GitHub knižnica IDSK"
@@ -42,8 +41,7 @@ const DeveloperPage = () => {
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
 
-                Odporúčame nainštalovať si IDSK Frontend zo správcu balíčkov platformy <a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="underline">Node (NPM)</a>.
-
+                Odporúčame nainštalovať si ID-SK Frontend zo správcu balíčkov platformy <a href="https://www.npmjs.com/package/@id-sk/frontend?activeTab=versions" className="text-my-blue underline">Node (NPM)</a>.
             </p>
             <h3 className="mb-4">
                 Ako postupovať pri inštalácii
@@ -56,7 +54,7 @@ const DeveloperPage = () => {
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
 
-                Môžete si tiež stiahnuť <a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist" className="underline">skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajnového systému IDSK.
+                Môžete si tiež stiahnuť <a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist" className="text-my-blue underline">skompilované a minifikované prvky (CSS, Javascript)</a> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
 
             </p>
             <h3 className="mb-4">
@@ -86,8 +84,8 @@ const DeveloperPage = () => {
             </p>
             <ul className='text-custom-19 tracking-wide leading-7 list-disc list-inside mb-4'>
 
-                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/%40id-sk" className="underline">CSS a JS</a></li>
-                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/assets" className="underline">Assety</a></li>
+                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/%40id-sk" className="text-my-blue underline">CSS a JS</a></li>
+                <li><a href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/assets" className="text-my-blue underline">Assety</a></li>
 
             </ul>
             <h2 className="idsk-subtitle my-4">2. Zahrňte zdroje</h2>

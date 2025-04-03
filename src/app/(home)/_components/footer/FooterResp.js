@@ -12,11 +12,11 @@ const FooterResp = () => {
           <div className="flex flex-col w-[73%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow text-base tracking-wide leading-7 text-black max-md:mt-10 max-md:max-w-full">
               <div className="flex gap-5 max-md:flex-wrap">
-                <a href="https://idsk2.gov.sk/ochrana-osobnych-udajov" className="underline">Ochrana osobných údajov</a>
+                <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline">Viac informácií o spracovaní súborov cookies</a>
                 <a href="mailto:idsk@mirri.gov.sk" className="underline">Kontakt na prevádzkovateľa</a>
               </div>
-              <p className="mt-5 leading-6 max-md:max-w-full">Prevádzkovateľom služby je <a href="https://mirri.gov.sk" className="underline">Ministerstvo investícií, regionálneho rozvoja a informatizácie SR</a>.</p>
-              <p className="mt-5 leading-6 max-md:max-w-full">Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies. <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline">Viac informácií o spracovaní súborov cookies</a>.</p>
+              <p className="mt-5 leading-6 max-md:max-w-full">Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.</p>
+              {/*<p className="mt-5 leading-6 max-md:max-w-full">Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies. <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline">Viac informácií o spracovaní súborov cookies</a>.</p>*/}
               <a href="https://idsk.gov.sk" className="mt-5 text-xl max-md:max-w-full">
                 <span className="text-base tracking-wide leading-6 text-black">Vytvorené v súlade s </span>
                 <span className="text-base tracking-wide leading-7 text-black underline"> IDSK.</span>
