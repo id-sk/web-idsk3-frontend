@@ -47,14 +47,14 @@ const SuboryCookies = () => {
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         Z pohľadu GDPR sú niektoré cookies zároveň považované za osobné údaje. Cookies sú osobnými údajmi vtedy, ak je na základe cookies možné identifikovať Vás ako konkrétnu osobu.
-        <b>Ministerstvo aktuálne spracúva len nevyhnutné cookies.</b>
+        <strong>Ministerstvo aktuálne spracúva len nevyhnutné cookies.</strong>
       </p>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        <b>Ministerstvo spracúva nasledujúce nevyhnutné cookies</b><br/>
+        <strong>Ministerstvo spracúva nasledujúce nevyhnutné cookies</strong><br/>
 
-          <b>NÁZOV COOKIES:</b>&emsp;TS#<br/>
-        <b>DOBA UCHOVÁVANIA:</b>&emsp;Po skončení relácie (zavretí webovej stránky) sa neuchováva.<br/>
-        <b>ÚČEL SPRACÚVANIA:</b>&emsp;Zvyšuje bezpečnosť webovej stránky. Je to tiež relačný súbor cookies.
+          <strong>NÁZOV COOKIES:</strong>&emsp;TS#<br/>
+        <strong>DOBA UCHOVÁVANIA:</strong>&emsp;Po skončení relácie (zavretí webovej stránky) sa neuchováva.<br/>
+        <strong>ÚČEL SPRACÚVANIA:</strong>&emsp;Zvyšuje bezpečnosť webovej stránky. Je to tiež relačný súbor cookies.
       </p>
       
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
@@ -89,15 +89,9 @@ const SuboryCookies = () => {
         9.	Právny základ spracúvania
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Právnym základom pre spracúvanie <b>nevyhnutných cookies</b> je zákonná povinnosť prevádzkovateľa v zmysle 
-        čl. 6 ods. 1 písm. c) GDPR: <i>„spracúvanie je nevyhnutné na splnenie zákonnej povinnosti prevádzkovateľa“</i>.
+        Právnym základom pre spracúvanie nevyhnutných cookies je <strong>zákonná povinnosť prevádzkovateľa</strong> v zmysle 
+        čl. 6 ods. 1 písm. c) GDPR: <em>„spracúvanie je nevyhnutné na splnenie zákonnej povinnosti prevádzkovateľa“</em>.
         Zákonná povinnosť vyplýva ministerstvu zo zákona č. 452/2021 Z. z. o elektronických komunikáciách v znení neskorších predpisov.
-      </p>
-      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Právnym základom pre spracúvanie analytických, preferenčných a marketingových cookies je <b>súhlas dotknutej osoby</b> 
-        v zmysle čl. 6 ods. 1 písm. a) GDPR: <i>„dotknutá osoba vyjadrila súhlas so spracúvaním svojich osobných údajov 
-        na jeden alebo viaceré konkrétne účely“</i>. Dotknutá osoba má právo kedykoľvek svoj súhlas odvolať, pričom jej 
-        osobné údaje budú v tomto prípade vymazané a nebude možné ich naďalej využívať.
       </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
@@ -147,14 +141,14 @@ const SuboryCookies = () => {
       16.	Osobné údaje
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-      Osobné údaj <b>nebudú použité</b> na automatizované individuálne rozhodovanie vrátane profilovania.
+      Osobné údaj <strong>nebudú použité</strong> na automatizované individuálne rozhodovanie vrátane profilovania.
       </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       17.	Práva dotknutej osoby
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-      V súlade s čl. 15 až 22 GDPR je dotknutá osoba oprávnená prostredníctvom žiadosti si uplatniť nasledovné <b>práva dotknutej osoby:</b>
+      V súlade s čl. 15 až 22 GDPR je dotknutá osoba oprávnená prostredníctvom žiadosti si uplatniť nasledovné <strong>práva dotknutej osoby:</strong>
       <ul className="list-disc list-inside ml-4 text-custom-19">
         <li>právo na potvrdenie o spracúvaní osobných údajov,</li>
         <li>právo na získanie prístupu k osobným údajom, vrátane relevantných informácií týkajúcich sa ich spracúvania,</li>
@@ -200,7 +194,7 @@ const SuboryCookies = () => {
       </h2>
       <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
       Ak sa dotknutá osoba domnieva, že pri spracúvaní osobných údajov boli porušené jej práva, má právo podať návrh na začatie konania 
-      o ochrane osobných údajov <b>Úradu na ochranu osobných údajov SR</b> v súlade s ustanoveniami zákona č. 18/2018 Z. z. o ochrane osobných údajov 
+      o ochrane osobných údajov <strong>Úradu na ochranu osobných údajov SR</strong> v súlade s ustanoveniami zákona č. 18/2018 Z. z. o ochrane osobných údajov 
       a o zmene a doplnení niektorých zákonov v znení neskorších predpisov: 
       <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/" class="text-my-blue underline"> Návrh na začatie konania o ochrane osobných údajov</a>.      
       </p>
