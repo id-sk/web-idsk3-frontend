@@ -93,12 +93,6 @@ const SuboryCookies = () => {
         čl. 6 ods. 1 písm. c) GDPR: <i>„spracúvanie je nevyhnutné na splnenie zákonnej povinnosti prevádzkovateľa“</i>.
         Zákonná povinnosť vyplýva ministerstvu zo zákona č. 452/2021 Z. z. o elektronických komunikáciách v znení neskorších predpisov.
       </p>
-      <p className="mt-8 text-custom-19 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Právnym základom pre spracúvanie analytických, preferenčných a marketingových cookies je <b>súhlas dotknutej osoby</b> 
-        v zmysle čl. 6 ods. 1 písm. a) GDPR: <i>„dotknutá osoba vyjadrila súhlas so spracúvaním svojich osobných údajov 
-        na jeden alebo viaceré konkrétne účely“</i>. Dotknutá osoba má právo kedykoľvek svoj súhlas odvolať, pričom jej 
-        osobné údaje budú v tomto prípade vymazané a nebude možné ich naďalej využívať.
-      </p>
 
       <h2 className="mt-8 text-4xl tracking-wide text-black max-md:mr-1 max-md:max-w-full">
         10.	Sprostredkovateľ, ktorý spracúva osobné údaje v mene prevádzkovateľa
