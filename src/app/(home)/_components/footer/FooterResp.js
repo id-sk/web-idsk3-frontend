@@ -11,12 +11,12 @@ const FooterResp = () => {
         <div className="flex gap-5 max-md:flex-col max-md:gap-0">
           <div className="flex flex-col w-[73%] max-md:ml-0 max-md:w-full">
             <div className="flex flex-col grow text-base tracking-wide leading-7 text-black max-md:mt-10 max-md:max-w-full">
+              <p className="mt-5 leading-6 max-md:max-w-full">Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.</p>
               <div className="flex gap-5 max-md:flex-wrap">
                 <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline">Informácie o spracúvaní súborov cookies</a>
                 <a href="mailto:idsk@mirri.gov.sk" className="underline">Kontakt na prevádzkovateľa</a>
               </div>
               <p className="mt-5 leading-6 max-md:max-w-full">Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.</p>
-              <p className="mt-5 leading-6 max-md:max-w-full">Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.</p>
               <a href="https://idsk.gov.sk" className="mt-5 text-xl max-md:max-w-full">
                 <span className="text-base tracking-wide leading-6 text-black">Vytvorené v súlade s </span>
                 <span className="text-base tracking-wide leading-7 text-black underline"> IDSK.</span>
