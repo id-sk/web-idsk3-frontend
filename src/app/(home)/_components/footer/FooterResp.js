@@ -19,7 +19,7 @@ const FooterResp = () => {
               <p className="mt-4 max-md:max-w-full">Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.</p>
               <a href="https://idsk.gov.sk" className="mt-4 text-xl max-md:max-w-full">
                 <span className="text-base tracking-wide text-black">Vytvorené v súlade s </span>
-                <span className="text-base tracking-wide text-black underline"> IDSK.</span>
+                <span className="text-base tracking-wide text-black underline"> Jednotným dizajnovým manuálom IDSK.</span>
               </a>
             </div>
           </div>
