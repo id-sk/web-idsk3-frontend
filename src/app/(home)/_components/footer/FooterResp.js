@@ -17,10 +17,12 @@ const FooterResp = () => {
                 <a href="mailto:idsk@mirri.gov.sk" className="underline">Kontakt na prevádzkovateľa</a>
               </div>
               <p className="mt-4 max-md:max-w-full">Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.</p>
-              <a href="https://idsk.gov.sk" className="mt-4 text-xl max-md:max-w-full">
-                <span className="text-base tracking-wide text-black">Vytvorené v súlade s </span>
-                <span className="text-base tracking-wide text-black underline"> Jednotným dizajnovým manuálom IDSK.</span>
-              </a>
+              <p className="mt-4 max-md:max-w-full">Vytvorené v súlade s <a href="https://idsk.gov.sk" className="underline"> Jednotným dizajnovým manuálom IDSK.</a></p>
+    
+    // <span className="text-base tracking-wide text-black">Vytvorené v súlade s </span>
+    // <span className="text-base tracking-wide text-black underline"> Jednotným dizajnovým manuálom IDSK.</span>
+    // <a href="https://idsk.gov.sk" className="mt-4 text-xl max-md:max-w-full">  </a>
+    
             </div>
           </div>
         </div>
