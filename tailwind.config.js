@@ -9,7 +9,14 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
+    container: {
+      center: true,
+      padding: '1rem',
+    },
     extend: {
+      maxWidth: {
+        '1440': '1440px',
+      },
       lineHeight: { 
         'custom-14': '14px', // This is the default, equivalent to 28px in most base font sizes
         'custom-28': '28px',
