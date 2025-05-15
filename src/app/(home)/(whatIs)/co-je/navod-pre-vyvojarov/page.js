@@ -22,7 +22,7 @@ const DeveloperPage = () => {
             <main id="main-content" role="main">
 
       <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pre použitie ID-SK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="text-my-blue underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
+                Pre použitie IDSK vo vašom projekte môžete využiť <a href="https://github.com/id-sk/idsk3-frontend" className="text-my-blue underline">repozitár dostupný na GitHub-e</a>. V repozitári nájdete sadu komponentov používateľského rozhrania pre webové sídlo, elektronickú službu a webovú aplikáciu.
             </p>
             <PrimaryButton
                 label="GitHub knižnica IDSK"
