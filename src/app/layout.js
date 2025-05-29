@@ -3,7 +3,7 @@ import '../styles/index.css'
 
 
 export const metadata = {
-  title: "IDSK v3",
+  title: "IDSK 3",
   description: "IDSK Frontend",
 };
 
