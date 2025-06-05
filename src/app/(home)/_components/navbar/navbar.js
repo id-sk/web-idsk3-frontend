@@ -174,7 +174,7 @@ const Navbar = ({ sidebarData }) => {
       <div className='flex flex-wrap items-center'>
         <Search pageDetails={pageRoutes} />
         <PrimaryButton
-          label="IDSK 2.0"
+          label="ID-SK 2"
           onClick={handleClick}
           className='mr-2 large-screen-only'
         />
