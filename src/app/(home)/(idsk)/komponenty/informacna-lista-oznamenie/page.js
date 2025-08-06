@@ -16,7 +16,7 @@ const InfobarPage = () => {
                 Informačná lišta slúži na oboznámenie alebo upozornenie použivateľa o nových informáciach v ramci používateľského rozhrania. Umiestnenie informačnej lište je zväčšia v hornej časti obsahu najmä kvôli vizuálne priorite. Oznámenie zvyčajne slúži na zobrazenie permanentnej informácie pre používateľa.
             </p>
             <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
+                <Link href={'https://komponenty.idsk3.gov.sk/components/notification-banner'}>
                 <Card  
                 title="Kód komponentu"
                 content="HTML verzia na prevzatie"

@@ -17,6 +17,14 @@ const NavigationBarPage = () => {
         Jeho účelom je prehľadne usporiadať pre používateľa odkazy na súvisiaci obsah, ktorý je rozmiestnený na rôznych, samostatných podstránkach.
         Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
       </p>
+            <div className="ml-2 mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/signpost'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
       <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie horizontálenho rázcestníka </h2>
       <p className="mt-5 text-custom-19 tracking-wide leading-7 max-md:max-w-full">
         Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
