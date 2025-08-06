@@ -17,7 +17,7 @@ const RadioPage = () => {
                 Používateľ prepína medzi stavmi kliknutím na prepínacie pole. Pri navrhovaní prepínacieho poľa by sa mala zabezpečiť
                 jeho jasná viditeľnosť a ľahká klikateľnosť.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/radios/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>

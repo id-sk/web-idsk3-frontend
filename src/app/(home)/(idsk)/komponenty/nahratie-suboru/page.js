@@ -13,6 +13,14 @@ const TextUploadPage = () => {
             <p className="idsk-subtitle mb-16">
                 Pole pre nahratie súboru je interaktívny prvok, ktorý umožňuje používateľovi nahrať súbor na webové sídlo. Umožňuje používateľom nahrať súbory, ako sú napríklad obrázky, dokumenty. Okrem tlačidla pre nahratie súboru môže byť vhodné pridať aj textové popisy alebo iné prvky na vysvetlenie, ktoré typy súborov môžu byť nahrané resp na vysvetlenie postupu nahrávania súborov.
             </p>
+            <div className="mb-10">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/file-upload'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie poľa pre nahratie súboru
             </h2>

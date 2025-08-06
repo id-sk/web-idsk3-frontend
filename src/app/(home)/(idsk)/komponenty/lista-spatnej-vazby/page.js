@@ -16,7 +16,7 @@ const BackBarPage = () => {
                 Lišta spätnej väzby sa umiestňuje bezprostredne nad komponent päta. Základným cieľom lišty spätnej väzby je
                 zistiť od používateľov užitočnosť a relevantnosť publikovaného obsahu na webovom sídle.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/feedback-bar/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>

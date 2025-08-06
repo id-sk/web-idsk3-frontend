@@ -15,7 +15,7 @@ const CardPage = () => {
             <p className="idsk-subtitle mb-16">
                 Primárna funkcia komponentu kartička je vizuálna reprezentácia obsahu článkov alebo podstránok. Prvky, ako sú text a obrázky, by mali byť na kartičke umiestnené spôsobom, ktorý jasne naznačuje ich hierarchiu.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/card/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>

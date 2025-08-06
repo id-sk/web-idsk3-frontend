@@ -15,7 +15,7 @@ const BreadcrumbPage = () => {
             <p className="idsk-subtitle mb-16">
                 Omrviková navigácia je spôsob, ako používateľom umožniť rýchle a jednoduché navigovanie v rámci webovej stránky alebo aplikácie. Ide o typ navigácie, ktorý ukazuje používateľom aktuálnu polohu v hierarchii stránok a umožňuje im rýchlo sa vrátiť na predchádzajúce úrovne.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/breadcrumbs/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>

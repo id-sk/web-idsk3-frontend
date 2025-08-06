@@ -16,7 +16,7 @@ const FooterPage = () => {
                 Všetky stránky musia používať štandardizovanú pätičku. Pätička môže ale nemusí obsahovať štrukturované,
                 hyperlinkové odkazy na dôležitý obsah. Základnou variáciou je pätička bez sekundárdnej navigácie.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/footer/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>
