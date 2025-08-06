@@ -9,7 +9,7 @@ export const pageRoutes = [
     },
     {
         "name": "Hlavička - webové aplikácie",
-        "link": "/komponenty/hlavicka-webove-aplikacie"
+        "link": "/komponenty/hlavicka-elektronicke-sluzby"
     },
     {
         "name": "Hlavička - webové sídla",

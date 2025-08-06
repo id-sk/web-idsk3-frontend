@@ -13,6 +13,14 @@ const ButtonPage = () => {
             <p className="idsk-subtitle mb-16">
             Textové tlačidlo slúži na akcie s najnižšou prioritou v rámci používateľského rozhrania. Komponent je použitý zvyčajne spolu s primárnym alebo sekundárnym tlačidlom. Je navrhnutý tak aby bol ľahko viditeľný aj pre ľudí so zrakovým obmedzením.
             </p>
+            <div className="ml-2 mb-16">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/button/vo-forme-textu/preview'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
             Použitie textových tlačidiel 
             </h2>
