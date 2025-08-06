@@ -9,12 +9,12 @@ import React from 'react';
 const HeaderAppPage = () => {
     return (
         <div className="component-page">
-            <title>Hlavička webové aplikacie</title>
+            <title>Hlavička pre elektronické služby</title>
             <h1 className="my-8">
-                Hlavička - webové aplikácie
+                Hlavička - elektronické služby
             </h1>
             <p className="idsk-subtitle mb-16">
-                Hlavička pre webové aplikácie (elektronické služby) podporuje jednotný vizuálny zážitok používateľa naprieč rozhraniami ekosystému štátu. Využíva sa iba pre rozhrania, ktoré vyžadujú autentifikáciu používateľa, ako
+                Hlavička pre elektronické služby podporuje jednotný vizuálny zážitok používateľa naprieč rozhraniami ekosystému štátu. Využíva sa iba pre rozhrania, ktoré vyžadujú autentifikáciu používateľa, ako
                 sú elektronické služby, portály služieb a osobné zóny.
             </p>
             <div className="ml-2 mb-16">

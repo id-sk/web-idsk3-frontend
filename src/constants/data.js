@@ -12,7 +12,7 @@ export const baseData = [
 
 export const componentsData = [
   { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.svg", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
-  { href: "komponenty/hlavicka-webove-aplikacie", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
+  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
   { href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
   { href: "/komponenty/chyby-validacie", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Chyby a validácie", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
   /* { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner - oznámenie", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""}, */

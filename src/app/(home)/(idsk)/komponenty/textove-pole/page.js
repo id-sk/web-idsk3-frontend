@@ -17,7 +17,7 @@ const TextInputPage = () => {
                 s cieľom dodať im žiadanú informáciu alebo službu. Pre správne pochopenie vyžadovaného údaju
                 je potrebné zrozumiteľne popísať názov textového poľa. Základným pravidlom použitia je oboznámiť používateľa o povinnosti vyplnenia textového poľa.
             </p>
-            <div className="mb-10">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/input'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>
