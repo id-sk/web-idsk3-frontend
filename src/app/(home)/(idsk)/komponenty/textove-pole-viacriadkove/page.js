@@ -13,6 +13,14 @@ const TextInputPage = () => {
             <p className="idsk-subtitle mb-16">
                 Viacriadkové textové pole je interaktívny prvok v grafickom dizajne, ktorý umožňuje používateľovi zadať viacero riadkov textu. Na rozdiel od jednoriadkového textového poľa, ktoré umožňuje zadať iba jeden riadok textu, viacriadkové textové pole dáva možnosť používateľom zadať dlhšie texty.
             </p>
+            <div className="mb-10">
+                <Link href={'https://komponenty.idsk3.gov.sk/components/textarea/'}>
+                    <ArticleCard>
+                        <h4>Kód komponentu</h4>
+                        <p className="my-1">HTML verzia na prevzatie</p>
+                    </ArticleCard>
+                </Link>
+            </div>
             <h2 className="mb-4">
                 Použitie viacriadkového textového poľa
             </h2>
