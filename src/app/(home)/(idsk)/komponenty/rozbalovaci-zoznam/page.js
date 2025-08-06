@@ -16,7 +16,7 @@ const DropdownPage = () => {
                 Komponent rozbaľovací zoznam sa zobrazuje po kliku na dátové rozbaľovacie pole alebo tlačidlo
                 s rozbaľovacou ikonou vpravo. Poskytuje zoznam akcií alebo možností, ktoré je možné použiť.
             </p>
-            <div className="mb-16">
+            <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/dropdown/'}>
                     <ArticleCard>
                         <h4>Kód komponentu</h4>
