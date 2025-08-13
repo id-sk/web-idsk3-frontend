@@ -1,7 +1,7 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
-import Image from 'next/image'
+import Card from '@/app/(home)/_components/article/article';
+import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
@@ -13,15 +13,11 @@ const BackBarPage = () => {
                 Lišta spätnej väzby
             </h1>
             <p className="idsk-subtitle mb-16">
-                Lišta spätnej väzby sa umiestňuje bezprostredne nad komponent päta. Základným cieľom lišty spätnej väzby je
-                zistiť od používateľov užitočnosť a relevantnosť publikovaného obsahu na webovom sídle.
+                Lišta spätnej väzby sa umiestňuje bezprostredne nad komponent päta. Základným cieľom lišty spätnej väzby je zistiť od používateľov užitočnosť a relevantnosť publikovaného obsahu na webovom sídle.
             </p>
             <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/feedback-bar/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
                 </Link>
             </div>
             <h2 className="mb-4">

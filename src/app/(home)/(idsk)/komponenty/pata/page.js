@@ -1,6 +1,6 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
+import Card from '@/app/(home)/_components/article/article';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react';
@@ -13,23 +13,18 @@ const FooterPage = () => {
                 Päta
             </h1>
             <p className="idsk-subtitle mb-16">
-                Všetky stránky musia používať štandardizovanú pätičku. Pätička môže ale nemusí obsahovať štrukturované,
-                hyperlinkové odkazy na dôležitý obsah. Základnou variáciou je pätička bez sekundárdnej navigácie.
+                Všetky stránky musia používať štandardizovanú pätu. Päta obsahuje štrukturované hypertextové odkazy na dôležitý obsah. Základnou variáciou je päta bez sekundárdnej navigácie.
             </p>
             <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/footer/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
                 </Link>
             </div>
             <h2 className="mb-4">
                 Použitie päty
             </h2>
             <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pätička sa primárne využíva pre webové sídla a je umiestnená stále na konci stránky, roluje sa spoločne
-                s obsahom. Komponent obsahuje textové informácie o prevádzkovateľovi webovej stránky a textové odkazy na:
+                Päta sa primárne využíva pre webové sídla a je umiestnená stále na konci stránky, roluje sa spoločne s obsahom. Komponent obsahuje textové informácie o prevádzkovateľovi webovej stránky a textové odkazy na:
             </p>
             <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
                 <li>1. vyhlásenie o prístupnosti</li>

@@ -1,7 +1,6 @@
 'use client'
 
 import Card from '@/app/(home)/_components/article/article';
-import { ArticleCard } from '@eslovensko/idsk-react';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
