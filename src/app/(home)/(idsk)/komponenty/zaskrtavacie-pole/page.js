@@ -1,6 +1,6 @@
 'use client'
 
-import { ArticleCard } from '@eslovensko/idsk-react';
+import Card from '@/app/(home)/_components/article/article';
 import Image from 'next/image'
 import Link from 'next/link';
 import React from 'react';
@@ -18,10 +18,7 @@ const CheckboxPage = () => {
             </p>
             <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/checkboxes/'}>
-                    <ArticleCard>
-                        <h4>Kód komponentu</h4>
-                        <p className="my-1">HTML verzia na prevzatie</p>
-                    </ArticleCard>
+                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
                 </Link>
             </div>
             <h2 className="mb-4">

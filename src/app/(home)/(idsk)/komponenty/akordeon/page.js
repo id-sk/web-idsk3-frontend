@@ -17,10 +17,7 @@ const Accordion = () => {
             </p>
             <div className="ml-2 mb-16">
                 <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
-                <Card  
-                title="Kód komponentu"
-                content="HTML verzia na prevzatie"
-                 />
+            <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
                 </Link>
             </div>
             <h2 className="mb-4">
