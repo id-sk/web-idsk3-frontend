@@ -9,7 +9,7 @@ const DesignersPage = () => {
 
     const handleClick = () => {
 
-        router.push('https://www.figma.com/community/file/1400036861459768308/idsk-3');
+        router.push('https://www.figma.com/community/file/1581301778555425083');
 
     };
 
@@ -31,7 +31,7 @@ const DesignersPage = () => {
                 onClick={handleClick}
                 className='my-4 ml-1'
             />
-            <iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://embed.figma.com/file/1400036861459768308/hf_embed?community_viewer=true&embed_host=fastma&fuid=1308358878849558762&kind=file&viewer=1" allowFullScreen title='Figma pre dizajnérov'>
+            <iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://embed.figma.com/community/file/1581301778555425083?embed_host=share&viewer=1&zoom=0.49" allowFullScreen title='Figma pre dizajnérov'>
             </iframe>
         </div>
     );

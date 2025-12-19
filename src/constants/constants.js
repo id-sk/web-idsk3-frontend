@@ -23,10 +23,10 @@ export const pageRoutes = [
         "name": "Informačná lišta oznámenie",
         "link": "/komponenty/informacna-lista-oznamenie"
     }, */
-    {
+    /*{
         "name": "Informačná lišta upozornenie",
         "link": "/komponenty/informacna-lista-upozornenie"
-    },
+    },*/
     {
         "name": "Kartička",
         "link": "/komponenty/karticka"
