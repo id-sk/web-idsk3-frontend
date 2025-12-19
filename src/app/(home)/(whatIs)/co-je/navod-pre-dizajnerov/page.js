@@ -34,7 +34,6 @@ const DesignersPage = () => {
       <iframe
         style={{
           border: '1px solid rgba(0,0,0,0.1)',
-          transform: 'scale(0.49)',
           transformOrigin: 'top left',
         }}
         width={800}
