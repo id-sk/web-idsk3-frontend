@@ -31,16 +31,20 @@ const DesignersPage = () => {
         className="my-4 ml-1"
       />
 
-      <iframe
-        style={{
-          border: '1px solid rgba(0,0,0,0.1)',
-          transformOrigin: 'top left',
-        }}
-        width={800}
-        height={450}
-        src="https://embed.figma.com/design/8zCidJGMqcU5Kdmd94BoEL/IDSK-3.1.0?node-id=5012-6464&embed-host=share"
-        allowFullScreen
-      />
+      <div style={{ position: 'relative', width: '100%', paddingTop: '56.25%' }}>
+        <iframe
+            src="https://embed.figma.com/design/8zCidJGMqcU5Kdmd94BoEL/IDSK-3.1.0?node-id=5012-6464&embed-host=share"
+            style={{
+            border: '1px solid rgba(0,0,0,0.1)',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            }}
+            allowFullScreen
+        />
+</div>
     </div>
   );
 };
