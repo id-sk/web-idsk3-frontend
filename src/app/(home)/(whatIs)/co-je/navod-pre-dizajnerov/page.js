@@ -1,8 +1,7 @@
-'use client'
+'use client';
 
+import Head from 'next/head';
 import { PrimaryButton } from '@eslovensko/idsk-react';
-import { useRouter } from "next/navigation";
-
 
 const DesignersPage = () => {
     const router = useRouter();
@@ -34,7 +33,8 @@ const DesignersPage = () => {
             <iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://embed.figma.com/design/8zCidJGMqcU5Kdmd94BoEL/IDSK-3.1.0?node-id=5012-6464&embed-host=share" allowFullScreen title='Figma pre dizajnérov'>
             </iframe>
         </div>
-    );
-}
+    </div>
+  );
+};
 
 export default DesignersPage;
