@@ -48,15 +48,35 @@ export default function HomePage() {
                 <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
                   <div className="flex flex-col max-md:mt-2.5 max-md:max-w-full">
                     <h1 className="text-5xl font-black text-black leading-[55px] max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
-                      Manuál pre tvorbu elektronických služieb a webových sídiel štátu
+                      Dizajnový systém elektronických služieb a webových sídel 
                     </h1>
                     <p className="mt-7 text-2xl tracking-normal leading-9 text-neutral-950 max-md:max-w-full">
-                      Manuál, ktorý má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní elektronických služieb na Slovensku.
+                      Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3.0.0. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
                     </p>
-                    <Link href="/co-je">
-                      <button className="justify-center hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md">
-                        Začnite s IDSK
-                      </button>
+                    <Link 
+                      href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      /* PRIDANÉ: inline-flex, items-center a gap-2 */
+                      className="inline-flex items-center justify-center gap-2 hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md"
+                    >
+                      <span className="underline">Figma IDSK 3.1.0</span>
+                      
+                      {/* IKONKA EXTERNAL LINK */}
+                      <svg 
+                        className="w-6 h-6 shrink-0" 
+                        fill="none" 
+                        stroke="currentColor" 
+                        viewBox="0 0 24 24" 
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path 
+                          strokeLinecap="round" 
+                          strokeLinejoin="round" 
+                          strokeWidth={2} 
+                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                        />
+                      </svg>
                     </Link>
                   </div>
                 </div>

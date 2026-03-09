@@ -31,7 +31,7 @@ const DesignersPage = () => {
                 onClick={handleClick}
                 className='my-4 ml-1'
             />
-            <iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://embed.figma.com/design/8zCidJGMqcU5Kdmd94BoEL/IDSK-3.1.0?node-id=5012-6464&embed-host=share" allowFullScreen title='Figma pre dizajnérov'>
+            <iframe style={{ border: '1px solid rgba(0, 0, 0, 0.1)' }} width="800" height="450" src="https://embed.figma.com/file/1581301778555425083/hf_embed?community_viewer=true&embed_host=fastma&fuid=1567875285555985583&kind=file&page-selector=0&viewer=1" allowFullScreen title='Figma pre dizajnérov'>
             </iframe>
         </div>
     );
