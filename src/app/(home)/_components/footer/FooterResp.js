@@ -21,6 +21,9 @@ const FooterResp = () => {
             <a href="mailto:idsk@mirri.gov.sk" className="underline hover:text-blue-600">
               Kontakt na prevádzkovateľa
             </a>
+            <a href="https://idsk2.gov.sk/" className="underline hover:text-blue-600">
+              IDSK2
+            </a>
           </div>
           <p className="mt-4">
             Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.
