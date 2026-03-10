@@ -103,7 +103,7 @@ const Navbar = ({ sidebarData }) => {
       }
       logo={
         <a href="/">
-          <div className="flex gap-5 justify-between w-full max-w-[1120px] max-md:flex-wrap max-md:max-w-full">
+          <div className="flex gap-5 justify-between w-full">
             <header className="font-source-sans-pro flex gap-4 self-start font-bold text-blue-900 items-center">
               <Image
                 src="/images/logotyp.svg"
@@ -173,11 +173,6 @@ const Navbar = ({ sidebarData }) => {
     >
       <div className='flex flex-wrap items-center'>
         <Search pageDetails={pageRoutes} />
-        <PrimaryButton
-          label="ID-SK 2"
-          onClick={handleClick}
-          className='mr-2 large-screen-only'
-        />
       </div>
     </HeaderContainer>
   );
