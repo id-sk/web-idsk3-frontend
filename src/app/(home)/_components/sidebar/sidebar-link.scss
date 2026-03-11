@@ -1,33 +1,31 @@
 .sidebar-link {
     display: block;
-    padding: 8px; /* Corresponds to p-2 */
-    border-radius: 8px; /* Corresponds to rounded */
-    font-size: 1rem; /* Corresponds to text-sm */
+    /* Zmenili sme padding, aby bol naľavo 0 */
+    padding: 8px 0; 
+    border-radius: 8px; 
+    font-size: 1rem; 
   
     &:hover {
-      background-color: #FFF; /* Corresponds to hover:bg-gray-100 */
+      background-color: #F3F4F6; /* Mierne stmavený hover pre lepšiu viditeľnosť (Tailwind gray-100) */
     }
   
     &.active {
-      color: #0B4199; /* Corresponds to text-black */
-      font-weight: 600; /* Corresponds to font-semibold */
+      color: #0B4199; 
+      font-weight: 600; 
     }
   
     &:not(.active) {
-      color: #000000; /* Corresponds to text-gray-500 */
+      color: #000000; 
     }
-
   }
-
-  /* Hide the component by default */
-.aside-container {
-  display: none;
-}
-
-/* Use a media query to show the component on larger screens */
-@media (min-width: 1120px) { /* This corresponds to the 'lg' breakpoint in Tailwind */
+  
   .aside-container {
-      display: flex;
-      flex-direction: column;
+    display: none;
   }
-}
+  
+  @media (min-width: 1120px) { 
+    .aside-container {
+        display: flex;
+        flex-direction: column;
+    }
+  }

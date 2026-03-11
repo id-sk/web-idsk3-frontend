@@ -12,6 +12,9 @@
   .idsk-page-layout__heading__title-gray {
     @apply mb-6 before:-z-10 before:absolute before:h-[300%] before:w-[200vw] before:-translate-x-1/2 before:bg-neutral-90 before:bottom-0;
   }
+  .page-container {
+    @apply w-full max-w-[1120px] mx-auto px-4 md:px-8;
+  }
   #secondary-navigation span,
   #secondary-navigation-dropdown a {
     @apply lowercase;

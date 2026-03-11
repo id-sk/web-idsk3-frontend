@@ -163,3 +163,14 @@ div.idsk-header-container__menu {
         margin-left: 0 !important;
     }
 }
+
+/* ==========================================================================
+   7. FIX PRE SEARCH TLAČIDLO (Aby nebolo sivé ani keď je disabled)
+   ========================================================================== */
+div.idsk-header-container .search .idsk-searchbar__button,
+div.idsk-header-container .search .idsk-searchbar__button:disabled {
+    background-color: #126DFF !important; /* Primárna IDSK modrá */
+    color: white !important;
+    pointer-events: none !important; /* Zachovanie pôvodného správania */
+    opacity: 1 !important;
+}
