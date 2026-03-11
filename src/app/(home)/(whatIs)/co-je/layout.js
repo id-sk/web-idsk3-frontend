@@ -9,7 +9,7 @@ import { idskRoutes } from "@/constants/constants.js";
 const WhatIsLayout = ({ children }) => {
   return (
     // Zarovnanie rovnako ako pri ostatných stránkach na max. 1120px do stredu
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 h-full">
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 lg:px-4 h-full">
       
       <Sidebar data={idskRoutes} />
       

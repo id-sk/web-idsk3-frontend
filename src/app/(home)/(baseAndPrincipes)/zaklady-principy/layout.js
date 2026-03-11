@@ -9,7 +9,7 @@ import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons
 const BaseLayout = ({ children }) => {
   return (
     // Keďže hlavička a päta sú už v RootLayoute, tu riešime len stred (Sidebar + Obsah)
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 h-full">
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 lg:px-4 h-full">
       
       <Sidebar data={basicRoutes} />
       

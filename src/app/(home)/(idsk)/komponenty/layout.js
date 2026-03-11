@@ -11,7 +11,7 @@ const IdskLayout = ({ children }) => {
   return (
     // Odstránený Navbar, Footer a SkipLink (tie sú už v RootLayout).
     // Obalený rovnako ako BaseLayout, aby to lícovalo na 1120px.
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 h-full">
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 lg:px-4 h-full">
       
       <Sidebar data={pageRoutes} />
       

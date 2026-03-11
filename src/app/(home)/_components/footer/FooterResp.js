@@ -7,7 +7,7 @@ const FooterResp = () => {
       {/* 1. OBAL PÄTY: Drží len 100% šírku, pozadie a horný border. Žiadny flex! */}
       
       {/* 2. OBSAHOVÝ KONTAJNER: Tu je tých max 1120px, centrovanie (mx-auto) a Flexbox */}
-      <div className="flex justify-between items-end w-full max-w-[1120px] mx-auto py-12 px-4 max-md:flex-col max-md:items-start max-md:gap-8">
+      <div className="flex justify-between items-end w-full max-w-[1120px] mx-auto py-12 px-4 sm:px-8 lg:px-4 max-md:flex-col max-md:items-start max-md:gap-8">
         
         {/* ĽAVÁ ČASŤ: Texty */}
         <div className="flex flex-col w-[73%] max-md:w-full">
