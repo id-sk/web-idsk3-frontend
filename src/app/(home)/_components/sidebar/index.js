@@ -3,13 +3,13 @@
 import { Wrapper } from "./wrapper";
 import SidebarLink from "./sidebar-link.js";
 
-
 const Sidebar = ({ data }) => {
   return (
     <Wrapper>
       <aside className="h-full flex flex-col pb-8 sticky overflow-y-auto">
         <nav>
-          <ul role="list" aria-live="polite" className="text-black pr-2 pt-2">
+          {/* PRIDANÉ ml-0 a pl-0, aby sme vynulovali to globálne 8px odsadenie! */}
+          <ul role="list" aria-live="polite" className="text-black pr-2 pt-2 ml-0 pl-0">
             {data.map((item) => (
               <li key={item.name}>
                 <SidebarLink href={item.link}>
@@ -20,7 +20,8 @@ const Sidebar = ({ data }) => {
           </ul>
         </nav>
       </aside>
-    </Wrapper>);
+    </Wrapper>
+  );
 }
 
 export default Sidebar;
