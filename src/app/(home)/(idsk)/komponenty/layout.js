@@ -9,13 +9,13 @@ import { scrollToTop } from "@/utils/scroll.js";
 
 const IdskLayout = ({ children }) => {
   return (
-    // Odstránený Navbar, Footer a SkipLink (tie sú už v RootLayout).
-    // Obalený rovnako ako BaseLayout, aby to lícovalo na 1120px.
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 lg:px-4 h-full">
+    // 1. OPRAVA OKRAJOV: Zmenené lg:px-4 na min-[1160px]:px-4
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4 h-full">
       
       <Sidebar data={pageRoutes} />
       
-      <main id="main-content" className="flex-1 pl-0 lg:pl-15 py-8 overflow-hidden">
+      {/* 2. OPRAVA DIERY: Odsadenie obsahu naskočí presne na 1120px spolu so Sidebarom */}
+      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8 overflow-hidden">
         <div className="relative h-auto overflow-auto">
           {children} 
         </div>

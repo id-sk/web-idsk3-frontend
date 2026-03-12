@@ -17,10 +17,12 @@ function ImageCard({ href, src, title, description, alt }) {
           alt={alt || title}
           className="w-full aspect-[1.5] object-cover"
         />
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">
+        {/* ZMENŠENÝ NADPIS KARTIČKY */}
+        <h3 className="mt-5 text-xl md:text-lg lg:text-xl font-bold tracking-wide leading-8 text-my-blue underline">
           {title}
         </h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-3">
+        {/* ZMENŠENÝ POPIS KARTIČKY na text-base (štandardný text) */}
+        <p className="mt-2.5 text-base tracking-wide leading-7 text-black line-clamp-3">
           {description}
         </p>
       </div>
@@ -34,16 +36,17 @@ const BasePage = () => {
       <title>Základy a princípy</title>
       
       <header>
-        <h1 className="text-5xl font-black text-black leading-[55px] max-md:text-4xl">
+        {/* ZMENŠENÝ HLAVNÝ NADPIS */}
+        <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px]">
           Základy a princípy
         </h1>
       </header>
       
-      <p className="mt-8 w-full text-xl tracking-wide leading-7">
+      {/* ZMENŠENÝ INTRO TEXT na text-base pre mobil a text-lg pre desktop */}
+      <p className="mt-8 w-full text-base md:text-lg tracking-wide leading-7 md:leading-8">
         Základné prvky vizuálnej identity pre vytvorenie konzistentného a účinného dizajnu elektronických služieb a webových sídiel.
       </p>
       
-      {/* Nahradený zbytočne zložitý Flex za jednoduchý CSS Grid */}
       <section className="mt-10 w-full">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-5">
           {baseData.slice(0, 3).map((card, index) => (

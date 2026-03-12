@@ -17,10 +17,12 @@ function ImageCard({ href, src, title, description, alt }) {
           alt={alt || title}
           className="w-full aspect-[1.5] object-cover"
         />
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">
+        {/* ZMENŠENÝ NADPIS KARTIČKY z text-2xl */}
+        <h3 className="mt-5 text-xl md:text-lg lg:text-xl font-bold tracking-wide leading-8 text-my-blue underline">
           {title}
         </h3>
-        <p className="mt-2.5 text-custom-19 tracking-wide leading-7 text-black line-clamp-3">
+        {/* ZMENŠENÝ POPIS KARTIČKY na text-base namiesto text-custom-19 */}
+        <p className="mt-2.5 text-base tracking-wide leading-7 text-black line-clamp-3">
           {description}
         </p>
       </div>
@@ -30,26 +32,23 @@ function ImageCard({ href, src, title, description, alt }) {
 
 const IdskPage = () => {
   return (
-    // Tento div drží tvoj text a grid pokope. Ak chceš aby sa to roztiahlo viac, môžeš zmeniť max-w-[850px]
+    // Tento div drží tvoj text a grid pokope.
     <div className="flex flex-col my-8 max-w-[850px]">
       <title>Zoznam komponentov</title>
       
       <header>
-        <h1 className="text-5xl font-black text-black leading-[55px] max-md:text-4xl">
+        {/* ZMENŠENÝ HLAVNÝ NADPIS z text-5xl */}
+        <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px]">
           Zoznam Komponentov
         </h1>
       </header>
       
-      <p className="mt-8 text-2xl tracking-normal leading-9 text-black">
+      {/* ZMENŠENÝ INTRO TEXT na text-base pre mobil a text-lg pre desktop (predtým text-2xl) */}
+      <p className="mt-8 text-base md:text-lg tracking-wide leading-7 md:leading-8 text-black">
         Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.
       </p>
       
-      {/* TUTO JE TA MÁGIA: 
-        Jedna jediná sekcia, ktorá má Grid.
-        grid-cols-1 pre mobily (pod sebou).
-        md:grid-cols-2 pre tablety.
-        lg:grid-cols-3 pre desktop (3 vedľa seba).
-      */}
+      {/* Sekcia s Gridom zostáva perfektná */}
       <section className="mt-10 w-full">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {componentsData.map((card, index) => (

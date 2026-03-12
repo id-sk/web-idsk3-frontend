@@ -8,12 +8,13 @@ import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons
 
 const BaseLayout = ({ children }) => {
   return (
-    // Keďže hlavička a päta sú už v RootLayoute, tu riešime len stred (Sidebar + Obsah)
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 lg:px-4 h-full">
+    // 1. OPRAVA: Zmenené lg:px-4 na min-[1160px]:px-4 (Lícuje s hlavičkou)
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4 h-full">
       
       <Sidebar data={basicRoutes} />
       
-      <main id="main-content" className="flex-1 pl-0 lg:pl-15 py-8 overflow-hidden">
+      {/* 2. OPRAVA: Padding sa ukáže až pri 1120px, čiže presne vtedy, keď naskočí Sidebar! */}
+      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8 overflow-hidden">
         <div className="relative h-auto overflow-auto">
           {children}
         </div>

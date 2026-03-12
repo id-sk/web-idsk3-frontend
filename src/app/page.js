@@ -4,7 +4,7 @@ import { homePageData } from "@/constants/data";
 import Image from 'next/image';
 import Link from "next/link";
 
-// Tu je vrátený tvoj originálny komponent ImageCard
+// 1. OPRAVA: Zmenšili sme fonty v ImageCard
 function ImageCard({ href, src, title, description, alt }) {
   return (
     <Link href={href ?? "#"} className="flex w-full">
@@ -19,8 +19,12 @@ function ImageCard({ href, src, title, description, alt }) {
             className="w-full aspect-[1.5] object-cover"
           />
         </figure>
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-5">
+        {/* Nadpis kartičky: zmenšený na text-xl, a pre stredné obrazovky na text-lg */}
+        <h3 className="mt-5 text-xl md:text-lg lg:text-xl font-bold tracking-wide leading-8 text-my-blue underline">
+            {title}
+        </h3>
+        {/* Popis kartičky: zmenšený z text-xl na klasickú veľkosť text-base */}
+        <p className="mt-2.5 text-base tracking-wide leading-7 text-black line-clamp-5">
           {description}
         </p>
       </article>
@@ -31,27 +35,26 @@ function ImageCard({ href, src, title, description, alt }) {
 export default function HomePage() {
   return (
     <>
-      {/* 1. Hero sekcia (Plná šírka s šedým pozadím) */}
       <section className="w-full bg-zinc-100 pt-16 pb-20">
         <div className="page-container flex max-md:flex-col gap-5">
           
           <div className="flex flex-col w-[67%] max-md:w-full">
-            <h1 className="text-5xl font-black text-black leading-[55px] max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
+            {/* 2. OPRAVA: Nadpis H1 bol príliš veľký. Na mobile bude text-3xl, od tabletu text-4xl */}
+            <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
               Dizajnový systém elektronických služieb a webových sídel 
             </h1>
-            <p className="mt-7 text-2xl tracking-normal leading-9 text-neutral-950 max-md:max-w-full">
+            {/* 3. OPRAVA: Odstavec bol text-2xl! Zmenené na text-base (mobil) a text-lg (desktop) */}
+            <p className="mt-7 text-base md:text-lg tracking-normal leading-8 text-neutral-950 max-md:max-w-full">
               Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3.0.0. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
             </p>
             <Link 
               href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
               target="_blank" 
               rel="noopener noreferrer"
-              /* PRIDANÉ: inline-flex, items-center a gap-2 */
               className="inline-flex items-center justify-center gap-2 hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md"
             >
               <span className="underline">Figma IDSK 3.1.0</span>
               
-              {/* IKONKA EXTERNAL LINK */}
               <svg 
                 className="w-6 h-6 shrink-0" 
                 fill="none" 
@@ -82,7 +85,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 2. Sekcia s kartičkami (Centrovaná na max-width vďaka triede page-container) */}
       <section className="page-container py-12">
         <div className="flex gap-5 max-md:flex-col mb-5">
           {homePageData.slice(0, 3).map((card, index) => (

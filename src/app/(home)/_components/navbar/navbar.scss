@@ -1,30 +1,21 @@
 $max-width: 1120px;
 
 /* ==========================================================================
-   1. SEKUNDÁRNA NAVIGÁCIA (Modrý pás úplne hore + Slovenčina)
+   1. GLOBÁLNE NASTAVENIA A RESET (Aplikuje sa všade)
    ========================================================================== */
-div.idsk-secondary-navigation__header {
+div.idsk-secondary-navigation__header,
+div.idsk-header-container,
+div.idsk-header-container__menu {
     max-width: $max-width !important;
     margin-left: auto !important;
     margin-right: auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
+}
+
+div.idsk-secondary-navigation__header {
     position: relative !important; 
 }
 
-div.idsk-secondary-navigation__dropdown {
-    right: 1rem !important; 
-}
-
-/* ==========================================================================
-   2. HLAVNÝ HEADER (Desktop)
-   ========================================================================== */
 div.idsk-header-container {
-    max-width: $max-width !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 1rem !important;
-    padding-right: 1rem !important;
     display: flex !important;
     flex-direction: row !important; 
     flex-wrap: nowrap !important;   
@@ -32,50 +23,154 @@ div.idsk-header-container {
     align-items: center !important;
     height: auto !important;
     min-height: 6.25rem !important;
-    gap: 1rem !important; 
+}
+
+div.idsk-header-container__menu nav.idsk-navigation {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
 }
 
 /* ==========================================================================
-   3. MOBILNÉ ROZLOŽENIE: Logo -> Search -> Menu (Pod 768px)
+   2. FÁZA: DESKTOP (Všetko nad 1160px)
    ========================================================================== */
-@media (max-width: 768px) {
+@media (min-width: 1160px) {
+    div.idsk-secondary-navigation__header,
     div.idsk-header-container {
-        gap: 0.75rem !important; /* Mierne zmenšenie medzier */
+        padding-left: 1rem !important; /* LÍCUJE s naším 1120px stredovým layoutom */
+        padding-right: 1rem !important;
+    }
+    div.idsk-header-container__menu {
+        padding-left: 0.5rem;
+    }
+    div.idsk-secondary-navigation__dropdown {
+        right: 1rem !important; 
+    }
+    div.idsk-header-container {
+        gap: 1rem !important;
+    }
+}
+
+/* ==========================================================================
+   3. FÁZA: TABLET A STREDNÝ DESKTOP (641px až 1159px)
+   ========================================================================== */
+@media (min-width: 641px) and (max-width: 1159px) {
+    div.idsk-secondary-navigation__header,
+    div.idsk-header-container {
+        padding-left: 2rem !important; 
+        padding-right: 2rem !important;
+    }
+    div.idsk-header-container__menu {
+        padding-left: 1.5rem;
+    }
+    div.idsk-secondary-navigation__dropdown {
+        right: 2rem !important; 
+    }
+    div.idsk-header-container {
+        gap: 2rem !important;
+    }
+    
+    /* Vynútenie desktopového menu a skrytie hamburgera */
+    div.idsk-header-container__menu {
+        display: flex !important;
+    }
+    div.idsk-header-container__menu--mobile {
+        display: none !important;
     }
 
-    /* A. Logo - Zostane úplne vľavo */
+    /* Obal navigácie */
+    div.idsk-header-container__menu nav.idsk-navigation {
+        flex-direction: row !important;
+        align-items: center !important;
+        padding-left: 0 !important; 
+        padding-right: 0 !important;
+    }
+
+    /* ======= OPRAVA ŠTÝLOV LINIEK (Simulácia desktopu) ======= */
+    
+    /* 1. Zrušenie 100% mobilnej šírky a tenkých čiar (0.063rem) */
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link {
+        width: auto !important;
+        border-top-width: 4px !important;    /* Desktopový štandard */
+        border-bottom-width: 1px !important; /* Desktopový štandard */
+        border-color: transparent !important; /* Štandardne priesvitné */
+    }
+
+    /* 2. Vrátenie správneho desktop paddingu pre texty odkazov */
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link > a {
+        padding: 1.25rem 0.625rem !important;
+    }
+
+    /* 3. Aktívny stav (clicked) - presne ako na desktope nad 1120px */
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked {
+        border-bottom-color: rgb(11, 65, 153) !important; /* Modrá hrubá čiara naspodku */
+    }
+    
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked > a {
+        color: rgb(11, 65, 153) !important; /* Modrý text */
+        font-weight: 700 !important;
+    }
+
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked > a:hover {
+        text-decoration: none !important;
+    }
+
+    /* Skrytie mobilných špecifík (napr. text Menu alebo šípky) */
+    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__label {
+        display: none !important;
+    }
+}
+
+/* ==========================================================================
+   4. FÁZA: MOBIL (Všetko do 768px - IDSK tu zapína hamburger)
+   ========================================================================== */
+@media (max-width: 640px) {
+    /* Okraje a medzery */
+    div.idsk-secondary-navigation__header,
+    div.idsk-header-container,
+    div.idsk-header-container__menu {
+        padding-left: 1rem !important; /* VRÁTENIE na 16px, aby to nevošlo do loga */
+        padding-right: 1rem !important;
+    }
+    div.idsk-secondary-navigation__dropdown {
+        right: 1rem !important; 
+    }
+    div.idsk-header-container {
+        gap: 0.75rem !important; 
+    }
+
+    /* Usporiadanie do jedného riadku */
     div.idsk-header-container > a {
         order: 1 !important;
         flex: 0 0 auto !important; 
     }
 
-    /* B. Search blok - Roztiahne sa v strede a odtlačí menu doprava */
+    /* Roztiahnutý vyhľadávací panel v strede */
     div.idsk-header-container > div:not(.idsk-header-container__menu--mobile):not(.idsk-secondary-navigation) {
         order: 2 !important;
-        flex: 1 1 auto !important; /* Dovolí mu zobrať všetok voľný priestor v strede */
-        min-width: 0 !important;   /* ZÁCHRANA PRED PRETEKANÍM: Dovolí Searchu zmrštiť sa */
-        margin-right: auto !important; /* Odtlačí menu na pravý okraj */
+        flex: 1 1 auto !important; 
+        min-width: 0 !important;  
+        margin-right: auto !important; 
         display: flex !important;
-        justify-content: right !important;
+        justify-content: flex-end !important;
     }
 
-    /* Input vo vnútri rešpektuje veľkosť rodiča */
-    div.idsk-header-container .idsk-searchbar__wrapper {
-        width: 100% !important;
-    }
+    div.idsk-header-container .idsk-searchbar__wrapper,
     div.idsk-header-container .idsk-searchbar {
         width: 100% !important;
-        min-width: 50px !important; /* Dovolí inputu maximálne sa scvrknúť */
+    }
+    
+    div.idsk-header-container .idsk-searchbar {
+        min-width: 50px !important; 
     }
 
-    /* C. Mobilné menu - Úplne vpravo */
+    /* Hamburger menu úplne vpravo */
     div.idsk-header-container__menu--mobile {
         order: 3 !important;
         flex: 0 0 auto !important;
         padding: 0 !important; 
         display: flex !important;
-        justify-content: flex-end !important; /* Zarovnanie doprava */
-        margin-left: 1rem;
+        justify-content: flex-end !important; 
+        margin-left: 1rem !important; /* Zmenšené z 2rem, aby ho neodtláčalo von */
     }
 
     .menu-button {
@@ -86,48 +181,37 @@ div.idsk-header-container {
 }
 
 /* ==========================================================================
-   4. MOBIL DISPLEJE (< 420px) - Mierne zmenšenie prvkov (Micro-adjustments)
+   5. FÁZA: EXTRÉMNE MALÝ MOBIL (Pod 420px - micro adjustments)
    ========================================================================== */
 @media (max-width: 420px) {
     div.idsk-header-container {
         gap: 0.5rem !important;
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
+        /* Padding zostáva 1rem (dedí sa z max-width: 768px), len zmenšujeme prvky */
     }
 
-    /* 1. Zmenšenie Loga */
     div.idsk-header-container > a img {
-        width: 32px !important; /* Pôvodne 48px */
+        width: 32px !important; 
         height: 32px !important;
     }
+    
     div.idsk-header-container > a h3.dizajn {
-        font-size: 1.1rem !important; /* Menší nadpis */
+        font-size: 1.1rem !important; 
     }
 
-    /* 2. Zmenšenie Search Baru */
-    div.idsk-header-container .idsk-searchbar {
-        height: 2.25rem !important; /* Pôvodne 2.5rem */
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-        font-size: 0.85rem !important;
-    }
-    div.idsk-header-container .idsk-searchbar__button {
-        height: 2.25rem !important;
-        padding-left: 0.5rem !important;
-        padding-right: 0.5rem !important;
-    }
-    div.idsk-header-container .idsk-searchbar__icon--medium {
-        width: 1.15rem !important;
-        height: 1.15rem !important;
-    }
-
-    /* 3. Zmenšenie Menu Tlačidla */
+    div.idsk-header-container .idsk-searchbar,
+    div.idsk-header-container .idsk-searchbar__button,
     .menu-button {
-        height: 2.25rem !important;
+        height: 2.25rem !important; 
         padding-left: 0.5rem !important;
         padding-right: 0.5rem !important;
+    }
+    
+    div.idsk-header-container .idsk-searchbar,
+    .menu-button {
         font-size: 0.85rem !important;
     }
+
+    div.idsk-header-container .idsk-searchbar__icon--medium,
     .menu-button .idsk-menu-button__icon {
         width: 1.15rem !important;
         height: 1.15rem !important;
@@ -135,23 +219,7 @@ div.idsk-header-container {
 }
 
 /* ==========================================================================
-   5. MENU POD LOGOM (Desktop)
-   ========================================================================== */
-div.idsk-header-container__menu {
-    max-width: $max-width !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-    padding-left: 0.4rem !important;
-    padding-right: 0.4rem !important;
-
-    nav.idsk-navigation {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-    }
-}
-
-/* ==========================================================================
-   6. HELPERS
+   6. OSTATNÉ (Helpers a Fixy)
    ========================================================================== */
 .sidebarNavigationLink {
     margin-left: 20px;
@@ -164,13 +232,11 @@ div.idsk-header-container__menu {
     }
 }
 
-/* ==========================================================================
-   7. FIX PRE SEARCH TLAČIDLO (Aby nebolo sivé ani keď je disabled)
-   ========================================================================== */
+/* Fix pre search tlačidlo (IDSK modrá aj keď je disabled) */
 div.idsk-header-container .search .idsk-searchbar__button,
 div.idsk-header-container .search .idsk-searchbar__button:disabled {
-    background-color: #126DFF !important; /* Primárna IDSK modrá */
+    background-color: #126DFF !important; 
     color: white !important;
-    pointer-events: none !important; /* Zachovanie pôvodného správania */
+    pointer-events: none !important; 
     opacity: 1 !important;
 }
