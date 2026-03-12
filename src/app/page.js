@@ -66,8 +66,18 @@ export default function HomePage() {
               href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md"
-            >
+              className="inline-flex items-center justify-center gap-2 self-start 
+                px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white 
+                bg-blue-600 rounded-md transition-all duration-200
+                outline-none
+                hover:shadow-none 
+                hover:ring-[4px] 
+                hover:ring-[#757575]
+                focus-visible:ring-3 
+                focus-visible:ring-[#757575] 
+                focus-visible:ring-offset-2
+              "
+              >
               <span className="underline">Figma IDSK 3.1.0</span>
               
               <svg 

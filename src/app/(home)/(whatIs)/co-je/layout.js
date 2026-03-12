@@ -8,14 +8,13 @@ import { idskRoutes } from "@/constants/constants.js";
 
 const WhatIsLayout = ({ children }) => {
   return (
-    // 1. OPRAVA: Zmenené lg:px-4 na min-[1160px]:px-4 (Lícuje s hlavičkou)
     <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4 h-full">
-      
       <Sidebar data={idskRoutes} />
       
-      {/* 2. OPRAVA: Odsadenie obsahu od Sidebaru naskočí až pri 1120px */}
-      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8 overflow-hidden">
-        <div className="relative h-auto overflow-auto">
+      {/* ODSTRÁNENÉ overflow-hidden */}
+      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8"> 
+        {/* ODSTRÁNENÉ overflow-auto */}
+        <div className="relative h-auto">
           {children}
         </div>
         <TextButton
@@ -25,7 +24,6 @@ const WhatIsLayout = ({ children }) => {
           className="go-up-btn mt-8"
         />
       </main>
-
     </div>
   );
 };

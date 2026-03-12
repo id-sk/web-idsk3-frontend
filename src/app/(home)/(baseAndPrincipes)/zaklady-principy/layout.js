@@ -14,8 +14,8 @@ const BaseLayout = ({ children }) => {
       <Sidebar data={basicRoutes} />
       
       {/* 2. OPRAVA: Padding sa ukáže až pri 1120px, čiže presne vtedy, keď naskočí Sidebar! */}
-      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8 overflow-hidden">
-        <div className="relative h-auto overflow-auto">
+      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8">
+        <div className="relative h-auto">
           {children}
         </div>
         <TextButton

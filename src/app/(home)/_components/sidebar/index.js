@@ -6,12 +6,13 @@ import SidebarLink from "./sidebar-link.js";
 const Sidebar = ({ data }) => {
   return (
     <Wrapper>
-      <aside className="h-full flex flex-col pb-8 sticky overflow-y-auto">
+      {/* 1. Pridané px-4 (alebo aspoň px-2), aby mal focus ring miesto na dýchanie vnútri scrollu */}
+      <aside className="h-full flex flex-col pb-8 sticky overflow-y-auto px-2">
         <nav>
-          {/* PRIDANÉ ml-0 a pl-0, aby sme vynulovali to globálne 8px odsadenie! */}
-          <ul role="list" aria-live="polite" className="text-black pr-2 pt-2 ml-0 pl-0">
+          {/* 2. Odstránené pr-2 (už máme padding na aside) a pridaný p-1 pre istotu */}
+          <ul role="list" aria-live="polite" className="text-black pt-2 ml-0 pl-0 p-1">
             {data.map((item) => (
-              <li key={item.name}>
+              <li key={item.name} className="mb-1"> {/* Pridaný malý odstup medzi riadkami */}
                 <SidebarLink href={item.link}>
                   {item.name}
                 </SidebarLink>

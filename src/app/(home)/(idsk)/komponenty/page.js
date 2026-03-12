@@ -7,58 +7,63 @@ import React from 'react';
 
 function ImageCard({ href, src, title, description, alt }) {
   return (
-    <Link href={href ?? "#"} className="flex w-full h-full">
-      <div className="flex flex-col grow p-5 hover:shadow-lg tracking-wide bg-white rounded-xl border border-solid border-neutral-200">
-        <Image
-          width={100}
-          height={100}
-          quality={100}
-          src={src}
-          alt={alt || title}
-          className="w-full aspect-[1.5] object-cover"
-        />
-        {/* ZMENŠENÝ NADPIS KARTIČKY z text-2xl */}
-        <h3 className="mt-5 text-xl md:text-lg lg:text-xl font-bold tracking-wide leading-8 text-my-blue underline">
-          {title}
-        </h3>
-        {/* ZMENŠENÝ POPIS KARTIČKY na text-base namiesto text-custom-19 */}
-        <p className="mt-2.5 text-base tracking-wide leading-7 text-black line-clamp-3">
-          {description}
-        </p>
-      </div>
+    <Link 
+      href={href ?? "#"} 
+      className="flex w-full h-full group outline-none rounded-2xl"
+    >
+      <article className="
+        relative flex flex-col w-full h-full p-4 sm:p-5 tracking-wide bg-white 
+        rounded-2xl border border-solid border-neutral-200
+        transition-all duration-200
+        /* Výkričníky zabezpečia prebitie IDSK tieňov */
+        group-hover:!shadow-none 
+        group-hover:!ring-[4px] group-hover:!ring-[#757575]
+        hover:z-10
+      ">
+        {/* Kontajner obrázka s overflow-hidden pre scale efekt */}
+        <div className="relative w-full aspect-[3/2] bg-zinc-200 overflow-hidden shrink-0">
+          <Image
+            src={src}
+            alt={alt || title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        </div>
+        
+        <div className="flex flex-col grow mt-4">
+          <h3 className="text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-my-blue underline line-clamp-2">
+            {title}
+          </h3>
+          <p className="mt-2 text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black line-clamp-3">
+            {description}
+          </p>
+        </div>
+      </article>
     </Link>
   );
 }
 
 const IdskPage = () => {
   return (
-    // Tento div drží tvoj text a grid pokope.
-    <div className="flex flex-col my-8 max-w-[850px]">
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
       <title>Zoznam komponentov</title>
       
       <header>
-        {/* ZMENŠENÝ HLAVNÝ NADPIS z text-5xl */}
-        <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px]">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
           Zoznam Komponentov
         </h1>
       </header>
       
-      {/* ZMENŠENÝ INTRO TEXT na text-base pre mobil a text-lg pre desktop (predtým text-2xl) */}
-      <p className="mt-8 text-base md:text-lg tracking-wide leading-7 md:leading-8 text-black">
+      <p className="mt-8 text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black">
         Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.
       </p>
       
-      {/* Sekcia s Gridom zostáva perfektná */}
       <section className="mt-10 w-full">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
           {componentsData.map((card, index) => (
             <ImageCard 
               key={index} 
-              href={card.href} 
-              src={card.src} 
-              title={card.title} 
-              description={card.description} 
-              alt={card.alt} 
+              {...card} 
             />
           ))}
         </div>
