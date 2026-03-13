@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React from 'react';
 
-// 1. Pomocný komponent musí byť definovaný PRED hlavným komponentom
 function ImageCard({ href, src, title, description, alt }) {
   return (
     <Link 
@@ -41,7 +40,7 @@ function ImageCard({ href, src, title, description, alt }) {
   );
 }
 
-// 2. HLAVNÝ KOMPONENT - skontroluj, či máš správne otvorené/zatvorené zátvorky { }
+// 2. HLAVNÝ KOMPONENT
 const WhatIsPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
@@ -69,5 +68,4 @@ const WhatIsPage = () => {
   );
 };
 
-// 3. TOTO JE NAJDÔLEŽITEJŠÍ RIADOK - musí tu byť len raz
 export default WhatIsPage;

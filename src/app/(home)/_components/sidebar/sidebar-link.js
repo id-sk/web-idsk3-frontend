@@ -11,9 +11,9 @@ const SidebarLink = ({ href, children }) => {
   return (
     <Link
       href={href}
-       className={`sidebar-link ${active ? 'active' : ''}`}
+      className={`sidebar-link ${active ? 'active' : ''}`}
     >
-      {children}
+      <span className="sidebar-link-text">{children}</span>
     </Link>
   );
 };

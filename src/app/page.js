@@ -73,9 +73,6 @@ export default function HomePage() {
                 hover:shadow-none 
                 hover:ring-[4px] 
                 hover:ring-[#757575]
-                focus-visible:ring-3 
-                focus-visible:ring-[#757575] 
-                focus-visible:ring-offset-2
               "
               >
               <span className="underline">Figma IDSK 3.1.0</span>

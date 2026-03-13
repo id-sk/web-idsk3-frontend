@@ -4,14 +4,20 @@
     padding: 8px 0; 
     border-radius: 8px; 
     font-size: 1rem; 
+
+    .sidebar-link-text {
+      display: inline-block;
+      padding-left: 12px; // TU nastavuješ odsadenie textu od okraja
+    }
   
     &:hover {
-      background-color: #F3F4F6; /* Mierne stmavený hover pre lepšiu viditeľnosť (Tailwind gray-100) */
+      background-color: #eff5fe; /* Mierne stmavený hover pre lepšiu viditeľnosť (Tailwind gray-100) */
     }
   
     &.active {
       color: #0B4199; 
       font-weight: 600; 
+      background-color:#eff5fe;
     }
   
     &:not(.active) {
@@ -21,6 +27,10 @@
   
   .aside-container {
     display: none;
+  }
+
+  a {
+    padding-left: 5px;
   }
   
   @media (min-width: 1120px) { 
