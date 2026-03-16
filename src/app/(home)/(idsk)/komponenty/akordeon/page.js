@@ -1,10 +1,11 @@
 'use client'
 
 import Card from '@/app/(home)/_components/article/article';
+import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import Image from 'next/image';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { Accordion, TabBar, TabBarLink } from '@eslovensko/idsk-react';
+import { CustomAccordion } from '@/app/(home)/_components/accordion/accordionCustom';
 
 const AccordionPage = () => {
     // 1. Zavedieme stav pre aktívny tab (predvolený je 'pouzitie')
@@ -26,42 +27,37 @@ const AccordionPage = () => {
             <p className="mt-2 text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-10">
                 Akordeón sa používa na zobrazovanie väčšieho množstva obsahu v obmedzenom priestore, ktorý je rozdelený do logických častí (sekcií). Používateľ si môže rozbaliť len tie sekcie, ktoré ho zaujímajú. Umožňuje tak udržať stránku prehľadnú a zabrániť zahlteniu informáciami.
             </p>
-            
 
-            {/* ========================================== */}
-            {/* TAB BAR - Navigácia */}
-            {/* ========================================== */}
-
-            <TabBar className="mb-10 border-b border-neutral-300 gap-4">
-                <TabBarLink 
+            <MyTabBar>
+                <MyTabLink 
                     href="#"
                     selected={activeTab === 'pouzitie'}
                     onClick={(e) => { e.preventDefault(); setActiveTab('pouzitie'); }}
                 >
                     Použitie
-                </TabBarLink>
-                <TabBarLink 
+                </MyTabLink>
+                <MyTabLink 
                     href="#"
                     selected={activeTab === 'varianty'}
                     onClick={(e) => { e.preventDefault(); setActiveTab('varianty'); }}
                 >
                     Varianty a stavy
-                </TabBarLink>
-                <TabBarLink 
+                </MyTabLink>
+                <MyTabLink 
                     href="#"
                     selected={activeTab === 'pristupnost'}
                     onClick={(e) => { e.preventDefault(); setActiveTab('pristupnost'); }}
                 >
                     Prístupnosť
-                </TabBarLink>
-                <TabBarLink 
+                </MyTabLink>
+                <MyTabLink 
                     href="#"
                     selected={activeTab === 'kod'}
                     onClick={(e) => { e.preventDefault(); setActiveTab('kod'); }}
                 >
-                    Kód
-                </TabBarLink>
-            </TabBar>
+                    Implementácia
+                </MyTabLink>
+            </MyTabBar>
 
             {/* ========================================== */}
             {/* OBSAH TABOV - Podmienené vykresľovanie */}
@@ -77,20 +73,20 @@ const AccordionPage = () => {
                         Použitie Akordeónu
                     </h2>
 
-                    <Accordion 
+                    <CustomAccordion 
                         heading={
-                            <span className="text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
                                 Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?
                             </span>
                         } 
                         initiallyClosed={true}
-                        bgGray={true}
-                        className="mb-10 border-b border-neutral-n400"
                     >
-                        <div className="py-4 text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>Nie. Po odoslaní správy (najmä ostrej) nie je možné ju zrušiť alebo upraviť. Odporúča sa preto vždy použiť testovaciu správu pred hromadným odoslaním.</p>
+                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            Consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.</p>
                         </div>
-                    </Accordion>
+                    </CustomAccordion>
+
                     
                     <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                         Nadpis príslušnej lišty by mal byť v primeranej dĺžke, maximálne v 1 riadku a výstižne popisovať to, čo sa v danom akordeóne nachádza. Detailnejšie informácie o tom, čo je umiestené v akordeóne, dodefinujte v popise pod nadpisom. Akordeón najlepšie funguje pre jednoduché texty a odkazy. Nepoužívajte akordeón na obsah, ktorý je dôležitý pre všetkých používateľov. Akordeón sa typicky používa na:
@@ -131,48 +127,81 @@ const AccordionPage = () => {
                     </h2>
                     
                     <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4">
-                         Akordeón je zložený zo sekcií, ktoré je možné rozbaliť/zbaliť individuálne, alebo všetky naraz tlačidlom “Otvoriť/Zavrieť všetky” sekcie. V prípade potreby dlhšieho nadpisu sekcie (viac, ako 10 slov), je možné v hlavičke sekcie použiť popis. Akordeón zároveň obsahuje dva základné stavy, indikujúce jeho interaktivitu pre použitie myšou (hover) i klávesnicou (focus).
+                         Akordeón je zložený zo sekcií, ktoré je možné rozbaliť/zbaliť individuálne, alebo všetky naraz tlačidlom “Otvoriť/Zavrieť všetky” sekcie. V prípade potreby dlhšieho nadpisu sekcie (viac, ako 10 slov), je možné v hlavičke sekcie použiť popis.
                     </p>
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4">
-                        1. Variant akordeónu s popisom/bez popisu:
-                    </p>
-                    
-                    
-                    <div className="relative w-full aspect-[4/1] bg-white rounded-xl overflow-hidden mb-10 border border-neutral-200">
-                        <Image
-                            src="/images/akordeon/variant-popis-bez.png"
-                            fill
-                            className="object-cover p-2 sm:p-4"
-                            alt="zaškrtávacieho poľa s textom/bez textu"
-                        />
-                    </div>
-                    
-                    
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4">
-                        2. Variant akordeónu zatvorený/otvorený:
+                    <p className="text-sm sm:text-base font-bold tracking-wide leading-relaxed sm:leading-7 text-black mb-6">
+                        1. Variant akordeónu bez popisu/s popisom:
                     </p>
                     
-                    <div className="relative w-full aspect-[4/1] bg-white rounded-xl overflow-hidden mb-10 border border-neutral-200">
-                        <Image
-                            src="/images/akordeon/nastavenie-zatvoreny-otvoreny.png"
-                            fill
-                            className="object-cover p-2 sm:p-4"
-                            alt="varianty päty"
-                        />
-                    </div>
+                    
+                    <CustomAccordion 
+                        heading={
+                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                Toto je variant akordeónu bez popisu
+                            </span>
+                        } 
+                        initiallyClosed={true}
+                    >
+                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            </p>
+                        </div>
+                    </CustomAccordion>
 
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4">
-                       3. Stavy akordeónu - zameraný myšou(hover)/zameraný klávesnicou (focus):
+                    <CustomAccordion 
+                        heading={
+                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                Toto je variant akordeónu s popisom
+                            </span>
+                        } 
+                        subTitle="Tu môžete napísať detailnejšie informácie o tom, čo tento akordeón obsahuje."
+                        initiallyClosed={true}
+                    >
+                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+                    </CustomAccordion>
+                    
+
+                    <p className="text-sm sm:text-base font-bold tracking-wide leading-relaxed sm:leading-7 text-black mt-10 mb-1">
+                       2. Stavy akordeónu - zameraný myšou(hover) a zameraný klávesnicou (focus):
+                    </p>
+                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
+                         Akordeón zároveň obsahuje dva základné stavy, indikujúce jeho interaktivitu pre použitie myšou (hover) i klávesnicou (focus).
                     </p>
                     
-                    <div className="relative w-full aspect-[4/1] bg-white rounded-xl overflow-hidden mb-10 border border-neutral-200">
-                        <Image
-                            src="/images/akordeon/nastavenie-zatvoreny-otvoreny.png"
-                            fill
-                            className="object-cover p-2 sm:p-4"
-                            alt="varianty päty"
-                        />
-                    </div>
+                   <CustomAccordion 
+                        className="demo-hover-state" 
+                        heading={
+                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                Akordeón zobrazujúci zameranie myšou
+                            </span>
+                        } 
+                    >
+                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                            <p>Zameranie myšou (hover stav) je kľúčovým prvkom pre vizuálnu indikáciu interaktívneho komponentu. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
+                        </div>
+                    </CustomAccordion>
+
+                    {/* 2. AKORDEÓN: Vynútený FOCUS (oranžový obrys) */}
+                    <CustomAccordion 
+                        className="demo-focus-state" 
+                        heading={
+                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                Akordeón zobrazujúci zameranie klávesnicou
+                            </span>
+                        } 
+                    >
+                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                            <p>Zameranie klávesnicou (focus stav) je kľúčovým prvkom prístupnosti, a to nielen pre vizuálnu indikáciu interaktívneho komponentu pre používateľov klávesnice, ale primárne pre používateľov asistenčných zariadení. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
+                        </div>
+                    </CustomAccordion>
 
                 </div>
             )}
@@ -198,11 +227,27 @@ const AccordionPage = () => {
                         Základné pravidlá prístupnosti komponentu Akordeón                
                     </p>
                     <ul className="list-disc pl-5 text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
-                        <li className="pl-2">všetky interaktívne prvky sú implementované ako tlačidlá button </li>
-                        <li className="pl-2">pridajte atribút aria-expanded (true/false), ktorý označuje či je sekcia rozbalená alebo zbalená</li>
-                        <li className="pl-2">pridajte atribút aria-controls, ktorý prepája tlačidlo s konkrétnym obsahom sekcie (cez ID), vďaka čomu asistenčné technológie vedia, že kliknutím na tlačidlo sa zmení viditeľnosť práve tejto sekcie</li>
-                        <li className="pl-2">pridajte atribút aria-label, ktorý kombinuje názov sekcie, prípadný súhrn a stavovú správu (otvorené/zatvorené) pre asistenčné technológie</li>
-                        <li className="pl-2">obsah musí zostať vždy dostupný aj bez JavaScriptu</li>
+                        <li className="pl-2">
+                            všetky interaktívne prvky sú implementované ako tlačidlá <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">button</code>
+                        </li>
+                        <li className="pl-2">
+                            pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-expanded (true/false)</code>, ktorý označuje či je sekcia rozbalená alebo zbalená
+                        </li>
+                        <li className="pl-2">
+                            pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-controls</code>, ktorý prepája tlačidlo s konkrétnym obsahom sekcie (cez ID), vďaka čomu asistenčné technológie vedia, že kliknutím na tlačidlo sa zmení viditeľnosť práve tejto sekcie
+                        </li>
+                        <li className="pl-2">
+                            pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label</code>, ktorý kombinuje názov sekcie, prípadný súhrn a stavovú správu (otvorené/zatvorené) pre asistenčné technológie
+                        </li>
+                        <li className="pl-2">
+                            obsah musí zostať vždy dostupný aj bez JavaScriptu
+                        </li>
+                        <li className="pl-2">
+                            Nezabudnite ikonu pre asistenčné zariadenia skryť pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code> (<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">svg</code>) alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=""</code> (<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">img</code>)
+                        </li>
+                        <li className="pl-2">
+                            Akordeón musí mať funkčné stavy zameranie myšou a zameranie klávesnicou tak ako to je zobrazené v časti Varianty.
+                        </li>
                     </ul>
 
 
@@ -211,20 +256,192 @@ const AccordionPage = () => {
 
             {/* TAB: KÓD */}
             {activeTab === 'kod' && (
-                <div className="animate-fade-in">
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-black mb-6 leading-tight">
-                        Kód a implementácia
-                    </h2>
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
-                        Technická dokumentácia k implementácii akordeónu v rámci projektu.
+                <div className="space-y-10 text-black">
+    {/* ÚVODNÁ ČASŤ */}
+    <section>
+        <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia akordeónu z ID-SK Frontend</h2>
+        <p className="text-sm sm:text-base leading-relaxed mb-4">
+            Komponenty z knižnice ID-SK Frontend môžete do svojho projektu integrovať dvoma spôsobmi v závislosti od vašej technologickej infraštruktúry:
+        </p>
+        <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base">
+            <li><strong>Statická HTML implementácia</strong> – vhodná pre projekty bez Node.js alebo bundlera.</li>
+            <li><strong>Pokročilá integrácia (NPM + SCSS + JS)</strong> – vhodná pre projekty so správou zdrojov a build procesom.</li>
+        </ul>
+    </section>
+
+    {/* POŽIADAVKY */}
+    <section>
+        <h3 className="text-md sm:text-xl font-bold mb-4">Základné požiadavky</h3>
+        <p className="text-sm sm:text-base leading-relaxed mb-4">Pred začiatkom integrácie sa uistite, že máte:</p>
+        <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base">
+            <li><strong className="font-semibold">Node.js:</strong> verzia 4.2.0 alebo vyššia.</li>
+            <li><strong className="font-semibold">Dart Sass:</strong> verzia 1.0.0 alebo vyššia.</li>
+            <li><strong className="font-semibold">Nunjucks:</strong> verzia 3.0.0 alebo vyššia (ak chcete používať makrá).</li>
+        </ul>
+    </section>
+
+    {/* MOŽNOSŤ 1: HTML */}
+    <section>
+        <h3 className="text-md sm:text-xl font-bold mb-4">Možnosti implementácie</h3>
+        
+        <div className="my-8">
+            <h4 className="text-md sm:text-lg font-bold text-black mb-3">1. Jednoduchá statická integrácia (HTML + minifikované súbory)</h4>
+            <p className="text-sm sm:text-base leading-relaxed mb-4">
+                Ak váš projekt nevyužíva Node.js alebo bundler (napr. Webpack, Vite), môžete použiť hotové buildy. Pri inštalácii z <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">dist</code> sa používajú kompilované a minifikované verzie šablóny so štýlmi. To znamená, že nebudete môcť:
+            </p>
+            <ul className="list-disc pl-5 mb-6 space-y-1 text-sm sm:text-base">
+                <li>selektívne zahrnúť CSS alebo JavaScript pre jednotlivé komponenty</li>
+                <li>zostaviť si vlastné štýly alebo komponenty na základe palety alebo typografických kombinácií</li>
+                <li>prispôsobiť si kód (napríklad prepísať farby alebo povoliť globálne štýly)</li>
+                <li>použiť dynamické komponenty z Nunjucks šablón</li>
+            </ul>
+
+            <div className="space-y-6">
+                {/* Krok: Stiahnutie zdrojov */}
+                <div>
+                    <strong className="block mb-2 text-sm sm:text-base">➜ Stiahnite a zahrňte zdroje</strong>
+                    <p className="text-sm sm:text-base leading-relaxed mb-2">
+                        Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov. Skopírujte celý <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">assets</code> priečinok a minifikované súbory do rootu vášho projektu. Štruktúra by mala vyzerať približne takto:
                     </p>
-                    
-                    <div className="mb-12 w-full sm:w-2/3 md:w-1/2">
-                        <Link href={'https://komponenty.idsk3.gov.sk/components/accordion/'}>
-                            <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
-                        </Link>
+                    <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto w-full max-w-full min-w-0">
+                        <pre className="text-sm font-mono text-gray-100 leading-relaxed whitespace-pre-wrap break-words">
+                            <code>
+{`project/ 
+│ 
+├── assets - images  
+           - fonts 
+├── index.html 
+├── frontend.min.css 
+├── frontend.min.js 
+├── frontend.min.css.map 
+└── frontend.min.js.map`}
+                            </code>
+                        </pre>
                     </div>
                 </div>
+
+                {/* Krok: Prepojenie štýlov */}
+                <div>
+                    <strong className="block mb-2 text-sm sm:text-base">➜ Prepojte štýly</strong>
+                    <p className="text-sm sm:text-base leading-relaxed mb-2">
+                        Do časti <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">head</code> vložte minifikované css. Na záver <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">body</code> pripojte minifikovaný javascript.
+                    </p>
+                    <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto w-full max-w-full min-w-0">
+                        <pre className="text-sm font-mono text-gray-100 leading-relaxed whitespace-pre-wrap break-words">
+                            <code>
+{`<!DOCTYPE html> 
+<html> 
+  <head> 
+    <title>Ukážka</title> 
+    <link rel="stylesheet" href="frontend.min.css"> 
+  </head> 
+  <body> 
+    <script type="module" src="./frontend.min.js"></script> 
+  </body> 
+</html>`}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+
+                {/* Krok: HTML */}
+                <div>
+                    <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
+                    <p className="text-sm sm:text-base leading-relaxed mb-2">
+                        Zo stránky dokumentácie stiahnite HTML kód komponentu Akordeón a vložte ho do svojho HTML. Ak používate čisté HTML, musíte do značky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code>. Tento atribút musí byť unikátny v rámci domény, aby bolo možné udržať stav rozbalenia akordeónu.
+                    </p>
+                    <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto w-full max-w-full min-w-0">
+                        <pre className="text-sm font-mono text-gray-100 leading-relaxed whitespace-pre-wrap break-words">
+                            <code>
+{`<div class="govuk-accordion" data-module="govuk-accordion" id="with-descriptions"> 
+  <div class="govuk-accordion__section"> 
+    <div class="govuk-accordion__section-header "> 
+      <h2 class="govuk-accordion__section-heading"> 
+        <span class="govuk-accordion__section-button" id="with-descriptions-heading-1"> 
+          Názov 
+        </span> 
+      </h2> 
+    </div> 
+    <div id="with-descriptions-content-1" class="govuk-accordion__section-content"> 
+      <p class="govuk-body"> 
+        Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. Ak nemôžete uviesť svoju štátnu príslušnosť, budete musieť poslať kópie dokladov totožnosti poštou. 
+      </p> 
+    </div> 
+  </div> 
+  <div class="govuk-accordion__section"> 
+    <div class="govuk-accordion__section-header "> 
+      <h2 class="govuk-accordion__section-heading"> 
+        <span class="govuk-accordion__section-button" id="with-descriptions-heading-2"> 
+          Názov 
+        </span> 
+      </h2> 
+        <div class="govuk-accordion__section-summary govuk-body" id="with-descriptions-summary-2"> 
+          Popis 
+        </div> 
+    </div> 
+    <div id="with-descriptions-content-2" class="govuk-accordion__section-content"> 
+      <p class="govuk-body"> 
+        Potrebujeme poznať vašu štátnu príslušnosť, aby sme mohli zistiť, v ktorých voľbách máte právo voliť. 
+      </p> 
+    </div> 
+  </div> 
+</div>`}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {/* MOŽNOSŤ 2: NPM */}
+        <div className="my-8">
+            <h4 className="text-lg font-bold text-black mb-3">2. Pokročilá integrácia cez NPM a SCSS</h4>
+            
+            <ol className="list-disc pl-5 space-y-6 text-sm sm:text-base">
+                <li>
+                    <strong className="block mb-2">Nainštalujte balík</strong>
+                    Pre inštaláciu cez NPM spustite (po skončení inštalácie sa balík <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">@id-sk/frontend</code> objaví v <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">node_modules</code>):
+                    <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto mt-2 w-full max-w-full min-w-0">
+                        <pre className="text-sm font-mono text-gray-100 whitespace-pre-wrap break-words">
+                            <code>
+{`npm install nunjucks --save
+npm i @id-sk/frontend@3.0.0-beta.0-hotfix`}
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <strong className="block mb-2">Pridajte Nunjucks/HTML</strong>
+                    Do pripraveného súboru (či už .html alebo .njk) vložte kód, ktorý nájdete na stránke komponentov v detaile komponentu.
+                </li>
+                <li>
+                    <strong className="font-semibold block mb-2">Importujte štýly</strong>
+                    Pre import individuálneho IDSK komponentu, v tomto prípade Akordeónu, do svojho Sass súboru pridajte:
+                    <div className="bg-gray-800 rounded-lg p-4 mt-2 w-full max-w-full min-w-0 overflow-x-auto">
+                        <pre className="text-sm font-mono text-gray-100 whitespace-pre-wrap break-words">
+                            <code>
+{`@import "node_modules/@id-sk/frontend/idsk/components/accordion/accordion";`}
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+                <li>
+                    <strong className="font-semibold block mb-2">Importujte Javascript</strong>
+                    ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module</code>. Pre import javascriptu Akordeónu, vložte do .js súboru:
+                    <div className="bg-gray-800 rounded-lg p-4 overflow-x-auto mt-2 w-full max-w-full min-w-0">
+                        <pre className="text-sm font-mono text-gray-100 whitespace-pre-wrap break-words">
+                            <code>
+{`import { Accordion, createAll } from 'govuk-frontend' 
+
+createAll(Accordion)`}
+                            </code>
+                        </pre>
+                    </div>
+                </li>
+            </ol>
+        </div>
+    </section>
+</div>
             )}
 
         </div>

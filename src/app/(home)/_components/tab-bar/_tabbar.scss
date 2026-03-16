@@ -1,0 +1,57 @@
+/* CustomTabBar.scss */
+
+.moj-vlastny-tab-bar {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin-bottom: 2.5rem;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    right: 0;
+    left: 0.6rem;
+    height: 1px;
+    background-color: #d4d4d4;
+    z-index: 1; 
+  }
+
+  .idsk-tab-bar__link {
+    background-color: white;
+    color: black;
+    border: 1px solid #d4d4d4;
+    padding: 0.625rem 1.5rem;
+    position: relative;
+    margin-bottom: -1px; 
+
+    /* Riešenie zdvojených čiar */
+    &:not(:first-child) {
+      margin-left: -1px;
+    }
+
+    /* --------------------------------------------------- */
+    /* 1. HOVER STAV (Iba pre myš, aby sa nezasekol na mobile) */
+    /* --------------------------------------------------- */
+    @media (hover: hover) {
+      &:hover {
+        /* Pridáme hrubý 4px tieň smerom von. Border necháme tak! */
+        box-shadow: 0 0 0 4px #757575 !important;
+        /* Tab vyskočí nad VŠETKY ostatné taby, takže tieň nebude nikde odseknutý */
+        z-index: 25 !important;
+        /* Voliteľné: jemná zmena farby pozadia pre lepšiu odozvu */
+        background-color: #f9fafb; 
+      }
+    }
+    /* --------------------------------------------------- */
+    /* 3. AKTÍVNY STAV (Clicked) */
+    /* --------------------------------------------------- */
+    &.idsk-tab-bar__link--clicked {
+      box-shadow: inset 0 -3px 0 0 #0B4199 !important; 
+      color: #0B4199 !important;
+      font-weight: bold !important;
+      background-color: white !important;
+
+    }
+  }
+}
