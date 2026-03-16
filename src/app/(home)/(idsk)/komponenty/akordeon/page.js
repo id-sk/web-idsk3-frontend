@@ -1,14 +1,11 @@
 'use client'
 
-import Card from '@/app/(home)/_components/article/article';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState } from 'react';
 import { CustomAccordion } from '@/app/(home)/_components/accordion/accordionCustom';
 
 const AccordionPage = () => {
-    // 1. Zavedieme stav pre aktívny tab (predvolený je 'pouzitie')
+
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     return (
