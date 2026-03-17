@@ -15,12 +15,10 @@ function ImageCard({ href, src, title, description, alt }) {
         relative flex flex-col w-full h-full p-4 sm:p-5 tracking-wide bg-white 
         rounded-2xl border border-solid border-neutral-200
         transition-all duration-200
-        /* Výkričníky zabezpečia prebitie IDSK tieňov */
         group-hover:!shadow-none 
         group-hover:!ring-[4px] group-hover:!ring-[#757575]
         hover:z-10
       ">
-        {/* Kontajner obrázka s overflow-hidden pre scale efekt */}
         <div className="relative w-full aspect-[3/2] bg-zinc-200 overflow-hidden shrink-0">
           <Image
             src={src}

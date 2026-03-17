@@ -13,7 +13,7 @@ const TypographyTable = ({ items }) => {
     <div className="mt-10 w-full max-md:max-w-full">
       <div className="flex gap-5 max-md:flex-col">
         <div className="flex flex-col w-6/12 max-md:ml-0 max-md:w-full">
-        <h3 className="text-xl text-neutral-500">
+        <h3 className="text-xl text-black">
           veľké obrazovky so šírkou od 731 px
         </h3>
           {leftItems.map((item, index) => (
@@ -21,7 +21,7 @@ const TypographyTable = ({ items }) => {
           ))}
         </div>
         <div className="flex flex-col ml-5 w-6/12 max-md:ml-0 max-md:w-full">
-        <h3 className="text-xl text-neutral-500">
+        <h3 className="text-xl text-black">
           malé obrazovky so šírkou do 730 px
         </h3>
           {rightItems.map((item, index) => (

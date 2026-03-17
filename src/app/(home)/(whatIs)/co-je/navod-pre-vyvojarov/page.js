@@ -95,13 +95,15 @@ const DeveloperPage = () => {
                     <li>Použiť komponenty z Nunjucks šablón.</li>
                 </ul>
                 
-                <InformationBanner 
-                    variant="information" 
-                    title="Odstránenie obmedzení"
-                    ariaLabel="Oznámenie o inštalácii"
+                <div className="w-full overflow-hidden my-8">
+                    <InformationBanner 
+                        variant="information" 
+                        title="Odstránenie obmedzení"
+                        ariaLabel="Oznámenie o inštalácii"
                     >
-                    Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať IDSK Frontend pomocou node package manager.
-                </InformationBanner>
+                        Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať IDSK Frontend pomocou node package manager.
+                    </InformationBanner>
+                </div>
 
                 <h2 className="text-xl md:text-2xl font-bold my-6 text-black">
                     Kroky k inštalácii
@@ -120,12 +122,12 @@ const DeveloperPage = () => {
                 <p className="text-base md:text-lg tracking-wide leading-relaxed md:leading-8 mb-6 text-black">
                     Skopírujte celý priečinok assets do rootu vašej služby. Podľa nižšie uvedeného príkladu pridajte súbory CSS a JavaScript do šablóny HTML.
                 </p>
-                <div className="my-8 w-full bg-[#f3f2f1] border border-[#bfc1c3] rounded-sm">
+                <div className="my-8 max-w-full w-full bg-[#f3f2f1] border border-[#bfc1c3] rounded-sm">
 <div className="bg-[#dee0e2] px-4 py-2 border-b border-[#bfc1c3] flex justify-between items-center">
     <span className="text-sm font-bold text-[#0b0c0c] font-mono">Ukážka HTML štruktúry</span>
     <span className="text-xs text-[#505a5f]">index.html</span>
 </div>
-<pre className="p-4 overflow-x-auto text-sm sm:text-base leading-6 text-[#0b0c0c] font-mono">
+<pre className="p-4 overflow-x-auto text-sm sm:text-base leading-6 text-[#0b0c0c] font-mono whitespace-pre-wrap break-words">
 {`<!DOCTYPE html>
 <html>
 <head>

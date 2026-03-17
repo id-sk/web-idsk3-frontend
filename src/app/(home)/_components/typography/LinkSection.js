@@ -6,7 +6,7 @@ import LinkTable from './LinkTable';
 const LinkSection = ({ title, items }) => {
   return (
     <section className="mt-20 w-full max-md:mt-10 max-md:max-w-full">
-      <h2 className="text-4xl font-black text-neutral-500">{title}</h2>
+      <h2 className="text-xl sm:text-2xl font-black text-black">{title}</h2>
       <LinkTable items={items} />
     </section>
   );

@@ -6,12 +6,10 @@ const Vzory404 = () => {
     <div className="flex flex-col max-w-[835px]">
       <title>Vzory</title>
       
-      {/* ZMENŠENÝ HLAVNÝ NADPIS */}
-      <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px]">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px]">
         Vzory
       </h1>
       
-      {/* ZMENŠENÝ TEXT v kartičke: z text-2xl na text-base pre mobil a text-lg pre desktop */}
       <div className="flex flex-col pt-7 pb-14 mt-8 w-full max-w-[496px] px-5 text-base md:text-lg tracking-normal leading-7 md:leading-8 text-center text-black bg-white rounded-sm border border-solid border-black border-opacity-10">
         <Image
           src="/images/404/404.svg"

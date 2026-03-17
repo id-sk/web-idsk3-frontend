@@ -256,7 +256,7 @@ const AccordionPage = () => {
                 <div className="space-y-10 text-black">
     {/* ÚVODNÁ ČASŤ */}
     <section>
-        <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia akordeónu z ID-SK Frontend</h2>
+        <h2 className="text-xl sm:text-2xl font-bold mt-3 mb-10">Implementácia akordeónu z ID-SK Frontend</h2>
         <p className="text-sm sm:text-base leading-relaxed mb-4">
             Komponenty z knižnice ID-SK Frontend môžete do svojho projektu integrovať dvoma spôsobmi v závislosti od vašej technologickej infraštruktúry:
         </p>
@@ -282,7 +282,7 @@ const AccordionPage = () => {
         <h3 className="text-md sm:text-xl font-bold mb-4">Možnosti implementácie</h3>
         
         <div className="my-8">
-            <h4 className="text-md sm:text-lg font-bold text-black mb-3">1. Jednoduchá statická integrácia (HTML + minifikované súbory)</h4>
+            <h4 className="text-md sm:text-lg font-bold text-black mb-3">1. Statická HTML implementácia (HTML + minifikované súbory)</h4>
             <p className="text-sm sm:text-base leading-relaxed mb-4">
                 Ak váš projekt nevyužíva Node.js alebo bundler (napr. Webpack, Vite), môžete použiť hotové buildy. Pri inštalácii z <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">dist</code> sa používajú kompilované a minifikované verzie šablóny so štýlmi. To znamená, že nebudete môcť:
             </p>
@@ -392,7 +392,7 @@ const AccordionPage = () => {
 
         {/* MOŽNOSŤ 2: NPM */}
         <div className="my-8">
-            <h4 className="text-lg font-bold text-black mb-3">2. Pokročilá integrácia cez NPM a SCSS</h4>
+            <h4 className="text-lg font-bold text-black mb-3">2. Pokročilá integrácia (NPM + SCSS + JS)</h4>
             
             <ol className="list-disc pl-5 space-y-6 text-sm sm:text-base">
                 <li>

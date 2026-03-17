@@ -1,28 +1,27 @@
 'use client';
 
 import React from 'react';
-import Block from '@/app/(home)/_components/focus/block';
 import Image from 'next/image';
-
 
 const FocusPage = () => {
   return (
     <main
       id="main-content"
       role="main"
-      className="flex flex-col pb-8 my-8 max-w-[1000px]"
+      className="flex flex-col pb-8 my-8 max-w-[1000px] px-4 sm:px-0 text-black"
     >
       <title>Zameranie klávesnicou (Focus)</title>
       <header>
-        <h1 className="w-full text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
           Zameranie klávesnicou (Focus)
         </h1>
       </header>
+
       <section aria-labelledby="intro">
         <h2 id="intro" className="sr-only">
           Úvod
         </h2>
-        <p className="mt-5 w-full text-2xl tracking-normal leading-9 text-black max-md:max-w-full">
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-6">
           Používateľ, ktorý používa klávesnicu ako svoje primárne vstupné
           zariadenie, sa naviguje po webovej stránke tak, že preskakuje z
           jedného interaktívneho prvku na druhý. Vidiaci používateľ klávesnice
@@ -30,162 +29,184 @@ const FocusPage = () => {
           pomáha určiť, na ktorom prvku sa momentálne nachádza a s ktorým môže
           interagovať.
         </p>
-        <p className="mt-8 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
           V štandarde pre dizajnový manuál je zameranie pri navigácii pomocou
           klávesnice (focus) navrhnuté tak, aby spĺňalo požiadavky na kontrast
           pre netextové prvky (Kritérium úspešnosti 1.4.11 Kontrast netextových
           prvkov z WCAG 2.1).
         </p>
       </section>
+
       <section aria-labelledby="focus-style">
-        <h2 id="focus-style" className="text-4xl leading-custom-45 font-black text-black mt-8">
+        <h2 id="focus-style" className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4 mt-8">
           Štýl zamerania
         </h2>
-        <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-8">
           Komponent s aktívnou plochou označuje svoj zameraný stav orámovaním s
           hrúbkou 3 px, ktoré je umiestnené vo vzdialenosti 2 px od komponentu.
           Komponent s aktívnou plochou na svetlom pozadí označuje svoj zameraný
           stav oranžovým orámovaním (#D96E00), v záhlaví na tmavom pozadí
           bielym orámovaním (#FFF).
         </p>
-        <h3 className="mt-8 text-2xl font-bold leading-custom-35 text-black max-md:max-w-full">
+
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-8 mt-12">
           Príklady použitia
         </h3>
-        <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Hypertextový odkaz</h4>
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Hypertextový odkaz</h4>
         <Image
-                src="/images/focus/hypertextovy-odkaz.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="hypertextovy odkaz"
-                className='mt-8 mb-16'
-            />
-        <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Tlačidlo</h4>
-          <Image
-                src="/images/focus/tlacidlo.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="tlacidlo"
-                className='mt-8 mb-16'
-            />
-             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Zaškrtávacie pole</h4>
-          <Image
-                src="/images/focus/zaskrtavacie-pole.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="zaskrtavacie pole"
-                className='mt-8 mb-16'
-            />
-             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Prepínacie pole</h4>
-          <Image
-                src="/images/focus/prepinacie-pole.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="prepinacie pole"
-                className='mt-8 mb-16'
-            />
-            <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Textové pole</h4>
-          <Image
-                src="/images/focus/textove-pole.svg"
-                width={500}
-                height={520}
-                quality={100}
-                alt="textove pole"
-                className='mt-8 mb-16'
-            />
-         <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Viacriadkové textové pole</h4>
-          <Image
-                src="/images/focus/viacriadkove-textove-pole.svg"
-                width={800}
-                height={520}
-                quality={100}
-                alt="viacriadkove textove pole"
-                className='mt-8 mb-16'
-            />
-              <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Viacriadkové textové pole</h4>
-          <Image
-                src="/images/focus/viacriadkove-textove-pole.svg"
-                width={800}
-                height={520}
-                quality={100}
-                alt="viacriadkove textove pole"
-                className='mt-8 mb-16'
-            />
-           <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Kartička</h4>
-          <Image
-                src="/images/focus/karticka.svg"
-                width={800}
-                height={520}
-                quality={100}
-                alt="karticka"
-                className='mt-8 mb-16'
-            />
-             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Rázcestník</h4>
-          <Image
-                src="/images/focus/razcestnik.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="razcestnik"
-                className='mt-8 mb-16'
-            />
-           <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Omrvinková navigácia</h4>
-          <Image
-                src="/images/focus/omrvinkova-navigacia.svg"
-                width={575}
-                height={520}
-                quality={100}
-                alt="omrvinkova navigacia"
-                className='mt-8 mb-16'
-            />
-             <h4 className="mt-8 text-xl font-bold tracking-normal leading-custom-26 text-black max-md:max-w-full">Záhlavie</h4>
-          <Image
-                src="/images/focus/zahlavie.svg"
-                width={375}
-                height={520}
-                quality={100}
-                alt="zahlavie"
-                className='mt-8 mb-14'
-            />
+          src="/images/focus/hypertextovy-odkaz.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu na hypertextovom odkaze"
+          className="w-full max-w-[375px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Tlačidlo</h4>
+        <Image
+          src="/images/focus/tlacidlo.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu na tlačidle"
+          className="w-full max-w-[375px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Zaškrtávacie pole</h4>
+        <Image
+          src="/images/focus/zaskrtavacie-pole.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre zaškrtávacie pole"
+          className="w-full max-w-[375px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Prepínacie pole</h4>
+        <Image
+          src="/images/focus/prepinacie-pole.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre prepínacie pole"
+          className="w-full max-w-[375px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Textové pole</h4>
+        <Image
+          src="/images/focus/textove-pole.svg"
+          width={500}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre textové pole"
+          className="w-full max-w-[500px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Viacriadkové textové pole</h4>
+        <Image
+          src="/images/focus/viacriadkove-textove-pole.svg"
+          width={800}
+          height={300}
+          quality={100}
+          alt="Ukážka focusu pre viacriadkové textové pole"
+          className="w-full h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Kartička</h4>
+        <Image
+          src="/images/focus/karticka.svg"
+          width={800}
+          height={300}
+          quality={100}
+          alt="Ukážka focusu pre kartičku"
+          className="w-full h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Rázcestník</h4>
+        <Image
+          src="/images/focus/razcestnik.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre rázcestník"
+          className="w-full max-w-[375px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Omrvinková navigácia</h4>
+        <Image
+          src="/images/focus/omrvinkova-navigacia.svg"
+          width={575}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre omrvinkovú navigáciu"
+          className="w-full max-w-[575px] h-auto mb-16 border border-gray-200 rounded shadow-sm bg-white"
+        />
+
+        <h4 className="text-base sm:text-lg font-bold text-black mb-4 mt-8">Záhlavie</h4>
+        <Image
+          src="/images/focus/zahlavie.svg"
+          width={375}
+          height={150}
+          quality={100}
+          alt="Ukážka focusu pre záhlavie"
+          className="w-full max-w-[375px] h-auto mb-14 border border-gray-200 rounded shadow-sm bg-white"
+        />
       </section>
+
       <section aria-labelledby="focus-pseudo-class">
-        <h2 id="focus-pseudo-class" className="text-4xl leading-custom-45 font-black text-black mt-2">
+        <h2 id="focus-pseudo-class" className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4 mt-12">
           Pseudo trieda focus
         </h2>
-        <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-8">
           Pseudo triedy využívame na definovanie špeciálneho stavu prvku. CSS
-          pseudo-trieda :focus slúži na štýlovanie komponentu, ktorý je aktuálne
-          zameraný pomocou klávesnice, teda je v stave `focus` (zameraný).
+          pseudo-trieda <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">:focus</code> slúži na štýlovanie komponentu, ktorý je aktuálne
+          zameraný pomocou klávesnice, teda je v stave <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">focus</code> (zameraný).
           Typickým príkladom komponentu, ktorý môže byť v stave focus, je
           formulárový prvok, napríklad textové pole alebo tlačidlo.
         </p>
-        <h3 className="mt-8 text-2xl font-bold leading-custom-35 text-black max-md:max-w-full">
+
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">
           Príklad použitia
         </h3>
-        <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-4">
           Ukážka štýlu pre viditeľné zameranie pomocou klávesnice, ktoré sa
           aplikuje na všetky zamerateľné prvky na webovom sídle.
         </p>
-        <Block>
-          {`:focus {
-              outline: 2px solid #D96E00;
-              outline-offset: 3px;
-              background-color: transparent;
-            }`}
-        </Block>
-        <p className="mt-5 w-full text-custom-19 tracking-wide leading-7 text-black max-md:max-w-full">
+        
+        {/* Prvá ukážka CSS kódu */}
+        <div className="my-8 w-full max-w-full overflow-hidden bg-[#f3f2f1] border border-[#bfc1c3] rounded-sm">
+            <div className="bg-[#dee0e2] px-4 py-2 border-b border-[#bfc1c3] flex justify-between items-center">
+                <span className="text-sm font-bold text-[#0b0c0c] font-mono">Ukážka CSS štruktúry</span>
+                <span className="text-xs text-[#505a5f]">style.css</span>
+            </div>
+            <pre className="p-4 overflow-x-auto text-sm sm:text-base leading-6 text-[#0b0c0c] font-mono whitespace-pre-wrap break-words">
+{`:focus {
+    outline: 2px solid #D96E00;
+    outline-offset: 3px;
+    background-color: transparent;
+}`}
+            </pre>
+        </div>
+
+        <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-4 mt-8">
           Záhlavie, tmavé pozadie:
         </p>
-        <Block>
-          {`:focus {
-              outline: 2px solid #FFF;
-              outline-offset: 3px;
-              background-color: transparent;
-            }`}
-        </Block>
+        
+        {/* Druhá ukážka CSS kódu */}
+        <div className="my-8 w-full max-w-full overflow-hidden bg-[#f3f2f1] border border-[#bfc1c3] rounded-sm">
+            <div className="bg-[#dee0e2] px-4 py-2 border-b border-[#bfc1c3] flex justify-between items-center">
+                <span className="text-sm font-bold text-[#0b0c0c] font-mono">Ukážka CSS štruktúry</span>
+                <span className="text-xs text-[#505a5f]">style.css</span>
+            </div>
+            <pre className="p-4 overflow-x-auto text-sm sm:text-base leading-6 text-[#0b0c0c] font-mono whitespace-pre-wrap break-words">
+{`:focus {
+    outline: 2px solid #FFF;
+    outline-offset: 3px;
+    background-color: transparent;
+}`}
+            </pre>
+        </div>
       </section>
     </main>
   );
