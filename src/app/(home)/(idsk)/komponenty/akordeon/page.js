@@ -69,22 +69,23 @@ const AccordionPage = () => {
                     <h2 className="text-lg sm:text-xl md:text-2xl font-bold text-black mt-3 mb-10 leading-tight">
                         Použitie Akordeónu
                     </h2>
-
-                    <CustomAccordion 
-                        heading={
-                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
-                                Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?
-                            </span>
-                        } 
-                        initiallyClosed={true}
-                    >
-                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            Consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.</p>
+                    <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
+                        <div className="w-full max-w-[700px] py-7 my-6 px-4">
+                            <CustomAccordion 
+                                heading={
+                                    <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                        Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?
+                                    </span>
+                                } 
+                                initiallyClosed={true}
+                            >
+                                <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    Consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor. Pulvinar vivamus fringilla lacus nec metus bibendum egestas. Iaculis massa nisl malesuada lacinia integer nunc posuere.</p>
+                                </div>
+                            </CustomAccordion>
                         </div>
-                    </CustomAccordion>
-
-                    
+                    </div>
                     <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                         Nadpis príslušnej lišty by mal byť v primeranej dĺžke, maximálne v 1 riadku a výstižne popisovať to, čo sa v danom akordeóne nachádza. Detailnejšie informácie o tom, čo je umiestené v akordeóne, dodefinujte v popise pod nadpisom. Akordeón najlepšie funguje pre jednoduché texty a odkazy. Nepoužívajte akordeón na obsah, ktorý je dôležitý pre všetkých používateľov. Akordeón sa typicky používa na:
                     </p>
@@ -130,75 +131,80 @@ const AccordionPage = () => {
                         1. Variant akordeónu bez popisu/s popisom:
                     </p>
                     
-                    
-                    <CustomAccordion 
-                        heading={
-                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
-                                Toto je variant akordeónu bez popisu
-                            </span>
-                        } 
-                        initiallyClosed={true}
-                    >
-                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
-                                eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                            </p>
+                    <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
+                            <div className="flex1 w-full max-w-[700px] px-4">
+                                <CustomAccordion 
+                                    heading={
+                                        <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                            Toto je variant akordeónu bez popisu
+                                        </span>
+                                    } 
+                                    initiallyClosed={true}
+                                >
+                                    <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore 
+                                            eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                        </p>
+                                    </div>
+                                </CustomAccordion>
+                            </div>
+                            <div className="flex1 w-full max-w-[700px] px-4">
+                                 <CustomAccordion 
+                                    heading={
+                                        <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                            Toto je variant akordeónu s popisom
+                                        </span>
+                                    } 
+                                    subTitle="Tu môžete napísať detailnejšie informácie o tom, čo tento akordeón obsahuje."
+                                    initiallyClosed={true}
+                                >
+                                    <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                                        <p>
+                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
+                                            nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                                        </p>
+                                    </div>
+                                </CustomAccordion>
+                            </div>
                         </div>
-                    </CustomAccordion>
-
-                    <CustomAccordion 
-                        heading={
-                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
-                                Toto je variant akordeónu s popisom
-                            </span>
-                        } 
-                        subTitle="Tu môžete napísať detailnejšie informácie o tom, čo tento akordeón obsahuje."
-                        initiallyClosed={true}
-                    >
-                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis 
-                                nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                            </p>
-                        </div>
-                    </CustomAccordion>
-                    
-
                     <p className="text-sm sm:text-base font-bold tracking-wide leading-relaxed sm:leading-7 text-black mt-10 mb-1">
                        2. Stavy akordeónu - zameraný myšou(hover) a zameraný klávesnicou (focus):
                     </p>
                     <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                          Akordeón zároveň obsahuje dva základné stavy, indikujúce jeho interaktivitu pre použitie myšou (hover) i klávesnicou (focus).
                     </p>
-                    
-                   <CustomAccordion 
-                        className="demo-hover-state" 
-                        heading={
-                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
-                                Akordeón zobrazujúci zameranie myšou
-                            </span>
-                        } 
-                    >
-                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>Zameranie myšou (hover stav) je kľúčovým prvkom pre vizuálnu indikáciu interaktívneho komponentu. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
+                    <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
+                            <div className="flex1 w-full max-w-[700px] px-4">
+                                <CustomAccordion 
+                                    className="demo-hover-state" 
+                                    heading={
+                                        <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                            Akordeón zobrazujúci zameranie myšou
+                                        </span>
+                                    } 
+                                >
+                                    <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                                        <p>Zameranie myšou (hover stav) je kľúčovým prvkom pre vizuálnu indikáciu interaktívneho komponentu. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
+                                    </div>
+                                </CustomAccordion>
+                            </div>
+                            <div className="flex1 w-full max-w-[700px] px-4">
+                                 <CustomAccordion 
+                                    className="demo-focus-state" 
+                                    heading={
+                                        <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
+                                            Akordeón zobrazujúci zameranie klávesnicou
+                                        </span>
+                                    } 
+                                >
+                                    <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
+                                        <p>Zameranie klávesnicou (focus stav) je kľúčovým prvkom prístupnosti, a to nielen pre vizuálnu indikáciu interaktívneho komponentu pre používateľov klávesnice, ale primárne pre používateľov asistenčných zariadení. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
+                                    </div>
+                                </CustomAccordion>
+                            </div>
                         </div>
-                    </CustomAccordion>
-
-                    {/* 2. AKORDEÓN: Vynútený FOCUS (oranžový obrys) */}
-                    <CustomAccordion 
-                        className="demo-focus-state" 
-                        heading={
-                            <span className="text-md sm:text-lg font-bold tracking-wide leading-tight sm:leading-8 text-black block py-1">
-                                Akordeón zobrazujúci zameranie klávesnicou
-                            </span>
-                        } 
-                    >
-                        <div className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black">
-                            <p>Zameranie klávesnicou (focus stav) je kľúčovým prvkom prístupnosti, a to nielen pre vizuálnu indikáciu interaktívneho komponentu pre používateľov klávesnice, ale primárne pre používateľov asistenčných zariadení. Používateľ vďaka nemu môže vidieť, že nasledujúci akordeón je možné zbaliť a rozbaliť.</p>
-                        </div>
-                    </CustomAccordion>
 
                 </div>
             )}
@@ -212,17 +218,17 @@ const AccordionPage = () => {
                     <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                         Komponent je v súlade s normami WCAG 2.2 AA . Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky. 
                     </p>
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4 font-bold">
-                        Klávesové ovládanie                   
-                    </p>
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
+                        Klávesové ovládanie
+                    </h3>
                     <ul className="list-disc pl-5 text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                         <li className="pl-2">Enter alebo medzerník – rozbalí / zbalí sekciu,</li>
                         <li className="pl-2">Tab – prechádza medzi hlavičkami,</li>
                         <li className="pl-2">Shift + Tab – ide späť.</li>
                     </ul>
-                    <p className="text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-4 font-bold">
-                        Základné pravidlá prístupnosti komponentu Akordeón                
-                    </p>
+                    <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
+                        Základné pravidlá prístupnosti
+                    </h3>
                     <ul className="list-disc pl-5 text-sm sm:text-base tracking-wide leading-relaxed sm:leading-7 text-black mb-8">
                         <li className="pl-2">
                             všetky interaktívne prvky sú implementované ako tlačidlá <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">button</code>

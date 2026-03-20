@@ -31,7 +31,6 @@ const TypographyPage = () => {
                     <p className="text-sm sm:text-base tracking-wide text-neutral-500">Font family</p>
                 </div>
 
-                {/* Hrúbky fontu (tieto nechávame naschvál obrovské pre demonštráciu) */}
                 <div className="flex flex-wrap gap-8 sm:gap-12">
                     <div className="flex flex-col items-start">
                         <span className="text-4xl sm:text-5xl font-black text-black leading-tight mb-2">Aa</span>
