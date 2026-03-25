@@ -24,7 +24,6 @@ const LinkItem = ({ title, size, lineHeight, spacing, type, fontWeight }) => {
           <p className="text-xs font-bold leading-4 text-neutral-500 max-md:mt-10">
             Veľkosť: {size}<br />
             Veľkosť riadku: {lineHeight}<br />
-            {/* Medzery medzi odsekmi: {spacing}<br  />*/}
             Rez písma: {type}
           </p>
         </div>

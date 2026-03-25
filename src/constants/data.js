@@ -32,7 +32,7 @@ export const componentsData = [
   { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},
   { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},
   { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
-  { href: "/komponenty/zaskrtavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Zaškrtávacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
+  { href: "/komponenty/zaciarkavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Začiarkavacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
 ];
 
 export const whatIsData = [

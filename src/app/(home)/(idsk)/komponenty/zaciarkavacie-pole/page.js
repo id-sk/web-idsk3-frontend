@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { Select } from '@eslovensko/idsk-react';
+import { Checkbox } from '@eslovensko/idsk-react';
 import { InformationBanner } from '@eslovensko/idsk-react';
 
 // Profi balíčky na zvýrazňovanie kódu
@@ -13,9 +13,10 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT (Škrupina stránky a slovník tabov)
 // ============================================================================
-const SelectPage = () => {
+const checkbox = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
+    // 🌟 SLOVNÍK TABOV: Tu len priradíme kľúč k danému podkomponentu
     const renderTabContent = {
         pouzitie: <TabPouzitie />,
         varianty: <TabVarianty />,
@@ -25,17 +26,16 @@ const SelectPage = () => {
 
     return (
         <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
-            <title>Rozbaľovacie pole</title>
+            <title>Začiarkavacie pole</title>
             
             <header>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
-                    Rozbaľovacie pole (Select)
+                    Začiarkavacie pole (Checkbox)
                 </h1>
             </header>
             
             <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
-                Rozbaľovacie pole je interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu možnosť z ponuky dostupných hodnôt. 
-                Po kliknutí na pole používateľ otvorí zoznam možností (rozbaľovací zoznam) a z neho zvolí požadovanú položku. Vybraná možnosť sa následne zobrazí v základnom (zatvorenom) stave poľa.
+                Začiarkavacie pole je interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek z množiny možností. Používateľ označí Začiarkavacie pole kliknutím do štvorca a zruší označenie opätovným kliknutím.
             </p>
 
             <MyTabBar>
@@ -69,6 +69,7 @@ const SelectPage = () => {
                 </MyTabLink>
             </MyTabBar>
 
+            {/* Vykreslenie aktívneho tabu */}
             <div className="mt-8">
                 {renderTabContent[activeTab]}
             </div>
@@ -76,7 +77,7 @@ const SelectPage = () => {
     );
 }
 
-export default SelectPage;
+export default checkbox;
 
 
 // ============================================================================
@@ -87,34 +88,34 @@ export default SelectPage;
 const TabPouzitie = () => (
     <div className="animate-fade-in">
         <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4">
-            Použitie rozbaľovacieho poľa
+            Použitie textového poľa
         </h2>
         
+        {/* Ukážka Inputu na bodkovanom pozadí */}
         <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] py-7 my-6 px-4">
-                <Select 
-                    id="vyber-polozku"
-                    name="vyber"
-                    label="Vyberte si položku zo zoznamu"
-                    inputSize="large"
+                <Checkbox 
+                    inputSize='large'
+                    name="checkbox"
+                    label="Príklad začiarkavacieho poľa"
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
         </div>
 
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
-            Rozbaľovacie pole (select) slúži na výber jednej hodnoty zo zoznamu možností v rámci formulára. Používateľ po kliknutí otvorí zoznam a vyberie požadovanú položku; následne pole zobrazí vybranú hodnotu v zatvorenom stave. Select je vhodný najmä v situáciách, keď potrebujete šetriť priestor alebo keď zoznam obsahuje viacero možností. Funguje aj bez JavaScriptu, čo z neho robí spoľahlivý natívny formulárový prvok.
+            Začiarkavacie pole je interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek z množiny možností. Používateľ označí Začiarkavacie pole kliknutím do štvorca a zruší označenie opätovným kliknutím.
+        </p>
+        <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
+            Začiarkavacie pole je interaktívny komponent, ktorý slúži na získanie súhlasu alebo potvrdenie výberu v používateľskom rozhraní. Komponent je využívaný prevažne s popisom, ktorý definuje funkcionalitu komponentu.
+            Obsahuje tri stavy – začiarknutý, nezačiarknutý a neurčitý. Zmena stavu nastane kliknutím na komponent. V prípade použitia začiarkávacieho poľa pre získanie súhlasu alebo potvrdenia, je pole v predvolenom stave prázdne.
+            Komponent funguje aj bez použitia skriptovacieho jazyka JavaScript, pričom aplikovanie jazyka JavaScript môže byť použité pre rozšírenú funcionalitu.
         </p>
 
         <div className="flex flex-wrap gap-8 sm:gap-12 mt-10">
             <div className="flex flex-col items-start flex-1 min-w-[280px]">
                 <InformationBanner
-                    ariaLabel="Správne použitie rozbaľovacieho poľa"
+                    ariaLabel="Správne použitie textového poľa"
                     type="banner"
                     variant="success"
                     hideCloseButton={true}
@@ -123,18 +124,18 @@ const TabPouzitie = () => (
                     Ako sa používa
                 </h3>
                  <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                    <li>Zoznam obsahuje 5 až 20 vzájomne sa vylučujúcich možností.</li>
-                    <li>Položky sú logicky zoradené (napr. abecedne, chronologicky alebo od najčastejšej voľby).</li>
-                    <li>Rozbaľovací zoznam neprekáža inému dôležitému obsahu.</li>
-                    <li>použite s overením v reálnom čase.</li>
-                    <li>Používajte s krátkymi textami možností, ktoré nepresahujú jeden riadok.</li>
+                    <li>zadávaný údaj je krátky voľný text.</li>
+                    <li>údaj nemá pevne definovaný formát.</li>
+                    <li>má používateľ zadať napr. meno a priezvisko, názov ulice, mesta alebo inú krátku informáciu.</li>
+                    <li>veľkosť poľa zodpovedá očakávanej dĺžke textu.</li>
+                    <li>nie je vhodné ani účelné použiť špecializovaný typ vstupu.</li>
                 </ul>
                 </InformationBanner>
             </div>
             
             <div className="flex flex-col items-start flex-1 min-w-[280px]">
                 <InformationBanner
-                    ariaLabel="Nesprávne použitie rozbaľovacieho poľa"
+                    ariaLabel="Neprávne použitie textového poľa"
                     type="banner"
                     variant="warning"
                     hideCloseButton={true}
@@ -143,10 +144,10 @@ const TabPouzitie = () => (
                     Ako sa nepoužíva
                 </h3>
                  <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                    <li>je možností príliš málo (menej ako 5) – použite Prepínacie pole</li>
-                    <li>je možností extrémne veľa – použite prvok s našepkávačom a vyhľadávaním (listbox alebo combobox).</li>
-                    <li>potrebujete vybrať viac ako jednu položku naraz - použite Začiarkavacie políčka</li>
-                    <li>výber zmení kontext stránky (napr. funguje ako navigácia)</li>
+                    <li>ak je zadávaný údaj dlhý voľný text</li>
+                    <li>ak údaj má pevne definovaný formát (e-mail, telefónne číslo dátum, atď.)</li>
+                    <li>ak používateľ vyberá hodnotu zo zoznamu - použite select, radio button alebo checkbox</li>
+                    <li>ak potrebujete vstup automaticky validovať podľa typu</li>
                 </ul>
                 </InformationBanner>
             </div>
@@ -161,125 +162,115 @@ const TabVarianty = () => (
             Varianty
         </h2>
         
-        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant povinného/nepovinného rozbaľovacieho poľa</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant povinného/nepovinného textového poľa</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-unrequired"
-                    name="vyber"
+                <Checkbox 
+                    id="input-priklad-povinne"
+                    inputSize='medium'
+                    name="meno"
                     label="Príklad povinného poľa"
-                    placeholder='-- Vyberte položku --'
-                    inputSize="medium"
                     mandatory={true}
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="seclet-required"
-                    name="vyber"
-                    label="Príklad nepovinného poľa (nepovinné pole)"
-                    placeholder='-- Vyberte položku --'
-                    inputSize="medium"
+                <Checkbox 
+                    id="input-priklad-nepovinne"
+                    inputSize='medium'
+                    name="meno"
+                    label="Príklad nepovinného poľa"
+                    optionalText="(nepovinné pole)"
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant chybového, neaktívneho rozbaľovacieho poľa a rozbaľovacieho poľa s podnadpisom</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant chybového a neaktívneho textového poľa</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-priklad-chyba"
+                <Checkbox 
+                    id="input-priklad-chyba"
                     inputSize='medium'
-                    name="vyber"
+                    name="meno"
                     label="Príklad chybového stavu"
                     errorMsg="Chybový text"
                     mandatory={true}
                     error={true}
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-priklad-disabled"
+                <Checkbox 
+                    id="input-priklad-disabled"
                     inputSize='medium'
-                    name="vyber"
+                    name="meno"
                     label="Príklad neaktívneho stavu"
                     optionalText="(nepovinné pole)"
                     disabled={true}
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
-            </div>
-            <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-priklad-podnadpis"
-                    inputSize='medium'
-                    name="meno"
-                    label="Príklad s podnadpisom"
-                    subtitle="Podnadpis rozbaľovacieho poľa"
-                    mandatory={true}
-                    fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant rozbaľovacieho poľa veľký/malý</h3>
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Varianty textového poľa s podnadpisom, s placeholderom a s popisom</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-priklad-velky"
+                <Checkbox 
+                    id="input-priklad-podnadpis"
                     inputSize='medium'
-                    name="vyber"
-                    label="Variant rozbaľovacieho poľa - veľký"
+                    name="meno"
+                    label="Príklad s podnadpisom"
+                    subtitle="Podnadpis textového poľa"
                     mandatory={true}
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
             </div>
             <div className="w-full max-w-[400px] px-4">
-                <Select 
-                    id="select-priklad-maly"
-                    inputSize='small'
-                    name="vyber"
-                    label="Variant rozbaľovacieho poľa - malý"
+                <Checkbox 
+                    id="input-priklad-placeholder"
+                    inputSize='medium'
+                    name="meno"
+                    label="Príklad s placeholderom"
+                    placeholder="Ján Novák"
                     mandatory={true}
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
-                </Select>
+                />
+            </div>
+            <div className="w-full max-w-[400px] px-4">
+                <Checkbox 
+                    id="input-priklad-popis"
+                    inputSize='medium'
+                    name="meno"
+                    label="Príklad s popisným textom"
+                    caption="Popisný text"
+                    mandatory={true}
+                    fullWidth={true}
+                />
+            </div>
+        </div>
+
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant dátového poľa veľký/malý</h3>
+        <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
+            <div className="w-full max-w-[400px] px-4">
+                <Checkbox 
+                    id="input-priklad-velky"
+                    inputSize='large'
+                    name="meno"
+                    label="Variant textového poľa - veľký"
+                    mandatory={true}
+                    fullWidth={true}
+                />
+            </div>
+            <div className="w-full max-w-[400px] px-4">
+                <Checkbox 
+                    id="input-priklad-maly"
+                    inputSize='medium'
+                    name="meno"
+                    label="Variant textového poľa - malý"
+                    mandatory={true}
+                    fullWidth={true}
+                />
             </div>
         </div>
     </div>
@@ -292,59 +283,51 @@ const TabPristupnost = () => (
             Prístupnosť (Accessibility)
         </h2>
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
-            Komponent je v súlade s normami WCAG 2.2 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky. 
+            Komponent je v súlade s normami WCAG 2.2 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky.
         </p>
         
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
             Klávesové ovládanie
         </h3>
-        <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-4">
-            Rozbaľovacie pole má plnú podporu natívneho klávesnicového ovládania:
-        </p>
         <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Tab</code> / <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Shift + Tab</code> – presun zamerania na rozbaľovacie pole alebo z neho na predchádzajúci/nasledujúci prvok.</li>
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Medzerník</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Alt + Šípka dole</code> – otvorí zatvorené rozbaľovacie pole.</li>
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Šípka hore</code> / <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Šípka dole</code> – pohyb medzi jednotlivými možnosťami (funguje v zatvorenom aj otvorenom stave).</li>
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Enter</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Medzerník</code> – potvrdí výber a zatvorí rozbaľovací zoznam.</li>
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Esc</code> – zbalí rozbaľovací zoznam bez zmeny aktuálneho výberu.</li>
-            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Home</code> / <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">End</code> – presun na prvú alebo poslednú možnosť v zozname.</li>
-            <li><strong>Zadávanie textu</strong> – stlačenie písmena na klávesnici rýchlo presunie zameranie na možnosť začínajúcu na daný znak.</li>
+            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Tab</code> – presun zamerania klávesnicou do textového poľa alebo na ďalší prvok formulára.</li>
+            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Shift + Tab</code> – presun zamerania klávesnicou na predchádzajúci prvok.</li>
+            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Enter</code> – potvrdenie formulára (ak je pole súčasťou formulára).</li>
+            <li><code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">Esc</code> – zrušenie vstupu (iba ak je implementované správanie na úrovni formulára).</li>
+            <li>Zadávanie textu funguje štandardne pomocou klávesnice.</li>
         </ul>
         
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
             Základné pravidlá prístupnosti
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
-            
             <li>
-                Používajte natívne HTML prvky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>, spoločne s atribútom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">value=""</code>
+                Každý input musí mať jasný, programovo asociovaný label cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">for="id"</code> (v Reacte <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">htmlFor</code>).
             </li>
             <li>
-                Každý prvok <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> musí mať jasný, programovo asociovaný popis cez značku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label&gt;</code>. Nikdy nenahrádzajte skutočný label predvolenou prvou možnosťou v zozname (napríklad zmazaním labelu a ponechaním iba možnosti "Vyberte si...").
+                V prípade zadávania osobných údajov nezabudnite pridať tzv. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete</code>, napr.:<br className="hidden sm:block" />
+                <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label for="firstName"&gt;Krstné meno:&lt;/label&gt; &lt;input name="firstName" id="firstName" type="text" autocomplete="given-name" /&gt;</code>
             </li>
             <li>
-                Vyhnite sa automatickému odosielaniu (Auto-submission): Nikdy nepoužívajte udalosť zmeny výberu (onChange) na okamžité odoslanie formulára alebo navigáciu. Mätie to používateľov čítačiek obrazovky, ktorí pri prechádzaní zoznamu šípkami nechtiac aktivujú zmeny. Vždy poskytnite potvrdzovacie tlačidlo.
+                Prípadný <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">placeholder</code> slúži len pre príklad (napr.: <em>Jana Novotná</em>). Placeholder <strong>NEFUNGUJE</strong> ako náhrada labelu a hintu a <strong>NESMIE</strong> vysvetľovať funkciu textového poľa.
             </li>
             <li>
-                Vyhnite sa závislým poliam: Nemeňte dynamicky možnosti v jednom rozbaľovacom poli len na základe toho, čo používateľ vybral v inom. Pre mnohých používateľov je mätúce pochopiť, ako jedna voľba ovplyvňuje druhú.
+                Neaktívne pole (disabled) nesmie byť focusovateľné (zamerateľné klávesnicou).
             </li>
             <li>
-                Pri zbere neovplyvnených dát (napríklad v dotazníkoch) sa vyhnite predvyplneniu určitej hodnoty. Uistite sa, že prvá predvolená možnosť je neaktívna inštrukcia (napr. <em>-- Vyberte možnosť --</em>).
+                Prípadný hint prepojte na input cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
             </li>
             <li>
-                Zabezpečte jasne viditeľný stav zamerania (focus state) pre samotné rozbaľovacie pole.
+                V prípade povinného poľa nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
             </li>
             <li>
-                Prípadný doplňujúci text (hint) prepojte na pole cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>. V prípade povinného poľa nezabudnite pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
+                Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
             </li>
             <li>
-                Ak je zoznam rozsiahly, použite element <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;optgroup label="Názov skupiny"&gt;</code> na zoskupenie súvisiacich <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>. Uľahčí to orientáciu nielen vizuálne, ale aj pre čítačky obrazovky.
+                Nezabudnite, že samotná hviezdička na označenie povinného poľa nestačí - musí byť dodatočne vysvetlená pomocou vysvetlivky označenia povinných polí.
             </li>
             <li>
-                Ak pole požaduje bežné údaje (napríklad krajinu v adrese), použite atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete</code> (napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete="country"</code>), aby ste používateľom uľahčili vypĺňanie.
-            </li>
-            <li>
-                Aj keď HTML umožňuje vložiť do selectu tag <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;hr&gt;</code>, považuje sa len za vizuálny prvok a asistenčné technológie ho ignorujú. Nepoužívajte ho na prenášanie dôležitého kontextu.
+                Chybový hint musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800"> aria-describedby="error"</code> a okrem farby, ikony a hintu upozornenia nezabudnite pre čítačky pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
             </li>
         </ul>
     </div>
@@ -355,7 +338,7 @@ const TabImplementacia = () => (
     <div className="animate-fade-in text-black space-y-10">
         
         <section>
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia rozbaľovacieho poľa z ID-SK Frontend</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia textového poľa z ID-SK Frontend</h2>
             <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-8">
                 Komponenty z knižnice ID-SK Frontend môžete do svojho projektu integrovať dvoma spôsobmi v závislosti od vašej technologickej infraštruktúry:
             </p>
@@ -440,22 +423,21 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/select" className="text-my-blue underline hover:text-blue-800 transition-colors"> rozbaľovací zoznam</a> a vložte ho do svojho HTML. Ak používate čisté HTML, musíte do značky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code>. Tento atribút musí byť unikátny v rámci domény.
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/input" className="text-my-blue underline hover:text-blue-800 transition-colors"> textové pole</a> a vložte ho do svojho HTML. Ak používate čisté HTML, musíte do značky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code>. Tento atribút musí byť unikátny v rámci domény.
                         </p>
                         
+                        {/* Zvýraznenie kódu pre čisté HTML inputu */}
                         <SyntaxHighlighter language="html" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
                             {dedent`
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label" for="select-1">
-                                        Label text goes here
-                                        <span class="idsk-required">*</span>
-                                    </label>
-                                    <select class="govuk-select" id="select-1" name="select-1">
-                                        <option value="1">GOV.UK frontend option 1</option>
-                                        <option value="2" selected>GOV.UK frontend option 2</option>
-                                        <option value="3" disabled>GOV.UK frontend option 3</option>
-                                    </select>
-                                    </div>
+                                <div class="govuk-form-group govuk-input-component">
+                                  <label class="govuk-label govuk-body-m" for="input-example">
+                                    Názov textového poľa
+                                    <span class="govuk-body-s">(nepovinné)</span>
+                                  </label>
+                                  <div class="govuk-input-container">
+                                    <input class="govuk-input" id="input-example" name="default" type="text">
+                                  </div>
+                                </div>
                             `}
                         </SyntaxHighlighter>
                     </div>
@@ -484,23 +466,23 @@ const TabImplementacia = () => (
                     </li>
                     <li>
                         <strong className="font-semibold block mb-2">Importujte štýly</strong>
-                        Pre import individuálneho IDSK komponentu, v tomto prípade Rozbaľovacieho poľa, do svojho Sass súboru pridajte:
+                        Pre import individuálneho IDSK komponentu, v tomto prípade Textového poľa, do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter language="scss" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
                             {dedent`
-                                @import "node_modules/@id-sk/frontend/idsk/components/select/select";
+                                @import "node_modules/@id-sk/frontend/idsk/components/input/input";
                             `}
                         </SyntaxHighlighter>
                     </li>
                     <li>
                         <strong className="font-semibold block mb-2">Importujte Javascript</strong>
-                        ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module</code>. Pre import javascriptu rozbaľovacieho poľa, vložte do .js súboru:
+                        ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module</code>. Pre import javascriptu textového poľa, vložte do .js súboru:
                         
                         <SyntaxHighlighter language="javascript" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
                             {dedent`
-                                import { Select, createAll } from 'govuk-frontend' 
+                                import { Input, createAll } from 'govuk-frontend' 
 
-                                createAll(Select)
+                                createAll(Input)
                             `}
                         </SyntaxHighlighter>
                     </li>

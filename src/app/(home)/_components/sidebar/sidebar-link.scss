@@ -1,17 +1,16 @@
 .sidebar-link {
     display: block;
-    /* Zmenili sme padding, aby bol naľavo 0 */
     padding: 8px 0; 
     border-radius: 8px; 
     font-size: 1rem; 
 
     .sidebar-link-text {
       display: inline-block;
-      padding-left: 12px; // TU nastavuješ odsadenie textu od okraja
+      padding-left: 12px;
     }
   
     &:hover {
-      background-color: #eff5fe; /* Mierne stmavený hover pre lepšiu viditeľnosť (Tailwind gray-100) */
+      background-color: #eff5fe; 
     }
   
     &.active {

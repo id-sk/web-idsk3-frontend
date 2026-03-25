@@ -4,11 +4,6 @@ import React from "react";
 const FooterResp = () => {
   return (
     <footer className="w-full border-t border-solid bg-neutral-100 border-neutral-200">
-      
-      {/* ZMENA V PADDINGOCH: 
-        px-4 (Mobil: 16px) -> sm:px-8 (Tablet od 640px: 32px) -> min-[1160px]:px-4 (Desktop od 1160px: 16px)
-        Toto presne kopíruje tvoj navbar.scss!
-      */}
       <div className="flex justify-between items-end w-full max-w-[1120px] mx-auto py-12 px-4 sm:px-8 min-[1160px]:px-4 max-md:flex-col max-md:items-start max-md:gap-8">
         
         {/* ĽAVÁ ČASŤ: Texty */}

@@ -36,7 +36,7 @@ div.idsk-header-container__menu nav.idsk-navigation {
 @media (min-width: 1160px) {
     div.idsk-secondary-navigation__header,
     div.idsk-header-container {
-        padding-left: 1rem !important; /* LÍCUJE s naším 1120px stredovým layoutom */
+        padding-left: 1rem !important; 
         padding-right: 1rem !important;
     }
     div.idsk-header-container__menu {
@@ -87,26 +87,23 @@ div.idsk-header-container__menu nav.idsk-navigation {
 
     /* ======= OPRAVA ŠTÝLOV LINIEK (Simulácia desktopu) ======= */
     
-    /* 1. Zrušenie 100% mobilnej šírky a tenkých čiar (0.063rem) */
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link {
         width: auto !important;
-        border-top-width: 4px !important;    /* Desktopový štandard */
-        border-bottom-width: 1px !important; /* Desktopový štandard */
-        border-color: transparent !important; /* Štandardne priesvitné */
+        border-top-width: 4px !important;
+        border-bottom-width: 1px !important;
+        border-color: transparent !important; 
     }
 
-    /* 2. Vrátenie správneho desktop paddingu pre texty odkazov */
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link > a {
         padding: 1.25rem 0.625rem !important;
     }
 
-    /* 3. Aktívny stav (clicked) - presne ako na desktope nad 1120px */
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked {
-        border-bottom-color: rgb(11, 65, 153) !important; /* Modrá hrubá čiara naspodku */
+        border-bottom-color: rgb(11, 65, 153) !important; 
     }
     
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked > a {
-        color: rgb(11, 65, 153) !important; /* Modrý text */
+        color: rgb(11, 65, 153) !important; 
         font-weight: 700 !important;
     }
 
@@ -114,7 +111,6 @@ div.idsk-header-container__menu nav.idsk-navigation {
         text-decoration: none !important;
     }
 
-    /* Skrytie mobilných špecifík (napr. text Menu alebo šípky) */
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__label {
         display: none !important;
     }
@@ -128,7 +124,7 @@ div.idsk-header-container__menu nav.idsk-navigation {
     div.idsk-secondary-navigation__header,
     div.idsk-header-container,
     div.idsk-header-container__menu {
-        padding-left: 1rem !important; /* VRÁTENIE na 16px, aby to nevošlo do loga */
+        padding-left: 1rem !important; 
         padding-right: 1rem !important;
     }
     div.idsk-secondary-navigation__dropdown {
@@ -186,7 +182,7 @@ div.idsk-header-container__menu nav.idsk-navigation {
 @media (max-width: 420px) {
     div.idsk-header-container {
         gap: 0.5rem !important;
-        /* Padding zostáva 1rem (dedí sa z max-width: 768px), len zmenšujeme prvky */
+        /* Padding zostáva 1rem (dedí sa z max-width: 768px) */
     }
 
     div.idsk-header-container > a img {

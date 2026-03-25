@@ -88,8 +88,8 @@ export const pageRoutes = [
         "link": "/komponenty/tlacidlo-textove"
     },
     {
-        "name": "Zaškrtávacie pole",
-        "link": "/komponenty/zaskrtavacie-pole"
+        "name": "Začiarkavacie pole",
+        "link": "/komponenty/zaciarkavacie-pole"
     }
 ];
 
