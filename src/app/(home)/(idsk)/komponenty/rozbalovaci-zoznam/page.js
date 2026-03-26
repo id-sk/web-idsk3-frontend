@@ -399,7 +399,14 @@ const TabImplementacia = () => (
                         </p>
                         
                         {/* Zvýraznenie kódu pre štruktúru súborov (text/bash) */}
-                        <SyntaxHighlighter language="bash" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="bash" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 project/ 
                                 │ 
@@ -421,7 +428,14 @@ const TabImplementacia = () => (
                         </p>
                         
                         {/* Zvýraznenie kódu pre HTML head */}
-                        <SyntaxHighlighter language="html" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="html" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 <!DOCTYPE html> 
                                 <html> 
@@ -443,7 +457,14 @@ const TabImplementacia = () => (
                             Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/select" className="text-my-blue underline hover:text-blue-800 transition-colors"> rozbaľovací zoznam</a> a vložte ho do svojho HTML. Ak používate čisté HTML, musíte do značky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code>. Tento atribút musí byť unikátny v rámci domény.
                         </p>
                         
-                        <SyntaxHighlighter language="html" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="html"
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 <div class="govuk-form-group">
                                     <label class="govuk-label" for="select-1">
@@ -471,7 +492,14 @@ const TabImplementacia = () => (
                         <strong className="block mb-2">Nainštalujte balík</strong>
                         Pre inštaláciu cez NPM spustite (po skončení inštalácie sa balík <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">@id-sk/frontend</code> objaví v <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">node_modules</code>):
                         
-                        <SyntaxHighlighter language="bash" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="bash" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 npm install nunjucks --save
                                 npm i @id-sk/frontend@3.0.0-beta.0-hotfix
@@ -486,7 +514,14 @@ const TabImplementacia = () => (
                         <strong className="font-semibold block mb-2">Importujte štýly</strong>
                         Pre import individuálneho IDSK komponentu, v tomto prípade Rozbaľovacieho poľa, do svojho Sass súboru pridajte:
                         
-                        <SyntaxHighlighter language="scss" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="scss"
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 @import "node_modules/@id-sk/frontend/idsk/components/select/select";
                             `}
@@ -496,7 +531,14 @@ const TabImplementacia = () => (
                         <strong className="font-semibold block mb-2">Importujte Javascript</strong>
                         ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module</code>. Pre import javascriptu rozbaľovacieho poľa, vložte do .js súboru:
                         
-                        <SyntaxHighlighter language="javascript" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="javascript" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 import { Select, createAll } from 'govuk-frontend' 
 

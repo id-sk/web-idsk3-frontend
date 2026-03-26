@@ -357,7 +357,14 @@ const TabImplementacia = () => (
                         </p>
                         
                         {/* Zvýraznenie kódu pre štruktúru súborov (text/bash) */}
-                        <SyntaxHighlighter language="bash" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="bash"
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 project/ 
                                 │ 
@@ -379,7 +386,14 @@ const TabImplementacia = () => (
                         </p>
                         
                         {/* Zvýraznenie kódu pre HTML head */}
-                        <SyntaxHighlighter language="html" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="html" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 <!DOCTYPE html> 
                                 <html> 
@@ -402,7 +416,14 @@ const TabImplementacia = () => (
                         </p>
                         
                         {/* Zvýraznenie kódu pre čisté HTML inputu */}
-                        <SyntaxHighlighter language="html" style={vscDarkPlus} customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="html" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 <div data-module="govuk-textarea" class="govuk-form-group">
                                 <label class="govuk-label" for="more-detail">
@@ -432,7 +453,14 @@ const TabImplementacia = () => (
                         <strong className="block mb-2">Nainštalujte balík</strong>
                         Pre inštaláciu cez NPM spustite (po skončení inštalácie sa balík <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">@id-sk/frontend</code> objaví v <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">node_modules</code>):
                         
-                        <SyntaxHighlighter language="bash" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="bash" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 npm install nunjucks --save
                                 npm i @id-sk/frontend@3.0.0-beta.0-hotfix
@@ -447,7 +475,14 @@ const TabImplementacia = () => (
                         <strong className="font-semibold block mb-2">Importujte štýly</strong>
                         Pre import individuálneho IDSK komponentu, v tomto prípade Viacriadkového textového poľa, do svojho Sass súboru pridajte:
                         
-                        <SyntaxHighlighter language="scss" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="scss" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 @import "node_modules/@id-sk/frontend/idsk/components/textarea/textarea";
                             `}
@@ -457,7 +492,14 @@ const TabImplementacia = () => (
                         <strong className="font-semibold block mb-2">Importujte Javascript</strong>
                         ID-SK Frontend komponenty s JavaScript správaním majú vo svojom markupe nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module</code>. Pre import javascriptu viacriadkového textového poľa, vložte do .js súboru:
                         
-                        <SyntaxHighlighter language="javascript" style={vscDarkPlus} className="mt-4" customStyle={{ padding: '1.25rem', borderRadius: '0.5rem', fontSize: '0.875rem' }}>
+                        <SyntaxHighlighter 
+                            language="javascript" 
+                            style={vscDarkPlus} 
+                            wrapLines={true}
+                            wrapLongLines={true}
+                            customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
+                            codeTagProps={{ style: { whiteSpace: 'pre-wrap', wordBreak: 'break-word' } }}
+                            >
                             {dedent`
                                 import { Textarea, createAll } from 'govuk-frontend' 
 
