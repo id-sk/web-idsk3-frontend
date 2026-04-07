@@ -44,7 +44,7 @@ export const pageRoutes = [
         "link": "/komponenty/pata"
     },
     {
-        "name": "Pole pre nahratie súboru",
+        "name": "Pole na nahratie súboru",
         "link": "/komponenty/nahratie-suboru"
     },
     {
@@ -55,14 +55,14 @@ export const pageRoutes = [
         "name": "Rázcestník - horizontálny",
         "link": "/komponenty/razcestnik-horizontalny"
     },
-    {
+    /* {
         "name": "Rázcestník - vertikálny",
         "link": "/komponenty/razcestnik-vertikalny"
-    },
-    {
+    }, */
+    /* {
         "name": "Rázcestník - textový",
         "link": "/komponenty/razcestnik-textovy"
-    },
+    },*/
     {
         "name": "Rozbaľovací zoznam",
         "link": "/komponenty/rozbalovaci-zoznam"
@@ -72,7 +72,7 @@ export const pageRoutes = [
         "link": "/komponenty/textove-pole"
     },
     {
-        "name": "Textové pole - viacriadkové",
+        "name": "Viacriadkové textové pole",
         "link": "/komponenty/textove-pole-viacriadkove"
     },
     {

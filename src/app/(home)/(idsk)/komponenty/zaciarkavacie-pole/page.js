@@ -11,12 +11,11 @@ import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import dedent from 'dedent';
 
 // ============================================================================
-// 1. HLAVNÝ KOMPONENT (Škrupina stránky a slovník tabov)
+// 1. HLAVNÝ KOMPONENT
 // ============================================================================
 const checkbox = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
-    // 🌟 SLOVNÍK TABOV: Tu len priradíme kľúč k danému podkomponentu
     const renderTabContent = {
         pouzitie: <TabPouzitie />,
         varianty: <TabVarianty />,
@@ -88,10 +87,9 @@ export default checkbox;
 const TabPouzitie = () => (
     <div className="animate-fade-in">
         <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4">
-            Použitie textového poľa
+            Použitie začiarkavacieho poľa
         </h2>
         
-        {/* Ukážka Inputu na bodkovanom pozadí */}
         <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] py-7 my-6 px-4">
                 <Checkbox 
@@ -114,7 +112,7 @@ const TabPouzitie = () => (
         <div className="flex flex-wrap gap-8 sm:gap-12 mt-10">
             <div className="flex flex-col items-start flex-1 min-w-[280px]">
                 <InformationBanner
-                    ariaLabel="Správne použitie textového poľa"
+                    ariaLabel="Správne použitie začiarkavacieho poľa"
                     type="banner"
                     variant="success"
                     hideCloseButton={true}
@@ -134,7 +132,7 @@ const TabPouzitie = () => (
             
             <div className="flex flex-col items-start flex-1 min-w-[280px]">
                 <InformationBanner
-                    ariaLabel="Neprávne použitie textového poľa"
+                    ariaLabel="Neprávne použitie začiarkavacieho poľa"
                     type="banner"
                     variant="warning"
                     hideCloseButton={true}

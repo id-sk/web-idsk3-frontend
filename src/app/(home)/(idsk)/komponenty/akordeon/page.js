@@ -238,7 +238,7 @@ const TabPristupnost = () => (
             Prístupnosť (Accessibility)
         </h2>
         <p className="text-sm sm:text-base tracking-wide leading-relaxed text-black mb-8">
-            Komponent je v súlade s normami WCAG 2.2 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky. 
+            Komponent je v súlade s normami WCAG 2.1 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky. 
         </p>
         
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
