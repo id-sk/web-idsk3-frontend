@@ -19,10 +19,10 @@ export const pageRoutes = [
         "name": "Chyby a validácie",
         "link": "/komponenty/chyby-validacie"
     },
-   /*  {
-        "name": "Informačná lišta oznámenie",
-        "link": "/komponenty/informacna-lista-oznamenie"
-    }, */
+    {
+        "name": "Informačná lišta",
+        "link": "/komponenty/informacna-lista"
+    },
     /*{
         "name": "Informačná lišta upozornenie",
         "link": "/komponenty/informacna-lista-upozornenie"
@@ -76,17 +76,17 @@ export const pageRoutes = [
         "link": "/komponenty/textove-pole-viacriadkove"
     },
     {
-        "name": "Tlačidlo - primárne",
-        "link": "/komponenty/tlacidlo-primarne"
+        "name": "Tlačidlo",
+        "link": "/komponenty/tlacidlo"
     },
-    {
+    /*{
         "name": "Tlačidlo - sekundárne",
         "link": "/komponenty/tlacidlo-sekundarne"
-    },
-    {
+    },*/
+    /*{
         "name": "Tlačidlo - textové",
         "link": "/komponenty/tlacidlo-textove"
-    },
+    },*/
     {
         "name": "Začiarkavacie pole",
         "link": "/komponenty/zaciarkavacie-pole"

@@ -15,7 +15,7 @@ export const componentsData = [
   { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
   { href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
   { href: "/komponenty/chyby-validacie", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Chyby a validácie", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
-  /* { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner - oznámenie", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""}, */
+  { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
   /*{ href: "/komponenty/informacna-lista-upozornenie", src: "/images/komponenty-cards/info-banner-upozornenie.svg", title: "Informačný banner - upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},*/
   { href: "/komponenty/karticka", src: "/images/komponenty-cards/karticka.svg", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
   { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista-spatnej-vazby.svg", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
@@ -28,9 +28,9 @@ export const componentsData = [
   /*{ href: "/komponenty/razcestnik-vertikalny", src:"/images/komponenty-cards/razcestnik-vertikalny.svg", title: "Rázcestník vertikálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},*/
   { href: "/komponenty/rozbalovaci-zoznam", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovací zoznam", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},  
   { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/textove-pole.svg", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
-  { href: "/komponenty/tlacidlo-primarne", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo - Primárne", description: "Hlavné akčné prvky, ktoré majú najväčší vplyv na používateľskú interakciu.", alt: ""},
-  { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},
-  { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},
+  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo", description: "Akčné prvky, ktoré majú vplyv na používateľskú interakciu.", alt: ""},
+  /* { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},*/
+  /* { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},*/
   { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
   { href: "/komponenty/zaciarkavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Začiarkavacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
 ];
