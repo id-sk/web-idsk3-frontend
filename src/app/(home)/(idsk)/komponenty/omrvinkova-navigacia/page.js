@@ -387,7 +387,7 @@ const TabImplementacia = () => (
                     </li>
                     <li>
                         <strong className="font-semibold block mb-2">Importujte štýly</strong>
-                        Pre import individuálneho IDSK komponentu (rázcestník) do svojho Sass súboru pridajte:
+                        Pre import individuálneho IDSK komponentu (omrvinková navigácia) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
                             language="html" 

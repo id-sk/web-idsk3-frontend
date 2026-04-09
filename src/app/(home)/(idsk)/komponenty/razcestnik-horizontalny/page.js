@@ -86,7 +86,7 @@ export default signpost;
 const TabPouzitie = () => (
     <div className="animate-fade-in">
         <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4">
-            Použitie poľa na nahratie súboru
+            Použitie rázcestníka
         </h2>
         
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
@@ -123,7 +123,7 @@ const TabPouzitie = () => (
                     <li>ako jeden celistvý klikateľný prvok,</li>
                     <li>s jasným vizuálnym indikátorom, že ide o klikateľný prvok (napr. ikonka šípky),</li>
                     <li>udržujte nadpisy aj podnadpisy krátke,</li>
-                    <li>v logických a primeraných skupinách (max. 5 zázcestníkov)</li>
+                    <li>v logických a primeraných skupinách (max. 5 rázcestníkov)</li>
                 </ul>
                 </InformationBanner>
             </div>

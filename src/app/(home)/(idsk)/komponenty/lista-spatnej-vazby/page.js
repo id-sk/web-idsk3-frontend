@@ -119,10 +119,10 @@ const TabPouzitie = () => (
                         Ako sa používa
                     </h3>
                     <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                        <li>Je umiestnená vždy pod komponentom hlavička tak, aby bola dostupná počas celej cesty používateľa rozhraním.</li>
-                        <li>Zvyčajne sa skladá z horizontálneho reťazca odkazov, ktorý začína domovskou stránkou a postupne ukazuje každú úroveň hierarchie stránok, až k aktuálnej polohe používateľa.</li>
-                        <li>Pri používaní omrvinkovej navigácie je dôležité zabezpečiť, aby bola štruktúra webového sídla (site map) zreteľná a zároveň jednoduchá (krátke názvy).</li>
-                        <li>Obsah v jednotlivých sekciách je rovnocenný a nezávislý (teda nezáleží na poradí rozbalenia).</li>
+                        <li>Komponent sa umiestňuje vždy na spodok stránky bezprostredne pred pätičku (footer), kedy už má používateľ prečítaný obsah.</li>
+                        <li>Vždy používajte rovnocennú vizuálnu váhu pre odpovede „Áno“ aj „Nie“ (obe ako sekundárne tlačidlá), aby ste predišli klamlivým vzorcom (dark patterns).</li>
+                        <li>Po odoslaní odpovede vždy vizuálne informujte používateľa o úspešnom prijatí väzby (napríklad správou „Ďakujeme za vašu spätnú väzbu“).</li>
+                        <li>Formulár na nahlásenie chyby udržujte stručný a nežiadajte v ňom od používateľa zbytočné osobné údaje.</li>
                     </ul>
                 </InformationBanner>
             </div>
@@ -138,9 +138,9 @@ const TabPouzitie = () => (
                         Ako sa nepoužíva
                     </h3>
                     <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                        <li>Nepoužívajte komponent na webových stránkach s plochou štruktúrou ani na zobrazenie pokroku cez lineárnu cestu či transakciu.</li>
-                        <li>Vyhnite sa dlhým názvom stránok, alebo ich pri zobrazení v omrvinkovej navigácii skráťte.</li>
-                        <li>Pri veľmi dlhej navigácii v mobilnej verzii (viac ako 5 hierarchických úrovní) zvážte vizuálne skrátenie navigácie.</li>
+                        <li>Nepoužívajte lištu spätnej väzby na zhromažďovanie komplexných analytických dát alebo dlhých prieskumov spokojnosti.</li>
+                        <li>Nevkladajte tento komponent na každú jednu podstránku procesu (napríklad do viacnásobného formulára), patrí zvyčajne na informačné stránky alebo na koniec procesu.</li>
+                        <li>Tlačidlo „Nahlásiť chybu“ by nemalo viesť na všeobecnú kontaktnú stránku, ale na modálne okno.</li>
                     </ul>
                 </InformationBanner>
             </div>
@@ -218,7 +218,7 @@ const TabImplementacia = () => (
     <div className="animate-fade-in text-black space-y-10">
         
         <section>
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia omrvinkovej navigácie z ID-SK Frontend</h2>
+            <h2 className="text-xl sm:text-2xl font-bold mb-4">Implementácia lišty spätnej väzby z ID-SK Frontend</h2>
             <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-8">
                 Komponenty z knižnice ID-SK Frontend môžete do svojho projektu integrovať dvoma spôsobmi v závislosti od vašej technologickej infraštruktúry:
             </p>
@@ -385,7 +385,7 @@ const TabImplementacia = () => (
                     </li>
                     <li>
                         <strong className="font-semibold block mb-2">Importujte štýly</strong>
-                        Pre import individuálneho IDSK komponentu (rázcestník) do svojho Sass súboru pridajte:
+                        Pre import individuálneho IDSK komponentu (lišta spätnej väzby) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
                             language="html" 
