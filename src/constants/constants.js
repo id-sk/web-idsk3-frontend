@@ -16,8 +16,8 @@ export const pageRoutes = [
         "link": "/komponenty/hlavicka-webove-sidla"
     },
     {
-        "name": "Chyby a validácie",
-        "link": "/komponenty/chyby-validacie"
+        "name": "Prehľad s chybovými hláseniami",
+        "link": "/komponenty/prehlad-s-chybovymi-hlaseniami"
     },
     {
         "name": "Informačná lišta",
