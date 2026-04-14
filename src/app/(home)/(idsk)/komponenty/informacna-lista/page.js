@@ -214,10 +214,6 @@ const TabPristupnost = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             Informačná lišta spĺňa požiadavky WCAG 2.1 AA. Spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú plnohodnotné interakcie s klávesnicou a asistenčnými technológiami (čítačkami obrazovky).  
         </p>
-        
-        <h3 className="text-lg sm:text-xl font-bold text-black mb-4">
-            Klávesové ovládanie
-        </h3>
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">
             Klávesové ovládanie
         </h3>
@@ -235,19 +231,19 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             <li>
-                <strong>Dynamické chybové a varovné lišty:</strong> Ak sa informačná lišta (error alebo warning) zjaví na obrazovke dynamicky ako reakcia na akciu používateľa (napr. po odoslaní formulára), musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="alert"</code>. Čítačka obrazovky vďaka tomu okamžite preruší čítanie a upozorní používateľa na kritický problém.
+                Dynamické chybové a varovné lišty: Ak sa informačná lišta (error alebo warning) zjaví na obrazovke dynamicky ako reakcia na akciu používateľa (napr. po odoslaní formulára), musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="alert"</code>. Čítačka obrazovky vďaka tomu okamžite preruší čítanie a upozorní používateľa na kritický problém.
             </li>
             <li>
-                <strong>Dynamické úspešné a informačné lišty:</strong> Ak sa dynamicky zjaví zelená (success) alebo modrá (info) lišta, použite <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="status"</code>. Čítačka obrazovky počká, kým dočíta aktuálnu vetu, a až potom slušne oznámi novú informáciu bez toho, aby používateľa vyrušila.
+                Dynamické úspešné a informačné lišty: Ak sa dynamicky zjaví zelená (success) alebo modrá (info) lišta, použite <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="status"</code>. Čítačka obrazovky počká, kým dočíta aktuálnu vetu, a až potom slušne oznámi novú informáciu bez toho, aby používateľa vyrušila.
             </li>
             <li>
-                <strong>Statické lišty v obsahu stránky:</strong> Ak je informačná lišta pevnou súčasťou rozloženia stránky (napríklad globálne upozornenie o odstávke navrchu stránky), mala by mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="region"</code> a mala by byť prepojená so svojím nadpisom pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby="id-nadpisu"</code>, aby ju čítačky vedeli ľahko lokalizovať.
+                Statické lišty v obsahu stránky: Ak je informačná lišta pevnou súčasťou rozloženia stránky (napríklad globálne upozornenie o odstávke navrchu stránky), mala by mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="region"</code> a mala by byť prepojená so svojím nadpisom pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby="id-nadpisu"</code>, aby ju čítačky vedeli ľahko lokalizovať.
             </li>
             <li>
-                <strong>Dekoratívne ikony:</strong> Ikonky vo vnútri lišty, ktoré vizuálne určujú jej typ (výkričník, fajka, i), musia byť pred asistenčnými technológiami skryté pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>. 
+                Dekoratívne ikony: Ikonky vo vnútri lišty, ktoré vizuálne určujú jej typ (výkričník, fajka, i), musia byť pred asistenčnými technológiami skryté pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>. 
             </li>
             <li>
-                <strong>Zrozumiteľnosť bez farieb:</strong> Nespoliehajte sa pri odovzdávaní informácie iba na farbu (napr. červená = chyba). Zabezpečte, aby bol význam zrejmý aj z textu alebo štruktúry (napríklad pomocou skrytého textu "Chyba:" pre čítačky na začiatku správy), čím splníte kritériá WCAG pre používateľov s poruchou farbocitu.
+                Zrozumiteľnosť bez farieb: Nespoliehajte sa pri odovzdávaní informácie iba na farbu (napr. červená = chyba). Zabezpečte, aby bol význam zrejmý aj z textu alebo štruktúry (napríklad pomocou skrytého textu "Chyba:" pre čítačky na začiatku správy), čím splníte kritériá WCAG pre používateľov s poruchou farbocitu.
             </li>
         </ul>
     </div>
