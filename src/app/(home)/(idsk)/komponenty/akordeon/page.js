@@ -146,7 +146,7 @@ const TabVarianty = () => (
         </h2>
         
         <p className="text-sm sm:text-base tracking-wide leading-relaxed text-black mb-8">
-             Akordeón je zložený zo sekcií, ktoré je možné rozbaliť/zbaliť individuálne, alebo všetky naraz tlačidlom “Otvoriť/Zavrieť všetky” sekcie. V prípade potreby dlhšieho nadpisu sekcie (viac ako 10 slov), je možné v hlavičke sekcie použiť popis.
+            Akordeón je zložený zo sekcií, ktoré je možné rozbaliť/zbaliť individuálne, alebo všetky naraz tlačidlom “Otvoriť/Zavrieť všetky” sekcie. V prípade potreby dlhšieho nadpisu sekcie (viac ako 10 slov), je možné v hlavičke sekcie použiť popis.
         </p>
         
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4">

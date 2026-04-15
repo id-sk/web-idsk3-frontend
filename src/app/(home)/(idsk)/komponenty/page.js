@@ -9,7 +9,7 @@ function ImageCard({ href, src, title, description, alt }) {
   return (
     <Link 
       href={href ?? "#"} 
-      className="flex w-full h-full group outline-none rounded-2xl"
+      className="flex w-full h-full group outline-none rounded-2xl !pl-0"
     >
       <article className="
         relative flex flex-col w-full h-full p-4 sm:p-5 tracking-wide bg-white 

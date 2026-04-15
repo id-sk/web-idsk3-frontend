@@ -95,8 +95,7 @@ const TabPouzitie = () => (
             <div className="w-full max-w-[500px] px-4">
                <Link 
                     href="/komponenty/karticka"
-                    /* Z Linku sme zmazali všetky focus-visible triedy, ostal len čistý obal */
-                    className="flex w-full h-full group outline-none rounded-2xl"
+                    className="flex w-full h-full group outline-none rounded-2xl !pl-0"
                 >
                     <article className="
                         relative flex flex-col w-full h-full p-4 sm:p-5 tracking-wide bg-white 
@@ -188,7 +187,7 @@ const TabVarianty = () => (
             <div className="w-full max-w-[500px] px-4">
                  <Link 
                     href="/komponenty/karticka"
-                    className="flex w-full h-full group outline-none rounded-2xl"
+                    className="flex w-full h-full group outline-none rounded-2xl !pl-0"
                 >
                     <article className="
                         relative flex flex-col w-full h-full p-4 sm:p-5 tracking-wide bg-white 
