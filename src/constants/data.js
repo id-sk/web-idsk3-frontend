@@ -12,9 +12,8 @@ export const baseData = [
 
 export const componentsData = [
   { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.svg", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
-  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
-  { href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
-  { href: "/komponenty/prehlad-s-chybovymi-hlaseniami", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Prehľad s chybovými hláseniami", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
+  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - elektronické služby", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
+  /*{ href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },*/
   { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
   /*{ href: "/komponenty/informacna-lista-upozornenie", src: "/images/komponenty-cards/info-banner-upozornenie.svg", title: "Informačný banner - upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},*/
   { href: "/komponenty/karticka", src: "/images/komponenty-cards/karticka.svg", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
@@ -22,6 +21,7 @@ export const componentsData = [
   { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/omrvinkova-navigacia.svg", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
   { href: "komponenty/pata", src: "/images/komponenty-cards/pata.svg", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
   { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/pole-pre-nahratie-suboru.svg", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
+  { href: "/komponenty/prehlad-s-chybovymi-hlaseniami", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Prehľad s chybovými hláseniami", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
   { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/prepinacie-pole.svg", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
   { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/razcestnik-horizontalny.svg", title: "Rázcestník horizontálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
   /* { href: "/komponenty/razcestnik-textovy", src:"/images/komponenty-cards/razcestnik-textovy.svg", title: "Rázcestník textový", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},*/

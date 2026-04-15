@@ -8,17 +8,13 @@ export const pageRoutes = [
         "link": "/komponenty/akordeon"
     },
     {
-        "name": "Hlavička - webové aplikácie",
+        "name": "Hlavička - elektronické služby",
         "link": "/komponenty/hlavicka-elektronicke-sluzby"
     },
-    {
+    /*{
         "name": "Hlavička - webové sídla",
         "link": "/komponenty/hlavicka-webove-sidla"
-    },
-    {
-        "name": "Prehľad s chybovými hláseniami",
-        "link": "/komponenty/prehlad-s-chybovymi-hlaseniami"
-    },
+    },*/
     {
         "name": "Informačná lišta",
         "link": "/komponenty/informacna-lista"
@@ -46,6 +42,10 @@ export const pageRoutes = [
     {
         "name": "Pole na nahratie súboru",
         "link": "/komponenty/nahratie-suboru"
+    },
+    {
+        "name": "Prehľad s chybovými hláseniami",
+        "link": "/komponenty/prehlad-s-chybovymi-hlaseniami"
     },
     {
         "name": "Prepínacie pole",
