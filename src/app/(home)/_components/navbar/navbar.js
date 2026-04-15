@@ -71,111 +71,113 @@ const Nav = ({ isMobileMenuOpen, sidebarData }) => {
   )
 }
 
-const Navbar = ({ sidebarData }) => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true)
-  const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
+const Navbar = ({ sidebarData, hideNavigation = false }) => {
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true)
+    const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
 
-  const router = useRouter();
+    const router = useRouter();
 
-  const handleClick = () => {
-    router.push('https://idsk2.gov.sk/');
-  };
+    const handleClick = () => {
+        router.push('https://idsk2.gov.sk/');
+    };
 
-  const handleToggle = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  };
+    const handleToggle = () => {
+        setIsMobileMenuOpen(!isMobileMenuOpen)
+    };
 
-  const handleToggleLanguage = () => {
-    setIsLanguageMenuOpen(!isLanguageMenuOpen)
-  };
+    const handleToggleLanguage = () => {
+        setIsLanguageMenuOpen(!isLanguageMenuOpen)
+    };
 
-  return (
-    <HeaderContainer
-      fixed
-      largeMenu={
-        <div
-          style={{
-            height: '68px',
-          }}
-        >
-          <Nav isMobileMenuOpen={isMobileMenuOpen} />
-        </div>
-      }
-      logo={
-        <a href="/">
-          <div className="flex gap-5 justify-between w-full">
-            <header className="font-source-sans-pro flex gap-4 self-start font-bold text-blue-900 items-center">
-              <Image
-                src="/images/logotyp.svg"
-                alt=""
-                sizes="100vw"
-                width={0}
-                height={0}
-                className="w-8 h-8 md:w-12 md:h-12"
-              />
-              <h3 className='py-2 max-w-720px dizajn'>IDSK 3</h3>
-            </header>
-          </div>
-        </a>
-      }
-      mobileMenu={
-        <MenuMobile
-          opened
-          aria-label={isMobileMenuOpen ? 'Menu otvorené' : 'Menu zatvorené'}
-        >
-          <MenuButton
-            closedTitle="Menu"
-            opened={isMobileMenuOpen}
-            openedTitle="Zavrieť"
-            toggleOpened={handleToggle}
-            className='menu-button'
-          />
-          <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
-        </MenuMobile>
-      }
-      secondaryNavigation={
-        <SecondaryNavigation
-          dropDownOptions={[<a key={'english'}>english</a>]}
-          dropDownTitle="slovenčina"
-          heading="Oficiálna stránka"
-          headingButton="verejnej správy"
-          mobileHeading="SK"
-          mobileHeadingButton="e-Gov"
-          aria-expanded={isLanguageMenuOpen ? true : false}
-          onClick={handleToggleLanguage}
-        >
-          <div className="grid grid-cols-1 gap-4 tb2:grid-cols-2 tb2:gap-8">
-            <div>
-              <h3 className="idsk-text-body-1">
-                Doména gov.sk je oficiálna
-              </h3>
-              <p className="py-2.5">
-                Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk.{' '}
-                <a
-                  href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci"
-                  target="_blank"
-                >
-                  Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze.
+    return (
+        <HeaderContainer
+            fixed
+            // Tu je to kúzlo: Ak hideNavigation NIE JE true, ukáž menu. Inak vráť null (nič).
+            largeMenu={
+                !hideNavigation ? (
+                    <div style={{ height: '68px' }}>
+                        <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
+                    </div>
+                ) : null
+            }
+            logo={
+                <a href="/">
+                    <div className="flex gap-5 justify-between w-full">
+                        <header className="font-source-sans-pro flex gap-4 self-start font-bold text-blue-900 items-center">
+                            <Image
+                                src="/images/logotyp.svg"
+                                alt="Logo"
+                                sizes="100vw"
+                                width={0}
+                                height={0}
+                                className="w-8 h-8 md:w-12 md:h-12"
+                            />
+                            <h3 className='py-2 max-w-720px dizajn'>IDSK 3</h3>
+                        </header>
+                    </div>
                 </a>
-              </p>
+            }
+            // Rovnaké kúzlo pre mobilné menu
+            mobileMenu={
+                !hideNavigation ? (
+                    <MenuMobile
+                        opened
+                        aria-label={isMobileMenuOpen ? 'Menu otvorené' : 'Menu zatvorené'}
+                    >
+                        <MenuButton
+                            closedTitle="Menu"
+                            opened={isMobileMenuOpen}
+                            openedTitle="Zavrieť"
+                            toggleOpened={handleToggle}
+                            className='menu-button'
+                        />
+                        <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
+                    </MenuMobile>
+                ) : null
+            }
+            secondaryNavigation={
+                <SecondaryNavigation
+                    dropDownOptions={[<a key={'english'}>english</a>]}
+                    dropDownTitle="slovenčina"
+                    heading="Oficiálna stránka"
+                    headingButton="verejnej správy"
+                    mobileHeading="SK"
+                    mobileHeadingButton="e-Gov"
+                    aria-expanded={isLanguageMenuOpen ? true : false}
+                    onClick={handleToggleLanguage}
+                >
+                    <div className="grid grid-cols-1 gap-4 tb2:grid-cols-2 tb2:gap-8">
+                        <div>
+                            <h3 className="idsk-text-body-1">
+                                Doména gov.sk je oficiálna
+                            </h3>
+                            <p className="py-2.5">
+                                Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk.{' '}
+                                <a
+                                    href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci"
+                                    target="_blank"
+                                >
+                                    Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze.
+                                </a>
+                            </p>
+                        </div>
+                        <div>
+                            <h3 className="idsk-text-body-1">
+                                Táto stránka je zabezpečená
+                            </h3>
+                            <p className="py-2.5">
+                                Buďte pozorní a vždy sa uistite, že zdieľate informácie iba cez zabezpečenú webovú stránku verejnej správy SR. Zabezpečená stránka vždy začína https:// pred názvom domény webového sídla.
+                            </p>
+                        </div>
+                    </div>
+                </SecondaryNavigation>
+            }
+        >
+            <div className='flex flex-wrap items-center'>
+                <Search pageDetails={pageRoutes} />
             </div>
-            <div>
-              <h3 className="idsk-text-body-1">
-                Táto stránka je zabezpečená
-              </h3>
-              <p className="py-2.5">
-                Buďte pozorní a vždy sa uistite, že zdieľate informácie iba cez zabezpečenú webovú stránku verejnej správy SR. Zabezpečená stránka vždy začína https:// pred názvom domény webového sídla.
-              </p>
-            </div>
-          </div>
-        </SecondaryNavigation>
-      }
-    >
-      <div className='flex flex-wrap items-center'>
-        <Search pageDetails={pageRoutes} />
-      </div>
-    </HeaderContainer>
-  );
+        </HeaderContainer>
+    );
 };
 
 export default Navbar;
