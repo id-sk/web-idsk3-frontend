@@ -361,7 +361,7 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             <li>
-                Vždy jasne definujte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">type</code> (zvyčajne <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"button"</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"submit"</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&quot;reset&quot;</code>), aby ste predišli nechcenému odoslaniu formulára.
+                Vždy jasne definujte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">type</code> (zvyčajne <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&quot;button&quot;</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&quot;submit&quot;</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&quot;reset&quot;</code>), aby ste predišli nechcenému odoslaniu formulára.
             </li>
             <li>
                 Text musí byť jasný, opisný a krátky (1–2 slová). Ideálne by mal začínať slovesom (napr. &quot;Odoslať&quot;, &quot;Uložiť&quot;, &quot;Pokračovať&quot;, &quot;Zmeniť heslo&quot;).
