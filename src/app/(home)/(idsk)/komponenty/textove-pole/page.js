@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { Input } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -30,7 +30,7 @@ const TextInputPage = () => {
             
             <header>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
-                    Textové pole (Input type='text')
+                    Textové pole (Input type=&quot;text&quot;)
                 </h1>
             </header>
             
@@ -305,11 +305,11 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             <li>
-                Každý input musí mať jasný, programovo asociovaný label cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">for="id"</code> (v Reacte <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">htmlFor</code>).
+                Každý input musí mať jasný, programovo asociovaný label cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">for=&quot;id&quot;</code> (v Reacte <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">htmlFor</code>).
             </li>
             <li>
                 V prípade zadávania osobných údajov nezabudnite pridať tzv. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete</code>, napr.:<br className="hidden sm:block" />
-                <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label for="firstName"&gt;Krstné meno:&lt;/label&gt; &lt;input name="firstName" id="firstName" type="text" autocomplete="given-name" /&gt;</code>
+                <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label for=&quot;firstName&quot;&gt;Krstné meno:&lt;/label&gt; &lt;input name=&quot;firstName&quot; id=&quot;firstName&quot; type=&quot;text&quot; autocomplete=&quot;given-name&quot; /&gt;</code>
             </li>
             <li>
                 Prípadný <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">placeholder</code> slúži len pre príklad (napr.: <em>Jana Novotná</em>). Placeholder <strong>NEFUNGUJE</strong> ako náhrada labelu a hintu a <strong>NESMIE</strong> vysvetľovať funkciu textového poľa.
@@ -324,13 +324,13 @@ const TabPristupnost = () => (
                 V prípade povinného poľa nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
             </li>
             <li>
-                Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
+                Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>.
             </li>
             <li>
                 Nezabudnite, že samotná hviezdička na označenie povinného poľa nestačí - musí byť dodatočne vysvetlená pomocou vysvetlivky označenia povinných polí.
             </li>
             <li>
-                Chybový hint musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800"> aria-describedby="error"</code> a okrem farby, ikony a hintu upozornenia nezabudnite pre čítačky pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
+                Chybový hint musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800"> aria-describedby=&quot;error&quot;</code> a okrem farby, ikony a hintu upozornenia nezabudnite pre čítačky pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>.
             </li>
         </ul>
     </div>

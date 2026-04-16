@@ -258,7 +258,7 @@ const TabPristupnost = () => (
                 Všetky interaktívne prvky sú implementované ako tlačidlá <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;button&gt;</code>.
             </li>
             <li>
-                Pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-expanded="true/false"</code>, ktorý označuje či je sekcia rozbalená alebo zbalená.
+                Pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-expanded=&quot;true/false&quot;</code>, ktorý označuje či je sekcia rozbalená alebo zbalená.
             </li>
             <li>
                 Pridajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-controls</code>, ktorý prepája tlačidlo s konkrétnym obsahom sekcie (cez ID), vďaka čomu asistenčné technológie vedia, že kliknutím na tlačidlo sa zmení viditeľnosť práve tejto sekcie.
@@ -270,7 +270,7 @@ const TabPristupnost = () => (
                 Obsah musí zostať vždy dostupný aj bez zapnutého JavaScriptu.
             </li>
             <li>
-                Nezabudnite ikonu pre asistenčné zariadenia skryť pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code> (v prípade <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">svg</code>) alebo prázdneho <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=""</code> (v prípade obrázkov).
+                Nezabudnite ikonu pre asistenčné zariadenia skryť pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code> (v prípade <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">svg</code>) alebo prázdneho <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=&quot;&quot;</code> (v prípade obrázkov).
             </li>
             <li>
                 Akordeón musí mať funkčné stavy zamerania myšou (hover) a zamerania klávesnicou (focus), tak ako to je zobrazené v časti Varianty.

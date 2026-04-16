@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { RadioButton } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const radioButton = () => {
+const RadioButtonPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -76,7 +76,7 @@ const radioButton = () => {
     );
 }
 
-export default radioButton;
+export default RadioButtonPage;
 
 
 // ============================================================================
@@ -265,22 +265,22 @@ const TabPristupnost = () => (
                 Všetky prepínacie polia z jednej logickej skupiny (1 skupina = 1 téma) musia byť obalené v tagu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;fieldset&gt;</code>. Samotná hlavná otázka pre túto skupinu musí byť implementovaná cez natívny tag <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;legend&gt;</code>.
             </li>
             <li>
-                Všetky prepínacie polia v rámci jednej skupiny musia mať identický atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">name="rovnake_meno"</code>. Ak je tento atribút odlišný, polia nebudú fungovať ako vzájomne sa vylučujúce možnosti a prehliadač s nimi nebude vedieť správne pracovať.
+                Všetky prepínacie polia v rámci jednej skupiny musia mať identický atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">name=&quot;rovnake_meno&quot;</code>. Ak je tento atribút odlišný, polia nebudú fungovať ako vzájomne sa vylučujúce možnosti a prehliadač s nimi nebude vedieť správne pracovať.
             </li>
             <li>
                 Snažte sa udržať počet možností v skupine menší ako 10. Zoraďte ich v logickom poradí (napríklad od A po Z, chronologicky alebo od najpravdepodobnejšej voľby).
             </li>
             <li>
-                Užívateľsky kritická, právna alebo obmedzujúca voľba (napr. <em>"Áno, chcem odoberať newsletter"</em>) by nikdy nemala byť predvybraná (tzv. default checked).
+                Užívateľsky kritická, právna alebo obmedzujúca voľba (napr. <em>&quot;Áno, chcem odoberať newsletter&quot;</em>) by nikdy nemala byť predvybraná (tzv. default checked).
             </li>
             <li>
                 Prípadný hint (nápovedu) k celej skupine alebo ku konkrétnemu poľu prepojte prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
             </li>
             <li>
-                V prípade povinnej voľby nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>. Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden="true"&gt;</code>, aby ju čítačky obrazovky neduplikovali.
+                V prípade povinnej voľby nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>. Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden=&quot;true&quot;&gt;</code>, aby ju čítačky obrazovky neduplikovali.
             </li>
             <li>
-                Pri chybovom stave musí mať input pridaný atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid="true"</code> a chybová hláška musí byť na neho prepojená cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
+                Pri chybovom stave musí mať input pridaný atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid=&quot;true&quot;</code> a chybová hláška musí byť na neho prepojená cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
             </li>
         </ul>
     </div>
@@ -391,7 +391,7 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/radios" className="text-my-blue underline hover:text-blue-800 transition-colors"> prepínacie pole</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module="govuk-radios"</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/radios" className="text-my-blue underline hover:text-blue-800 transition-colors"> prepínacie pole</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module=&quot;govuk-radios&quot;</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
                         </p>
                         
                         <SyntaxHighlighter 
@@ -442,7 +442,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -464,7 +464,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (prepínacie pole) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -481,7 +481,7 @@ const TabImplementacia = () => (
                         ID-SK (GOV.UK) komponenty s JavaScript správaním je nutné inicializovať. Pre inicializáciu konkrétne komponentu prepínacie pole použite tento kód:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="javascript" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

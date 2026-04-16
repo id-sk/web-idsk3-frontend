@@ -5,7 +5,7 @@ import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import Link from "next/link";
 import Image from 'next/image';
 import { ArticleCard } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -254,7 +254,7 @@ const TabPristupnost = () => (
                 Celá kartička by mala byť hypertextovým odkazom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a&gt;</code>.
             </li>
             <li>
-                Obrázok kartičky by mal mať nastavené:<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt="Nadpis kartičky"</code>ak je iba dekoratívny -<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=""</code>.
+                Obrázok kartičky by mal mať nastavené:<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=&quot;Nadpis kartičky&quot;</code>ak je iba dekoratívny -<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=&quot;&quot;</code>.
             </li>
             <li>
                 V prípade použitia dátumu na kartičke mu nezabudnite pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800"> time datetime </code>). 
@@ -425,7 +425,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -447,7 +447,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (kartička) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

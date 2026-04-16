@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { Input } from '@eslovensko/idsk-react';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 import ErrorSummaryCustom from '@/app/(home)/_components/error-summary/errorSummaryCustom';
@@ -15,7 +15,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const errorSummary = () => {
+const ErrorSummaryPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -76,7 +76,7 @@ const errorSummary = () => {
     );
 }
 
-export default errorSummary;
+export default ErrorSummaryPage;
 
 // ============================================================================
 // 2. PODKOMPONENTY (Obsah jednotlivých tabov)
@@ -111,7 +111,7 @@ const TabPouzitie = () => {
                         description="Prosím, opravte nasledujúce údaje pred pokračovaním:"
                         errors={chyby} 
                     />
-                    <p classname="mb-7">
+                    <p className="mb-7">
                         Povinné polia sú označené hviezdičkou (<span className="text-[#C3112B] text-xl">*</span>)
                     </p>    
 
@@ -316,13 +316,13 @@ const TabPristupnost = () => (
                 Nadpis celého prehľadu by mal mať úroveň <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;h2&gt;</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;h3&gt;</code> podľa kontextu stránky. Mal by byť jasný a krátky.
             </li>
             <li>
-                Celý obalový komponent musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="alert"</code>, čím okamžite upozorní asistenčné zariadenia, že vo formulári nastali chyby.
+                Celý obalový komponent musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;alert&quot;</code>, čím okamžite upozorní asistenčné zariadenia, že vo formulári nastali chyby.
             </li>
             <li>
-                Komponent musí byť prepojený s nadpisom cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby="id-nadpisu"</code>.
+                Komponent musí byť prepojený s nadpisom cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby=&quot;id-nadpisu&quot;</code>.
             </li>
             <li>
-                Nastavenie <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">tabindex="-1"</code> musí byť prítomné (ideálne priamo na nadpise prehľadu), aby naň bolo možné presunúť focus cez JavaScript, no aby do neho používateľ zbytočne nenarazil pri bežnom tabbing-u.
+                Nastavenie <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">tabindex=&quot;-1&quot;</code> musí byť prítomné (ideálne priamo na nadpise prehľadu), aby naň bolo možné presunúť focus cez JavaScript, no aby do neho používateľ zbytočne nenarazil pri bežnom tabbing-u.
             </li>
             <li>
                 Nezabudnite JavaScriptom nastaviť správne focus stavy, aby aj asistenčné zariadenia vedeli, že a kde nastal problém. Po zistení chyby sa musí focus automaticky presunúť na prehľad chýb.
@@ -331,13 +331,13 @@ const TabPristupnost = () => (
                 Jednotlivé chybové položky musia byť vytvorené cez zoznam (<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;ul&gt;</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;li&gt;</code>) a obsahovať preklik (<code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a&gt;</code>).
             </li>
             <li>
-                Odkaz v chybovej položke musí cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">href="#id-pola"</code> smerovať presne na id daného chybne vyplneného vstupného poľa vo formulári.
+                Odkaz v chybovej položke musí cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">href=&quot;#id-pola&quot;</code> smerovať presne na id daného chybne vyplneného vstupného poľa vo formulári.
             </li>
             <li>
                 Text odkazu v prehľade musí byť úplne totožný s chybovou hláškou zobrazenou priamo pri dátovom poli, aby nebol používateľ zmätený.
             </li>
             <li>
-                Okrem farby, ikony a hintu nezabudnite pre čítačky obrazovky pridať samotnému chybnému poľu vo formulári atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid="true"</code>.
+                Okrem farby, ikony a hintu nezabudnite pre čítačky obrazovky pridať samotnému chybnému poľu vo formulári atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid=&quot;true&quot;</code>.
             </li>
         </ul>
     </div>
@@ -448,7 +448,7 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/error-summary" className="text-my-blue underline hover:text-blue-800 transition-colors"> prehľad s chybovými hláseniami</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module="govuk-error-summary"</code>, bez ktorého nebude fungovať JavaScript.
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/error-summary" className="text-my-blue underline hover:text-blue-800 transition-colors"> prehľad s chybovými hláseniami</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module=&quot;govuk-error-summary&quot;</code>, bez ktorého nebude fungovať JavaScript.
                         </p>
                         
                         <SyntaxHighlighter 
@@ -521,7 +521,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (prehľad s chybovými hláseniami) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="sass" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

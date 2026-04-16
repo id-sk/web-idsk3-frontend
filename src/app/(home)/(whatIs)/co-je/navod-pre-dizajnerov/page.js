@@ -556,7 +556,7 @@ const TabNavodPreNedizajnerov = () => (
             <ul className="list-disc pl-5 space-y-2 text-sm sm:text-base mb-8">
                 <li>Kliknite pravým tlačidlom myši na komponent a vyberte <strong>Reset all changes</strong> (alebo Reset instance). Komponent sa vráti do pôvodného stavu z knižnice.</li>
                 <li>Použite klávesovú skratku <strong>Cmd + Z</strong> (MacOS) alebo <strong>Ctrl + Z</strong> (Windows) pre krok späť.</li>
-                <li>Ak problém pretrváva a komponent je nenávratne "rozbitý", odstráňte ho z plátna a jednoducho vložte nový z knižnice v paneli Assets.</li>
+                <li>Ak problém pretrváva a komponent je nenávratne rozbitý, odstráňte ho z plátna a jednoducho vložte nový z knižnice v paneli Assets.</li>
             </ul>
         </section>
 

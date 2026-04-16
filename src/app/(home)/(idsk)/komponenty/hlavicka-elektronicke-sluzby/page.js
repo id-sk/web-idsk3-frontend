@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import Navbar from '@/app/(home)/_components/navbar/navbar';
 
 // Balíčky na zvýrazňovanie kódu
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT (Škrupina stránky a slovník tabov)
 // ============================================================================
-const navbarPage = () => {
+const NavbarPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -76,7 +76,7 @@ const navbarPage = () => {
     );
 }
 
-export default navbarPage;
+export default NavbarPage;
 
 
 // ============================================================================
@@ -252,13 +252,13 @@ const TabPristupnost = () => (
                 Celý blok vždy obaľte do natívneho HTML tagu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;header&gt;</code>. Ak hlavička obsahuje priamo aj názov stránky, dajte tomuto textu úroveň <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;h1&gt;</code>.
             </li>
             <li>
-                Prepojte logo s domovskou stránkou pomocou odkazu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a href="/"&gt;</code>. Odporúča sa použiť formát SVG (max. výška 50px) a nezabudnite na jasný alt text, napríklad „Odkaz na domovskú stránku ministerstva“.
+                Prepojte logo s domovskou stránkou pomocou odkazu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">a href=&quot;&quot;</code>. Odporúča sa použiť formát SVG (max. výška 50px) a nezabudnite na jasný alt text, napríklad „Odkaz na domovskú stránku ministerstva“.
             </li>
             <li>
                 Hlavné menu musí byť v tagu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;nav&gt;</code>. Rozbaľovacie zoznamy otvárajte vždy cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;button&gt;</code> a samotné položky štruktúrujte štandardne cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;ul&gt;</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;li&gt;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a&gt;</code> s popisným textom.
             </li>
             <li>
-                Každé tlačidlo, ktoré otvára podmenu, musí obsahovať atribúty <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-haspopup</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-expanded="true/false"</code>, aby asistenčné technológie vedeli, v akom je menu stave.
+                Každé tlačidlo, ktoré otvára podmenu, musí obsahovať atribúty <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-haspopup</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-expanded=&quot;true/false&quot;</code>, aby asistenčné technológie vedeli, v akom je menu stave.
             </li>
             <li>
                 Medzera medzi jednotlivými interaktívnymi prvkami (tlačidlami) by mala byť aspoň 25px od stredu interaktívneho prvku. Zabránite tak nechceným preklikom, čo mimoriadne ocenia používatelia s trasom rúk alebo zhoršenou motorikou.

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { CustomFeedback } from '@/app/(home)/_components/feedback-bar/feedbackCustom';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const feedback = () => {
+const FeedbackPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -74,7 +74,7 @@ const feedback = () => {
     );
 }
 
-export default feedback;
+export default FeedbackPage;
 
 
 // ============================================================================
@@ -201,10 +201,10 @@ const TabPristupnost = () => (
                 Pre správny sémantický kontext nastavte otázku ako <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;legend&gt;</code> a vložte otázku i oba prislúchajúce <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;button&gt;</code> elementy do obalu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;fieldset&gt;</code>.
             </li>
             <li>
-                Celá lišta spätnej väzby musí mať kvôli správnemu zameraniu v čítačkách nastavené atribúty <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="region"</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label="Lišta spätnej väzby"</code>.
+                Celá lišta spätnej väzby musí mať kvôli správnemu zameraniu v čítačkách nastavené atribúty <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;region&quot;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label=&quot;Lišta spätnej väzby&quot;</code>.
             </li>
             <li>
-                Pre informovanie používateľa o zmene obsahu (napríklad prechod do stavu „Ďakujeme“) je nutné obalu pridať <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="status"</code> alebo atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-live="polite"</code>. Zabezpečíte tým okamžité a kontinuálne čítanie zmeny stavu bez nutnosti presúvať focus.
+                Pre informovanie používateľa o zmene obsahu (napríklad prechod do stavu „Ďakujeme“) je nutné obalu pridať <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;status&quot;</code> alebo atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-live=&quot;polite&quot;</code>. Zabezpečíte tým okamžité a kontinuálne čítanie zmeny stavu bez nutnosti presúvať focus.
             </li>
             <li>
                 Nezabudnite v CSS nastaviť medzeru (gap) medzi tlačidlami aspoň na <strong>25px</strong>. Je to kľúčové pre používateľov s motorickým znevýhodnením, aby sa predišlo náhodným a nechceným kliknutiam.
@@ -366,7 +366,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -388,7 +388,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (lišta spätnej väzby) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

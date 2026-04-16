@@ -3,7 +3,7 @@
 import React, { useState, useRef } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { DropZone } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { SecondaryButton } from '@eslovensko/idsk-react';
 
 // Profi balíčky na zvýrazňovanie kódu
@@ -14,7 +14,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const dropZone = () => {
+const DropZonePage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -76,7 +76,7 @@ const dropZone = () => {
     );
 }
 
-export default dropZone;
+export default DropZonePage;
 
 
 // ============================================================================
@@ -277,28 +277,28 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
            <li>
-                Vždy použite element <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label&gt;</code> pre jednoznačný, programovo určiteľný názov poľa na nahratie súboru. Nezabudnite ho spárovať s konkrétnym inputom cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">for</code> odkazujúci na jedinečné <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code> prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type="file"&gt;</code>.
+                Vždy použite element <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label&gt;</code> pre jednoznačný, programovo určiteľný názov poľa na nahratie súboru. Nezabudnite ho spárovať s konkrétnym inputom cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">for</code> odkazujúci na jedinečné <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">id</code> prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type=&quot;file&quot;&gt;</code>.
             </li>
             <li>
-                Celý komponent je potrebné implementovať ako orientačný bod (landmark) použitím prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> s atribútom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="region"</code> a s priradeným názvom prostredníctvom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label</code>, napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div role="region" aria-label="Pole na nahratie súboru"&gt;...&lt;/div&gt;</code>.
+                Celý komponent je potrebné implementovať ako orientačný bod (landmark) použitím prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div&gt;</code> s atribútom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;region&quot;</code> a s priradeným názvom prostredníctvom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label</code>, napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;div role=&quot;region&quot; aria-label=&quot;Pole na nahratie súboru&quot;&gt;...&lt;/div&gt;</code>.
             </li>
             <li>
-                Atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code> je potrebné implementovať priamo na prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type="file"&gt;</code>. Tento atribút musí odkazovať na id prvku obsahujúceho spresňujúce informácie k poľu (hint) a zároveň aj na id prvku obsahujúceho chybové hlásenie.
+                Atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code> je potrebné implementovať priamo na prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type=&quot;file&quot;&gt;</code>. Tento atribút musí odkazovať na id prvku obsahujúceho spresňujúce informácie k poľu (hint) a zároveň aj na id prvku obsahujúceho chybové hlásenie.
             </li>
             <li>
                 Tlačidlo na výber súboru musí mať rovnako implementovaný atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>, ktorý odkazuje na id prvku obsahujúceho spresňujúce informácie a zároveň aj na id prvku obsahujúceho chybové hlásenie.
             </li>
             <li>
-                Pre obmedzenie formátov nahrávaných súborov používajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">accept</code>, do ktorého definujete prípony (napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">accept=".pdf,.jpg,.png"</code>).
+                Pre obmedzenie formátov nahrávaných súborov používajte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">accept</code>, do ktorého definujete prípony (napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">accept=&quot;.pdf,.jpg,.png&quot;</code>).
             </li>
             <li>
-                V prípade chybového stavu musí byť prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type="file"&gt;</code> nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid="true"</code>.
+                V prípade chybového stavu musí byť prvku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;input type=&quot;file&quot;&gt;</code> nastavený atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid=&quot;true&quot;</code>.
             </li>
             <li>
-                V prípade povinnej voľby nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>. Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden="true"&gt;</code>, aby ju čítačky obrazovky neduplikovali.
+                V prípade povinnej voľby nezabudnite pridať inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>. Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden=&quot;true&quot;&gt;</code>, aby ju čítačky obrazovky neduplikovali.
             </li>
             <li>
-                Dekoratívne ikonky (napríklad ikona obláčika na nahratie alebo ikony jednotlivých typov súborov) musia byť skryté pre asistenčné technológie pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
+                Dekoratívne ikonky (napríklad ikona obláčika na nahratie alebo ikony jednotlivých typov súborov) musia byť skryté pre asistenčné technológie pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>.
             </li>
         </ul>
     </div>
@@ -410,7 +410,7 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/file-upload" className="text-my-blue underline hover:text-blue-800 transition-colors"> pole na nahratie súboru</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module="govuk-fileUpload"</code>, bez ktorého nebude fungovať JavaScript (napríklad drag & drop funkcionalita alebo validácia).
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/file-upload" className="text-my-blue underline hover:text-blue-800 transition-colors"> pole na nahratie súboru</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module=&quot;govuk-fileUpload&quot;</code>, bez ktorého nebude fungovať JavaScript (napríklad drag & drop funkcionalita alebo validácia).
                         </p>
                         
                         <SyntaxHighlighter 
@@ -460,7 +460,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -482,7 +482,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (pole na nahratie súboru) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -499,7 +499,7 @@ const TabImplementacia = () => (
                         ID-SK (GOV.UK) komponenty s JavaScript správaním je nutné inicializovať. Pre inicializáciu konkrétneho komponentu pole na nahratie súboru použite tento kód:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="javascript" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

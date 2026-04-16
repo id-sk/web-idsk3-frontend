@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { Select } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -317,10 +317,10 @@ const TabPristupnost = () => (
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             
             <li>
-                Používajte natívne HTML prvky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>, spoločne s atribútom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">value=""</code>
+                Používajte natívne HTML prvky <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>, spoločne s atribútom <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">value=&quot;&quot;</code>
             </li>
             <li>
-                Každý prvok <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> musí mať jasný, programovo asociovaný popis cez značku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label&gt;</code>. Nikdy nenahrádzajte skutočný label predvolenou prvou možnosťou v zozname (napríklad zmazaním labelu a ponechaním iba možnosti "Vyberte si...").
+                Každý prvok <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;select&gt;</code> musí mať jasný, programovo asociovaný popis cez značku <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;label&gt;</code>. Nikdy nenahrádzajte skutočný label predvolenou prvou možnosťou v zozname (napríklad zmazaním labelu a ponechaním iba možnosti &quot;Vyberte si...&quot;).
             </li>
             <li>
                 Vyhnite sa automatickému odosielaniu (Auto-submission): Nikdy nepoužívajte udalosť zmeny výberu (onChange) na okamžité odoslanie formulára alebo navigáciu. Mätie to používateľov čítačiek obrazovky, ktorí pri prechádzaní zoznamu šípkami nechtiac aktivujú zmeny. Vždy poskytnite potvrdzovacie tlačidlo.
@@ -338,10 +338,10 @@ const TabPristupnost = () => (
                 Prípadný doplňujúci text (hint) prepojte na pole cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>. V prípade povinného poľa nezabudnite pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
             </li>
             <li>
-                Ak je zoznam rozsiahly, použite element <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;optgroup label="Názov skupiny"&gt;</code> na zoskupenie súvisiacich <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>. Uľahčí to orientáciu nielen vizuálne, ale aj pre čítačky obrazovky.
+                Ak je zoznam rozsiahly, použite element <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;optgroup label=&quot;Názov skupiny&quot;&gt;</code> na zoskupenie súvisiacich <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;option&gt;</code>. Uľahčí to orientáciu nielen vizuálne, ale aj pre čítačky obrazovky.
             </li>
             <li>
-                Ak pole požaduje bežné údaje (napríklad krajinu v adrese), použite atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete</code> (napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete="country"</code>), aby ste používateľom uľahčili vypĺňanie.
+                Ak pole požaduje bežné údaje (napríklad krajinu v adrese), použite atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete</code> (napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">autocomplete=&quot;country&quot;</code>), aby ste používateľom uľahčili vypĺňanie.
             </li>
             <li>
                 Aj keď HTML umožňuje vložiť do selectu tag <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;hr&gt;</code>, považuje sa len za vizuálny prvok a asistenčné technológie ho ignorujú. Nepoužívajte ho na prenášanie dôležitého kontextu.

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { Checkbox } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT
 // ============================================================================
-const checkbox = () => {
+const CheckboxPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -76,7 +76,7 @@ const checkbox = () => {
     );
 }
 
-export default checkbox;
+export default CheckboxPage;
 
 
 // ============================================================================
@@ -132,7 +132,7 @@ const TabPouzitie = () => (
             
             <div className="flex flex-col items-start flex-1 min-w-[280px]">
                 <InformationBanner
-                    ariaLabel="Neprávne použitie začiarkavacieho poľa"
+                    ariaLabel="Nesprávne použitie začiarkavacieho poľa"
                     type="banner"
                     variant="warning"
                     hideCloseButton={true}
@@ -300,10 +300,10 @@ const TabPristupnost = () => (
                 V prípade povinného poľa pridajte inputu atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
             </li>
             <li>
-                Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden="true"&gt;</code>, aby ju čítačky obrazovky neduplikovali. Samotná hviezdička nestačí, význam povinných polí musí byť vysvetlený na začiatku formulára.
+                Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span aria-hidden=&quot;true&quot;&gt;</code>, aby ju čítačky obrazovky neduplikovali. Samotná hviezdička nestačí, význam povinných polí musí byť vysvetlený na začiatku formulára.
             </li>
             <li>
-                Pri chybovom stave musí mať input pridaný atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid="true"</code> a chybová hláška musí byť na input prepojená cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code> (aby ju čítačka prečítala hneď po zameraní poľa).
+                Pri chybovom stave musí mať input pridaný atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid=&quot;true&quot;</code> a chybová hláška musí byť na input prepojená cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code> (aby ju čítačka prečítala hneď po zameraní poľa).
             </li>
         </ul>
     </div>
@@ -415,7 +415,7 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/checkboxes" className="text-my-blue underline hover:text-blue-800 transition-colors"> začiarkavacie pole</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module="govuk-checkboxes"</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/checkboxes" className="text-my-blue underline hover:text-blue-800 transition-colors"> začiarkavacie pole</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module=&quot;govuk-checkboxes&quot;</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
                         </p>
                         
                         <SyntaxHighlighter 
@@ -430,22 +430,22 @@ const TabImplementacia = () => (
                                 <div class="govuk-form-group">
                                     <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                                         <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="národnosť" name="národnosť" type="checkbox" value="british">
-                                        <label class="govuk-label govuk-checkboxes__label" for="národnosť">
-                                            Britská
-                                        </label>
+                                            <input class="govuk-checkboxes__input" id="národnosť" name="národnosť" type="checkbox" value="british">
+                                            <label class="govuk-label govuk-checkboxes__label" for="národnosť">
+                                                Britská
+                                            </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="národnosť-2" name="národnosť" type="checkbox" value="irish">
-                                        <label class="govuk-label govuk-checkboxes__label" for="národnosť-2">
-                                            Írska
-                                        </label>
+                                            <input class="govuk-checkboxes__input" id="národnosť-2" name="národnosť" type="checkbox" value="irish">
+                                            <label class="govuk-label govuk-checkboxes__label" for="národnosť-2">
+                                                Írska
+                                            </label>
                                         </div>
                                         <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input" id="národnosť-3" name="národnosť" type="checkbox" value="other">
-                                        <label class="govuk-label govuk-checkboxes__label" for="národnosť-3">
-                                            Občan inej krajiny
-                                        </label>
+                                            <input class="govuk-checkboxes__input" id="národnosť-3" name="národnosť" type="checkbox" value="other">
+                                            <label class="govuk-label govuk-checkboxes__label" for="národnosť-3">
+                                                Občan inej krajiny
+                                            </label>
                                         </div>
                                     </div>
                                 </div>

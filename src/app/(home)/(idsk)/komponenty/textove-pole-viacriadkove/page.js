@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { TextField } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT (Škrupina stránky a slovník tabov)
 // ============================================================================
-const TextInputPage = () => {
+const TextareaPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -78,7 +78,7 @@ const TextInputPage = () => {
     );
 }
 
-export default TextInputPage;
+export default TextareaPage;
 
 
 // ============================================================================
@@ -89,7 +89,7 @@ export default TextInputPage;
 const TabPouzitie = () => (
     <div className="animate-fade-in">
         <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4">
-            Použitie textového poľa
+            Použitie viacriadkového textového poľa
         </h2>
         
         {/* Ukážka Inputu na bodkovanom pozadí */}
@@ -284,7 +284,7 @@ const TabPristupnost = () => (
                 Neaktívne pole (disabled) nesmie byť focusovateľné (zamerateľné klávesnicou).
             </li>
             <li>
-                Pre dynamické zmeny – napríklad pre počítadlo znakov – pridajte pre čítačky atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-live="polite"</code> spolu s limitom znakov v <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">maxLength</code>.
+                Pre dynamické zmeny – napríklad pre počítadlo znakov – pridajte pre čítačky atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-live=&quot;polite&quot;</code> spolu s limitom znakov v <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">maxLength</code>.
             </li>
             <li>
                 Prípadný popis prepojte na pole cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
@@ -293,7 +293,7 @@ const TabPristupnost = () => (
                 V prípade povinného poľa nezabudnite pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>.
             </li>
             <li>
-                Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
+                Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>.
             </li>
             <li>
                 Nezabudnite, že samotná hviezdička na označenie povinného poľa nestačí - musí byť dodatočne vysvetlená pomocou vysvetlivky označenia povinných polí.
@@ -302,7 +302,7 @@ const TabPristupnost = () => (
                 Chybové hlásenia realizujte prostredníctvom JavaScriptu a napojte ich napríklad na HTML atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">required</code>. Chybový hint musí byť prepojený s poľom cez atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-describedby</code>.
             </li>
             <li>
-                Okrem farby, ikony a textu upozornenia nezabudnite v prípade chyby pridať pre čítačky atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid="true"</code>.
+                Okrem farby, ikony a textu upozornenia nezabudnite v prípade chyby pridať pre čítačky atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-invalid=&quot;true&quot;</code>.
             </li>
         </ul>
     </div>
@@ -434,7 +434,7 @@ const TabImplementacia = () => (
                                     <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"
                                     maxlength="200"></textarea>
                                     <span class="idsk-textarea--counter" aria-live="polite">
-                                    <span>0</span> / 200
+                                        <span>0</span> / 200
                                     </span>
                                 </div>
                                 </div>

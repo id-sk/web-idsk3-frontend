@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { Signpost } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const signpost = () => {
+const SignpostPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -75,7 +75,7 @@ const signpost = () => {
     );
 }
 
-export default signpost;
+export default SignpostPage;
 
 
 // ============================================================================
@@ -210,10 +210,10 @@ const TabPristupnost = () => (
                 Keďže je celý komponent odkazom, asistenčné technológie prečítajú nadpis aj popis rázcestníka ako jeden súvislý celok. Texty preto udržujte čo najstručnejšie, aby ste používateľa nezahltili zbytočne dlhým názvom odkazu.
             </li>
             <li>
-                Ikonky určujúce tému rázcestníka, rovnako ako navigačná šípka, sú pre asistenčné zariadenia zväčša čisto dekoratívne. Musia byť skryté pred čítačkami obrazovky pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>.
+                Ikonky určujúce tému rázcestníka, rovnako ako navigačná šípka, sú pre asistenčné zariadenia zväčša čisto dekoratívne. Musia byť skryté pred čítačkami obrazovky pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>.
             </li>
             <li>
-                Ak rázcestník vedie na externú stránku alebo otvára odkaz v novom okne, musí obsahovať skryté textové upozornenie pre čítačky (napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;span class="sr-only"&gt;otvorí sa v novom okne&lt;/span&gt;</code>). Ak na to použijete špeciálnu ikonu externého odkazu, môžete upozornenie pridať priamo do nej.
+                Ak rázcestník vedie na externú stránku alebo otvára odkaz v novom okne, musí obsahovať skryté textové upozornenie pre čítačky (napríklad <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;aria-label=&quot;Otvorí sa v novom okne&quot;/span&gt;</code>). Ak na to použijete špeciálnu ikonu externého odkazu, môžete upozornenie pridať priamo do nej.
             </li>
         </ul>
     </div>
@@ -361,7 +361,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -383,7 +383,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (rázcestník) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

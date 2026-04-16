@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { FooterContainer } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -251,10 +251,10 @@ const TabPristupnost = () => (
                 Navigácia v päte by mala byť reprezentovaná cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;nav&gt;</code> <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;ul&gt;</code> <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;li&gt;</code> <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a&gt;</code>.
             </li>
             <li>
-                Pre navigáciu v päte môžete na oddelenie od ostatných použiť napr.  <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;aria-label="Navigácia v päte"&gt;</code>.
+                Pre navigáciu v päte môžete na oddelenie od ostatných použiť napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;aria-label=&quot;Navigácia v päte&quot;&gt;</code>.
             </li>
             <li>
-                Odkazy v päte by mali mať jasný a pochopiteľný textový popis (vyhnite sa všeobecným frázam ako "kliknite sem").
+                Odkazy v päte by mali mať jasný a pochopiteľný textový popis (vyhnite sa všeobecným frázam ako &quot;kliknite sem&quot;).
             </li>
             <li>
                 Päta by mala mať nadpis úrovne <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">h2</code> 
@@ -459,7 +459,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="bash" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -481,7 +481,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (päta) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

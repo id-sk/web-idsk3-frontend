@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -90,17 +90,13 @@ const TabPouzitie = () => (
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[600px] px-4">
                 <InformationBanner
+                    title="Príklad komponentu informačná lišta"
                     ariaLabel="Príklad komponentu informačná lišta"
                     type="banner"
                     variant="information"
                     hideCloseButton={true}
                 >
-                 <h3 className="text-lg sm:text-xl font-bold text-black leading-tight mb-4">
-                    Príklad komponentu informačná lišta
-                </h3>
-                 <p>
                     Lorem ipsum dolor sit amet consectetur. Ipsum diam proin ultricies amet. Gravida rhoncus ultricies odio sed molestie neque.
-                </p>
                 </InformationBanner>
             </div>
         </div>
@@ -158,10 +154,7 @@ const TabVarianty = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8"> <strong>Informačný typ</strong> má informačnú funkciu a slúži na vyzdvihnutie informácie pre používateľa. Poskytuje všeobecné alebo doplnkové informácie</p>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">             
-                <InformationBanner ariaLabel="Oznam" type="banner" variant="information" hideCloseButton={true}>
-                    <h3 className="text-lg sm:text-xl font-bold leading-tight mb-2">
-                        Oznam (Informačný typ):
-                    </h3>
+                <InformationBanner title="Príklad komponentu informačná lišta" ariaLabel="Oznam" type="banner" variant="information" hideCloseButton={false}>
                     <p>Pre rýchlejšie a efektívnejšie vybavenie žiadosti sa odporúča priložiť aj doklad o ukončení štúdia (napr. vysvedčenie o vykonaní záverečnej skúšky, maturitné vysvedčenie, vysokoškolský diplom a pod.).</p>
                 </InformationBanner>
             </div>
@@ -169,10 +162,7 @@ const TabVarianty = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8"> <strong>Varovný typ</strong> má najvyššiu výstražnú funkciu a slúži na zobrazovanie kritických informácii, ktoré môžu brániť používateľovi dokončiť akciu alebo majú vplyv na úspešné dokončenie akcie. Upozorňuje na potenciálny problém alebo riziko. Nezamieňať si tento komponent s komponentom chybové hlásenie </p>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-                <InformationBanner ariaLabel="Upozornenie" type="banner" variant="warning" hideCloseButton={true}>
-                    <h3 className="text-lg sm:text-xl font-bold leading-tight mb-2">
-                        Vyhľadávanie v schránke nebolo úspešné:
-                    </h3>
+                <InformationBanner title="Príklad komponentu varovná lišta" ariaLabel="Chyba" type="banner" variant="alert" hideCloseButton={false}>
                     <p>Lorem ipsum dolor sit amet consectetur. Ipsum diam proin ultricies amet. Gravida rhoncus ultricies odio sed molestie neque. Lacus sit congue consequat convallis ut etiam massa vulputate aenean.</p>
                 </InformationBanner>
             </div>
@@ -181,10 +171,7 @@ const TabVarianty = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8"> <strong>Upozorňovací typ</strong> má stredne výstražnú funkciu a vyžaduje zvýšenú pozornosť používateľa. Je vhodné použiť ho tam, kde informácia môže mať zásadný vplyv na výber možnosti používateľa</p>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-                <InformationBanner ariaLabel="Chyba" type="banner" variant="alert" hideCloseButton={true}>
-                    <h3 className="text-lg sm:text-xl font-bold leading-tight mb-2">
-                        Počkajte na výzvu na doplnenie dokumentov alebo rozhodnutie:
-                    </h3>
+                <InformationBanner title="Príklad komponentu upozorňovacia lišta" ariaLabel="Upozornenie" type="banner" variant="warning" hideCloseButton={false}>
                     <p>V prípade, že prílohy nenahráte v tejto žiadosti, je potrebné ich doložiť dodatočne (elektronicky alebo osobne). Požadované prílohy sú nevyhnutné k vyriešeniu vašej žiadosti.</p>
                 </InformationBanner>
             </div>
@@ -193,10 +180,7 @@ const TabVarianty = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8"> <strong>Úspešný typ</strong> informuje o úspešnom dokončení akcie a slúži na potvrdenie správnosti kroku. Nepoužíva sa pri dokončení elektronickej služby -  na to slúži iný komponent (succes page)</p>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-                <InformationBanner ariaLabel="Úspech" type="banner" variant="success" hideCloseButton={true}>
-                    <h3 className="text-lg sm:text-xl font-bold leading-tight mb-2">
-                        Ste prihlásený:
-                    </h3>
+                <InformationBanner title="Príklad komponentu úspešná lišta" ariaLabel="Úspech" type="banner" variant="success" hideCloseButton={false}>
                     <p>Lorem ipsum dolor sit amet consectetur. Ipsum diam proin ultricies amet. Gravida rhoncus ultricies odio sed molestie neque. Lacus sit congue consequat convallis ut etiam massa vulputate aenean.</p>
                 </InformationBanner>
 
@@ -231,19 +215,19 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             <li>
-                Dynamické chybové a varovné lišty: Ak sa informačná lišta (error alebo warning) zjaví na obrazovke dynamicky ako reakcia na akciu používateľa (napr. po odoslaní formulára), musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="alert"</code>. Čítačka obrazovky vďaka tomu okamžite preruší čítanie a upozorní používateľa na kritický problém.
+                Dynamické chybové a varovné lišty: Ak sa informačná lišta (error alebo warning) zjaví na obrazovke dynamicky ako reakcia na akciu používateľa (napr. po odoslaní formulára), musí mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;alert&quot;</code>. Čítačka obrazovky vďaka tomu okamžite preruší čítanie a upozorní používateľa na kritický problém.
             </li>
             <li>
-                Dynamické úspešné a informačné lišty: Ak sa dynamicky zjaví zelená (success) alebo modrá (info) lišta, použite <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="status"</code>. Čítačka obrazovky počká, kým dočíta aktuálnu vetu, a až potom slušne oznámi novú informáciu bez toho, aby používateľa vyrušila.
+                Dynamické úspešné a informačné lišty: Ak sa dynamicky zjaví zelená (success) alebo modrá (info) lišta, použite <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;status&quot;</code>. Čítačka obrazovky počká, kým dočíta aktuálnu vetu, a až potom slušne oznámi novú informáciu bez toho, aby používateľa vyrušila.
             </li>
             <li>
-                Statické lišty v obsahu stránky: Ak je informačná lišta pevnou súčasťou rozloženia stránky (napríklad globálne upozornenie o odstávke navrchu stránky), mala by mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role="region"</code> a mala by byť prepojená so svojím nadpisom pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby="id-nadpisu"</code>, aby ju čítačky vedeli ľahko lokalizovať.
+                Statické lišty v obsahu stránky: Ak je informačná lišta pevnou súčasťou rozloženia stránky (napríklad globálne upozornenie o odstávke navrchu stránky), mala by mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">role=&quot;region&quot;</code> a mala by byť prepojená so svojím nadpisom pomocou <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-labelledby=&quot;id-nadpisu&quot;</code>, aby ju čítačky vedeli ľahko lokalizovať.
             </li>
             <li>
-                Dekoratívne ikony: Ikonky vo vnútri lišty, ktoré vizuálne určujú jej typ (výkričník, fajka, i), musia byť pred asistenčnými technológiami skryté pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code>. 
+                Dekoratívne ikony: Ikonky vo vnútri lišty, ktoré vizuálne určujú jej typ (výkričník, fajka, i), musia byť pred asistenčnými technológiami skryté pomocou atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code>. 
             </li>
             <li>
-                Zrozumiteľnosť bez farieb: Nespoliehajte sa pri odovzdávaní informácie iba na farbu (napr. červená = chyba). Zabezpečte, aby bol význam zrejmý aj z textu alebo štruktúry (napríklad pomocou skrytého textu "Chyba:" pre čítačky na začiatku správy), čím splníte kritériá WCAG pre používateľov s poruchou farbocitu.
+                Zrozumiteľnosť bez farieb: Nespoliehajte sa pri odovzdávaní informácie iba na farbu (napr. červená = chyba). Zabezpečte, aby bol význam zrejmý aj z textu alebo štruktúry (napríklad pomocou skrytého textu &quot;Chyba:&quot; pre čítačky na začiatku správy), čím splníte kritériá WCAG pre používateľov s poruchou farbocitu.
             </li>
         </ul>
     </div>
@@ -354,7 +338,7 @@ const TabImplementacia = () => (
                     <div>
                         <strong className="block mb-2 text-sm sm:text-base">➜ Skopírujte HTML kód</strong>
                         <p className="text-sm sm:text-base leading-relaxed md:leading-8 mb-4">
-                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/notification-banner" className="text-my-blue underline hover:text-blue-800 transition-colors"> informačná lišta</a> a vložte ho do svojho HTML. Nezabudnite na atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">data-module="govuk-radios"</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
+                            Zo stránky dokumentácie stiahnite HTML kód komponentu <a href="https://komponenty.idsk3.gov.sk/components/notification-banner" className="text-my-blue underline hover:text-blue-800 transition-colors"> informačná lišta</a> a vložte ho do svojho HTML.
                         </p>
                         
                         <SyntaxHighlighter 

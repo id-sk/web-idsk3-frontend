@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const buttonIDSK = () => {
+const ButtonPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -75,7 +75,7 @@ const buttonIDSK = () => {
     );
 }
 
-export default buttonIDSK;
+export default ButtonPage;
 
 
 // ============================================================================
@@ -149,7 +149,7 @@ const TabPouzitie = () => (
                         <li>Nepoužívajte tlačidlá na bežnú navigáciu medzi stránkami, ak nejde o súčasť procesu.</li>
                         <li>Vyhnite sa nápisom ako „Kliknite tu“ alebo „OK“, ktoré nevysvetľujú kontext akcie.</li>
                         <li>Nepoužívajte tlačidlá obsahujúce iba ikonu bez textu, pokiaľ nejde o všeobecne známe symboly.</li>
-                        <li>Pri hierarchicky rovnocenných možnostiach (napr. "Áno" a "Nie") používajte hierarchicky rovnocenné tlačidlá</li>
+                        <li>Pri hierarchicky rovnocenných možnostiach (napr. &quot;Áno&quot; a &quot;Nie&quot;) používajte hierarchicky rovnocenné tlačidlá</li>
                     </ul>
                 </InformationBanner>
             </div>
@@ -193,9 +193,7 @@ const TabVarianty = () => (
                     Doplnková akcia
                 </ButtonCustom>
 
-                <ButtonCustom variant="primary" status="warning">
-                    Hlavná akcia
-                </ButtonCustom>
+                <div className="hidden sm:block"></div>
                 <ButtonCustom variant="secondary" status="warning">
                     Vedľajšia akcia
                 </ButtonCustom>
@@ -363,13 +361,13 @@ const TabPristupnost = () => (
         </h3>
         <ul className="list-disc pl-5 space-y-3 text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
             <li>
-                Vždy jasne definujte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">type</code> (zvyčajne <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"button"</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"submit"</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"reset"</code>), aby ste predišli nechcenému odoslaniu formulára.
+                Vždy jasne definujte atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">type</code> (zvyčajne <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"button"</code>, <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">"submit"</code> alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&quot;reset&quot;</code>), aby ste predišli nechcenému odoslaniu formulára.
             </li>
             <li>
-                Text musí byť jasný, opisný a krátky (1–2 slová). Ideálne by mal začínať slovesom (napr. „Odoslať“, „Uložiť“, „Pokračovať“, „Zmeniť heslo“).
+                Text musí byť jasný, opisný a krátky (1–2 slová). Ideálne by mal začínať slovesom (napr. &quot;Odoslať&quot;, &quot;Uložiť&quot;, &quot;Pokračovať&quot;, &quot;Zmeniť heslo&quot;).
             </li>
             <li>
-                Ak tlačidlo obsahuje <strong>iba ikonu</strong> (napr. krížik na zatvorenie alebo lupu na vyhľadávanie), asistenčné zariadenia nebudú vedieť, čo robí. Vždy mu musíte pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label</code> (napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label="Vyhľadať na webe"</code>).
+                Ak tlačidlo obsahuje <strong>iba ikonu</strong> (napr. krížik na zatvorenie alebo lupu na vyhľadávanie), asistenčné zariadenia nebudú vedieť, čo robí. Vždy mu musíte pridať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label</code> (napr. <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label=&quot;Vyhľadať na webe&quot;</code>).
             </li>
             <li>
                 Zameriavací rámik je pre prístupnosť kľúčový. Náš komponent automaticky využíva <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">focus-visible</code> s výraznou oranžovou farbou ID-SK na jasnú identifikáciu zvoleného prvku.
@@ -429,7 +427,7 @@ const TabImplementacia = () => (
                         </p>
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="text" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -517,7 +515,7 @@ const TabImplementacia = () => (
                         Pre inštaláciu cez NPM spustite:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="shell" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -539,7 +537,7 @@ const TabImplementacia = () => (
                         Pre import individuálneho IDSK komponentu (tlačidlo) do svojho Sass súboru pridajte:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="scss" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}
@@ -556,7 +554,7 @@ const TabImplementacia = () => (
                         ID-SK komponenty s JavaScript správaním je nutné inicializovať. Pre inicializáciu konkrétneho komponentu tlačidlo použite tento kód:
                         
                         <SyntaxHighlighter 
-                            language="html" 
+                            language="javascript" 
                             style={vscDarkPlus} 
                             wrapLines={true}
                             wrapLongLines={true}

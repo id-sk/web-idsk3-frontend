@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { Breadcrumbs } from '@eslovensko/idsk-react';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -13,7 +13,7 @@ import dedent from 'dedent';
 // ============================================================================
 // 1. HLAVNÝ KOMPONENT 
 // ============================================================================
-const breadcrumbs = () => {
+const BreadcrumbsPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
     const renderTabContent = {
@@ -74,7 +74,7 @@ const breadcrumbs = () => {
     );
 }
 
-export default breadcrumbs;
+export default BreadcrumbsPage;
 
 
 // ============================================================================
@@ -201,22 +201,16 @@ const TabPristupnost = () => (
                 Používajte výhradne natívne HTML tagy. Celá navigácia musí byť obalená v elemente <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;nav&gt;</code>, pričom samotné položky tvoria usporiadaný zoznam <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;ol&gt;</code> s elementmi <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;li&gt;</code> a <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;a&gt;</code>.
             </li>
             <li>
-                Nezabudnite pripojiť kontext pre čítačky obrazoviek pridaním atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label="omrvinková navigácia"</code> (alebo podobného) priamo na hlavný <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;nav&gt;</code> element.
+                Nezabudnite pripojiť kontext pre čítačky obrazoviek pridaním atribútu <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-label=&quot;omrvinková navigácia&quot;</code> (alebo podobného) priamo na hlavný <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">&lt;nav&gt;</code> element.
             </li>
             <li>
-                Vizuálne oddeľovače (napr. šípky, lomky), pokiaľ nie sú pridané čistým CSS (napr. cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">::after</code>), musíte pre čítačky skryť. Použite atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden="true"</code> pre ikony alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=""</code> pre obrázky.
+                Vizuálne oddeľovače (napr. šípky, lomky), pokiaľ nie sú pridané čistým CSS (napr. cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">::after</code>), musíte pre čítačky skryť. Použite atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-hidden=&quot;true&quot;</code> pre ikony alebo <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">alt=&quot;&quot;</code> pre obrázky.
             </li>
             <li>
-                Pre vylepšenie zážitku z asistenčných technológií odporúčame pridať za text každého odkazu vizuálne skrytú čiarku (napr. cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">className="sr-only"</code>). Čítačka ju interpretuje ako pauzu a jasne tak oddelí jednotlivé linky od seba.
+                Pre dlhé reťazce odkazov v mobilných zariadeniach zvážte zjednodušenie navigácie, aby nezaberala priveľa miesta, napr. pomocou funkcionality &quot;collapse&quot; alebo doplnením o funkciu späť. 
             </li>
             <li>
-                Pre dlhé reťazce odkazov v mobilných zariadeniach zvážte zjednodušenie navigácie, aby nezaberala priveľa miesta, napr. pomocou funkcionality "collapse" alebo doplnením o funkciu späť. 
-            </li>
-            <li>
-                Pre vylepšenie zážitku z asistenčných technológií odporúčame pridať za text každého odkazu vizuálne skrytú čiarku (napr. cez <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">className="sr-only"</code>). Čítačka ju interpretuje ako pauzu a jasne tak oddelí jednotlivé linky od seba.
-            </li>
-            <li>
-                Aktuálna stránka má mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-current="page"</code>
+                Aktuálna stránka má mať atribút <code className="bg-gray-200 font-mono text-sm px-1.5 py-0.5 rounded text-gray-800">aria-current=&quot;page&quot;</code>
             </li>
         </ul>
     </div>
