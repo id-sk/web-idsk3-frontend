@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { Checkbox } from '@eslovensko/idsk-react';
+import Checkbox from '@/app/(home)/_components/inputs/checkboxCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
@@ -177,9 +177,32 @@ const TabVarianty = () => (
                     inputSize='large'
                     name="checkbox"
                     label="Menovka"
-                    optionalText="(nepovinné pole)"
+                    optionalText="nepovinné pole"
                     fullWidth={true}
                     mandatory={false}
+                />
+            </div>
+        </div>
+
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant textového poľa s popisom a bez popisu</h3>
+        <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
+            <div className="w-full max-w-[400px] px-4">
+                <Checkbox 
+                    inputSize='large'
+                    name="checkbox"
+                    label="Menovka"
+                    fullWidth={true}
+                />
+            </div>
+            <div className="w-full max-w-[400px] px-4">
+                <Checkbox 
+                    inputSize='large'
+                    name="checkbox"
+                    label="Menovka"
+                    optionalText="nepovinné pole"
+                    fullWidth={true}
+                    mandatory={false}
+                    hint="Toto je nepovinné pole"
                 />
             </div>
         </div>
@@ -223,11 +246,13 @@ const TabVarianty = () => (
             <div className="w-full max-w-[400px] px-4">
                 <Checkbox 
                     inputSize='large'
-                    name="checkbox"
+                    name="invalid checkbox"
                     label="Menovka"
                     error={true}
+                    aria-invalid={true}
                     fullWidth={true}
                     mandatory={true}
+                    errorMsg="Zabudli ste označiť možnosť"
                 />
             </div>
         </div>
@@ -239,7 +264,6 @@ const TabVarianty = () => (
                     inputSize='large'
                     name="checkbox"
                     label="Menovka"
-                    checked={true}
                     fullWidth={true}
                     mandatory={true}
                 />
@@ -249,7 +273,6 @@ const TabVarianty = () => (
                     inputSize='small'
                     name="checkbox"
                     label="Menovka"
-                    checked={true}
                     fullWidth={true}
                     mandatory={true}
                 />
