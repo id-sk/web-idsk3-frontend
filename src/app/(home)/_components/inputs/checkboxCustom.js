@@ -67,12 +67,12 @@ const Checkbox = forwardRef(
 
           <div
             className={`
-              bg-white flex items-center justify-center shrink-0 rounded-[5px] border-2 transition-all duration-200
+              bg-white flex items-center justify-center shrink-0 rounded-[5px] border-2
               ${boxSizeClass}
-              peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-[#d96e00] peer-focus-visible:outline-offset-3
+              peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-[#d96e00] peer-focus-visible:outline-offset-2
               group-hover:ring-[4px] group-hover:ring-[#757575]
               peer-checked:[&>svg]:opacity-100
-              peer-disabled:border-[#bdbdbd] peer-disabled:cursor-not-allowed
+              peer-disabled:border-[#bdbdbd] peer-disabled:cursor-not-allowed peer-disabled:hover:ring-[0px]
               ${hasError ? 'border-[#C3112B]' : 'border-[#424242]'}
             `}
           >
@@ -84,7 +84,7 @@ const Checkbox = forwardRef(
             {mandatory ? (
               <span aria-hidden="true" className="text-[#C3112B] text-xl ml-1">*</span>
             ) : (
-              <span className="text-gray-500 text-[16px] leading-[24px] ml-1">(nepovinné pole)</span>
+              <span className="text-[#757575] text-[16px] leading-[24px] ml-1">(nepovinné pole)</span>
             )}
           </span>
         </label>
