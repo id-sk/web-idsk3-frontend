@@ -7,18 +7,18 @@ const FooterResp = () => {
       <div className="flex justify-between items-end w-full max-w-[1120px] mx-auto py-12 px-4 sm:px-8 min-[1160px]:px-4 max-md:flex-col max-md:items-start max-md:gap-8">
         
         {/* ĽAVÁ ČASŤ: Texty */}
-        <div className="flex flex-col w-[73%] max-md:w-full">
+        <div className="flex flex-col w-[73%] max-md:w-full [&_a]:text-[#0B4199] [&_a]:underline [&_a:hover]:text-[#126DFF] [&_a:visited]:text-[#592999]">
           <p className="text-base tracking-wide text-black">
             Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.
           </p>
           <div className="mt-4 flex gap-5 max-md:flex-wrap">
-            <a href="https://idsk.gov.sk/co-je/cookies-policy" className="underline hover:text-blue-600">
+            <a href="https://idsk.gov.sk/co-je/cookies-policy">
               Informácie o spracúvaní súborov cookies
             </a>
-            <a href="mailto:idsk@mirri.gov.sk" className="underline hover:text-blue-600">
+            <a href="mailto:idsk@mirri.gov.sk">
               Kontakt na prevádzkovateľa
             </a>
-            <a href="https://idsk2.gov.sk/" className="underline hover:text-blue-600">
+            <a href="https://idsk2.gov.sk/">
               IDSK2
             </a>
           </div>
@@ -26,7 +26,7 @@ const FooterResp = () => {
             Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.
           </p>
           <p className="mt-4">
-            Vytvorené v súlade s <a href="https://idsk.gov.sk" className="underline hover:text-blue-600">Jednotným dizajnovým manuálom IDSK</a>.
+            Vytvorené v súlade s <a href="https://idsk.gov.sk">Jednotným dizajnovým manuálom IDSK</a>.
           </p>
         </div>
 
