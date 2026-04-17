@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
 import { CustomAccordion } from '@/app/(home)/_components/accordion/accordionCustom';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
@@ -135,6 +136,47 @@ const TabPouzitie = () => (
         <p className="text-sm sm:text-base tracking-wide leading-relaxed text-black mb-10">
             Každá sekcia sa kliknutím na celú plochu hlavičky sekcie rozbalí resp. zbalí, pričom sa zmení ikona – indikátor (ro)zbalenia. Po kliknutí sa (ro)zbalí príslušný panel s obsahom sekcie. Rozbalenie ďalšej sekcie nemá vplyv na uzavretie iného, už otvoreného obsahu. Naraz môže byť otvorených viacero sekcií, používateľ si kliknutím sám určí, ktorú sekciu chce zbaliť alebo rozbaliť.
         </p>
+
+        <div className="flex flex-wrap gap-8 sm:gap-12 mt-10">
+            <div className="flex flex-col items-start flex-1 min-w-[280px]">
+                <InformationBanner
+                    ariaLabel="Správne použitie akordeónu"
+                    type="banner"
+                    variant="basic"
+                    hideCloseButton={true}
+                >
+                    <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
+                        Ako sa používa
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
+                        <li>keď máte viacero súvisiacich sekcií (min. 2, max 10),</li>
+                        <li>keď obsah v jednotlivých sekciách je rovnocenný a nezávislý,</li>
+                        <li>keď potrebujete rozdeliť obsah do logických sekcií (napr. FAQ, návody, inštrukcie),</li>
+                        <li>keď máte obsah, ktorý sa pravidelne opakuje alebo je známy.</li>
+                    </ul>
+                </InformationBanner>
+            </div>
+            
+            <div className="flex flex-col items-start flex-1 min-w-[280px]">
+                <InformationBanner
+                    ariaLabel="Nesprávne použitie akordeónu"
+                    type="banner"
+                    variant="warning"
+                    hideCloseButton={true}
+                >
+                    <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
+                    Ako sa nepoužíva
+                </h3>
+                    <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
+                    <li>keď je potrebné vidieť všetky informácie naraz (napr. pri porovnávaní údajov),</li>
+                    <li>keď ide o kľúčový obsah, ktorý by nemal byť skrytý (napr. textové pole s povinnými údajmi),</li>
+                    <li>keď sekcie obsahujú veľa textu, vnorené interaktívne prvky alebo akčné prvky,</li>
+                    <li>keď ide o navigáciu medzi sekciami – vtedy použite taby alebo obsahovú navigáciu,</li>
+                </ul>
+                </InformationBanner>
+            </div>
+        </div>
+
     </div>
 );
 

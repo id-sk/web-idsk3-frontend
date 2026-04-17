@@ -106,7 +106,7 @@ const TabPouzitie = () => (
                 <InformationBanner
                     ariaLabel="Správne použitie omrvinkovej navigácie"
                     type="banner"
-                    variant="success"
+                    variant="basic"
                     hideCloseButton={true}
                     >
                     <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">

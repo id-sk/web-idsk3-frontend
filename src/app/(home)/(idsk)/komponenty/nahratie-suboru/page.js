@@ -93,24 +93,24 @@ const TabPouzitie = () => (
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[600px] px-4">
                <DropZone 
-                        dropzoneTitle="Nahrajte životopis"
-                        subtitle="Nahrajte súbor alebo ho sem presuňte."
-                        description={
-                            <>
-                                Podporované formáty: JPG, PNG, PDF <br />
-                                Maximálna veľkosť súborov je 500 MB
-                            </>
-                            }
-                        buttonText="Vyberte súbory"
-                        filesTitle="Nahraté súbory"
-                        maxSize={524288000}
-                        acceptFiles={{ 
-                            'application/pdf': ['.pdf'], 
-                            'image/jpeg': ['.jpeg', '.jpg'],
-                            'image/png': ['.png']
-                        }} 
-                    />
-                </div>
+                    dropzoneTitle="Nahrajte životopis"
+                    subtitle="Nahrajte súbor alebo ho sem presuňte."
+                    description={
+                        <>
+                            Podporované formáty: JPG, PNG, PDF <br />
+                            Maximálna veľkosť súborov je 500 MB
+                        </>
+                        }
+                    buttonText="Vyberte súbory"
+                    filesTitle="Nahraté súbory"
+                    maxSize={524288000}
+                    acceptFiles={{ 
+                        'application/pdf': ['.pdf'], 
+                        'image/jpeg': ['.jpeg', '.jpg'],
+                        'image/png': ['.png']
+                    }} 
+                />
+            </div>
         </div>
 
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
@@ -130,7 +130,7 @@ const TabPouzitie = () => (
                 <InformationBanner
                     ariaLabel="Správne použitie poľa na nahratie súboru"
                     type="banner"
-                    variant="success"
+                    variant="basic"
                     hideCloseButton={true}
                 >
                  <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
