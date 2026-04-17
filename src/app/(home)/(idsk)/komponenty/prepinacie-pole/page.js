@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { RadioButton } from '@eslovensko/idsk-react';
+import { RadioButton, RadioButtonGroup } from '@/app/(home)/_components/inputs/radioButtonCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 // Profi balíčky na zvýrazňovanie kódu
@@ -91,21 +91,28 @@ const TabPouzitie = () => (
         </h2>
         
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio"
-                    label="Pole č.1"
-                    fullWidth={true}
-                />
-            </div>
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio"
-                    label="Pole č.2"
-                    fullWidth={true}
-                />
+            <div className="w-full max-w-[600px] px-4">
+                <RadioButtonGroup 
+                    legend="Ako vás máme kontaktovať?" 
+                    name="kontakt"
+                    hint="Vyberte len jednu možnosť"
+                    mandatory={true}
+                    >
+                    <RadioButton 
+                        value="email" 
+                        label="E-mail" 
+                    />
+                    <RadioButton 
+                        value="sms" 
+                        label="Textová správa (SMS)" 
+                        disabled={true} 
+                    />
+                    <RadioButton 
+                        value="telefon" 
+                        label="Telefón" 
+                        hint="Zavoláme vám v pracovných dňoch od 8:00 do 16:00."
+                    />
+                </RadioButtonGroup>
             </div>
         </div>
 
@@ -121,7 +128,7 @@ const TabPouzitie = () => (
                 <InformationBanner
                     ariaLabel="Správne použitie prepínacieho poľa"
                     type="banner"
-                    variant="success"
+                    variant="basic"
                     hideCloseButton={true}
                 >
                  <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
@@ -163,69 +170,78 @@ const TabPouzitie = () => (
 const TabVarianty = () => (
     <div className="animate-fade-in">
         <h2 className="text-xl sm:text-2xl font-bold tracking-wide text-black mb-4">
-            Varianty
+            Varianty a stavy
         </h2>
         
+        {/* ZAČIARKNUTÝ A NEZAČIARKNUTÝ STAV */}
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant začiarknutého/nezačiarknutého prepínacieho poľa</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio-group-1"
-                    label="Menovka (Predvolene začiarknuté)"
-                    defaultChecked={true}
-                    fullWidth={true}
-                />
-            </div>
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio-group-1"
-                    label="Menovka (Nezačiarknuté)"
-                    fullWidth={true}
-                />
+            <div className="w-full max-w-[600px] px-4">
+                <RadioButtonGroup 
+                    legend="Prepínacie pole" 
+                    name="stav-zaciarknutia"
+                    hint="Prepínacie pole ukazuje zvolenú a nezvolenú možnosť."
+                    mandatory={true}
+                >
+                    {/* Použijeme defaultChecked namiesto checked pre React */}
+                    <RadioButton 
+                        value="checked" 
+                        label="Začiarknuté" 
+                        defaultChecked
+                    />
+                    <RadioButton 
+                        value="unchecked" 
+                        label="Nezačiarknuté" 
+                    />
+                </RadioButtonGroup>
             </div>
         </div>
 
-        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Varianty prepínacieho poľa - zrušený a chybový</h3>
+        {/* NEAKTÍVNY A CHYBOVÝ STAV */}
+        <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Varianty prepínacieho poľa - neaktívny a chybový</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton
-                    inputSize='large'
-                    name="radio-group-disabled" // Unikátne meno
-                    label="Menovka (Neaktívne)"
-                    fullWidth={true}
-                    disabled={true}
-                />
-            </div>
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio-group-error" // Unikátne meno
-                    label="Menovka (Chyba)"
-                    error={true}
-                    fullWidth={true}
-                />
+            <div className="w-full max-w-[600px] px-4">
+                <RadioButtonGroup 
+                    legend="Prepínacie pole príklad" 
+                    name="stav-chybovy"
+                    hint="Ukážka neaktívneho (disabled) poľa v chybovej skupine."
+                    mandatory={true}
+                    errorMsg="Toto pole je povinné. Vyberte jednu z možností."
+                >
+                    <RadioButton 
+                        value="disabled" 
+                        label="Menovka (Neaktívne)" 
+                        disabled={true}
+                    />
+                    <RadioButton 
+                        value="unchecked" 
+                        label="Menovka (Chyba)"
+                    />
+                </RadioButtonGroup>
             </div>
         </div>
 
+        {/* VEĽKOSŤ: VEĽKÝ A MALÝ */}
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant prepínacieho poľa veľký/malý</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='large'
-                    name="radio-group-size"
-                    label="Menovka (Veľký variant)"
-                    fullWidth={true}
-                />
-            </div>
-            <div className="w-full max-w-[400px] px-4">
-                <RadioButton 
-                    inputSize='small'
-                    name="radio-group-size"
-                    label="Menovka (Malý variant)"
-                    fullWidth={true}
-                />
+            <div className="w-full max-w-[600px] px-4">
+                <RadioButtonGroup 
+                    legend="Prepínacie pole veľkosti" 
+                    name="stav-velkosti"
+                    hint="Prepínacie pole môže nadobúdať veľký a malý formát."
+                    mandatory={true}
+                >
+                    <RadioButton 
+                        value="large-size" 
+                        label="Menovka (veľké)" 
+                        inputSize="large" 
+                    />
+                    <RadioButton 
+                        value="small-size" 
+                        label="Menovka (malé)"
+                        inputSize="small"
+                    />
+                </RadioButtonGroup>
             </div>
         </div>
     </div>

@@ -98,11 +98,11 @@ const TabPouzitie = () => (
                     label="Vyberte si položku zo zoznamu"
                     inputSize="large"
                     fullWidth={true}
-                >
-                    <option value="">-- Vyberte položku --</option>
-                    <option value="polozka-1">Položka 1</option>
-                    <option value="polozka-2">Položka 2</option>
-                    <option value="polozka-3">Položka 3</option>
+                    >
+                        <option value="">-- Vyberte položku --</option>
+                        <option value="polozka-1">Položka 1</option>
+                        <option value="polozka-2">Položka 2</option>
+                        <option value="polozka-3">Položka 3</option>
                 </Select>
             </div>
         </div>
@@ -116,19 +116,19 @@ const TabPouzitie = () => (
                 <InformationBanner
                     ariaLabel="Správne použitie rozbaľovacieho poľa"
                     type="banner"
-                    variant="success"
+                    variant="basic"
                     hideCloseButton={true}
-                >
-                 <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
-                    Ako sa používa
-                </h3>
-                 <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                    <li>Zoznam obsahuje 5 až 20 vzájomne sa vylučujúcich možností.</li>
-                    <li>Položky sú logicky zoradené (napr. abecedne, chronologicky alebo od najčastejšej voľby).</li>
-                    <li>Rozbaľovací zoznam neprekáža inému dôležitému obsahu.</li>
-                    <li>použite s overením v reálnom čase.</li>
-                    <li>Používajte s krátkymi textami možností, ktoré nepresahujú jeden riadok.</li>
-                </ul>
+                    >
+                    <h3 className="text-lg sm:text-xl font-bold text-black leading-tight ml-2 mb-4">
+                        Ako sa používa
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
+                        <li>Zoznam obsahuje 5 až 20 vzájomne sa vylučujúcich možností.</li>
+                        <li>Položky sú logicky zoradené (napr. abecedne, chronologicky alebo od najčastejšej voľby).</li>
+                        <li>Rozbaľovací zoznam neprekáža inému dôležitému obsahu.</li>
+                        <li>použite s overením v reálnom čase.</li>
+                        <li>Používajte s krátkymi textami možností, ktoré nepresahujú jeden riadok.</li>
+                    </ul>
                 </InformationBanner>
             </div>
             
