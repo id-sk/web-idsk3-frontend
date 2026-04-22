@@ -14,8 +14,8 @@
 }
 
 .focus-outline-orange:focus {
-  outline: 2px solid #D96E00;
-  outline-offset: 3px;
+  outline: 3px solid #D96E00;
+  outline-offset: 2px;
 }
 
 html,

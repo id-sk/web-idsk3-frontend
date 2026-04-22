@@ -2,7 +2,6 @@
 import "./globals.css";
 import '../styles/index.css';
 
-// Tu importni komponenty. Uprav si cesty podľa toho, kde ich presne máš.
 import Navbar from "@/app/(home)/_components/navbar/navbar";
 import FooterResp from "@/app/(home)/_components/footer/FooterResp";
 import SkipLinkClient from "@/app/(home)/_components/skiplink/SkipLinkClient";
@@ -19,9 +18,8 @@ export default function RootLayout({ children }) {
         <SkipLinkClient />
         <Navbar />
         
-        {/* Toto flex-grow zabezpečí, že ak má stránka málo obsahu, Footer ostane dole */}
         <main className="flex-grow">
-          {children}  {/* Sem sa automaticky natiahne obsah tvojich page.js */}
+          {children} 
         </main>
         
         <FooterResp />

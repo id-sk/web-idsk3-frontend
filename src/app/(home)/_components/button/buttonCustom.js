@@ -47,7 +47,7 @@ const ButtonCustom = forwardRef(({
   const baseClasses = `
     inline-flex items-center justify-center font-bold tracking-wide 
     p-[12px] rounded-[5px] gap-[10px] transition-all duration-100 outline-none
-    focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#d96e00] focus-visible:outline-offset-3
+    focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#d96e00] focus-visible:outline-offset-2
     disabled:cursor-not-allowed
   `;
 
@@ -92,7 +92,6 @@ const ButtonCustom = forwardRef(({
     large: 'h-[48px]',
   };
 
-  // 3. ODCHYTENIE KLÁVES - upravené, aby nespúšťalo animáciu, ak je disabled
   const handleKeyDown = (e) => {
     if (e.key === 'Enter' && !disabled) setIsEnterPressed(true);
     if (onKeyDown) onKeyDown(e);

@@ -4,7 +4,6 @@ import { homePageData } from "@/constants/data";
 import Image from 'next/image';
 import Link from "next/link";
 
-// 1. OPRAVA: Zmenšené fonty v ImageCard
 function ImageCard({ href, src, title, description, alt }) {
   return (
     <Link 
@@ -54,31 +53,32 @@ export default function HomePage() {
         <div className="page-container flex max-md:flex-col gap-5">
           
           <div className="flex flex-col w-[67%] max-md:w-full">
-            {/* 2. OPRAVA: Nadpis H1 bol príliš veľký. Na mobile bude text-3xl, od tabletu text-4xl */}
             <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
               Dizajnový systém elektronických služieb a webových sídel 
             </h1>
-            {/* 3. OPRAVA: Odstavec bol text-2xl! Zmenené na text-base (mobil) a text-lg (desktop) */}
             <p className="mt-7 text-base md:text-lg tracking-normal leading-8 text-neutral-950 max-md:max-w-full">
               Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3.0.0. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
             </p>
             <Link 
-              href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2 self-start 
-                px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white 
-                bg-blue-600 rounded-md transition-all duration-200
-                outline-none
-                hover:shadow-none 
-                hover:ring-[4px] 
-                hover:ring-[#757575]
-              "
+                href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
+                target="_blank" 
+                aria-label="Figma IDSK (otvorí sa v novom okne)"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 self-start 
+                    px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white 
+                    bg-blue-600 rounded-md transition-all duration-200
+                    outline-none
+                    hover:shadow-none 
+                    hover:ring-[4px] 
+                    hover:ring-[#757575]
+                    hover:underline
+                    "
               >
-              <span className="underline">Figma IDSK 3.1.0</span>
+              <span>Figma IDSK 3.1.0</span>
               
               <svg 
                 className="w-6 h-6 shrink-0" 
+                aria-hidden="true"
                 fill="none" 
                 stroke="currentColor" 
                 viewBox="0 0 24 24" 
@@ -100,7 +100,7 @@ export default function HomePage() {
               className="w-full"
               width={300}
               height={240}
-              alt="Ilustrácia manuálu"
+              alt=""
             />
           </div>
 

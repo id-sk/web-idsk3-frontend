@@ -54,7 +54,6 @@
       outline: none !important;
     }
 
-    /* --- VÝMENA PLUS/MÍNUS ZA ŠÍPKU --- */
     
     /* 1. Skryť originálne IDSK SVG ikony */
     .idsk-accordion__icon {
@@ -125,10 +124,6 @@
   .idsk-accordion__content-body {
     color: #000;
   }
-
-  /* ========================================== */
-  /* VYNÚTENÉ STAVY PRE UKÁŽKY (Dizajn manuál)  */
-  /* ========================================== */
   
   /* 1. Vynútený HOVER (Sivý tieň) */
   &.demo-hover-state {

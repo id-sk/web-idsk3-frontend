@@ -14,7 +14,6 @@ const UvodPage = () => {
       </header>
       
       <main id="main-content" role="main" className="mt-8">
-        {/* Zvýraznený úvodný text (Perex) */}
         <p className="text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black">
           IDSK je súbor pravidiel tvorby obsahu a funkčnosti elektronických
           služieb v súlade s potrebami používateľov. Definuje komponenty, jednotné
@@ -23,7 +22,6 @@ const UvodPage = () => {
           používateľom elektronických služieb v celej verejnej správe.
         </p>
         
-        {/* Skupina štandardných odstavcov */}
         <div className="space-y-6 mt-6 text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black">
           <p>
             Požiadavka zjednotenia elektronických služieb vyplýva z Národnej
@@ -60,7 +58,6 @@ const UvodPage = () => {
           </p>
         </div>
 
-        {/* Sekcia: Na čo slúži IDSK a na čo nie */}
         <h2 className="mt-10 mb-6 text-xl sm:text-2xl font-bold tracking-wide text-black">
           Na čo slúži IDSK a na čo nie
         </h2>
