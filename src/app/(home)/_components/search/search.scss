@@ -27,3 +27,30 @@
     display: block;
   }
 }
+
+.idsk-custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: 10px !important;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #E0E0E0 !important;
+    border-radius: 5px !important;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #757575 !important;
+    border-radius: 10px !important;
+  }
+
+  /* Tu zabíjame šípky v Edge a Chrome */
+  &::-webkit-scrollbar-button {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-width: thin !important;
+    scrollbar-color: #757575 #E0E0E0 !important;
+  }
+}
