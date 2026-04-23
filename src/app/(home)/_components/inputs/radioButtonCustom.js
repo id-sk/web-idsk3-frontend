@@ -115,7 +115,6 @@ export const RadioButton = forwardRef(
             value={value}
             ref={ref}
             disabled={disabled}
-            aria-invalid={error}
             aria-describedby={describedBy} 
             className="peer sr-only" 
             {...props}
