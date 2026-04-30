@@ -21,7 +21,7 @@ const Article = ({ title, description, src, date }) => (
       </div>
       <div className="flex flex-col ml-5 w-[71%] max-md:ml-0 max-md:w-full">
         <div className="flex flex-col grow justify-center tracking-wide leading-[150%] max-md:mt-10 max-md:max-w-full">
-          <div className="text-2xl font-bold text-my-blue underline max-md:max-w-full">{title}</div>
+          <div className="text-2xl font-bold text-[#0b4199] underline max-md:max-w-full">{title}</div>
           <div className="mt-2.5 text-xl leading-7 text-black max-md:max-w-full">{description}</div>
           <div className="mt-2.5 text-base text-neutral-500 max-md:max-w-full">{date}</div>
         </div>

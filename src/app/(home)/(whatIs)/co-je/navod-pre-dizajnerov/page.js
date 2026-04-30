@@ -2,9 +2,9 @@
 
 import React, { useState } from 'react';
 import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
-import { PrimaryButton } from '@eslovensko/idsk-react';
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import Image from 'next/image';
-import { InformationBanner } from '@eslovensko/idsk-react';
 
 
 const DesignersPage = () => {
@@ -45,11 +45,14 @@ const DesignersPage = () => {
                 </div>
 
                 <div className="mb-12">
-                    <PrimaryButton
-                        label="Knižnica IDSK"
-                        onClick={handleClick}
-                        className="my-4"
-                    />
+                    <ButtonCustom variant="primary" status="basic" onClick={handleClick} className="my-4" aria-label="Otvorí sa v novom okne"
+                    iconRight={
+                        <svg className="w-5 h-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                        </svg>
+                    }>
+                        Figma knižnica IDSK
+                    </ButtonCustom>
                 </div>
                 <MyTabBar>
                     <MyTabLink 
@@ -139,7 +142,7 @@ const TabAkoZacat = () => (
                             width={1100}
                             height={500}
                             quality={100}
-                            alt="Ako pracovať s bočným panelom"
+                            alt="Ako pracovať s pravým bočným panelom"
                             className="w-full h-auto md:h-[500px] object-cover"
                         />
                     </div>
@@ -152,7 +155,7 @@ const TabAkoZacat = () => (
                             width={1100}
                             height={500}
                             quality={100}
-                            alt="Ako pracovať s bočným panelom"
+                            alt="Ako pracovať s ľavým bočným panelom"
                             className="w-full h-auto md:h-[500px] object-cover"
                         />
                     </div>
@@ -535,7 +538,7 @@ const TabNavodPreNedizajnerov = () => (
             </div>
         </section>
         <InformationBanner
-            ariaLabel="Neprávne použitie textového poľa"
+            ariaLabel="Čo nerobiť pri práci s Figma knižnicou"
             type="banner"
             variant="warning"
             hideCloseButton={true}
@@ -580,7 +583,7 @@ const TabNavodPreNedizajnerov = () => (
                             width={350}
                             height={196}
                             quality={100}
-                            alt="Návod pre začiatočníkov"
+                            alt="Návod pre začiatočníkov (Otvorí sa v novom okne)"
                             className="w-full h-full object-cover scale-105 transition-transform duration-300 hover:scale-110"
                         />
                     </a>
@@ -589,7 +592,7 @@ const TabNavodPreNedizajnerov = () => (
                             href="https://help.figma.com/hc/en-us/articles/360039827114-Getting-started-with-Figma" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="text-lg font-bold text-my-blue hover:underline block mb-2"
+                            className="text-lg font-bold text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] block mb-2"
                         >
                             Figma návod pre začiatočníkov
                         </a>
@@ -612,7 +615,7 @@ const TabNavodPreNedizajnerov = () => (
                             width={350}
                             height={196}
                             quality={100}
-                            alt="Ako funguje Auto Layout"
+                            alt="Ako funguje Auto Layout (otvorí sa v novom okne)"
                             className="w-full h-full object-cover scale-105 transition-transform duration-300 hover:scale-110"
                         />
                     </a>
@@ -621,7 +624,7 @@ const TabNavodPreNedizajnerov = () => (
                             href="https://www.figma.com/community/file/784448220678228461" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="text-lg font-bold text-my-blue hover:underline block mb-2"
+                            className="text-lg font-bold text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] block mb-2"
                         >
                             Ako funguje Auto Layout
                         </a>
@@ -644,7 +647,7 @@ const TabNavodPreNedizajnerov = () => (
                             width={350}
                             height={196}
                             quality={100}
-                            alt="Práca s variantmi"
+                            alt="Návod práca s variantmi (Otvorí sa v novom okne)"
                             className="w-full h-full object-cover scale-105 transition-transform duration-300 hover:scale-110"
                         />
                     </a>
@@ -653,7 +656,7 @@ const TabNavodPreNedizajnerov = () => (
                             href="https://help.figma.com/hc/en-us/articles/360056440594-Create-and-use-variants" 
                             target="_blank" 
                             rel="noreferrer" 
-                            className="text-lg font-bold text-my-blue hover:underline block mb-2"
+                            className="text-lg font-bold text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] block mb-2"
                         >
                             Práca s variantmi
                         </a>

@@ -153,7 +153,7 @@ const TabVarianty = () => (
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant so zbalením pre mobilné zariadenia a plne rozbalený variant na viaceré riadky</h3>
         {/* Nápoveda pre používateľov dokumentácie */}
         <p className="text-sm sm:text-base tracking-wide leading-relaxed md:leading-8 text-black mb-8">
-            💡 <strong>Tip:</strong> Zmenšite šírku okna prehliadača, aby ste videli, ako sa omrvinková navigácia automaticky prispôsobí pre mobilné zariadenia.
+            <strong>Tip:</strong> Zmenšite šírku okna prehliadača, aby ste videli, ako sa omrvinková navigácia automaticky prispôsobí pre mobilné zariadenia.
         </p>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[600px] px-4">

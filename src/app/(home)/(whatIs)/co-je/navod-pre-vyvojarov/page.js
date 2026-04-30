@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { InformationBanner } from '@eslovensko/idsk-react';
+import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 const DeveloperPage = () => {
     return (
@@ -24,6 +24,7 @@ const DeveloperPage = () => {
                     href="https://github.com/id-sk/id-sk-frontend" 
                     target="_blank" 
                     rel="noopener noreferrer"
+                    aria-label="Otvorí sa na novej karte"
                     className="inline-flex items-center justify-center gap-2 self-start 
                         px-5 py-3 mt-1 text-base font-bold tracking-wide leading-6 text-center text-white 
                         bg-blue-600 rounded-md transition-all duration-200
@@ -33,10 +34,11 @@ const DeveloperPage = () => {
                         hover:ring-[#757575]
                     "
                     >
-                    <span className="underline">GitHub knižnica IDSK</span>
+                    <span>GitHub knižnica IDSK</span>
                     
                     <svg 
                         className="w-6 h-6 shrink-0" 
+                        aria-hidden={true}
                         fill="none" 
                         stroke="currentColor" 
                         viewBox="0 0 24 24" 
@@ -97,11 +99,17 @@ const DeveloperPage = () => {
                 
                 <div className="w-full overflow-hidden my-8">
                     <InformationBanner 
-                        variant="information" 
-                        title="Odstránenie obmedzení"
-                        ariaLabel="Oznámenie o inštalácii"
-                    >
-                        Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať IDSK Frontend pomocou node package manager.
+                        ariaLabel="Odstránenie obmedzení inštaláciou node package manager"
+                        type="banner"
+                        variant="basic"
+                        hideCloseButton={true}
+                        >
+                        <h3 className="text-lg sm:text-xl font-bold text-black leading-tight mb-2">
+                            Odstránenie obmedzení
+                        </h3>
+                        <p classname="text-sm tracking-wide leading-relaxed text-black">
+                            Ak požadujete niektorú z týchto funkcií, je výhodnejšie nainštalovať IDSK Frontend pomocou node package manager.
+                        </p>
                     </InformationBanner>
                 </div>
 
@@ -128,6 +136,7 @@ const DeveloperPage = () => {
     <span className="text-xs text-[#505a5f]">index.html</span>
 </div>
 <pre className="p-4 overflow-x-auto text-sm sm:text-base leading-6 text-[#0b0c0c] font-mono whitespace-pre-wrap break-words">
+<code className="language-html">
 {`<!DOCTYPE html>
 <html>
 <head>
@@ -141,6 +150,7 @@ const DeveloperPage = () => {
     <script>window.GOVUKFrontend.initAll()</script>
 </body>
 </html>`}
+</code>
 </pre>
 </div>
             </main>

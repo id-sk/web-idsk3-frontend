@@ -16,7 +16,7 @@ const Vzory404 = () => {
           width={300}
           height={550}
           quality={100}
-          alt="404"
+          alt=""
           className="w-full aspect-[1.5]"
         />
         <div className="self-center mt-11 max-md:mt-10">

@@ -23,7 +23,7 @@ function ImageCard({ href, src, title, description, alt }) {
         <div className="relative w-full aspect-[3/2] bg-zinc-200 rounded-xl overflow-hidden shrink-0">
           <Image
             src={src}
-            alt={alt || title}
+            alt={alt || ""}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
@@ -62,7 +62,7 @@ export default function HomePage() {
             <Link 
                 href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
                 target="_blank" 
-                aria-label="Figma IDSK (otvorí sa v novom okne)"
+                aria-label="Figma IDSK 3.1.0 (otvorí sa v novom okne)"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 self-start 
                     px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white 

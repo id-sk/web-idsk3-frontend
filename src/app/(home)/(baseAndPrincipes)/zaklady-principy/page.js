@@ -22,7 +22,7 @@ function ImageCard({ href, src, title, description, alt }) {
         <div className="relative w-full aspect-[3/2] bg-zinc-200 overflow-hidden shrink-0">
           <Image
             src={src}
-            alt={alt || title}
+            alt={alt || ""}
             fill
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />

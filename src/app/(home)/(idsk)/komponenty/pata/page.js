@@ -104,7 +104,7 @@ const TabPouzitie = () => (
                     }
                     logo={
                         <a href="https://mirri.gov.sk" target="_blank" rel="noopener noreferrer" className="mt-6 inline-block">
-                            <img src="/images/group.svg" alt="MIRRI SR" width="290" height="66" />
+                            <img src="/images/group.svg" alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky" width="290" height="66" />
                         </a>
                     }
                 >
@@ -192,7 +192,7 @@ const TabVarianty = () => (
                     }
                     logo={
                         <a href="https://mirri.gov.sk" target="_blank" rel="noopener noreferrer">
-                            <img src="/images/group.svg" alt="MIRRI SR" width="290" height="66" />
+                            <img src="/images/group.svg" alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky" width="290" height="66" />
                         </a>
                     }
                 >
