@@ -7,16 +7,15 @@ import InformationBanner from '@/app/(home)/_components/information-banner/infor
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import dedent from 'dedent';
 
 // ============================================================================
-// 1. HLAVNÝ KOMPONENT (Škrupina stránky a slovník tabov)
+// 1. HLAVNÝ KOMPONENT
 // ============================================================================
 const TextInputPage = () => {
     const [activeTab, setActiveTab] = useState('pouzitie');
 
-    // 🌟 SLOVNÍK TABOV: Tu len priradíme kľúč k danému podkomponentu
     const renderTabContent = {
         pouzitie: <TabPouzitie />,
         varianty: <TabVarianty />,
@@ -93,7 +92,6 @@ const TabPouzitie = () => (
             Použitie textového poľa
         </h2>
         
-        {/* Ukážka Inputu na bodkovanom pozadí */}
         <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[400px] py-7 my-6 px-4">
                 <Input 
@@ -387,7 +385,7 @@ const TabImplementacia = () => (
                         {/* Zvýraznenie kódu pre štruktúru súborov (text/bash) */}
                         <SyntaxHighlighter 
                             language="bash" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -416,7 +414,7 @@ const TabImplementacia = () => (
                         {/* Zvýraznenie kódu pre HTML head */}
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -446,7 +444,7 @@ const TabImplementacia = () => (
                         {/* Zvýraznenie kódu pre čisté HTML inputu */}
                         <SyntaxHighlighter 
                             language="html"
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -479,7 +477,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="bash" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -501,7 +499,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="scss" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -518,7 +516,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="javascript" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}

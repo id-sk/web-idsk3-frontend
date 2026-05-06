@@ -7,7 +7,7 @@ import InformationBanner from '@/app/(home)/_components/information-banner/infor
 
 // Balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import dedent from 'dedent';
 
 // ============================================================================
@@ -372,7 +372,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E]">
                             <SyntaxHighlighter 
                                 language="bash" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -402,7 +402,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E]">
                             <SyntaxHighlighter 
                                 language="html" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -433,7 +433,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E]">
                             <SyntaxHighlighter 
                                 language="html" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -492,7 +492,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E] mt-4">
                             <SyntaxHighlighter 
                                 language="bash" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -516,7 +516,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E] mt-4">
                             <SyntaxHighlighter 
                                 language="scss" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -535,7 +535,7 @@ const TabImplementacia = () => (
                         <div className="w-full min-w-0 rounded-lg border border-gray-700 bg-[#1E1E1E] mt-4">
                             <SyntaxHighlighter 
                                 language="javascript" 
-                                style={vscDarkPlus} 
+                                style={a11yDark} 
                                 wrapLines={true}
                                 wrapLongLines={true}
                                 customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, background: 'transparent', whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}

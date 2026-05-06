@@ -18,9 +18,9 @@ export default function RootLayout({ children }) {
         <SkipLinkClient />
         <Navbar />
         
-        <main className="flex-grow">
+        <div className="flex-grow">
           {children} 
-        </main>
+        </div>
         
         <FooterResp />
       </body>

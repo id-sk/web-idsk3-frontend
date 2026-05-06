@@ -25,70 +25,66 @@ const DesignersPage = () => {
         <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
             <title>Pre dizajnérov</title>
             
-            <header>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight mb-8">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight mb-8">
+                Pre dizajnérov
+            </h1>
+
+            <div className="text-sm sm:text-base tracking-wide leading-relaxed text-black mb-8 space-y-6">
+                <p>
+                    V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK – knižnicu štýlov, komponentov či vzorov.
+                </p>
+                <p>
+                    Všetky súbory sú voľne prístupné na prepoužitie a pre prácu s nimi je nevyhnutné duplikovať súbory alebo skopírovať do nového súboru.
+                </p>
+                <p>
+                    Pomocou týchto komponentov je možné vyskladať elektronickú službu a/alebo webové sídlo v IDSK.
+                </p>
+            </div>
+
+            <div className="mb-12">
+                <ButtonCustom variant="primary" status="basic" onClick={handleClick} className="my-4" aria-label="Otvorí sa v novom okne"
+                iconRight={
+                    <svg className="w-5 h-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                    </svg>
+                }>
+                    Figma knižnica IDSK
+                </ButtonCustom>
+            </div>
+            <MyTabBar>
+                <MyTabLink 
+                    href="#" 
+                    selected={activeTab === 'akoZacat'} 
+                    onClick={(e) => { e.preventDefault(); setActiveTab('akoZacat'); }}
+                >
+                    Ako začať
+                </MyTabLink>
+                <MyTabLink 
+                    href="#" 
+                    selected={activeTab === 'dizajnovySystem'} 
+                    onClick={(e) => { e.preventDefault(); setActiveTab('dizajnovySystem'); }}
+                >
+                    Dizajnový systém
+                </MyTabLink>
+                <MyTabLink 
+                    href="#" 
+                    selected={activeTab === 'navodPreDizajnerov'} 
+                    onClick={(e) => { e.preventDefault(); setActiveTab('navodPreDizajnerov'); }}
+                >
                     Pre dizajnérov
-                </h1>
-            </header>
+                </MyTabLink>
+                <MyTabLink 
+                    href="#" 
+                    selected={activeTab === 'navodPreNedizajnerov'} 
+                    onClick={(e) => { e.preventDefault(); setActiveTab('navodPreNedizajnerov'); }}
+                >
+                    Pre nedizajnérov
+                </MyTabLink>
+            </MyTabBar>
 
-            <main id="main-content" role="main">
-                <div className="text-sm sm:text-base tracking-wide leading-relaxed text-black mb-8 space-y-6">
-                    <p>
-                        V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK – knižnicu štýlov, komponentov či vzorov.
-                    </p>
-                    <p>
-                        Všetky súbory sú voľne prístupné na prepoužitie a pre prácu s nimi je nevyhnutné duplikovať súbory alebo skopírovať do nového súboru.
-                    </p>
-                    <p>
-                        Pomocou týchto komponentov je možné vyskladať elektronickú službu a/alebo webové sídlo v IDSK.
-                    </p>
-                </div>
-
-                <div className="mb-12">
-                    <ButtonCustom variant="primary" status="basic" onClick={handleClick} className="my-4" aria-label="Otvorí sa v novom okne"
-                    iconRight={
-                        <svg className="w-5 h-5 shrink-0" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                        </svg>
-                    }>
-                        Figma knižnica IDSK
-                    </ButtonCustom>
-                </div>
-                <MyTabBar>
-                    <MyTabLink 
-                        href="#" 
-                        selected={activeTab === 'akoZacat'} 
-                        onClick={(e) => { e.preventDefault(); setActiveTab('akoZacat'); }}
-                    >
-                        Ako začať
-                    </MyTabLink>
-                    <MyTabLink 
-                        href="#" 
-                        selected={activeTab === 'dizajnovySystem'} 
-                        onClick={(e) => { e.preventDefault(); setActiveTab('dizajnovySystem'); }}
-                    >
-                        Dizajnový systém
-                    </MyTabLink>
-                    <MyTabLink 
-                        href="#" 
-                        selected={activeTab === 'navodPreDizajnerov'} 
-                        onClick={(e) => { e.preventDefault(); setActiveTab('navodPreDizajnerov'); }}
-                    >
-                        Pre dizajnérov
-                    </MyTabLink>
-                    <MyTabLink 
-                        href="#" 
-                        selected={activeTab === 'navodPreNedizajnerov'} 
-                        onClick={(e) => { e.preventDefault(); setActiveTab('navodPreNedizajnerov'); }}
-                    >
-                        Pre nedizajnérov
-                    </MyTabLink>
-                </MyTabBar>
-
-                <div className="mt-8 text-black">
-                    {renderTabContent[activeTab]}
-                </div>
-            </main>
+            <div className="mt-8 text-black">
+                {renderTabContent[activeTab]}
+            </div>
         </div>
     );
 }

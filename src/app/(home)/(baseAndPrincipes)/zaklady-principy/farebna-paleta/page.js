@@ -7,7 +7,7 @@ import { primaryColors, secondaryColors, neutralColors, extendedPrimaryColors, a
 
 const ColorPalette = () => {
   return (
-    <main className="flex flex-col my-8 max-w-[1200px] px-4 xl:px-0">
+    <div className="flex flex-col my-8 max-w-[1200px] px-4 xl:px-0">
       <title>Farebná paleta</title>
       
       <header>
@@ -62,7 +62,7 @@ const ColorPalette = () => {
           cardsPerRow={6} gap="1rem" rowGap="0.5rem" 
         /> 
       </ColorSection>
-    </main>
+    </div>
   );
 };
 

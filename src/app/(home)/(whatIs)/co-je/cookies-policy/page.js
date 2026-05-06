@@ -10,13 +10,11 @@ const SuboryCookies = () => {
     <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
       <title>Spracúvanie súborov cookies</title>
       
-      <header>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
-          Spracúvanie súborov cookies na webovej stránke idsk.gov.sk
-        </h1>
-      </header>
+      <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
+        Spracúvanie súborov cookies na webovej stránke idsk.gov.sk
+      </h1>
 
-      <main id="main-content" role="main">
+      <div>
         <p className="mt-8 text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black">
           Informácie pre dotknutú osobu pri získaní osobných údajov
         </p>
@@ -230,7 +228,7 @@ const SuboryCookies = () => {
           a o zmene a doplnení niektorých zákonov v znení neskorších predpisov: 
           <a href="https://dataprotection.gov.sk/sk/ine/vzory-formulare-stiahnutie/navrh-zacatie-konania-ochrane-osobnych-udajov/" className="text-my-blue underline hover:text-blue-800 transition-colors ml-1">Návrh na začatie konania o ochrane osobných údajov</a>.       
         </p>
-      </main>
+      </div>
     </div>
   );
 }

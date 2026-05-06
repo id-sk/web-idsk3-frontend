@@ -5,9 +5,8 @@ import Image from 'next/image';
 
 const FocusPage = () => {
   return (
-    <main
+    <div
       id="main-content"
-      role="main"
       className="flex flex-col pb-8 my-8 max-w-[1000px] px-4 sm:px-0 text-black"
     >
       <title>Zameranie klávesnicou (Focus)</title>
@@ -208,7 +207,7 @@ const FocusPage = () => {
             </pre>
         </div>
       </section>
-    </main>
+    </div>
   );
 };
 

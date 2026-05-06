@@ -6,7 +6,7 @@ import InformationBanner from '@/app/(home)/_components/information-banner/infor
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import dedent from 'dedent';
 
 // ============================================================================
@@ -282,7 +282,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -310,7 +310,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -343,7 +343,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -379,7 +379,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -401,7 +401,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}

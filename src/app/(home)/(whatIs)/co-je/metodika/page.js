@@ -5,14 +5,11 @@ const MetodikaPage = () => {
         <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
             <title>Metodika</title>
             
-            <header>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
-                    Metodika <span lang="en">User-centered Design</span>
-                </h1>
-            </header>
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
+                Metodika <span lang="en">User-centered Design</span>
+            </h1>
             
-            <main id="main-content" role="main" className="mt-8">
-                {/* Úvodný zvýraznený text */}
+            <div className="mt-8">
                 <p className="text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black mb-8">
                     Elektronické služby štátu by mali byť pripravované metodikou <span lang="en">user-centered dizajnu (UCD)</span>, aby sa zabezpečila zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa – občana.
                 </p>
@@ -21,7 +18,6 @@ const MetodikaPage = () => {
                     Na dodržanie user-centered prístupu je nutné rozdeliť prípravnú fázu projektu do 4 fáz:
                 </p>
                 
-                {/* Sémanticky správny číslovaný zoznam */}
                 <ol className="list-decimal pl-5 space-y-2 mb-10 text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black">
                     <li>úvodná analýza a výskum zákazníckych skupín,</li>
                     <li>návrh navigácie, prototypu a testovanie,</li>
@@ -203,7 +199,7 @@ const MetodikaPage = () => {
                 <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-8">
                     Report deklaruje splnenie požiadaviek podľa štandardu prístupnosti a funkčnosti webových sídiel a mobilných aplikácií podľa vyhlášky Úradu podpredsedu vlády Slovenskej republiky pre investície a informatizáciu č. 78/2020 Z. z. o štandardoch pre informačné technológie verejnej správy.
                 </p>
-            </main>
+            </div>
         </div>
     );
 }

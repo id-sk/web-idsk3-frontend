@@ -8,7 +8,7 @@ import { SecondaryButton } from '@eslovensko/idsk-react';
 
 // Profi balíčky na zvýrazňovanie kódu
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { a11yDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import dedent from 'dedent';
 
 // ============================================================================
@@ -96,10 +96,10 @@ const TabPouzitie = () => (
                     dropzoneTitle="Nahrajte životopis"
                     subtitle="Nahrajte súbor alebo ho sem presuňte."
                     description={
-                        <>
-                            Podporované formáty: JPG, PNG, PDF <br />
-                            Maximálna veľkosť súborov je 500 MB
-                        </>
+                            <span className="!text-gray-700">
+                                Podporované formáty: JPG, PNG, PDF <br />
+                                Maximálna veľkosť súborov je 500 MB
+                            </span>
                         }
                     buttonText="Vyberte súbory"
                     filesTitle="Nahraté súbory"
@@ -181,14 +181,15 @@ const TabVarianty = () => (
         <h3 className="text-lg sm:text-xl font-bold text-black mb-4 mt-8">Variant drag and drop a variant klasické dátové pole (funguje aj bez javascriptu)</h3>
         <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
             <div className="w-full max-w-[600px] px-4">
-                <DropZone 
+                <DropZone
+                        className='bg-white text-black'
                         dropzoneTitle="Nahrajte životopis"
                         subtitle="Nahrajte súbor alebo ho sem presuňte."
                         description={
-                            <>
-                                Podporované formáty: JPG, PNG, PDF <br />
-                                Maximálna veľkosť súborov je 500 MB
-                            </>
+                                <span className="!text-gray-700">
+                                    Podporované formáty: JPG, PNG, PDF <br />
+                                    Maximálna veľkosť súborov je 500 MB
+                                </span>
                             }
                         buttonText="Vyberte súbory"
                         filesTitle="Nahraté súbory"
@@ -200,7 +201,7 @@ const TabVarianty = () => (
                         }} 
                     />
             </div>
-                <div className="w-full max-w-[600px] px-4">
+                <div className="w-full max-w-[600px] px-4 bg-white">
                     <label className="text-xl sm:text-2xl font-bold text-black mb-4 mt-8" htmlFor="simple-file-upload">
                             Nahrajte životopis
                         </label>
@@ -214,7 +215,7 @@ const TabVarianty = () => (
                             id="custom-file-upload" 
                             name="custom-file-upload" 
                             type="file" 
-                            className="sr-only"
+                            className="sr-only bg-white"
                             aria-describedby="custom-file-upload-hint"
                             accept=".pdf" 
                         />
@@ -354,7 +355,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -382,7 +383,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -415,7 +416,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="html" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -461,7 +462,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="bash" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -483,7 +484,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="scss" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
@@ -500,7 +501,7 @@ const TabImplementacia = () => (
                         
                         <SyntaxHighlighter 
                             language="javascript" 
-                            style={vscDarkPlus} 
+                            style={a11yDark} 
                             wrapLines={true}
                             wrapLongLines={true}
                             customStyle={{ padding: '1.25rem', fontSize: '0.875rem', margin: 0, whiteSpace: 'pre-wrap', wordBreak: 'break-word' }}
