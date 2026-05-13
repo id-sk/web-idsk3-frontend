@@ -1,6 +1,5 @@
 // app/layout.js
 import "./globals.css";
-import '../styles/index.css';
 
 import Navbar from "@/app/(home)/_components/navbar/navbar";
 import FooterResp from "@/app/(home)/_components/footer/FooterResp";

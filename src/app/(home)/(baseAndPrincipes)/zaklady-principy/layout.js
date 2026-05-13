@@ -12,7 +12,7 @@ const BaseLayout = ({ children }) => {
       
       <Sidebar data={basicRoutes} />
       
-      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-15 py-8">
+      <main id="main-content" className="flex-1 pl-0 min-[1120px]:pl-[3.75rem] py-8">
         <div className="relative h-auto">
           {children}
         </div>
@@ -20,7 +20,7 @@ const BaseLayout = ({ children }) => {
           icon={<SvgArrowUp />}
           label="Naspäť hore"
           onClick={scrollToTop}
-          className="go-up-btn mt-8"
+          className="-ml-3 mt-8"
         />
       </main>
       
