@@ -158,58 +158,57 @@ export const slovakColors = [
 ];
 
 export const headlineData = [
-  { title: 'Headline 1', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black' },
-  { title: 'Headline 2', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 3', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 4', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 1', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 2', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 3', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold' },
-  { title: 'Headline 4', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold' },
-  
+  { title: 'Headline 1', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black', fontWeight: '900' },
+  { title: 'Headline 2', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 3', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 4', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 1', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 2', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 3', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Headline 4', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const subtitleData = [
   { title: 'Subtitle', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold' },
+  { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
   { title: 'Subtitle', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold' },
+  { title: 'Subtitle bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const bodyData = [
-  { title: 'Body', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body ', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body 1', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body 1 bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Body', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body ', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body 1', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body 1 bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const captionData = [
-  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold' },
-  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold' },
-  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold', fontWeight: '700' },
+  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold', fontWeight: '700' },
+  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const linkData = [
-  { title: 'Link L', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Regular', fontWeight: '400'},
-  { title: 'Link L bold', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link M', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link M bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link S', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link S bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link L', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'},
-  { title: 'Link L bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link M', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link M bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link S', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link S bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
+  { title: 'Link L', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L bold', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link M', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link M bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link S', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link S bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link M', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link M bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link S', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link S bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
 ];
 

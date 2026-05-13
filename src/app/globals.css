@@ -1,74 +1,79 @@
+/* ==========================================================================
+   1. EXTERNÉ KNIŽNICE A NAŠE MODULY (Orchestration Layer)
+   ========================================================================== */
+@import '@eslovensko/idsk-react/dist/styles/idsk3_theme.css';
+@import '../styles/cms.css';
+@import '../styles/idsk-overrides.css';
+
+/* ==========================================================================
+   2. TAILWIND CORE
+   ========================================================================== */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* ==========================================================================
+   3. BASE VRSTVA (Globálne pravidlá a resety)
+   ========================================================================== */
+@layer base {
+  :root * { box-sizing: border-box; }
+  html, body { @apply font-source-sans-pro; max-width: 100vw; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
 
-:root * {
-  box-sizing: border-box;
+  /* Scrollbars */
+  * { scrollbar-width: thin !important; scrollbar-color: darkgray lightgray !important; }
+  ::-webkit-scrollbar-thumb { background-color: darkgray !important; }
+  ::-webkit-scrollbar-track { background: lightgray !important; }
+
+  /* Input number fix */
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+  input[type='number'] { -moz-appearance: textfield; }
 }
 
-@layer base {
-  body, pre, code, .your-custom-class {
-    @apply font-source-sans-pro;
+/* ==========================================================================
+   4. COMPONENTS VRSTVA (Layout - app specific)
+   ========================================================================== */
+@layer components {
+  .page-container {
+    @apply w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4;
   }
 }
 
-.focus-outline-orange:focus {
-  outline: 3px solid #D96E00;
-  outline-offset: 2px;
+/* ==========================================================================
+   5. UTILITIES VRSTVA (Pomocné triedy)
+   ========================================================================== */
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  .focus-outline-orange:focus { outline: 3px solid #D96E00; outline-offset: 2px; }
+  
+  .menu-button-offset { @apply w-32 -ml-[0.35rem]; }
+  .component-page-width { @apply max-w-[58vw]; }
+  .basic-page-width { @apply max-w-[66vw]; }
+  .go-up-btn-offset { @apply -ml-3; }
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+/* ==========================================================================
+   6. NON-TAILWIND (Vanilla CSS pre iframe, animácie a print)
+   ========================================================================== */
+.react-player { position: absolute; top: 0; left: 0; }
+.grecaptcha-badge { visibility: hidden; }
+
+.loading-animation {
+  display: inline-block;
+  font-family: monospace;
+  clip-path: inset(0 3ch 0 0);
+  animation: l 1s steps(4) infinite;
 }
+@keyframes l { to { clip-path: inset(0 -1ch 0 0); } }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-* {
-  scrollbar-width: thin !important;
-  scrollbar-color: darkgray lightgray !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: darkgray !important;
-}
-
-::-webkit-scrollbar-track {
-  background: lightgray !important;
-}
-
-
-.menu-button {
-  width: 8rem;
-  margin-left: '-0.35rem'
-}
-
-.component-page {
-  max-width: 58vw;
-}
-
-.go-up-btn {
-  margin-left: -0.75rem;
-}
-
-.basic-page {
-  max-width: 66vw;
-}
-
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-
-.no-scrollbar {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.overflow-hidden {
-  overflow: hidden;
+@media print {
+  #__nettle_bot_widget_root, header, footer, .node-article > .comment-form, .comments, .share-links, .idsk-page-layout__breadcrumbs {
+    display: none !important;
+  }
+  main { overflow: hidden !important; }
+  .idsk-page-layout__heading__title > div { padding: 0 !important; }
+  .idsk-page-layout__heading { padding-bottom: 0 !important; }
+  .idsk-anchor-card, img { break-inside: avoid-page; }
+  ::-webkit-scrollbar { display: none; }
 }
