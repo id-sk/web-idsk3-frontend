@@ -212,3 +212,19 @@ export const linkData = [
   { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
 ];
 
+export const shadowData = [
+  { title: "Tieň veľký", shadowClass: "shadow-lg-custom" },
+  { title: "Tieň stredný", shadowClass: "shadow-md-custom" },
+  { title: "Tieň malý", shadowClass: "shadow-sm-custom" },
+  { title: "Tieň dialog", shadowClass: "shadow-dialog-custom" },
+  { title: "Tieň hlavička", shadowClass: "shadow-header-custom" }
+];
+
+export const spacingData = [
+    { id: 1, name: 'Token meno', size: '15px', width: 'w-2' },
+    { id: 2, name: 'Token meno', size: '20px', width: 'w-2.5' },
+    { id: 3, name: 'Token meno', size: '30px', width: 'w-[15px]' },
+    { id: 4, name: 'Token meno', size: '40px', width: 'w-5' },
+    { id: 5, name: 'Token meno', size: '60px', width: 'w-[30px]' },
+    { id: 6, name: 'Token meno', size: '100px', width: 'w-[50px]' },
+];

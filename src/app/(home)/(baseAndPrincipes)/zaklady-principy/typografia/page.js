@@ -1,20 +1,16 @@
 'use client'
 
-import LinkSection from "@/app/(home)/_components/typography/LinkSection";
-import SizeInfo from "@/app/(home)/_components/typography/ScreenSizeInfo";
-import TypographySection from "@/app/(home)/_components/typography/TypographySection";
+import { TypographySection } from "@/app/(home)/_components/typography/TypographySection";
 import { headlineData, subtitleData, bodyData, captionData, linkData } from "@/constants/data";
 
 const TypographyPage = () => {
     return (
-        <main id="main-content" role="main" className="flex flex-col my-8 pb-8 max-w-[1000px] px-4 sm:px-0 text-black">
+        <div id="main-content" className="flex flex-col my-8 pb-8 max-w-[1000px] px-4 sm:px-0 text-black">
             <title>Typografia</title>
-            
-            <header>
-                <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
-                    Typografia
-                </h1>
-            </header>
+
+            <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+                Typografia
+            </h1>
 
             <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
                 Typografia je súbor rôznych typov písma, ktoré sú odlišné v štýle, veľkosti, šírke riadkovania a vzdialenosti medzi písmenami. Pri definovaní typografie bola definovaná škálovateľnosť v podobe preddefinovaných štýlov, ktorých úlohou je správne zobrazenie na rozličných zariadeniach. Ďalším dôvodom potreby škálovania je zabezpečenie správnej čitateľnosti a estetickej príjemnosti v rôznych častiach rozhrania.
@@ -47,14 +43,13 @@ const TypographyPage = () => {
                 </div>
             </section>
 
-            {/* Komponenty s ukážkami gigantickej typografie :) */}
-            {/* <SizeInfo /> */}
+            {/* Vykreslenie tabuliek pomocou nášho nového komponentu */}
             <TypographySection title="Nadpisy" items={headlineData} />
             <TypographySection title="Podnadpisy" items={subtitleData} />
             <TypographySection title="Hlavný text" items={bodyData} />
             <TypographySection title="Popis a tlačidlo" items={captionData} />
-            <LinkSection title="Hypertextové odkazy" items={linkData} />
-        </main>
+            <TypographySection title="Hypertextové odkazy" items={linkData} isLink={true} />
+        </div>
     );
 };
 
