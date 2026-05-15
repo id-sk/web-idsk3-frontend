@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
-import { MyTabBar, MyTabLink } from '@/app/(home)/_components/tab-bar/tabBar';
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/(home)/_components/tab-bar/tabBar';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { Text, SectionBlock, Ul, Ol, H3, H4, ExtLink } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
@@ -82,14 +82,6 @@ const FeedbackSection = () => (
 // ============================================================================
 
 export default function DesignersClient() {
-  const [activeTab, setActiveTab] = useState('akoZacat');
-
-  const renderTabContent = {
-    akoZacat: <TabAkoZacat />,
-    dizajnovySystem: <TabDizajnovySystem />,
-    navodPreDizajnerov: <TabNavodPreDizajnerov />,
-    navodPreNedizajnerov: <TabNavodPreNedizajnerov />
-  };
 
   return (
     <div className="flex flex-col gap-10 my-8 max-w-[1000px] px-4 sm:px-0 text-black">
@@ -119,32 +111,32 @@ export default function DesignersClient() {
         </a>
       </div>
 
-      <div className="flex flex-col">
-        <MyTabBar>
-          {['akoZacat', 'dizajnovySystem', 'navodPreDizajnerov', 'navodPreNedizajnerov'].map((tabKey) => {
-            const tabLabels = {
-              akoZacat: 'Ako začať',
-              dizajnovySystem: 'Dizajnový systém',
-              navodPreDizajnerov: 'Pre dizajnérov',
-              navodPreNedizajnerov: 'Pre nedizajnérov'
-            };
-            return (
-              <MyTabLink 
-                key={tabKey}
-                href="#" 
-                selected={activeTab === tabKey} 
-                onClick={(e) => { e.preventDefault(); setActiveTab(tabKey); }}
-              >
-                {tabLabels[tabKey]}
-              </MyTabLink>
-            );
-          })}
-        </MyTabBar>
+      <Tabs defaultValue="akoZacat">
+        <TabsList ariaLabel="Sekcie dokumentácie pre dizajnérov">
+          <TabsTrigger value="akoZacat">Ako začať</TabsTrigger>
+          <TabsTrigger value="dizajnovySystem">Dizajnový systém</TabsTrigger>
+          <TabsTrigger value="navodPreDizajnerov">Pre dizajnérov</TabsTrigger>
+          <TabsTrigger value="navodPreNedizajnerov">Pre nedizajnérov</TabsTrigger>
+        </TabsList>
 
-        <div className="text-black" role="tabpanel">
-          {renderTabContent[activeTab]}
+        <div className="mt-2 text-black">
+          <TabsContent value="akoZacat">
+            <TabAkoZacat />
+          </TabsContent>
+
+          <TabsContent value="dizajnovySystem">
+            <TabDizajnovySystem />
+          </TabsContent>
+
+          <TabsContent value="navodPreDizajnerov">
+            <TabNavodPreDizajnerov />
+          </TabsContent>
+
+          <TabsContent value="navodPreNedizajnerov">
+            <TabNavodPreNedizajnerov />
+          </TabsContent>
         </div>
-      </div>
+      </Tabs>
     </div>
   );
 }
@@ -280,9 +272,13 @@ const TabNavodPreDizajnerov = () => (
     <SectionBlock titleString="Návod na prácu s knižnicou">
       <Text>Knižnica IDSK vo Figme obsahuje pripravené komponenty, ktoré môžete opakovane používať v projekte. Dizajnér vytvoril komponenty tak, aby ste ich nemuseli navrhovať od začiatku.</Text>
       <Text>Príklady komponentov: tlačidlá, karty, hlavičky, ikony, bannery.</Text>
-      <div className="bg-blue-50 border-l-4 border-blue-500 p-4 text-sm sm:text-base text-blue-900">
-        <strong>Tip:</strong> Používajte komponenty z knižnice a vkladajte ich do projektu bez úprav základnej štruktúry.
-      </div>
+      <InformationBanner 
+          variant="information" 
+          title="Tip" 
+          hideCloseButton={true}
+        >
+          Používajte komponenty z knižnice a vkladajte ich do projektu bez úprav základnej štruktúry.
+      </InformationBanner>
     </SectionBlock>
 
     <section className="flex flex-col gap-4">
@@ -427,11 +423,13 @@ const TabNavodPreNedizajnerov = () => (
       </div>
     </section>
 
-    <InformationBanner type="banner" variant="warning" hideCloseButton={true}>
-      <div className="flex flex-col gap-4 p-2">
-        <h3 className="text-lg sm:text-xl font-bold text-black leading-tight">
-          Čomu sa vyhnúť
-        </h3>
+    <InformationBanner 
+      type="banner" 
+      variant="warning" 
+      hideCloseButton={true}
+      title="Čomu sa vyhnúť"
+    >
+      <div className="flex flex-col gap-4">
         <Ul>
           <li>Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým odpojí od zdrojovej knižnice a prestane sa aktualizovať.</li>
           <li>Neupravujte štruktúru vrstiev vo vnútri komponentu. Nemeňte textové štýly, rozmery ani farby, ktoré sú pevne nastavené v dizajnovom systéme.</li>

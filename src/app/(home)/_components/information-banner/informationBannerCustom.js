@@ -1,10 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useId } from 'react';
 import classNames from 'classnames';
 
 // --- IKONKY ---
-
 const CloseIcon = () => (
   <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -43,7 +42,7 @@ const AlertIcon = () => (
   </svg>
 );
 
-const InformationBanner = ({
+export const InformationBanner = ({
   title,
   ariaLabel,
   icon,
@@ -58,10 +57,14 @@ const InformationBanner = ({
   className,
   errorMessageId,
   accent = true,
+  role, 
 }) => {
   const [visible, setVisibility] = useState(true);
 
-  const idForAria = errorMessageId || `banner-${Math.random().toString(36).substr(2, 9)}`;
+  const reactId = useId();
+  const idForAria = errorMessageId || `banner-${reactId.replace(/:/g, '')}`;
+  
+  const titleId = title ? `${idForAria}-title` : undefined;
 
   let RenderedIcon = icon;
   if (!icon && useDefaultIcon) {
@@ -72,46 +75,25 @@ const InformationBanner = ({
   }
 
   const variantStyles = {
-    information: {
-      bg: 'bg-white',
-      border: 'border-[#126DFF]',
-      text: 'text-[#212121]',
-      iconColor: 'text-[#126DFF]', 
-      closeHover: 'hover:ring-[4px] hover:ring-[#757575]',
-    },
-    success: {
-      bg: 'bg-white',
-      border: 'border-[#078814]',
-      text: 'text-[#212121]',
-      iconColor: 'text-[#078814]',
-      closeHover: 'hover:ring-[4px] hover:ring-[#757575]',
-    },
-    warning: {
-      bg: 'bg-white',
-      border: 'border-[#BD730C]',
-      text: 'text-[#212121]',
-      iconColor: 'text-[#BD730C]',
-      closeHover: 'hover:ring-[4px] hover:ring-[#757575]',
-    },
-    alert: {
-      bg: 'bg-white',
-      border: 'border-[#C3112B]',
-      text: 'text-[#212121]',
-      iconColor: 'text-[#C3112B]',
-      closeHover: 'hover:ring-[4px] hover:ring-[#757575]',
-    },
+    information: { bg: 'bg-white', border: 'border-[#126DFF]', text: 'text-[#212121]', iconColor: 'text-[#126DFF]', closeHover: 'hover:ring-[4px] hover:ring-[#757575]' },
+    success: { bg: 'bg-white', border: 'border-[#078814]', text: 'text-[#212121]', iconColor: 'text-[#078814]', closeHover: 'hover:ring-[4px] hover:ring-[#757575]' },
+    warning: { bg: 'bg-white', border: 'border-[#BD730C]', text: 'text-[#212121]', iconColor: 'text-[#BD730C]', closeHover: 'hover:ring-[4px] hover:ring-[#757575]' },
+    alert: { bg: 'bg-white', border: 'border-[#C3112B]', text: 'text-[#212121]', iconColor: 'text-[#C3112B]', closeHover: 'hover:ring-[4px] hover:ring-[#757575]' },
   };
 
   const style = variantStyles[variant] || variantStyles.information;
 
   if (!visible) return null;
 
+  const isAlert = variant === 'alert';
+  const computedRole = role || (isAlert ? 'alert' : undefined);
+
   return (
-    <div
-      role={variant === 'alert' ? 'alert' : 'status'}
-      aria-labelledby={`${idForAria}-label`}
+    <section
+      role={computedRole}
+      aria-labelledby={titleId} 
+      aria-label={!title ? (ariaLabel || `Upozornenie typu ${variant}`) : undefined} // Fallback, ak chýba title
       className={classNames(
-        // Zmenil som items-start na items-center
         'relative flex items-center overflow-hidden rounded-md border-[2px] transition-all duration-300 animate-fade-in',
         style.bg,
         style.border,
@@ -120,14 +102,8 @@ const InformationBanner = ({
         className
       )}
     >
-      <span className="sr-only" id={`${idForAria}-label`}>
-        {ariaLabel || title || `Upozornenie typu ${variant}`}
-      </span>
-
-      {/* Tu je tiež items-center namiesto items-start */}
       <div className="flex w-full justify-between items-center gap-5">
         
-        {/* Vymazaný mt-0.5, aby to presne sedelo na stred */}
         {RenderedIcon && (
           <div className={classNames('flex-shrink-0', style.iconColor)}>
             {RenderedIcon}
@@ -136,7 +112,7 @@ const InformationBanner = ({
 
         <div className="flex flex-col flex-grow justify-center">
           {title && (
-            <h3 className={classNames('text-base sm:text-lg font-bold tracking-wide leading-snug mb-1', style.text)}>
+            <h3 id={titleId} className={classNames('text-base sm:text-lg font-bold tracking-wide leading-snug mb-1', style.text)}>
               {title}
             </h3>
           )}
@@ -171,7 +147,7 @@ const InformationBanner = ({
         </div>
 
       </div>
-    </div>
+    </section>
   );
 };
 
