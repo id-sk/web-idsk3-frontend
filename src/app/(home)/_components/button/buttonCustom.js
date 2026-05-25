@@ -51,36 +51,32 @@ const ButtonCustom = forwardRef(({
     disabled:cursor-not-allowed
   `;
 
-  // 2. PRIDANÁ LOGIKA: Reťazenie 'disabled:' pre vypnutie hover/active efektov
   const variantClasses = {
     primary: `
         bg-[var(--btn-base)] text-white
-        hover:underline hover:ring-[4px] hover:ring-[#757575]
-        active:bg-[var(--btn-active)] active:scale-[0.98] active:underline
+        enabled:hover:underline enabled:hover:ring-[4px] enabled:hover:ring-[#757575]
+        enabled:active:bg-[var(--btn-active)] enabled:active:scale-[0.98] enabled:active:underline
         
         disabled:bg-[var(--btn-border)] disabled:text-[var(--btn-text)] 
-        disabled:hover:no-underline disabled:hover:ring-0 disabled:active:scale-100 disabled:active:bg-[var(--btn-border)]
         
         ${isEnterPressed && !disabled ? '!bg-[var(--btn-active)] !scale-[0.98] !underline' : ''}
     `,
     secondary: `
         bg-white border-2 border-[var(--btn-hover)] text-[var(--btn-hover)]
-        hover:border-[var(--btn-hover)] hover:text-[var(--btn-hover)] hover:underline hover:ring-[4px] hover:ring-[#757575]
-        active:bg-[var(--btn-light)] active:underline active:scale-[0.98]
+        enabled:hover:border-[var(--btn-hover)] enabled:hover:text-[var(--btn-hover)] enabled:hover:underline enabled:hover:ring-[4px] enabled:hover:ring-[#757575]
+        enabled:active:bg-[var(--btn-light)] enabled:active:underline enabled:active:scale-[0.98]
         
         disabled:bg-white disabled:border-[var(--btn-border)] disabled:text-[var(--btn-border)]
-        disabled:hover:no-underline disabled:hover:ring-0 disabled:hover:bg-white disabled:active:scale-100 disabled:active:bg-white
         
         ${isEnterPressed && !disabled ? '!bg-[var(--btn-light)] !scale-[0.98] !underline' : ''}
     `,
     tertiary: `
         bg-transparent text-[var(--btn-hover)] underline
-        hover:underline hover:decoration-[2px] hover:underline-offset-[3px] 
-        hover:ring-[4px] hover:ring-[#757575]
-        active:bg-[var(--btn-light)] active:underline active:decoration-[2px] active:underline-offset-[3px] active:scale-[0.98]
+        enabled:hover:underline enabled:hover:decoration-[2px] enabled:hover:underline-offset-[3px] 
+        enabled:hover:ring-[4px] enabled:hover:ring-[#757575]
+        enabled:active:bg-[var(--btn-light)] enabled:active:underline enabled:active:decoration-[2px] enabled:active:underline-offset-[3px] enabled:active:scale-[0.98]
         
         disabled:text-[var(--btn-border)]
-        disabled:disabled:hover:ring-0 disabled:hover:bg-transparent disabled:active:scale-100 disabled:active:bg-transparent disabled:hover:decoration-[1px] disabled:underline-offset-[1px]
         
         ${isEnterPressed && !disabled ? '!bg-[var(--btn-light)] !decoration-[2px] !underline-offset-[3px] !scale-[0.98]' : ''}
     `
