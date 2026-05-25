@@ -1,54 +1,94 @@
 'use client';
 
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useId, useRef } from 'react';
 
 const ErrorSummaryCustom = ({
+  id,
   title = 'Vyskytol sa problém',
   description,
-  errors = [], // Očakáva pole objektov: [{ id: 'meno', message: 'Zadajte meno' }]
+  errors = [],
   className = '',
+  focusOnRender = true,
+  focusKey,
   ...props
 }) => {
   const summaryRef = useRef(null);
+  const lastFocusKeyRef = useRef(null);
 
-  // Zabezpečí presun focusu na prehľad chýb, keď sa objavia nové chyby
+  const generatedId = useId().replace(/:/g, '');
+  const summaryId = id || `error-summary-${generatedId}`;
+  const titleId = `${summaryId}-title`;
+  const descriptionId = description ? `${summaryId}-description` : undefined;
+
   useEffect(() => {
-    if (errors.length > 0 && summaryRef.current) {
-      summaryRef.current.focus();
+    if (!focusOnRender || !errors || errors.length === 0 || !summaryRef.current) {
+      return;
     }
-  }, [errors]);
 
-  // Ak nie sú žiadne chyby, komponent sa vôbec nevykreslí
-  if (!errors || errors.length === 0) return null;
+    if (focusKey !== undefined) {
+      if (lastFocusKeyRef.current === focusKey) {
+        return;
+      }
+
+      lastFocusKeyRef.current = focusKey;
+    }
+
+    summaryRef.current.focus();
+  }, [errors?.length, focusOnRender, focusKey]);
+
+  if (!errors || errors.length === 0) {
+    return null;
+  }
+
+  const handleErrorClick = (event, targetId) => {
+    const targetElement = document.getElementById(targetId);
+
+    if (!targetElement) {
+      return;
+    }
+
+    event.preventDefault();
+
+    targetElement.focus({ preventScroll: true });
+
+    const prefersReducedMotion = window.matchMedia(
+      '(prefers-reduced-motion: reduce)'
+    ).matches;
+
+    targetElement.scrollIntoView({
+      behavior: prefersReducedMotion ? 'auto' : 'smooth',
+      block: 'center',
+    });
+  };
 
   return (
     <div
+      id={summaryId}
       ref={summaryRef}
       className={`
-        bg-white text-black p-[20px] mb-8 outline-none
+        bg-white text-black p-[20px] mb-8
         border-[#C3112B] rounded-lg border-y-2 border-r-2 border-l-[5px]
-        focus-visible:ring-[3px] focus-visible:ring-[#d96e00] focus-visible:ring-offset-2
+        focus:outline focus:outline-[3px] focus:outline-[#d96e00] focus:outline-offset-2
         ${className}
       `}
-      role="alert"
-      aria-labelledby="error-summary-title"
-      tabIndex="-1"
+      aria-labelledby={titleId}
+      aria-describedby={descriptionId}
+      tabIndex={-1}
       {...props}
     >
-      <h2 id="error-summary-title" className="text-lg sm:text-xl font-bold mb-4">
+      <h2 id={titleId} className="text-lg sm:text-xl font-bold mb-4">
         {title}
       </h2>
-      
+
       {description && (
-        <p className="text-base mb-4">
+        <p id={descriptionId} className="text-base mb-4">
           {description}
         </p>
       )}
 
-      {/* Zoznam chýb bez odsadenia a bez odrážok (list-none, pl-0) */}
       <ul className="list-none pl-0 m-0 space-y-2">
-        {errors.map((error, index) => (
-          <li key={index}>
+        {errors.map((error) => (
+          <li key={`${error.id}-${error.message}`}>
             <a
               href={`#${error.id}`}
               className="
@@ -58,15 +98,7 @@ const ErrorSummaryCustom = ({
                 visited:text-[#592999]
                 transition-all duration-200
               "
-              onClick={(e) => {
-                // Hladký presun focusu na chybné pole po kliknutí na link
-                e.preventDefault();
-                const targetElement = document.getElementById(error.id);
-                if (targetElement) {
-                  targetElement.focus();
-                  targetElement.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
-              }}
+              onClick={(event) => handleErrorClick(event, error.id)}
             >
               {error.message}
             </a>
