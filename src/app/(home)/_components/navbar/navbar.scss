@@ -90,21 +90,18 @@ div.idsk-header-container__menu nav.idsk-navigation {
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link {
         width: auto !important;
         border-top-width: 4px !important;
-        border-bottom-width: 1px !important;
+        border-bottom-width: 4px !important;
         border-color: transparent !important; 
     }
 
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link > a {
         padding: 1.25rem 0.625rem !important;
+        font-weight: 700 !important;
+        color: rgb(11, 65, 153) !important; 
     }
 
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked {
         border-bottom-color: rgb(11, 65, 153) !important; 
-    }
-    
-    div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked > a {
-        color: rgb(11, 65, 153) !important; 
-        font-weight: 700 !important;
     }
 
     div.idsk-header-container__menu nav.idsk-navigation .idsk-navigation__link--clicked > a:hover {

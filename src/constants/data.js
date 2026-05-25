@@ -158,21 +158,21 @@ export const slovakColors = [
 ];
 
 export const headlineData = [
-  { title: 'Headline 1', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black', fontWeight: '900' },
-  { title: 'Headline 2', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 3', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 4', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 1', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 2', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 3', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
-  { title: 'Headline 4', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis XL', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black', fontWeight: '900' },
+  { title: 'Nadpis L', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis M', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis S', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis XL', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis L', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis M', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis S', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const subtitleData = [
-  { title: 'Subtitle', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
-  { title: 'Subtitle', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Perex', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
+  { title: 'Perex bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Perex', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
+  { title: 'Perex bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const bodyData = [
@@ -180,8 +180,8 @@ export const bodyData = [
   { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
   { title: 'Body ', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
   { title: 'Body bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
-  { title: 'Body', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
-  { title: 'Body bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body 1', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body 1 bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
   { title: 'Body 1', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
   { title: 'Body 1 bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
 ];
