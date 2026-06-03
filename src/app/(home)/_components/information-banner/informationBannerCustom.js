@@ -102,10 +102,10 @@ export const InformationBanner = ({
         className
       )}
     >
-      <div className="flex w-full justify-between items-center gap-5">
+      <div className="flex w-full justify-between items-center">
         
         {RenderedIcon && (
-          <div className={classNames('flex-shrink-0', style.iconColor)}>
+          <div className={classNames('flex-shrink-0 mr-3 sm:mr-4', style.iconColor)}>
             {RenderedIcon}
           </div>
         )}
