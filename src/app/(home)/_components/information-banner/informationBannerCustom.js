@@ -5,14 +5,14 @@ import classNames from 'classnames';
 
 // --- IKONKY ---
 const CloseIcon = () => (
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <line x1="18" y1="6" x2="6" y2="18"></line>
       <line x1="6" y1="6" x2="18" y2="18"></line>
   </svg>
 );
 
 const InfoIcon = () => (
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <circle cx="12" cy="12" r="10" stroke="none" />
     <line x1="12" y1="16" x2="12" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" />
     <line x1="12" y1="8" x2="12.01" y2="8" stroke="white" strokeWidth="2" strokeLinecap="round" />
@@ -20,14 +20,14 @@ const InfoIcon = () => (
 );
 
 const CheckCircleIcon = () => (
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <circle cx="12" cy="12" r="10" stroke="none" />
     <polyline points="16 9 10 16 7 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </svg>
 );
 
 const WarningIcon = () => (
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2L1 21h22L12 2z" stroke="none" />
     <line x1="12" y1="10" x2="12" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" />
     <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" />
@@ -35,7 +35,7 @@ const WarningIcon = () => (
 );
 
 const AlertIcon = () => (
-  <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+  <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" stroke="none" />
     <line x1="12" y1="8" x2="12" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" />
     <line x1="12" y1="16" x2="12.01" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round" />
@@ -53,11 +53,12 @@ export const InformationBanner = ({
   actionButton,
   hideCloseButton = false,
   closeButtonOnClick = () => {},
-  closeButtonLabel = 'Zavrieť',
+  closeButtonLabel = 'Zavrieť informačnú lištu',
   className,
   errorMessageId,
   accent = true,
-  role, 
+  role,
+  announcement = 'static',
 }) => {
   const [visible, setVisibility] = useState(true);
 
@@ -85,14 +86,19 @@ export const InformationBanner = ({
 
   if (!visible) return null;
 
-  const isAlert = variant === 'alert';
-  const computedRole = role || (isAlert ? 'alert' : undefined);
+  const computedRole =
+    role ||
+    (announcement === 'assertive'
+      ? 'alert'
+      : announcement === 'polite'
+        ? 'status'
+        : 'region');
 
   return (
     <section
       role={computedRole}
-      aria-labelledby={titleId} 
-      aria-label={!title ? (ariaLabel || `Upozornenie typu ${variant}`) : undefined} // Fallback, ak chýba title
+      aria-labelledby={titleId}
+      aria-label={!title ? (ariaLabel || `Informačná lišta typu ${variant}`) : undefined}
       className={classNames(
         'relative flex items-center overflow-hidden rounded-md border-[2px] transition-all duration-300 animate-fade-in',
         style.bg,
