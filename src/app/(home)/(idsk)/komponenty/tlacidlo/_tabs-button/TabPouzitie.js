@@ -27,7 +27,7 @@ const TabPouzitie = () => (
             </Text>
             
             <Text>
-                Správne nastavená vizuálna hierarchia pomáha používateľovi identifikovať hlavnú výzvu na akciu (CTA) a znižuje kognitívnu záťaž pri rozhodovaní. V IDSK 3 používame tri úrovne priority: primárne pre kľúčové akcie, sekundárne pre doplnkové voľby a terciárne (textové) pre akcie s najnižšou dôležitosťou.
+                Správne nastavená vizuálna hierarchia pomáha používateľovi identifikovať hlavnú výzvu na akciu (CTA) a znižuje kognitívnu záťaž pri rozhodovaní. V IDSK 3 používame tri úrovne priority: primárne pre kľúčové akcie, sekundárne pre vedľajšie, menej dôležité voľby a terciárne (textové) pre doplnkové akcie s najnižšou dôležitosťou.
             </Text>
 
             <div className="flex flex-wrap gap-8 sm:gap-12 mt-10">
@@ -40,7 +40,7 @@ const TabPouzitie = () => (
                     >
                         <Ul className="text-sm mt-4">
                             <li>Na jednej stránke používajte spravidla iba jedno primárne tlačidlo.</li>
-                            <li>Text musí mať stručnú a jasnú menovku (napr. „Odoslať“, „Uložiť“).</li>
+                            <li>Text musí mať stručnú a jasnú menovku (napr. &quot;Odoslať&quot;, &quot;Uložiť&quot;).</li>
                             <li>Akcie klaďte vedľa seba v poradí dôležitosti (napr. Späť ako sekundárne, Pokračovať ako primárne).</li>
                             <li>Pri dôležitých akciách implementujte ochranu proti viacnásobnému odoslaniu.</li>
                         </Ul>
@@ -59,7 +59,7 @@ const TabPouzitie = () => (
                             <li>Nepoužívajte tlačidlá na bežnú navigáciu medzi stránkami, ak nejde o súčasť procesu.</li>
                             <li>Vyhnite sa nápisom ako „Kliknite tu“ alebo „OK“, ktoré nevysvetľujú kontext akcie.</li>
                             <li>Nepoužívajte tlačidlá obsahujúce iba ikonu bez textu, pokiaľ nejde o všeobecne známe symboly.</li>
-                            <li>Pri hierarchicky rovnocenných možnostiach (napr. "Áno" a "Nie") používajte hierarchicky rovnocenné tlačidlá</li>
+                            <li>Pri hierarchicky rovnocenných možnostiach (napr. Áno a Nie) používajte hierarchicky rovnocenné tlačidlá</li>
                         </Ul>
                     </InformationBanner>
                 </div>

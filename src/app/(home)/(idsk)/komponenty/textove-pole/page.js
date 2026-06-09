@@ -9,7 +9,7 @@ import TabImplementacia from './_tabs-inputtext/TabImplementacia';
 
 export const metadata = {
   title: 'Textové pole | Komponenty IDSK',
-  description: 'Dokumentácia komponentu Textové pole (Input type="text"), jeho varianty, prístupnosť a implementácia.',
+  description: 'Dokumentácia komponentu Textové pole (Input type=text), jeho varianty, prístupnosť a implementácia.',
 };
 
 const TextInputPage = () => {
@@ -18,7 +18,7 @@ const TextInputPage = () => {
       
       <header>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
-          Textové pole (Input type="text")
+          Textové pole (Input type=&quot;text&quot;)
         </h1>
       </header>
       

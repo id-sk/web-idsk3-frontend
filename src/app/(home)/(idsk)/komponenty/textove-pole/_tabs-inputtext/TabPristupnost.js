@@ -24,11 +24,11 @@ const TabPristupnost = () => {
                 <H3>Základné pravidlá prístupnosti</H3>
                 <Ul>
                     <li>
-                        Každý input musí mať jasný, programovo asociovaný label cez <code className={codeClass}>for="id"</code> (v Reacte <code className={codeClass}>htmlFor</code>).
+                        Každý input musí mať jasný, programovo asociovaný label cez <code className={codeClass}>for=&quot;id&quot;</code> (v Reacte <code className={codeClass}>htmlFor</code>).
                     </li>
                     <li>
                         V prípade zadávania osobných údajov nezabudnite pridať tzv. <code className={codeClass}>autocomplete</code>, napr.:<br className="hidden sm:block" />
-                        <code className={codeClass}>&lt;label for="firstName"&gt;Krstné meno:&lt;/label&gt; &lt;input name="firstName" id="firstName" type="text" autocomplete="given-name" /&gt;</code>
+                        <code className={codeClass}>&lt;label for=&quot;firstName&quot;&gt;Krstné meno:&lt;/label&gt; &lt;input name=&quot;firstName&quot; id=&quot;firstName&quot; type=&quot;text&quot; autocomplete=&quot;given-name&quot; /&gt;</code>
                     </li>
                     <li>
                         Prípadný <code className={codeClass}>placeholder</code> slúži len pre príklad (napr.: <em>Jana Novotná</em>). Placeholder <strong>NEFUNGUJE</strong> ako náhrada labelu a hintu a <strong>NESMIE</strong> vysvetľovať funkciu textového poľa.
@@ -37,19 +37,19 @@ const TabPristupnost = () => {
                         Neaktívne pole (disabled) nesmie byť focusovateľné (zamerateľné klávesnicou).
                     </li>
                     <li>
-                        Prípadný hint prepojte na input cez atribút <code className={codeClass}>aria-describedby</code>.
+                        Prípadný hint prepojte na textové pole cez atribút <code className={codeClass}>aria-describedby</code>.
                     </li>
                     <li>
                         V prípade povinného poľa nezabudnite pridať inputu atribút <code className={codeClass}>required</code>.
                     </li>
                     <li>
-                        Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className={codeClass}>&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className={codeClass}>aria-hidden="true"</code>.
+                        Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className={codeClass}>&lt;span&gt;</code>, aby ju bolo možné pred asistenčnými technológiami skryť prostredníctvom atribútu <code className={codeClass}>aria-hidden=&quot;true&quot;</code>.
                     </li>
                     <li>
                         Nezabudnite, že samotná hviezdička na označenie povinného poľa nestačí - musí byť dodatočne vysvetlená pomocou vysvetlivky označenia povinných polí.
                     </li>
                     <li>
-                        Chybový hint musí mať atribút <code className={codeClass}>aria-describedby="error"</code> a okrem farby, ikony a hintu upozornenia nezabudnite pre čítačky pridať atribút <code className={codeClass}>aria-hidden="true"</code>.
+                        Chybový hint musí mať atribút <code className={codeClass}>aria-describedby=&quot;error&quot;</code> a okrem farby, ikony a hintu upozornenia nezabudnite pre asistenčné technológie pridať atribút <code className={codeClass}>aria-hidden=&quot;true&quot;</code>.
                     </li>
                 </Ul>
 

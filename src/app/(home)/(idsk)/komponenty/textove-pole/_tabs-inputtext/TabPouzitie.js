@@ -40,11 +40,11 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>zadávaný údaj je krátky voľný text.</li>
-                            <li>údaj nemá pevne definovaný formát.</li>
-                            <li>má používateľ zadať napr. meno a priezvisko, názov ulice, mesta alebo inú krátku informáciu.</li>
-                            <li>veľkosť poľa zodpovedá očakávanej dĺžke textu.</li>
-                            <li>nie je vhodné ani účelné použiť špecializovaný typ vstupu.</li>
+                            <li>Ak zadávaný údaj je krátky voľný text.</li>
+                            <li>Ak údaj nemá pevne definovaný formát.</li>
+                            <li>Ak má používateľ zadať napr. meno a priezvisko, názov ulice, mesta alebo inú krátku informáciu.</li>
+                            <li>Ak veľkosť poľa zodpovedá očakávanej dĺžke textu.</li>
+                            <li>Ak nie je vhodné ani účelné použiť špecializovaný typ vstupu.</li>
                         </Ul>
                     </InformationBanner>
                 </div>
@@ -57,10 +57,10 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>ak je zadávaný údaj dlhý voľný text</li>
-                            <li>ak údaj má pevne definovaný formát (e-mail, telefónne číslo dátum, atď.)</li>
-                            <li>ak používateľ vyberá hodnotu zo zoznamu - použite select, radio button alebo checkbox</li>
-                            <li>ak potrebujete vstup automaticky validovať podľa typu</li>
+                            <li>Ak je zadávaný údaj dlhý voľný text.</li>
+                            <li>Ak údaj má pevne definovaný formát (e-mail, telefónne číslo dátum, atď.).</li>
+                            <li>Ak používateľ vyberá hodnotu zo zoznamu - použite select, radio button alebo checkbox.</li>
+                            <li>Ak potrebujete vstup automaticky validovať podľa typu.</li>
                         </Ul>
                     </InformationBanner>
                 </div>

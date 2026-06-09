@@ -42,7 +42,7 @@ const TabPristupnost = () => {
                         Neaktívne pole (<code className={codeClass}>disabled</code>) nesmie byť focusovateľné (zamerateľné klávesnicou).
                     </li>
                     <li>
-                        Pre dynamické zmeny – napríklad pre počítadlo znakov – pridajte pre čítačky atribút <code className={codeClass}>aria-live="polite"</code> spolu s limitom znakov v <code className={codeClass}>maxLength</code>.
+                        Pre dynamické zmeny – napríklad pre počítadlo znakov – pridajte pre asistenčné technológie atribút <code className={codeClass}>aria-live=&quot;polite&quot;</code> spolu s limitom znakov v <code className={codeClass}>maxLength</code>.
                     </li>
                     <li>
                         Prípadný popis prepojte na pole cez atribút <code className={codeClass}>aria-describedby</code>.
@@ -51,7 +51,7 @@ const TabPristupnost = () => {
                         V prípade povinného poľa nezabudnite pridať atribút <code className={codeClass}>required</code>.
                     </li>
                     <li>
-                        Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className={codeClass}>&lt;span&gt;</code>, aby ju bolo možné pred čítačkami skryť prostredníctvom atribútu <code className={codeClass}>aria-hidden="true"</code>.
+                        Hviezdička (označujúca povinné pole) musí byť vložená prostredníctvom elementu <code className={codeClass}>&lt;span&gt;</code>, aby ju bolo možné pred aistenčnými technológiami skryť prostredníctvom atribútu <code className={codeClass}>aria-hidden=&quot;true&quot;</code>.
                     </li>
                     <li>
                         Nezabudnite, že samotná hviezdička na označenie povinného poľa nestačí – musí byť dodatočne vysvetlená pomocou vysvetlivky označenia povinných polí.
@@ -60,7 +60,7 @@ const TabPristupnost = () => {
                         Chybové hlásenia realizujte prostredníctvom JavaScriptu a napojte ich napríklad na HTML atribút <code className={codeClass}>required</code>. Chybový hint musí byť prepojený s poľom cez atribút <code className={codeClass}>aria-describedby</code>.
                     </li>
                     <li>
-                        Okrem farby, ikony a textu upozornenia nezabudnite v prípade chyby pridať pre čítačky atribút <code className={codeClass}>aria-invalid="true"</code>.
+                        Okrem farby, ikony a textu upozornenia nezabudnite v prípade chyby pridať pre asistenčné technológie atribút <code className={codeClass}>aria-invalid=&quot;true&quot;</code>.
                     </li>
                 </Ul>
 

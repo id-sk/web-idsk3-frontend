@@ -38,11 +38,11 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>ak používateľ môže vybrať 1 alebo viacero možností</li>
-                            <li>s rovnocennými a nezávislými možnosťami</li>
-                            <li>výber nie je vzájomne vylučujúci</li>
-                            <li>s viditeľnou, stručnou a zrozumiteľnou menovkou</li>
-                            <li>v zoskupení maximálne 10 polí - ak potrebujete viac možností použite rozbaľovacie pole</li>
+                            <li>Používa sa ak používateľ môže vybrať 1 alebo viacero možností.</li>
+                            <li>Používa sa s rovnocennými a nezávislými možnosťami.</li>
+                            <li>Používa sa ak výber nie je vzájomne vylučujúci.</li>
+                            <li>Používa sa s viditeľnou, stručnou a zrozumiteľnou menovkou.</li>
+                            <li>Používa sa v zoskupení maximálne 10 polí - ak potrebujete viac možností použite rozbaľovacie pole.</li>
                         </Ul>
                     </InformationBanner>
                 </div>
@@ -55,11 +55,11 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>ak používateľ môže vybrať len jednu možnosť - použite prepínacie pole</li>
-                            <li>ako prepínač stavu zapnuté / vypnuté s okamžitým efektom</li>
-                            <li>bez menovky</li>
-                            <li>len ako ikonu alebo farbu bez textu</li>
-                            <li>nespájajte viac významov, tém alebo kategórií do jedného poľa</li>
+                            <li>Nepoužíva sa ak používateľ môže vybrať len jednu možnosť - použite prepínacie pole.</li>
+                            <li>Nepoužíva sa ako prepínač stavu zapnuté / vypnuté s okamžitým efektom.</li>
+                            <li>Nepoužíva sa bez menovky.</li>
+                            <li>Nepoužíva sa len ako ikona alebo farba bez textu.</li>
+                            <li>Nespájajte viac významov, tém alebo kategórií do jedného poľa.</li>
                         </Ul>
                     </InformationBanner>
                 </div>

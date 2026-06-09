@@ -10,7 +10,6 @@ const TabPouzitie = () => (
         
         <SectionBlock titleString="Použitie viacriadkového textového poľa">
             
-            {/* Ukážka Inputu na bodkovanom pozadí */}
             <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
                 <div className="w-full max-w-[500px] py-7 my-6 px-4">
                     <TextField 
@@ -39,10 +38,10 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>na získavanie dlhších súvislých odpovedí.</li>
-                            <li>na komentáre, opis problému, doplňujúce informácie atď.</li>
-                            <li>s jasným znázornením, či je pole povinné alebo nepovinné.</li>
-                            <li>s počtom znakov v pravom dolnom rohu poľa.</li>
+                            <li>Používa sa na získavanie dlhších súvislých odpovedí.</li>
+                            <li>Používa sa na komentáre, opis problému, doplňujúce informácie atď.</li>
+                            <li>Používa sa s jasným znázornením, či je pole povinné alebo nepovinné.</li>
+                            <li>Používa sa s počtom znakov v pravom dolnom rohu poľa.</li>
                         </Ul>
                     </InformationBanner>
                 </div>
@@ -55,9 +54,9 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>pre krátke vstupy a pre štruktúrované údaje (meno, e-mail, telefón).</li>
-                            <li>s horizontálnym scrollovaním textu.</li>
-                            <li>bez informácie o maximálnom počte znakov.</li>
+                            <li>Nepoužíva sa pre krátke vstupy a pre štruktúrované údaje (meno, e-mail, telefón).</li>
+                            <li>Nepoužíva sa s horizontálnym scrollovaním textu.</li>
+                            <li>Nepoužíva sa bez informácie o maximálnom počte znakov.</li>
                         </Ul>
                     </InformationBanner>
                 </div>

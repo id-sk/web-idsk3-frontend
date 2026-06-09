@@ -34,11 +34,11 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>na navigáciu k súvisiacemu obsahu,</li>
-                            <li>ako jeden celistvý klikateľný prvok,</li>
-                            <li>s jasným vizuálnym indikátorom, že ide o klikateľný prvok (napr. ikonka šípky),</li>
-                            <li>udržujte nadpisy aj podnadpisy krátke,</li>
-                            <li>v logických a primeraných skupinách (max. 5 rázcestníkov).</li>
+                            <li>Používa sa na navigáciu k súvisiacemu obsahu.</li>
+                            <li>Používa sa ako jeden celistvý klikateľný prvok.</li>
+                            <li>Používa sa s jasným vizuálnym indikátorom, že ide o klikateľný prvok (napr. ikonka šípky).</li>
+                            <li>Udržujte nadpisy aj podnadpisy krátke.</li>
+                            <li>Používa sa v logických a primeraných skupinách (max. 5 rázcestníkov).</li>
                         </Ul>
                     </InformationBanner>
                 </div>
@@ -51,11 +51,11 @@ const TabPouzitie = () => (
                         hideCloseButton={true}
                     >
                         <Ul className="text-sm mt-4">
-                            <li>s vnútornými odkazmi alebo tlačidlami,</li>
-                            <li>na zvýraznenie statického obsahu,</li>
-                            <li>v dlhých zoznamoch,</li>
-                            <li>ak chýba alebo je nejasný názov poľa,</li>
-                            <li>ako čistý text bez ikonky alebo ohraničenia.</li>
+                            <li>Nepoužíva sa s vnútornými odkazmi alebo tlačidlami.</li>
+                            <li>Nepoužíva sa na zvýraznenie statického obsahu.</li>
+                            <li>Nepoužíva sa v dlhých zoznamoch.</li>
+                            <li>Nepoužíva sa ak chýba alebo je nejasný názov poľa.</li>
+                            <li>Nepoužíva sa ako čistý text bez ikonky alebo ohraničenia.</li>
                         </Ul>
                     </InformationBanner>
                 </div>

@@ -22,13 +22,13 @@ const TabPristupnost = () => {
                 <H3>Základné pravidlá prístupnosti</H3>
                 <Ul>
                     <li>
-                        Vždy jasne definujte atribút <code className={codeClass}>type</code> (zvyčajne <code className={codeClass}>"button"</code>, <code className={codeClass}>"submit"</code> alebo <code className={codeClass}>"reset"</code>), aby ste predišli nechcenému odoslaniu formulára.
+                        Vždy jasne definujte atribút <code className={codeClass}>type</code> (zvyčajne <code className={codeClass}>&quot;button&quot;</code>, <code className={codeClass}>&quot;submit&quot;</code> alebo <code className={codeClass}>&quot;reset&quot;</code>), aby ste predišli nechcenému odoslaniu formulára.
                     </li>
                     <li>
-                        Text musí byť jasný, opisný a krátky (1–2 slová). Ideálne by mal začínať slovesom (napr. "Odoslať", "Uložiť", "Pokračovať", "Zmeniť heslo").
+                        Text musí byť jasný, opisný a krátky (1–2 slová). Ideálne by mal začínať slovesom (napr. &quot;Odoslať&quot;, &quot;Uložiť&quot;, &quot;Pokračovať&quot;, &quot;Zmeniť heslo&quot;).
                     </li>
                     <li>
-                        Ak tlačidlo obsahuje <strong>iba ikonu</strong> (napr. krížik na zatvorenie alebo lupu na vyhľadávanie), asistenčné zariadenia nebudú vedieť, čo robí. Vždy mu musíte pridať atribút <code className={codeClass}>aria-label</code> (napr. <code className={codeClass}>aria-label="Vyhľadať na webe"</code>).
+                        Ak tlačidlo obsahuje <strong>iba ikonu</strong> (napr. krížik na zatvorenie alebo lupu na vyhľadávanie), asistenčné technológie nebudú vedieť, čo robí. Vždy mu musíte pridať atribút <code className={codeClass}>aria-label</code> (napr. <code className={codeClass}>aria-label=&quot;Vyhľadať na webe&quot;</code>).
                     </li>
                     <li>
                         Zameriavací rámik je pre prístupnosť kľúčový. Náš komponent automaticky využíva <code className={codeClass}>focus-visible</code> s výraznou oranžovou farbou ID-SK na jasnú identifikáciu zvoleného prvku.

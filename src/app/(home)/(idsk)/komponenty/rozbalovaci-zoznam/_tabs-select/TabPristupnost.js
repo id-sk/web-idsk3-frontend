@@ -29,13 +29,13 @@ const TabPristupnost = () => {
                 <H3>Základné pravidlá prístupnosti</H3>
                 <Ul>
                     <li>
-                        Používajte natívne HTML prvky <code className={codeClass}>&lt;select&gt;</code> a <code className={codeClass}>&lt;option&gt;</code>, spoločne s atribútom <code className={codeClass}>value=""</code>.
+                        Používajte natívne HTML prvky <code className={codeClass}>&lt;select&gt;</code> a <code className={codeClass}>&lt;option&gt;</code>, spoločne s atribútom <code className={codeClass}>value=&quot;&quot;</code>.
                     </li>
                     <li>
-                        Každý prvok <code className={codeClass}>&lt;select&gt;</code> musí mať jasný, programovo asociovaný popis cez značku <code className={codeClass}>&lt;label&gt;</code>. Nikdy nenahrádzajte skutočný label predvolenou prvou možnosťou v zozname (napríklad zmazaním labelu a ponechaním iba možnosti "Vyberte si...").
+                        Každý prvok <code className={codeClass}>&lt;select&gt;</code> musí mať jasný, programovo asociovaný popis cez značku <code className={codeClass}>&lt;label&gt;</code>. Nikdy nenahrádzajte skutočný label predvolenou prvou možnosťou v zozname (napríklad zmazaním labelu a ponechaním iba možnosti &quot;Vyberte si...&quot;).
                     </li>
                     <li>
-                        Vyhnite sa automatickému odosielaniu (Auto-submission): Nikdy nepoužívajte udalosť zmeny výberu (<code className={codeClass}>onChange</code>) na okamžité odoslanie formulára alebo navigáciu. Mätie to používateľov čítačiek obrazovky, ktorí pri prechádzaní zoznamu šípkami nechtiac aktivujú zmeny. Vždy poskytnite potvrdzovacie tlačidlo.
+                        Vyhnite sa automatickému odosielaniu (Auto-submission): Nikdy nepoužívajte udalosť zmeny výberu (<code className={codeClass}>onChange</code>) na okamžité odoslanie formulára alebo navigáciu. Mätie to používateľov asistenčných technológií, ktorí pri prechádzaní zoznamu šípkami nechtiac aktivujú zmeny. Vždy poskytnite potvrdzovacie tlačidlo.
                     </li>
                     <li>
                         Vyhnite sa závislým poliam: Nemeňte dynamicky možnosti v jednom rozbaľovacom poli len na základe toho, čo používateľ vybral v inom. Pre mnohých používateľov je mätúce pochopiť, ako jedna voľba ovplyvňuje druhú.
@@ -50,10 +50,10 @@ const TabPristupnost = () => {
                         Prípadný doplňujúci text (hint) prepojte na pole cez atribút <code className={codeClass}>aria-describedby</code>. V prípade povinného poľa nezabudnite pridať atribút <code className={codeClass}>required</code>.
                     </li>
                     <li>
-                        Ak je zoznam rozsiahly, použite element <code className={codeClass}>&lt;optgroup label="Názov skupiny"&gt;</code> na zoskupenie súvisiacich <code className={codeClass}>&lt;option&gt;</code>. Uľahčí to orientáciu nielen vizuálne, ale aj pre čítačky obrazovky.
+                        Ak je zoznam rozsiahly, použite element <code className={codeClass}>&lt;optgroup label=&quot;Názov skupiny&quot;&gt;</code> na zoskupenie súvisiacich <code className={codeClass}>&lt;option&gt;</code>. Uľahčí to orientáciu nielen vizuálne, ale aj pre asistenčné technológie.
                     </li>
                     <li>
-                        Ak pole požaduje bežné údaje (napríklad krajinu v adrese), použite atribút <code className={codeClass}>autocomplete</code> (napr. <code className={codeClass}>autocomplete="country"</code>), aby ste používateľom uľahčili vypĺňanie.
+                        Ak pole požaduje bežné údaje (napríklad krajinu v adrese), použite atribút <code className={codeClass}>autocomplete</code> (napr. <code className={codeClass}>autocomplete=&quot;country&quot;</code>), aby ste používateľom uľahčili vypĺňanie.
                     </li>
                     <li>
                         Aj keď HTML umožňuje vložiť do rozbaľovacieho poľa tag <code className={codeClass}>&lt;hr&gt;</code>, považuje sa len za vizuálny prvok a asistenčné technológie ho ignorujú. Nepoužívajte ho na prenášanie dôležitého kontextu.

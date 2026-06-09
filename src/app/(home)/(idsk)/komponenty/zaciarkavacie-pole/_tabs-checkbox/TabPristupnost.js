@@ -40,10 +40,10 @@ const TabPristupnost = () => {
                         V prípade povinného poľa pridajte inputu atribút <code className={codeClass}>required</code>.
                     </li>
                     <li>
-                        Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className={codeClass}>&lt;span aria-hidden="true"&gt;</code>, aby ju čítačky obrazovky neduplikovali. Samotná hviezdička nestačí, význam povinných polí musí byť vysvetlený na začiatku formulára.
+                        Vizuálna hviezdička označujúca povinné pole musí byť vložená vo vnútri <code className={codeClass}>&lt;span aria-hidden=&quot;true&quot;&gt;</code>, aby ju čítačky obrazovky neduplikovali. Samotná hviezdička nestačí, význam povinných polí musí byť vysvetlený na začiatku formulára.
                     </li>
                     <li>
-                        Pri chybovom stave musí mať input pridaný atribút <code className={codeClass}>aria-invalid="true"</code> a chybová hláška musí byť na input prepojená cez <code className={codeClass}>aria-describedby</code> (aby ju čítačka prečítala hneď po zameraní poľa).
+                        Pri chybovom stave musí mať input pridaný atribút <code className={codeClass}>aria-invalid=&quot;true&quot;</code> a chybová hláška musí byť na input prepojená cez <code className={codeClass}>aria-describedby</code> (aby ju čítačka prečítala hneď po zameraní poľa).
                     </li>
                 </Ul>
 

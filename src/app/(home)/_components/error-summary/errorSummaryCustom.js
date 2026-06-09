@@ -21,20 +21,20 @@ const ErrorSummaryCustom = ({
   const descriptionId = description ? `${summaryId}-description` : undefined;
 
   useEffect(() => {
-    if (!focusOnRender || !errors || errors.length === 0 || !summaryRef.current) {
+  if (!focusOnRender || !errors || errors.length === 0 || !summaryRef.current) {
+    return;
+  }
+
+  if (focusKey !== undefined) {
+    if (lastFocusKeyRef.current === focusKey) {
       return;
     }
 
-    if (focusKey !== undefined) {
-      if (lastFocusKeyRef.current === focusKey) {
-        return;
-      }
+    lastFocusKeyRef.current = focusKey;
+  }
 
-      lastFocusKeyRef.current = focusKey;
-    }
-
-    summaryRef.current.focus();
-  }, [errors?.length, focusOnRender, focusKey]);
+  summaryRef.current.focus();
+  }, [errors, focusOnRender, focusKey]);
 
   if (!errors || errors.length === 0) {
     return null;

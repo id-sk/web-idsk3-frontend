@@ -102,7 +102,7 @@ const TabImplementacia = () => {
             <div>
               <strong className="block mb-2 text-sm sm:text-base md:text-lg">➜ Skopírujte HTML kód</strong>
               <Text className="mb-4">
-                Zo stránky dokumentácie stiahnite HTML kód komponentu <ExtLink href="https://komponenty.idsk3.gov.sk/components/checkboxes">začiarkavacie pole</ExtLink> a vložte ho do svojho HTML. Nezabudnite na atribút <code className={codeClass}>data-module="govuk-checkboxes"</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
+                Zo stránky dokumentácie stiahnite HTML kód komponentu <ExtLink href="https://komponenty.idsk3.gov.sk/components/checkboxes">začiarkavacie pole</ExtLink> a vložte ho do svojho HTML. Nezabudnite na atribút <code className={codeClass}>data-module=&quot;govuk-checkboxes&quot;</code>, bez ktorého nebude fungovať JavaScript (napr. podmienené odkrývanie obsahu).
               </Text>
               <CodeBlock 
                 language="html"
