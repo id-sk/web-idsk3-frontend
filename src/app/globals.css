@@ -18,7 +18,7 @@
 @layer base {
   :root * { box-sizing: border-box; }
   html, body { @apply font-source-sans-pro; max-width: 100vw; overflow-x: hidden; }
-  a { color: inherit; text-decoration: none; }
+  a { color: inherit; }
 
   /* Scrollbars */
   * { scrollbar-width: thin !important; scrollbar-color: darkgray lightgray !important; }
@@ -26,8 +26,15 @@
   ::-webkit-scrollbar-track { background: lightgray !important; }
 
   /* Input number fix */
-  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
-  input[type='number'] { -moz-appearance: textfield; }
+    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    appearance: none;
+    margin: 0; 
+  }
+  input[type='number'] { 
+    -moz-appearance: textfield; 
+    appearance: textfield;
+  }
 }
 
 /* ==========================================================================

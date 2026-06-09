@@ -81,3 +81,28 @@
     text-decoration: underline; 
     text-decoration-style: dashed; 
   }
+
+  /* ==========================================================================
+   Custom Sidebar Components Fixes
+   ========================================================================== */
+
+/* 1. Oprava pre nefunkčné podčiarknutie na základe dedičnosti */
+.idsk-sidebar-nav a {
+    text-decoration: underline !important;
+    text-decoration-line: underline !important;
+}
+
+.idsk-sidebar-nav a:not([aria-current="page"]) {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+}
+
+/* 2. Neutralizácia globálneho IDSK focusu a rádiusu na <a>, 
+   keďže stavy manažujeme na úrovni <li> */
+.idsk-sidebar-nav a,
+.idsk-sidebar-nav a:focus,
+.idsk-sidebar-nav a:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+    border-radius: 0px !important;
+}

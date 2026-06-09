@@ -11,20 +11,28 @@ const SidebarLink = ({ href, children }) => {
   const isActive = href === pathname;
 
   return (
-    <Link
-      href={href}
-      aria-current={isActive ? 'page' : undefined}
+    <li 
       className={cx(
-        'block rounded-lg py-2 pl-[4px] text-base tracking-wide transition-colors duration-150 outline-none',
-        'pr-[3px]', 
-        'focus:outline focus:outline-[3px] focus:outline-custom-orange focus:outline-offset-2',
-        isActive
-          ? 'bg-[#eff5fe] font-semibold text-regal-blue'
-          : 'text-black hover:bg-[#eff5fe]'
+        'mb-1 rounded-lg transition-all duration-150',
+        'hover:ring-[4px] hover:ring-[#757575]',
+        'focus-within:outline focus-within:outline-[3px] focus-within:outline-custom-orange focus-within:outline-offset-2',
+        
+        isActive 
+          ? 'bg-[#eff5fe] border-l-[3px] border-solid border-regal-blue rounded-l-none' 
+          : 'bg-transparent'
       )}
     >
-      <span className="inline-block pl-3">{children}</span>
-    </Link>
+      <Link
+        href={href}
+        aria-current={isActive ? 'page' : undefined}
+        className={cx(
+          'block py-2 pl-[16px] pr-3 tracking-wide select-none outline-none',
+          isActive ? 'font-semibold text-regal-blue' : 'text-black'
+        )}
+      >
+        {children}
+      </Link>
+    </li>
   );
 };
 
@@ -33,17 +41,16 @@ const Sidebar = ({ data = [] }) => {
     <aside className="hidden w-72 flex-col border-r-2 border-solid border-neutral-n400 bg-white py-8 min-[1120px]:flex">
       <div className="min-h-[300px] flex-initial rounded-card bg-white py-4">
         <div className="mt-3 flex flex-col text-base leading-6 tracking-wide text-black pb-8 sticky">
-          <nav aria-label="Bočné menu">
-            <ul className="ml-0 pl-0 pt-2 pr-3 text-black list-none">
+                    <nav aria-label="Bočné menu" className="idsk-sidebar-nav">
+            <ul className="ml-0 pt-2 pl-3 pr-3 text-black list-none">
               {data.map((item) => (
-                <li key={item.name} className="mb-1">
-                  <SidebarLink href={item.link}>
-                    {item.name}
-                  </SidebarLink>
-                </li>
+                <SidebarLink key={item.name} href={item.link}>
+                  {item.name}
+                </SidebarLink>
               ))}
             </ul>
           </nav>
+
         </div>
       </div>
     </aside>
