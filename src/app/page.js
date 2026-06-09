@@ -49,15 +49,15 @@ function ImageCard({ href, src, title, description, alt }) {
 export default function HomePage() {
   return (
     <>
-      <section className="w-full bg-zinc-100 pt-16 pb-20">
+      <section className="w-full bg-white pt-16 pb-20">
         <div className="page-container flex max-md:flex-col gap-5">
           
           <div className="flex flex-col w-[67%] max-md:w-full">
             <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
-              Dizajnový systém elektronických služieb a webových sídel 
+              Dizajnový systém elektronických služieb <br /> a webových sídel 
             </h1>
             <p className="mt-7 text-base md:text-lg tracking-normal leading-8 text-neutral-950 max-md:max-w-full">
-              Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3.0.0. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
+              Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
             </p>
             <Link 
                 href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
