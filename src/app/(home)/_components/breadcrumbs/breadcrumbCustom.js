@@ -90,7 +90,7 @@ const BreadcrumbCustom = ({
       {mobileBackItem && mobileBackItem.href && (
         <a
           href={mobileBackItem.href}
-          className="mb-2 inline-flex items-center gap-1 underline text-[#212121] hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] focus:outline-offset-2 md:hidden"
+          className="mb-2 hidden items-center gap-1 underline text-[#212121] hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] focus:outline-offset-2 max-[480px]:inline-flex"
         >
           <BackIcon className="h-4 w-4 shrink-0" />
           <span>{mobileBackItem.label}</span>
@@ -100,7 +100,7 @@ const BreadcrumbCustom = ({
       <ol
         className={cx(
           'flex flex-wrap items-center gap-y-2',
-          collapseOnMobile && 'hidden md:flex'
+          collapseOnMobile && 'max-[480px]:hidden'
         )}
       >
         {normalizedItems.map((item, index) => {

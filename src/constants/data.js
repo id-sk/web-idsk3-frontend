@@ -7,7 +7,8 @@ export const baseData = [
   /* { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""}, */
   { href: "zaklady-principy/tiene", src: "/images/zaklady-principy-cards/Tiene.svg", title: "Tiene", description: "Typy tieňov a ich použitie na vizuálne rozlíšenie obsahu.", alt: "" },
   { href: "zaklady-principy/medzery", src: "/images/zaklady-principy-cards/Medzery.svg", title: "Medzery", description: "Medzery a ich rozmery.", alt: "" },
-  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""}
+  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""},
+  { href: "zaklady-principy/zamerany-stav", src: "/images/focus/karticka.svg", title: "Zameranie klávesnicou", description: "Pravidlá a vizuálne štýly pre zameranie prvkov pomocou klávesnice, zabezpečujúce prístupnosť a spĺňajúce štandardy WCAG 2.1.", alt: ""}
 ];
 
 export const componentsData = [
@@ -41,6 +42,7 @@ export const whatIsData = [
   { href: "/co-je/metodika", src: "/images/co-je-cards/metodika-ucd.svg", title: "Metodika UCD", description: "Metodika user-centered dizajnu (UCD) zabezpečí zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa - občana.", alt: "" },
   { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK", alt: ""},
   { href: "/co-je/navod-pre-vyvojarov", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Návody pre vývojárov", description: 'Ak budete chcieť vytvoriť elektronickú službu pomocou IDSK, môžete využiť repozitár dostupný na GitHub-e.', alt: ""},
+  { href: "/co-je/cookies-policy", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Cookies Policy", description: 'Spracúvanie súborov cookies na webovej stránke idsk.gov.sk.', alt: ""},
 ];
 
 export const homePageData = [

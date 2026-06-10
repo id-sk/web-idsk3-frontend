@@ -168,3 +168,8 @@ export const idskRoutes = [
     },
 ];
 
+export const allRoutes = [
+  ...idskRoutes,
+  ...basicRoutes,
+  ...pageRoutes,
+];

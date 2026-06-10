@@ -13,7 +13,7 @@ import {
 } from '@eslovensko/idsk-react';
 import { usePathname, useRouter } from "next/navigation";
 import Search from '../search/search';
-import { pageRoutes } from '@/constants/constants';
+import { allRoutes } from '@/constants/constants';
 import './navbar.scss'
 
 const Nav = ({ isMobileMenuOpen, sidebarData }) => {
@@ -170,7 +170,7 @@ const Navbar = ({ sidebarData, hideNavigation = false }) => {
             }
         >
             <div className='flex flex-wrap items-center'>
-                <Search pageDetails={pageRoutes} />
+                <Search pageDetails={allRoutes} />
             </div>
         </HeaderContainer>
     );

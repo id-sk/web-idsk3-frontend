@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/app/(home)/_components/navbar/navbar";
 import FooterResp from "@/app/(home)/_components/footer/FooterResp";
 import SkipLinkClient from "@/app/(home)/_components/skiplink/SkipLinkClient";
+import AutoBreadcrumbs from '@/app/(home)/_components/breadcrumbs/autoBreadcrumbs';
 
 export const metadata = {
   title: "IDSK 3",
@@ -16,6 +17,7 @@ export default function RootLayout({ children }) {
       <body className="flex flex-col min-h-screen">
         <SkipLinkClient />
         <Navbar />
+        <AutoBreadcrumbs />
         
         <div className="flex-grow">
           {children} 
