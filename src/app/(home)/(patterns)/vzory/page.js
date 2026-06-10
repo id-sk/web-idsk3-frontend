@@ -5,17 +5,17 @@ export const metadata = {
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link"; 
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 import { Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 export default function VzoryComingSoon() {
   return (
-    <div className="flex flex-col my-8 max-w-[1000px] mx-auto px-4 sm:px-0">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] mb-8 w-full text-left">
+    <div className="flex flex-col my-8 max-w-[1120px] mx-auto px-4 sm:px-0">
+      <h1 className="text-left text-2xl sm:text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] mb-8 w-full">
           Vzory
       </h1>
       
-      <div className="flex flex-col items-center justify-center mt-4 pt-10 pb-14 w-full max-w-[550px] mx-auto px-5 bg-white rounded-[10px] border border-solid border-neutral-200 shadow-sm">
+      <div className="flex flex-col mt-4 pt-10 pb-14 w-full max-w-[550px] px-5 bg-white rounded-[10px] border border-solid border-neutral-200 shadow-sm">
         
         <Image
             src="/images/404/404.svg"
@@ -33,12 +33,9 @@ export default function VzoryComingSoon() {
           Čoskoro bude dostupná...
         </Text>
 
-        <Link 
-          href="/" 
-          className="inline-flex items-center justify-center px-6 py-3 text-base font-bold tracking-wide text-white bg-[#0B4199] rounded-md transition-all duration-200 outline-none hover:bg-[#126DFF] hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
-        >
-          Späť na hlavnú stránku
-        </Link>
+        <ButtonCustom variant="primary" status="basic" href="/">
+            Späť na hlavnú stránku
+        </ButtonCustom>
       </div>
     </div>
   );

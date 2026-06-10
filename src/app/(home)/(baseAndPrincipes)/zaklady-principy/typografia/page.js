@@ -5,7 +5,7 @@ import { headlineData, subtitleData, bodyData, captionData, linkData } from "@/c
 
 const TypographyPage = () => {
     return (
-        <div id="main-content" className="flex flex-col my-8 pb-8 max-w-[1000px] px-4 sm:px-0 text-black">
+        <div id="main-content" className="flex flex-col my-8 pb-8 max-w-[1120px] px-4 sm:px-0 text-black">
             <title>Typografia</title>
 
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">

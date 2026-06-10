@@ -133,7 +133,7 @@ const ArticleCard = ({
 
       <div
         className={cx(
-          'flex min-w-0 grow flex-col justify-center p-5',
+          'flex min-w-0 grow flex-col justify-start p-5',
           contentClassName
         )}
       >

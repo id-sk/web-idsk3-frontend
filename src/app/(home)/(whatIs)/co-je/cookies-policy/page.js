@@ -9,7 +9,7 @@ import { Text, SectionBlock, Ul, ExtLink } from '@/app/(home)/_components/conten
 
 export default function SuboryCookies() {
   return (
-    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
+    <div className="flex flex-col my-8 max-w-[1120px] px-4 sm:px-0">
       
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
         Spracúvanie súborov cookies na webovej stránke idsk.gov.sk

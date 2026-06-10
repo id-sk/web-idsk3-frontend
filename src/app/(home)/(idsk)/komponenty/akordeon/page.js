@@ -16,7 +16,7 @@ const AccordionPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
       <header>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
           Akordeón
         </h1>
       </header>

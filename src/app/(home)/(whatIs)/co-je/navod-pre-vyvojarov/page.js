@@ -9,7 +9,7 @@ import { Text, SectionBlock, Ul, Ol, H3, ExtLink, CodeBlock } from '@/app/(home)
 
 export default function DeveloperPage() {
   return (
-    <div className="flex flex-col max-w-[1000px] px-4 sm:px-0 my-8">
+    <div className="flex flex-col max-w-[1120px] px-4 sm:px-0 my-8">
       
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
         Pre vývojárov

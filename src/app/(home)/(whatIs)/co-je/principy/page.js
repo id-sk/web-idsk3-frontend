@@ -54,7 +54,7 @@ const principlesData = [
 
 export default function PrincipyPage() {
   return (
-    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
+    <div className="flex flex-col my-8 max-w-[1120px] px-4 sm:px-0">
       
       {/* Čistý H1 bez zbytočného <header> obalu */}
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
