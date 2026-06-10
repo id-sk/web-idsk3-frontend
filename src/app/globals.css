@@ -20,13 +20,22 @@
   html, body { @apply font-source-sans-pro; max-width: 100vw; overflow-x: hidden; }
   a { color: inherit; }
 
-  /* Scrollbars */
-  * { scrollbar-width: thin !important; scrollbar-color: darkgray lightgray !important; }
-  ::-webkit-scrollbar-thumb { background-color: darkgray !important; }
-  ::-webkit-scrollbar-track { background: lightgray !important; }
+  /* Scrollbars - A11y Fix (Kontrast min 3:1) */
+  * { 
+    scrollbar-width: thin !important; 
+    scrollbar-color: #757575 #E0E0E0 !important; 
+  }
+  
+  ::-webkit-scrollbar-thumb { 
+    background-color: #757575 !important; 
+    border-radius: 4px; 
+  }
+  
+  ::-webkit-scrollbar-track { 
+    background: #E0E0E0 !important; 
+  }
 
-  /* Input number fix */
-    input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { 
+  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button { 
     -webkit-appearance: none; 
     appearance: none;
     margin: 0; 
