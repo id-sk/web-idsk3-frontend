@@ -132,6 +132,7 @@ const Search = ({ pageDetails }) => {
           aria-describedby="autocomplete-assistiveHint"
           className="
             w-full px-4 py-2.5 text-[16px] text-[#212121] bg-transparent
+            placeholder:text-[#757575]
             focus:outline-none rounded-l-[5px]
           "
         />

@@ -64,8 +64,8 @@ export const pageRoutes = [
         "link": "/komponenty/razcestnik-textovy"
     },*/
     {
-        "name": "Rozbaľovací zoznam",
-        "link": "/komponenty/rozbalovaci-zoznam"
+        "name": "Rozbaľovacie pole",
+        "link": "/komponenty/rozbalovacie-pole"
     },
     {
         "name": "Textové pole",
