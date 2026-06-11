@@ -9,7 +9,7 @@ const TabPristupnost = () => {
             <SectionBlock titleString="Prístupnosť (Accessibility)">
                 
                 <Text>
-                    Komponent je v súlade s normami WCAG 2.1 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a čítačkami obrazovky. 
+                    Komponent je v súlade s normami WCAG 2.1 AA. Komponent spĺňa požiadavky na kontrastné pomery a jeho súčasťou sú interakcie s klávesnicou a asistenčnými technológiami. 
                 </Text>
                 
                 <H3>Klávesové ovládanie</H3>

@@ -12,8 +12,8 @@ const TabVarianty = () => (
 
       <H3>1. Variant akordeónu bez popisu a s popisom:</H3>
       
-      <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-12">
-        <div className="w-full max-w-[700px] px-4">
+      <div className="flex flex-col items-center gap-4 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px]">
+        <div className="w-full max-w-[700px] px-4 mt-5">
           <CustomAccordion 
             heading="Toto je variant akordeónu bez popisu" 
             initiallyClosed={true}
@@ -43,8 +43,8 @@ const TabVarianty = () => (
       </Text>
 
       {/* Demo kontajner pre stavy */}
-      <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8">
-        <div className="w-full max-w-[700px] px-4">
+      <div className="flex flex-col items-center gap-4 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px]">
+        <div className="w-full max-w-[700px] px-4 mt-5">
           <CustomAccordion 
             className="demo-hover-state" 
             heading="Akordeón zobrazujúci zameranie myšou" 

@@ -39,7 +39,7 @@ const TabImplementacia = () => {
 
       <SectionBlock titleString="Možnosti implementácie">
         
-        <div className="mt-4 mb-8">
+        <div className="mt-4">
           <H4>1. Statická HTML implementácia (HTML + minifikované súbory)</H4>
           <Text className="mb-4">
             Ak váš projekt nevyužíva Node.js alebo bundler (napr. Webpack, Vite), môžete použiť hotové buildy. Pri inštalácii z <code className={codeClass}>dist</code> sa používajú kompilované a minifikované verzie šablóny so štýlmi. To znamená, že nebudete môcť:
@@ -53,7 +53,7 @@ const TabImplementacia = () => {
 
           <div className="space-y-8 mt-8">
             <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">➜ Stiahnite a zahrňte zdroje</strong>
+              <strong className="block mb-2 text-sm sm:text-base md:text-lg">Stiahnite a zahrňte zdroje</strong>
               <Text className="mb-4">
                 Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov. Skopírujte celý <code className={codeClass}>assets</code> priečinok a minifikované súbory do rootu vášho projektu. Štruktúra by mala vyzerať približne takto:
               </Text>
@@ -74,7 +74,7 @@ const TabImplementacia = () => {
             </div>
 
             <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">➜ Prepojte štýly</strong>
+              <strong className="block mb-2 text-sm sm:text-base md:text-lg">Prepojte štýly</strong>
               <Text className="mb-4">
                 Do časti <code className={codeClass}>head</code> vložte minifikované css. Na záver <code className={codeClass}>body</code> pripojte minifikovaný javascript.
               </Text>
@@ -96,7 +96,7 @@ const TabImplementacia = () => {
             </div>
 
             <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">➜ Skopírujte HTML kód</strong>
+              <strong className="block mb-2 text-sm sm:text-base md:text-lg">Skopírujte HTML kód</strong>
               <Text className="mb-4">
                 Zo stránky dokumentácie stiahnite HTML kód komponentu <ExtLink href="https://komponenty.idsk3.gov.sk/components/accordion">akordeón</ExtLink> a vložte ho do svojho HTML. Ak používate čisté HTML, musíte do značky <code className={codeClass}>&lt;div&gt;</code> pridať atribút <code className={codeClass}>id</code>. Tento atribút musí byť unikátny v rámci domény, aby bolo možné udržať stav rozbalenia akordeónu.
               </Text>
@@ -143,12 +143,12 @@ const TabImplementacia = () => {
         </div>
 
         {/* POKROČILÁ NPM IMPLEMENTÁCIA */}
-        <div className="mt-12 mb-8">
+        <div>
           <H4>2. Pokročilá integrácia (NPM + SCSS + JS)</H4>
           
           <Ol>
             <li>
-              <strong className="block mb-2">Nainštalujte balík</strong>
+              <strong className="block mt-5 mb-2">Nainštalujte balík</strong>
               Pre inštaláciu cez NPM spustite (po skončení inštalácie sa balík <code className={codeClass}>@id-sk/frontend</code> objaví v <code className={codeClass}>node_modules</code>):
               <CodeBlock 
                 language="bash"

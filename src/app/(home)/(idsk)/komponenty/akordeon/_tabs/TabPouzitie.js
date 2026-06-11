@@ -6,10 +6,8 @@ const TabPouzitie = () => (
     <div className="animate-fade-in text-black w-full min-w-0">
         
         <SectionBlock titleString="Použitie Akordeónu">
-            
-            {/* Ukážka na bodkovanom pozadí */}
-            <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[700px] py-7 my-6 px-4">
+            <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+                <div className="w-full max-w-[700px] py-7 mt-6 mb-1 px-4">
                     <CustomAccordion 
                         heading="Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?" 
                         initiallyClosed={true}
@@ -65,10 +63,10 @@ const TabPouzitie = () => (
                         </h3>
                         {/* Tu používam čisté HTML tagy namiesto <Ul>, pretože InformationBanner má špecificky menšie písmo (text-sm), aby to pekne sedelo vo vnútri bannera */}
                         <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                            <li>keď máte viacero súvisiacich sekcií (min. 2, max 10),</li>
-                            <li>keď obsah v jednotlivých sekciách je rovnocenný a nezávislý,</li>
-                            <li>keď potrebujete rozdeliť obsah do logických sekcií (napr. FAQ, návody, inštrukcie),</li>
-                            <li>keď máte obsah, ktorý sa pravidelne opakuje alebo je známy.</li>
+                            <li>Použva sa keď máte viacero súvisiacich sekcií (min. 2, max 10).</li>
+                            <li>Použva sa keď obsah v jednotlivých sekciách je rovnocenný a nezávislý.</li>
+                            <li>Použva sa keď potrebujete rozdeliť obsah do logických sekcií (napr. FAQ, návody, inštrukcie).</li>
+                            <li>Použva sa keď máte obsah, ktorý sa pravidelne opakuje alebo je známy.</li>
                         </ul>
                     </InformationBanner>
                 </div>
@@ -84,10 +82,10 @@ const TabPouzitie = () => (
                             Ako sa nepoužíva
                         </h3>
                         <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                            <li>keď je potrebné vidieť všetky informácie naraz (napr. pri porovnávaní údajov),</li>
-                            <li>keď ide o kľúčový obsah, ktorý by nemal byť skrytý (napr. textové pole s povinnými údajmi),</li>
-                            <li>keď sekcie obsahujú veľa textu, vnorené interaktívne prvky alebo akčné prvky,</li>
-                            <li>keď ide o navigáciu medzi sekciami – vtedy použite taby alebo obsahovú navigáciu,</li>
+                            <li>Nepoužíva sa keď je potrebné vidieť všetky informácie naraz (napr. pri porovnávaní údajov).</li>
+                            <li>Nepoužíva sa keď ide o kľúčový obsah, ktorý by nemal byť skrytý (napr. textové pole s povinnými údajmi).</li>
+                            <li>Nepoužíva sa keď sekcie obsahujú veľa textu, vnorené interaktívne prvky alebo akčné prvky.</li>
+                            <li>Nepoužíva sa keď ide o navigáciu medzi sekciami – použite taby alebo obsahovú navigáciu.</li>
                         </ul>
                     </InformationBanner>
                 </div>

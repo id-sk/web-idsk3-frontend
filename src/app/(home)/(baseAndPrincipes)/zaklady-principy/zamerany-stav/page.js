@@ -10,7 +10,7 @@ export const metadata = {
 const focusExamples = [
   { id: 'hypertext', title: 'Hypertextový odkaz', layout: 'normal', src: '/images/focus/hypertextovy-odkaz.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'button', title: 'Tlačidlo', layout: 'normal', src: '/images/focus/tlacidlo.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
-  { id: 'checkbox', title: 'Zaškrtávacie pole', layout: 'normal', src: '/images/focus/zaskrtavacie-pole.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
+  { id: 'checkbox', title: 'Začiarkavacie pole', layout: 'normal', src: '/images/focus/zaciarkavacie-pole-focus.png', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'radio', title: 'Prepínacie pole', layout: 'normal', src: '/images/focus/prepinacie-pole.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'input', title: 'Textové pole', layout: 'normal', src: '/images/focus/textove-pole.svg', width: 500, height: 150, maxW: 'max-w-[375px]' },
   { id: 'textarea', title: 'Viacriadkové textové pole', layout: 'normal', src: '/images/focus/viacriadkove-textove-pole.svg', width: 500, height: 150, maxW: 'max-w-[375px]' },
@@ -25,7 +25,7 @@ const FocusPage = () => {
     <div className="flex flex-col pb-8 my-8 max-w-[1120px] px-4 sm:px-0 text-black">
       
       <header>
-        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
           Zameranie klávesnicou (Focus)
         </h1>
       </header>
@@ -50,7 +50,6 @@ const FocusPage = () => {
           {focusExamples.map((example) => (
             <figure 
               key={example.id} 
-              // Opravené interpolácie reťazcov
               className={`flex flex-col ${example.layout === 'full' ? 'md:col-span-2' : ''}`}
             >
               <H4>{example.title}</H4>
