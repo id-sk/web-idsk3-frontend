@@ -7,7 +7,7 @@ const FooterResp = () => {
       <div className="flex justify-between items-end w-full max-w-[1120px] mx-auto py-12 px-4 sm:px-8 min-[1160px]:px-4 max-md:flex-col max-md:items-start max-md:gap-8">
         
         {/* ĽAVÁ ČASŤ: Texty */}
-        <div className="flex flex-col w-[73%] max-md:w-full [&_a]:text-[#212121] [&_a]:underline [&_a:hover]:text-[#0B4199] [&_a:hover]:decoration-[3px] [&_a:visited]:text-[#592999]">
+        <div className="flex flex-col w-[73%] max-md:w-full [&_a]:text-[#212121] [&_a]:underline [&_a:hover]:text-[#0B4199] [&_a:hover]:decoration-[3px]">
           <p className="text-base tracking-wide text-black">
             Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.
           </p>

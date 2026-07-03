@@ -90,7 +90,7 @@ const BreadcrumbCustom = ({
       {mobileBackItem && mobileBackItem.href && (
         <a
           href={mobileBackItem.href}
-          className="mb-2 hidden items-center gap-1 underline text-[#212121] hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] focus:outline-offset-2 max-[480px]:inline-flex"
+          className="mb-2 hidden items-center gap-1 underline text-[#212121] hover:text-[#0B4199] hover:decoration-[3px] focus:outline-offset-2 max-[480px]:inline-flex"
         >
           <BackIcon className="h-4 w-4 shrink-0" />
           <span>{mobileBackItem.label}</span>
@@ -110,37 +110,37 @@ const BreadcrumbCustom = ({
           return (
             <li
               key={`${item.href || item.label}-${index}`}
-              className="flex min-w-0 items-center"
+              className="flex min-w-0 items-center gap-2 whitespace-nowrap"
               aria-current={isCurrent ? 'page' : undefined}
             >
               {index > 0 && (
-                <ChevronIcon className="mx-2 h-4 w-4 shrink-0 text-[#757575]" />
-                )}
+                <ChevronIcon className="h-4 w-4 shrink-0 text-[#757575]" />
+              )}
 
-                {item.href && !isCurrent ? (
+              {item.href && !isCurrent ? (
                 <a
-                    href={item.href}
-                    aria-label={item.isHome && item.homeVariant === 'icon' ? item.label : undefined}
-                    className="min-w-0 text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] visited:text-[#592999] focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
+                  href={item.href}
+                  aria-label={item.isHome && item.homeVariant === 'icon' ? item.label : undefined}
+                  className="min-w-0 text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
                 >
-                    {item.isHome && item.homeVariant === 'icon' ? (
-                    <HomeIcon className="h-4 w-4 shrink-0 text-[#212121] hover:text-[#0B4199] visited:text-[#592999]" />
-                    ) : (
+                  {item.isHome && item.homeVariant === 'icon' ? (
+                    <HomeIcon className="h-4 w-4 shrink-0 text-[#212121] hover:text-[#0B4199]" />
+                  ) : (
                     item.label
-                    )}
+                  )}
                 </a>
-                ) : (
+              ) : (
                 <span className="min-w-0 text-black">
-                    {item.isHome && item.homeVariant === 'icon' ? (
+                  {item.isHome && item.homeVariant === 'icon' ? (
                     <>
-                        <HomeIcon className="h-4 w-4 shrink-0 text-[#0B4199]" />
-                        <span className="sr-only">{item.label}</span>
+                      <HomeIcon className="h-4 w-4 shrink-0 text-[#0B4199]" />
+                      <span className="sr-only">{item.label}</span>
                     </>
-                    ) : (
+                  ) : (
                     item.label
-                    )}
+                  )}
                 </span>
-                )}
+              )}
             </li>
           );
         })}
