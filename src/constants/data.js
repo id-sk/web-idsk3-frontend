@@ -12,28 +12,28 @@ export const baseData = [
 ];
 
 export const componentsData = [
-  { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.svg", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
-  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - elektronické služby", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
+  { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.png", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
+  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka.png", title: "Hlavička - elektronické služby", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
   /*{ href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },*/
-  { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
+  { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/informacna_lista.png", title: "Informačný banner", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
   /*{ href: "/komponenty/informacna-lista-upozornenie", src: "/images/komponenty-cards/info-banner-upozornenie.svg", title: "Informačný banner - upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},*/
-  { href: "/komponenty/karticka", src: "/images/komponenty-cards/karticka.svg", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
-  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista-spatnej-vazby.svg", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
-  { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/omrvinkova-navigacia.svg", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
-  { href: "komponenty/pata", src: "/images/komponenty-cards/pata.svg", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
-  { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/pole-pre-nahratie-suboru.svg", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
-  { href: "/komponenty/prehlad-s-chybovymi-hlaseniami", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Prehľad s chybovými hláseniami", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
-  { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/prepinacie-pole.svg", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
-  { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/razcestnik-horizontalny.svg", title: "Rázcestník horizontálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
+  { href: "/komponenty/karticka", src: "/images/komponenty-cards/card.png", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
+  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista_spatnej_vazby.png", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
+  { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/breadcrumbs.png", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
+  { href: "komponenty/pata", src: "/images/komponenty-cards/paticka.png", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
+  { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/file_upload.png", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
+  { href: "/komponenty/prehlad-s-chybovymi-hlaseniami", src: "/images/komponenty-cards/chybove_hlasenie.png", title: "Prehľad s chybovými hláseniami", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
+  { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/radio_button.png", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
+  { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/signpost.png", title: "Rázcestník horizontálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
   /* { href: "/komponenty/razcestnik-textovy", src:"/images/komponenty-cards/razcestnik-textovy.svg", title: "Rázcestník textový", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},*/
   /*{ href: "/komponenty/razcestnik-vertikalny", src:"/images/komponenty-cards/razcestnik-vertikalny.svg", title: "Rázcestník vertikálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},*/
   { href: "/komponenty/rozbalovacie-pole", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovacie pole", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},  
-  { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/textove-pole.svg", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
-  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo", description: "Akčné prvky, ktoré majú vplyv na používateľskú interakciu.", alt: ""},
+  { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/text_field.png", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
+  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo.png", title: "Tlačidlo", description: "Akčné prvky, ktoré majú vplyv na používateľskú interakciu.", alt: ""},
   /* { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},*/
   /* { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},*/
-  { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
-  { href: "/komponenty/zaciarkavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Začiarkavacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
+  { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/textarea.png", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
+  { href: "/komponenty/zaciarkavacie-pole", src: "/images/komponenty-cards/checkbox.png", title: "Začiarkavacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
 ];
 
 export const whatIsData = [

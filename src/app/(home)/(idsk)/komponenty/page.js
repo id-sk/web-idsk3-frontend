@@ -31,6 +31,7 @@ const IdskPage = () => {
               description={card.description}
               alt={card.alt || ""}
               orientation="vertical"
+              imageClassName="!bg-white p-4"
             />
           ))}
         </div>
