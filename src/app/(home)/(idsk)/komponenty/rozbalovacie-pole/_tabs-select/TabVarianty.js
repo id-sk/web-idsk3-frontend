@@ -1,138 +1,219 @@
 'use client';
 
-import React from 'react';
-import { Select } from '@eslovensko/idsk-react';
-import { SectionBlock, H3 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import React, { useState } from 'react';
+import SelectDropdownCustom from '@/app/(home)/_components/select/selectCustom';
+import { SectionBlock, H3, Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
-const TabVarianty = () => (
-    <div className="animate-fade-in text-black w-full min-w-0">
-        
-        <SectionBlock titleString="Varianty a stavy">
-            
-            <H3>1. Variant povinného a nepovinného rozbaľovacieho poľa</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-unrequired"
-                        name="vyber-povinne"
-                        label="Príklad povinného poľa"
-                        placeholder="-- Vyberte položku --"
-                        inputSize="medium"
-                        mandatory={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-required"
-                        name="vyber-nepovinne"
-                        label="Príklad nepovinného poľa (nepovinné pole)"
-                        placeholder="-- Vyberte položku --"
-                        inputSize="medium"
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-            </div>
+const basicOptions = [
+  { value: 'sk', label: 'Slovensko' },
+  { value: 'cz', label: 'Česká republika' },
+  { value: 'at', label: 'Rakúsko' },
+  { value: 'hu', label: 'Maďarsko' },
+  { value: 'pl', label: 'Poľsko' },
+];
 
-            <H3>2. Variant chybového, neaktívneho rozbaľovacieho poľa a poľa s podnadpisom</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-priklad-chyba"
-                        inputSize="medium"
-                        name="vyber-chyba"
-                        label="Príklad chybového stavu"
-                        errorMsg="Chybový text"
-                        mandatory={true}
-                        error={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-priklad-disabled"
-                        inputSize="medium"
-                        name="vyber-disabled"
-                        label="Príklad neaktívneho stavu"
-                        optionalText="(nepovinné pole)"
-                        disabled={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-priklad-podnadpis"
-                        inputSize="medium"
-                        name="vyber-podnadpis"
-                        label="Príklad s podnadpisom"
-                        subtitle="Podnadpis rozbaľovacieho poľa"
-                        mandatory={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-            </div>
+const optionsWithDisabled = [
+  { value: 'sk', label: 'Slovensko' },
+  { value: 'cz', label: 'Česká republika' },
+  { value: 'at', label: 'Rakúsko (nedostupné)', disabled: true },
+  { value: 'hu', label: 'Maďarsko' },
+  { value: 'pl', label: 'Poľsko (nedostupné)', disabled: true },
+];
 
-            <H3>3. Variant rozbaľovacieho poľa veľký a malý</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-priklad-velky"
-                        inputSize="medium"
-                        name="vyber-velky"
-                        label="Variant rozbaľovacieho poľa - veľký"
-                        mandatory={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Select 
-                        id="select-priklad-maly"
-                        inputSize="small"
-                        name="vyber-maly"
-                        label="Variant rozbaľovacieho poľa - malý"
-                        mandatory={true}
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
-                </div>
-            </div>
-
-        </SectionBlock>
+const ExampleBox = ({ children }) => (
+  <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+    <div className="w-full max-w-[400px] py-7 my-6 px-4">
+      {children}
     </div>
+  </div>
 );
 
-export default TabVarianty;
+const TabVariantyStavy = () => {
+  const [controlledValue, setControlledValue] = useState('');
+
+  return (
+    <div className="animate-fade-in text-black w-full min-w-0">
+      <SectionBlock titleString="Varianty a stavy rozbaľovacieho poľa">
+        <Text>
+          Rozbaľovacie pole môže byť zobrazené v základnom, povinnom,
+          nepovinnom, chybovom alebo neaktívnom stave. Podporuje aj predvolenú
+          hodnotu, neaktívne položky a riadený stav.
+        </Text>
+
+        <H3>1. Základný stav</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-default"
+            name="select-default"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>2. Povinné pole</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-required"
+            name="select-required"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>3. Nepovinné pole</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-optional"
+            name="select-optional"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            mandatory={false}
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>4. Pole s pomocným textom</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-hint"
+            name="select-hint"
+            label="Názov rozbaľovacieho poľa"
+            hint="Pomocný text pre používateľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>5. Chybový stav</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-error"
+            name="select-error"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            error
+            errorMsg="Chybový text"
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>6. Chybový stav s pomocným textom</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-error-hint"
+            name="select-error-hint"
+            label="Názov rozbaľovacieho poľa"
+            hint="Pomocný text pre používateľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            error
+            errorMsg="Chybový text"
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>7. Neaktívny stav</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-disabled"
+            name="select-disabled"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            disabled
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>8. Vybraná hodnota</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-selected"
+            name="select-selected"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            mandatory
+            defaultValue="sk"
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>9. Malý variant</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-small"
+            name="select-small"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            inputSize="small"
+            mandatory
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>10. Vybraná hodnota v malom variante</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-small-selected"
+            name="select-small-selected"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte možnosť"
+            inputSize="small"
+            mandatory
+            defaultValue="sk"
+            fullWidth
+            options={basicOptions}
+          />
+        </ExampleBox>
+
+        <H3>11. Zoznam s neaktívnou položkou</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-disabled-option"
+            name="select-disabled-option"
+            label="Názov rozbaľovacieho poľa"
+            placeholder="Vyberte krajinu"
+            mandatory
+            fullWidth
+            options={optionsWithDisabled}
+          />
+        </ExampleBox>
+
+        <H3>12. Riadený stav</H3>
+        <ExampleBox>
+          <SelectDropdownCustom
+            id="select-controlled"
+            name="select-controlled"
+            label="Riadené rozbaľovacie pole"
+            placeholder="Vyberte možnosť"
+            mandatory
+            value={controlledValue}
+            onValueChange={setControlledValue}
+            fullWidth
+            options={basicOptions}
+          />
+
+          <p className="mt-4 text-[16px] leading-[24px] text-[#757575]">
+            Vybraná hodnota: <strong>{controlledValue || '(žiadna)'}</strong>
+          </p>
+        </ExampleBox>
+      </SectionBlock>
+    </div>
+  );
+};
+
+export default TabVariantyStavy;

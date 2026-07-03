@@ -1,29 +1,31 @@
 'use client';
 
 import React from 'react';
-import { Select } from '@eslovensko/idsk-react';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { SectionBlock, Text, Ul } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import SelectDropdownCustom from '@/app/(home)/_components/select/selectCustom';
 
 const TabPouzitie = () => (
     <div className="animate-fade-in text-black w-full min-w-0">
         
         <SectionBlock titleString="Použitie rozbaľovacieho poľa">
             
-            <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] py-7 my-6 px-4">
-                    <Select 
-                        id="vyber-polozku"
+                    <SelectDropdownCustom
+                        id="select-priklad"
                         name="vyber"
-                        label="Vyberte si položku zo zoznamu"
-                        inputSize="large"
-                        fullWidth={true}
-                    >
-                        <option value="">-- Vyberte položku --</option>
-                        <option value="polozka-1">Položka 1</option>
-                        <option value="polozka-2">Položka 2</option>
-                        <option value="polozka-3">Položka 3</option>
-                    </Select>
+                        label="Vyberte možnosť"
+                        hint="Vyberte jednu z dostupných možností."
+                        placeholder="Vyberte možnosť"
+                        mandatory
+                        fullWidth
+                        options={[
+                            { value: 'moznost-1', label: 'Možnosť 1' },
+                            { value: 'moznost-2', label: 'Možnosť 2' },
+                            { value: 'moznost-3', label: 'Možnosť 3' },
+                        ]}
+                        />
                 </div>
             </div>
 
