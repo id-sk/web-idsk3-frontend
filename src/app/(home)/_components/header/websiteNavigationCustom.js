@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import HeaderMenuItemCustom from './headerMenuItemCustom';
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
@@ -11,11 +11,13 @@ const WebsiteNavigationCustom = ({
   className = '',
   ...props
 }) => {
+  const [openItemId, setOpenItemId] = useState(null);
+
   return (
     <nav
       data-idsk="website-navigation"
       className={cx(
-        'idsk-website-nav hidden w-full flex-col items-center bg-white pt-1 min-[521px]:flex',
+        'idsk-website-nav hidden w-full flex-col items-center bg-white pt-1 min-[730px]:flex',
         className
       )}
       aria-label={ariaLabel}
@@ -34,9 +36,12 @@ const WebsiteNavigationCustom = ({
                   active={item.active}
                   onClick={item.onClick}
                   dropdownItems={item.dropdownItems}
-                  open={item.open}
+                  open={openItemId === itemKey}
                   defaultOpen={item.defaultOpen}
-                  onOpenChange={item.onOpenChange}
+                  onOpenChange={(nextOpen) => {
+                    setOpenItemId(nextOpen ? itemKey : null);
+                    item.onOpenChange?.(nextOpen);
+                  }}
                 >
                   {item.label}
                 </HeaderMenuItemCustom>

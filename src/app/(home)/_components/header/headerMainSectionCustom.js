@@ -100,7 +100,7 @@ const HeaderMainSectionCustom = ({
                   className="
                     flex min-w-0 items-center gap-4 rounded-[5px] no-underline
                     hover:ring-[4px] hover:ring-[#757575]
-                    focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2
+                    focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2
                   "
                 >
                   {logo && (
