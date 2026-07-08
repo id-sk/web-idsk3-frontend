@@ -132,7 +132,6 @@ export const basicRoutes = [
     // },
 ];
 
-
 export const idskRoutes = [
     {
         "name": "Čo je IDSK",
@@ -172,4 +171,58 @@ export const allRoutes = [
   ...idskRoutes,
   ...basicRoutes,
   ...pageRoutes,
+];
+
+export const createDropdownItems = (routes = []) =>
+  routes.slice(1).map((route) => ({
+    label: route.name,
+    href: route.link,
+  }));
+
+export const headerNavigationItems = [
+  {
+    id: 'co-je',
+    label: 'Čo je IDSK',
+    href: '/co-je',
+    variant: 'dropdown',
+    dropdownItems: [
+      {
+        label: 'Prehľad',
+        href: '/co-je',
+      },
+      ...createDropdownItems(idskRoutes),
+    ],
+  },
+  {
+    id: 'zaklady-principy',
+    label: 'Základy a princípy',
+    href: '/zaklady-principy',
+    variant: 'dropdown',
+    dropdownItems: [
+      {
+        label: 'Prehľad',
+        href: '/zaklady-principy',
+      },
+      ...createDropdownItems(basicRoutes),
+    ],
+  },
+  {
+    id: 'komponenty',
+    label: 'Komponenty',
+    href: '/komponenty',
+    variant: 'dropdown',
+    dropdownItems: [
+      {
+        label: 'Zoznam komponentov',
+        href: '/komponenty',
+      },
+      ...createDropdownItems(pageRoutes),
+    ],
+  },
+  {
+    id: 'vzory',
+    label: 'Vzory',
+    href: '/vzory',
+    variant: 'link',
+  },
 ];

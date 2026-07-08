@@ -1,179 +1,78 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
-import {
-  HeaderContainer,
-  MenuButton,
-  MenuMobile,
-  Navigation,
-  NavigationLink,
-  PrimaryButton,
-  SecondaryNavigation,
-} from '@eslovensko/idsk-react';
-import { usePathname, useRouter } from "next/navigation";
-import Search from '../search/search';
-import { allRoutes } from '@/constants/constants';
-import './navbar.scss'
+import { usePathname } from 'next/navigation';
 
-const Nav = ({ isMobileMenuOpen, sidebarData }) => {
+import SiteHeaderCustom from '@/app/(home)/_components/header/siteHeaderCustom';
+import Search from '../search/search';
+
+import {
+  allRoutes,
+  headerNavigationItems,
+} from '@/constants/constants';
+
+const Navbar = ({ hideNavigation = false }) => {
   const pathname = usePathname();
 
-  const getParentPath = (path) => path.split('/')[1];
-
-  // .slice(1) to remove the first element which is the parent
-  const sidebarDataWithParent = sidebarData?.slice(1).map(element => {
-    return {
-      ...element,
-      parent: '/' + getParentPath(element.link)
-    }
-  });
-
-  const parentRoutes = [
-    { href: "/co-je", label: "Čo je IDSK" },
-    { href: "/komponenty", label: "Komponenty" },
-    { href: "/zaklady-principy", label: "Základy a princípy" },
-    { href: "/vzory", label: "Vzory" }
-  ];
-
-  const renderSubLinks = (parentHref) => (
-    sidebarDataWithParent
-      ?.filter(item => item.parent === parentHref)
-      ?.map(subItem => (
-        // todo: sidebarNavigationLink class doesn't seem to apply the font size
-        <div key={subItem.link} className="pl-4 sidebarNavigationLink">
-          <NavigationLink
-            href={subItem.link}
-            label={subItem.name}
-            selected={pathname === subItem.link}
-          />
-        </div>
-      ))
-  );
-
+  const navigationItems = headerNavigationItems.map((item) => ({
+    ...item,
+    active: pathname === item.href || pathname.startsWith(`${item.href}/`),
+    dropdownItems: item.dropdownItems?.map((dropdownItem) => ({
+      ...dropdownItem,
+      active: pathname === dropdownItem.href,
+    })),
+  }));
 
   return (
-    isMobileMenuOpen && (
-      <Navigation>
-        {parentRoutes.map(parent => (
-          <React.Fragment key={parent.href}>
-            <NavigationLink
-              href={parent.href}
-              label={parent.label}
-              selected={pathname.startsWith(parent.href)}
+    <SiteHeaderCustom
+      headerProps={{
+        sticky: true,
+        hasNavigation: !hideNavigation,
+      }}
+      topBarProps={{
+        officialWebsiteTitle: 'Doména gov.sk je oficiálna',
+        officialWebsiteText:
+          'Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk.',
+        officialWebsiteLinkHref:
+          'https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci',
+        officialWebsiteLinkLabel:
+          'Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze.',
+        secureWebsiteTitle: 'Táto stránka je zabezpečená',
+        secureWebsiteText:
+          'Buďte pozorní a vždy sa uistite, že zdieľate informácie iba cez zabezpečenú webovú stránku verejnej správy SR. Zabezpečenú webovú stránku spoznáte podľa webovej adresy začínajúcej https://.',
+      }}
+      mainProps={{
+        logo: (
+          <div className="flex items-center gap-4">
+            <Image
+              src="/images/logotyp.svg"
+              alt=""
+              sizes="100vw"
+              width={48}
+              height={48}
+              className="h-8 w-8 md:h-12 md:w-12"
             />
-            {sidebarData && renderSubLinks(parent.href)}
-          </React.Fragment>
-        ))}
-      </Navigation>
-
-    )
-  )
-}
-
-const Navbar = ({ sidebarData, hideNavigation = false }) => {
-    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(true)
-    const [isLanguageMenuOpen, setIsLanguageMenuOpen] = useState(false)
-
-    const router = useRouter();
-
-    const handleToggle = () => {
-        setIsMobileMenuOpen(!isMobileMenuOpen)
-    };
-
-    const handleToggleLanguage = () => {
-        setIsLanguageMenuOpen(!isLanguageMenuOpen)
-    };
-
-    return (
-        <HeaderContainer
-            fixed
-            largeMenu={
-                !hideNavigation ? (
-                    <div style={{ height: '68px' }}>
-                        <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
-                    </div>
-                ) : null
-            }
-            logo={
-                <a href="/">
-                    <div className="flex gap-5 justify-between w-full">
-                        <header className="font-source-sans-pro flex gap-4 self-start font-bold text-blue-900 items-center">
-                            <Image
-                                src="/images/logotyp.svg"
-                                alt="Logo"
-                                sizes="100vw"
-                                width={0}
-                                height={0}
-                                className="w-8 h-8 md:w-12 md:h-12"
-                            />
-                            <h3 className='py-2 max-w-720px dizajn'>IDSK 3</h3>
-                        </header>
-                    </div>
-                </a>
-            }
-            mobileMenu={
-                !hideNavigation ? (
-                    <MenuMobile
-                        opened
-                        aria-label={isMobileMenuOpen ? 'Menu otvorené' : 'Menu zatvorené'}
-                    >
-                        <MenuButton
-                            closedTitle="Menu"
-                            opened={isMobileMenuOpen}
-                            openedTitle="Zavrieť"
-                            toggleOpened={handleToggle}
-                            className='menu-button'
-                        />
-                        <Nav isMobileMenuOpen={isMobileMenuOpen} sidebarData={sidebarData} />
-                    </MenuMobile>
-                ) : null
-            }
-            secondaryNavigation={
-                <div className="relative z-[60]">
-                    <SecondaryNavigation
-                        dropDownOptions={[<a key={'english'}>english</a>]}
-                        dropDownTitle="slovenčina"
-                        heading="Oficiálna stránka"
-                        headingButton="verejnej správy"
-                        mobileHeading="SK"
-                        mobileHeadingButton="e-Gov"
-                        aria-expanded={isLanguageMenuOpen ? true : false}
-                        onClick={handleToggleLanguage}
-                    >
-                        <div className="grid grid-cols-1 gap-4 tb2:grid-cols-2 tb2:gap-8 z-[60]">
-                            <div>
-                                <h3 className="idsk-text-body-1">
-                                    Doména gov.sk je oficiálna
-                                </h3>
-                                <p className="py-2.5">
-                                    Toto je oficiálna webová stránka orgánu verejnej moci Slovenskej republiky. Oficiálne stránky využívajú najmä doménu gov.sk.{' '}
-                                    <a
-                                        href="https://www.slovensko.sk/sk/agendy/agenda/_organy-verejnej-moci"
-                                        target="_blank"
-                                    >
-                                        Odkazy na jednotlivé webové sídla orgánov verejnej moci nájdete na tomto odkaze.
-                                    </a>
-                                </p>
-                            </div>
-                            <div>
-                                <h3 className="idsk-text-body-1">
-                                    Táto stránka je zabezpečená
-                                </h3>
-                                <p className="py-2.5">
-                                    Buďte pozorní a vždy sa uistite, že zdieľate informácie iba cez zabezpečenú webovú stránku verejnej správy SR. Zabezpečená stránka vždy začína https:// pred názvom domény webového sídla.
-                                </p>
-                            </div>
-                        </div>
-                    </SecondaryNavigation>
-                </div>
-            }
-        >
-            <div className='flex flex-wrap items-center'>
-                <Search pageDetails={allRoutes} />
-            </div>
-        </HeaderContainer>
-    );
+          </div>
+        ),
+        logoHref: '/',
+        logoAriaLabel: 'Domovská stránka IDSK 3',
+        orgName: 'IDSK 3',
+        orgNameAsHeading: false,
+        SearchComponent: Search,
+        searchProps: {
+          pageDetails: allRoutes,
+        },
+        showMail: false,
+        showNotifications: false,
+        showLogin: false,
+        drawerProps: {
+          navLabel: 'Navigácia',
+        },
+      }}
+      navigationItems={hideNavigation ? [] : navigationItems}
+    />
+  );
 };
 
 export default Navbar;
