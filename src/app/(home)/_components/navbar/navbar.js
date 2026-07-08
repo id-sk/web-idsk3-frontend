@@ -68,6 +68,7 @@ const Navbar = ({ hideNavigation = false }) => {
         showLogin: false,
         drawerProps: {
           navLabel: 'Navigácia',
+          showUserSection: false,
         },
       }}
       navigationItems={hideNavigation ? [] : navigationItems}

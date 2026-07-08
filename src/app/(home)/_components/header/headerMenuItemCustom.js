@@ -30,6 +30,8 @@ const HeaderMenuItemCustom = ({
   const isControlled = open !== undefined;
   const isOpen = isControlled ? open : internalOpen;
 
+  const activeDropdownIndex = dropdownItems.findIndex((item) => item.active);
+
   const setOpen = (nextOpen) => {
     if (!isControlled) {
       setInternalOpen(nextOpen);
@@ -45,21 +47,30 @@ const HeaderMenuItemCustom = ({
       }
     };
 
-    const handleEscape = (event) => {
-      if (event.key === 'Escape') {
-        setOpen(false);
-        triggerRef.current?.focus();
-      }
-    };
-
     document.addEventListener('mousedown', handleOutsideClick);
-    document.addEventListener('keydown', handleEscape);
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
-      document.removeEventListener('keydown', handleEscape);
     };
   }, []);
+
+  useEffect(() => {
+    if (!isOpen) return;
+
+    const handleEscape = (event) => {
+      if (event.key !== 'Escape') return;
+
+      event.preventDefault();
+      setOpen(false);
+      triggerRef.current?.focus();
+    };
+
+    document.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.removeEventListener('keydown', handleEscape);
+    };
+  }, [isOpen]);
 
   const triggerClasses = cx(
     'relative flex h-12 cursor-pointer flex-col items-start bg-transparent p-0 text-left no-underline',
@@ -74,10 +85,9 @@ const HeaderMenuItemCustom = ({
   );
 
   const dropdownItemClass = cx(
-    'relative flex min-h-12 w-full cursor-pointer items-center rounded-none border-0 px-5 py-2.5 text-left text-[16px] leading-6 tracking-wide outline-none no-underline',
-    'text-[#212121] bg-white',
+    'relative flex min-h-12 w-full cursor-pointer items-center rounded-[2px] border-0 bg-white px-5 py-2.5 text-left text-[16px] leading-6 tracking-wide outline-none no-underline',
     'hover:bg-[#F5F5F5] hover:underline hover:decoration-2 hover:underline-offset-2',
-    'focus:bg-[#F5F5F5] focus:underline focus:decoration-2 focus:underline-offset-2'
+    'focus:underline-offset-2 focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2'
   );
 
   if (variant === 'dropdown') {
@@ -90,7 +100,6 @@ const HeaderMenuItemCustom = ({
           data-idsk="header-menu-item"
           aria-current={active ? 'page' : undefined}
           aria-expanded={isOpen}
-          aria-haspopup="menu"
           aria-controls={isOpen ? menuId : undefined}
           onClick={() => setOpen(!isOpen)}
           className={triggerClasses}
@@ -110,62 +119,65 @@ const HeaderMenuItemCustom = ({
         {isOpen && (
           <div
             id={menuId}
-            role="menu"
             aria-labelledby={triggerId}
-            aria-orientation="vertical"
-            className="absolute left-[-5px] top-[calc(100%+5px)] z-[60] flex w-[249px] flex-col overflow-hidden rounded-[5px] border-2 border-[#BDBDBD] bg-white shadow-[0_12px_16px_rgba(26,26,26,0.24)]"
+            className="absolute left-[-5px] top-[calc(100%+5px)] z-[60] flex w-[249px] flex-col rounded-[5px] border-2 border-[#BDBDBD] bg-white shadow-[0_12px_16px_rgba(26,26,26,0.24)]"
           >
-            {dropdownItems.map((item) => {
-              const key = item.id ?? item.href ?? item.label;
+            {activeDropdownIndex >= 0 && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[-2px] z-[70] h-12 w-[3px] bg-[#0B4199]"
+                style={{ top: `${6 + activeDropdownIndex * 48}px` }}
+              />
+            )}
 
-              if (item.href) {
+            <ul className="m-0 flex list-none flex-col p-[6px]" role="list">
+              {dropdownItems.map((item) => {
+                const key = item.id ?? item.href ?? item.label;
+
+                if (item.href) {
+                  return (
+                    <li key={key} className="m-0 flex w-full p-0">
+                      <a
+                        href={item.href}
+                        aria-current={item.active ? 'page' : undefined}
+                        className={cx(
+                          dropdownItemClass,
+                          item.active ? 'font-bold text-[#0B4199]' : 'text-[#212121]'
+                        )}
+                        onClick={() => {
+                          item.onClick?.();
+                          setOpen(false);
+                        }}
+                      >
+                        <span className="relative z-[2] min-w-0 flex-1">
+                          {item.label}
+                        </span>
+                      </a>
+                    </li>
+                  );
+                }
+
                 return (
-                  <a
-                    key={key}
-                    href={item.href}
-                    role="menuitem"
-                    aria-current={item.active ? 'page' : undefined}
-                    className={cx(
-                      dropdownItemClass,
-                      item.active && 'font-bold text-[#0B4199]'
-                    )}
-                    onClick={() => {
-                      item.onClick?.();
-                      setOpen(false);
-                    }}
-                  >
-                    {item.active && (
-                      <span
-                        aria-hidden="true"
-                        className="pointer-events-none absolute bottom-0 left-[-2px] top-0 z-[60] w-[3px] bg-[#0B4199]"
-                      />
-                    )}
-
-                    <span className="relative z-[2] min-w-0 flex-1">
-                      {item.label}
-                    </span>
-                  </a>
+                  <li key={key} className="m-0 flex w-full p-0">
+                    <button
+                      type="button"
+                      className={cx(
+                        dropdownItemClass,
+                        item.active ? 'font-bold text-[#0B4199]' : 'text-[#212121]'
+                      )}
+                      onClick={() => {
+                        item.onClick?.();
+                        setOpen(false);
+                      }}
+                    >
+                      <span className="relative z-[2] min-w-0 flex-1">
+                        {item.label}
+                      </span>
+                    </button>
+                  </li>
                 );
-              }
-
-              return (
-                <button
-                  key={key}
-                  type="button"
-                  role="menuitem"
-                  className={cx(
-                    dropdownItemClass,
-                    item.active && 'font-bold text-[#0B4199]'
-                  )}
-                  onClick={() => {
-                    item.onClick?.();
-                    setOpen(false);
-                  }}
-                >
-                  {item.label}
-                </button>
-              );
-            })}
+              })}
+            </ul>
           </div>
         )}
       </div>

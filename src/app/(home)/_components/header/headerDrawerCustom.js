@@ -18,6 +18,7 @@ const HeaderDrawerCustom = ({
   onOpenChange,
   closeAriaLabel = 'Zatvoriť menu',
   user,
+  showUserSection = true,
   profileDetails = [],
   loginLabel = 'Prihlásiť sa',
   onLogin,
@@ -81,7 +82,8 @@ const HeaderDrawerCustom = ({
 
   const hasActionItems = actionItems.length > 0;
   const hasNavItems = navItems.length > 0;
-  const hasContentBelowProfile = showSearch || hasActionItems || hasNavItems;
+  const hasContentBelowProfile =
+    showUserSection && (showSearch || hasActionItems || hasNavItems);
 
   const renderDrawerItem = (item, index) => {
     const itemKey = item.id ?? item.href ?? item.label ?? index;
@@ -231,6 +233,7 @@ const HeaderDrawerCustom = ({
         </div>
 
         <div className="flex flex-1 flex-col gap-6 overflow-y-auto pt-4">
+          {showUserSection && (
           <div className="flex flex-col gap-4 px-4">
             <h3 className="text-[24px] font-bold leading-8 text-[#212121]">
               Profil
@@ -322,6 +325,7 @@ const HeaderDrawerCustom = ({
               </button>
             )}
           </div>
+          )}
 
           {hasContentBelowProfile && (
             <div className="shrink-0 px-4">

@@ -66,7 +66,7 @@ const TopBarCustom = ({
               'my-[1px] inline-flex min-h-10 min-w-0 max-w-[calc(100%-96px)] shrink items-center gap-1 rounded-[5px] py-2 text-left text-[16px] leading-6 underline',
               'hover:ring-[4px] hover:ring-white',
               'active:bg-[#EFF5FE] active:text-[#0B4199]',
-              'focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2'
+              'focus:outline focus:outline-[3px] focus:outline-[#FFF] focus:outline-offset-2'
             )}
           >
             <span className="min-w-0 text-left">
