@@ -11,7 +11,7 @@ const FooterResp = () => {
           <p className="text-base tracking-wide text-black">
             Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.
           </p>
-          <div className="mt-4 flex gap-5 max-md:flex-wrap">
+          <div className="mt-4 flex max-w-[680px] flex-wrap gap-x-5 gap-y-2">
             <a href="https://idsk.gov.sk/co-je/cookies-policy">
               Informácie o spracúvaní súborov cookies
             </a>

@@ -66,7 +66,7 @@ const ErrorSummaryCustom = ({
       id={summaryId}
       ref={summaryRef}
       className={`
-        bg-white text-black p-[20px] mb-8
+        max-w-[640px] bg-white text-black p-[20px] mb-8
         border-[#C3112B] rounded-lg border-y-2 border-r-2 border-l-[5px]
         focus:outline focus:outline-[3px] focus:outline-[#d96e00] focus:outline-offset-2
         ${className}

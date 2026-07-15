@@ -3,7 +3,7 @@
 import React, { useEffect, useId, useRef, useState } from 'react';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 
-const MAX_FILE_SIZE = 500 * 1024 * 1024;
+const MAX_FILE_SIZE = 15 * 1024 * 1024;
 const DEFAULT_ACCEPT = '.jpg,.jpeg,.png,.doc,.docx,.pdf';
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
@@ -48,7 +48,7 @@ const validateFile = ({ file, accept, maxSize, acceptedFormatsLabel }) => {
   }
 
   if (file.size > maxSize) {
-    return 'Nepodarilo sa nahrať súbor. Maximálna veľkosť súboru je 500 MB.';
+    return 'Nepodarilo sa nahrať súbor. Maximálna veľkosť súboru je 15 MB.';
   }
 
   return null;
@@ -378,7 +378,7 @@ const FileUploadCustom = ({
   subtitle = '',
   formatsText = 'Podporované formáty: JPG, PNG, DOC, DOCX, PDF',
   acceptedFormatsLabel = 'JPG, PNG, DOC, DOCX alebo PDF',
-  maxSizeText = 'Maximálna veľkosť súboru: 500 MB',
+  maxSizeText = 'Maximálna veľkosť súboru: 15 MB',
   buttonText = 'Vyberte súbory',
   filesTitle = 'Nahrané súbory',
   accept = DEFAULT_ACCEPT,
@@ -415,6 +415,10 @@ const FileUploadCustom = ({
       normalizeInitialFile(file, index, inputId)
     )
   );
+
+  const hasFieldError = !!errorMessage;
+  const hasFileError = files.some((file) => file.status === 'error');
+  const hasUploadError = hasFieldError || hasFileError;
 
   const openFileDialog = () => {
     if (disabled) return;
@@ -625,8 +629,8 @@ const FileUploadCustom = ({
           multiple={multiple}
           required={required}
           disabled={disabled}
-          aria-invalid={errorMessage ? 'true' : undefined}
-          aria-errormessage={errorMessage ? errorId : undefined}
+          aria-invalid={hasUploadError ? 'true' : undefined}
+          aria-errormessage={hasFieldError ? errorId : undefined}
           aria-labelledby={titleId}
           aria-describedby={describedBy}
           tabIndex={!enableDragAndDrop ? -1 : undefined}
@@ -643,7 +647,9 @@ const FileUploadCustom = ({
 
               disabled
                 ? 'cursor-not-allowed border-[#BDBDBD] bg-[#F5F5F5] text-[#757575]'
-                : 'cursor-pointer border-[#757575] bg-white text-[#0B4199] hover:bg-[#EFF5FE] hover:ring-[4px] hover:ring-[#757575] peer-focus:bg-[#EFF5FE] peer-focus:outline peer-focus:outline-[3px] peer-focus:outline-[#D96E00] peer-focus:outline-offset-[2px] peer-focus:[&_.file-upload-pseudo-button]:bg-[#0B4199] peer-focus:[&_.file-upload-pseudo-button]:text-white',
+                : hasUploadError
+                  ? 'cursor-pointer border-[#C3112B] bg-white text-[#0B4199] hover:bg-[#EFF5FE] hover:ring-[4px] hover:ring-[#757575] peer-focus:bg-[#EFF5FE] peer-focus:outline peer-focus:outline-[3px] peer-focus:outline-[#D96E00] peer-focus:outline-offset-[2px]'
+                  : 'cursor-pointer border-[#757575] bg-white text-[#0B4199] hover:bg-[#EFF5FE] hover:ring-[4px] hover:ring-[#757575] peer-focus:bg-[#EFF5FE] peer-focus:outline peer-focus:outline-[3px] peer-focus:outline-[#D96E00] peer-focus:outline-offset-[2px]',
 
               'peer-disabled:cursor-not-allowed peer-disabled:opacity-60',
               isDragging && !disabled && 'bg-[#EFF5FE] ring-[4px] ring-[#757575]'
@@ -753,7 +759,7 @@ const FileUploadCustom = ({
         {errorMessage && (
           <p
             id={errorId}
-            className="mt-[10px] text-[16px]/[24px] text-[#C3112B]"
+            className="mt-[10px] text-[19px]/[28px] text-[#C3112B]"
           >
             <span className="sr-only">Chyba: </span>
             {errorMessage}

@@ -74,23 +74,28 @@ const HeaderMenuItemCustom = ({
     };
   }, [isOpen]);
 
-  const triggerClasses = cx(
-    'relative flex h-12 cursor-pointer flex-col items-start bg-transparent p-0 text-left no-underline',
-    'focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2',
-    className
-  );
+const triggerClasses = cx(
+  'relative flex h-12 cursor-pointer flex-col items-start bg-transparent p-0 text-left no-underline',
+  'focus:outline-none',
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2',
+  className
+);
 
-  const contentClasses = cx(
-    'flex h-full items-center border-b-[3px] px-3',
-    active || isOpen ? 'border-b-[#0B4199] bg-[#EFF5FE]' : 'border-b-transparent',
-    'hover:rounded-[5px] hover:ring-[4px] hover:ring-[#757575]'
-  );
+const contentClasses = cx(
+  'flex h-full items-center border-b-[3px] px-3',
+  active || isOpen
+    ? 'border-b-[#0B4199] bg-[#EFF5FE]'
+    : 'border-b-transparent',
+  'hover:rounded-[5px] hover:ring-[4px] hover:ring-[#757575]'
+);
 
-  const dropdownItemClass = cx(
-    'relative flex min-h-12 w-full cursor-pointer items-center rounded-[2px] border-0 bg-white px-5 py-2.5 text-left text-[16px] leading-6 tracking-wide outline-none no-underline',
-    'hover:bg-[#F5F5F5] hover:underline hover:decoration-2 hover:underline-offset-2',
-    'focus:underline-offset-2 focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2'
-  );
+const dropdownItemClass = cx(
+  'relative flex min-h-12 w-full cursor-pointer items-center rounded-[2px] border-0 bg-white px-5 py-2.5 text-left text-[16px] leading-6 tracking-wide outline-none no-underline',
+  'hover:bg-[#F5F5F5] hover:underline hover:decoration-2 hover:underline-offset-2',
+  'focus:outline-none',
+  'focus-visible:underline focus-visible:decoration-2 focus-visible:underline-offset-2',
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2'
+);
 
   if (variant === 'dropdown') {
     return (
