@@ -21,6 +21,12 @@ const FooterResp = () => {
             <a href="https://idsk2.gov.sk/">
               IDSK2
             </a>
+            <a href="/mapa-stranok">
+              Mapa stránok
+            </a>
+            <a href="/navrhnut-komponent">
+              Navrhnúť komponent
+            </a>
           </div>
           <p className="mt-4">
             Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.
