@@ -167,10 +167,26 @@ export const idskRoutes = [
     },
 ];
 
+export const serviceRoutes = [
+  {
+    name: 'Mapa stránok',
+    link: '/mapa-stranok',
+  },
+  {
+    name: 'Vyhlásenie o prístupnosti',
+    link: '/vyhlasenie-o-pristupnosti',
+  },
+  {
+    name: 'Navrhnúť komponent',
+    link: '/navrhnut-komponent',
+  },
+];
+
 export const allRoutes = [
   ...idskRoutes,
   ...basicRoutes,
   ...pageRoutes,
+  ...serviceRoutes,
 ];
 
 export const createDropdownItems = (routes = []) =>
