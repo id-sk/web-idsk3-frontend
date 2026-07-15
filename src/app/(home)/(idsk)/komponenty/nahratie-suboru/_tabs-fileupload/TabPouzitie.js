@@ -12,7 +12,7 @@ import {
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4';
+  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
@@ -25,7 +25,7 @@ const TabPouzitie = () => (
             hint="Spresnite požiadavku na nahrávaný súbor."
             subtitle="Nahrajte súbor alebo ho sem presuňte."
             formatsText={<>Podporované formáty: <span className="font-bold">JPG, PNG, DOC, DOCX, PDF</span></>}
-            maxSizeText={<>Maximálna veľkosť súboru: <span className="font-bold">500 MB</span></>}
+            maxSizeText={<>Maximálna veľkosť súboru: <span className="font-bold">15 MB</span></>}
             buttonText="Vyberte súbory"
             required
           />
