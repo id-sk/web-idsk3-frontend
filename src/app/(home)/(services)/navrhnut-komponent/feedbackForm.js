@@ -388,7 +388,7 @@ export default function FeedbackForm() {
           Zámer vytvorenia nového komponentu alebo úpravy existujúceho komponentu
         </h1>
 
-        <p className="mt-6 text-[19px] leading-7 tracking-wide text-[#212121]">
+        <p className="mt-6 text-[19px] leading-7 tracking-wide text-[#212121] max-w-[935px]">
           Tento formulár slúži orgánom riadenia na zasielanie zámerov na
           vytvorenie nového alebo úpravu existujúceho komponentu dizajnového
           manuálu. Proces prebieha v súlade s{' '}
@@ -620,7 +620,7 @@ export default function FeedbackForm() {
               maxSizeText={
                 <>
                   Maximálna veľkosť súboru:{' '}
-                  <span className="font-bold">500 MB</span>
+                  <span className="font-bold">15 MB</span>
                 </>
               }
               buttonText="Vyberte súbor"
