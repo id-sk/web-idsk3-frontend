@@ -42,7 +42,6 @@ export const whatIsData = [
   { href: "/co-je/metodika", src: "/images/co-je-cards/metodika-ucd.svg", title: "Metodika UCD", description: "Metodika user-centered dizajnu (UCD) zabezpečí zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa - občana.", alt: "" },
   { href: "/co-je/navod-pre-dizajnerov", src: "/images/co-je-cards/navod-pre-dizajnerov.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK", alt: ""},
   { href: "/co-je/navod-pre-vyvojarov", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Návody pre vývojárov", description: 'Ak budete chcieť vytvoriť elektronickú službu pomocou IDSK, môžete využiť repozitár dostupný na GitHub-e.', alt: ""},
-  { href: "/co-je/cookies-policy", src: "/images/co-je-cards/navod-pre-vyvojarov.svg", title: "Cookies Policy", description: 'Spracúvanie súborov cookies na webovej stránke idsk.gov.sk.', alt: ""},
 ];
 
 export const homePageData = [

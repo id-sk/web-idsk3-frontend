@@ -12,7 +12,7 @@ const FooterResp = () => {
             Na tomto webovom sídle sa využívajú len nevyhnutné/technické cookies.
           </p>
           <div className="mt-4 flex max-w-[680px] flex-wrap gap-x-5 gap-y-2">
-            <a href="https://idsk.gov.sk/co-je/cookies-policy">
+            <a href="/cookies-policy">
               Informácie o spracúvaní súborov cookies
             </a>
             <a href="mailto:idsk@mirri.gov.sk">

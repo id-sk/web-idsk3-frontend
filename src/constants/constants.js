@@ -161,10 +161,6 @@ export const idskRoutes = [
         "name": "Návod pre vývojárov",
         "link": "/co-je/navod-pre-vyvojarov"
     },
-    {
-        "name": "Spracovanie cookies",
-        "link": "/co-je/cookies-policy"
-    },
 ];
 
 export const serviceRoutes = [
@@ -180,6 +176,10 @@ export const serviceRoutes = [
     name: 'Navrhnúť komponent',
     link: '/navrhnut-komponent',
   },
+  {
+    "name": "Spracovanie cookies",
+    "link": "cookies-policy"
+    },
 ];
 
 export const allRoutes = [
