@@ -9,7 +9,7 @@ const TabPouzitie = () => (
         <SectionBlock titleString="Použitie začiarkavacieho poľa">
             
             {/* Ukážka na bodkovanom pozadí */}
-            <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] py-7 my-6 px-4">
                     <Checkbox 
                         inputSize='large'

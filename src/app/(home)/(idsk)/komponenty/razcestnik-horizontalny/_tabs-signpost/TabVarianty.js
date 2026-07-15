@@ -13,7 +13,7 @@ const TabVarianty = () => (
         <SectionBlock titleString="Varianty a stavy">
             
             <H3>1. Základný rázcestník (bez ikoniek)</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[800px] px-4">
                     <Signpost 
                         heading="Tlačivá a formuláre" 
@@ -25,7 +25,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>2. S ikonkou napravo (napríklad šípka)</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[800px] px-4">
                     <Signpost 
                         heading="Pokračovať na ďalší krok" 
@@ -38,7 +38,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>3. S ikonkou naľavo</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[800px] px-4">
                     <Signpost 
                         heading="Metodické usmernenia" 
@@ -51,7 +51,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>4. S ikonkami na oboch stranách</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[800px] px-4">
                     <Signpost 
                         heading="Komponenty" 
@@ -66,7 +66,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>5. Skupina rázcestníkov (Grid zobrazenie)</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[800px] px-4">
                     <SignpostGroup columns={2}>
                         <Signpost heading="Rodina a vzťahy" href="/komponenty/razcestnik-horizontalny" arrowIcon={IconArrow}>
