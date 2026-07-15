@@ -1,128 +1,160 @@
 'use client';
 
 import React from 'react';
-import { Input } from '@eslovensko/idsk-react';
-import { SectionBlock, H3 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import TextInputCustom from '@/app/(home)/_components/inputs/textInputCustom';
+import {
+  SectionBlock,
+  H3,
+} from '@/app/(home)/_components/content-blocks/ContentBlocks';
+
+const ExampleFrame = ({ children }) => (
+  <div className="mb-8 mt-4 flex flex-col items-center gap-6 border-2 border-dashed border-[#9e9e9e] rounded-[10px] py-10">
+    {children}
+  </div>
+);
+
+const ExampleInputWrapper = ({ children }) => (
+  <div className="w-full max-w-[400px] px-4">
+    {children}
+  </div>
+);
 
 const TabVarianty = () => (
-    <div className="animate-fade-in text-black w-full min-w-0">
-        
-        <SectionBlock titleString="Varianty a stavy">
-            
-            <H3>1. Variant povinného a nepovinného textového poľa</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-povinne"
-                        inputSize='medium'
-                        name="priklad-povinne"
-                        label="Príklad povinného poľa"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-nepovinne"
-                        inputSize='medium'
-                        name="priklad-nepovinne"
-                        label="Príklad nepovinného poľa"
-                        optionalText="(nepovinné pole)"
-                        fullWidth={true}
-                    />
-                </div>
-            </div>
+  <div className="animate-fade-in w-full min-w-0 text-black">
+    <SectionBlock titleString="Varianty a stavy">
+      <H3>1. Variant povinného a nepovinného textového poľa</H3>
 
-            <H3>2. Variant chybového a neaktívneho textového poľa</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-chyba"
-                        inputSize='medium'
-                        name="priklad-chyba"
-                        label="Príklad chybového stavu"
-                        errorMsg="Chybový text"
-                        mandatory={true}
-                        error={true}
-                        fullWidth={true}
-                    />
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-disabled"
-                        inputSize='medium'
-                        name="priklad-disabled"
-                        label="Príklad neaktívneho stavu"
-                        optionalText="(nepovinné pole)"
-                        disabled={true}
-                        fullWidth={true}
-                    />
-                </div>
-            </div>
+      <ExampleFrame>
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-povinne"
+            inputSize="large"
+            name="priklad-povinne"
+            label="Príklad povinného poľa"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
 
-            <H3>3. Varianty textového poľa s podnadpisom, placeholderom a popisom</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-podnadpis"
-                        inputSize='medium'
-                        name="priklad-podnadpis"
-                        label="Príklad s podnadpisom"
-                        subtitle="Podnadpis textového poľa"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-placeholder"
-                        inputSize='medium'
-                        name="priklad-placeholder"
-                        label="Príklad s placeholderom"
-                        placeholder="Ján Novák"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-popis"
-                        inputSize='medium'
-                        name="priklad-popis"
-                        label="Príklad s popisným textom"
-                        caption="Popisný text"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-            </div>
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-nepovinne"
+            inputSize="large"
+            name="priklad-nepovinne"
+            label="Príklad nepovinného poľa"
+            optionalText="(nepovinné pole)"
+            fullWidth
+          />
+        </ExampleInputWrapper>
+      </ExampleFrame>
 
-            <H3>4. Variant dátového poľa veľký a malý</H3>
-            <div className="flex flex-col items-center gap-6 py-10 bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-velky"
-                        inputSize='large'
-                        name="priklad-velky"
-                        label="Variant textového poľa - veľký"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-                <div className="w-full max-w-[400px] px-4">
-                    <Input 
-                        id="input-priklad-maly"
-                        inputSize='medium'
-                        name="priklad-maly"
-                        label="Variant textového poľa - malý"
-                        mandatory={true}
-                        fullWidth={true}
-                    />
-                </div>
-            </div>
+      <H3>2. Variant chybového a neaktívneho textového poľa</H3>
 
-        </SectionBlock>
-    </div>
+      <ExampleFrame>
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-chyba"
+            inputSize="large"
+            name="priklad-chyba"
+            label="Príklad chybového stavu"
+            error
+            errorMsg="Chybový text"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-disabled"
+            inputSize="large"
+            name="priklad-disabled"
+            label="Príklad neaktívneho stavu"
+            optionalText="(nepovinné pole)"
+            disabled
+            fullWidth
+          />
+        </ExampleInputWrapper>
+      </ExampleFrame>
+
+      <H3>3. Varianty textového poľa s podnadpisom, placeholderom a popisom</H3>
+
+      <ExampleFrame>
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-podnadpis"
+            inputSize="large"
+            name="priklad-podnadpis"
+            label="Príklad s podnadpisom"
+            subtitle="Podnadpis textového poľa"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-placeholder"
+            inputSize="large"
+            name="priklad-placeholder"
+            label="Príklad s placeholderom"
+            placeholder="Ján Novák"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-popis"
+            inputSize="large"
+            name="priklad-popis"
+            label="Príklad s popisným textom"
+            description="Popisný text"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+      </ExampleFrame>
+
+      <H3>4. Varianty veľkostí textového poľa</H3>
+
+      <ExampleFrame>
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-velky"
+            inputSize="large"
+            name="priklad-velky"
+            label="Variant textového poľa – veľký"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-stredny"
+            inputSize="medium"
+            name="priklad-stredny"
+            label="Variant textového poľa – stredný"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+
+        <ExampleInputWrapper>
+          <TextInputCustom
+            id="input-priklad-maly"
+            inputSize="small"
+            name="priklad-maly"
+            label="Variant textového poľa – malý"
+            mandatory
+            fullWidth
+          />
+        </ExampleInputWrapper>
+      </ExampleFrame>
+    </SectionBlock>
+  </div>
 );
 
 export default TabVarianty;
