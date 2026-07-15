@@ -6,6 +6,7 @@ import React, { forwardRef, useId, Children, cloneElement } from 'react';
 // 1. OBALOVACÍ KOMPONENT (Skupina)
 // ============================================================================
 export const RadioButtonGroup = ({
+  id,
   legend,
   hint,
   mandatory = true,
@@ -14,9 +15,10 @@ export const RadioButtonGroup = ({
   className,
   children
 }) => {
-  const uniqueId = useId();
-  const hintId = hint ? `group-hint-${uniqueId}` : undefined;
-  const errorId = errorMsg ? `group-error-${uniqueId}` : undefined;
+  const generatedId = useId();
+  const groupId = id || `radio-group-${generatedId}`;
+  const hintId = hint ? `${groupId}-hint` : undefined;
+  const errorId = errorMsg ? `${groupId}-error` : undefined;
   const hasError = !!errorMsg;
 
   const groupDescribedBy = [
@@ -37,6 +39,7 @@ export const RadioButtonGroup = ({
 
   return (
     <fieldset
+      id={groupId}
       className={`flex flex-col ${className || ''}`}
       aria-required={mandatory ? 'true' : undefined}
       aria-describedby={groupDescribedBy}

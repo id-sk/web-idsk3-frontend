@@ -41,6 +41,8 @@ const HeaderMenuItemCustom = ({
   };
 
   useEffect(() => {
+    if (!isOpen) return;
+
     const handleOutsideClick = (event) => {
       if (wrapperRef.current && !wrapperRef.current.contains(event.target)) {
         setOpen(false);
@@ -52,7 +54,7 @@ const HeaderMenuItemCustom = ({
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
-  }, []);
+  }, [isOpen]);
 
   useEffect(() => {
     if (!isOpen) return;

@@ -39,12 +39,12 @@ const getFileExtension = (fileName) => {
   return `.${parts[parts.length - 1].toLowerCase()}`;
 };
 
-const validateFile = ({ file, accept, maxSize }) => {
+const validateFile = ({ file, accept, maxSize, acceptedFormatsLabel }) => {
   const extension = getFileExtension(file.name);
   const acceptedExtensions = getAcceptedExtensions(accept);
 
   if (acceptedExtensions.length > 0 && !acceptedExtensions.includes(extension)) {
-    return 'Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF.';
+    return `Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte ${acceptedFormatsLabel}.`;
   }
 
   if (file.size > maxSize) {
@@ -377,6 +377,7 @@ const FileUploadCustom = ({
   hint = 'Spresnite požiadavku na nahrávaný súbor.',
   subtitle = '',
   formatsText = 'Podporované formáty: JPG, PNG, DOC, DOCX, PDF',
+  acceptedFormatsLabel = 'JPG, PNG, DOC, DOCX alebo PDF',
   maxSizeText = 'Maximálna veľkosť súboru: 500 MB',
   buttonText = 'Vyberte súbory',
   filesTitle = 'Nahrané súbory',
@@ -449,7 +450,12 @@ const FileUploadCustom = ({
 
   const createFileRows = (selectedFiles) =>
     selectedFiles.map((file, index) => {
-      const validationError = validateFile({ file, accept, maxSize });
+      const validationError = validateFile({
+        file,
+        accept,
+        maxSize,
+        acceptedFormatsLabel,
+      });
 
       return {
         id: `${inputId}-${Date.now()}-${index}`,
