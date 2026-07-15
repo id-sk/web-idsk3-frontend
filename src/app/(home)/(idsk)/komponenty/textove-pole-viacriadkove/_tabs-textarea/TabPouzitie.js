@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { TextField } from '@eslovensko/idsk-react'; 
+import TextareaCustom from '@/app/(home)/_components/inputs/textareaCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { SectionBlock, Text, Ul } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
@@ -10,16 +10,16 @@ const TabPouzitie = () => (
         
         <SectionBlock titleString="Použitie viacriadkového textového poľa">
             
-            <div className="flex justify-center bg-[#FDFDFD] bg-[radial-gradient(circle,_#4B4B4B40_1px,_transparent_1px)] bg-[size:18px_18px] rounded-sm mb-8 mt-4">
+            <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[500px] py-7 my-6 px-4">
-                    <TextField 
+                    <TextareaCustom
                         id="textarea-priklad"
-                        inputSize='large'
-                        name="meno"
+                        name="textarea-priklad"
                         label="Príklad viacriadkového textového poľa"
+                        mandatory
+                        fullWidth
+                        maxLength={300}
                         placeholder="Príklad placeholderu"
-                        mandatory={true}
-                        fullWidth={true}
                     />
                 </div>
             </div>
