@@ -100,7 +100,7 @@ export const InformationBanner = ({
       aria-labelledby={titleId}
       aria-label={!title ? (ariaLabel || `Informačná lišta typu ${variant}`) : undefined}
       className={classNames(
-        'relative flex items-center overflow-hidden rounded-md border-[2px] transition-all duration-300 animate-fade-in',
+        'max-w-[740px] relative flex items-center overflow-hidden rounded-md border-[2px] transition-all duration-300 animate-fade-in',
         style.bg,
         style.border,
         type === 'banner' ? 'p-4 sm:px-6 sm:py-5' : 'py-5 px-4 w-full max-w-7xl mx-auto',

@@ -3,6 +3,9 @@
 import React from 'react';
 
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
+
+
 
 import {
   SectionBlock,
@@ -42,7 +45,7 @@ const TabVarianty = () => (
             ariaLabel="Oznam"
             type="banner"
             variant="information"
-            hideCloseButton={false}
+            hideCloseButton={true}
           >
             <p>
               Pre rýchlejšie vybavenie žiadosti odporúčame priložiť doklad o
@@ -66,7 +69,7 @@ const TabVarianty = () => (
             ariaLabel="Chyba"
             type="banner"
             variant="alert"
-            hideCloseButton={false}
+            hideCloseButton={true}
           >
             <p>
               Žiadosť nie je možné odoslať, pretože chýbajú povinné údaje.
@@ -90,7 +93,7 @@ const TabVarianty = () => (
             ariaLabel="Upozornenie"
             type="banner"
             variant="warning"
-            hideCloseButton={false}
+            hideCloseButton={true}
           >
             <p>
               Ak prílohy nenahráte v tejto žiadosti, bude potrebné ich doložiť
@@ -114,7 +117,7 @@ const TabVarianty = () => (
             ariaLabel="Úspech"
             type="banner"
             variant="success"
-            hideCloseButton={false}
+            hideCloseButton={true}
           >
             <p>
               Formulár bol úspešne uložený. Vypĺňanie môžete dokončiť neskôr.
@@ -123,11 +126,10 @@ const TabVarianty = () => (
         </div>
       </div>
 
-      <H3>5. Statická lišta bez zatvorenia</H3>
+      <H3>5. Informačná lišta s tlačidlom</H3>
 
       <Text className="mb-4">
-        Ak je informačná lišta pevnou súčasťou obsahu stránky, nemusí obsahovať
-        tlačidlo na zatvorenie.
+        Informačná lišta môže využívať aj tlačidlo ktoré umožní používateľovi vykonať požadovanú akciu.
       </Text>
 
       <div className={exampleWrapperClass}>
@@ -138,6 +140,16 @@ const TabVarianty = () => (
             type="banner"
             variant="information"
             hideCloseButton={true}
+            actionButton={
+            <ButtonCustom
+              href="/kontakt"
+              variant="tertiary"
+              status="basic"
+              size="medium"
+            >
+              Akcia
+            </ButtonCustom>
+            }
           >
             <p>
               Služba bude dočasne nedostupná v sobotu od 22:00 do 23:30.
