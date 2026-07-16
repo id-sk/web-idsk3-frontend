@@ -2,11 +2,9 @@
 
 import { usePathname } from 'next/navigation';
 import BreadcrumbCustom from './breadcrumbCustom';
-import { allRoutes } from '@/constants/constants'; // uprav cestu podľa seba
+import { allRoutes } from '@/constants/constants';
 
 const sectionRoutes = {
-  '/co-je': 'Čo je IDSK',
-  '/zaklady-principy': 'Základy a princípy',
   '/komponenty': 'Komponenty',
   '/vzory': 'Vzory',
 };

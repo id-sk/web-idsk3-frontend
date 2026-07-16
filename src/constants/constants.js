@@ -94,10 +94,10 @@ export const pageRoutes = [
 ];
 
 export const basicRoutes = [
-    {
-        "name": "Základy a princípy",
-        "link": "/zaklady-principy"
-    },
+    // {
+    //     "name": "Základy a princípy",
+    //    "link": "/zaklady-principy"
+    // },
     {
         "name": "Typografia",
         "link": "/zaklady-principy/typografia"
@@ -133,10 +133,10 @@ export const basicRoutes = [
 ];
 
 export const idskRoutes = [
-    {
-        "name": "Čo je IDSK",
-        "link": "/co-je"
-    },
+    // {
+    //     "name": "Čo je IDSK",
+    //     "link": "/co-je"
+    // },
     // {
     //     "name": "Github",
     //     "link": "/co-je/github"
@@ -202,10 +202,7 @@ export const headerNavigationItems = [
     href: '/co-je',
     variant: 'dropdown',
     dropdownItems: [
-      {
-        label: 'Prehľad',
-        href: '/co-je',
-      },
+
       ...createDropdownItems(idskRoutes),
     ],
   },
@@ -215,25 +212,14 @@ export const headerNavigationItems = [
     href: '/zaklady-principy',
     variant: 'dropdown',
     dropdownItems: [
-      {
-        label: 'Prehľad',
-        href: '/zaklady-principy',
-      },
-      ...createDropdownItems(basicRoutes),
+        ...createDropdownItems(basicRoutes),
     ],
   },
   {
     id: 'komponenty',
     label: 'Komponenty',
     href: '/komponenty',
-    variant: 'dropdown',
-    dropdownItems: [
-      {
-        label: 'Zoznam komponentov',
-        href: '/komponenty',
-      },
-      ...createDropdownItems(pageRoutes),
-    ],
+    variant: 'link',
   },
   {
     id: 'vzory',

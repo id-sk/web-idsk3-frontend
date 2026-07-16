@@ -46,10 +46,10 @@ export const Signpost = ({
   const isExternal = target === '_blank' || isExternalHref(href);
 
   const linkClassName = cx(
-    'group block w-full rounded-[10px] border-2 border-[#BDBDBD] bg-white p-5 tracking-wide no-underline',
-    'hover:ring-[4px] hover:ring-[#757575]',
-    'focus:outline-none',
-    'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2',
+      'group block w-full rounded-[10px] border-2 border-[#BDBDBD] bg-white p-5 tracking-wide no-underline',
+      'hover:ring-[4px] hover:ring-[#757575]',
+      'focus:outline-none',
+      'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2',
     className
   );
 
@@ -58,7 +58,7 @@ export const Signpost = ({
       <div className="flex items-start justify-between gap-4">
         <div className="flex min-w-0 items-start gap-3">
           {icon && (
-            <div className="mt-1 shrink-0 text-[#0B4199] group-focus-visible:text-[#0B0C0C]">
+            <div className="mt-1 shrink-0 text-[#0B4199]">
               {renderIcon(icon, 'h-6 w-6')}
             </div>
           )}
@@ -68,7 +68,6 @@ export const Signpost = ({
               'text-[19px] font-bold leading-7 text-[#0B4199] underline',
               'sm:text-[24px] sm:leading-9',
               'group-hover:decoration-[3px] group-hover:underline-offset-2',
-              'group-focus-visible:text-[#0B0C0C]'
             )}
           >
             {heading}

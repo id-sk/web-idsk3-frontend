@@ -106,7 +106,7 @@ export default function HomePage() {
             
             <div className="mt-10 self-start">
               <Link 
-                href="/navrhnut-stranku" 
+                href="/navrhnut-komponent" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 tabIndex={-1}
@@ -118,22 +118,11 @@ export default function HomePage() {
                   aria-label="Poslať zámer (otvorí sa v novom okne)"
                   iconRight={
                     <svg 
-                      className="w-5 h-5 shrink-0" 
-                      fill="none" 
-                      stroke="currentColor" 
-                      viewBox="0 0 24 24" 
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path 
-                        strokeLinecap="round" 
-                        strokeLinejoin="round" 
-                        strokeWidth={2} 
-                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
-                      />
+                      xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-4 h-4"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
                   }
                 >
-                  Figma IDSK 3.1.0
+                  Poslať zámer
                 </ButtonCustom>
               </Link>
             </div>
@@ -145,7 +134,7 @@ export default function HomePage() {
       {/* Spodná sekcia - Hlavný rozcestník s využitím SectionBlock */}
       <div className="page-container pb-12">
         <SectionBlock>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-2">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
             {homePageData.map((card, index) => (
               <Signpost
                 key={`home-signpost-${index}`}

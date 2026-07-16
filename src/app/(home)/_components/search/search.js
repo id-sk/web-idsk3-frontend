@@ -47,12 +47,10 @@ const Search = ({ pageDetails = [] }) => {
 
   const normalizedSearchField = normalizeForSearch(searchField);
 
-  const filteredPages =
-    pageDetails?.filter(
-      (page) =>
-        normalizeForSearch(page.name) !== normalizeForSearch('Zoznam komponentov') &&
-        normalizeForSearch(page.name).includes(normalizedSearchField)
-    ) || [];
+ const filteredPages =
+  pageDetails?.filter((page) =>
+    normalizeForSearch(page.name).includes(normalizedSearchField)
+  ) || [];
 
   const showDropdown = searchField.length > 0 && isDropdownOpen;
 
