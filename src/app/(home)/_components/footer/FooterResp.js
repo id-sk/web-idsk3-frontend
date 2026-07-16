@@ -27,6 +27,9 @@ const FooterResp = () => {
             <a href="/navrhnut-komponent">
               Navrhnúť komponent
             </a>
+            <a href="/vyhlasenie-o-pristupnosti">
+              Vyhlásenie o prístupnosti            
+            </a>
           </div>
           <p className="mt-4">
             Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja a informatizácie SR.
