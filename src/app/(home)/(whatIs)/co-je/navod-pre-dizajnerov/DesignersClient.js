@@ -333,7 +333,7 @@ const TabNavodPreDizajnerov = () => (
         <li>Prehliadajte jednotlivé položky na stránke a vyberte variant, ktorý potrebujete.</li>
       </Ul>
       <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-        <Image src="/images/designers/varianty_priklad.png" width={1100} height={400} alt="Ako pracovať s komponentom" className="w-full h-auto md:h-[400px] object-cover" />
+        <Image src="/images/info-lista/info_lista1.png" width={1100} height={400} alt="Ako pracovať s komponentom" className="w-full h-auto md:h-[400px] object-cover" />
       </div>
     </section>
 
@@ -414,29 +414,47 @@ const TabNavodPreNedizajnerov = () => (
         </Ul>
       </div>
       
-      <div className="flex flex-col gap-4">
-        <H4>Zmena variantov (stavov):</H4>
-        <Text>Komponenty môžu mať viac verzií, tzv. varianty (napríklad informačný, úspešný, upozorňovací, oznamovací banner). Prepínate ich v pravom paneli.</Text>
-        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-          <Image src="/images/designers/nedizajneri3.png" width={1100} height={400} alt="Ako si meniť varianty" className="w-full h-auto md:h-[400px] object-cover" />
-        </div>
-      </div>
-    </section>
+     <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
+  <div className="flex flex-col gap-4">
+    <H4>Zmena variantov (stavov):</H4>
 
-    <InformationBanner 
-      type="banner" 
-      variant="warning" 
-      hideCloseButton={true}
-      title="Čomu sa vyhnúť"
-    >
-      <div className="flex flex-col gap-4">
-        <Ul>
-          <li>Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým odpojí od zdrojovej knižnice a prestane sa aktualizovať.</li>
-          <li>Neupravujte štruktúru vrstiev vo vnútri komponentu. Nemeňte textové štýly, rozmery ani farby, ktoré sú pevne nastavené v dizajnovom systéme.</li>
-          <li>Nekopírujte komponenty do súborov, v ktorých knižnica IDSK nie je aktivovaná. Komponenty tam môžu stratiť svoje prepojenie.</li>
-        </Ul>
-      </div>
-    </InformationBanner>
+    <Text>
+      Komponenty môžu mať viac verzií, tzv. varianty (napríklad informačný,
+      úspešný, upozorňovací, oznamovací banner). Prepínate ich v pravom paneli.
+    </Text>
+
+    <div className="flex flex-col gap-3">
+      <H4> Čomu sa vyhnúť:</H4>
+
+      <Ul>
+        <li>
+          Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým
+          odpojí od zdrojovej knižnice a prestane sa aktualizovať.
+        </li>
+        <li>
+          Neupravujte štruktúru vrstiev vo vnútri komponentu. Nemeňte textové
+          štýly, rozmery ani farby, ktoré sú pevne nastavené v dizajnovom systéme.
+        </li>
+        <li>
+          Nekopírujte komponenty do súborov, v ktorých knižnica IDSK nie je
+          aktivovaná. Komponenty tam môžu stratiť svoje prepojenie.
+        </li>
+      </Ul>
+    </div>
+  </div>
+
+  <div className="mt-10 w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
+    <Image
+      src="/images/info-lista/info_lista1.png"
+      width={700}
+      height={560}
+      alt="Ako si meniť varianty"
+      sizes="(max-width: 1024px) 100vw, 420px"
+      className="h-auto w-full object-contain"
+    />
+  </div>
+</div>
+    </section>
 
     <section className="flex flex-col gap-4">
       <H3>Oprava chýb</H3>
