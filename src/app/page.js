@@ -3,15 +3,21 @@
 import Image from 'next/image'; 
 import Link from "next/link";
 import { homePageData } from "@/constants/data";
-import ArticleCard from '@/app/(home)/_components/article/articleCard';
+import { Signpost } from '@/app/(home)/_components/signpost/signpostCustom';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 import { SectionBlock, Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+
+const ArrowRightIcon = ({ className = '' }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
+);
 
 export default function HomePage() {
   return (
     <>
       {/* Úvodná predstavenie dizajnového systému */}
-      <section className="w-full bg-white pt-16 pb-20">
+      <section className="w-full bg-white pt-16 pb-10">
         <div className="page-container flex max-md:flex-col gap-5">
           
           <div className="flex flex-col w-[67%] max-md:w-full">
@@ -73,20 +79,83 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      <section className="w-full bg-[#EFF5FE] pt-16 pb-10">
+        <div className="page-container flex max-md:flex-col gap-5">
+
+          {/* Pravá ilustračná sekcia */}
+          <div className="w-[33%] max-md:w-full mt-2 flex items-center justify-center">
+            <Image
+              src="/images/home-page/ilustration_home_page.png"
+              className="w-full h-auto object-contain"
+              width={300}
+              height={240}
+              alt=""
+              priority
+            />
+          </div>
+
+          <div className="flex flex-col w-[67%] max-md:w-full">
+            <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
+              Potrebujete nový komponent alebo zmeniť <br /> existujúci?
+            </h1>
+            
+            <Text className="mt-7 max-md:max-w-full">
+              Pošlite nám svoj zámer. Posúdime ho a pomôžeme vám nájsť vhodné riešenie v súlade s IDSK.
+            </Text>
+            
+            <div className="mt-10 self-start">
+              <Link 
+                href="/navrhnut-stranku" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                tabIndex={-1}
+              >
+                <ButtonCustom
+                  variant="secondary"
+                  status="basic"
+                  size="large"
+                  aria-label="Poslať zámer (otvorí sa v novom okne)"
+                  iconRight={
+                    <svg 
+                      className="w-5 h-5 shrink-0" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                      />
+                    </svg>
+                  }
+                >
+                  Figma IDSK 3.1.0
+                </ButtonCustom>
+              </Link>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
       {/* Spodná sekcia - Hlavný rozcestník s využitím SectionBlock */}
       <div className="page-container pb-12">
         <SectionBlock>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7 mt-2">
             {homePageData.map((card, index) => (
-              <ArticleCard 
-                key={`home-card-${index}`}
+              <Signpost
+                key={`home-signpost-${index}`}
                 href={card.href}
-                src={card.src}
-                title={card.title}
-                description={card.description}
-                alt={card.alt || ""}
-                orientation="vertical"
-              />
+                heading={card.title}
+                headingLevel="h3"
+                arrowIcon={<ArrowRightIcon />}
+              >
+                {card.description}
+              </Signpost>
             ))}
           </div>
         </SectionBlock>
