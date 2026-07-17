@@ -42,6 +42,7 @@ const HeaderDrawerCustom = ({
   const reactId = useId();
   const instanceId = reactId.replace(/:/g, '');
   const drawerTitleId = `idsk-header-drawer-title-${instanceId}`;
+  const navTitleId = `idsk-header-drawer-nav-title-${instanceId}`;
 
   const [searchValue, setSearchValue] = useState('');
   const [openSections, setOpenSections] = useState({});
@@ -88,19 +89,23 @@ const HeaderDrawerCustom = ({
   const renderDrawerItem = (item, index) => {
     const itemKey = item.id ?? item.href ?? item.label ?? index;
     const hasChildren = item.children?.length > 0;
-    const isSectionOpen = hasChildren && (openSections[itemKey] ?? item.active);
+    const hasActiveChild = hasChildren && item.children.some((child) => child.active);
+
+    const isCategoryHighlighted = item.active || hasActiveChild;
+    const shouldShowCategoryStripe = isCategoryHighlighted && !hasActiveChild;
+
+    const isSectionOpen = hasChildren && (openSections[itemKey] ?? isCategoryHighlighted);
 
     const outerClass = cx(
       'group relative flex w-full cursor-pointer border-0 bg-transparent p-0 text-left no-underline',
-      'focus:outline-none',
-      item.active && !hasChildren && 'border-l-[3px] border-[#0B4199]'
+      'focus:outline-none'
     );
 
     const mainContentClass = cx(
       'mx-4 flex min-h-12 w-[calc(100%-32px)] items-center gap-2 px-3 py-3 text-[16px] font-bold leading-6 text-[#0B4199]',
       'group-hover:rounded-[5px] group-hover:ring-[4px] group-hover:ring-[#757575]',
       'group-focus:rounded-[5px] group-focus:outline group-focus:outline-[3px] group-focus:outline-[#D96E00] group-focus:outline-offset-2',
-      item.active && !hasChildren && 'bg-[#EFF5FE]'
+      isCategoryHighlighted && 'bg-[#EFF5FE]'
     );
 
     if (hasChildren) {
@@ -112,7 +117,14 @@ const HeaderDrawerCustom = ({
             onClick={() => toggleSection(itemKey)}
             aria-expanded={isSectionOpen}
           >
-            <span className={cx(mainContentClass, item.active && 'bg-[#EFF5FE]')}>
+            {shouldShowCategoryStripe && (
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute left-[18px] top-0 z-[60] h-full w-[3px] bg-[#0B4199]"
+              />
+            )}
+
+            <span className={mainContentClass}>
               <span>{item.label}</span>
 
               <span aria-hidden="true" className="ml-auto flex shrink-0 items-center">
@@ -182,13 +194,20 @@ const HeaderDrawerCustom = ({
       return (
         <li key={itemKey} className="flex w-full">
           <a
-            href={item.href}
-            className={outerClass}
-            onClick={item.onClick}
-            aria-current={item.active ? 'page' : undefined}
-          >
-            {content}
-          </a>
+              href={item.href}
+              className={outerClass}
+              onClick={item.onClick}
+              aria-current={item.active ? 'page' : undefined}
+            >
+              {shouldShowCategoryStripe && (
+                <span
+                  aria-hidden="true"
+                  className="pointer-events-none absolute left-[18px] top-0 z-[60] h-full w-[3px] bg-[#0B4199]"
+                />
+              )}
+
+              {content}
+            </a>
         </li>
       );
     }
@@ -392,9 +411,15 @@ const HeaderDrawerCustom = ({
                 />
               </div>
 
-              <div className="flex flex-col gap-4 pb-8">
+              <nav
+                className="flex flex-col gap-4 pb-8"
+                aria-labelledby={navTitleId}
+              >
                 <div className="flex items-center px-4">
-                  <h3 className="text-[24px] font-bold leading-8 text-[#212121]">
+                  <h3
+                    id={navTitleId}
+                    className="text-[24px] font-bold leading-8 text-[#212121]"
+                  >
                     {navLabel}
                   </h3>
                 </div>
@@ -402,7 +427,7 @@ const HeaderDrawerCustom = ({
                 <ul className="m-0 flex list-none flex-col gap-1 p-0" role="list">
                   {navItems.map(renderDrawerItem)}
                 </ul>
-              </div>
+              </nav>
             </>
           )}
         </div>

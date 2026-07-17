@@ -394,6 +394,9 @@ export default function FeedbackForm() {
           manuálu. Proces prebieha v súlade s{' '}
           <a
             href="/metodicke-usmernenie-051024-2026-okpspi.pdf"
+            type="application/pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="
               text-[#0B4199] underline underline-offset-2
               hover:text-[#126DFF] hover:decoration-2
@@ -401,6 +404,7 @@ export default function FeedbackForm() {
             "
           >
             Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI
+            <span className="sr-only">, súbor PDF, otvorí sa v novom okne</span>
           </a>
           .
         </p>
@@ -471,7 +475,7 @@ export default function FeedbackForm() {
               type="email"
               inputSize="medium"
               label="E-mail"
-              subtitle="Zadajte vo formáte xxx@yyy.sk"
+              subtitle="Zadajte vo formáte xxx@yyy.sk."
               placeholder="napr. jana.slovakova@slovensko.sk"
               mandatory
               fullWidth
@@ -517,7 +521,7 @@ export default function FeedbackForm() {
                 name="nazov-komponentu"
                 inputSize="medium"
                 label="Názov komponentu"
-                subtitle="Uveďte návrh názvu nového komponentu, alebo presný názov existujúceho komponentu z knižnice IDSK"
+                subtitle="Uveďte návrh názvu nového komponentu, alebo presný názov existujúceho komponentu z knižnice IDSK."
                 mandatory
                 placeholder="napr. Tlačidlo"
                 description={
@@ -592,7 +596,7 @@ export default function FeedbackForm() {
                 label="Grafický návrh (Figma/Príloha)"
                 placeholder="napr. https://www.figma.com/design/..."
                 mandatory
-                subtitle="Vložte priamy odkaz na projekt v nástroji Figma (s povolením na zobrazenie)"
+                subtitle="Vložte priamy odkaz na projekt v nástroji Figma (s povolením na zobrazenie)."
                 fullWidth
                 value={values.url}
                 error={!!errorMap.url}

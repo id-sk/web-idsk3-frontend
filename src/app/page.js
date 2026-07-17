@@ -96,9 +96,9 @@ export default function HomePage() {
           </div>
 
           <div className="flex flex-col w-[67%] max-md:w-full">
-            <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
+            <h2 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
               Potrebujete nový komponent alebo zmeniť <br /> existujúci?
-            </h1>
+            </h2>
             
             <Text className="mt-7 max-md:max-w-full">
               Pošlite nám svoj zámer. Posúdime ho a pomôžeme vám nájsť vhodné riešenie v súlade s IDSK.
@@ -133,21 +133,31 @@ export default function HomePage() {
 
       {/* Spodná sekcia - Hlavný rozcestník s využitím SectionBlock */}
       <div className="page-container pb-12">
-        <SectionBlock>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
-            {homePageData.map((card, index) => (
-              <Signpost
-                key={`home-signpost-${index}`}
-                href={card.href}
-                heading={card.title}
-                headingLevel="h3"
-                arrowIcon={<ArrowRightIcon />}
-              >
-                {card.description}
-              </Signpost>
-            ))}
-          </div>
-        </SectionBlock>
+        <section
+            aria-labelledby="zacnite-s-idsk"
+            className="page-container pb-12 pt-16"
+          >
+            <h2
+              id="zacnite-s-idsk"
+              className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full self-center"
+            >
+              Začnite s IDSK
+            </h2>
+
+            <div className="mt-8 grid grid-cols-1 gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3">
+              {homePageData.map((card, index) => (
+                <Signpost
+                  key={`home-signpost-${index}`}
+                  href={card.href}
+                  heading={card.title}
+                  headingLevel="h3"
+                  arrowIcon={<ArrowRightIcon />}
+                >
+                  {card.description}
+                </Signpost>
+              ))}
+            </div>
+          </section>
       </div>
     </>
   );
