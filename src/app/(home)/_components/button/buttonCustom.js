@@ -26,7 +26,7 @@ const ButtonCustom = forwardRef(({
   const colors = {
     blue: {
       base: '#126dff',
-      hover: '#072c66',
+      hover: '#0B4199',
       active: '#072c66',
       light: '#eff5fe',
     },

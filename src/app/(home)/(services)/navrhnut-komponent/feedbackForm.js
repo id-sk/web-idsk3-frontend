@@ -68,9 +68,9 @@ const CopyIcon = ({ className = '' }) => (
 
 const RequiredHint = () => (
   <p className="mt-8 text-[16px] leading-6 text-[#757575]">
-    Povinné polia sú označené hviezdičkou ({' '}
+    Povinné polia sú označené hviezdičkou ({''}
     <span aria-hidden="true" className="text-[#C3112B]">
-      *
+    *
     </span>
     )
   </p>
