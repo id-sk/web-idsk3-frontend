@@ -135,7 +135,7 @@ export default function HomePage() {
       <div className="page-container pb-12">
         <section
             aria-labelledby="zacnite-s-idsk"
-            className="page-container pb-12 pt-16"
+            className="pb-12 pt-16"
           >
             <h2
               id="zacnite-s-idsk"
