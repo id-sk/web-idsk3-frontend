@@ -12,6 +12,7 @@ import {
 } from '@/app/(home)/_components/inputs/radioButtonCustom';
 import FileUploadCustom from '@/app/(home)/_components/inputs/fileUploadCustom';
 import ErrorSummaryCustom from '@/app/(home)/_components/error-summary/errorSummaryCustom';
+import { submitFeedbackForm } from './_lib/submitFeedbackForm';
 
 const initialValues = {
   organizacia: '',
@@ -82,23 +83,12 @@ const validateEmail = (value) => {
   return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 };
 
-const getCurrentDateLabel = () =>
-  new Intl.DateTimeFormat('sk-SK', {
-    day: 'numeric',
-    month: 'long',
-    year: 'numeric',
-    hour: 'numeric',
-    minute: '2-digit',
-  }).format(new Date());
-
-const createReferenceNumber = () =>
-  `IDSK-${Math.floor(100000 + Math.random() * 900000)}`;
-
 export default function FeedbackForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState([]);
   const [successData, setSuccessData] = useState(null);
   const [copied, setCopied] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const errorMap = useMemo(
     () =>
@@ -223,6 +213,8 @@ export default function FeedbackForm() {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    if (isSubmitting) return;
+
     const isValid = validateForm();
 
     if (!isValid) {
@@ -233,25 +225,36 @@ export default function FeedbackForm() {
       return;
     }
 
-    /*
-      Sem potom príde reálne napojenie na API route, napríklad:
+    setIsSubmitting(true);
 
-      await fetch('/api/spatna-vazba', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(values),
+    try {
+      const result = await submitFeedbackForm(values);
+
+      setSuccessData({
+        nazovKomponentu: values.nazovKomponentu,
+        email: values.email,
+        datumPrijatia: result.datumPrijatia,
+        referencneCislo: result.referencneCislo,
       });
-    */
 
-    setSuccessData({
-      nazovKomponentu: values.nazovKomponentu,
-      email: values.email,
-      datumPrijatia: getCurrentDateLabel(),
-      referencneCislo: createReferenceNumber(),
-    });
+      setErrors([]);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } catch (error) {
+      setErrors(
+        error.errors || [
+          {
+            id: 'odoslat-zamer',
+            message: error.message || 'Formulár sa nepodarilo odoslať.',
+          },
+        ]
+      );
 
-    setErrors([]);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.setTimeout(() => {
+        document.getElementById('form-error-summary')?.focus();
+      }, 0);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleCopyEmail = async () => {
@@ -654,12 +657,14 @@ export default function FeedbackForm() {
 
           <div>
             <ButtonCustom
+              id="odoslat-zamer"
               type="submit"
               variant="primary"
               status="basic"
               size="large"
+              disabled={isSubmitting}
             >
-              Odoslať zámer
+              {isSubmitting ? 'Odosielam zámer' : 'Odoslať zámer'}
             </ButtonCustom>
           </div>
         </form>
