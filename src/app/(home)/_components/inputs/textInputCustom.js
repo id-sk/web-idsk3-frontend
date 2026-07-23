@@ -23,6 +23,7 @@ const TextInputCustom = forwardRef(
       id,
       name,
       type = 'text',
+      autoComplete,
       label,
       subtitle,
       description,
@@ -118,6 +119,7 @@ const TextInputCustom = forwardRef(
             ref={ref}
             name={name}
             type={type}
+            autoComplete={autoComplete}
             required={isRequired}
             aria-required={isRequired ? 'true' : undefined}
             disabled={disabled}

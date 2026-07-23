@@ -433,6 +433,7 @@ export default function FeedbackForm() {
             <TextInputCustom
               id="organizacia"
               name="organizacia"
+              autoComplete="organization"
               inputSize="medium"
               label="Názov inštitúcie"
               placeholder="napr. Sociálna poisťovňa"
@@ -447,6 +448,7 @@ export default function FeedbackForm() {
             <TextInputCustom
               id="meno"
               name="meno"
+              autoComplete="given-name"
               inputSize="medium"
               label="Meno kontaktnej osoby"
               placeholder="napr. Jana"
@@ -461,6 +463,7 @@ export default function FeedbackForm() {
             <TextInputCustom
               id="priezvisko"
               name="priezvisko"
+              autoComplete="family-name"
               inputSize="medium"
               label="Priezvisko kontaktnej osoby"
               placeholder="napr. Slováková"
@@ -476,6 +479,7 @@ export default function FeedbackForm() {
               id="email"
               name="email"
               type="email"
+              autoComplete="email"
               inputSize="medium"
               label="E-mail"
               subtitle="Zadajte vo formáte xxx@yyy.sk."
@@ -595,6 +599,7 @@ export default function FeedbackForm() {
                 id="url"
                 name="url"
                 type="url"
+                autoComplete="url"
                 inputSize="medium"
                 label="Grafický návrh (Figma/Príloha)"
                 placeholder="napr. https://www.figma.com/design/..."

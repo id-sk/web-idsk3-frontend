@@ -27,7 +27,7 @@ const SidebarLink = ({ href, children }) => {
         aria-current={isActive ? 'page' : undefined}
         className={cx(
           'block py-2 pl-[16px] pr-3 tracking-wide select-none outline-none',
-          isActive ? 'font-semibold text-regal-blue' : 'text-black'
+          isActive ? 'text-regal-blue' : 'text-black'
         )}
       >
         {children}

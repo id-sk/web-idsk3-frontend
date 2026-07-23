@@ -86,23 +86,27 @@
    Custom Sidebar Components Fixes
    ========================================================================== */
 
-/* 1. Oprava pre nefunkčné podčiarknutie na základe dedičnosti */
-.idsk-sidebar-nav a {
-    text-decoration: underline !important;
-    text-decoration-line: underline !important;
-}
-
-.idsk-sidebar-nav a:not([aria-current="page"]) {
+/* Bočné menu: odkazy bez podčiarknutia vo všetkých stavoch */
+.idsk-sidebar-nav a,
+.idsk-sidebar-nav a:link,
+.idsk-sidebar-nav a:visited,
+.idsk-sidebar-nav a:hover,
+.idsk-sidebar-nav a:focus,
+.idsk-sidebar-nav a:focus-visible,
+.idsk-sidebar-nav a:active,
+.idsk-sidebar-nav a[aria-current="page"] {
     text-decoration: none !important;
     text-decoration-line: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
 }
 
-/* 2. Neutralizácia globálneho IDSK focusu a rádiusu na <a>, 
-   keďže stavy manažujeme na úrovni <li> */
+/* Neutralizácia globálneho IDSK focusu na <a>,
+   keďže focus stav riešime cez focus-within na <li> */
 .idsk-sidebar-nav a,
 .idsk-sidebar-nav a:focus,
 .idsk-sidebar-nav a:focus-visible {
     outline: none !important;
-    box-shadow: none !important;
-    border-radius: 0px !important;
+    border-radius: 0 !important;
 }

@@ -63,8 +63,10 @@ const createReferenceNumber = () =>
 
 const createTransporter = () => {
   const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || 587);
+  const port = Number(process.env.SMTP_PORT || 25);
   const secure = process.env.SMTP_SECURE === 'true';
+  const requireTLS = process.env.SMTP_REQUIRE_TLS === 'true';
+  const tlsServername = process.env.SMTP_TLS_SERVERNAME;
 
   if (!host) {
     throw new Error('Chýba SMTP_HOST.');
@@ -74,6 +76,10 @@ const createTransporter = () => {
     host,
     port,
     secure,
+    requireTLS,
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
     auth:
       process.env.SMTP_USER && process.env.SMTP_PASSWORD
         ? {
@@ -81,6 +87,11 @@ const createTransporter = () => {
             pass: process.env.SMTP_PASSWORD,
           }
         : undefined,
+    tls: tlsServername
+      ? {
+          servername: tlsServername,
+        }
+      : undefined,
   });
 };
 
