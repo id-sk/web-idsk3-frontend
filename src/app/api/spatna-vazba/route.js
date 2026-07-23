@@ -1,4 +1,6 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
+import { Buffer } from 'node:buffer';
 
 export const runtime = 'nodejs';
 
@@ -59,6 +61,87 @@ const getCurrentDateLabel = () =>
 const createReferenceNumber = () =>
   `IDSK-${Math.floor(100000 + Math.random() * 900000)}`;
 
+const getFeedbackFormMode = () =>
+  process.env.FEEDBACK_FORM_MODE === 'email' ? 'email' : 'mock';
+
+const validateEmailConfig = () => {
+  if (!process.env.MAIL_FROM) {
+    throw new Error('Chýba MAIL_FROM.');
+  }
+
+  if (!process.env.MAIL_TO) {
+    throw new Error('Chýba MAIL_TO.');
+  }
+};
+
+const createTransporter = () => {
+  const host = process.env.SMTP_HOST;
+  const port = Number(process.env.SMTP_PORT || 25);
+  const secure = process.env.SMTP_SECURE === 'true';
+  const requireTLS = process.env.SMTP_REQUIRE_TLS === 'true';
+  const tlsServername = process.env.SMTP_TLS_SERVERNAME;
+
+  if (!host) {
+    throw new Error('Chýba SMTP_HOST.');
+  }
+
+  return nodemailer.createTransport({
+    host,
+    port,
+    secure,
+    requireTLS,
+    connectionTimeout: 10000,
+    greetingTimeout: 10000,
+    socketTimeout: 15000,
+    auth:
+      process.env.SMTP_USER && process.env.SMTP_PASSWORD
+        ? {
+            user: process.env.SMTP_USER,
+            pass: process.env.SMTP_PASSWORD,
+          }
+        : undefined,
+    tls: tlsServername
+      ? {
+          servername: tlsServername,
+        }
+      : undefined,
+  });
+};
+
+const buildEmailText = ({ values, referencneCislo, datumPrijatia }) => `
+Bol prijatý nový zámer vytvorenia alebo úpravy komponentu IDSK.
+
+Referenčné číslo: ${referencneCislo}
+Dátum prijatia: ${datumPrijatia}
+
+Údaje o žiadateľovi
+Názov inštitúcie: ${values.organizacia}
+Meno: ${values.meno}
+Priezvisko: ${values.priezvisko}
+E-mail: ${values.email}
+
+Typ zámeru
+${values.typZameru}
+
+Informácie o komponente
+Názov komponentu: ${values.nazovKomponentu}
+
+Popis funkcionality komponentu:
+${values.popisZameru}
+
+Zdôvodnenie potreby:
+${values.dovodZmeny}
+
+Výstupy z používateľského prieskumu:
+${values.doplnujuceInformacie}
+
+Grafický návrh / URL:
+${values.url}
+
+Súhlas:
+${values.suhlas === 'true' ? 'Áno' : 'Nie'}
+`;
+
 export async function POST(request) {
   try {
     const formData = await request.formData();
@@ -87,15 +170,12 @@ export async function POST(request) {
     if (!values.nazovKomponentu) errors.push('Chýba názov komponentu.');
     if (!values.popisZameru) errors.push('Chýba popis funkcionality komponentu.');
     if (!values.dovodZmeny) errors.push('Chýba zdôvodnenie potreby.');
-
     if (!values.doplnujuceInformacie) {
       errors.push('Chýbajú výstupy z používateľského prieskumu.');
     }
-
     if (!validateUrl(values.url)) {
       errors.push('URL adresa k návrhu alebo podkladom nie je platná.');
     }
-
     if (values.suhlas !== 'true') {
       errors.push('Chýba potvrdenie správnosti údajov.');
     }
@@ -136,21 +216,56 @@ export async function POST(request) {
 
     const datumPrijatia = getCurrentDateLabel();
     const referencneCislo = createReferenceNumber();
+    const feedbackFormMode = getFeedbackFormMode();
 
-    console.info('Formulár bol odoslaný v testovacom režime bez e-mailu.', {
-      referencneCislo,
-      email: values.email,
-      nazovKomponentu: values.nazovKomponentu,
+    if (feedbackFormMode === 'mock') {
+      console.info('Formulár bol odoslaný v testovacom režime bez e-mailu.', {
+        referencneCislo,
+        email: values.email,
+        nazovKomponentu: values.nazovKomponentu,
+      });
+
+      return NextResponse.json({
+        ok: true,
+        mock: true,
+        datumPrijatia,
+        referencneCislo,
+      });
+    }
+
+    validateEmailConfig();
+
+    const attachments = await Promise.all(
+      files.map(async (file) => ({
+        filename: file.name,
+        content: Buffer.from(await file.arrayBuffer()),
+        contentType: file.type || undefined,
+      }))
+    );
+
+    const transporter = createTransporter();
+
+    await transporter.sendMail({
+      from: process.env.MAIL_FROM,
+      to: process.env.MAIL_TO,
+      replyTo: values.email,
+      subject: `Nový zámer komponentu: ${values.nazovKomponentu}`,
+      text: buildEmailText({
+        values,
+        referencneCislo,
+        datumPrijatia,
+      }),
+      attachments,
     });
 
     return NextResponse.json({
       ok: true,
-      mock: true,
+      mock: false,
       datumPrijatia,
       referencneCislo,
     });
   } catch (error) {
-    console.error('Chyba pri testovacom odosielaní formulára:', error);
+    console.error('Chyba pri odosielaní formulára:', error);
 
     return NextResponse.json(
       {
