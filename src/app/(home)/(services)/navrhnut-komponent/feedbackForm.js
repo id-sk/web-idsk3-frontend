@@ -1,7 +1,15 @@
 'use client';
 
-import React, { useMemo, useState } from 'react';
+import React, {
+  useCallback,
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+} from 'react';
 import Image from 'next/image';
+
 import TextInputCustom from '@/app/(home)/_components/inputs/textInputCustom';
 import TextareaCustom from '@/app/(home)/_components/inputs/textareaCustom';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
@@ -13,6 +21,8 @@ import {
 import FileUploadCustom from '@/app/(home)/_components/inputs/fileUploadCustom';
 import ErrorSummaryCustom from '@/app/(home)/_components/error-summary/errorSummaryCustom';
 import { submitFeedbackForm } from './_lib/submitFeedbackForm';
+
+const IDSK_EMAIL = 'idsk@mirri.gov.sk';
 
 const initialValues = {
   organizacia: '',
@@ -27,6 +37,115 @@ const initialValues = {
   url: '',
   prilohy: [],
   suhlas: false,
+};
+
+const FIELD_ORDER = [
+  'organizacia',
+  'meno',
+  'priezvisko',
+  'email',
+  'typZameru',
+  'nazovKomponentu',
+  'popisZameru',
+  'dovodZmeny',
+  'doplnujuceInformacie',
+  'url',
+  'prilohy',
+  'suhlas',
+];
+
+const FIELD_NAMES = new Set(FIELD_ORDER);
+
+const SERVER_ERROR_FIELD_MAP = {
+  organizacia: 'organizacia',
+  meno: 'meno',
+  priezvisko: 'priezvisko',
+  email: 'email',
+  typZameru: 'typZameru',
+  'typ-zameru': 'typZameru',
+  nazovKomponentu: 'nazovKomponentu',
+  'nazov-komponentu': 'nazovKomponentu',
+  popisZameru: 'popisZameru',
+  'popis-zameru': 'popisZameru',
+  dovodZmeny: 'dovodZmeny',
+  'dovod-zmeny': 'dovodZmeny',
+  doplnujuceInformacie: 'doplnujuceInformacie',
+  'doplnujuce-informacie': 'doplnujuceInformacie',
+  url: 'url',
+  priloha: 'prilohy',
+  prilohy: 'prilohy',
+  suhlas: 'suhlas',
+};
+
+const normalizeReactId = (value) => value.replace(/:/g, '');
+
+const prefersReducedMotion = () =>
+  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+const validateEmail = (value) => {
+  if (!value) return false;
+
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim());
+};
+
+const validateUrl = (value) => {
+  if (!value) return false;
+
+  try {
+    const url = new URL(value.trim());
+    return url.protocol === 'http:' || url.protocol === 'https:';
+  } catch {
+    return false;
+  }
+};
+
+const getValidationMessage = (fieldName, values) => {
+  switch (fieldName) {
+    case 'organizacia':
+      return values.organizacia.trim()
+        ? ''
+        : 'Zadajte názov inštitúcie.';
+    case 'meno':
+      return values.meno.trim() ? '' : 'Zadajte meno kontaktnej osoby.';
+    case 'priezvisko':
+      return values.priezvisko.trim()
+        ? ''
+        : 'Zadajte priezvisko kontaktnej osoby.';
+    case 'email':
+      return validateEmail(values.email)
+        ? ''
+        : 'Zadajte e-mailovú adresu v tvare meno@example.com.';
+    case 'typZameru':
+      return values.typZameru ? '' : 'Vyberte typ zámeru.';
+    case 'nazovKomponentu':
+      return values.nazovKomponentu.trim()
+        ? ''
+        : 'Zadajte názov komponentu.';
+    case 'popisZameru':
+      return values.popisZameru.trim()
+        ? ''
+        : 'Popíšte funkcionalitu komponentu.';
+    case 'dovodZmeny':
+      return values.dovodZmeny.trim()
+        ? ''
+        : 'Uveďte zdôvodnenie potreby.';
+    case 'doplnujuceInformacie':
+      return values.doplnujuceInformacie.trim()
+        ? ''
+        : 'Uveďte výstupy z používateľského prieskumu alebo odkaz na samostatnú prílohu.';
+    case 'url':
+      return validateUrl(values.url)
+        ? ''
+        : 'Zadajte platnú URL adresu grafického návrhu.';
+    case 'prilohy':
+      return values.prilohy?.length ? '' : 'Nahrajte aspoň jednu prílohu.';
+    case 'suhlas':
+      return values.suhlas
+        ? ''
+        : 'Potvrďte správnosť uvedených údajov.';
+    default:
+      return '';
+  }
 };
 
 const CheckIcon = ({ className = '' }) => (
@@ -69,258 +188,358 @@ const CopyIcon = ({ className = '' }) => (
 
 const RequiredHint = () => (
   <p className="mt-8 text-[16px] leading-6 text-[#757575]">
-    Povinné polia sú označené hviezdičkou ({''}
-    <span aria-hidden="true" className="text-[#C3112B]">
-    *
+    Povinné polia sú označené hviezdičkou
+    <span aria-hidden="true" className="text-[#757575]">
+      {' '}(<span className="text-[#C3112B]">*</span>)
     </span>
-    )
+    .
   </p>
 );
 
-const validateEmail = (value) => {
-  if (!value) return false;
-
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
-};
-
 export default function FeedbackForm() {
+  const generatedId = normalizeReactId(useId());
+
+  const ids = useMemo(
+    () => ({
+      form: `feedback-form-${generatedId}`,
+      heading: `feedback-form-${generatedId}-heading`,
+      errorSummary: `feedback-form-${generatedId}-error-summary`,
+      submitStatus: `feedback-form-${generatedId}-submit-status`,
+      submitButton: `feedback-form-${generatedId}-submit`,
+      successHeading: `feedback-form-${generatedId}-success-heading`,
+      contactHeading: `feedback-form-${generatedId}-contact-heading`,
+      organizacia: `feedback-form-${generatedId}-organizacia`,
+      meno: `feedback-form-${generatedId}-meno`,
+      priezvisko: `feedback-form-${generatedId}-priezvisko`,
+      email: `feedback-form-${generatedId}-email`,
+      typZameruGroup: `feedback-form-${generatedId}-typ-zameru`,
+      typZameruNovy: `feedback-form-${generatedId}-typ-zameru-novy`,
+      typZameruUprava: `feedback-form-${generatedId}-typ-zameru-uprava`,
+      nazovKomponentu: `feedback-form-${generatedId}-nazov-komponentu`,
+      popisZameru: `feedback-form-${generatedId}-popis-zameru`,
+      dovodZmeny: `feedback-form-${generatedId}-dovod-zmeny`,
+      doplnujuceInformacie: `feedback-form-${generatedId}-doplnujuce-informacie`,
+      url: `feedback-form-${generatedId}-url`,
+      priloha: `feedback-form-${generatedId}-priloha`,
+      suhlas: `feedback-form-${generatedId}-suhlas`,
+    }),
+    [generatedId]
+  );
+
+  const fieldTargetIds = useMemo(
+    () => ({
+      organizacia: ids.organizacia,
+      meno: ids.meno,
+      priezvisko: ids.priezvisko,
+      email: ids.email,
+      typZameru: ids.typZameruNovy,
+      nazovKomponentu: ids.nazovKomponentu,
+      popisZameru: ids.popisZameru,
+      dovodZmeny: ids.dovodZmeny,
+      doplnujuceInformacie: ids.doplnujuceInformacie,
+      url: ids.url,
+      prilohy: ids.priloha,
+      suhlas: ids.suhlas,
+    }),
+    [ids]
+  );
+
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState([]);
   const [successData, setSuccessData] = useState(null);
-  const [copied, setCopied] = useState(false);
+  const [copyStatus, setCopyStatus] = useState({
+    message: '',
+    isError: false,
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [summaryFocusRequest, setSummaryFocusRequest] = useState(0);
+
+  const valuesRef = useRef(initialValues);
+  const errorSummaryRef = useRef(null);
+  const successHeadingRef = useRef(null);
+  const fieldRefs = useRef({});
+
+  const fieldRefCallbacks = useMemo(() => {
+    const callbacks = {};
+
+    FIELD_ORDER.forEach((fieldName) => {
+      callbacks[fieldName] = (node) => {
+        if (node) {
+          fieldRefs.current[fieldName] = node;
+        } else {
+          delete fieldRefs.current[fieldName];
+        }
+      };
+    });
+
+    return callbacks;
+  }, []);
 
   const errorMap = useMemo(
     () =>
-      errors.reduce((acc, error) => {
-        acc[error.id] = error.message;
-        return acc;
+      errors.reduce((accumulator, error) => {
+        if (error.field) {
+          accumulator[error.field] = error.message;
+        }
+
+        return accumulator;
       }, {}),
     [errors]
   );
 
-  const updateValue = (fieldName, fieldValue) => {
-      setValues((current) => ({
-        ...current,
-        [fieldName]: fieldValue,
-      }));
+  const createFieldError = useCallback(
+    (fieldName, message, suffix = 'validation') => ({
+      id: `${ids.form}-${suffix}-${fieldName}`,
+      kind: 'field',
+      field: fieldName,
+      targetId: fieldTargetIds[fieldName],
+      message,
+    }),
+    [fieldTargetIds, ids.form]
+  );
+
+  const validateForm = useCallback(
+    (nextValues) =>
+      FIELD_ORDER.reduce((nextErrors, fieldName) => {
+        const message = getValidationMessage(fieldName, nextValues);
+
+        if (message) {
+          nextErrors.push(createFieldError(fieldName, message));
+        }
+
+        return nextErrors;
+      }, []),
+    [createFieldError]
+  );
+
+  const normalizeServerErrors = useCallback(
+    (error) => {
+      const rawErrors = Array.isArray(error?.errors) ? error.errors : [];
+
+      if (!rawErrors.length) {
+        return [
+          {
+            id: `${ids.form}-submit-error`,
+            kind: 'global',
+            message:
+              error?.message || 'Formulár sa nepodarilo odoslať.',
+          },
+        ];
+      }
+
+      return rawErrors.map((serverError, index) => {
+        const rawField =
+          typeof serverError === 'object' && serverError !== null
+            ? serverError.field || serverError.id
+            : undefined;
+        const mappedField =
+          SERVER_ERROR_FIELD_MAP[rawField] ||
+          (FIELD_NAMES.has(rawField) ? rawField : undefined);
+        const message =
+          typeof serverError === 'string'
+            ? serverError
+            : serverError?.message || 'Skontrolujte zadanú hodnotu.';
+
+        if (mappedField) {
+          return createFieldError(mappedField, message, `server-${index}`);
+        }
+
+        return {
+          id: `${ids.form}-server-global-${index}`,
+          kind: 'global',
+          message,
+        };
+      });
+    },
+    [createFieldError, ids.form]
+  );
+
+  const updateValue = useCallback((fieldName, fieldValue) => {
+    const nextValues = {
+      ...valuesRef.current,
+      [fieldName]: fieldValue,
     };
 
-    const validateUrl = (value) => {
-    if (!value) return false;
+    valuesRef.current = nextValues;
+    setValues(nextValues);
 
-    try {
-      const url = new URL(value);
-      return url.protocol === 'http:' || url.protocol === 'https:';
-    } catch {
+    setErrors((currentErrors) => {
+      const hasFieldError = currentErrors.some(
+        (error) => error.field === fieldName
+      );
+
+      if (!hasFieldError) {
+        return currentErrors;
+      }
+
+      const nextMessage = getValidationMessage(fieldName, nextValues);
+
+      if (!nextMessage) {
+        return currentErrors.filter((error) => error.field !== fieldName);
+      }
+
+      return currentErrors.map((error) =>
+        error.field === fieldName
+          ? {
+              ...error,
+              message: nextMessage,
+            }
+          : error
+      );
+    });
+  }, []);
+
+  const focusErrorTarget = useCallback((error) => {
+    if (!error.field) {
       return false;
     }
-  };
 
- const validateForm = () => {
-    const nextErrors = [];
+    const target = fieldRefs.current[error.field];
 
-    if (!values.organizacia.trim()) {
-      nextErrors.push({
-        id: 'organizacia',
-        message: 'Zadajte názov inštitúcie.',
-      });
+    if (!target || typeof target.focus !== 'function') {
+      return false;
     }
 
-    if (!values.meno.trim()) {
-      nextErrors.push({
-        id: 'meno',
-        message: 'Zadajte meno kontaktnej osoby.',
-      });
+    target.focus({ preventScroll: true });
+    target.scrollIntoView?.({
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+      block: 'center',
+    });
+
+    return true;
+  }, []);
+
+  useEffect(() => {
+    if (summaryFocusRequest === 0) {
+      return;
     }
 
-    if (!values.priezvisko.trim()) {
-      nextErrors.push({
-        id: 'priezvisko',
-        message: 'Zadajte priezvisko kontaktnej osoby.',
-      });
+    errorSummaryRef.current?.focus();
+  }, [summaryFocusRequest]);
+
+  useEffect(() => {
+    if (!successData || !successHeadingRef.current) {
+      return;
     }
 
-    if (!validateEmail(values.email)) {
-      nextErrors.push({
-        id: 'email',
-        message: 'Zadajte e-mailovú adresu v tvare meno@example.com.',
-      });
-    }
-
-    if (!values.typZameru) {
-      nextErrors.push({
-        id: 'typ-zameru',
-        message: 'Vyberte typ zámeru.',
-      });
-    }
-
-    if (!values.nazovKomponentu.trim()) {
-      nextErrors.push({
-        id: 'nazov-komponentu',
-        message: 'Zadajte názov komponentu.',
-      });
-    }
-
-    if (!values.popisZameru.trim()) {
-      nextErrors.push({
-        id: 'popis-zameru',
-        message: 'Popíšte funkcionalitu komponentu.',
-      });
-    }
-
-    if (!values.dovodZmeny.trim()) {
-      nextErrors.push({
-        id: 'dovod-zmeny',
-        message: 'Uveďte zdôvodnenie potreby.',
-      });
-    }
-
-    if (!values.doplnujuceInformacie.trim()) {
-      nextErrors.push({
-        id: 'doplnujuce-informacie',
-        message: 'Uveďte výstupy z používateľského prieskumu alebo odkaz na samostatnú prílohu.',
-      });
-    }
-
-    if (!validateUrl(values.url)) {
-      nextErrors.push({
-        id: 'url',
-        message: 'Zadajte platnú URL adresu k návrhu alebo podkladom.',
-      });
-    }
-
-    if (!values.prilohy || values.prilohy.length === 0) {
-      nextErrors.push({
-        id: 'priloha',
-        message: 'Nahrajte aspoň jednu prílohu.',
-      });
-    }
-
-    if (!values.suhlas) {
-      nextErrors.push({
-        id: 'suhlas',
-        message: 'Potvrďte správnosť uvedených údajov.',
-      });
-    }
-
-    setErrors(nextErrors);
-
-    return nextErrors.length === 0;
-  };
-
+    successHeadingRef.current.focus({ preventScroll: true });
+    successHeadingRef.current.scrollIntoView({
+      behavior: prefersReducedMotion() ? 'auto' : 'smooth',
+      block: 'start',
+    });
+  }, [successData]);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    if (isSubmitting) return;
-
-    const isValid = validateForm();
-
-    if (!isValid) {
-      window.setTimeout(() => {
-        document.getElementById('form-error-summary')?.focus();
-      }, 0);
-
+    if (isSubmitting) {
       return;
     }
 
+    const currentValues = valuesRef.current;
+    const nextErrors = validateForm(currentValues);
+
+    if (nextErrors.length) {
+      setErrors(nextErrors);
+      setSummaryFocusRequest((current) => current + 1);
+      return;
+    }
+
+    setErrors([]);
     setIsSubmitting(true);
 
     try {
-      const result = await submitFeedbackForm(values);
+      const result = await submitFeedbackForm(currentValues);
 
       setSuccessData({
-        nazovKomponentu: values.nazovKomponentu,
-        email: values.email,
+        nazovKomponentu: currentValues.nazovKomponentu,
+        email: currentValues.email,
         datumPrijatia: result.datumPrijatia,
         referencneCislo: result.referencneCislo,
       });
-
       setErrors([]);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (error) {
-      setErrors(
-        error.errors || [
-          {
-            id: 'odoslat-zamer',
-            message: error.message || 'Formulár sa nepodarilo odoslať.',
-          },
-        ]
-      );
-
-      window.setTimeout(() => {
-        document.getElementById('form-error-summary')?.focus();
-      }, 0);
+      setErrors(normalizeServerErrors(error));
+      setSummaryFocusRequest((current) => current + 1);
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleCopyEmail = async () => {
-    if (!successData?.email) return;
-
-    await navigator.clipboard.writeText('idsk@mirri.gov.sk');
-    setCopied(true);
-
-    window.setTimeout(() => {
-      setCopied(false);
-    }, 2500);
+    try {
+      await navigator.clipboard.writeText(IDSK_EMAIL);
+      setCopyStatus({
+        message: 'E-mailová adresa bola skopírovaná.',
+        isError: false,
+      });
+    } catch {
+      setCopyStatus({
+        message:
+          'E-mailovú adresu sa nepodarilo skopírovať. Označte ju a skopírujte ručne.',
+        isError: true,
+      });
+    }
   };
 
   if (successData) {
-  return (
-    <main className="mx-auto my-8 w-full max-w-[1120px] px-4">
-      <div className="mx-auto flex flex-col items-center text-center">
-        <CheckIcon className="h-20 w-20" />
+    return (
+      <main className="mx-auto my-8 w-full max-w-[1120px] px-4">
+        <div className="mx-auto flex flex-col items-center text-center">
+          <CheckIcon className="h-20 w-20" />
 
-        <h1 className="mt-6 text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]">
-          Ďakujeme, váš zámer sme úspešne prijali.
-        </h1>
+          <h1
+            id={ids.successHeading}
+            ref={successHeadingRef}
+            tabIndex={-1}
+            className="mt-6 text-2xl font-black leading-tight text-black focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 sm:text-3xl md:text-4xl md:leading-[55px]"
+          >
+            Ďakujeme, váš zámer sme úspešne prijali.
+          </h1>
 
-        <dl className="mt-8 flex w-full flex-col items-center gap-3 text-center text-[19px] leading-7 text-[#212121]">
-          <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
-            <dt>Názov komponentu:</dt>
-            <dd className="m-0 min-w-0 break-words">
-              <strong>{successData.nazovKomponentu}</strong>
-            </dd>
-          </div>
+          <dl className="mt-8 flex w-full flex-col items-center gap-3 text-center text-[19px] leading-7 text-[#212121]">
+            <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
+              <dt>Názov komponentu:</dt>
+              <dd className="m-0 min-w-0 break-words">
+                <strong>{successData.nazovKomponentu}</strong>
+              </dd>
+            </div>
 
-          <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
-            <dt>Dátum prijatia:</dt>
-            <dd className="m-0 min-w-0 break-words">
-              <strong>{successData.datumPrijatia}</strong>
-            </dd>
-          </div>
+            <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
+              <dt>Dátum prijatia:</dt>
+              <dd className="m-0 min-w-0 break-words">
+                <strong>{successData.datumPrijatia}</strong>
+              </dd>
+            </div>
 
-          <div className="flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-2">
-            <dt>Referenčné číslo:</dt>
-            <dd className="m-0 min-w-0 break-words">
-              <strong>{successData.referencneCislo}</strong>
-            </dd>
-          </div>
+            <div className="flex max-w-full flex-wrap items-center justify-center gap-x-2 gap-y-2">
+              <dt>Referenčné číslo:</dt>
+              <dd className="m-0 min-w-0 break-words">
+                <strong>{successData.referencneCislo}</strong>
+              </dd>
+            </div>
 
-          <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
-            <dt>Vyjadrenie k zámeru vám zašleme na e-mailovú adresu:</dt>
-            <dd className="m-0 min-w-0 break-words">
-              <strong>{successData.email}</strong>
-            </dd>
-          </div>
-        </dl>
-      </div>
+            <div className="flex max-w-full flex-wrap items-baseline justify-center gap-x-1">
+              <dt>Vyjadrenie k zámeru vám zašleme na e-mailovú adresu:</dt>
+              <dd className="m-0 min-w-0 break-words">
+                <strong>{successData.email}</strong>
+              </dd>
+            </div>
+          </dl>
+        </div>
 
-      <section
-        aria-labelledby="kontaktujte-idsk-tim"
-        className="mx-auto mt-10 w-full"
-      >
-        <h2
-          id="kontaktujte-idsk-tim"
-          className="text-[24px] font-bold leading-8 text-[#212121]"
+        <section
+          aria-labelledby={ids.contactHeading}
+          className="mx-auto mt-10 w-full"
         >
-          V prípade otázok kontaktujte
-        </h2>
+          <h2
+            id={ids.contactHeading}
+            className="text-[24px] font-bold leading-8 text-[#212121]"
+          >
+            V prípade otázok kontaktujte
+          </h2>
 
-        <div className="mt-4 rounded-[5px] border-2 border-[#BDBDBD] bg-white p-6">
+          <div className="mt-4 rounded-[5px] border-2 border-[#BDBDBD] bg-white p-6">
             <div className="flex flex-col gap-6 sm:flex-row sm:items-center">
               <div
                 aria-hidden="true"
@@ -338,22 +557,24 @@ export default function FeedbackForm() {
               <div className="min-w-0 text-left sm:pl-4">
                 <p className="m-0 text-[19px] leading-7 text-[#212121]">
                   <strong>
-                    IDSK tím Ministerstva investícií, regionálneho rozvoja a informatizácie.
+                    IDSK tím Ministerstva investícií, regionálneho rozvoja a
+                    informatizácie.
                   </strong>
                 </p>
 
                 <div className="mt-3 flex max-w-full flex-wrap items-center gap-x-1 gap-y-3 text-[19px] leading-7 text-[#212121]">
-                  <span>Email:</span>
+                  <span>E-mail:</span>
 
                   <a
-                    href="mailto:idsk@mirri.gov.sk"
+                    href={`mailto:${IDSK_EMAIL}`}
                     className="
                       text-[#0B4199] underline underline-offset-2
                       hover:text-[#126DFF] hover:decoration-2
-                      focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2
+                      focus:outline focus:outline-[3px] focus:outline-[#D96E00]
+                      focus:outline-offset-2
                     "
                   >
-                    <strong>idsk@mirri.gov.sk</strong>
+                    <strong>{IDSK_EMAIL}</strong>
                   </a>
 
                   <ButtonCustom
@@ -362,6 +583,7 @@ export default function FeedbackForm() {
                     status="basic"
                     size="medium"
                     onClick={handleCopyEmail}
+                    aria-label={`Kopírovať e-mailovú adresu ${IDSK_EMAIL}`}
                     iconLeft={<CopyIcon className="h-5 w-5 shrink-0" />}
                     className="ml-2"
                   >
@@ -369,310 +591,360 @@ export default function FeedbackForm() {
                   </ButtonCustom>
                 </div>
 
-                {copied && (
-                  <p
-                    className="mt-4 text-[16px] leading-6 text-[#00703C]"
-                    role="status"
-                  >
-                    E-mailová adresa bola skopírovaná.
-                  </p>
-                )}
+                <p
+                  className={
+                    copyStatus.message
+                      ? `mt-4 text-[16px] leading-6 ${
+                          copyStatus.isError
+                            ? 'text-[#C3112B]'
+                            : 'text-[#00703C]'
+                        }`
+                      : 'sr-only'
+                  }
+                  role="status"
+                  aria-atomic="true"
+                >
+                  {copyStatus.message}
+                </p>
               </div>
             </div>
           </div>
-      </section>
-    </main>
-  );
-}
+        </section>
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto my-8 w-full max-w-[1120px] px-4">
-        <h1 className="text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]">
-          Zámer vytvorenia nového komponentu alebo úpravy existujúceho komponentu
-        </h1>
+      <h1
+        id={ids.heading}
+        className="text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]"
+      >
+        Zámer vytvorenia nového komponentu alebo úpravy existujúceho
+        komponentu
+      </h1>
 
-        <p className="mt-6 text-[19px] leading-7 tracking-wide text-[#212121] max-w-[935px]">
-          Tento formulár slúži orgánom riadenia na zasielanie zámerov na
-          vytvorenie nového alebo úpravu existujúceho komponentu dizajnového
-          manuálu. Proces prebieha v súlade s{' '}
-          <a
-            href="/metodicke-usmernenie-051024-2026-okpspi.pdf"
-            type="application/pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-              text-[#0B4199] underline underline-offset-2
-              hover:text-[#126DFF] hover:decoration-2
-              focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2
-            "
-          >
-            Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI
-            <span className="sr-only">, súbor PDF, otvorí sa v novom okne</span>
-          </a>
-          .
+      <p className="mt-6 max-w-[935px] text-[19px] leading-7 tracking-wide text-[#212121]">
+        Tento formulár slúži orgánom riadenia na zasielanie zámerov na
+        vytvorenie nového alebo úpravu existujúceho komponentu dizajnového
+        manuálu. Proces prebieha v súlade s{' '}
+        <a
+          href="/metodicke-usmernenie-051024-2026-okpspi.pdf"
+          type="application/pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            text-[#0B4199] underline underline-offset-2
+            hover:text-[#126DFF] hover:decoration-2
+            focus:outline focus:outline-[3px] focus:outline-[#D96E00]
+            focus:outline-offset-2
+          "
+        >
+          Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI
+          <span className="sr-only">, súbor PDF, otvorí sa v novom okne</span>
+        </a>
+        .
+      </p>
+
+      <RequiredHint />
+
+      <form
+        id={ids.form}
+        className="mt-10 flex flex-col gap-10"
+        noValidate
+        aria-busy={isSubmitting ? 'true' : undefined}
+        onSubmit={handleSubmit}
+      >
+        <p
+          id={ids.submitStatus}
+          className="sr-only"
+          role="status"
+          aria-atomic="true"
+        >
+          {isSubmitting ? 'Formulár sa odosiela.' : ''}
         </p>
 
-        <RequiredHint />
+        {errors.length > 0 && (
+          <ErrorSummaryCustom
+            id={ids.errorSummary}
+            ref={errorSummaryRef}
+            title="Vo formulári sú chyby"
+            description="Opravte označené polia a formulár odošlite znova."
+            errors={errors}
+            onErrorClick={focusErrorTarget}
+          />
+        )}
 
-        <form className="mt-10 flex flex-col gap-10" noValidate onSubmit={handleSubmit}>
-          {errors.length > 0 && (
-            <ErrorSummaryCustom
-              id="form-error-summary"
-              title="Vo formulári sú chyby"
-              description="Opravte označené polia a formulár odošlite znova."
-              errors={errors}
-              focusOnRender={false}
-            />
-          )}
+        <fieldset className="m-0 flex max-w-[400px] flex-col gap-6 border-0 p-0">
+          <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
+            Údaje o žiadateľovi
+          </legend>
 
-          <fieldset className="m-0 flex flex-col gap-6 border-0 p-0 max-w-[400px]">
-            <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
-              Údaje o žiadateľovi
-            </legend>
+          <TextInputCustom
+            id={ids.organizacia}
+            ref={fieldRefCallbacks.organizacia}
+            name="organizacia"
+            autoComplete="organization"
+            inputSize="medium"
+            label="Názov inštitúcie"
+            placeholder="napr. Sociálna poisťovňa"
+            mandatory
+            fullWidth
+            value={values.organizacia}
+            error={Boolean(errorMap.organizacia)}
+            errorMsg={errorMap.organizacia}
+            onChange={(event) =>
+              updateValue('organizacia', event.target.value)
+            }
+          />
 
+          <TextInputCustom
+            id={ids.meno}
+            ref={fieldRefCallbacks.meno}
+            name="meno"
+            autoComplete="given-name"
+            inputSize="medium"
+            label="Meno kontaktnej osoby"
+            placeholder="napr. Jana"
+            mandatory
+            fullWidth
+            value={values.meno}
+            error={Boolean(errorMap.meno)}
+            errorMsg={errorMap.meno}
+            onChange={(event) => updateValue('meno', event.target.value)}
+          />
+
+          <TextInputCustom
+            id={ids.priezvisko}
+            ref={fieldRefCallbacks.priezvisko}
+            name="priezvisko"
+            autoComplete="family-name"
+            inputSize="medium"
+            label="Priezvisko kontaktnej osoby"
+            placeholder="napr. Slováková"
+            mandatory
+            fullWidth
+            value={values.priezvisko}
+            error={Boolean(errorMap.priezvisko)}
+            errorMsg={errorMap.priezvisko}
+            onChange={(event) =>
+              updateValue('priezvisko', event.target.value)
+            }
+          />
+
+          <TextInputCustom
+            id={ids.email}
+            ref={fieldRefCallbacks.email}
+            name="email"
+            type="email"
+            autoComplete="email"
+            inputSize="medium"
+            label="E-mail"
+            subtitle="Zadajte vo formáte xxx@yyy.sk."
+            placeholder="napr. jana.slovakova@slovensko.sk"
+            mandatory
+            fullWidth
+            value={values.email}
+            error={Boolean(errorMap.email)}
+            errorMsg={errorMap.email}
+            onChange={(event) => updateValue('email', event.target.value)}
+          />
+        </fieldset>
+
+        <RadioButtonGroup
+          id={ids.typZameruGroup}
+          legend="Typ zámeru"
+          name="typ-zameru"
+          mandatory
+          errorMsg={errorMap.typZameru}
+          className="m-0 border-0 p-0"
+        >
+          <RadioButton
+            id={ids.typZameruNovy}
+            ref={fieldRefCallbacks.typZameru}
+            value="novy-komponent"
+            label="Nový komponent"
+            checked={values.typZameru === 'novy-komponent'}
+            onChange={(event) =>
+              updateValue('typZameru', event.target.value)
+            }
+          />
+
+          <RadioButton
+            id={ids.typZameruUprava}
+            value="uprava-komponentu"
+            label="Úprava existujúceho komponentu / nový variant"
+            checked={values.typZameru === 'uprava-komponentu'}
+            onChange={(event) =>
+              updateValue('typZameru', event.target.value)
+            }
+          />
+        </RadioButtonGroup>
+
+        <fieldset className="m-0 flex flex-col gap-6 border-0 p-0">
+          <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
+            Informácie o komponente
+          </legend>
+
+          <div className="max-w-[400px]">
             <TextInputCustom
-              id="organizacia"
-              name="organizacia"
-              autoComplete="organization"
+              id={ids.nazovKomponentu}
+              ref={fieldRefCallbacks.nazovKomponentu}
+              name="nazov-komponentu"
               inputSize="medium"
-              label="Názov inštitúcie"
-              placeholder="napr. Sociálna poisťovňa"
+              label="Názov komponentu"
+              subtitle="Uveďte návrh názvu nového komponentu, alebo presný názov existujúceho komponentu z knižnice IDSK."
               mandatory
-              fullWidth
-              value={values.organizacia}
-              error={!!errorMap.organizacia}
-              errorMsg={errorMap.organizacia}
-              onChange={(event) => updateValue('organizacia', event.target.value)}
-            />
-
-            <TextInputCustom
-              id="meno"
-              name="meno"
-              autoComplete="given-name"
-              inputSize="medium"
-              label="Meno kontaktnej osoby"
-              placeholder="napr. Jana"
-              mandatory
-              fullWidth
-              value={values.meno}
-              error={!!errorMap.meno}
-              errorMsg={errorMap.meno}
-              onChange={(event) => updateValue('meno', event.target.value)}
-            />
-
-            <TextInputCustom
-              id="priezvisko"
-              name="priezvisko"
-              autoComplete="family-name"
-              inputSize="medium"
-              label="Priezvisko kontaktnej osoby"
-              placeholder="napr. Slováková"
-              mandatory
-              fullWidth
-              value={values.priezvisko}
-              error={!!errorMap.priezvisko}
-              errorMsg={errorMap.priezvisko}
-              onChange={(event) => updateValue('priezvisko', event.target.value)}
-            />
-
-            <TextInputCustom
-              id="email"
-              name="email"
-              type="email"
-              autoComplete="email"
-              inputSize="medium"
-              label="E-mail"
-              subtitle="Zadajte vo formáte xxx@yyy.sk."
-              placeholder="napr. jana.slovakova@slovensko.sk"
-              mandatory
-              fullWidth
-              value={values.email}
-              error={!!errorMap.email}
-              errorMsg={errorMap.email}
-              onChange={(event) => updateValue('email', event.target.value)}
-            />
-          </fieldset>
-
-          <RadioButtonGroup
-            id="typ-zameru"
-            legend="Typ zámeru"
-            name="typ-zameru"
-            mandatory={true}
-            errorMsg={errorMap['typ-zameru']}
-            className="m-0 border-0 p-0"
-          >
-            <RadioButton
-              id="typ-zameru-novy"
-              value="novy-komponent"
-              label="Nový komponent"
-              checked={values.typZameru === 'novy-komponent'}
-              onChange={(event) => updateValue('typZameru', event.target.value)}
-            />
-
-            <RadioButton
-              id="typ-zameru-uprava"
-              value="uprava-komponentu"
-              label="Úprava existujúceho komponentu / nový variant"
-              checked={values.typZameru === 'uprava-komponentu'}
-              onChange={(event) => updateValue('typZameru', event.target.value)}
-            />
-          </RadioButtonGroup>
-
-          <fieldset className="m-0 flex flex-col gap-6 border-0 p-0">
-            <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
-              Informácie o komponente
-            </legend>
-            <div className="max-w-[400px]">
-              <TextInputCustom
-                id="nazov-komponentu"
-                name="nazov-komponentu"
-                inputSize="medium"
-                label="Názov komponentu"
-                subtitle="Uveďte návrh názvu nového komponentu, alebo presný názov existujúceho komponentu z knižnice IDSK."
-                mandatory
-                placeholder="napr. Tlačidlo"
-                description={
-                  <>
-                    <a
-                      href="/komponenty"
-                      className="text-[#0B4199] underline hover:text-[#126DFF] hover:decoration-2 focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
-                    >
-                      Zoznam komponentov IDSK
-                    </a>
-                  </>
-                }
-                fullWidth
-                value={values.nazovKomponentu}
-                error={!!errorMap['nazov-komponentu']}
-                errorMsg={errorMap['nazov-komponentu']}
-                onChange={(event) => updateValue('nazovKomponentu', event.target.value)}
-              />
-            </div>
-
-            <div className="max-w-[640px] flex flex-col gap-6">
-              <TextareaCustom
-                id="popis-zameru"
-                name="popis-zameru"
-                label="Popis funkcionality komponentu"
-                subtitle="Podrobne opíšte, na čo komponent slúži a aká je jeho očakávaná interakcia a správanie."
-                mandatory
-                fullWidth
-                maxLength={300}
-                value={values.popisZameru}
-                error={!!errorMap['popis-zameru']}
-                errorMsg={errorMap['popis-zameru']}
-                onChange={(event) => updateValue('popisZameru', event.target.value)}
-              />
-
-              <TextareaCustom
-                id="dovod-zmeny"
-                name="dovod-zmeny"
-                label="Zdôvodnenie potreby"
-                subtitle="Uveďte dôvody vytvorenia/zmeny, napr. chýbajúci prvok v IDSK, nová legislatíva, technologické limity."
-                mandatory
-                fullWidth
-                maxLength={300}
-                value={values.dovodZmeny}
-                error={!!errorMap['dovod-zmeny']}
-                errorMsg={errorMap['dovod-zmeny']}
-                onChange={(event) => updateValue('dovodZmeny', event.target.value)}
-              />
-
-              <TextareaCustom
-                id="doplnujuce-informacie"
-                name="doplnujuce-informacie"
-                label="Výstupy z používateľského prieskumu"
-                subtitle="Stručne zhrňte zistenia z prieskumu alebo uveďte odkaz na samostatnú prílohu s výstupmi."
-                mandatory
-                fullWidth
-                maxLength={300}
-                value={values.doplnujuceInformacie}
-                error={!!errorMap['doplnujuce-informacie']}
-                errorMsg={errorMap['doplnujuce-informacie']}
-                onChange={(event) =>
-                  updateValue('doplnujuceInformacie', event.target.value)
-                }
-              />
-             </div>
-            <div className="max-w-[400px]">
-              <TextInputCustom
-                id="url"
-                name="url"
-                type="url"
-                autoComplete="url"
-                inputSize="medium"
-                label="Grafický návrh (Figma/Príloha)"
-                placeholder="napr. https://www.figma.com/design/..."
-                mandatory
-                subtitle="Vložte priamy odkaz na projekt v nástroji Figma (s povolením na zobrazenie)."
-                fullWidth
-                value={values.url}
-                error={!!errorMap.url}
-                errorMsg={errorMap.url}
-                onChange={(event) => updateValue('url', event.target.value)}
-              />
-            </div>
-
-            <FileUploadCustom
-              id="priloha"
-              title="Prílohy"
-              hint="Nahrajte dokumentáciu k zámeru (napr. výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu)."
-              subtitle="Nahrajte súbor alebo ho sem presuňte."
-              accept=".fig,.xls,.xlsx,.odt,.ods,.csv,.zip"
-              acceptedFormatsLabel="FIG, XLS, XLSX, ODT, ODS, CSV alebo ZIP"
-              required
-              errorMessage={errorMap.priloha}
-              onChangeFiles={(files) => updateValue('prilohy', files)}
-              formatsText={
-                <>
-                  Podporované formáty:{' '}
-                  <span className="font-bold">FIG, XLS, XLSX, ODT, ODS, CSV, ZIP</span>
-                </>
+              placeholder="napr. Tlačidlo"
+              description={
+                <a
+                  href="/komponenty"
+                  className="text-[#0B4199] underline hover:text-[#126DFF] hover:decoration-2 focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
+                >
+                  Zoznam komponentov IDSK
+                </a>
               }
-              maxSizeText={
-                <>
-                  Maximálna veľkosť súboru:{' '}
-                  <span className="font-bold">15 MB</span>
-                </>
+              fullWidth
+              value={values.nazovKomponentu}
+              error={Boolean(errorMap.nazovKomponentu)}
+              errorMsg={errorMap.nazovKomponentu}
+              onChange={(event) =>
+                updateValue('nazovKomponentu', event.target.value)
               }
-              buttonText="Vyberte súbor"
             />
-          </fieldset>
-
-          <div
-            className="flex flex-col gap-2"
-            aria-describedby={errorMap.suhlas ? 'suhlas-error' : undefined}
-          >
-            <div className="flex items-start gap-3">
-              <div className="max-w-[760px]">
-                <Checkbox
-                  id="suhlas"
-                  name="suhlas"
-                  inputSize="large"
-                  label="Orgán riadenia potvrdzuje, že zdrojový kód komponentu bude publikovaný pod verejnou licenciou umožňujúcou jeho bezodplatné používanie, úpravu a šírenie."
-                  mandatory
-                  checked={values.suhlas}
-                  error={!!errorMap.suhlas}
-                  errorMsg={errorMap.suhlas}
-                  onChange={(event) => updateValue('suhlas', event.target.checked)}
-                />
-              </div>
-            </div>
           </div>
 
-          <div>
-            <ButtonCustom
-              id="odoslat-zamer"
-              type="submit"
-              variant="primary"
-              status="basic"
-              size="large"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Odosielam zámer' : 'Odoslať zámer'}
-            </ButtonCustom>
+          <div className="flex max-w-[640px] flex-col gap-6">
+            <TextareaCustom
+              id={ids.popisZameru}
+              ref={fieldRefCallbacks.popisZameru}
+              name="popis-zameru"
+              label="Popis funkcionality komponentu"
+              subtitle="Podrobne opíšte, na čo komponent slúži a aká je jeho očakávaná interakcia a správanie."
+              mandatory
+              fullWidth
+              maxLength={300}
+              value={values.popisZameru}
+              error={Boolean(errorMap.popisZameru)}
+              errorMsg={errorMap.popisZameru}
+              onChange={(event) =>
+                updateValue('popisZameru', event.target.value)
+              }
+            />
+
+            <TextareaCustom
+              id={ids.dovodZmeny}
+              ref={fieldRefCallbacks.dovodZmeny}
+              name="dovod-zmeny"
+              label="Zdôvodnenie potreby"
+              subtitle="Uveďte dôvody vytvorenia/zmeny, napr. chýbajúci prvok v IDSK, nová legislatíva, technologické limity."
+              mandatory
+              fullWidth
+              maxLength={300}
+              value={values.dovodZmeny}
+              error={Boolean(errorMap.dovodZmeny)}
+              errorMsg={errorMap.dovodZmeny}
+              onChange={(event) =>
+                updateValue('dovodZmeny', event.target.value)
+              }
+            />
+
+            <TextareaCustom
+              id={ids.doplnujuceInformacie}
+              ref={fieldRefCallbacks.doplnujuceInformacie}
+              name="doplnujuce-informacie"
+              label="Výstupy z používateľského prieskumu"
+              subtitle="Stručne zhrňte zistenia z prieskumu alebo uveďte odkaz na samostatnú prílohu s výstupmi."
+              mandatory
+              fullWidth
+              maxLength={300}
+              value={values.doplnujuceInformacie}
+              error={Boolean(errorMap.doplnujuceInformacie)}
+              errorMsg={errorMap.doplnujuceInformacie}
+              onChange={(event) =>
+                updateValue('doplnujuceInformacie', event.target.value)
+              }
+            />
           </div>
-        </form>
+
+          <div className="max-w-[400px]">
+            <TextInputCustom
+              id={ids.url}
+              ref={fieldRefCallbacks.url}
+              name="url"
+              type="url"
+              inputSize="medium"
+              label="Grafický návrh"
+              placeholder="napr. https://www.figma.com/design/..."
+              mandatory
+              subtitle="Vložte priamy odkaz na projekt napr. v nástroji Figma (s povolením na zobrazenie)."
+              fullWidth
+              value={values.url}
+              error={Boolean(errorMap.url)}
+              errorMsg={errorMap.url}
+              onChange={(event) => updateValue('url', event.target.value)}
+            />
+          </div>
+
+          <FileUploadCustom
+            id={ids.priloha}
+            inputRef={fieldRefCallbacks.prilohy}
+            title="Prílohy"
+            hint="Nahrajte dokumentáciu k zámeru (napr. výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu)."
+            subtitle="Nahrajte súbor alebo ho sem presuňte."
+            accept=".fig,.xls,.xlsx,.odt,.ods,.csv,.zip"
+            acceptedFormatsLabel="FIG, XLS, XLSX, ODT, ODS, CSV alebo ZIP"
+            required
+            errorMessage={errorMap.prilohy}
+            onChangeFiles={(files) => updateValue('prilohy', files)}
+            formatsText={
+              <>
+                Podporované formáty:{' '}
+                <span className="font-bold">
+                  FIG, XLS, XLSX, ODT, ODS, CSV, ZIP
+                </span>
+              </>
+            }
+            maxSizeText={
+              <>
+                Maximálna veľkosť súboru:{' '}
+                <span className="font-bold">15 MB</span>
+              </>
+            }
+            buttonText="Vyberte súbor"
+          />
+        </fieldset>
+
+        <div className="max-w-[760px]">
+          <Checkbox
+            id={ids.suhlas}
+            ref={fieldRefCallbacks.suhlas}
+            name="suhlas"
+            inputSize="large"
+            label="Orgán riadenia potvrdzuje, že zdrojový kód komponentu bude publikovaný pod verejnou licenciou umožňujúcou jeho bezodplatné používanie, úpravu a šírenie."
+            mandatory
+            checked={values.suhlas}
+            error={Boolean(errorMap.suhlas)}
+            errorMsg={errorMap.suhlas}
+            onChange={(event) =>
+              updateValue('suhlas', event.target.checked)
+            }
+          />
+        </div>
+
+        <div>
+          <ButtonCustom
+            id={ids.submitButton}
+            type="submit"
+            variant="primary"
+            status="basic"
+            size="large"
+            disabled={isSubmitting}
+          >
+            {isSubmitting ? 'Odosielam zámer' : 'Odoslať zámer'}
+          </ButtonCustom>
+        </div>
+      </form>
     </main>
   );
 }

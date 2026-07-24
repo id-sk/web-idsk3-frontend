@@ -3,6 +3,8 @@
 import React, { forwardRef, useId } from 'react';
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
+const normalizeReactId = (value) => value.replace(/:/g, '');
+const mergeIds = (...ids) => ids.filter(Boolean).join(' ') || undefined;
 
 const WarningIcon = ({ className = '' }) => (
   <svg
@@ -34,7 +36,6 @@ const TextInputCustom = forwardRef(
       disabled = false,
       error = false,
       errorMsg,
-      announceError = true,
       inputSize = 'large',
       fullWidth = false,
       value,
@@ -43,33 +44,31 @@ const TextInputCustom = forwardRef(
       placeholder,
       className = '',
       inputClassName = '',
+      'aria-describedby': externalDescribedBy,
       ...props
     },
     ref
   ) => {
-    const generatedId = useId();
+    const generatedId = normalizeReactId(useId());
     const inputId = id || `input-${generatedId}`;
-
     const subtitleId = subtitle ? `${inputId}-subtitle` : undefined;
-    const descriptionId = description || caption ? `${inputId}-description` : undefined;
+    const descriptionId =
+      description || caption ? `${inputId}-description` : undefined;
     const errorId = errorMsg ? `${inputId}-error` : undefined;
 
-    const hasError = error || !!errorMsg;
+    const hasError = error || Boolean(errorMsg);
     const isRequired = required ?? mandatory;
-
-    const describedBy =
-      [
-        subtitleId,
-        descriptionId,
-        hasError && errorId ? errorId : null,
-      ]
-        .filter(Boolean)
-        .join(' ') || undefined;
+    const describedBy = mergeIds(
+      externalDescribedBy,
+      subtitleId,
+      descriptionId,
+      hasError ? errorId : undefined
+    );
 
     const sizeClasses = {
-      small: 'h-[40px] text-[16px] leading-6 px-4',
-      medium: 'h-[40px] text-[16px] leading-6 px-4',
-      large: 'h-[48px] text-[19px] leading-7 px-4',
+      small: 'h-[40px] px-4 text-[16px] leading-6',
+      medium: 'h-[40px] px-4 text-[16px] leading-6',
+      large: 'h-[48px] px-4 text-[19px] leading-7',
     };
 
     return (
@@ -90,13 +89,12 @@ const TextInputCustom = forwardRef(
           >
             <span>
               {label}
-
               {isRequired ? (
-                <span aria-hidden="true" className="ml-1 text-xl text-[#C3112B]">
+                <span aria-hidden="true" className="ml-1 text-[#C3112B]">
                   *
                 </span>
               ) : (
-                <span className="ml-1 text-[16px] font-normal leading-6 text-[#757575]">
+                <span aria-hidden="true" className="ml-1 text-[16px] font-normal leading-6 text-[#757575]">
                   {optionalText}
                 </span>
               )}
@@ -115,13 +113,13 @@ const TextInputCustom = forwardRef(
 
         <div className="relative flex w-full">
           <input
+            {...props}
             id={inputId}
             ref={ref}
             name={name}
             type={type}
             autoComplete={autoComplete}
             required={isRequired}
-            aria-required={isRequired ? 'true' : undefined}
             disabled={disabled}
             value={value}
             defaultValue={value === undefined ? defaultValue : undefined}
@@ -129,7 +127,6 @@ const TextInputCustom = forwardRef(
             placeholder={placeholder}
             aria-invalid={hasError ? 'true' : undefined}
             aria-describedby={describedBy}
-            aria-errormessage={hasError && errorId ? errorId : undefined}
             className={cx(
               'w-full rounded-[5px] border-2 bg-white text-[#212121] outline-none transition-colors',
               sizeClasses[inputSize] || sizeClasses.large,
@@ -143,7 +140,6 @@ const TextInputCustom = forwardRef(
                   : 'border-[#424242]',
               inputClassName
             )}
-            {...props}
           />
 
           {hasError && (
@@ -170,7 +166,6 @@ const TextInputCustom = forwardRef(
             {hasError && errorMsg && (
               <span
                 id={errorId}
-                role={announceError ? 'alert' : undefined}
                 className="text-[19px] leading-7 text-[#C3112B]"
               >
                 <span>Chyba: </span>

@@ -1,58 +1,71 @@
 'use client';
 
-import React, { forwardRef, useId, Children, cloneElement } from 'react';
+import React, {
+  Children,
+  cloneElement,
+  forwardRef,
+  useId,
+} from 'react';
 
-// ============================================================================
-// 1. OBALOVACÍ KOMPONENT (Skupina)
-// ============================================================================
+const normalizeReactId = (value) => value.replace(/:/g, '');
+const mergeIds = (...ids) => ids.filter(Boolean).join(' ') || undefined;
+
 export const RadioButtonGroup = ({
   id,
   legend,
   hint,
   mandatory = true,
+  required,
   errorMsg,
   name,
-  className,
-  children
+  className = '',
+  children,
+  'aria-describedby': externalDescribedBy,
+  ...props
 }) => {
-  const generatedId = useId();
+  const generatedId = normalizeReactId(useId());
   const groupId = id || `radio-group-${generatedId}`;
   const hintId = hint ? `${groupId}-hint` : undefined;
   const errorId = errorMsg ? `${groupId}-error` : undefined;
-  const hasError = !!errorMsg;
+  const hasError = Boolean(errorMsg);
+  const isRequired = required ?? mandatory;
 
-  const groupDescribedBy = [
-    hintId,
-    hasError ? errorId : null
-  ].filter(Boolean).join(' ') || undefined;
+  const groupDescribedBy = mergeIds(externalDescribedBy, hintId);
 
   const renderedChildren = Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return cloneElement(child, {
-        error: hasError,
-        name: child.props.name || name,
-      });
+    if (!React.isValidElement(child)) {
+      return child;
     }
 
-    return child;
+    return cloneElement(child, {
+      name: child.props.name || name,
+      required: child.props.required ?? isRequired,
+      error: child.props.error || hasError,
+      groupHintId: hintId,
+      groupErrorId: hasError ? errorId : undefined,
+    });
   });
 
   return (
     <fieldset
+      {...props}
       id={groupId}
-      className={`flex flex-col ${className || ''}`}
-      aria-required={mandatory ? 'true' : undefined}
+      className={`flex flex-col ${className}`}
       aria-describedby={groupDescribedBy}
-      aria-invalid={hasError ? 'true' : undefined}
-      aria-errormessage={hasError ? errorId : undefined}
     >
       {legend && (
-        <legend className={`text-[24px] leading-[35px] text-black font-bold ${hint ? 'mb-[3px]' : 'mb-7'}`}>
+        <legend
+          className={`text-[24px] font-bold leading-[35px] text-black ${
+            hint ? 'mb-[3px]' : 'mb-7'
+          }`}
+        >
           {legend}
-          {mandatory ? (
-            <span aria-hidden="true" className="text-[#C3112B] text-xl ml-1">*</span>
+          {isRequired ? (
+            <span aria-hidden="true" className="ml-1 text-[#C3112B]">
+              *
+            </span>
           ) : (
-            <span className="text-gray-500 text-[19px] font-normal leading-[28px] ml-1">
+            <span aria-hidden="true" className="ml-1 text-[16px] font-normal leading-[24px] text-[#757575]">
               (nepovinné pole)
             </span>
           )}
@@ -60,18 +73,20 @@ export const RadioButtonGroup = ({
       )}
 
       {hint && (
-        <div id={hintId} className="text-[#757575] text-[19px] leading-[28px] mb-7">
+        <div
+          id={hintId}
+          className="mb-7 text-[19px] leading-[28px] text-[#757575]"
+        >
           {hint}
         </div>
       )}
 
-      <div className="flex flex-col gap-4">
-        {renderedChildren}
-      </div>
+      <div className="flex flex-col gap-4">{renderedChildren}</div>
 
-      {hasError && errorMsg && (
-        <div id={errorId} role="alert" className="flex items-end mt-4">
-          <span className="text-[#C3112B] text-[19px] leading-[28px]">
+      {hasError && (
+        <div id={errorId} className="mt-4 flex items-start">
+          <span className="text-[19px] leading-[28px] text-[#C3112B]">
+            <span>Chyba: </span>
             {errorMsg}
           </span>
         </div>
@@ -80,77 +95,111 @@ export const RadioButtonGroup = ({
   );
 };
 
-// ============================================================================
-// 2. SAMOTNÁ MOŽNOSŤ (Radio Button)
-// ============================================================================
 export const RadioButton = forwardRef(
-  ({
-    id,
-    name,
-    value,
-    disabled = false,
-    error = false,
-    label,
-    hint,
-    inputSize = 'large',
-    className,
-    ...props
-  }, ref) => {
-    const uniqueId = useId();
-    const radioId = id || `radio-${uniqueId}`;
+  (
+    {
+      id,
+      name,
+      value,
+      disabled = false,
+      error = false,
+      label,
+      hint,
+      required = false,
+      groupHintId,
+      groupErrorId,
+      inputSize = 'large',
+      className = '',
+      'aria-describedby': externalDescribedBy,
+      ...props
+    },
+    ref
+  ) => {
+    const generatedId = normalizeReactId(useId());
+    const radioId = id || `radio-${generatedId}`;
     const itemHintId = hint ? `${radioId}-hint` : undefined;
 
+    const describedBy = mergeIds(
+      externalDescribedBy,
+      itemHintId,
+      groupHintId,
+      groupErrorId
+    );
+
     const isSmall = inputSize === 'small';
-    const boxSizeClass = isSmall ? 'w-[24px] h-[24px]' : 'w-[40px] h-[40px]';
-    const dotSizeClass = isSmall ? 'w-[12px] h-[12px]' : 'w-[20px] h-[20px]';
+    const boxSizeClass = isSmall
+      ? 'h-[24px] w-[24px]'
+      : 'h-[40px] w-[40px]';
+    const dotSizeClass = isSmall
+      ? 'h-[12px] w-[12px]'
+      : 'h-[20px] w-[20px]';
     const textOffsetClass = isSmall ? 'ml-[36px]' : 'ml-[52px]';
 
     return (
-      <div className={`flex flex-col ${className || ''}`}>
+      <div className={`flex flex-col ${className}`}>
         <label
           htmlFor={radioId}
-          className={`relative flex items-center group ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}
+          className={`relative flex items-start group ${
+            disabled ? 'cursor-not-allowed' : 'cursor-pointer'
+          }`}
         >
           <input
+            {...props}
             id={radioId}
+            ref={ref}
             type="radio"
             name={name}
             value={value}
-            ref={ref}
             disabled={disabled}
-            aria-describedby={itemHintId}
+            required={required}
             aria-invalid={!disabled && error ? 'true' : undefined}
+            aria-describedby={describedBy}
             className="peer sr-only"
-            {...props}
           />
 
           <div
             className={`
-              bg-white flex items-center justify-center shrink-0 rounded-full border-2
-              ${boxSizeClass}
-              peer-focus-visible:outline peer-focus-visible:outline-[3px] peer-focus-visible:outline-[#d96e00] peer-focus-visible:outline-offset-2
-              ${!disabled ? 'group-hover:ring-[4px] group-hover:ring-[#757575]' : ''}
-              peer-checked:[&>div]:opacity-100 peer-checked:[&>div]:scale-100
-              peer-disabled:border-[#bdbdbd] peer-disabled:cursor-not-allowed peer-disabled:hover:ring-[0px]
+              flex shrink-0 items-center justify-center rounded-full border-2
+              bg-white ${boxSizeClass}
+              peer-focus-visible:outline peer-focus-visible:outline-[3px]
+              peer-focus-visible:outline-[#d96e00]
+              peer-focus-visible:outline-offset-2
+              ${
+                !disabled
+                  ? 'group-hover:ring-[4px] group-hover:ring-[#757575]'
+                  : ''
+              }
+              peer-checked:[&>div]:scale-100
+              peer-checked:[&>div]:opacity-100
+              peer-disabled:cursor-not-allowed peer-disabled:border-[#bdbdbd]
+              peer-disabled:hover:ring-[0px]
               ${error ? 'border-[#C3112B]' : 'border-[#424242]'}
             `}
           >
             <div
               className={`
-                ${dotSizeClass} rounded-full bg-[#424242] opacity-0 scale-50 transition-all duration-100
+                ${dotSizeClass} scale-50 rounded-full bg-[#424242] opacity-0
+                transition-all duration-100
               `}
             />
           </div>
 
           {label && (
-            <span className={`ml-3 text-[19px] leading-[28px] ${disabled ? 'text-gray-500' : 'text-black'}`}>
+            <span
+              className={`ml-3 text-[19px] leading-[28px] ${
+                disabled ? 'text-gray-500' : 'text-black'
+              }`}
+            >
               {label}
             </span>
           )}
         </label>
 
         {hint && (
-          <div id={itemHintId} className={`${textOffsetClass} text-[#757575] text-[19px] leading-[28px] mt-1`}>
+          <div
+            id={itemHintId}
+            className={`${textOffsetClass} mt-1 text-[19px] leading-[28px] text-[#757575]`}
+          >
             {hint}
           </div>
         )}
