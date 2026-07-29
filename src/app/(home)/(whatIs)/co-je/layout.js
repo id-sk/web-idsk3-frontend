@@ -2,7 +2,7 @@
 
 import { scrollToTop } from "@/utils/scroll.js";
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
-import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
+import SvgArrowUp from '@/app/(home)/_components/icons/SvgArrowUp';
 
 const WhatIsLayout = ({ children }) => {
   return (
