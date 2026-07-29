@@ -46,6 +46,7 @@ const ErrorSummaryCustom = forwardRef(
         {...props}
         id={summaryId}
         ref={ref}
+        role="region"
         className={`
           mb-8 max-w-[640px] rounded-lg border-y-2 border-r-2
           border-l-[5px] border-[#C3112B] bg-white p-[20px] text-black
@@ -81,7 +82,6 @@ const ErrorSummaryCustom = forwardRef(
                     className="
                       text-[#0B4199] underline decoration-[1px]
                       underline-offset-3 transition-all duration-200
-                      visited:text-[#592999]
                       hover:text-[#126DFF] hover:decoration-[2px]
                       hover:underline-offset-3
                       focus:text-[#126DFF] focus-visible:ring-[3px]

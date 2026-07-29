@@ -119,7 +119,9 @@ const TextInputCustom = forwardRef(
             name={name}
             type={type}
             autoComplete={autoComplete}
-            required={isRequired}
+            required={undefined} 
+            aria-required={isRequired ? 'true' : undefined}
+            
             disabled={disabled}
             value={value}
             defaultValue={value === undefined ? defaultValue : undefined}
@@ -145,7 +147,7 @@ const TextInputCustom = forwardRef(
           {hasError && (
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-[#C3112B]"
+              className="pointer-events-none absolute right-4 top-1/2 z-10 -translate-y-1/2 text-[#C3112B]"
             >
               <WarningIcon className="h-5 w-5" />
             </span>
@@ -163,6 +165,7 @@ const TextInputCustom = forwardRef(
               </span>
             )}
 
+            {/* Chybová hláška správne neobsahuje role="alert" */}
             {hasError && errorMsg && (
               <span
                 id={errorId}

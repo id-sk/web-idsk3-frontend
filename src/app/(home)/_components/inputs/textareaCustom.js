@@ -192,7 +192,8 @@ const TextareaCustom = forwardRef(
             ref={ref}
             name={name}
             rows={rows}
-            required={isRequired}
+            required={undefined}
+            aria-required={isRequired ? 'true' : undefined}
             disabled={disabled}
             maxLength={maxLength}
             value={value}
@@ -218,7 +219,7 @@ const TextareaCustom = forwardRef(
           {hasError && (
             <span
               aria-hidden="true"
-              className="pointer-events-none absolute right-4 top-3 text-[#C3112B]"
+              className="pointer-events-none absolute right-4 top-3 z-10 text-[#C3112B]"
             >
               <WarningIcon className="h-5 w-5" />
             </span>
@@ -237,7 +238,7 @@ const TextareaCustom = forwardRef(
         {maxLength !== undefined && (
           <>
             <span id={counterLimitId} className="sr-only">
-              Maximálne {maxLength} znakov.
+              Maximálne {maxLength} znakov
             </span>
             <span className="sr-only" role="status" aria-atomic="true">
               {counterAnnouncement}
@@ -256,6 +257,7 @@ const TextareaCustom = forwardRef(
               </span>
             )}
 
+            {/* 3. OPRAVA: Overenie - role="alert" tu už našťastie nemáš, takže toto zostáva čisté a funkčné podľa požiadaviek */}
             {hasError && errorMsg && (
               <span
                 id={errorId}
