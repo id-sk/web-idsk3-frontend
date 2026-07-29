@@ -8,7 +8,7 @@ const TabPouzitie = () => (
         
         <SectionBlock titleString="Použitie tlačidiel">
             
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="flex flex-wrap justify-center gap-4 px-4">
                     <ButtonCustom variant="primary" status="basic">
                         Hlavná akcia

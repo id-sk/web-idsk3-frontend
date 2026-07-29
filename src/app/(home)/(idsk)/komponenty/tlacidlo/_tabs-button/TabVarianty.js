@@ -8,7 +8,7 @@ const TabVarianty = () => (
         <SectionBlock titleString="Varianty a stavy">
             
             <H3>1. Varianty tlačidla – primárne, sekundárne, textové</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                  <div className="grid grid-cols-1 sm:grid-cols-3 place-items-center gap-12 px-4 max-w-[700px] mx-auto">
                     <ButtonCustom variant="primary" status="basic">
                         Hlavná akcia
@@ -23,7 +23,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>2. Typy tlačidla – úspešné, výstražné, neaktívne</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                  <div className="grid grid-cols-1 sm:grid-cols-3 place-items-center gap-12 px-4 max-w-[700px] mx-auto">
                     {/* Success */}
                     <ButtonCustom variant="primary" status="success">
@@ -58,7 +58,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>3. Veľkosti tlačidla – veľké, stredné, malé</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                  <div className="grid grid-cols-1 sm:grid-cols-3 place-items-center gap-12 px-4 max-w-[700px] mx-auto">
                     <ButtonCustom variant="primary" status="basic" size="large">
                         Hlavná akcia
@@ -73,7 +73,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>4. Konfigurácie tlačidla – s ikonkou naľavo, s ikonkou napravo, iba ikonka</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="grid grid-cols-1 sm:grid-cols-3 place-items-center gap-12 px-4 max-w-[700px] mx-auto">
                     
                     <ButtonCustom 

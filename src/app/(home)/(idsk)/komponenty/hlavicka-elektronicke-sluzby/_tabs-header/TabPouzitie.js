@@ -13,7 +13,7 @@ import {
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const exampleWrapperClass =
-  'flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 transition-all duration-300';
+  'flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 transition-all duration-300';
 
 const TabPouzitie = () => {
   const mockSidebarData = [];

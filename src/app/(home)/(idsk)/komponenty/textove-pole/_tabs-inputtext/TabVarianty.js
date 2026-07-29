@@ -8,7 +8,7 @@ import {
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const ExampleFrame = ({ children }) => (
-  <div className="mb-8 mt-4 flex flex-col items-center gap-6 border-2 border-dashed border-[#9e9e9e] rounded-[10px] py-10">
+  <div className="mb-8 mt-4 flex flex-col items-center gap-6 border-2 border-dashed border-[#757575] rounded-[10px] py-10">
     {children}
   </div>
 );

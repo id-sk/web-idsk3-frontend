@@ -8,7 +8,7 @@ const TabVarianty = () => (
         <SectionBlock titleString="Varianty a stavy">
             
             <H3>1. Variant povinného a nepovinného začiarkavacieho poľa</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] px-4">
                     <Checkbox 
                         inputSize='large'
@@ -31,7 +31,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>2. Variant začiarkavacieho poľa s popisom a bez popisu</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] px-4">
                     <Checkbox 
                         inputSize='large'
@@ -54,7 +54,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>3. Variant začiarknutého a nezačiarknutého poľa</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] px-4">
                     <Checkbox 
                         inputSize='large'
@@ -78,7 +78,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>4. Varianty začiarkavacieho poľa – zrušený a chybový</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] px-4">
                     <Checkbox 
                         inputSize='large'
@@ -104,7 +104,7 @@ const TabVarianty = () => (
             </div>
 
             <H3>5. Variant začiarkavacieho poľa – veľký a malý</H3>
-            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[400px] px-4">
                     <Checkbox 
                         inputSize='large'

@@ -6,7 +6,7 @@ const TabPouzitie = () => (
     <div className="animate-fade-in text-black w-full min-w-0">
         
         <SectionBlock titleString="Použitie Akordeónu">
-            <div className="flex justify-center border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4">
+            <div className="flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
                 <div className="w-full max-w-[700px] py-7 mt-6 mb-1 px-4">
                     <CustomAccordion 
                         heading="Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?" 
