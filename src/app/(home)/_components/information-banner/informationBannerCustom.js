@@ -1,7 +1,9 @@
 'use client';
 
 import React, { useState, useId } from 'react';
-import classNames from 'classnames';
+
+
+const classNames = (...classes) => classes.filter(Boolean).join(' ');
 
 // --- IKONKY ---
 const CloseIcon = () => (
