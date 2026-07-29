@@ -1,7 +1,8 @@
 'use client';
 
 import React from 'react';
-import { FooterContainer } from '@eslovensko/idsk-react';
+import Image from "next/image";
+import FooterBase from "@/app/(home)/_components/footer/footerBase";
 
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
@@ -11,80 +12,62 @@ import {
   Ul,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
+const OperatorInformation = () => (
+  <p>
+    Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja
+    a informatizácie Slovenskej republiky.
+  </p>
+);
+
+const MirriLogo = () => (
+  <a
+    href="https://mirri.gov.sk"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <Image
+      src="/images/group.svg"
+      alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
+      width={290}
+      height={66}
+      className="h-auto max-w-full"
+    />
+  </a>
+);
+
 const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4';
+  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie päty">
       <div className={exampleWrapperClass}>
         <div className="w-full max-w-[700px] px-4">
-          <FooterContainer
-            linksList={[
-              <a
-                key="cookies"
-                href="https://idsk.gov.sk/co-je/cookies-policy"
-                className="hover:underline"
-              >
-                Informácie o spracúvaní súborov cookies
-              </a>,
-              <a
-                key="contact"
-                href="mailto:idsk@mirri.gov.sk"
-                className="hover:underline"
-              >
-                Kontakt na prevádzkovateľa
-              </a>,
-              <a
-                key="idsk2"
-                href="https://idsk2.gov.sk/"
-                className="hover:underline"
-              >
-                IDSK2
-              </a>,
+          <FooterBase
+            ariaLabel="Ukážka základného variantu päty"
+            links={[
+              {
+                href: "#",
+                label: "Vyhlásenie o prístupnosti",
+              },
+              {
+                href: "#",
+                label: "Kontakt na prevádzkovateľa",
+              },
+              {
+                href: "#",
+                label: "Mapa stránky",
+              },
             ]}
-            bottomSection={
-              <div className="mt-6 text-md text-black">
-                <p>
-                  Prevádzkovateľom služby je Ministerstvo investícií,
-                  regionálneho rozvoja a informatizácie SR.
-                </p>
-
-                <p className="mt-4">
-                  Vytvorené v súlade s{' '}
-                  <a
-                    href="https://idsk.gov.sk"
-                    className="underline hover:text-blue-600"
-                  >
-                    Jednotným dizajnovým manuálom IDSK
-                  </a>
-                  .
-                </p>
-              </div>
-            }
-            logo={
-              <a
-                href="https://mirri.gov.sk"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-6 inline-block"
-              >
-                <img
-                  src="/images/group.svg"
-                  alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
-                  width="290"
-                  height="66"
-                />
-              </a>
-            }
+            bottomSection={<OperatorInformation />}
+            logo={<MirriLogo />}
           >
-            <div className="mb-6 text-md text-black">
-              <p>
-                Na tomto webovom sídle sa využívajú len nevyhnutné/technické
-                cookies.
-              </p>
-            </div>
-          </FooterContainer>
+            <p>
+              Na tomto webovom sídle sa využívajú len nevyhnutné/technické
+              cookies.
+            </p>
+          </FooterBase>
         </div>
       </div>
 

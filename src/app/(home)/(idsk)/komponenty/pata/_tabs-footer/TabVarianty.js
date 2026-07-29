@@ -1,19 +1,40 @@
-'use client';
-
-import React from 'react';
-import { FooterContainer } from '@eslovensko/idsk-react';
-
+import Image from "next/image";
+import FooterBase from "@/app/(home)/_components/footer/footerBase";
 import {
   SectionBlock,
   H3,
   Text,
-} from '@/app/(home)/_components/content-blocks/ContentBlocks';
+} from "@/app/(home)/_components/content-blocks/ContentBlocks";
 
 const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#9e9e9e] rounded-[10px] mb-8 mt-4';
+  "mb-8 mt-4 flex flex-col items-center gap-6 rounded-[10px] border-2 border-dashed border-[#757575] py-10";
+
+const OperatorInformation = () => (
+  <p>
+    Prevádzkovateľom služby je Ministerstvo investícií, regionálneho rozvoja
+    a informatizácie Slovenskej republiky.
+  </p>
+);
+
+const MirriLogo = () => (
+  <a
+    href="https://mirri.gov.sk"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="block"
+  >
+    <Image
+      src="/images/group.svg"
+      alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
+      width={290}
+      height={66}
+      className="h-auto max-w-full"
+    />
+  </a>
+);
 
 const TabVarianty = () => (
-  <div className="animate-fade-in text-black w-full min-w-0">
+  <div className="animate-fade-in w-full min-w-0 text-black">
     <SectionBlock titleString="Varianty a stavy">
       <H3>1. Základný variant päty</H3>
 
@@ -24,52 +45,30 @@ const TabVarianty = () => (
 
       <div className={exampleWrapperClass}>
         <div className="w-full max-w-[700px] px-4">
-          <FooterContainer
-            linksList={[
-              <a
-                key="accessibility"
-                href="#"
-                className="hover:underline"
-              >
-                Vyhlásenie o prístupnosti
-              </a>,
-              <a key="contact" href="#" className="hover:underline">
-                Kontakt na prevádzkovateľa
-              </a>,
-              <a key="map" href="#" className="hover:underline">
-                Mapa stránky
-              </a>,
+          <FooterBase
+            ariaLabel="Ukážka základného variantu päty"
+            links={[
+              {
+                href: "#",
+                label: "Vyhlásenie o prístupnosti",
+              },
+              {
+                href: "#",
+                label: "Kontakt na prevádzkovateľa",
+              },
+              {
+                href: "#",
+                label: "Mapa stránky",
+              },
             ]}
-            bottomSection={
-              <div className="mt-4 text-base text-black">
-                <p>
-                  Prevádzkovateľom služby je Ministerstvo investícií,
-                  regionálneho rozvoja a informatizácie Slovenskej republiky.
-                </p>
-              </div>
-            }
-            logo={
-              <a
-                href="https://mirri.gov.sk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/images/group.svg"
-                  alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
-                  width="290"
-                  height="66"
-                />
-              </a>
-            }
+            bottomSection={<OperatorInformation />}
+            logo={<MirriLogo />}
           >
-            <div className="mb-6 text-md text-black">
-              <p>
-                Na tomto webovom sídle sa využívajú len nevyhnutné/technické
-                cookies.
-              </p>
-            </div>
-          </FooterContainer>
+            <p>
+              Na tomto webovom sídle sa využívajú len nevyhnutné/technické
+              cookies.
+            </p>
+          </FooterBase>
         </div>
       </div>
 
@@ -82,89 +81,64 @@ const TabVarianty = () => (
 
       <div className={exampleWrapperClass}>
         <div className="w-full max-w-[700px] px-4">
-          <FooterContainer
-            linksList={[
-              <a
-                key="idsk2"
-                href="https://idsk2.gov.sk/"
-                className="hover:underline"
-              >
-                IDSK 2
-              </a>,
-              <a key="privacy" href="#" className="hover:underline">
-                Ochrana osobných údajov
-              </a>,
+          <FooterBase
+            ariaLabel="Ukážka variantu päty s navigáciou"
+            links={[
+              {
+                href: "https://idsk2.gov.sk/",
+                label: "IDSK 2",
+              },
+              {
+                href: "#",
+                label: "Ochrana osobných údajov",
+              },
             ]}
-            bottomSection={
-              <div className="mt-4 text-base text-black">
-                <p>
-                  Prevádzkovateľom služby je Ministerstvo investícií,
-                  regionálneho rozvoja a informatizácie Slovenskej republiky.
-                </p>
-              </div>
-            }
-            logo={
-              <a
-                href="https://mirri.gov.sk"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/images/group.svg"
-                  alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
-                  width="290"
-                  height="66"
-                />
-              </a>
-            }
+            bottomSection={<OperatorInformation />}
+            logo={<MirriLogo />}
           >
             <nav
               aria-label="Navigácia v päte"
-              className="flex flex-col md:flex-row gap-10 md:gap-24 mb-6 border-b border-gray-300 pb-7"
+              className="border-b border-neutral-300 pb-7"
             >
-              <div>
-                <h2 className="font-bold text-lg mb-4">Užitočné odkazy</h2>
-                <ul className="space-y-3 list-none p-0 m-0">
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Elektronické služby
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Životné situácie
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Časté otázky (FAQ)
-                    </a>
-                  </li>
-                </ul>
-              </div>
+              <div className="flex flex-wrap gap-x-20 gap-y-10">
+                <div className="min-w-[180px] flex-1">
+                  <h2 className="mb-4 text-lg font-bold">
+                    Užitočné odkazy
+                  </h2>
 
-              <div>
-                <h2 className="font-bold text-lg mb-4">O nás</h2>
-                <ul className="space-y-3 list-none p-0 m-0">
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Projekty
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Kariéra
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" className="hover:underline">
-                      Kontakty
-                    </a>
-                  </li>
-                </ul>
+                  <ul className="m-0 list-none space-y-3 p-0">
+                    <li>
+                      <a href="#">Elektronické služby</a>
+                    </li>
+                    <li>
+                      <a href="#">Životné situácie</a>
+                    </li>
+                    <li>
+                      <a href="#">Časté otázky (FAQ)</a>
+                    </li>
+                  </ul>
+                </div>
+
+                <div className="min-w-[180px] flex-1">
+                  <h2 className="mb-4 text-lg font-bold">
+                    O nás
+                  </h2>
+
+                  <ul className="m-0 list-none space-y-3 p-0">
+                    <li>
+                      <a href="#">Projekty</a>
+                    </li>
+                    <li>
+                      <a href="#">Kariéra</a>
+                    </li>
+                    <li>
+                      <a href="#">Kontakty</a>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </nav>
-          </FooterContainer>
+          </FooterBase>
         </div>
       </div>
     </SectionBlock>
