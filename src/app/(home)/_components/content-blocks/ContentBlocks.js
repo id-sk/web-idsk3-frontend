@@ -63,7 +63,7 @@ export const ExtLink = ({ href, children, className = "" }) => (
     href={href} 
     target="_blank" 
     rel="noopener noreferrer" 
-    className={`text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px] transition-all duration-100 visited:text-[#592999] ${className}`}
+    className={`text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px] transition-all duration-100 ${className}`}
   >
     {children}
     <span className="sr-only"> (otvorí sa v novom okne)</span>

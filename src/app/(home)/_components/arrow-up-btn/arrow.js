@@ -1,7 +1,7 @@
 'use client';
 
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
-import ArrowUpIcon from '@/app/(home)/_components/icons/ArrowUpIcon';
+import SvgArrowUp from '@/app/(home)/_components/icons/SvgArrowUp';
 import { scrollToTop } from '@/utils/scroll';
 
 const BackToTop = ({ className = '' }) => (
@@ -9,7 +9,7 @@ const BackToTop = ({ className = '' }) => (
     type="button"
     variant="tertiary"
     status="basic"
-    iconRight={<ArrowUpIcon className="h-5 w-5" />}
+    iconRight={<SvgArrowUp className="h-5 w-5" />}
     onClick={scrollToTop}
     className={className}
   >

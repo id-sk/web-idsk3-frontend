@@ -72,7 +72,7 @@ export default function PrincipyPage() {
                 {/* Odkaz generujeme z celého názvu, aby presne sedel s IDčka v SectionBlock */}
                 <a 
                   href={`#${generateId(item.title)}`} 
-                  className="text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px] transition-all duration-100 visited:text-[#592999]"
+                  className="text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px] transition-all duration-100"
                 >
                   {item.shortLabel}
                 </a>

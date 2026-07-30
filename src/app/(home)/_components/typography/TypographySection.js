@@ -15,7 +15,7 @@ const StyleRow = ({ title, size, lineHeight, type, fontWeight, isLink = false })
              <p>
                 <a href="#" 
                    className={`
-                     text-[#0B4199] visited:text-[#592999] hover:text-[#126DFF]
+                     text-[#0B4199] hover:text-[#126DFF]
                      underline underline-offset-3
                      transition-all duration-100
                      ${hoverDecorationThickness}
