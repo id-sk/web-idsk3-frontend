@@ -24,6 +24,8 @@ import { submitFeedbackForm } from './_lib/submitFeedbackForm';
 
 const IDSK_EMAIL = 'idsk@mirri.gov.sk';
 
+
+
 const initialValues = {
   organizacia: '',
   meno: '',
@@ -37,6 +39,7 @@ const initialValues = {
   url: '',
   prilohy: [],
   suhlas: false,
+  website_url_honey: '',
 };
 
 const FIELD_ORDER = [
@@ -79,8 +82,18 @@ const SERVER_ERROR_FIELD_MAP = {
 
 const normalizeReactId = (value) => value.replace(/:/g, '');
 
-const prefersReducedMotion = () =>
-  window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const prefersReducedMotion = () => {
+  if (
+    typeof window === 'undefined' ||
+    typeof window.matchMedia !== 'function'
+  ) {
+    return false;
+  }
+
+  return window.matchMedia(
+    '(prefers-reduced-motion: reduce)'
+  ).matches;
+};
 
 const validateEmail = (value) => {
   if (!value) return false;
@@ -136,9 +149,7 @@ const getValidationMessage = (fieldName, values) => {
     case 'url':
       return validateUrl(values.url)
         ? ''
-        : 'Zadajte platnú URL adresu grafického návrhu.';
-    case 'prilohy':
-      return values.prilohy?.length ? '' : 'Nahrajte aspoň jednu prílohu.';
+        : 'Zadajte platnú URL adresu grafického návrhu v správnom tvare (https:// alebo http://).';
     case 'suhlas':
       return values.suhlas
         ? ''
@@ -187,11 +198,9 @@ const CopyIcon = ({ className = '' }) => (
 );
 
 const RequiredHint = () => (
-  <p className="mt-8 text-[16px] leading-6 text-[#757575]">
+  <p aria-hidden="true" className="mt-8 text-[16px] leading-6 text-[#757575]">
     Povinné polia sú označené hviezdičkou
-    <span aria-hidden="true" className="text-[#757575]">
       {' '}(<span className="text-[#C3112B]">*</span>)
-    </span>
     .
   </p>
 );
@@ -247,6 +256,57 @@ export default function FeedbackForm() {
   const [values, setValues] = useState(initialValues);
   const [errors, setErrors] = useState([]);
   const [successData, setSuccessData] = useState(null);
+
+  const [prilohyValidation, setPrilohyValidation] = useState({
+    isValid: false,
+    hasInvalidFiles: false,
+    isRequiredMissing: true,
+    totalSize: 0,
+    invalidFiles: [],
+    message: 'Nahrajte aspoň jednu prílohu.',
+  });
+
+  const handleFilesChange = useCallback((files) => {
+  const nextValues = {
+      ...valuesRef.current,
+      prilohy: files,
+    };
+
+    valuesRef.current = nextValues;
+    setValues(nextValues);
+  }, []);
+
+    const handleFilesValidationChange = useCallback((validation) => {
+    setPrilohyValidation(validation);
+
+    setErrors((currentErrors) => {
+      const hasAttachmentsError = currentErrors.some(
+        (error) => error.field === 'prilohy'
+      );
+
+      if (!hasAttachmentsError) {
+        return currentErrors;
+      }
+
+      if (validation.isValid) {
+        return currentErrors.filter(
+          (error) => error.field !== 'prilohy'
+        );
+      }
+
+      return currentErrors.map((error) =>
+        error.field === 'prilohy'
+          ? {
+              ...error,
+              message:
+                validation.message ||
+                'Skontrolujte nahrané prílohy.',
+            }
+          : error
+      );
+    });
+  }, []);
+
   const [copyStatus, setCopyStatus] = useState({
     message: '',
     isError: false,
@@ -299,18 +359,24 @@ export default function FeedbackForm() {
   );
 
   const validateForm = useCallback(
-    (nextValues) =>
-      FIELD_ORDER.reduce((nextErrors, fieldName) => {
-        const message = getValidationMessage(fieldName, nextValues);
-
-        if (message) {
-          nextErrors.push(createFieldError(fieldName, message));
-        }
-
+  (nextValues) =>
+    FIELD_ORDER.reduce((nextErrors, fieldName) => {
+      if (fieldName === 'prilohy') {
         return nextErrors;
-      }, []),
-    [createFieldError]
-  );
+      }
+      const message = getValidationMessage(
+        fieldName,
+        nextValues
+      );
+      if (message) {
+        nextErrors.push(
+          createFieldError(fieldName, message)
+        );
+      }
+      return nextErrors;
+    }, []),
+  [createFieldError]
+);
 
   const normalizeServerErrors = useCallback(
     (error) => {
@@ -427,9 +493,9 @@ export default function FeedbackForm() {
       behavior: prefersReducedMotion() ? 'auto' : 'smooth',
       block: 'start',
     });
-  }, [successData]);
+    }, [successData]);
 
-  const handleSubmit = async (event) => {
+    const handleSubmit = async (event) => {
     event.preventDefault();
 
     if (isSubmitting) {
@@ -439,9 +505,21 @@ export default function FeedbackForm() {
     const currentValues = valuesRef.current;
     const nextErrors = validateForm(currentValues);
 
-    if (nextErrors.length) {
+    if (!prilohyValidation.isValid) {
+      nextErrors.push(
+        createFieldError(
+          'prilohy',
+          prilohyValidation.message ||
+            'Skontrolujte nahrané prílohy.'
+        )
+      );
+    }
+
+    if (nextErrors.length > 0) {
       setErrors(nextErrors);
-      setSummaryFocusRequest((current) => current + 1);
+      setSummaryFocusRequest(
+        (current) => current + 1
+      );
       return;
     }
 
@@ -449,36 +527,49 @@ export default function FeedbackForm() {
     setIsSubmitting(true);
 
     try {
-      const result = await submitFeedbackForm(currentValues);
+      const result =
+        await submitFeedbackForm(currentValues);
 
       setSuccessData({
-        nazovKomponentu: currentValues.nazovKomponentu,
+        nazovKomponentu:
+          currentValues.nazovKomponentu,
         email: currentValues.email,
         datumPrijatia: result.datumPrijatia,
         referencneCislo: result.referencneCislo,
       });
-      setErrors([]);
     } catch (error) {
       setErrors(normalizeServerErrors(error));
-      setSummaryFocusRequest((current) => current + 1);
+      setSummaryFocusRequest(
+        (current) => current + 1
+      );
     } finally {
       setIsSubmitting(false);
     }
   };
 
   const handleCopyEmail = async () => {
+    setCopyStatus({
+      message: '',
+      isError: false,
+    });
+
     try {
       await navigator.clipboard.writeText(IDSK_EMAIL);
-      setCopyStatus({
-        message: 'E-mailová adresa bola skopírovaná.',
-        isError: false,
-      });
+
+      window.setTimeout(() => {
+        setCopyStatus({
+          message: 'E-mailová adresa bola skopírovaná.',
+          isError: false,
+        });
+      }, 50);
     } catch {
-      setCopyStatus({
-        message:
-          'E-mailovú adresu sa nepodarilo skopírovať. Označte ju a skopírujte ručne.',
-        isError: true,
-      });
+      window.setTimeout(() => {
+        setCopyStatus({
+          message:
+            'E-mailovú adresu sa nepodarilo skopírovať. Označte ju a skopírujte ručne.',
+          isError: true,
+        });
+      }, 50);
     }
   };
 
@@ -492,6 +583,7 @@ export default function FeedbackForm() {
             id={ids.successHeading}
             ref={successHeadingRef}
             tabIndex={-1}
+            role="status" 
             className="mt-6 text-2xl font-black leading-tight text-black focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 sm:text-3xl md:text-4xl md:leading-[55px]"
           >
             Ďakujeme, váš zámer sme úspešne prijali.
@@ -557,8 +649,8 @@ export default function FeedbackForm() {
               <div className="min-w-0 text-left sm:pl-4">
                 <p className="m-0 text-[19px] leading-7 text-[#212121]">
                   <strong>
-                    IDSK tím Ministerstva investícií, regionálneho rozvoja a
-                    informatizácie.
+                    IDSK tím Ministerstva investícií, regionálneho rozvoja
+                    a informatizácie Slovenskej republiky.
                   </strong>
                 </p>
 
@@ -601,7 +693,7 @@ export default function FeedbackForm() {
                         }`
                       : 'sr-only'
                   }
-                  role="status"
+                  aria-live="polite"
                   aria-atomic="true"
                 >
                   {copyStatus.message}
@@ -640,10 +732,9 @@ export default function FeedbackForm() {
             focus:outline-offset-2
           "
         >
-          Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI
-          <span className="sr-only">, súbor PDF, otvorí sa v novom okne</span>
+          Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI (PDF, 694 kB)
+          <span className="sr-only">, otvorí sa v novom okne</span>
         </a>
-        .
       </p>
 
       <RequiredHint />
@@ -664,6 +755,30 @@ export default function FeedbackForm() {
           {isSubmitting ? 'Formulár sa odosiela.' : ''}
         </p>
 
+        <div
+            className="absolute left-[-9999px] top-auto h-px w-px overflow-hidden"
+            aria-hidden="true"
+          >
+            <label htmlFor="website_url_honey">
+              Webová stránka
+            </label>
+
+            <input
+              id="website_url_honey"
+              name="website_url_honey"
+              type="text"
+              tabIndex={-1}
+              autoComplete="off"
+              value={values.website_url_honey}
+              onChange={(event) =>
+                updateValue(
+                  'website_url_honey',
+                  event.target.value
+                )
+              }
+            />
+          </div>
+
         {errors.length > 0 && (
           <ErrorSummaryCustom
             id={ids.errorSummary}
@@ -677,13 +792,14 @@ export default function FeedbackForm() {
 
         <fieldset className="m-0 flex max-w-[400px] flex-col gap-6 border-0 p-0">
           <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
-            Údaje o žiadateľovi
+            <h2>Údaje o žiadateľovi</h2>
           </legend>
 
           <TextInputCustom
             id={ids.organizacia}
             ref={fieldRefCallbacks.organizacia}
             name="organizacia"
+            maxLength={200}
             autoComplete="organization"
             inputSize="medium"
             label="Názov inštitúcie"
@@ -702,6 +818,7 @@ export default function FeedbackForm() {
             id={ids.meno}
             ref={fieldRefCallbacks.meno}
             name="meno"
+            maxLength={100}
             autoComplete="given-name"
             inputSize="medium"
             label="Meno kontaktnej osoby"
@@ -718,6 +835,7 @@ export default function FeedbackForm() {
             id={ids.priezvisko}
             ref={fieldRefCallbacks.priezvisko}
             name="priezvisko"
+            maxLength={100}
             autoComplete="family-name"
             inputSize="medium"
             label="Priezvisko kontaktnej osoby"
@@ -736,6 +854,7 @@ export default function FeedbackForm() {
             id={ids.email}
             ref={fieldRefCallbacks.email}
             name="email"
+            maxLength={254}
             type="email"
             autoComplete="email"
             inputSize="medium"
@@ -753,7 +872,7 @@ export default function FeedbackForm() {
 
         <RadioButtonGroup
           id={ids.typZameruGroup}
-          legend="Typ zámeru"
+          legend={<h2 className="inline">Typ zámeru</h2>}
           name="typ-zameru"
           mandatory
           errorMsg={errorMap.typZameru}
@@ -783,7 +902,7 @@ export default function FeedbackForm() {
 
         <fieldset className="m-0 flex flex-col gap-6 border-0 p-0">
           <legend className="mb-2 text-[24px] font-bold leading-8 text-[#212121]">
-            Informácie o komponente
+            <h2>Informácie o komponente</h2>
           </legend>
 
           <div className="max-w-[400px]">
@@ -791,19 +910,12 @@ export default function FeedbackForm() {
               id={ids.nazovKomponentu}
               ref={fieldRefCallbacks.nazovKomponentu}
               name="nazov-komponentu"
+              maxLength={200}
               inputSize="medium"
               label="Názov komponentu"
               subtitle="Uveďte návrh názvu nového komponentu, alebo presný názov existujúceho komponentu z knižnice IDSK."
               mandatory
               placeholder="napr. Tlačidlo"
-              description={
-                <a
-                  href="/komponenty"
-                  className="text-[#0B4199] underline hover:text-[#126DFF] hover:decoration-2 focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
-                >
-                  Zoznam komponentov IDSK
-                </a>
-              }
               fullWidth
               value={values.nazovKomponentu}
               error={Boolean(errorMap.nazovKomponentu)}
@@ -812,6 +924,21 @@ export default function FeedbackForm() {
                 updateValue('nazovKomponentu', event.target.value)
               }
             />
+            <div className="mt-2 text-[16px] leading-6"> 
+              <a
+                href="/komponenty"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="
+                  text-[#0B4199] underline underline-offset-2
+                  hover:text-[#126DFF] hover:decoration-2 
+                  focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2
+                "
+              >
+                Zoznam komponentov IDSK
+                <span className="sr-only">, otvorí sa v novom okne</span>
+              </a>
+            </div>
           </div>
 
           <div className="flex max-w-[640px] flex-col gap-6">
@@ -872,12 +999,13 @@ export default function FeedbackForm() {
               id={ids.url}
               ref={fieldRefCallbacks.url}
               name="url"
+              maxLength={2048}
               type="url"
               inputSize="medium"
               label="Grafický návrh"
               placeholder="napr. https://www.figma.com/design/..."
               mandatory
-              subtitle="Vložte priamy odkaz na projekt napr. v nástroji Figma (s povolením na zobrazenie)."
+              subtitle="Vložte priamy odkaz na projekt napr. v nástroji Figma (s povolením na zobrazenie). URL adresa musí začínať na https:// alebo http://."
               fullWidth
               value={values.url}
               error={Boolean(errorMap.url)}
@@ -885,35 +1013,44 @@ export default function FeedbackForm() {
               onChange={(event) => updateValue('url', event.target.value)}
             />
           </div>
-
-          <FileUploadCustom
-            id={ids.priloha}
-            inputRef={fieldRefCallbacks.prilohy}
-            title="Prílohy"
-            hint="Nahrajte dokumentáciu k zámeru (napr. výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu)."
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            accept=".fig,.xls,.xlsx,.odt,.ods,.csv,.zip"
-            acceptedFormatsLabel="FIG, XLS, XLSX, ODT, ODS, CSV alebo ZIP"
-            required
-            errorMessage={errorMap.prilohy}
-            onChangeFiles={(files) => updateValue('prilohy', files)}
-            formatsText={
-              <>
-                Podporované formáty:{' '}
-                <span className="font-bold">
-                  FIG, XLS, XLSX, ODT, ODS, CSV, ZIP
-                </span>
-              </>
-            }
-            maxSizeText={
-              <>
-                Maximálna veľkosť súboru:{' '}
-                <span className="font-bold">15 MB</span>
-              </>
-            }
-            buttonText="Vyberte súbor"
-          />
         </fieldset>
+
+        <FileUploadCustom
+          id={ids.priloha}
+          inputRef={fieldRefCallbacks.prilohy}
+          title="Prílohy"
+          headingLevel="h2"
+          filesHeadingLevel="h3"
+          hint="Nahrajte dokumentáciu k zámeru (napr. výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu)."
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          accept=".fig,.xls,.xlsx,.odt,.ods,.csv,.zip"
+          acceptedFormatsLabel="FIG, XLS, XLSX, ODT, ODS, CSV alebo ZIP"
+          maxFiles={5}
+          maxTotalSize={15 * 1024 * 1024}
+          required
+          errorMessage={errorMap.prilohy}
+          onChangeFiles={handleFilesChange}
+          onValidationChange={handleFilesValidationChange}
+          formatsText={
+            <>
+              Podporované formáty:{' '}
+              <span className="font-bold">
+                FIG, XLS, XLSX, ODT, ODS, CSV, ZIP
+              </span>
+              <p>
+                Maximálny počet súborov:{' '}
+                <span className="font-bold">5</span>
+              </p>
+            </>
+          }
+          maxSizeText={
+            <>
+              Maximálna celková veľkosť všetkých súborov:{' '}
+              <span className="font-bold">15 MB</span>
+            </>
+          }
+          buttonText="Vyberte súbor"
+        />
 
         <div className="max-w-[760px]">
           <Checkbox
