@@ -1,100 +1,66 @@
-'use client'
-
-import Card from '@/app/(home)/_components/article/article';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from '@/app/(home)/_components/tab-bar/tabBar';
+
+import TabPouzitie from './_tabs-card/TabPouzitie';
+import TabVarianty from './_tabs-card/TabVarianty';
+import TabPristupnost from './_tabs-card/TabPristupnost';
+import TabImplementacia from './_tabs-card/TabImplementacia';
+
+export const metadata = {
+  title: 'Kartička | Komponenty IDSK',
+  description:
+    'Dokumentácia komponentu Kartička, jeho použitie, varianty, prístupnosť a implementácia.',
+};
+
 const CardPage = () => {
-    return (
-        <div className="component-page">
-            <title>Kartička</title>
-            <h1 className="my-8">
-                Kartička
-            </h1>
-            <p className="idsk-subtitle mb-16">
-                Primárna funkcia komponentu kartička je vizuálna reprezentácia obsahu článkov alebo podstránok. Prvky, ako sú text a obrázky, by mali byť na kartičke umiestnené spôsobom, ktorý jasne naznačuje ich hierarchiu.
-            </p>
-            <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/card/'}>
-                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
-                </Link>
-            </div>
-            <h2 className="mb-4">
-                Použitie kartičky
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Kartička je komponent obsahujúci stručný popis poprípade tag ale taktiež môže obsahovať obrázok. Slúži, ako navigácia na články alebo podstránky. Celá plocha kartičky je klikateľná, kde po kliku je používateľ presmerovaný na konkrétny obsah.
-            </p>
-            <h2 className="mt-8 mb-4">
-                Varianty
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                Komponent umožňuje použitie 2 variantov:
-            </p>
-            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
-                <li>1. Horizontálna</li>
-                <li>2. Vertikálna</li>
-            </ol>
-            <Image
-                src="/images/karticka/varianty-karticky.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="varianty kartičky"
-                className="mt-4 mb-8"
-            />
-            <h2 className="mt-8 mb-4">
-                Nastavenie
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                1. Variant kartičky základný stav/vybraný stav
-            </p>
-            <div className='mb-4'>
-            <Image
-                src="/images/karticka/nastavenie-vybrany-stav.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="varianty kartičky základný stav/vybraný stav"
-                className="mt-4 mb-8"
-            />
-            </div>
-            <div className='mb-4'>
-            <Image
-                src="/images/karticka/nastavenie-zakladny-stav.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="varianty kartičky základný stav/vybraný stav"
-                className="mt-4 mb-8"
-            />
-            </div>
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                2. Variant kartičky s obrázkom/bez obrázku
-            </p>
-            <div className='mb-4'>
-            <Image
-                src="/images/karticka/nastavenie-s-obrazkom.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="kartičky s obrázkom/bez obrázku"
-                className="mt-4 mb-8"
-            />
-            </div>
-            <div className='mb-4'>
-            <Image
-                src="/images/karticka/varianty-karticky-s-obrazkom-bez.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="kartičky s obrázkom/bez obrázku"
-                className="mt-4 mb-8"
-            />
-            </div>
+  return (
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
+      <header>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+          Kartička (Card)
+        </h1>
+      </header>
+
+      <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
+        Primárna funkcia komponentu kartička je vizuálna reprezentácia obsahu
+        článkov alebo podstránok. Prvky, ako sú text a obrázky, majú byť
+        umiestnené spôsobom, ktorý jasne naznačuje ich hierarchiu.
+      </p>
+
+      <Tabs defaultValue="pouzitie">
+        <TabsList ariaLabel="Sekcie dokumentácie komponentu Kartička">
+          <TabsTrigger value="pouzitie">Použitie</TabsTrigger>
+          <TabsTrigger value="varianty">Varianty a stavy</TabsTrigger>
+          <TabsTrigger value="pristupnost">Prístupnosť</TabsTrigger>
+          <TabsTrigger value="kod">Implementácia</TabsTrigger>
+        </TabsList>
+
+        <div className="mt-2 text-black">
+          <TabsContent value="pouzitie">
+            <TabPouzitie />
+          </TabsContent>
+
+          <TabsContent value="varianty">
+            <TabVarianty />
+          </TabsContent>
+
+          <TabsContent value="pristupnost">
+            <TabPristupnost />
+          </TabsContent>
+
+          <TabsContent value="kod">
+            <TabImplementacia />
+          </TabsContent>
         </div>
-    );
-}
+      </Tabs>
+    </div>
+  );
+};
 
 export default CardPage;

@@ -1,55 +1,64 @@
-'use client'
+import React from 'react';
 
-import Card from '@/app/(home)/_components/article/article';
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/(home)/_components/tab-bar/tabBar';
 
-const NavigationBarPage = () => {
+import TabPouzitie from './_tabs-signpost/TabPouzitie';
+import TabVarianty from './_tabs-signpost/TabVarianty';
+import TabPristupnost from './_tabs-signpost/TabPristupnost';
+import TabImplementacia from './_tabs-signpost/TabImplementacia';
+
+export const metadata = {
+  title: 'Rázcestník | Komponenty IDSK',
+  description: 'Dokumentácia komponentu Rázcestník - horizontálny (Signpost), jeho varianty, prístupnosť a implementácia.',
+};
+
+const SignpostPage = () => {
   return (
-    <main className="flex flex-col my-8 max-w-[835px] max-md:pr-5">
-      <title>Rázcestník</title>
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
+      
       <header>
-        <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:max-w-full max-md:text-4xl">Horizontálny rázcestník</h1>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+          Rázcestník - horizontálny (Signpost)
+        </h1>
       </header>
-      <p className="mt-5 text-2xl tracking-normal leading-9 text-black max-md:max-w-full">
-        Horizontálny rázcestník má formu jednoduchej dlaždice usporiadanej horizontálne, ktorá je zložená z nadpisu, popisu a oddeľovacej čiary.
-        Jeho účelom je prehľadne usporiadať pre používateľa odkazy na súvisiaci obsah, ktorý je rozmiestnený na rôznych, samostatných podstránkach.
-        Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
+      
+      <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
+        Horizontálny rázcestník má formu jednoduchej horizontálnej dlaždice, ktorá je zložená z nadpisu, popisu a oddeľovacej čiary. Jeho účelom je prehľadne usporiadať pre používateľa odkazy na súvisiaci obsah, ktorý je rozmiestnený na rôznych, samostatných podstránkach. Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
       </p>
-            <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/signpost'}>
-                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
-                </Link>
-            </div>
-      <h2 className="mt-20 text-4xl font-black text-black max-md:mt-10 max-md:max-w-full">Použitie horizontálenho rázcestníka </h2>
-      <p className="mt-5 text-custom-19 tracking-wide leading-7 max-md:max-w-full">
-        Rázcestník je jedným z komponentov, ktoré navigujú používateľa k obsahu vašej stránky.
-        Použitím rázcestníka spolu s nadpisom a podnadpisom dáte používateľovi najavo, ktorý obsah (a ako) spolu na stránke súvisí.
-        Pri definovaní nadpisu a podnadpisu buďte struční a vecní. Rázcestník môžete štrukturovať do jedného alebo viacerých stĺpcov,
-        musíte však dodržať pravidlá pre rozloženie stránky <span lang="en">(grid)</span>.
-      </p>
-      <h2 className="mt-8 mb-4">Varianty</h2>
-      <p className="text-custom-19 tracking-wide leading-7 ">
-        Komponent umožňuje použitie vzájomných kombinácií týchto variantov a stavov:
-      </p>
-      <ol className='text-custom-19 tracking-wide leading-7 list-disc list-inside '>
-        <li>S ikonou</li>
-        <li>S šípkou</li>
-        <li>S ikonou a šípkou</li>
-      </ol>
-      <div className="my-2 w-[100%] h-[100%] ">
-        <Image
-          src="/images/razcestnik/horizontalny-razcestnik.svg"
-          width={100}
-          height={100}
-          quality={100}
-          alt="horizontalny-razcestnik"
-          className="w-full h-full"
-        />
-      </div>
-    </main>
+
+      <Tabs defaultValue="pouzitie">
+        
+        <TabsList ariaLabel="Sekcie dokumentácie komponentu Rázcestník">
+          <TabsTrigger value="pouzitie">Použitie</TabsTrigger>
+          <TabsTrigger value="varianty">Varianty a stavy</TabsTrigger>
+          <TabsTrigger value="pristupnost">Prístupnosť</TabsTrigger>
+          <TabsTrigger value="kod">Implementácia</TabsTrigger>
+        </TabsList>
+
+        <div className="mt-2 text-black">
+          
+          <TabsContent value="pouzitie">
+            <TabPouzitie />
+          </TabsContent>
+
+          <TabsContent value="varianty">
+            <TabVarianty />
+          </TabsContent>
+
+          <TabsContent value="pristupnost">
+            <TabPristupnost />
+          </TabsContent>
+
+          <TabsContent value="kod">
+            <TabImplementacia />
+          </TabsContent>
+          
+        </div>
+
+      </Tabs>
+      
+    </div>
   );
 }
 
-export default NavigationBarPage;
+export default SignpostPage;

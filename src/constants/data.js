@@ -7,32 +7,33 @@ export const baseData = [
   /* { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""}, */
   { href: "zaklady-principy/tiene", src: "/images/zaklady-principy-cards/Tiene.svg", title: "Tiene", description: "Typy tieňov a ich použitie na vizuálne rozlíšenie obsahu.", alt: "" },
   { href: "zaklady-principy/medzery", src: "/images/zaklady-principy-cards/Medzery.svg", title: "Medzery", description: "Medzery a ich rozmery.", alt: "" },
-  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""}
+  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""},
+  { href: "zaklady-principy/zamerany-stav", src: "/images/focus/karticka.svg", title: "Zameranie klávesnicou", description: "Pravidlá a vizuálne štýly pre zameranie prvkov pomocou klávesnice, zabezpečujúce prístupnosť a spĺňajúce štandardy WCAG 2.1.", alt: ""}
 ];
 
 export const componentsData = [
-  { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.svg", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
-  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka-web-aplikacie.svg", title: "Hlavička - webové aplikácie", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
-  { href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },
-  { href: "/komponenty/chyby-validacie", src: "/images/komponenty-cards/chyby-a-validacie.svg", title: "Chyby a validácie", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
-  /* { href: "/komponenty/informacna-lista-oznamenie", src: "/images/komponenty-cards/info-banner-oznamenie.svg", title: "Informačný banner - oznámenie", description: "Prvok slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""}, */
+  { href: "komponenty/akordeon", src: "/images/komponenty-cards/akordeon.png", title: "Akordeón", description: "Nástroj na zobrazenie alebo skrývanie prehľadu sekcií súvisiaceho obsahu.", alt: ""},
+  { href: "komponenty/hlavicka-elektronicke-sluzby", src: "/images/komponenty-cards/hlavicka.png", title: "Hlavička - elektronické služby", description: "Hlavička pre rozhrania, ktoré vyžadujú autentifikáciu používateľa.", alt: ""},
+  /*{ href: "komponenty/hlavicka-webove-sidla", src: "/images/komponenty-cards/hlavicka-web-sidla.svg", title: "Hlavička - webové sídla", description: "Hlavná navigácia webovej stránky", alt: "" },*/
+  { href: "/komponenty/informacna-lista", src: "/images/komponenty-cards/informacna_lista.png", title: "Informačná lišta", description: "Komponent slúžiaci na zobrazenie permanentnej informácie pre používateľa.", alt: ""},
   /*{ href: "/komponenty/informacna-lista-upozornenie", src: "/images/komponenty-cards/info-banner-upozornenie.svg", title: "Informačný banner - upozornenie", description: "Výrazný prvok, upozornenie použivateľa o podstatných/nových informáciach", alt: ""},*/
-  { href: "/komponenty/karticka", src: "/images/komponenty-cards/karticka.svg", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
-  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista-spatnej-vazby.svg", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
-  { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/omrvinkova-navigacia.svg", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
-  { href: "komponenty/pata", src: "/images/komponenty-cards/pata.svg", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
-  { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/pole-pre-nahratie-suboru.svg", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
-  { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/prepinacie-pole.svg", title: "Prepínacie pole", description: "Formulárový prvok pre výber jednej z preddefinovaných možností.", alt: ""},
-  { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/razcestnik-horizontalny.svg", title: "Rázcestník horizontálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
-  { href: "/komponenty/razcestnik-textovy", src:"/images/komponenty-cards/razcestnik-textovy.svg", title: "Rázcestník textový", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
-  { href: "/komponenty/razcestnik-vertikalny", src:"/images/komponenty-cards/razcestnik-vertikalny.svg", title: "Rázcestník vertikálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},
-  { href: "/komponenty/rozbalovaci-zoznam", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovací zoznam", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},  
-  { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/textove-pole.svg", title: "Textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu", alt: ""},
-  { href: "/komponenty/tlacidlo-primarne", src: "/images/komponenty-cards/tlacidlo-primarne.svg", title: "Tlačidlo - Primárne", description: "Hlavné akčné prvky, ktoré majú najväčší vplyv na používateľskú interakciu.", alt: ""},
-  { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},
-  { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},
-  { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/viacriadkove-text-pole.svg", title: "Viacriadkové textové pole", description: "Prvok, kam užívateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
-  { href: "/komponenty/zaskrtavacie-pole", src: "/images/komponenty-cards/zaskrtavacie-pole.svg", title: "Zaškrtávacie pole", description: "Interaktívny prvok, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
+  { href: "/komponenty/karticka", src: "/images/komponenty-cards/card.png", title: "Kartička", description: "Vizuálna reprezentácia obsahu článkov alebo podstránok.", alt: ""},
+  { href: "komponenty/lista-spatnej-vazby", src: "/images/komponenty-cards/lista_spatnej_vazby.png", title: "Lišta spätnej väzby", description: "Slúži na návrhy a vyjadrenie spokojnosti s informáciami získanými na stránke.", alt: ""},
+  { href: "komponenty/omrvinkova-navigacia", src: "/images/komponenty-cards/breadcrumbs.png", title: "Omrvinková navigácia", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},
+  { href: "komponenty/pata", src: "/images/komponenty-cards/paticka.png", title: "Päta", description: "Informácie o prevádzkovateľovi webovej stránky a textové odkazy.", alt: ""},
+  { href: "/komponenty/nahratie-suboru", src: "/images/komponenty-cards/file_upload.png", title: "Pole pre nahratie súboru", description: "Nástroj umožňujúci používateľom nahrať súbory.", alt: ""},
+  { href: "/komponenty/prehlad-s-chybovymi-hlaseniami", src: "/images/komponenty-cards/chybove_hlasenie.png", title: "Prehľad s chybovými hláseniami", description: "Pravidlá ako zobrazovať chyby a validácie v elektronickom formulári.", alt:""},
+  { href: "/komponenty/prepinacie-pole", src: "/images/komponenty-cards/radio_button.png", title: "Prepínacie pole", description: "Formulárový komponent pre výber jednej z preddefinovaných možností.", alt: ""},
+  { href: "/komponenty/razcestnik-horizontalny", src:"/images/komponenty-cards/signpost.png", title: "Rázcestník horizontálny", description: "Navigačný komponent formou jednoduchej dlaždice usporiadanej horizontálne", alt: ""},
+  /* { href: "/komponenty/razcestnik-textovy", src:"/images/komponenty-cards/razcestnik-textovy.svg", title: "Rázcestník textový", description: "Navigačný prvok formou jednoduchej dlaždice , zloženej z nadpisu, popisu a oddeľovacej čiary.", alt: ""},*/
+  /*{ href: "/komponenty/razcestnik-vertikalny", src:"/images/komponenty-cards/razcestnik-vertikalny.svg", title: "Rázcestník vertikálny", description: "Navigačný prvok formou jednoduchej dlaždice usporiadanej vertikálne", alt: ""},*/
+  { href: "/komponenty/rozbalovacie-pole", src: "/images/komponenty-cards/rozbalovaci-zoznam.svg", title: "Rozbaľovacie pole", description: "Interaktívny zoznam akcií alebo možností, ktoré je možné vybrať", alt: ""},  
+  { href: "/komponenty/textove-pole", src: "/images/komponenty-cards/text_field.png", title: "Textové pole", description: "Komponent, kam používateľ zadáva textovú informáciu", alt: ""},
+  { href: "/komponenty/tlacidlo", src: "/images/komponenty-cards/tlacidlo.png", title: "Tlačidlo", description: "Akčné prvky, ktoré majú vplyv na používateľskú interakciu.", alt: ""},
+  /* { href: "/komponenty/tlacidlo-sekundarne", src: "/images/komponenty-cards/tlacidlo-sekundarne.svg", title: "Tlačidlo - Sekundárne", description: "Vedľajšie akčné prvky, ktoré môžu byť potrebné v určitých situáciách.", alt: ""},*/
+  /* { href: "/komponenty/tlacidlo-textove", src: "/images/komponenty-cards/tlacidlo-textove.svg", title: "Tlačidlo - Textové", description: "Nástroj na užívateľskú interakciu s najnižšou prioritou.", alt: ""},*/
+  { href: "/komponenty/textove-pole-viacriadkove", src: "/images/komponenty-cards/textarea.png", title: "Viacriadkové textové pole", description: "Komponent, kam používateľ zadáva textovú informáciu vo viacerých riadkoch", alt: ""},
+  { href: "/komponenty/zaciarkavacie-pole", src: "/images/komponenty-cards/checkbox.png", title: "Začiarkavacie pole", description: "Interaktívny komponent, ktorý umožňuje používateľovi vybrať jednu alebo viacero položiek.", alt:""},
 ];
 
 export const whatIsData = [
@@ -44,12 +45,12 @@ export const whatIsData = [
 ];
 
 export const homePageData = [
-  { href: "/co-je", src: "/images/home-page/co-je-id-sk.svg", title: "Čo je IDSK", description: "Jednotný dizajnový manuál elektronických služieb a webových sídiel Slovenska. „IDSK“ je dizajnový systém + manuál na tvorbu elektronických služieb a webových sídiel štátu.", alt: ""},
-  { href: "/co-je/principy", src: "/images/home-page/10-principov-idsk.svg", title: "10 princípov IDSK", description: "1. princíp – princíp užitočnosti – začnite potrebami používateľov. Dizajn služby začína identifikáciou potrieb používateľov. Nevychádzajte z domnienok.", alt: ""},
-  { href: "/co-je/metodika", src: "/images/home-page/metodika-a-usmernenia.svg", title: "Metodika a usmernenia", description: "Elektronické služby štátu by mali byť pripravované metodikou User-Centered Design (UCD), aby sa zabezpečila zmysluplnosť a použiteľnosť služieb občanmi.", alt: ""},
-  { href: "/zaklady-principy", src: "/images/home-page/zaklady-style-guide.svg", title: "Základy (Style guide)", description: "Súbor štýlov používateľského rozhrania a štandardov dizajnu pre komponenty. Typografia, farebná paleta, ikony, tiene, medzery, stĺpce, použitie obrázkov, ...", alt: ""},
-  { href: "/komponenty", src: "/images/home-page/komponenty.svg", title: "Komponenty", description: "Knižnica komponentov, ktoré sa používajú na tvorbu elektronických služieb a webových sídiel. Akordeón, Dátové polia, Hlavička, Päta, Tlačidlá, ...", alt: ""},
-  { href: "/vzory", src: "/images/home-page/vzory-ux-patterns.svg", title: "Vzory (UX patterns)", description: "Používanie a adaptácia návrhových vzorov: Adresy, Aktuality, Blok s rázcestníkom, Cookie banner, Článok, Dátum, Indikátor progresu, Meno, Priezvisko, Email...", alt: ""},
+  { href: "/co-je/uvod", src: "/images/home-page/co-je-id-sk.svg", title: "Úvod do dizajnového manuálu IDSK", description: "IDSK vznikol najmä za účelom zaistenia konzistentnosti dizajnu používateľských rozhraní elektronických služieb a webových sídiel slovenského e-Governmentu.", alt: ""},
+  { href: "/komponenty", src: "/images/home-page/komponenty.svg", title: "Zoznam komponentov", description: "Knižnica komponentov, ktoré sa používajú na tvorbu elektronických služieb a webových sídiel. Akordeón, Dátové polia, Hlavička, Päta, Tlačidlá, ...", alt: ""},
+  { href: "/co-je/navod-pre-dizajnerov", src: "/images/home-page/10-principov-idsk.svg", title: "Návod pre dizajnérov", description: "V dizajnérskom nástroji Figma nájdete knižnicu dizajnového systému IDSK", alt: ""},
+  { href: "/co-je/navod-pre-vyvojarov", src: "/images/home-page/metodika-a-usmernenia.svg", title: "Návod pre vývojárov", description: "Ak budete chcieť vytvoriť elektronickú službu pomocou IDSK, môžete využiť repozitár dostupný na GitHub-e.", alt: ""},
+  { href: "zaklady-principy/typografia", src: "/images/home-page/zaklady-style-guide.svg", title: "Typografia", description: "Pravidlá pre použitie textových prvkov, typov a veľkostí písma.", alt: ""},
+  { href: "zaklady-principy/farebna-paleta", src: "/images/home-page/vzory-ux-patterns.svg", title: "Farebná paleta", description: "Prehľad farebných paliet pre grafické používateľské rozhranie.", alt: ""},
 ];
 
 export const primaryColors = [
@@ -158,58 +159,73 @@ export const slovakColors = [
 ];
 
 export const headlineData = [
-  { title: 'Headline 1', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black' },
-  { title: 'Headline 2', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 3', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 4', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 1', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 2', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold' },
-  { title: 'Headline 3', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold' },
-  { title: 'Headline 4', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold' },
-  
+  { title: 'Nadpis XL', size: '48px', lineHeight: '55px', spacing: '0px', type: 'Black', fontWeight: '900' },
+  { title: 'Nadpis L', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis M', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis S', size: '20px', lineHeight: '26px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis XL', size: '36px', lineHeight: '45px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis L', size: '24px', lineHeight: '35px', spacing: '0px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis M', size: '20px', lineHeight: '26px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Nadpis S', size: '19px', lineHeight: '24px', spacing: '0px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const subtitleData = [
-  { title: 'Subtitle', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold' },
-  { title: 'Subtitle', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
-  { title: 'Subtitle bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold' },
+  { title: 'Perex', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
+  { title: 'Perex bold', size: '24px', lineHeight: '36px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
+  { title: 'Perex', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Regular', fontWeight: '400' },
+  { title: 'Perex bold', size: '19px', lineHeight: '28px', spacing: '0.15px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const bodyData = [
-  { title: 'Body', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body ', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Body 1', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Body 1 bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Body', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body ', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body bold', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body 1', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body 1 bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Body 1', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Body 1 bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const captionData = [
-  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold' },
-  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold' },
-  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold' },
+  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold', fontWeight: '700' },
+  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Caption bold', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Bold', fontWeight: '700' },
+  { title: 'Button', size: '16px', lineHeight: '24px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
 ];
 
 export const linkData = [
-  { title: 'Link L', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Regular', fontWeight: '400'},
-  { title: 'Link L bold', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link M', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link M bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link S', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link S bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link L', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'},
-  { title: 'Link L bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link M', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link M bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link S', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400'  },
-  { title: 'Link S bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold' },
-  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400'  },
+  { title: 'Link L', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L bold', size: '24px', lineHeight: '36px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link M', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link M bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link S', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link S bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link L bold', size: '19px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link M', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link M bold', size: '16px', lineHeight: '28px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link S', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Regular', fontWeight: '400' },
+  { title: 'Link S bold', size: '14px', lineHeight: '20px', spacing: '0.5px', type: 'Bold', fontWeight: '700' },
+  { title: 'Link caption', size: '12px', lineHeight: '16px', spacing: '0.4px', type: 'Regular', fontWeight: '400' },
 ];
 
+export const shadowData = [
+  { title: "Tieň veľký", shadowClass: "shadow-lg-custom" },
+  { title: "Tieň stredný", shadowClass: "shadow-md-custom" },
+  { title: "Tieň malý", shadowClass: "shadow-sm-custom" },
+  { title: "Tieň dialog", shadowClass: "shadow-dialog-custom" },
+  { title: "Tieň hlavička", shadowClass: "shadow-header-custom" }
+];
+
+export const spacingData = [
+    { id: 1, name: 'Token meno', size: '15px', width: 'w-2' },
+    { id: 2, name: 'Token meno', size: '20px', width: 'w-2.5' },
+    { id: 3, name: 'Token meno', size: '30px', width: 'w-[15px]' },
+    { id: 4, name: 'Token meno', size: '40px', width: 'w-5' },
+    { id: 5, name: 'Token meno', size: '60px', width: 'w-[30px]' },
+    { id: 6, name: 'Token meno', size: '100px', width: 'w-[50px]' },
+];

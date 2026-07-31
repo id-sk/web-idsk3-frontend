@@ -1,68 +1,66 @@
-'use client'
-
-import Card from '@/app/(home)/_components/article/article';
-import Image from 'next/image';
-import Link from 'next/link';
 import React from 'react';
 
-const BreadcrumbPage = () => {
-    return (
-        <div className="component-page">
-            <title>Omrvinková navigácia</title>
-            <h1 className="my-8">
-                Omrvinková navigácia
-            </h1>
-            <p className="idsk-subtitle mb-16">
-                Omrviková navigácia je spôsob, ako používateľom umožniť rýchle a jednoduché navigovanie v rámci webovej stránky alebo aplikácie. Ide o typ navigácie, ktorý ukazuje používateľom aktuálnu polohu v hierarchii stránok a umožňuje im rýchlo sa vrátiť na predchádzajúce úrovne.
-            </p>
-            <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/breadcrumbs/'}>
-                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
-                </Link>
-            </div>
-            <h2 className="mb-4">
-                Použitie omrvinkovej navigácie
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-8">
-                Pri navrhovaní omrvinkovej navigácie je dôležité zabezpečiť, aby bola zreteľná a jednoduchá na používanie. Omrviková navigácia sa zvyčajne skladá z horizontálneho reťazca odkazov, ktorý začína domovskou stránkou a postupne ukazuje každú úroveň hierarchie stránok, až k aktuálnej polohe používateľa. Omrvinková navigácia je umiestnená vždy pod komponentom hlavička tak
-                aby bola dostupná počas celej cesty používateľa rozhraním.
-            </p>
-            <Image
-                src="/images/omrvinkova/pouzitie.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="použitie omrvinkovej navigácie"
-                className="mt-4 mb-12"
-            />
-            <h2 className="mt-8 mb-4">
-                Varianty
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mt-2 ">
-                Komponent umožňuje použitie 2 variantov:
-            </p>
-            <ol className='text-custom-19 tracking-wide leading-7 mb-6'>
-                <li>1. Základný stav</li>
-                <li>2. Vybraný stav</li>
-            </ol>
-            <Image
-                src="/images/omrvinkova/zakladny.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="základný stav"
-                className="mt-4 mb-8"
-            />
-            <Image
-                src="/images/omrvinkova/vybrany.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="vybraný stav"
-                className="mt-4 mb-8"
-            />
-        </div>
-    );
-}
+import {
+  Tabs,
+  TabsList,
+  TabsTrigger,
+  TabsContent,
+} from '@/app/(home)/_components/tab-bar/tabBar';
 
-export default BreadcrumbPage;
+import TabPouzitie from './_tabs-breadcrumbs/TabPouzitie';
+import TabVarianty from './_tabs-breadcrumbs/TabVarianty';
+import TabPristupnost from './_tabs-breadcrumbs/TabPristupnost';
+import TabImplementacia from './_tabs-breadcrumbs/TabImplementacia';
+
+export const metadata = {
+  title: 'Omrvinková navigácia | Komponenty IDSK',
+  description:
+    'Dokumentácia komponentu Omrvinková navigácia (Breadcrumbs), jeho použitie, varianty, prístupnosť a implementácia.',
+};
+
+const BreadcrumbsPage = () => {
+  return (
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
+      <header>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+          Omrvinková navigácia (Breadcrumbs)
+        </h1>
+      </header>
+
+      <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
+        Komponent omrvinková navigácia pomáha používateľom pochopiť, kde sa
+        nachádzajú v štruktúre webového sídla a prechádzať medzi jednotlivými
+        úrovňami.
+      </p>
+
+      <Tabs defaultValue="pouzitie">
+        <TabsList ariaLabel="Sekcie dokumentácie komponentu Omrvinková navigácia">
+          <TabsTrigger value="pouzitie">Použitie</TabsTrigger>
+          <TabsTrigger value="varianty">Varianty a stavy</TabsTrigger>
+          <TabsTrigger value="pristupnost">Prístupnosť</TabsTrigger>
+          <TabsTrigger value="kod">Implementácia</TabsTrigger>
+        </TabsList>
+
+        <div className="mt-2 text-black">
+          <TabsContent value="pouzitie">
+            <TabPouzitie />
+          </TabsContent>
+
+          <TabsContent value="varianty">
+            <TabVarianty />
+          </TabsContent>
+
+          <TabsContent value="pristupnost">
+            <TabPristupnost />
+          </TabsContent>
+
+          <TabsContent value="kod">
+            <TabImplementacia />
+          </TabsContent>
+        </div>
+      </Tabs>
+    </div>
+  );
+};
+
+export default BreadcrumbsPage;

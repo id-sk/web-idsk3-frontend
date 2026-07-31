@@ -1,123 +1,64 @@
-'use client'
-
-import Card from '@/app/(home)/_components/article/article';
-import Image from 'next/image'
-import Link from 'next/link';
 import React from 'react';
 
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/(home)/_components/tab-bar/tabBar';
+
+import TabPouzitie from './_tabs-inputtext/TabPouzitie';
+import TabVarianty from './_tabs-inputtext/TabVarianty';
+import TabPristupnost from './_tabs-inputtext/TabPristupnost';
+import TabImplementacia from './_tabs-inputtext/TabImplementacia';
+
+export const metadata = {
+  title: 'Textové pole | Komponenty IDSK',
+  description: 'Dokumentácia komponentu Textové pole (Input type=text), jeho varianty, prístupnosť a implementácia.',
+};
+
 const TextInputPage = () => {
-    return (
-        <div className="component-page">
-            <title>Textové pole</title>
-            <h1 className="my-8">
-                Textové pole
-            </h1>
-            <p className="idsk-subtitle mb-16">
-                Textové pole predstavuje vstupné prvky, ktorých hlavným cieľom je zber dát získaných od používateľov
-                s cieľom dodať im žiadanú informáciu alebo službu. Pre správne pochopenie vyžadovaného údaju
-                je potrebné zrozumiteľne popísať názov textového poľa. Základným pravidlom použitia je oboznámiť používateľa o povinnosti vyplnenia textového poľa.
-            </p>
-            <div className="ml-2 mb-16">
-                <Link href={'https://komponenty.idsk3.gov.sk/components/input'}>
-                    <Card title="Kód komponentu" content="HTML verzia na prevzatie"/>
-                </Link>
-            </div>
-            <h2 className="mb-4">
-                Použitie textového poľa
-            </h2>
-            <p className="itext-custom-19 tracking-wide leading-7 mb-8">
-                Primárne použitie komponentu textového pole je vo formulároch. Veľkosť poľa zohľadňuje prípustný počet
-                znakov daného poľa. Je potrebné zabezpečiť, aby koncový používateľ mohol zadať potrebné údaje aj na menších
-                obrazovkách mobilných zariadení. Pri menších veľkostiach obrazoviek je vhodné škálovať polia na celú šírku obrazovky.
-            </p>
-            <Image
-                src="/images/textove-pole/pouzitie-textoveho-pola.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="použitie prepínacieho pola"
-            />
-            <h2 className="mt-8 mb-4">
-                Varianty
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                Komponent umožňuje použitie 5 variantov:
-            </p>
-            <ol className='text-custom-19 tracking-wide leading-7 mb-4'>
-                <li>1. Jednoduchý stav</li>
-                <li>2. Vybraný stav</li>
-                <li>3. Zameraný stav</li>
-                <li>4. Chybový stav</li>
-                <li>5. Neaktívny stav</li>
-            </ol>
-            <Image
-                src="/images/textove-pole/vsetky-varianty.svg"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="varianty pola"
-                className="mt-4 mb-8"
-            />
-            <h2 className="mt-12 mb-4">
-                Nastavenie
-            </h2>
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                1. Variant povinného/nepovinného dátového poľa
-            </p>
-            <Image
-                src="/images/textove-pole/variant-povinneho-nepovinneho.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="variant povinného/nepovinného dátového poľa"
-                className="mt-4 mb-8"
-            />
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                2. Variant dátového poľa s rozbaľovačom/bez rozbaľovača
-            </p>
-            <Image
-                src="/images/textove-pole/variant-rozbalovac-bez.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="variant dátového poľa s rozbaľovačom/bez rozbaľovača"
-                className="mt-4 mb-8"
-            />
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                3. Variant dátového poľa s podnadpisom/bez podnadpisu
-            </p>
-            <Image
-                src="/images/textove-pole/variant-podnadpisom-bez.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="variant dátového poľa s podnadpisom/bez podnadpisu"
-                className="mt-4 mb-8"
-            />
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                4. Variant dátového poľa s popisom/bez popisu
-            </p>
-            <Image
-                src="/images/textove-pole/datove-popis-bez.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="variant dátového poľa s popisom/bez popisu"
-                className="mt-4 mb-8"
-            />
-            <p className="text-custom-19 tracking-wide leading-7 mb-4">
-                5. Variant dátového poľa veľký/malý
-            </p>
-            <Image
-                src="/images/textove-pole/velky-maly.png"
-                width={1100}
-                height={250}
-                quality={100}
-                alt="variant velký / malý"
-                className="mt-4 mb-12"
-            />
+  return (
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">
+      
+      <header>
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
+          Textové pole (Input type=&quot;text&quot;)
+        </h1>
+      </header>
+      
+      <p className="text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black mb-12">
+        Textové polia predstavujú vstupné prvky, ktorých hlavným cieľom je zber dát získaných od používateľov s cieľom dodať im žiadanú informáciu alebo službu. Pre správne pochopenie vyžadovaného údaja je potrebné zrozumiteľne popísať názov textového poľa. Základným pravidlom použitia je oboznámiť používateľa o povinnosti vyplnenia textového poľa.
+      </p>
+
+      <Tabs defaultValue="pouzitie">
+        
+        <TabsList ariaLabel="Sekcie dokumentácie komponentu Textové pole">
+          <TabsTrigger value="pouzitie">Použitie</TabsTrigger>
+          <TabsTrigger value="varianty">Varianty a stavy</TabsTrigger>
+          <TabsTrigger value="pristupnost">Prístupnosť</TabsTrigger>
+          <TabsTrigger value="kod">Implementácia</TabsTrigger>
+        </TabsList>
+
+        <div className="mt-2 text-black">
+          
+          <TabsContent value="pouzitie">
+            <TabPouzitie />
+          </TabsContent>
+
+          <TabsContent value="varianty">
+            <TabVarianty />
+          </TabsContent>
+
+          <TabsContent value="pristupnost">
+            <TabPristupnost />
+          </TabsContent>
+
+          <TabsContent value="kod">
+            <TabImplementacia />
+          </TabsContent>
+          
         </div>
-    );
+
+      </Tabs>
+      
+    </div>
+  );
 }
 
 export default TextInputPage;

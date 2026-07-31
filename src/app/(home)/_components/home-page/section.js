@@ -15,7 +15,7 @@ const Section = ({ href ,title, description, src }) => (
         quality={100}
         alt="blank"
       />
-      <div className="mt-5 text-2xl font-bold leading-9 text-my-blue underline">{title}</div>
+      <div className="mt-5 text-2xl font-bold leading-9 text-[#0b4199] underline">{title}</div>
       <div className="mt-2.5 text-xl leading-7 text-black">{description}</div>
     </section>
     </Link>

@@ -1,19 +1,23 @@
-import { scrollToTop } from "@/utils/scroll";
-import { TextButton } from "@eslovensko/idsk-react";
-import SvgArrowUp from '/node_modules/@eslovensko/idsk-core/dist/assets/svgIcons/Navigation/arrow_upward.svg';
+'use client';
 
-const ArrowUpBtn = () => {
-    return (
-        <TextButton
-            icon={<SvgArrowUp />}
-            label="Naspäť hore"
-            onClick={scrollToTop}
-            className="go-up-btn"
-        />
-    )
-}
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
+import SvgArrowUp from '@/app/(home)/_components/icons/SvgArrowUp';
+import { scrollToTop } from '@/utils/scroll';
 
-export default ArrowUpBtn;
+const BackToTop = ({ className = '' }) => (
+  <ButtonCustom
+    type="button"
+    variant="tertiary"
+    status="basic"
+    iconRight={<SvgArrowUp className="h-5 w-5" />}
+    onClick={scrollToTop}
+    className={className}
+  >
+    Naspäť hore
+  </ButtonCustom>
+);
+
+export default BackToTop;
 
 
 

@@ -1,0 +1,112 @@
+  /* IDSK Core Overrides (Raw CSS pre ľahší debug a upgrade) */
+  .idsk-page-layout__heading__title { 
+    padding-bottom: 0; 
+    position: relative; 
+    z-index: 10; 
+    overflow-wrap: anywhere; 
+  }
+  
+  #secondary-navigation span, 
+  #secondary-navigation-dropdown a { 
+    text-transform: lowercase; 
+  }
+  
+  #secondary-navigation-body a { 
+    text-decoration: underline; 
+  }
+  
+  .idsk-accordion__content .p-text ul, 
+  .idsk-accordion__content .p-text ol { 
+    padding-left: 2rem; 
+  }
+  
+  .idsk-in-page-navigation .idsk-in-page-navigation__line { 
+    border-style: none; 
+  }
+  
+  @media (min-width: 768px) { /* tb2 breakpoint equivalent */
+    .idsk-in-page-navigation .idsk-in-page-navigation__line {
+      border-style: solid;
+      padding-left: 1.25rem;
+    }
+  }
+
+  .idsk-in-page-navigation__list a.idsk-active > svg { 
+    position: absolute; 
+    left: 1rem; 
+  }
+  
+  .idsk-text-signpost .idsk-loader__icon, 
+  .idsk-star__icon { 
+    cursor: pointer; 
+    font-size: 1.5rem; 
+    height: 2rem; 
+    width: 2rem; 
+  }
+  
+  .idsk-navigation__link--dropdown { border-bottom-width: 0.063rem; }
+  .idsk-information-banner__wrapper > button { white-space: nowrap; }
+  .feedback > .idsk-input__caption--error { margin-top: -1rem; }
+  
+  .signature-table > tbody > tr { 
+    border-width: 1px; 
+    border-radius: 0.25rem; 
+  }
+  
+  .signature-dialog > .idsk-dialog-wrapper > .idsk-dialog { margin-bottom: 4.5rem; }
+  
+  .idsk-menu-button > span, 
+  .idsk-search-container__buttons > .idsk-link-button > span, 
+  .idsk-button { 
+    white-space: normal; 
+    word-break: normal; 
+  }
+  
+  .idsk-modal-sidebar__close-button > .idsk-tooltip::after { margin-top: 0.75rem; }
+  .idsk-dropzone { padding: 0; }
+  .idsk-searchbar__input-wrapper ul li { text-align: left; }
+  .idsk-searchbar { text-overflow: ellipsis; }
+  .idsk-navigation__link a { padding-top: 0.938rem; padding-bottom: 0.938rem; }
+  .idsk-navigation__link { border-top-width: 0.063rem; border-bottom-width: 0.063rem; }
+  .idsk-notification-card__date { white-space: nowrap; padding-left: 0.25rem; }
+
+  /* Third-party overridy */
+  .react-datepicker-popper { z-index: 50; }
+  .tooltip-from-drupal a { color: white; text-decoration: underline; }
+  .tooltip-from-drupal a:hover { color: #a3a3a3; }
+  
+  abbr[data-tip] { 
+    display: inline-block; 
+    font-weight: 700; 
+    text-decoration: underline; 
+    text-decoration-style: dashed; 
+  }
+
+  /* ==========================================================================
+   Custom Sidebar Components Fixes
+   ========================================================================== */
+
+/* Bočné menu: odkazy bez podčiarknutia vo všetkých stavoch */
+.idsk-sidebar-nav a,
+.idsk-sidebar-nav a:link,
+.idsk-sidebar-nav a:visited,
+.idsk-sidebar-nav a:hover,
+.idsk-sidebar-nav a:focus,
+.idsk-sidebar-nav a:focus-visible,
+.idsk-sidebar-nav a:active,
+.idsk-sidebar-nav a[aria-current="page"] {
+    text-decoration: none !important;
+    text-decoration-line: none !important;
+    border-bottom: 0 !important;
+    box-shadow: none !important;
+    background-image: none !important;
+}
+
+/* Neutralizácia globálneho IDSK focusu na <a>,
+   keďže focus stav riešime cez focus-within na <li> */
+.idsk-sidebar-nav a,
+.idsk-sidebar-nav a:focus,
+.idsk-sidebar-nav a:focus-visible {
+    outline: none !important;
+    border-radius: 0 !important;
+}

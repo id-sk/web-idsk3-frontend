@@ -1,71 +1,42 @@
-'use client'
+import React from "react";
+import { whatIsData } from "@/constants/data"; 
+import ArticleCard from '@/app/(home)/_components/article/articleCard';
 
-import { whatIsData } from "@/constants/data";
-import Image from "next/image";
-import Link from "next/link";
-
-
-function ImageCard({ href, src, title, description, alt }) {
-  return (
-    <Link href={href ?? "#"}>
-      <div className="flex flex-col grow p-5 w-full hover:shadow-lg tracking-wide bg-white rounded-xl border border-solid border-neutral-200 max-md:mt-5 h-[400px]">
-        <Image
-          width={100}
-          height={100}
-          quality={100}
-          src={src}
-          alt={alt}
-          className="w-full aspect-[1.5] object-cover"
-        />
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-custom-19 tracking-wide leading-7 text-black line-clamp-2">{description}</p>
-      </div>
-    </Link>
-  );
-}
-
+export const metadata = {
+  title: 'Čo je IDSK? | IDSK',
+  description: 'Stránka slúžiaca ako navigácia k základným princípom IDSK.',
+};
 
 const WhatIsPage = () => {
   return (
-    <div className="flex flex-col my-8 max-w-[1000px]">
-      <title>Čo je IDSK</title>
+    <div className="flex flex-col my-8 max-w-[1120px] px-4 sm:px-0">
       <header>
-        <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
           Čo je IDSK
         </h1>
       </header>
-      <main id="main-content" role="main">
-      <p className="mt-8 text-2xl leading-9 tracking-wide text-black max-md:mr-1 max-md:max-w-full">
-        Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (IDSK) je dizajnový systém elektronických služieb a webových sídiel štátu. IDSK má za cieľ zjednotiť používateľské rozhrania a spôsob komunikácie s používateľom pri poskytovaní služieb. Je to manuál na tvorbu kvalitných elektronických služieb a webových sídiel na Slovensku.{" "}
-      </p>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {whatIsData.slice(0, 3).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
+      
+      <div className="mt-8 w-full text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black">
+        Jednotný dizajn manuál elektronických služieb a webových sídiel Slovenska (IDSK) je dizajnový systém elektronických služieb a webových sídiel štátu. 
+      </div>
+      
+      <section className="mt-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-10">
+          {whatIsData.map((card, index) => (
+            <ArticleCard 
+              key={`principle-${index}`}
+              href={card.href}
+              src={card.src}
+              title={card.title}
+              description={card.description}
+              alt={card.alt || ""}
+              orientation="vertical"
+            />
           ))}
         </div>
       </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {whatIsData.slice(3, 5).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      </main>
     </div>
   );
-}
+};
 
 export default WhatIsPage;
-
-
-
-
-
-
-

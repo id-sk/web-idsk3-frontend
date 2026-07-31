@@ -1,117 +1,49 @@
-'use client'
-
 import { componentsData } from "@/constants/data";
-import Image from "next/image";
-import Link from "next/link";
+import { Signpost } from '@/app/(home)/_components/signpost/signpostCustom';
 import React from 'react';
 
-function ImageCard({ href, src, title, description, alt }) {
-  return (
-    <Link href={href ?? "#"}>
-      <div className="flex flex-col grow p-5  hover:shadow-lg tracking-wide bg-white rounded-xl border border-solid border-neutral-200 max-md:mt-5 h-[400px]">
-        <Image
-          width={100}
-          height={100}
-          quality={100}
-          src={src}
-          alt={alt}
-          className="w-full aspect-[1.5] object-cover"
-        />
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-custom-19 tracking-wide leading-7 text-black line-clamp-3">{description}</p>
-      </div>
-    </Link>
-  );
-}
+export const metadata = {
+  title: 'Komponenty | IDSK',
+  description: 'Stránka slúžiaca ako navigácia ku komponentom IDSK.',
+};
+
+const ArrowRightIcon = ({ className = '' }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
+);
 
 const IdskPage = () => {
   return (
-    <div className="flex flex-col my-8 max-w-[850px]">
-      <title>Zoznam komponentov</title>
+    <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0">
       <header>
-        <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
+        <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
           Zoznam Komponentov
         </h1>
       </header>
-      <p className="mt-8 text-2xl tracking-normal leading-9 text-black max-md:mr-1 max-md:max-w-full">
-      Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.{" "}
+      
+      <p className="mt-8 text-sm sm:text-base md:text-lg tracking-wide leading-relaxed md:leading-8 text-black">
+        Základné stavebné bloky používateľského rozhrania. Prvky, ktorých opakované použitie má za cieľ vytvorenie jednotného vzhľadu a funkčnosti stránok a webových sídiel.
       </p>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(0, 3).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
+      
+      <section className="mt-10 w-full">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 sm:gap-7">
+          {componentsData.map((card, index) => (
+            <Signpost
+              key={`home-signpost-${index}`}
+              href={card.href}
+              heading={card.title}
+              headingLevel="h3"
+              arrowIcon={<ArrowRightIcon />}
+            >
+              {card.description}
+            </Signpost>
           ))}
         </div>
       </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(3, 6).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(6, 9).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(9, 12).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(12, 15).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(15, 18).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(18, 21).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <section className="px-1 mt-10 w-full max-md:max-w-full">
-        <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-          {componentsData.slice(21, 22).map((card, index) => (
-            <div key={index} className="flex flex-col w-[33%] h-auto max-md:ml-0 max-md:w-full">
-              <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-            </div>
-          ))}
-        </div>
-      </section>
-      <div className='mt-6'>
-      </div>
-    </div>
 
+      <div className='mt-6'></div>
+    </div>
   );
 }
 

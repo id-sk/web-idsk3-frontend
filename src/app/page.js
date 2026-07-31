@@ -1,123 +1,167 @@
-'use client'
+'use client';
 
-import { homePageData } from "@/constants/data";
-import Image from 'next/image';
+import Image from 'next/image'; 
 import Link from "next/link";
-import FooterResp from './(home)/_components/footer/FooterResp';
-import Navbar from "./(home)/_components/navbar/navbar";
-import { SkipLink } from "@eslovensko/idsk-react";
-import { handleSkip } from "@/utils/skip";
+import { homePageData } from "@/constants/data";
+import { Signpost } from '@/app/(home)/_components/signpost/signpostCustom';
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
+import { SectionBlock, Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
-
-function ImageCard({ href, src, title, description, alt }) {
-  return (
-    <Link href={href ?? "#"}>
-      <article className="flex flex-col grow p-5 w-full hover:shadow-lg tracking-wide bg-white rounded-xl border border-solid border-neutral-200 max-md:mt-5 max-h-[850px] max-w-[600px] overflow-hidden">
-        <figure className="w-full h-full bg-zinc-200">
-          <Image
-            width={100}
-            height={100}
-            quality={100}
-            src={src}
-            alt={alt}
-            className="w-full aspect-[1.5] object-cover"
-          />
-        </figure>
-        <h3 className="mt-5 text-2xl font-bold tracking-wide leading-9 text-my-blue underline">{title}</h3>
-        <p className="mt-2.5 text-xl tracking-wide leading-7 text-black line-clamp-5">
-          {description}
-        </p>
-      </article>
-    </Link>
-  );
-}
-
+const ArrowRightIcon = ({ className = '' }) => (
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+  </svg>
+);
 
 export default function HomePage() {
   return (
     <>
-      <SkipLink onClick={handleSkip}>
-        Preskočiť na hlavný obsah
-      </SkipLink>
+      {/* Úvodná predstavenie dizajnového systému */}
       <main>
-        <Navbar />
-        <section className="flex flex-col pt-16 px-8 bg-zinc-100 max-md:max-w-full">
-          <div className="flex flex-col items-center px-16 pt-9 pb-20 w-full bg-zinc-100 max-md:px-5 max-md:max-w-full">
-            <div className="mb-4 w-full max-w-[1168px] max-md:max-w-full">
-              <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-                <div className="flex flex-col w-[67%] max-md:ml-0 max-md:w-full">
-                  <div className="flex flex-col max-md:mt-2.5 max-md:max-w-full">
-                    <h1 className="text-5xl font-black text-black leading-[55px] max-md:max-w-full max-md:text-4xl max-md:leading-[51px]">
-                      Dizajnový systém elektronických služieb a webových sídel 
-                    </h1>
-                    <p className="mt-7 text-2xl tracking-normal leading-9 text-neutral-950 max-md:max-w-full">
-                      Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3.0.0. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
-                    </p>
-                    <Link 
-                      href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      /* PRIDANÉ: inline-flex, items-center a gap-2 */
-                      className="inline-flex items-center justify-center gap-2 hover:shadow-lg self-start px-5 py-3 mt-10 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md"
+        <section className="w-full bg-white pt-16 pb-10">
+          <div className="page-container flex max-md:flex-col gap-5">
+            
+            <div className="flex flex-col w-[67%] max-md:w-full">
+              <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
+                Dizajnový systém elektronických služieb <br /> a webových sídel 
+              </h1>
+              
+              <Text className="mt-7 max-md:max-w-full">
+                Webové sídlo IDSK obsahuje verziu dizajnového systému IDSK 3. <strong>Aktuálna a platná verzia dizajnového systému IDSK 3.1.0 </strong> je dostupná výhradne vo Figma komunitnej knižnici.
+              </Text>
+              
+              <div className="mt-10 self-start">
+                <ButtonCustom
+                  href="https://www.figma.com/community/file/1581301778555425083/idsk-3-1-0" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  variant="primary"
+                  status="basic"
+                  size="large"
+                  aria-label="Figma IDSK 3.1.0 (otvorí sa v novom okne)"
+                  iconRight={
+                    <svg 
+                      className="w-5 h-5 shrink-0" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24" 
+                      xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" /* 👈 Znova pridané pre skrytie pred čítačkou */
                     >
-                      <span className="underline">Figma IDSK 3.1.0</span>
-                      
-                      {/* IKONKA EXTERNAL LINK */}
-                      <svg 
-                        className="w-6 h-6 shrink-0" 
-                        fill="none" 
-                        stroke="currentColor" 
-                        viewBox="0 0 24 24" 
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path 
-                          strokeLinecap="round" 
-                          strokeLinejoin="round" 
-                          strokeWidth={2} 
-                          d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                </div>
-                <div className="flex flex-col ml-5 w-[33%] max-md:ml-0 max-md:w-full">
-                  <Image
-                    src="/images/home-page/undraw.svg"
-                    className="grow mt-7 w-full aspect-[1.23] max-md:mt-10"
-                    width={100}
-                    height={100}
-                    quality={100}
-                    alt=""
-                  />
-                </div>
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+                      />
+                    </svg>
+                  }
+                >
+                  Figma IDSK 3.1.0
+                </ButtonCustom>
               </div>
             </div>
+
+            {/* Pravá ilustračná sekcia */}
+            <div className="w-[33%] max-md:w-full mt-7 flex items-center justify-center">
+              <Image
+                src="/images/home-page/undraw.svg"
+                className="w-full h-auto object-contain"
+                width={300}
+                height={240}
+                alt=""
+                priority
+              />
+            </div>
+
           </div>
         </section>
-        <main className="flex flex-col w-full h-full pt-12 -my-2 pb-8 max-w-[1100px] mx-auto self-center  max-md:max-w-full">
-          <section className="p-3 mt-3 w-full max-md:max-w-full">
-            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-              {homePageData.slice(0, 3).map((card, index) => (
-                <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-              ))}
+
+
+        <section className="w-full bg-[#EFF5FE] pt-16 pb-10">
+          <div className="page-container flex max-md:flex-col gap-5">
+
+            {/* Pravá ilustračná sekcia */}
+            <div className="w-[33%] max-md:w-full mt-2 flex items-center justify-center">
+              <Image
+                src="/images/home-page/ilustration_home_page.png"
+                className="w-full h-auto object-contain"
+                width={300}
+                height={240}
+                alt=""
+                priority
+              />
             </div>
-          </section>
-          <section className="p-3 w-full  max-md:max-w-full">
-            <div className="flex gap-5 max-md:flex-col max-md:gap-0">
-              {homePageData.slice(3, 6).map((card, index) => (
-                <ImageCard key={index} href={card.href} src={card.src} title={card.title} description={card.description} alt={card.alt} />
-              ))}
+
+            <div className="flex flex-col w-[67%] max-md:w-full">
+              <h2 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
+                Potrebujete nový komponent alebo zmeniť <br /> existujúci?
+              </h2>
+              
+              <Text className="mt-7 max-md:max-w-full">
+                Pošlite nám svoj zámer. Posúdime ho a pomôžeme vám nájsť vhodné riešenie v súlade s IDSK.
+              </Text>
+              
+              <div className="mt-10 self-start">
+                  <ButtonCustom
+                    href="/navrhnut-komponent"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    variant="secondary"
+                    status="basic"
+                    size="large"
+                    aria-label="Poslať zámer (otvorí sa v novom okne)"
+                    iconRight={
+                      <svg 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        fill="none" 
+                        viewBox="0 0 24 24" 
+                        strokeWidth={2} 
+                        stroke="currentColor" 
+                        className="w-4 h-4" 
+                        aria-hidden="true"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                      </svg>
+                    }
+                  >
+                    Poslať zámer
+                  </ButtonCustom>
+              </div>
             </div>
-          </section>
-        </main>
-        <br />
-        <br />
-        <FooterResp />
+
+          </div>
+        </section>
+
+        {/* Spodná sekcia - Hlavný rozcestník s využitím SectionBlock */}
+        <div className="page-container pb-12">
+          <section
+              aria-labelledby="zacnite-s-idsk"
+              className="pb-12 pt-16"
+            >
+              <h2
+                id="zacnite-s-idsk"
+                className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full self-center"
+              >
+                Začnite s IDSK
+              </h2>
+
+              <div className="mt-8 grid grid-cols-1 gap-6 sm:gap-7 md:grid-cols-2 lg:grid-cols-3">
+                {homePageData.map((card, index) => (
+                  <Signpost
+                    key={`home-signpost-${index}`}
+                    href={card.href}
+                    heading={card.title}
+                    headingLevel="h3"
+                    arrowIcon={<ArrowRightIcon />}
+                  >
+                    {card.description}
+                  </Signpost>
+                ))}
+              </div>
+            </section>
+        </div>
       </main>
     </>
   );
-
 }
-
-
-

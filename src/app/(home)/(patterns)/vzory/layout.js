@@ -1,23 +1,11 @@
 'use client'
 
-import Navbar from "../../_components/navbar/navbar.js";
-import FooterResp from "../../_components/footer/FooterResp.js";
-import { SkipLink } from "@eslovensko/idsk-react";
-import { handleSkip } from "@/utils/skip.js";
-
-
 const VzoryLayout = ({ children }) => {
   return (
-    <div className="flex flex-col min-h-screen">
-      <SkipLink onClick={handleSkip}>
-        Preskočiť na hlavný obsah
-      </SkipLink>
-      <Navbar />
-      <main className="flex-grow mx-12 p-4 mb-4 -my-2">
-        {children}
-      </main>
-      <FooterResp />
-    </div>
+    // 1. OPRAVA: Zmenené lg:px-4 na min-[1160px]:px-4
+    <main id="main-content" className="flex-grow w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4 py-8">
+      {children}
+    </main>
   );
 };
 

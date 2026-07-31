@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "dedent": "^1.7.2",
     "next": "14.2.3",
+    "nodemailer": "^9.0.3",
     "react": "^18",
     "react-dom": "^18",
+    "react-syntax-highlighter": "^16.1.1",
     "sharp": "^0.33.4"
   },
   "devDependencies": {
-    "@eslovensko/idsk-core": "^3.1.7",
-    "@eslovensko/idsk-react": "^3.8.64",
     "@svgr/webpack": "^8.1.0",
     "autoprefixer": "^10.4.19",
     "eslint": "^8",

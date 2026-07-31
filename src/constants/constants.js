@@ -8,21 +8,17 @@ export const pageRoutes = [
         "link": "/komponenty/akordeon"
     },
     {
-        "name": "Hlavička - webové aplikácie",
+        "name": "Hlavička - elektronické služby",
         "link": "/komponenty/hlavicka-elektronicke-sluzby"
     },
-    {
+    /*{
         "name": "Hlavička - webové sídla",
         "link": "/komponenty/hlavicka-webove-sidla"
-    },
+    },*/
     {
-        "name": "Chyby a validácie",
-        "link": "/komponenty/chyby-validacie"
+        "name": "Informačná lišta",
+        "link": "/komponenty/informacna-lista"
     },
-   /*  {
-        "name": "Informačná lišta oznámenie",
-        "link": "/komponenty/informacna-lista-oznamenie"
-    }, */
     /*{
         "name": "Informačná lišta upozornenie",
         "link": "/komponenty/informacna-lista-upozornenie"
@@ -44,8 +40,12 @@ export const pageRoutes = [
         "link": "/komponenty/pata"
     },
     {
-        "name": "Pole pre nahratie súboru",
+        "name": "Pole na nahratie súboru",
         "link": "/komponenty/nahratie-suboru"
+    },
+    {
+        "name": "Prehľad s chybovými hláseniami",
+        "link": "/komponenty/prehlad-s-chybovymi-hlaseniami"
     },
     {
         "name": "Prepínacie pole",
@@ -55,49 +55,49 @@ export const pageRoutes = [
         "name": "Rázcestník - horizontálny",
         "link": "/komponenty/razcestnik-horizontalny"
     },
-    {
+    /* {
         "name": "Rázcestník - vertikálny",
         "link": "/komponenty/razcestnik-vertikalny"
-    },
-    {
+    }, */
+    /* {
         "name": "Rázcestník - textový",
         "link": "/komponenty/razcestnik-textovy"
-    },
+    },*/
     {
-        "name": "Rozbaľovací zoznam",
-        "link": "/komponenty/rozbalovaci-zoznam"
+        "name": "Rozbaľovacie pole",
+        "link": "/komponenty/rozbalovacie-pole"
     },
     {
         "name": "Textové pole",
         "link": "/komponenty/textove-pole"
     },
     {
-        "name": "Textové pole - viacriadkové",
+        "name": "Viacriadkové textové pole",
         "link": "/komponenty/textove-pole-viacriadkove"
     },
     {
-        "name": "Tlačidlo - primárne",
-        "link": "/komponenty/tlacidlo-primarne"
+        "name": "Tlačidlo",
+        "link": "/komponenty/tlacidlo"
     },
-    {
+    /*{
         "name": "Tlačidlo - sekundárne",
         "link": "/komponenty/tlacidlo-sekundarne"
-    },
-    {
+    },*/
+    /*{
         "name": "Tlačidlo - textové",
         "link": "/komponenty/tlacidlo-textove"
-    },
+    },*/
     {
-        "name": "Zaškrtávacie pole",
-        "link": "/komponenty/zaskrtavacie-pole"
+        "name": "Začiarkavacie pole",
+        "link": "/komponenty/zaciarkavacie-pole"
     }
 ];
 
 export const basicRoutes = [
-    {
-        "name": "Základy a princípy",
-        "link": "/zaklady-principy"
-    },
+    // {
+    //     "name": "Základy a princípy",
+    //    "link": "/zaklady-principy"
+    // },
     {
         "name": "Typografia",
         "link": "/zaklady-principy/typografia"
@@ -132,12 +132,11 @@ export const basicRoutes = [
     // },
 ];
 
-
 export const idskRoutes = [
-    {
-        "name": "Čo je IDSK",
-        "link": "/co-je"
-    },
+    // {
+    //     "name": "Čo je IDSK",
+    //     "link": "/co-je"
+    // },
     // {
     //     "name": "Github",
     //     "link": "/co-je/github"
@@ -162,9 +161,70 @@ export const idskRoutes = [
         "name": "Návod pre vývojárov",
         "link": "/co-je/navod-pre-vyvojarov"
     },
-    {
-        "name": "Spracovanie cookies",
-        "link": "/co-je/cookies-policy"
+];
+
+export const serviceRoutes = [
+  {
+    name: 'Mapa stránok',
+    link: '/mapa-stranok',
+  },
+  {
+    name: 'Vyhlásenie o prístupnosti',
+    link: '/vyhlasenie-o-pristupnosti',
+  },
+  {
+    name: 'Navrhnúť komponent',
+    link: '/navrhnut-komponent',
+  },
+  {
+    "name": "Spracovanie cookies",
+    "link": "cookies-policy"
     },
 ];
 
+export const allRoutes = [
+  ...idskRoutes,
+  ...basicRoutes,
+  ...pageRoutes,
+  ...serviceRoutes,
+];
+
+export const createDropdownItems = (routes = []) =>
+  routes.slice(1).map((route) => ({
+    label: route.name,
+    href: route.link,
+  }));
+
+export const headerNavigationItems = [
+  {
+    id: 'co-je',
+    label: 'Čo je IDSK',
+    href: '/co-je',
+    variant: 'dropdown',
+    dropdownItems: [
+
+      ...createDropdownItems(idskRoutes),
+    ],
+  },
+  {
+    id: 'zaklady-principy',
+    label: 'Základy a princípy',
+    href: '/zaklady-principy',
+    variant: 'dropdown',
+    dropdownItems: [
+        ...createDropdownItems(basicRoutes),
+    ],
+  },
+  {
+    id: 'komponenty',
+    label: 'Komponenty',
+    href: '/komponenty',
+    variant: 'link',
+  },
+  {
+    id: 'vzory',
+    label: 'Vzory',
+    href: '/vzory',
+    variant: 'link',
+  },
+];

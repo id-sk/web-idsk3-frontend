@@ -1,35 +1,42 @@
-import Image from "next/image";
+export const metadata = {
+  title: 'Vzory | IDSK',
+  description: 'Sekcia Vzory sa momentálne pripravuje a čoskoro bude dostupná.',
+};
+
 import React from "react";
+import Image from "next/image";
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
+import { Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
-
-const Vzory404 = () => {
+export default function VzoryComingSoon() {
   return (
-    <div className="flex flex-col pt-12 pb-8 max-w-[835px]">
-      <title>Vzory</title>
-      <h1 className="text-5xl font-black text-black leading-[55.2px] max-md:mr-1 max-md:max-w-full max-md:text-4xl">
-        Vzory
+    <div className="flex flex-col my-8 max-w-[1120px] mx-auto px-4 sm:px-0">
+      <h1 className="text-left text-2xl sm:text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] mb-8 w-full">
+          Vzory
       </h1>
-      <div className="px-1 flex flex-col pt-7 pb-14 mt-8 max-w-full text-2xl tracking-normal leading-9 text-center text-black bg-white rounded-sm border border-solid border-black border-opacity-10 w-[496px] max-md:px-5">
+      
+      <div className="flex flex-col mt-4 pt-10 pb-14 w-full max-w-[550px] px-5 bg-white rounded-[10px] border border-solid border-neutral-200 shadow-sm">
+        
         <Image
-          src="/images/404/404.svg"
-          width={300}
-          height={550}
-          quality={100}
-          alt="404"
-          className="w-full aspect-[1.5]"
+            src="/images/404/404.svg"
+            width={300}
+            height={200}
+            priority
+            alt="" 
+            aria-hidden="true" 
+            className="w-full h-auto max-w-[300px]" 
         />
-        <div className="self-center mt-11 max-md:mt-10">
-          Na časti <span className="font-bold">Vzory</span> pilne pracujeme,
+        
+        <Text className="mt-10 text-center !mb-8">
+          Na časti <strong>Vzory</strong> usilovne pracujeme.
           <br />
-          čoskoro bude dostupná...
-        </div>
+          Čoskoro bude dostupná...
+        </Text>
+
+        <ButtonCustom variant="primary" status="basic" href="/">
+            Späť na hlavnú stránku
+        </ButtonCustom>
       </div>
     </div>
   );
 }
-
-export default Vzory404;
-
-
-
-
