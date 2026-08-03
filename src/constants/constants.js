@@ -190,7 +190,7 @@ export const allRoutes = [
 ];
 
 export const createDropdownItems = (routes = []) =>
-  routes.slice(1).map((route) => ({
+  routes.map((route) => ({
     label: route.name,
     href: route.link,
   }));

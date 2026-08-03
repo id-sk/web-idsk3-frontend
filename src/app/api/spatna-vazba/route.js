@@ -6,18 +6,9 @@ import { randomUUID } from 'node:crypto';
 export const runtime = 'nodejs';
 
 // ============================================================================
-// 1. FAIL-FAST ENV VALIDÁCIA A KONFIGURÁCIA (S ochranou pre Next.js Build)
+// 1. BEZPEČNÁ KONFIGURÁCIA (Načítava sa až pri requeste, nie pri importe modulu)
 // ============================================================================
 const loadConfig = () => {
-  // Ochrana pre CI/CD: Počas build fázy vraciame bezpečný mock, aby kompilácia nezhavarovala
-  // na chýbajúcich produkčných SMTP premenných.
-  if (
-    process.env.NEXT_PHASE === 'phase-production-build' ||
-    process.env.NEXT_PHASE === 'phase-export'
-  ) {
-    return { mode: 'mock', smtp: null };
-  }
-
   const mode = process.env.FEEDBACK_FORM_MODE;
 
   if (process.env.NODE_ENV === 'production' && mode !== 'email') {
@@ -71,10 +62,8 @@ const loadConfig = () => {
   };
 };
 
-const CONFIG = loadConfig();
-
 // ============================================================================
-// 2. LIMITOVANIE, MAPY A KONŠTANTY
+// LIMITOVANIE, MAPY A KONŠTANTY
 // ============================================================================
 const MAX_FILES = 5;
 const MAX_TOTAL_FILE_SIZE = 15 * 1024 * 1024;
@@ -121,7 +110,7 @@ const FIELD_LABELS = {
 };
 
 // ============================================================================
-// 3. RATE LIMITING (In-Memory fallback)
+// RATE LIMITING (In-Memory fallback s HMR ochranou)
 // ============================================================================
 const globalStore = globalThis;
 if (!globalStore.feedbackRateLimitMap) {
@@ -193,27 +182,46 @@ const getCurrentDateLabel = () =>
 const createReferenceNumber = () =>
   `IDSK-${randomUUID().replaceAll('-', '').slice(0, 12).toUpperCase()}`;
 
+// SMTP Transporter s cachovaním a podporou konfiguračného objektu
 let cachedTransporter = null;
+let cachedTransporterKey = null;
 
-const getTransporter = () => {
-  if (cachedTransporter) return cachedTransporter;
-  if (CONFIG.mode !== 'email') throw new Error('Interná chyba: Pokus o odoslanie emailu v nesprávnom režime.');
+const getTransporter = (config) => {
+  if (config.mode !== 'email' || !config.smtp) {
+    throw new Error('Interná chyba: Pokus o odoslanie e-mailu v nesprávnom režime.');
+  }
+
+  const transporterKey = JSON.stringify({
+    host: config.smtp.host,
+    port: config.smtp.port,
+    secure: config.smtp.secure,
+    requireTLS: config.smtp.requireTLS,
+    smtpUser: config.smtp.smtpUser,
+    mailFrom: config.smtp.mailFrom,
+    mailTo: config.smtp.mailTo,
+    tlsServername: config.smtp.tlsServername,
+  });
+
+  if (cachedTransporter && cachedTransporterKey === transporterKey) {
+    return cachedTransporter;
+  }
 
   cachedTransporter = nodemailer.createTransport({
     pool: true,
     maxConnections: 3,
     maxMessages: 50,
-    host: CONFIG.smtp.host,
-    port: CONFIG.smtp.port,
-    secure: CONFIG.smtp.secure,
-    requireTLS: CONFIG.smtp.requireTLS,
+    host: config.smtp.host,
+    port: config.smtp.port,
+    secure: config.smtp.secure,
+    requireTLS: config.smtp.requireTLS,
     connectionTimeout: 10000,
     greetingTimeout: 10000,
     socketTimeout: 15000,
-    auth: CONFIG.smtp.smtpUser && CONFIG.smtp.smtpPassword ? { user: CONFIG.smtp.smtpUser, pass: CONFIG.smtp.smtpPassword } : undefined,
-    tls: CONFIG.smtp.tlsServername ? { servername: CONFIG.smtp.tlsServername } : undefined,
+    auth: config.smtp.smtpUser && config.smtp.smtpPassword ? { user: config.smtp.smtpUser, pass: config.smtp.smtpPassword } : undefined,
+    tls: config.smtp.tlsServername ? { servername: config.smtp.tlsServername } : undefined,
   });
 
+  cachedTransporterKey = transporterKey;
   return cachedTransporter;
 };
 
@@ -272,6 +280,9 @@ export async function POST(request) {
   };
 
   try {
+    // Načítanie konfigurácie až pri reálnom requeste (bezpečné pre build aj runtime)
+    const config = loadConfig();
+
     const contentType = request.headers.get('content-type')?.toLowerCase() ?? '';
     if (!contentType.includes('multipart/form-data')) {
       return sendResponse({ ok: false, code: 'UNSUPPORTED_MEDIA_TYPE', message: 'Požiadavka musí používať multipart/form-data.' }, 415);
@@ -424,7 +435,7 @@ export async function POST(request) {
     const datumPrijatia = getCurrentDateLabel();
     const referencneCislo = createReferenceNumber();
 
-    if (CONFIG.mode === 'mock') {
+    if (config.mode === 'mock') {
       console.info('Formulár bol odoslaný v testovacom režime bez e-mailu.', { referencneCislo, email: values.email, requestId });
       
       if (ip !== 'unknown-ip') {
@@ -435,7 +446,7 @@ export async function POST(request) {
       return sendResponse({ ok: true, mock: true, datumPrijatia, referencneCislo });
     }
 
-    const transporter = getTransporter();
+    const transporter = getTransporter(config);
     const safeComponentName = values.nazovKomponentu.replace(/[\r\n]+/g, ' ').slice(0, 150);
 
     const emailText = `
@@ -473,8 +484,8 @@ ${values.suhlas === 'true' ? 'Áno' : 'Nie'}
 `;
 
     await transporter.sendMail({
-      from: CONFIG.smtp.mailFrom,
-      to: CONFIG.smtp.mailTo,
+      from: config.smtp.mailFrom,
+      to: config.smtp.mailTo,
       replyTo: values.email,
       subject: `[${referencneCislo}] Nový zámer: ${safeComponentName}`,
       text: emailText,

@@ -15,7 +15,8 @@ export default function VzoryComingSoon() {
           Vzory
       </h1>
       
-      <div className="flex flex-col mt-4 pt-10 pb-14 w-full max-w-[550px] px-5 bg-white rounded-[10px] border border-solid border-neutral-200 shadow-sm">
+      {/* Čistý flex-col s items-start zabráni roztiahnutiu tlačidla */}
+      <div className="flex flex-col items-start mt-4 w-full gap-8">
         
         <Image
             src="/images/404/404.svg"
@@ -27,15 +28,16 @@ export default function VzoryComingSoon() {
             className="w-full h-auto max-w-[300px]" 
         />
         
-        <Text className="mt-10 text-center !mb-8">
+        <Text>
           Na časti <strong>Vzory</strong> usilovne pracujeme.
           <br />
           Čoskoro bude dostupná...
         </Text>
 
-        <ButtonCustom variant="primary" status="basic" href="/">
+        <ButtonCustom variant="secondary" status="basic" href="/">
             Späť na hlavnú stránku
         </ButtonCustom>
+        
       </div>
     </div>
   );

@@ -106,7 +106,7 @@ const TopBarCustom = ({
                   href={officialWebsiteLinkHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="text-white underline hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2"
+                  className="text-white underline hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#FFF] focus:outline-offset-2 rounded-[5px]"
                 >
                   {officialWebsiteLinkLabel}
                 </a>

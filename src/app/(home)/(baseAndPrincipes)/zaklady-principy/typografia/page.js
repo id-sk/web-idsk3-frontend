@@ -1,13 +1,15 @@
-'use client'
-
 import { TypographySection } from "@/app/(home)/_components/typography/TypographySection";
 import { headlineData, subtitleData, bodyData, captionData, linkData } from "@/constants/data";
+
+export const metadata = {
+  title: 'Typografia | IDSK',
+  description: 'Pravidlá pre typografiu dizajnového systému IDSK.',
+};
 
 const TypographyPage = () => {
     return (
         <div id="main-content" className="flex flex-col my-8 pb-8 max-w-[1120px] px-4 sm:px-0 text-black">
-            <title>Typografia</title>
-
+            
             <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
                 Typografia
             </h1>
