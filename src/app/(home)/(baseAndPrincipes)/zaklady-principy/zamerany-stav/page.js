@@ -10,7 +10,7 @@ export const metadata = {
 const focusExamples = [
   { id: 'hypertext', title: 'Hypertextový odkaz', layout: 'normal', src: '/images/focus/hypertextovy-odkaz.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'button', title: 'Tlačidlo', layout: 'normal', src: '/images/focus/tlacidlo.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
-  { id: 'checkbox', title: 'Začiarkavacie pole', layout: 'normal', src: '/images/focus/zaciarkavacie-pole-focus.png', width: 375, height: 150, maxW: 'max-w-[375px]' },
+  { id: 'checkbox', title: 'Začiarkavacie pole', layout: 'normal', src: '/images/focus/zaskrtavacie-pole.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'radio', title: 'Prepínacie pole', layout: 'normal', src: '/images/focus/prepinacie-pole.svg', width: 375, height: 150, maxW: 'max-w-[375px]' },
   { id: 'input', title: 'Textové pole', layout: 'normal', src: '/images/focus/textove-pole.svg', width: 500, height: 150, maxW: 'max-w-[375px]' },
   { id: 'textarea', title: 'Viacriadkové textové pole', layout: 'normal', src: '/images/focus/viacriadkove-textove-pole.svg', width: 500, height: 150, maxW: 'max-w-[375px]' },

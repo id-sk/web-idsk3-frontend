@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/app/(home)/_components/tab-bar/tabBar';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import { Text, SectionBlock, Ul, Ol, H3, H4, ExtLink } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 
 // ============================================================================
 // LOKÁLNE KOMPONENTY A DÁTA (Špecifické len pre túto podstránku)
@@ -15,13 +16,13 @@ const figmaTutorials = [
     title: "Figma návod pre začiatočníkov",
     text: "Začnite pracovať vo Figme a zoznámte sa s jej základným rozhraním a funkciami podľa tohto oficiálneho návodu.",
     image: "/images/designers/nedizajneri4.png",
-    link: "https://help.figma.com/hc/en-us/articles/360039827114-Getting-started-with-Figma"
+    link: "https://www.figma.com/resource-library/design-basics/?fuid=1567875285555985583"
   },
   {
     title: "Ako funguje Auto Layout",
     text: "Zistite, ako využívať Auto Layout na tvorbu flexibilných komponentov, ktoré sa automaticky prispôsobujú svojmu obsahu a veľkosti obrazovky.",
     image: "/images/designers/nedizajneri5.png",
-    link: "https://www.figma.com/community/file/784448220678228461"
+    link: "https://www.figma.com/community/file/784448220678228461/figma-auto-layout-playground"
   },
   {
     title: "Práca s variantmi",
@@ -37,7 +38,7 @@ const HorizontalTutorialCard = ({ title, text, image, link }) => (
       href={link} 
       target="_blank" 
       rel="noopener noreferrer" 
-      className="absolute inset-0 z-10 outline-none focus-visible:ring-[4px] focus-visible:ring-[#0B4199] rounded-[10px]"
+      className="absolute inset-0 z-10 outline-none focus-visible:ring-[4px] focus-visible:ring-[#0B4199] rounded-[5px]"
     >
       <span className="sr-only">{title} (otvorí sa v novom okne)</span>
     </a>
@@ -87,7 +88,7 @@ export default function DesignersClient() {
     <div className="flex flex-col gap-10 my-8 max-w-[1120px] px-4 sm:px-0 text-black">
       
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight">
-        Pre dizajnérov
+        Návod pre dizajnérov
       </h1>
 
       <div className="flex flex-col gap-6">
@@ -97,18 +98,34 @@ export default function DesignersClient() {
       </div>
 
       <div>
-        <a 
+        <ButtonCustom
           href="https://www.figma.com/community/file/1581301778555425083"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 my-2 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md transition-all duration-200 outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
+          variant="primary"
+          status="basic"
+          size="large"
+          iconRight={
+            <svg
+              className="w-5 h-5 shrink-0"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
+              />
+            </svg>
+          }
         >
-          <span>Figma knižnica IDSK</span>
+          Figma knižnica IDSK
           <span className="sr-only"> (otvorí sa v novom okne)</span>
-          <svg className="w-5 h-5 shrink-0" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-          </svg>
-        </a>
+        </ButtonCustom>
       </div>
 
       <Tabs defaultValue="akoZacat">

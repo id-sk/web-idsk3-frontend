@@ -14,6 +14,12 @@ import TabVarianty from './_tabs-footer/TabVarianty';
 import TabPristupnost from './_tabs-footer/TabPristupnost';
 import TabImplementacia from './_tabs-footer/TabImplementacia';
 
+export const metadata = {
+  title: 'Päta | Komponenty IDSK',
+  description:
+    'Dokumentácia komponentu Päta (Footer), jeho použitie, varianty, prístupnosť a implementácia.',
+};
+
 const FooterPage = () => {
   return (
     <div className="flex flex-col my-8 max-w-[1000px] px-4 sm:px-0 text-black">

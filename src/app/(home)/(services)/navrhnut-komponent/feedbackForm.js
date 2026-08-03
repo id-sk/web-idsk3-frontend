@@ -584,7 +584,7 @@ export default function FeedbackForm() {
             ref={successHeadingRef}
             tabIndex={-1}
             role="status" 
-            className="mt-6 text-2xl font-black leading-tight text-black focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 sm:text-3xl md:text-4xl md:leading-[55px]"
+            className="mt-6 text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]"
           >
             Ďakujeme, váš zámer sme úspešne prijali.
           </h1>
@@ -663,7 +663,7 @@ export default function FeedbackForm() {
                       text-[#0B4199] underline underline-offset-2
                       hover:text-[#126DFF] hover:decoration-2
                       focus:outline focus:outline-[3px] focus:outline-[#D96E00]
-                      focus:outline-offset-2
+                      focus:outline-offset-2 focus:rounded-[5px]
                     "
                   >
                     <strong>{IDSK_EMAIL}</strong>
