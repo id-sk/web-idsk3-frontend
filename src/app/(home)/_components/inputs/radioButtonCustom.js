@@ -139,7 +139,7 @@ export const RadioButton = forwardRef(
       <div className={`flex flex-col ${className}`}>
         <label
           htmlFor={radioId}
-          className={`relative flex items-start group ${
+          className={`relative flex items-center group ${
             disabled ? 'cursor-not-allowed' : 'cursor-pointer'
           }`}
         >
@@ -160,6 +160,7 @@ export const RadioButton = forwardRef(
 
           <div
             className={`
+              custom-radio-circle
               flex shrink-0 items-center justify-center rounded-full border-2
               bg-white ${boxSizeClass}
               peer-focus-visible:outline peer-focus-visible:outline-[3px]
@@ -172,13 +173,15 @@ export const RadioButton = forwardRef(
               }
               peer-checked:[&>div]:scale-100
               peer-checked:[&>div]:opacity-100
-              peer-disabled:cursor-not-allowed peer-disabled:border-[#bdbdbd]
+              peer-disabled:cursor-not-allowed
+              peer-disabled:border-[#bdbdbd]
               peer-disabled:hover:ring-[0px]
               ${error ? 'border-[#C3112B]' : 'border-[#424242]'}
             `}
           >
             <div
               className={`
+                custom-radio-dot
                 ${dotSizeClass} scale-50 rounded-full bg-[#424242] opacity-0
                 transition-all duration-100
               `}

@@ -6,8 +6,7 @@ import SvgArrowUp from '@/app/(home)/_components/icons/SvgArrowUp';
 
 const BaseLayout = ({ children }) => {
   return (
-    <div className="flex flex-1 w-full max-w-[1120px] mx-auto sm:px-8 min-[1160px]:px-4 h-full">
-      
+    <div className="flex flex-1 w-full max-w-[1120px] mx-auto px-4 sm:px-8 min-[1160px]:px-4 h-full">      
       <main id="main-content" className="flex-1 pl-0 min-[1120px] py-8">
         <div className="relative h-auto">
           {children}

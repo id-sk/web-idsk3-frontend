@@ -366,6 +366,40 @@
   }
 }
 
+@media (forced-colors: active) {
+  .custom-radio-circle {
+    background: Canvas;
+    border-color: ButtonText;
+  }
+
+  .custom-radio-dot {
+    background: Highlight;
+  }
+
+  input:disabled + .custom-radio-circle {
+    border-color: GrayText;
+  }
+}
+
+@media (forced-colors: active) {
+  .custom-checkbox-box {
+    background: Canvas;
+    border-color: ButtonText;
+  }
+
+  .custom-checkbox-check {
+    color: Highlight;
+  }
+
+  input:disabled + .custom-checkbox-box {
+    border-color: GrayText;
+  }
+
+  input:disabled + .custom-checkbox-box .custom-checkbox-check {
+    color: GrayText;
+  }
+}
+
 /* ==========================================================================
    7. NON-TAILWIND (Vanilla CSS pre iframe, animácie a print)
    ========================================================================== */

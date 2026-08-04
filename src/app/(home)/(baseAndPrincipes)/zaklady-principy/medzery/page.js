@@ -42,7 +42,7 @@ const GapsPage = () => {
                   <td className="py-4 pr-4">{item.size}</td>
                   <td className="py-4">
                     {/* Vizuálna ukážka medzery. Tailwind spracuje item.width z data.js */}
-                    <div className={`h-[15px] bg-[#c3d9f9] ${item.width}`} aria-hidden="true" />
+                    <div className={`h-[15px] bg-[#0b4199] ${item.width}`} aria-hidden="true" />
                   </td>
                 </tr>
               ))}

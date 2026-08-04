@@ -16,31 +16,31 @@ const CloseIcon = () => (
 const InfoIcon = () => (
   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <circle cx="12" cy="12" r="10" stroke="none" />
-    <line x1="12" y1="16" x2="12" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" />
-    <line x1="12" y1="8" x2="12.01" y2="8" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="16" x2="12" y2="12" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="8" x2="12.01" y2="8" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const CheckCircleIcon = () => (
   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <circle cx="12" cy="12" r="10" stroke="none" />
-    <polyline points="16 9 10 16 7 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+    <polyline points="16 9 10 16 7 13" stroke="Canvas" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
   </svg>
 );
 
 const WarningIcon = () => (
   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <path d="M12 2L1 21h22L12 2z" stroke="none" />
-    <line x1="12" y1="10" x2="12" y2="14" stroke="white" strokeWidth="2" strokeLinecap="round" />
-    <line x1="12" y1="18" x2="12.01" y2="18" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="10" x2="12" y2="14" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="18" x2="12.01" y2="18" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 
 const AlertIcon = () => (
   <svg aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
     <polygon points="7.86 2 16.14 2 22 7.86 22 16.14 16.14 22 7.86 22 2 16.14 2 7.86 7.86 2" stroke="none" />
-    <line x1="12" y1="8" x2="12" y2="12" stroke="white" strokeWidth="2" strokeLinecap="round" />
-    <line x1="12" y1="16" x2="12.01" y2="16" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="8" x2="12" y2="12" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
+    <line x1="12" y1="16" x2="12.01" y2="16" stroke="Canvas" strokeWidth="2" strokeLinecap="round" />
   </svg>
 );
 

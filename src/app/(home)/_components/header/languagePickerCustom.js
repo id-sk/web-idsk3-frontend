@@ -5,23 +5,25 @@ import React, { useEffect, useId, useRef, useState } from 'react';
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 const TriangleDownIcon = ({ className = '' }) => (
-  <span
+  <svg
     aria-hidden="true"
-    className={cx(
-      'inline-block h-0 w-0 border-l-[5px] border-r-[5px] border-t-[6px] border-l-transparent border-r-transparent border-t-current',
-      className
-    )}
-  />
+    focusable="false"
+    viewBox="0 0 10 6"
+    className={cx('h-[6px] w-[10px] shrink-0 fill-current', className)}
+  >
+    <path d="M0 0h10L5 6 0 0Z" />
+  </svg>
 );
 
 const TriangleUpIcon = ({ className = '' }) => (
-  <span
+  <svg
     aria-hidden="true"
-    className={cx(
-      'inline-block h-0 w-0 border-b-[6px] border-l-[5px] border-r-[5px] border-b-current border-l-transparent border-r-transparent',
-      className
-    )}
-  />
+    focusable="false"
+    viewBox="0 0 10 6"
+    className={cx('h-[6px] w-[10px] shrink-0 fill-current', className)}
+  >
+    <path d="M0 6h10L5 0 0 6Z" />
+  </svg>
 );
 
 const DEFAULT_LANGUAGES = [

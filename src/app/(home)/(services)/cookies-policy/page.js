@@ -49,8 +49,7 @@ export default function SuboryCookies() {
             <strong className="block mt-2">Ministerstvo aktuálne spracúva len nevyhnutné cookies.</strong>
           </Text>
           <InformationBanner
-              title="Príklad komponentu informačná lišta"
-              ariaLabel="Príklad komponentu informačná lišta"
+              title="Ilustračný príklad spracúvania cookies"
               type="banner"
               variant="information"
               hideCloseButton={true}
