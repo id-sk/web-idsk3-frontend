@@ -3,8 +3,7 @@
 import React from 'react';
 import { 
   SectionBlock, 
-  H3, 
-  H4, 
+  H3,  
   Text, 
   Ul, 
   Ol, 
@@ -40,7 +39,7 @@ const TabImplementacia = () => {
       <SectionBlock titleString="Možnosti implementácie">
         
         <div className="mt-4 mb-8">
-          <H4>1. Statická HTML implementácia (HTML + minifikované súbory)</H4>
+          <H3>1. Statická HTML implementácia (HTML + minifikované súbory)</H3>
           <Text className="mb-4">
             Ak váš projekt nevyužíva Node.js alebo bundler (napr. Webpack, Vite), môžete použiť hotové buildy. Pri inštalácii z <code className={codeClass}>dist</code> sa používajú kompilované a minifikované verzie šablóny so štýlmi. To znamená, že nebudete môcť:
           </Text>
@@ -136,7 +135,7 @@ const TabImplementacia = () => {
         </div>
 
         <div className="mt-12 mb-8">
-          <H4>2. Pokročilá integrácia (NPM + SCSS + JS)</H4>
+          <H3>2. Pokročilá integrácia (NPM + SCSS + JS)</H3>
           
           <Ol>
             <li>
