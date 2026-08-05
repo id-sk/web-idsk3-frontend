@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import FileUploadCustom from '@/app/(home)/_components/inputs/fileUploadCustom';
+import FileUploadCustom from '@/app/(home)/_components/inputs/file-upload/FileUploadCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 
 import {

@@ -18,13 +18,11 @@ import {
   RadioButton,
   RadioButtonGroup,
 } from '@/app/(home)/_components/inputs/radioButtonCustom';
-import FileUploadCustom from '@/app/(home)/_components/inputs/fileUploadCustom';
+import FileUploadCustom from '@/app/(home)/_components/inputs/file-upload/FileUploadCustom';
 import ErrorSummaryCustom from '@/app/(home)/_components/error-summary/errorSummaryCustom';
 import { submitFeedbackForm } from './_lib/submitFeedbackForm';
 
 const IDSK_EMAIL = 'idsk@mirri.gov.sk';
-
-
 
 const initialValues = {
   organizacia: '',
