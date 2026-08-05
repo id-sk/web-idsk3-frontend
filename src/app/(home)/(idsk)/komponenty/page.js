@@ -33,7 +33,7 @@ const IdskPage = () => {
               key={`home-signpost-${index}`}
               href={card.href}
               heading={card.title}
-              headingLevel="h3"
+              headingLevel="h2"
               arrowIcon={<ArrowRightIcon />}
             >
               {card.description}
