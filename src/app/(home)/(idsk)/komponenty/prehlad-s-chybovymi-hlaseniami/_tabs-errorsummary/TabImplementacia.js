@@ -1,8 +1,10 @@
+'use client';
+
 import React from 'react';
 
 import {
   SectionBlock,
-  H4,
+  H3,
   Text,
   Ul,
   Ol,
@@ -12,239 +14,271 @@ import {
 
 const TabImplementacia = () => {
   const codeClass =
-    'bg-neutral-100 border border-neutral-200 font-mono text-sm px-1.5 py-0.5 rounded text-black';
+    'rounded border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 font-mono text-sm text-black';
 
   return (
-    <div className="animate-fade-in text-black w-full min-w-0">
-      <SectionBlock titleString="Implementácia prehľadu s chybovými hláseniami">
+    <div className="animate-fade-in w-full min-w-0 text-black">
+      <SectionBlock titleString="Implementácia prehľadu s chybovými hláseniami z ID-SK Frontend">
         <Text>
-          Prehľad s chybovými hláseniami môžete implementovať ako súčasť
-          validačnej logiky formulára. V tomto React komponente používame pattern,
-          pri ktorom sa po validačnej chybe presunie focus na prehľad chýb.
-          Preto komponent nepoužíva <code className={codeClass}>role=&quot;alert&quot;</code>.
+          Komponent z knižnice ID-SK Frontend môžete do projektu integrovať
+          dvoma spôsobmi v závislosti od použitej technologickej infraštruktúry:
         </Text>
 
         <Ul>
           <li>
-            <strong>Focus-based pattern</strong> – odporúčaný v tomto komponente:
-            po odoslaní formulára sa focus presunie na prehľad chýb.
+            <strong>Statická HTML implementácia</strong> – vhodná pre projekty
+            bez Node.js alebo bundlera.
           </li>
+
           <li>
-            <strong>Alert pattern</strong> – použiteľný len vtedy, keď sa focus
-            na chybové hlásenie nepresúva.
+            <strong>Pokročilá integrácia (NPM + SCSS + JavaScript)</strong> –
+            vhodná pre projekty so správou zdrojov a build procesom.
           </li>
         </Ul>
       </SectionBlock>
 
       <SectionBlock titleString="Základné požiadavky">
-        <Text>Pri implementácii dodržte tieto pravidlá:</Text>
+        <Text>
+          Pri implementácii prehľadu s chybovými hláseniami dodržte tieto
+          pravidlá:
+        </Text>
 
         <Ul>
-          <li>každý prehľad chýb musí mať jasný nadpis,</li>
-          <li>každý odkaz v prehľade musí smerovať na konkrétne chybné pole,</li>
+          <li>prehľad chýb musí obsahovať jasný a zrozumiteľný nadpis,</li>
+
+          <li>
+            každý odkaz v prehľade musí smerovať na konkrétne chybné pole,
+          </li>
+
           <li>každé ID na stránke musí byť jedinečné,</li>
-          <li>text chyby v prehľade má byť rovnaký ako text chyby pri poli,</li>
-          <li>chybové hlásenie musí obsahovať konkrétnu informáciu, ako chybu opraviť.</li>
+
+          <li>
+            text chyby v prehľade má byť rovnaký ako text chyby pri danom poli,
+          </li>
+
+          <li>
+            chybové hlásenie musí používateľovi vysvetliť, ako chybu opraviť,
+          </li>
+
+          <li>
+            cieľové formulárové pole musí byť možné programovo zamerať.
+          </li>
         </Ul>
       </SectionBlock>
 
-      <SectionBlock titleString="React implementácia">
-        <div className="mt-4 mb-8">
-          <H4>1. Použitie komponentu</H4>
+      <SectionBlock titleString="Možnosti implementácie">
+        <div>
+          <H3>1. Statická HTML implementácia</H3>
 
           <Text className="mb-4">
-            Pole <code className={codeClass}>errors</code> obsahuje zoznam chýb.
-            Hodnota <code className={codeClass}>id</code> musí zodpovedať ID
-            konkrétneho chybného inputu vo formulári.
-          </Text>
-
-          <CodeBlock
-            language="jsx"
-            codeString={`import ErrorSummaryCustom from '@/app/(home)/_components/error-summary/errorSummaryCustom';
-
-const errors = [
-  {
-    id: 'email',
-    message: 'Zadajte e-mailovú adresu v tvare meno@example.com.',
-  },
-  {
-    id: 'name',
-    message: 'Meno musí obsahovať aspoň 3 znaky.',
-  },
-];
-
-<ErrorSummaryCustom
-  title="Vo formulári sú chyby"
-  description="Opravte označené polia a formulár odošlite znova."
-  errors={errors}
-  focusKey={submitCount}
-/>`}
-          />
-        </div>
-
-        <div className="mt-12 mb-8">
-          <H4>2. Správne označenie chybného poľa</H4>
-
-          <Text className="mb-4">
-            Input a chybové hlásenie nesmú používať rovnaké ID. Chybové hlásenie
-            prepojte s inputom cez <code className={codeClass}>aria-describedby</code>.
-          </Text>
-
-          <CodeBlock
-            language="html"
-            codeString={`<label for="email">
-  Zadajte e-mail
-  <span aria-hidden="true">*</span>
-</label>
-
-<p id="email-error" class="error-message">
-  <strong>Chyba:</strong>
-  Zadajte e-mailovú adresu v tvare meno@example.com.
-</p>
-
-<input
-  id="email"
-  name="email"
-  type="email"
-  aria-invalid="true"
-  aria-describedby="email-error"
-/>`}
-          />
-        </div>
-
-        <div className="mt-12 mb-8">
-          <H4>3. Čomu sa vyhnúť</H4>
-
-          <Text className="mb-4">
-            Ak na prehľad chýb presúvate focus, nepoužívajte na rovnakom prvku
-            live region.
-          </Text>
-
-          <CodeBlock
-            language="html"
-            codeString={`<!-- Nepoužívajte tento pattern, ak na prvok zároveň presúvate focus -->
-<div
-  role="alert"
-  tabindex="-1"
->
-  <h2>Vo formulári sú chyby</h2>
-</div>`}
-          />
-
-          <Text className="mt-6 mb-4">
-            Rovnako nepoužívajte rovnaké ID pre input a chybovú hlášku.
-          </Text>
-
-          <CodeBlock
-            language="html"
-            codeString={`<!-- Nesprávne: input aj chyba majú rovnaké id -->
-<input id="input-email" aria-errormessage="input-email">
-
-<span id="input-email">
-  Zadajte e-mailovú adresu v tvare meno@example.com.
-</span>`}
-          />
-        </div>
-      </SectionBlock>
-
-      <SectionBlock titleString="Implementácia z ID-SK Frontend">
-        <Text>
-          Ak implementujete komponent podľa ID-SK Frontend, overte si, aký
-          oznamovací pattern používa konkrétna verzia knižnice. Ak komponent
-          presúva focus na prehľad chýb, nepoužívajte súčasne{' '}
-          <code className={codeClass}>role=&quot;alert&quot;</code> na tom istom
-          prvku.
-        </Text>
-
-        <div className="mt-4 mb-8">
-          <H4>1. Statická HTML implementácia</H4>
-
-          <Text className="mb-4">
-            Z dokumentácie môžete vychádzať zo stránky komponentu{' '}
+            Zo stránky dokumentácie môžete prevziať HTML kód komponentu{' '}
             <ExtLink href="https://komponenty.idsk3.gov.sk/components/error-summary">
               prehľad s chybovými hláseniami
             </ExtLink>
-            . Pri vlastnej implementácii však zachovajte jedinečné ID a zvoľte
-            iba jeden oznamovací pattern.
+            . Odkazy v zozname musia smerovať na ID konkrétnych chybných polí vo
+            formulári.
           </Text>
 
           <CodeBlock
             language="html"
-            codeString={`<div
-  class="govuk-error-summary"
-  tabindex="-1"
-  aria-labelledby="error-summary-title"
-  data-module="govuk-error-summary"
->
-  <h2 id="error-summary-title" class="govuk-error-summary__title">
-    Vo formulári sú chyby
-  </h2>
+            codeString={`
+              <div
+                class="govuk-error-summary"
+                data-module="govuk-error-summary"
+              >
+                <div role="alert">
+                  <h2 class="govuk-error-summary__title">
+                    Zadajte správne tieto vstupné údaje a skúste odoslať znova.
+                  </h2>
 
-  <div class="govuk-error-summary__body">
-    <ul class="govuk-list govuk-error-summary__list">
-      <li>
-        <a href="#email">
-          Zadajte e-mailovú adresu v tvare meno@example.com.
-        </a>
-      </li>
-      <li>
-        <a href="#name">
-          Meno musí obsahovať aspoň 3 znaky.
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>`}
+                  <p class="govuk-error-summary__description">
+                    Priestor pre popis, k akým chybám došlo a ako ich opraviť.
+                  </p>
+
+                  <div class="govuk-error-summary__body">
+                    <ul class="govuk-list govuk-error-summary__list">
+                      <li>
+                        <a href="#example-error-1">
+                          Prosím, zadajte správny tvar vášho rodného čísla.
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#example-error-2">
+                          Prosím, zadajte správny tvar vášho OP preukazu.
+                        </a>
+                      </li>
+
+                      <li>
+                        <a href="#example-error-3">
+                          Prosím, zadajte správny tvar vášho telefónneho čísla.
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            `}
+          />
+
+          <Text className="mt-6 mb-4">
+            Hodnota atribútu <code className={codeClass}>href</code> musí
+            zodpovedať atribútu <code className={codeClass}>id</code> chybného
+            poľa:
+          </Text>
+
+          <CodeBlock
+            language="html"
+            codeString={`
+              <label for="example-error-1">
+                Rodné číslo
+              </label>
+
+              <p id="example-error-1-message" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Chyba:</span>
+                Prosím, zadajte správny tvar vášho rodného čísla.
+              </p>
+
+              <input
+                id="example-error-1"
+                name="birth-number"
+                type="text"
+                aria-invalid="true"
+                aria-describedby="example-error-1-message"
+              >
+            `}
           />
         </div>
 
-        <div className="mt-12 mb-8">
-          <H4>2. Pokročilá integrácia (NPM + SCSS + JS)</H4>
+        <div>
+          <H3>2. Pokročilá integrácia (NPM + SCSS + JavaScript)</H3>
 
           <Ol>
             <li>
-              <strong className="block mb-2">Nainštalujte balík</strong>
+              <strong className="mb-2 mt-5 block">Nainštalujte balík</strong>
+
               Pre inštaláciu cez NPM spustite:
 
               <CodeBlock
                 language="bash"
-                codeString={`npm install nunjucks --save
-npm i @id-sk/frontend@3.0.0-beta.0-hotfix`}
+                codeString={`
+                  npm install nunjucks --save
+                  npm i @id-sk/frontend@3.0.0-beta.0-hotfix
+                `}
               />
             </li>
 
             <li className="mt-6">
-              <strong className="block mb-2">Pridajte HTML alebo Nunjucks</strong>
-              Do pripraveného súboru vložte markup komponentu a uistite sa, že
-              odkazy v zozname smerujú na existujúce chybné polia.
+              <strong className="mb-2 block">
+                Pridajte Nunjucks alebo HTML
+              </strong>
+
+              Do pripraveného súboru vložte markup komponentu. Skontrolujte, že
+              odkazy v zozname smerujú na existujúce formulárové polia.
             </li>
 
             <li className="mt-6">
-              <strong className="font-semibold block mb-2">Importujte štýly</strong>
-              Pre import individuálneho ID-SK komponentu pridajte:
+              <strong className="mb-2 block font-semibold">
+                Importujte štýly
+              </strong>
+
+              Pre import individuálneho komponentu pridajte do Sass súboru:
 
               <CodeBlock
                 language="scss"
-                codeString={`@import "node_modules/@id-sk/frontend/idsk/components/error-summary/error-summary";`}
+                codeString={`
+                  @import "node_modules/@id-sk/frontend/idsk/components/error-summary/error-summary";
+                `}
               />
             </li>
 
             <li className="mt-6">
-              <strong className="font-semibold block mb-2">
-                Inicializujte JavaScript
+              <strong className="mb-2 block font-semibold">
+                Importujte JavaScript
               </strong>
-              Ak používate JavaScript modul knižnice, inicializujte ho podľa
-              verzie ID-SK Frontend používanej vo vašom projekte.
+
+              Komponent používa atribút{' '}
+              <code className={codeClass}>
+                data-module=&quot;govuk-error-summary&quot;
+              </code>
+              . JavaScript modul inicializujte takto:
 
               <CodeBlock
                 language="javascript"
-                codeString={`import { ErrorSummary, createAll } from 'govuk-frontend';
+                codeString={`
+                  import {
+                    ErrorSummary,
+                    createAll
+                  } from 'govuk-frontend';
 
-createAll(ErrorSummary);`}
+                  createAll(ErrorSummary);
+                `}
               />
             </li>
           </Ol>
         </div>
+      </SectionBlock>
+
+      <SectionBlock titleString="Správanie JavaScript modulu">
+        <Text>
+          JavaScript modul pri inicializácii štandardne presunie fokus na
+          prehľad s chybovými hláseniami. Toto správanie je možné vypnúť
+          nastavením{' '}
+          <code className={codeClass}>disableAutoFocus: true</code>.
+        </Text>
+
+        <Ul>
+          <li>
+            po inicializácii sa prehľad chýb programovo zameria,
+          </li>
+
+          <li>
+            po kliknutí na odkaz v prehľade modul vyhľadá cieľové pole podľa
+            fragmentu URL,
+          </li>
+
+          <li>
+            pred zameraním poľa posunie do viditeľnej oblasti jeho label alebo
+            legend,
+          </li>
+
+          <li>
+            pri radio buttonoch a checkboxoch sa snaží posunúť na legend
+            nadradeného <code className={codeClass}>fieldset</code>,
+          </li>
+
+          <li>
+            následne presunie fokus na konkrétny formulárový prvok.
+          </li>
+        </Ul>
+
+        <CodeBlock
+          language="javascript"
+          codeString={`
+            import {
+              ErrorSummary,
+              createAll
+            } from 'govuk-frontend';
+
+            createAll(ErrorSummary);
+          `}
+        />
+
+        <Text className="mt-6 mb-4">
+          Automatický fokus môžete vypnúť konfiguráciou komponentu:
+        </Text>
+
+        <CodeBlock
+          language="javascript"
+          codeString={`
+            new ErrorSummary(
+              document.querySelector('[data-module="govuk-error-summary"]'),
+              {
+                disableAutoFocus: true
+              }
+            );
+          `}
+        />
       </SectionBlock>
     </div>
   );

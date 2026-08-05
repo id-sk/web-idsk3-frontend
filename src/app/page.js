@@ -23,7 +23,7 @@ export default function HomePage() {
             
             <div className="flex flex-col w-[67%] max-md:w-full">
               <h1 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
-                Dizajnový systém elektronických služieb <br /> a webových sídel 
+                Dizajnový systém elektronických služieb a&nbsp;webových sídel 
               </h1>
               
               <Text className="mt-7 max-md:max-w-full">
@@ -46,7 +46,7 @@ export default function HomePage() {
                       stroke="currentColor" 
                       viewBox="0 0 24 24" 
                       xmlns="http://www.w3.org/2000/svg"
-                      aria-hidden="true" /* 👈 Znova pridané pre skrytie pred čítačkou */
+                      aria-hidden="true"
                     >
                       <path 
                         strokeLinecap="round" 
@@ -63,10 +63,10 @@ export default function HomePage() {
             </div>
 
             {/* Pravá ilustračná sekcia */}
-            <div className="w-[33%] max-md:w-full mt-7 flex items-center justify-center">
+            <div className="mt-7 hidden w-[33%] items-center justify-center md:flex">
               <Image
                 src="/images/home-page/undraw.svg"
-                className="w-full h-auto object-contain"
+                className="h-auto w-full object-contain"
                 width={300}
                 height={240}
                 alt=""
@@ -81,7 +81,6 @@ export default function HomePage() {
         <section className="w-full bg-[#EFF5FE] pt-16 pb-10">
           <div className="page-container flex max-md:flex-col gap-5">
 
-            {/* Pravá ilustračná sekcia */}
             <div className="w-[33%] max-md:w-full mt-2 flex items-center justify-center">
               <Image
                 src="/images/home-page/ilustration_home_page.png"
@@ -95,7 +94,7 @@ export default function HomePage() {
 
             <div className="flex flex-col w-[67%] max-md:w-full">
               <h2 className="text-3xl md:text-4xl font-black text-black leading-snug md:leading-[55px] max-md:max-w-full">
-                Potrebujete nový komponent alebo zmeniť <br /> existujúci?
+                Potrebujete nový komponent alebo upraviť&nbsp; existujúci?
               </h2>
               
               <Text className="mt-7 max-md:max-w-full">

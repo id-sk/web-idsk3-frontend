@@ -1,26 +1,31 @@
 import { CustomAccordion } from '@/app/(home)/_components/accordion/accordionCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
-import { SectionBlock, Text, Ul, Ol } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import { SectionBlock, ExampleBlock, Text, Ul, Ol } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const TabPouzitie = () => (    
     <div className="animate-fade-in text-black w-full min-w-0">
         
         <SectionBlock titleString="Použitie Akordeónu">
-            <div className="flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
-                <div className="w-full max-w-[700px] py-7 mt-6 mb-1 px-4">
-                    <CustomAccordion 
-                        heading="Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?" 
-                        initiallyClosed={true}
-                    >
-                        <Text>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-                        </Text>
-                        <Text className="mt-4">
-                            Consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu aenean sed diam urna tempor.
-                        </Text>
-                    </CustomAccordion>
-                </div>
-            </div>
+            <ExampleBlock innerClassName="max-w-[700px] pt-4 mt-2 mb-1">
+                <CustomAccordion
+                heading="Je možné zrušiť alebo stiahnuť notifikáciu po jej odoslaní?"
+                initiallyClosed={true}
+                >
+                <Text>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+                    veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+                    commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                    velit esse cillum dolore eu fugiat nulla pariatur.
+                </Text>
+
+                <Text className="mt-4">
+                    Consectetur adipiscing elit. Quisque faucibus ex sapien vitae pellentesque
+                    sem placerat. In id cursus mi pretium tellus duis convallis. Tempus leo eu
+                    aenean sed diam urna tempor.
+                </Text>
+                </CustomAccordion>
+            </ExampleBlock>
 
             <Text className="mb-4">
                 Nadpis príslušnej lišty by mal byť v primeranej dĺžke, maximálne v 1 riadku a výstižne popisovať to, čo sa v danom akordeóne nachádza. Detailnejšie informácie o tom, čo je umiestnené v akordeóne, dodefinujte v popise pod nadpisom. Akordeón najlepšie funguje pre jednoduché texty a odkazy. Nepoužívajte akordeón na obsah, ktorý je dôležitý pre všetkých používateľov. Akordeón sa typicky používa na:

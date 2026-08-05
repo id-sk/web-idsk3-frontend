@@ -85,6 +85,7 @@ const Checkbox = forwardRef(
 
           <div
             className={`
+              custom-checkbox-box
               flex shrink-0 items-center justify-center rounded-[5px] border-2
               bg-white ${boxSizeClass}
               peer-focus-visible:outline peer-focus-visible:outline-[3px]
@@ -96,13 +97,18 @@ const Checkbox = forwardRef(
                   : ''
               }
               peer-checked:[&>svg]:opacity-100
-              peer-disabled:cursor-not-allowed peer-disabled:border-[#bdbdbd]
+              peer-disabled:cursor-not-allowed
+              peer-disabled:border-[#bdbdbd]
               peer-disabled:hover:ring-[0px]
               ${hasError ? 'border-[#C3112B]' : 'border-[#424242]'}
             `}
           >
             <CheckIcon
-              className={`${iconSizeClass} text-[#424242] opacity-0 transition-opacity duration-200`}
+              className={`
+                custom-checkbox-check
+                ${iconSizeClass}
+                text-[#424242] opacity-0 transition-opacity duration-200
+              `}
             />
           </div>
 

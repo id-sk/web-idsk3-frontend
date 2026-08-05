@@ -64,7 +64,7 @@ const TabVarianty = () => (
         </div>
       </div>
 
-      <H3>2. Viacúrovňová omrvinková navigácia</H3>
+      <H3>3. Viacúrovňová omrvinková navigácia</H3>
 
       <Text className="mb-4">
         Pri viacúrovňovej štruktúre zobrazte jednotlivé úrovne od všeobecnejšej
@@ -76,15 +76,15 @@ const TabVarianty = () => (
           <BreadcrumbCustom
             items={[
               {
-                href: '/',
-                label: 'Úvod',
+                href: '#',
+                label: 'Domov',
               },
               {
-                href: '/komponenty',
+                href: '#',
                 label: 'Komponenty',
               },
               {
-                href: '/komponenty/navigacia',
+                href: '#',
                 label: 'Navigácia',
               },
               {
@@ -96,7 +96,7 @@ const TabVarianty = () => (
         </div>
       </div>
 
-      <H3>3. Dlhšia navigácia</H3>
+      <H3>4. Dlhšia navigácia</H3>
 
       <Text className="mb-4">
         Pri dlhších omrvinkách musí komponent zvládnuť zalomenie na viac riadkov
@@ -108,23 +108,23 @@ const TabVarianty = () => (
           <BreadcrumbCustom
             items={[
               {
-                href: '/',
+                href: '#',
                 label: 'Úvod',
               },
               {
-                href: '/sluzby',
+                href: '#',
                 label: 'Služby',
               },
               {
-                href: '/sluzby/podnikanie',
+                href: '#',
                 label: 'Podnikanie',
               },
               {
-                href: '/sluzby/podnikanie/registre',
+                href: '#',
                 label: 'Registre',
               },
               {
-                label: 'Výpis z registra',
+                label: 'Omrvinková navigácia',
                 current: true,
               },
             ]}
@@ -132,7 +132,7 @@ const TabVarianty = () => (
         </div>
       </div>
 
-      <H3>4. Mobilné zobrazenie</H3>
+      <H3>5. Mobilné zobrazenie</H3>
 
       <Text className="mb-4">
         Pri malých šírkach obrazovky môže komponent zobraziť zjednodušenú

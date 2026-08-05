@@ -4,7 +4,7 @@ import React from 'react';
 
 import {
   SectionBlock,
-  H4,
+  H3,
   Text,
   Ul,
   Ol,
@@ -58,7 +58,7 @@ const TabImplementacia = () => {
 
       <SectionBlock titleString="Možnosti implementácie">
         <div className="mt-4 mb-8">
-          <H4>1. Statická HTML implementácia</H4>
+          <H3>1. Statická HTML implementácia</H3>
 
           <Text className="mb-4">
             Ak projekt nevyužíva Node.js alebo bundler, môžete použiť
@@ -170,7 +170,7 @@ const TabImplementacia = () => {
         </div>
 
         <div className="mt-12 mb-8">
-          <H4>2. Pokročilá integrácia (NPM + SCSS + JS)</H4>
+          <H3>2. Pokročilá integrácia (NPM + SCSS + JS)</H3>
 
           <Ol>
             <li>

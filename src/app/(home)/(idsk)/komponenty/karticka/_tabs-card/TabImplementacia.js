@@ -4,7 +4,7 @@ import React from 'react';
 
 import {
   SectionBlock,
-  H4,
+  H3,
   Text,
   Ul,
   Ol,
@@ -14,14 +14,15 @@ import {
 
 const TabImplementacia = () => {
   const codeClass =
-    'bg-neutral-100 border border-neutral-200 font-mono text-sm px-1.5 py-0.5 rounded text-black';
+    'rounded border border-neutral-200 bg-neutral-100 px-1.5 py-0.5 font-mono text-sm text-black';
 
   return (
-    <div className="animate-fade-in text-black w-full min-w-0">
+    <div className="animate-fade-in w-full min-w-0 text-black">
       <SectionBlock titleString="Implementácia kartičky z ID-SK Frontend">
         <Text>
-          Komponent kartička môžete do projektu integrovať dvoma spôsobmi podľa
-          technologickej infraštruktúry:
+          Komponent kartička z knižnice ID-SK Frontend môžete do svojho projektu
+          integrovať dvoma spôsobmi v závislosti od vašej technologickej
+          infraštruktúry:
         </Text>
 
         <Ul>
@@ -29,9 +30,10 @@ const TabImplementacia = () => {
             <strong>Statická HTML implementácia</strong> – vhodná pre projekty
             bez Node.js alebo bundlera.
           </li>
+
           <li>
-            <strong>Pokročilá integrácia (NPM + SCSS + JS)</strong> – vhodná
-            pre projekty so správou zdrojov a build procesom.
+            <strong>Pokročilá integrácia (NPM + SCSS)</strong> – vhodná pre
+            projekty so správou zdrojov a build procesom.
           </li>
         </Ul>
       </SectionBlock>
@@ -44,10 +46,12 @@ const TabImplementacia = () => {
             <strong className="font-semibold">Node.js:</strong> verzia 4.2.0
             alebo vyššia.
           </li>
+
           <li>
             <strong className="font-semibold">Dart Sass:</strong> verzia 1.0.0
             alebo vyššia.
           </li>
+
           <li>
             <strong className="font-semibold">Nunjucks:</strong> verzia 3.0.0
             alebo vyššia, ak chcete používať makrá.
@@ -56,125 +60,221 @@ const TabImplementacia = () => {
       </SectionBlock>
 
       <SectionBlock titleString="Možnosti implementácie">
-        <div className="mt-4 mb-8">
-          <H4>1. Použitie vlastného React komponentu</H4>
+        <div>
+          <H3>1. Statická HTML implementácia (HTML + minifikované súbory)</H3>
 
           <Text className="mb-4">
-            V projekte odporúčame používať vlastný komponent{' '}
-            <code className={codeClass}>ArticleCard</code>, ktorý zjednocuje
-            vizuálne správanie kartičiek, hover a focus stavy, prácu s obrázkom
-            a prístupnú štruktúru odkazu.
+            Ak váš projekt nevyužíva Node.js alebo bundler, napríklad Webpack
+            alebo Vite, môžete použiť hotové buildy. Pri inštalácii z priečinka{' '}
+            <code className={codeClass}>dist</code> sa používajú kompilované a
+            minifikované verzie šablón a štýlov.
           </Text>
 
-          <CodeBlock
-            language="jsx"
-            codeString={`
-                import ArticleCard from '@/app/(home)/_components/article/articleCard';
+          <Text className="mb-4">Pri tomto spôsobe nebudete môcť:</Text>
 
-                <ArticleCard
-                href="/komponenty/karticka"
-                src="/images/co-je-cards/10-principov-idsk.svg"
-                alt=""
-                title="Základné informácie"
-                description="Stručný prehľad základných povinností pre fyzické a právnické osoby pri podávaní daňového priznania."
-                />
-            `}
-          />
-        </div>
-
-        <div className="mt-12 mb-8">
-          <H4>2. Statická HTML implementácia</H4>
-
-          <Text className="mb-4">
-            Ak projekt nevyužíva React alebo Next.js, kartičku je možné
-            implementovať aj staticky. Ak je celá kartička klikateľná, obalte
-            jej obsah jedným odkazom a nevkladajte do nej ďalšie interaktívne
-            prvky.
-          </Text>
-
-          <CodeBlock
-            language="html"
-            codeString={`
-                <a href="/komponenty/karticka" class="article-card">
-                <article>
-                    <img src="/assets/images/placeholder.png" alt="">
-
-                    <h3>
-                    Základné informácie
-                    </h3>
-
-                    <p>
-                    Stručný prehľad základných povinností pre fyzické a právnické osoby.
-                    </p>
-                </article>
-                </a>
-            `}
-          />
-        </div>
-
-        <div className="mt-12 mb-8">
-          <H4>3. Pokročilá integrácia (NPM + SCSS + JS)</H4>
-
-          <Ol>
+          <Ul>
             <li>
-              <strong className="block mb-2">Nainštalujte balík</strong>
+              selektívne zahrnúť štýly pre jednotlivé komponenty,
+            </li>
 
-              <Text>Pre inštaláciu cez NPM spustite:</Text>
+            <li>
+              zostaviť vlastné štýly alebo komponenty na základe palety a
+              typografických kombinácií,
+            </li>
+
+            <li>
+              jednoducho prispôsobiť zdrojový Sass kód komponentu,
+            </li>
+
+            <li>
+              použiť dynamické komponenty vytvorené pomocou Nunjucks makier.
+            </li>
+          </Ul>
+
+          <div className="mt-8 space-y-8">
+            <div>
+              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
+                Stiahnite a zahrňte zdroje
+              </strong>
+
+              <Text className="mb-4">
+                Stiahnite si najnovšie kompilované a minifikované verzie
+                štýlov a assetov. Skopírujte celý priečinok{' '}
+                <code className={codeClass}>assets</code> a minifikované súbory
+                do koreňového priečinka projektu. Štruktúra môže vyzerať
+                približne takto:
+              </Text>
 
               <CodeBlock
                 language="bash"
                 codeString={`
-                    npm install nunjucks --save
-                    npm i @id-sk/frontend@3.0.0-beta.0-hotfix
+                  project/
+                  │
+                  ├── assets/
+                  │   ├── images/
+                  │   └── fonts/
+                  ├── index.html
+                  ├── frontend.min.css
+                  └── frontend.min.css.map
+                `}
+              />
+            </div>
+
+            <div>
+              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
+                Prepojte štýly
+              </strong>
+
+              <Text className="mb-4">
+                Do elementu <code className={codeClass}>&lt;head&gt;</code>{' '}
+                vložte odkaz na minifikovaný CSS súbor.
+              </Text>
+
+              <CodeBlock
+                language="html"
+                codeString={`
+                  <!DOCTYPE html>
+                  <html lang="sk">
+                    <head>
+                      <meta charset="UTF-8">
+                      <meta
+                        name="viewport"
+                        content="width=device-width, initial-scale=1"
+                      >
+
+                      <title>Ukážka kartičky</title>
+
+                      <link
+                        rel="stylesheet"
+                        href="./frontend.min.css"
+                      >
+                    </head>
+
+                    <body>
+                    </body>
+                  </html>
+                `}
+              />
+            </div>
+
+            <div>
+              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
+                Skopírujte HTML kód
+              </strong>
+
+              <Text className="mb-4">
+                Zo stránky dokumentácie prevezmite HTML kód komponentu{' '}
+                <ExtLink href="https://komponenty.idsk3.gov.sk/components/card">
+                  kartička
+                </ExtLink>{' '}
+                a vložte ho do svojho HTML súboru.
+              </Text>
+
+              <CodeBlock
+                language="html"
+                codeString={`
+                  <div class="idsk-card">
+                    <div class="idsk-card__image-wrapper">
+                      <img
+                        src="/assets/images/placeholder.png"
+                        alt=""
+                      >
+                    </div>
+
+                    <div class="idsk-card__content">
+                      <div class="idsk-card__heading">
+                        <h3>
+                          <a
+                            href="/zakladne-informacie"
+                            class="govuk-link"
+                          >
+                            Nadpis kartičky
+                          </a>
+                        </h3>
+                      </div>
+
+                      <div class="idsk-card__description">
+                        V tejto časti nájdete všetky potrebné informácie
+                        spojené s používaním a vytvorením občianskeho
+                        preukazu s čipom.
+                      </div>
+
+                      <p class="idsk-card__date-tags">
+                        <time datetime="2023-01-01">
+                          1. 1. 2023
+                        </time>
+
+                        <span aria-hidden="true"> — </span>
+
+                        <span>Tag 1</span>
+                        <span aria-hidden="true"> | </span>
+                        <span>Tag 2</span>
+                        <span aria-hidden="true"> | </span>
+                        <span>Tag 3</span>
+                      </p>
+                    </div>
+                  </div>
+                `}
+              />
+
+              <Text className="mt-6 mb-4">
+                Ak obrázok neprináša žiadnu novú informáciu a iba vizuálne
+                dopĺňa obsah kartičky, použite prázdny alternatívny text{' '}
+                <code className={codeClass}>alt=&quot;&quot;</code>. Ak je
+                obrázok obsahovo dôležitý, opíšte jeho význam stručným
+                alternatívnym textom.
+              </Text>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <H3>2. Pokročilá integrácia (NPM + SCSS)</H3>
+
+          <Ol>
+            <li>
+              <strong className="mb-2 mt-5 block">
+                Nainštalujte balík
+              </strong>
+
+              Pre inštaláciu cez NPM spustite:
+
+              <CodeBlock
+                language="bash"
+                codeString={`
+                  npm install nunjucks --save
+                  npm i @id-sk/frontend@3.0.0-beta.0-hotfix
                 `}
               />
             </li>
 
             <li className="mt-6">
-              <strong className="block mb-2">Pridajte HTML alebo React komponent</strong>
-              Do pripraveného súboru vložte vlastný komponent alebo statickú
-              štruktúru podľa spôsobu integrácie.
+              <strong className="mb-2 block">
+                Pridajte Nunjucks alebo HTML
+              </strong>
+
+              Do pripraveného súboru s príponou{' '}
+              <code className={codeClass}>.html</code> alebo{' '}
+              <code className={codeClass}>.njk</code> vložte markup kartičky,
+              ktorý je uvedený vyššie.
             </li>
 
             <li className="mt-6">
-              <strong className="font-semibold block mb-2">
+              <strong className="mb-2 block font-semibold">
                 Importujte štýly
               </strong>
 
-              <Text>
-                Ak používate pôvodné ID-SK štýly, import individuálneho
-                komponentu vyzerá takto:
-              </Text>
+              Pre import individuálneho komponentu kartičky pridajte do Sass
+              súboru:
 
               <CodeBlock
                 language="scss"
                 codeString={`
-                    @import "node_modules/@id-sk/frontend/idsk/components/card/card";
+                  @import "node_modules/@id-sk/frontend/idsk/components/card/card";
                 `}
               />
             </li>
           </Ol>
-        </div>
-
-        <div className="mt-12">
-          <H4>4. Poznámka k existujúcemu komponentu</H4>
-
-          <Text>
-            Ak sa v projekte nachádza starší komponent{' '}
-            <code className={codeClass}>article.js</code>, neodstraňujte ho bez
-            kontroly používania. Nové implementácie smerujte na{' '}
-            <code className={codeClass}>articleCard.js</code> a starý komponent
-            odstráňte až v samostatnom clean-up commite po overení, že sa nikde
-            nepoužíva.
-          </Text>
-
-          <Text>
-            Pôvodná dokumentácia používala knižničný{' '}
-            <code className={codeClass}>ArticleCard</code> z{' '}
-            <code className={codeClass}>@eslovensko/idsk-react</code> a zároveň
-            mala v ukážkach natvrdo vložený markup karty. Nový komponent tieto
-            vzory zjednocuje.
-          </Text>
         </div>
       </SectionBlock>
     </div>

@@ -182,10 +182,18 @@ export const serviceRoutes = [
     },
 ];
 
+export const patternRoutes = [
+  {
+    name: 'Vzory',
+    link: '/vzory',
+  },
+];
+
 export const allRoutes = [
   ...idskRoutes,
   ...basicRoutes,
   ...pageRoutes,
+  ...patternRoutes,
   ...serviceRoutes,
 ];
 

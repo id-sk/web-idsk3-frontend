@@ -386,9 +386,13 @@ const TabNavodPreNedizajnerov = () => (
     <section className="flex flex-col gap-4">
       <H3>Aktualizácia knižnice</H3>
       <Text>Ak dizajnéri upravia komponenty v pôvodnej knižnici IDSK 3, zmeny sa automaticky prejavia aj vo vašom súbore.</Text>
-      <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 text-sm sm:text-base text-yellow-900">
-        <strong>Pozor:</strong> Nesťahujte knižnicu z Figma Community formou duplikácie súboru, pokiaľ to nie je nutné. Vytvorí sa tým iba lokálna kópia súboru a stratí sa prepojenie na centrálnu knižnicu. Komponenty sa vám potom nebudú automaticky aktualizovať.
-      </div>
+      <InformationBanner 
+          variant="warning" 
+          title="Pozor" 
+          hideCloseButton={true}
+        >
+          Nesťahujte knižnicu z Figma Community formou duplikácie súboru, pokiaľ to nie je nutné. Vytvorí sa tým iba lokálna kópia súboru a stratí sa prepojenie na centrálnu knižnicu. Komponenty sa vám potom nebudú automaticky aktualizovať.
+      </InformationBanner>
       
       <H3>Obsah knižnice</H3>
       <Ul>

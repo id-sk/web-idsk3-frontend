@@ -40,13 +40,25 @@ const FooterResp = () => {
         </div>
 
         {/* PRAVÁ ČASŤ: Logo */}
-        <a href="https://mirri.gov.sk" target="_blank" rel="noopener noreferrer" className="shrink-0 max-md:mt-5">
+        <a
+          href="https://mirri.gov.sk"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="
+            shrink-0 rounded-[4px] max-md:mt-5
+            forced-colors:bg-white
+            forced-colors:p-2
+            forced-colors:forced-color-adjust-none
+          "
+        >
           <Image
             src="/images/group.svg"
-            alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie Slovenskej republiky"
+            alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie SR, domovská stránka"
             width={290}
             height={66}
           />
+
+          <span className="sr-only"> (otvorí sa v novom okne)</span>
         </a>
 
       </div>
