@@ -59,6 +59,7 @@ const TabVarianty = () => (
                     <Checkbox 
                         inputSize='large'
                         name="checkbox-checked"
+                        readOnly
                         label="Menovka"
                         checked={true}
                         fullWidth={true}
@@ -69,6 +70,7 @@ const TabVarianty = () => (
                     <Checkbox 
                         inputSize='large'
                         name="checkbox-unchecked"
+                        readOnly
                         label="Menovka"
                         checked={false}
                         fullWidth={true}

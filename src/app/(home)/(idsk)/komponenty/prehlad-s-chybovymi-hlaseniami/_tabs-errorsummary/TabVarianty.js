@@ -57,14 +57,16 @@ const ExampleTextInput = ({
 const TabVarianty = () => {
   const errorsWithoutDescription = [
     {
-      id: 'error-summary-variant-email',
+      id: 'error-summary-variant-email-error',
+      targetId: 'error-summary-variant-email',
       message: 'Zadajte e-mailovú adresu v tvare meno@example.com.',
     },
   ];
 
   const errorsWithDescription = [
     {
-      id: 'error-summary-variant-name',
+      id: 'error-summary-variant-name-error',
+      targetId: 'error-summary-variant-name',
       message: 'Meno musí obsahovať aspoň 3 znaky.',
     },
   ];
@@ -84,7 +86,6 @@ const TabVarianty = () => {
             <ErrorSummaryCustom
               title="Vo formulári sú chyby"
               errors={errorsWithoutDescription}
-              focusOnRender={false}
             />
 
             <form className="space-y-8" noValidate>
@@ -113,7 +114,6 @@ const TabVarianty = () => {
               title="Vo formulári sú chyby"
               description="Opravte označené polia a formulár odošlite znova."
               errors={errorsWithDescription}
-              focusOnRender={false}
             />
 
             <form className="space-y-8" noValidate>

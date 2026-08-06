@@ -34,6 +34,8 @@ const Checkbox = forwardRef(
       hint,
       mandatory = true,
       required,
+      optionalText = '(nepovinné pole)',
+      fullWidth = false,
       inputSize = 'large',
       className = '',
       'aria-describedby': externalDescribedBy,
@@ -62,7 +64,11 @@ const Checkbox = forwardRef(
     const textOffsetClass = isSmall ? 'ml-[36px]' : 'ml-[52px]';
 
     return (
-      <div className={`flex flex-col ${className}`}>
+      <div
+        className={`flex flex-col ${
+          fullWidth ? 'w-full' : ''
+        } ${className}`}
+      >
         <label
           htmlFor={checkboxId}
           className={`relative flex items-start group ${
@@ -124,8 +130,11 @@ const Checkbox = forwardRef(
                   *
                 </span>
               ) : (
-                <span aria-hidden="true" className="ml-1 text-[16px] leading-[24px] text-[#757575]">
-                  (nepovinné pole)
+                <span
+                  aria-hidden="true"
+                  className="ml-1 text-[16px] leading-[24px] text-[#757575]"
+                >
+                  {optionalText}
                 </span>
               )}
             </span>
