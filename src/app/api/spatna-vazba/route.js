@@ -16,6 +16,7 @@ export const runtime = 'nodejs';
 
 export async function POST(request) {
   const requestId = randomUUID();
+  const receivedAt = new Date();
 
   const sendResponse = (body, status = 200, extraHeaders = {}) => {
     return NextResponse.json(
@@ -57,7 +58,13 @@ export async function POST(request) {
     // 1. HONEYPOT
     if (getString(formData, 'website_url_honey')) {
       console.info('Zachytili sme bota vo formulári (Honeypot).', { requestId });
-      return sendResponse({ ok: true, mock: true, datumPrijatia: getCurrentDateLabel(), referencneCislo: createReferenceNumber() });
+      return sendResponse({
+        ok: true,
+        mock: true,
+        datumPrijatia: getCurrentDateLabel(receivedAt),
+        datumPrijatiaIso: receivedAt.toISOString(),
+        referencneCislo: createReferenceNumber(),
+      });
     }
 
     // 2. IP EXTRAKCIA A RATE LIMITING
@@ -126,10 +133,12 @@ export async function POST(request) {
     let hasOversizedPayload = false;
     const rawFiles = formData.getAll('prilohy').filter((file) => file && typeof file === 'object' && typeof file.arrayBuffer === 'function');
 
-    if (rawFiles.length === 0) {
-      addError('prilohy', 'MISSING_FILE', 'Chýba aspoň jedna príloha.');
-    } else if (rawFiles.length > MAX_FILES) {
-      addError('prilohy', 'TOO_MANY_FILES', `Môžete nahrať najviac ${MAX_FILES} súborov.`);
+    if (rawFiles.length > MAX_FILES) {
+      addError(
+        'prilohy',
+        'TOO_MANY_FILES',
+        `Môžete nahrať najviac ${MAX_FILES} súborov.`
+      );
     }
 
     const totalFileSize = rawFiles.reduce((sum, file) => sum + Number(file.size || 0), 0);
@@ -178,13 +187,20 @@ export async function POST(request) {
     }
 
     // 5. ODOSLANIE E-MAILU
-    const datumPrijatia = getCurrentDateLabel();
-    const referencneCislo = createReferenceNumber();
+   const datumPrijatia = getCurrentDateLabel(receivedAt);
+  const datumPrijatiaIso = receivedAt.toISOString();
+  const referencneCislo = createReferenceNumber();
 
     if (config.mode === 'mock') {
       console.info('Formulár bol odoslaný v testovacom režime bez e-mailu.', { referencneCislo, email: values.email, requestId });
       recordSuccess(ip);
-      return sendResponse({ ok: true, mock: true, datumPrijatia, referencneCislo });
+      return sendResponse({
+        ok: true,
+        mock: true,
+        datumPrijatia,
+        datumPrijatiaIso,
+        referencneCislo,
+      });
     }
 
     const transporter = getTransporter(config);
@@ -235,8 +251,14 @@ ${values.suhlas === 'true' ? 'Áno' : 'Nie'}
 
     recordSuccess(ip);
 
-    return sendResponse({ ok: true, mock: false, datumPrijatia, referencneCislo });
-    
+    return sendResponse({
+      ok: true,
+      mock: false,
+      datumPrijatia,
+      datumPrijatiaIso,
+      referencneCislo,
+    });
+        
   } catch (error) {
     console.error('Chyba pri odosielaní formulára:', { requestId, error });
     return sendResponse({ ok: false, code: 'INTERNAL_ERROR', message: 'Formulár sa nepodarilo odoslať.' }, 500);

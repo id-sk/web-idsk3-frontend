@@ -6,26 +6,53 @@ export const MAX_FILES = 5;
 export const MAX_TOTAL_FILE_SIZE = 15 * 1024 * 1024;
 export const MAX_REQUEST_SIZE = 18 * 1024 * 1024;
 
-const ALLOWED_EXTENSIONS = ['.fig', '.xls', '.xlsx', '.odt', '.ods', '.csv', '.zip'];
+const ALLOWED_EXTENSIONS = [
+  '.docx',
+  '.pdf',
+  '.txt',
+  '.png',
+  '.svg',
+];
 
 const ALLOWED_MIME_BY_EXTENSION = {
-  '.fig': new Set(['', 'application/octet-stream', 'application/zip']),
-  '.xls': new Set(['', 'application/vnd.ms-excel', 'application/octet-stream']),
-  '.xlsx': new Set(['', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip', 'application/octet-stream']),
-  '.odt': new Set(['', 'application/vnd.oasis.opendocument.text', 'application/zip']),
-  '.ods': new Set(['', 'application/vnd.oasis.opendocument.spreadsheet', 'application/zip']),
-  '.csv': new Set(['', 'text/csv', 'text/plain', 'application/vnd.ms-excel']),
-  '.zip': new Set(['', 'application/zip', 'application/x-zip-compressed', 'application/octet-stream']),
+  '.docx': new Set([
+    '',
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+    'application/zip',
+    'application/octet-stream',
+  ]),
+  '.pdf': new Set([
+    '',
+    'application/pdf',
+    'application/octet-stream',
+  ]),
+  '.txt': new Set([
+    '',
+    'text/plain',
+    'application/octet-stream',
+  ]),
+  '.png': new Set([
+    '',
+    'image/png',
+    'application/octet-stream',
+  ]),
+  '.svg': new Set([
+    '',
+    'image/svg+xml',
+    'text/xml',
+    'application/xml',
+    'text/plain',
+    'application/octet-stream',
+  ]),
 };
 
 export const OUTGOING_CONTENT_TYPES = {
-  '.fig': 'application/octet-stream',
-  '.xls': 'application/vnd.ms-excel',
-  '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  '.odt': 'application/vnd.oasis.opendocument.text',
-  '.ods': 'application/vnd.oasis.opendocument.spreadsheet',
-  '.csv': 'text/csv; charset=utf-8',
-  '.zip': 'application/zip',
+  '.docx':
+    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+  '.pdf': 'application/pdf',
+  '.txt': 'text/plain; charset=utf-8',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml; charset=utf-8',
 };
 
 export const ALLOWED_INTENT_TYPES = new Set(['novy-komponent', 'uprava-komponentu']);
@@ -73,11 +100,15 @@ export const sanitizeAttachmentName = (name = '') => {
   return sanitized || 'priloha';
 };
 
-export const getCurrentDateLabel = () =>
+export const getCurrentDateLabel = (date = new Date()) =>
   new Intl.DateTimeFormat('sk-SK', {
     timeZone: 'Europe/Bratislava',
-    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
-  }).format(new Date());
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
 
 export const createReferenceNumber = () =>
   `IDSK-${randomUUID().replaceAll('-', '').slice(0, 12).toUpperCase()}`;
@@ -85,30 +116,89 @@ export const createReferenceNumber = () =>
 export const processAndValidateFile = async (file) => {
   const extension = getFileExtension(file.name);
 
-  if (!ALLOWED_EXTENSIONS.includes(extension)) return { isValid: false };
+  if (!ALLOWED_EXTENSIONS.includes(extension)) {
+    return { isValid: false };
+  }
 
   const allowedMimes = ALLOWED_MIME_BY_EXTENSION[extension];
-  if (!allowedMimes?.has(file.type || '')) return { isValid: false };
+
+  if (!allowedMimes?.has(file.type || '')) {
+    return { isValid: false };
+  }
 
   const fileBuffer = Buffer.from(await file.arrayBuffer());
 
-  if (fileBuffer.length === 0) return { isValid: false };
-
-  if (extension === '.csv') {
-    const sample = fileBuffer.subarray(0, Math.min(fileBuffer.length, 64 * 1024));
-    return { isValid: !sample.includes(0x00), buffer: fileBuffer };
+  if (fileBuffer.length === 0) {
+    return { isValid: false };
   }
 
-  if (fileBuffer.length < 4) return { isValid: false };
+  if (extension === '.txt') {
+    const sample = fileBuffer.subarray(
+      0,
+      Math.min(fileBuffer.length, 64 * 1024)
+    );
 
-  const hex = fileBuffer.subarray(0, 4).toString('hex').toUpperCase();
-
-  if (extension === '.xls') {
-    return { isValid: hex.startsWith('D0CF11E0'), buffer: fileBuffer };
+    return {
+      isValid: !sample.includes(0x00),
+      buffer: fileBuffer,
+    };
   }
 
-  const isZipBased = ['.zip', '.xlsx', '.ods', '.odt', '.fig'].includes(extension);
-  const hasZipSignature = hex.startsWith('504B0304') || hex.startsWith('504B0506') || hex.startsWith('504B0708');
+  if (fileBuffer.length < 4) {
+    return { isValid: false };
+  }
 
-  return { isValid: isZipBased && hasZipSignature, buffer: fileBuffer };
+  const hex = fileBuffer
+    .subarray(0, 8)
+    .toString('hex')
+    .toUpperCase();
+
+  if (extension === '.pdf') {
+    return {
+      isValid: hex.startsWith('25504446'),
+      buffer: fileBuffer,
+    };
+  }
+
+  if (extension === '.png') {
+    return {
+      isValid: hex.startsWith('89504E470D0A1A0A'),
+      buffer: fileBuffer,
+    };
+  }
+
+  if (extension === '.docx') {
+    const hasZipSignature =
+      hex.startsWith('504B0304') ||
+      hex.startsWith('504B0506') ||
+      hex.startsWith('504B0708');
+
+    return {
+      isValid: hasZipSignature,
+      buffer: fileBuffer,
+    };
+  }
+
+  if (extension === '.svg') {
+    const sample = fileBuffer
+      .subarray(0, Math.min(fileBuffer.length, 64 * 1024))
+      .toString('utf8')
+      .replace(/^\uFEFF/, '')
+      .trimStart()
+      .toLowerCase();
+
+    const looksLikeSvg =
+      sample.startsWith('<svg') ||
+      (
+        sample.startsWith('<?xml') &&
+        sample.includes('<svg')
+      );
+
+    return {
+      isValid: looksLikeSvg,
+      buffer: fileBuffer,
+    };
+  }
+
+  return { isValid: false };
 };

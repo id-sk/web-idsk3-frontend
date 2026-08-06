@@ -256,12 +256,12 @@ export default function FeedbackForm() {
   const [successData, setSuccessData] = useState(null);
 
   const [prilohyValidation, setPrilohyValidation] = useState({
-    isValid: false,
+    isValid: true,
     hasInvalidFiles: false,
-    isRequiredMissing: true,
+    isRequiredMissing: false,
     totalSize: 0,
     invalidFiles: [],
-    message: 'Nahrajte aspoň jednu prílohu.',
+    message: '',
   });
 
   const handleFilesChange = useCallback((files) => {
@@ -1019,13 +1019,12 @@ export default function FeedbackForm() {
           title="Prílohy"
           headingLevel="h2"
           filesHeadingLevel="h3"
-          hint="Nahrajte dokumentáciu k zámeru (napr. výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu)."
+          hint="Nahrajte dokumentáciu k zámeru, napríklad výstupy z používateľského prieskumu, grafické návrhy alebo technickú špecifikáciu."
           subtitle="Nahrajte súbor alebo ho sem presuňte."
-          accept=".fig,.xls,.xlsx,.odt,.ods,.csv,.zip"
-          acceptedFormatsLabel="FIG, XLS, XLSX, ODT, ODS, CSV alebo ZIP"
+          accept=".docx,.pdf,.txt,.png,.svg"
+          acceptedFormatsLabel="DOCX, PDF, TXT, PNG alebo SVG"
           maxFiles={5}
           maxTotalSize={15 * 1024 * 1024}
-          required
           errorMessage={errorMap.prilohy}
           onChangeFiles={handleFilesChange}
           onValidationChange={handleFilesValidationChange}
@@ -1033,8 +1032,9 @@ export default function FeedbackForm() {
             <>
               Podporované formáty:{' '}
               <span className="font-bold">
-                FIG, XLS, XLSX, ODT, ODS, CSV, ZIP
+                DOCX, PDF, TXT, PNG, SVG
               </span>
+
               <p>
                 Maximálny počet súborov:{' '}
                 <span className="font-bold">5</span>
