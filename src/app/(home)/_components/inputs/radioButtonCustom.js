@@ -39,10 +39,7 @@ export const RadioButtonGroup = ({
 
     return cloneElement(child, {
       name: child.props.name || name,
-      required: child.props.required ?? isRequired,
       error: child.props.error || hasError,
-      groupHintId: hintId,
-      groupErrorId: hasError ? errorId : undefined,
     });
   });
 
@@ -51,7 +48,11 @@ export const RadioButtonGroup = ({
       {...props}
       id={groupId}
       className={`flex flex-col ${className}`}
+      role="radiogroup"
+      aria-required={isRequired ? 'true' : undefined}
       aria-describedby={groupDescribedBy}
+      aria-invalid={hasError ? 'true' : undefined}
+      aria-errormessage={hasError ? errorId : undefined}
     >
       {legend && (
         <legend
@@ -105,9 +106,6 @@ export const RadioButton = forwardRef(
       error = false,
       label,
       hint,
-      required = false,
-      groupHintId,
-      groupErrorId,
       inputSize = 'large',
       className = '',
       'aria-describedby': externalDescribedBy,
@@ -121,9 +119,7 @@ export const RadioButton = forwardRef(
 
     const describedBy = mergeIds(
       externalDescribedBy,
-      itemHintId,
-      groupHintId,
-      groupErrorId
+      itemHintId
     );
 
     const isSmall = inputSize === 'small';
@@ -151,13 +147,9 @@ export const RadioButton = forwardRef(
             name={name}
             value={value}
             disabled={disabled}
-            required={undefined} 
-            aria-required={required ? 'true' : undefined}
-            aria-invalid={!disabled && error ? 'true' : undefined}
             aria-describedby={describedBy}
             className="peer sr-only"
           />
-
           <div
             className={`
               custom-radio-circle

@@ -103,44 +103,30 @@ export default function TabNavodPreNedizajnerov() {
             <li>Niektoré komponenty však umožňujú zmeniť variant ikony v pravom paneli.</li>
           </Ul>
         </div>
-        
-        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_420px] lg:items-start">
-          <div className="flex flex-col gap-4">
-            <H4>Zmena variantov (stavov):</H4>
+        <div className="flex flex-col gap-4">
+          <H4>Zmena variantov (stavov):</H4>
 
-            <Text>
-              Komponenty môžu mať viac verzií, tzv. varianty (napríklad informačný,
-              úspešný, upozorňovací, oznamovací banner). Prepínate ich v pravom paneli.
-            </Text>
+          <Text>
+            Komponenty môžu mať viac verzií, tzv. varianty (napríklad informačný,
+            úspešný, upozorňovací, oznamovací banner). Prepínate ich v pravom paneli.
+          </Text>
 
-            <div className="flex flex-col gap-3">
-              <H4> Čomu sa vyhnúť:</H4>
-              <Ul>
-                <li>
-                  Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým
-                  odpojí od zdrojovej knižnice a prestane sa aktualizovať.
-                </li>
-                <li>
-                  Neupravujte štruktúru vrstiev vo vnútri komponentu. Nemeňte textové
-                  štýly, rozmery ani farby, ktoré sú pevne nastavené v dizajnovom systéme.
-                </li>
-                <li>
-                  Nekopírujte komponenty do súborov, v ktorých knižnica IDSK nie je
-                  aktivovaná. Komponenty tam môžu stratiť svoje prepojenie.
-                </li>
-              </Ul>
-            </div>
-          </div>
-
-          <div className="mt-10 w-full overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-            <Image
-              src="/images/info-lista/info_lista1.png"
-              width={700}
-              height={560}
-              alt="Ako si meniť varianty"
-              sizes="(max-width: 1024px) 100vw, 420px"
-              className="h-auto w-full object-contain"
-            />
+          <div className="flex flex-col gap-3">
+            <H4> Čomu sa vyhnúť:</H4>
+            <Ul>
+              <li>
+                Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým
+                odpojí od zdrojovej knižnice a prestane sa aktualizovať.
+              </li>
+              <li>
+                Neupravujte štruktúru vrstiev vo vnútri komponentu. Nemeňte textové
+                štýly, rozmery ani farby, ktoré sú pevne nastavené v dizajnovom systéme.
+              </li>
+              <li>
+                Nekopírujte komponenty do súborov, v ktorých knižnica IDSK nie je
+                aktivovaná. Komponenty tam môžu stratiť svoje prepojenie.
+              </li>
+            </Ul>
           </div>
         </div>
       </section>
