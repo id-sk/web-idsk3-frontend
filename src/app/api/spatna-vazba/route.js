@@ -1,269 +1,22 @@
+// src/app/api/spatna-vazba/route.js
 import { NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
-import { Buffer } from 'node:buffer';
 import { randomUUID } from 'node:crypto';
+import { loadConfig } from './config';
+import { getTransporter } from './mailer';
+import { normalizeIp, checkRateLimit, recordSuccess } from './rateLimit';
+import {
+  MAX_REQUEST_SIZE, MAX_FILES, MAX_TOTAL_FILE_SIZE,
+  FIELD_LIMITS, FIELD_LABELS, ALLOWED_INTENT_TYPES, INTENT_TYPE_LABELS,
+  OUTGOING_CONTENT_TYPES, getString, validateEmail, validateUrl,
+  getFileExtension, sanitizeAttachmentName, getCurrentDateLabel,
+  createReferenceNumber, processAndValidateFile
+} from './validation';
 
 export const runtime = 'nodejs';
 
-// ============================================================================
-// 1. BEZPEČNÁ KONFIGURÁCIA (Načítava sa až pri requeste, nie pri importe modulu)
-// ============================================================================
-const loadConfig = () => {
-  const mode = process.env.FEEDBACK_FORM_MODE;
-
-  if (process.env.NODE_ENV === 'production' && mode !== 'email') {
-    throw new Error('FATAL: V produkcii musí byť FEEDBACK_FORM_MODE nastavené na "email".');
-  }
-
-  const feedbackMode = mode === 'email' || mode === 'mock' ? mode : 'mock';
-
-  if (feedbackMode !== 'email') {
-    return {
-      mode: feedbackMode,
-      smtp: null,
-    };
-  }
-
-  const host = process.env.SMTP_HOST;
-  const port = Number(process.env.SMTP_PORT || 25);
-  const secure = process.env.SMTP_SECURE === 'true';
-  const requireTLS = process.env.SMTP_REQUIRE_TLS === 'true';
-  const smtpUser = process.env.SMTP_USER?.trim();
-  const smtpPassword = process.env.SMTP_PASSWORD;
-  const mailFrom = process.env.MAIL_FROM;
-  const mailTo = process.env.MAIL_TO;
-  const tlsServername = process.env.SMTP_TLS_SERVERNAME;
-
-  if (!host) throw new Error('FATAL: Chýba SMTP_HOST.');
-  if (!mailFrom) throw new Error('FATAL: Chýba MAIL_FROM.');
-  if (!mailTo) throw new Error('FATAL: Chýba MAIL_TO.');
-
-  if (!Number.isInteger(port) || port < 1 || port > 65535) {
-    throw new Error('FATAL: SMTP_PORT nie je platný.');
-  }
-
-  if (Boolean(smtpUser) !== Boolean(smtpPassword)) {
-    throw new Error('FATAL: SMTP_USER a SMTP_PASSWORD musia byť nastavené spoločne.');
-  }
-
-  return {
-    mode: feedbackMode,
-    smtp: {
-      host,
-      port,
-      secure,
-      requireTLS,
-      smtpUser,
-      smtpPassword,
-      mailFrom,
-      mailTo,
-      tlsServername,
-    },
-  };
-};
-
-// ============================================================================
-// LIMITOVANIE, MAPY A KONŠTANTY
-// ============================================================================
-const MAX_FILES = 5;
-const MAX_TOTAL_FILE_SIZE = 15 * 1024 * 1024;
-const MAX_REQUEST_SIZE = 18 * 1024 * 1024;
-
-const ALLOWED_EXTENSIONS = ['.fig', '.xls', '.xlsx', '.odt', '.ods', '.csv', '.zip'];
-
-const ALLOWED_MIME_BY_EXTENSION = {
-  '.fig': new Set(['', 'application/octet-stream', 'application/zip']),
-  '.xls': new Set(['', 'application/vnd.ms-excel', 'application/octet-stream']),
-  '.xlsx': new Set(['', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', 'application/zip', 'application/octet-stream']),
-  '.odt': new Set(['', 'application/vnd.oasis.opendocument.text', 'application/zip']),
-  '.ods': new Set(['', 'application/vnd.oasis.opendocument.spreadsheet', 'application/zip']),
-  '.csv': new Set(['', 'text/csv', 'text/plain', 'application/vnd.ms-excel']),
-  '.zip': new Set(['', 'application/zip', 'application/x-zip-compressed', 'application/octet-stream']),
-};
-
-const OUTGOING_CONTENT_TYPES = {
-  '.fig': 'application/octet-stream',
-  '.xls': 'application/vnd.ms-excel',
-  '.xlsx': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-  '.odt': 'application/vnd.oasis.opendocument.text',
-  '.ods': 'application/vnd.oasis.opendocument.spreadsheet',
-  '.csv': 'text/csv; charset=utf-8',
-  '.zip': 'application/zip',
-};
-
-const ALLOWED_INTENT_TYPES = new Set(['novy-komponent', 'uprava-komponentu']);
-const INTENT_TYPE_LABELS = {
-  'novy-komponent': 'Nový komponent',
-  'uprava-komponentu': 'Úprava existujúceho komponentu / nový variant',
-};
-
-const FIELD_LIMITS = {
-  organizacia: 200, meno: 100, priezvisko: 100, email: 254,
-  nazovKomponentu: 200, popisZameru: 300, dovodZmeny: 300,
-  doplnujuceInformacie: 300, url: 2048,
-};
-
-const FIELD_LABELS = {
-  organizacia: 'Názov inštitúcie', meno: 'Meno', priezvisko: 'Priezvisko',
-  email: 'E-mail', nazovKomponentu: 'Názov komponentu', popisZameru: 'Popis',
-  dovodZmeny: 'Zdôvodnenie', doplnujuceInformacie: 'Výstupy z prieskumu', url: 'URL adresa',
-};
-
-// ============================================================================
-// RATE LIMITING (In-Memory fallback s HMR ochranou)
-// ============================================================================
-const globalStore = globalThis;
-if (!globalStore.feedbackRateLimitMap) {
-  globalStore.feedbackRateLimitMap = new Map();
-}
-const ipRateLimitMap = globalStore.feedbackRateLimitMap;
-
-const RATE_LIMIT_WINDOW_MS = 15 * 60 * 1000;
-const MAX_REQUESTS_ALL = 20;
-const MAX_REQUESTS_SUCCESS = 5;
-
-if (!globalStore.feedbackRateLimitInterval) {
-  globalStore.feedbackRateLimitInterval = setInterval(() => {
-    const now = Date.now();
-    for (const [ip, data] of ipRateLimitMap.entries()) {
-      const validAll = data.all.filter(t => now - t < RATE_LIMIT_WINDOW_MS);
-      const validSuccess = data.success.filter(t => now - t < RATE_LIMIT_WINDOW_MS);
-      
-      if (validAll.length === 0 && validSuccess.length === 0) {
-        ipRateLimitMap.delete(ip);
-      } else {
-        ipRateLimitMap.set(ip, { all: validAll, success: validSuccess });
-      }
-    }
-  }, RATE_LIMIT_WINDOW_MS).unref();
-}
-
-const normalizeIp = (value) => {
-  if (typeof value !== 'string') return '';
-  return value.trim().slice(0, 64);
-};
-
-// ============================================================================
-// POMOCNÉ FUNKCIE A VALIDÁCIE
-// ============================================================================
-const getString = (formData, key) => {
-  const value = formData.get(key);
-  return typeof value === 'string' ? value.trim() : '';
-};
-
-const validateEmail = (value) => value ? /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) : false;
-
-const validateUrl = (value) => {
-  if (!value) return false;
-  try {
-    const url = new URL(value);
-    return url.protocol === 'http:' || url.protocol === 'https:';
-  } catch {
-    return false;
-  }
-};
-
-const getFileExtension = (filename = '') => {
-  const lastDotIndex = filename.lastIndexOf('.');
-  return lastDotIndex === -1 ? '' : filename.slice(lastDotIndex).toLowerCase();
-};
-
-const sanitizeAttachmentName = (name = '') => {
-  const sanitized = name.replace(/[\u0000-\u001F\u007F]/g, '').replace(/[\\/]/g, '_').trim().slice(0, 200);
-  return sanitized || 'priloha';
-};
-
-const getCurrentDateLabel = () =>
-  new Intl.DateTimeFormat('sk-SK', {
-    timeZone: 'Europe/Bratislava',
-    day: 'numeric', month: 'long', year: 'numeric', hour: '2-digit', minute: '2-digit',
-  }).format(new Date());
-
-const createReferenceNumber = () =>
-  `IDSK-${randomUUID().replaceAll('-', '').slice(0, 12).toUpperCase()}`;
-
-// SMTP Transporter s cachovaním a podporou konfiguračného objektu
-let cachedTransporter = null;
-let cachedTransporterKey = null;
-
-const getTransporter = (config) => {
-  if (config.mode !== 'email' || !config.smtp) {
-    throw new Error('Interná chyba: Pokus o odoslanie e-mailu v nesprávnom režime.');
-  }
-
-  const transporterKey = JSON.stringify({
-    host: config.smtp.host,
-    port: config.smtp.port,
-    secure: config.smtp.secure,
-    requireTLS: config.smtp.requireTLS,
-    smtpUser: config.smtp.smtpUser,
-    mailFrom: config.smtp.mailFrom,
-    mailTo: config.smtp.mailTo,
-    tlsServername: config.smtp.tlsServername,
-  });
-
-  if (cachedTransporter && cachedTransporterKey === transporterKey) {
-    return cachedTransporter;
-  }
-
-  cachedTransporter = nodemailer.createTransport({
-    pool: true,
-    maxConnections: 3,
-    maxMessages: 50,
-    host: config.smtp.host,
-    port: config.smtp.port,
-    secure: config.smtp.secure,
-    requireTLS: config.smtp.requireTLS,
-    connectionTimeout: 10000,
-    greetingTimeout: 10000,
-    socketTimeout: 15000,
-    auth: config.smtp.smtpUser && config.smtp.smtpPassword ? { user: config.smtp.smtpUser, pass: config.smtp.smtpPassword } : undefined,
-    tls: config.smtp.tlsServername ? { servername: config.smtp.tlsServername } : undefined,
-  });
-
-  cachedTransporterKey = transporterKey;
-  return cachedTransporter;
-};
-
-// ============================================================================
-// SIGNATÚRY (Základný Magic Bytes Check)
-// ============================================================================
-const processAndValidateFile = async (file) => {
-  const extension = getFileExtension(file.name);
-
-  if (!ALLOWED_EXTENSIONS.includes(extension)) return { isValid: false };
-
-  const allowedMimes = ALLOWED_MIME_BY_EXTENSION[extension];
-  if (!allowedMimes?.has(file.type || '')) return { isValid: false };
-
-  const fileBuffer = Buffer.from(await file.arrayBuffer());
-
-  if (fileBuffer.length === 0) return { isValid: false };
-
-  if (extension === '.csv') {
-    const sample = fileBuffer.subarray(0, Math.min(fileBuffer.length, 64 * 1024));
-    return { isValid: !sample.includes(0x00), buffer: fileBuffer };
-  }
-
-  if (fileBuffer.length < 4) return { isValid: false };
-
-  const hex = fileBuffer.subarray(0, 4).toString('hex').toUpperCase();
-
-  if (extension === '.xls') {
-    return { isValid: hex.startsWith('D0CF11E0'), buffer: fileBuffer };
-  }
-
-  const isZipBased = ['.zip', '.xlsx', '.ods', '.odt', '.fig'].includes(extension);
-  const hasZipSignature = hex.startsWith('504B0304') || hex.startsWith('504B0506') || hex.startsWith('504B0708');
-
-  return { isValid: isZipBased && hasZipSignature, buffer: fileBuffer };
-};
-
-// ============================================================================
-// HLAVNÝ HANDLER
-// ============================================================================
 export async function POST(request) {
   const requestId = randomUUID();
+  const receivedAt = new Date();
 
   const sendResponse = (body, status = 200, extraHeaders = {}) => {
     return NextResponse.json(
@@ -280,7 +33,6 @@ export async function POST(request) {
   };
 
   try {
-    // Načítanie konfigurácie až pri reálnom requeste (bezpečné pre build aj runtime)
     const config = loadConfig();
 
     const contentType = request.headers.get('content-type')?.toLowerCase() ?? '';
@@ -306,31 +58,32 @@ export async function POST(request) {
     // 1. HONEYPOT
     if (getString(formData, 'website_url_honey')) {
       console.info('Zachytili sme bota vo formulári (Honeypot).', { requestId });
-      return sendResponse({ ok: true, mock: true, datumPrijatia: getCurrentDateLabel(), referencneCislo: createReferenceNumber() });
+      return sendResponse({
+        ok: true,
+        mock: true,
+        datumPrijatia: getCurrentDateLabel(receivedAt),
+        datumPrijatiaIso: receivedAt.toISOString(),
+        referencneCislo: createReferenceNumber(),
+      });
     }
 
     // 2. IP EXTRAKCIA A RATE LIMITING
     const forwardedFor = request.headers.get('x-forwarded-for');
-    const ip = normalizeIp(forwardedFor?.split(',')[0] ?? request.headers.get('x-real-ip')) || 'unknown-ip';
+    const rawIp = forwardedFor?.split(',')[0] ?? request.headers.get('x-real-ip');
+    const ip = normalizeIp(rawIp);
     
-    if (ip !== 'unknown-ip') {
-      const now = Date.now();
-      const userData = ipRateLimitMap.get(ip) || { all: [], success: [] };
-      
-      const recentAll = userData.all.filter(timestamp => now - timestamp < RATE_LIMIT_WINDOW_MS);
-      const recentSuccess = userData.success.filter(timestamp => now - timestamp < RATE_LIMIT_WINDOW_MS);
-      
-      if (recentAll.length >= MAX_REQUESTS_ALL || recentSuccess.length >= MAX_REQUESTS_SUCCESS) {
-        console.warn(`Rate limit prekročený pre IP: ${ip}`, { requestId, recentAll: recentAll.length, recentSuccess: recentSuccess.length });
-        return sendResponse(
-          { ok: false, code: 'RATE_LIMIT_EXCEEDED', message: 'Prekročili ste limit odoslaní. Skúste to prosím neskôr.' }, 
-          429, 
-          { 'Retry-After': String(Math.ceil(RATE_LIMIT_WINDOW_MS / 1000)) }
-        );
-      }
-      
-      recentAll.push(now);
-      ipRateLimitMap.set(ip, { all: recentAll, success: recentSuccess });
+    const rateLimitResult = checkRateLimit(ip);
+    if (rateLimitResult.exceeded) {
+      console.warn(`Rate limit prekročený pre IP: ${ip}`, { 
+        requestId, 
+        recentAll: rateLimitResult.recentAll, 
+        recentSuccess: rateLimitResult.recentSuccess 
+      });
+      return sendResponse(
+        { ok: false, code: 'RATE_LIMIT_EXCEEDED', message: 'Prekročili ste limit odoslaní. Skúste to prosím neskôr.' }, 
+        429, 
+        { 'Retry-After': rateLimitResult.retryAfter }
+      );
     }
 
     // 3. SPRACOVANIE A VALIDÁCIA ÚDAJOV
@@ -380,10 +133,12 @@ export async function POST(request) {
     let hasOversizedPayload = false;
     const rawFiles = formData.getAll('prilohy').filter((file) => file && typeof file === 'object' && typeof file.arrayBuffer === 'function');
 
-    if (rawFiles.length === 0) {
-      addError('prilohy', 'MISSING_FILE', 'Chýba aspoň jedna príloha.');
-    } else if (rawFiles.length > MAX_FILES) {
-      addError('prilohy', 'TOO_MANY_FILES', `Môžete nahrať najviac ${MAX_FILES} súborov.`);
+    if (rawFiles.length > MAX_FILES) {
+      addError(
+        'prilohy',
+        'TOO_MANY_FILES',
+        `Môžete nahrať najviac ${MAX_FILES} súborov.`
+      );
     }
 
     const totalFileSize = rawFiles.reduce((sum, file) => sum + Number(file.size || 0), 0);
@@ -432,18 +187,20 @@ export async function POST(request) {
     }
 
     // 5. ODOSLANIE E-MAILU
-    const datumPrijatia = getCurrentDateLabel();
-    const referencneCislo = createReferenceNumber();
+   const datumPrijatia = getCurrentDateLabel(receivedAt);
+  const datumPrijatiaIso = receivedAt.toISOString();
+  const referencneCislo = createReferenceNumber();
 
     if (config.mode === 'mock') {
       console.info('Formulár bol odoslaný v testovacom režime bez e-mailu.', { referencneCislo, email: values.email, requestId });
-      
-      if (ip !== 'unknown-ip') {
-        const userData = ipRateLimitMap.get(ip);
-        userData.success.push(Date.now());
-      }
-      
-      return sendResponse({ ok: true, mock: true, datumPrijatia, referencneCislo });
+      recordSuccess(ip);
+      return sendResponse({
+        ok: true,
+        mock: true,
+        datumPrijatia,
+        datumPrijatiaIso,
+        referencneCislo,
+      });
     }
 
     const transporter = getTransporter(config);
@@ -492,13 +249,16 @@ ${values.suhlas === 'true' ? 'Áno' : 'Nie'}
       attachments,
     });
 
-    if (ip !== 'unknown-ip') {
-      const userData = ipRateLimitMap.get(ip);
-      userData.success.push(Date.now());
-    }
+    recordSuccess(ip);
 
-    return sendResponse({ ok: true, mock: false, datumPrijatia, referencneCislo });
-    
+    return sendResponse({
+      ok: true,
+      mock: false,
+      datumPrijatia,
+      datumPrijatiaIso,
+      referencneCislo,
+    });
+        
   } catch (error) {
     console.error('Chyba pri odosielaní formulára:', { requestId, error });
     return sendResponse({ ok: false, code: 'INTERNAL_ERROR', message: 'Formulár sa nepodarilo odoslať.' }, 500);
