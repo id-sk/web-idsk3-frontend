@@ -13,6 +13,7 @@ const ErrorSummaryCustom = forwardRef(
       errors = [],
       className = '',
       onErrorClick,
+      focusOnRender = false,
       ...props
     },
     ref

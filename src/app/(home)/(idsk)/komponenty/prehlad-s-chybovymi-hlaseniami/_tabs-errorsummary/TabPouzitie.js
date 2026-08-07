@@ -65,11 +65,13 @@ const ExampleTextInput = ({
 const TabPouzitie = () => {
   const errors = [
     {
-      id: 'error-summary-demo-name',
+      id: 'error-summary-demo-name-error',
+      targetId: 'error-summary-demo-name',
       message: 'Meno musí obsahovať aspoň 3 znaky.',
     },
     {
-      id: 'error-summary-demo-email',
+      id: 'error-summary-demo-email-error',
+      targetId: 'error-summary-demo-email',
       message: 'Zadajte e-mailovú adresu v tvare meno@example.com.',
     },
   ];
@@ -83,7 +85,6 @@ const TabPouzitie = () => {
               title="Vo formulári sú chyby"
               description="Opravte nasledujúce údaje pred pokračovaním."
               errors={errors}
-              focusOnRender={false}
             />
 
             <p className="mb-7">

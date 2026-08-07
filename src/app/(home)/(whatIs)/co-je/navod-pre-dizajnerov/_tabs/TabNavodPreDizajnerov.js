@@ -87,15 +87,6 @@ export default function TabNavodPreDizajnerov() {
           <li>Varianty sú zoskupené na jednej stránke a usporiadané vedľa seba.</li>
           <li>Prehliadajte jednotlivé položky na stránke a vyberte variant, ktorý potrebujete.</li>
         </Ul>
-        <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
-          <Image 
-            src="/images/info-lista/info_lista1.png" 
-            width={1100} 
-            height={400} 
-            alt="Ako pracovať s komponentom" 
-            className="w-full h-auto md:h-[400px] object-cover" 
-          />
-        </div>
       </section>
 
       <FeedbackSection />

@@ -71,6 +71,7 @@ const TextareaCustom = forwardRef(
       disabled = false,
       error = false,
       errorMsg,
+      announceError = false,
       maxLength = 1000,
       value,
       defaultValue = '',
@@ -257,7 +258,6 @@ const TextareaCustom = forwardRef(
               </span>
             )}
 
-            {/* 3. OPRAVA: Overenie - role="alert" tu už našťastie nemáš, takže toto zostáva čisté a funkčné podľa požiadaviek */}
             {hasError && errorMsg && (
               <span
                 id={errorId}

@@ -263,6 +263,7 @@ const HeaderDrawerCustom = ({
                 <div className="flex items-center gap-3">
                   <div className="flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden rounded-full bg-[#212121] text-white">
                     {user.avatarSrc ? (
+                      // eslint-disable-next-line @next/next/no-img-element
                       <img
                         src={user.avatarSrc}
                         alt=""
