@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-signpost/TabPristupnost';
 import TabImplementacia from './_tabs-signpost/TabImplementacia';
 
 export const metadata = {
-  title: 'Rázcestník | Komponenty IDSK',
+  title: 'Rázcestník | IDSK',
   description: 'Dokumentácia komponentu Rázcestník - horizontálny (Signpost), jeho varianty, prístupnosť a implementácia.',
 };
 

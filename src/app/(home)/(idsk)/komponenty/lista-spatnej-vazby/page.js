@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-feedback/TabPristupnost';
 import TabImplementacia from './_tabs-feedback/TabImplementacia';
 
 export const metadata = {
-  title: 'Lišta spätnej väzby | Komponenty IDSK',
+  title: 'Lišta spätnej väzby | IDSK',
   description:
     'Dokumentácia komponentu Lišta spätnej väzby, jeho použitie, varianty, prístupnosť a implementácia.',
 };

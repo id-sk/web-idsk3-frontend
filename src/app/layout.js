@@ -7,8 +7,8 @@ import SkipLinkClient from "@/app/(home)/_components/skiplink/SkipLinkClient";
 import AutoBreadcrumbs from '@/app/(home)/_components/breadcrumbs/autoBreadcrumbs';
 
 export const metadata = {
-  title: "IDSK 3",
-  description: "IDSK Frontend",
+  title: "Domovská stránka | IDSK",
+  description: "IDSK domovská stránka",
 };
 
 export default function RootLayout({ children }) {

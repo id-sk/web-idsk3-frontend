@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-footer/TabPristupnost';
 import TabImplementacia from './_tabs-footer/TabImplementacia';
 
 export const metadata = {
-  title: 'Päta | Komponenty IDSK',
+  title: 'Päta | IDSK',
   description:
     'Dokumentácia komponentu Päta (Footer), jeho použitie, varianty, prístupnosť a implementácia.',
 };

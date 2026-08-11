@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-infobanner/TabPristupnost';
 import TabImplementacia from './_tabs-infobanner/TabImplementacia';
 
 export const metadata = {
-  title: 'Informačná lišta | Komponenty IDSK',
+  title: 'Informačná lišta | IDSK',
   description:
     'Dokumentácia komponentu Informačná lišta, jeho použitie, varianty, prístupnosť a implementácia.',
 };

@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-header/TabPristupnost';
 import TabImplementacia from './_tabs-header/TabImplementacia';
 
 export const metadata = {
-  title: 'Hlavička pre elektronické služby | Komponenty IDSK',
+  title: 'Hlavička pre elektronické služby | IDSK',
   description:
     'Dokumentácia komponentu Hlavička pre elektronické služby, jeho použitie, varianty, prístupnosť a implementácia.',
 };

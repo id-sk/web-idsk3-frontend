@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-checkbox/TabPristupnost';
 import TabImplementacia from './_tabs-checkbox/TabImplementacia';
 
 export const metadata = {
-  title: 'Začiarkavacie pole | Komponenty IDSK',
+  title: 'Začiarkavacie pole | IDSK',
   description: 'Dokumentácia komponentu Začiarkavacie pole (Checkbox), jeho varianty, prístupnosť a implementácia.',
 };
 

@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-textarea/TabPristupnost';
 import TabImplementacia from './_tabs-textarea/TabImplementacia';
 
 export const metadata = {
-  title: 'Viacriadkové textové pole | Komponenty IDSK',
+  title: 'Viacriadkové textové pole | IDSK',
   description: 'Dokumentácia komponentu Viacriadkové textové pole (Textarea), jeho varianty, prístupnosť a implementácia.',
 };
 

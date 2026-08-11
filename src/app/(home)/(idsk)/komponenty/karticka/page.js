@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-card/TabPristupnost';
 import TabImplementacia from './_tabs-card/TabImplementacia';
 
 export const metadata = {
-  title: 'Kartička | Komponenty IDSK',
+  title: 'Kartička | IDSK',
   description:
     'Dokumentácia komponentu Kartička, jeho použitie, varianty, prístupnosť a implementácia.',
 };
