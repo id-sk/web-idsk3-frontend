@@ -129,7 +129,7 @@ export const ExtLink = ({
     {children}
     <span className="sr-only">
       {' '}
-      (otvorí sa v novom okne)
+      (otvorí sa na novej karte)
     </span>
   </a>
 );
@@ -209,4 +209,11 @@ export const ExampleBlock = ({
       {children}
     </div>
   </div>
+);
+
+export const StepItem = ({ title, children, className = '' }) => (
+  <li className={className}>
+    <H4>{title}</H4>
+    {children}
+  </li>
 );

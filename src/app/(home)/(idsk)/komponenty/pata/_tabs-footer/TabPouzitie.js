@@ -10,6 +10,7 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const OperatorInformation = () => (
@@ -20,7 +21,7 @@ const OperatorInformation = () => (
 );
 
 const MirriLogo = () => (
-  <a
+  <a  
     href="https://mirri.gov.sk"
     target="_blank"
     rel="noopener noreferrer"
@@ -36,40 +37,35 @@ const MirriLogo = () => (
   </a>
 );
 
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
-
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie päty">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[700px] px-4">
-          <FooterBase
-            ariaLabel="Ukážka základného variantu päty"
-            links={[
-              {
-                href: "#",
-                label: "Vyhlásenie o prístupnosti",
-              },
-              {
-                href: "#",
-                label: "Kontakt na prevádzkovateľa",
-              },
-              {
-                href: "#",
-                label: "Mapa stránky",
-              },
-            ]}
-            bottomSection={<OperatorInformation />}
-            logo={<MirriLogo />}
-          >
-            <p>
-              Na tomto webovom sídle sa využívajú len nevyhnutné/technické
-              cookies.
-            </p>
-          </FooterBase>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[700px]">
+        <FooterBase
+          ariaLabel="Ukážka základného variantu päty"
+          links={[
+            {
+              href: "#",
+              label: "Vyhlásenie o prístupnosti",
+            },
+            {
+              href: "#",
+              label: "Kontakt na prevádzkovateľa",
+            },
+            {
+              href: "#",
+              label: "Mapa stránky",
+            },
+          ]}
+          bottomSection={<OperatorInformation />}
+          logo={<MirriLogo />}
+        >
+          <p>
+            Na tomto webovom sídle sa využívajú len nevyhnutné/technické
+            cookies.
+          </p>
+        </FooterBase>
+      </ExampleBlock>
 
       <Text className="mb-8">
         Päta sa primárne využíva pre webové sídla a býva vždy umiestnená na

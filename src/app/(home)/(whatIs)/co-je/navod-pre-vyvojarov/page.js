@@ -26,7 +26,7 @@ export default function DeveloperPage() {
         className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 mt-8 mb-8 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md transition-all duration-200 outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
       >
         <span>GitHub knižnica IDSK</span>
-        <span className="sr-only"> (otvorí sa v novom okne)</span>
+        <span className="sr-only"> (otvorí sa na novej karte)</span>
         <svg className="w-6 h-6 shrink-0" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>

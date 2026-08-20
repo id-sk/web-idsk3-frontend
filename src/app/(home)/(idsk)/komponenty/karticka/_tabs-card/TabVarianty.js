@@ -8,10 +8,8 @@ import {
   SectionBlock,
   H3,
   Text,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabVarianty = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
@@ -24,17 +22,15 @@ const TabVarianty = () => (
         žiadnu hodnotu alebo by zbytočne zahlcoval zoznam.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[400px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            orientation="vertical"
-            title="Nadpis kartičky"
-            description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
-            date="1.12.2025"
-            />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[400px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          orientation="vertical"
+          title="Nadpis kartičky"
+          description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
+          date="1.12.2025"
+        />
+      </ExampleBlock>
 
       <H3>2. Horizontálna kartička bez obrázka</H3>
 
@@ -43,17 +39,15 @@ const TabVarianty = () => (
         žiadnu hodnotu alebo by zbytočne zahlcoval zoznam.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[800px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            orientation="horizontal"
-            title="Nadpis kartičky"
-            description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
-            date="1.12.2025"
-            />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[800px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          orientation="horizontal"
+          title="Nadpis kartičky"
+          description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
+          date="1.12.2025"
+        />
+      </ExampleBlock>
 
       <H3>3. Vertikálna kartička s obrázkom</H3>
 
@@ -61,40 +55,33 @@ const TabVarianty = () => (
         Vertikálna kartička obsahuje obrázok, nadpis a krátky popis. 
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[400px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            orientation="vertical"
-            src="/images/co-je-cards/10-principov-idsk.svg"
-            alt=""
-            title="Nadpis kartičky"
-            description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
-            />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[400px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          orientation="vertical"
+          src="/images/co-je-cards/10-principov-idsk.svg"
+          alt=""
+          title="Nadpis kartičky"
+          description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
+        />
+      </ExampleBlock>
 
-
-        <H3>4. Horizontálna kartička s obrázkom</H3>
+      <H3>4. Horizontálna kartička s obrázkom</H3>
 
       <Text className="mb-4">
         Horizontálna kartička obsahuje obrázok, nadpis a krátky popis. 
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[800px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            orientation="horizontal"
-            src="/images/co-je-cards/10-principov-idsk.svg"
-            alt=""
-            title="Nadpis kartičky"
-            description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
-            />
-        </div>
-      </div>
-
-
+      <ExampleBlock className="mt-4" innerClassName="max-w-[800px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          orientation="horizontal"
+          src="/images/co-je-cards/10-principov-idsk.svg"
+          alt=""
+          title="Nadpis kartičky"
+          description="Tento text slúži iba ako ukážka naplneného obsahu v danom komponente."
+        />
+      </ExampleBlock>
 
       <H3>5. Vertikálna kartička s obrázkom a príliš dlhým nadpisom</H3>
 
@@ -103,17 +90,15 @@ const TabVarianty = () => (
         kartičiek zachoval konzistentnú výšku a čitateľnosť.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[400px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            src="/images/co-je-cards/10-principov-idsk.svg"
-            alt=""
-            title="Základné informácie o používaní elektronických služieb verejnej správy"
-            description="Stručný prehľad povinností, možností a odporúčaní pri používaní elektronických služieb."
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[400px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          src="/images/co-je-cards/10-principov-idsk.svg"
+          alt=""
+          title="Základné informácie o používaní elektronických služieb verejnej správy"
+          description="Stručný prehľad povinností, možností a odporúčaní pri používaní elektronických služieb."
+        />
+      </ExampleBlock>
 
       <H3>6. Skupina kartičiek</H3>
 
@@ -122,8 +107,8 @@ const TabVarianty = () => (
         konzistentnú dĺžku nadpisov, popisov a primeraný počet položiek.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="grid w-full max-w-[900px] grid-cols-1 gap-6 px-4 md:grid-cols-3">
+      <ExampleBlock className="mt-4" innerClassName="max-w-[900px]">
+        <div className="grid w-full grid-cols-1 gap-6 md:grid-cols-3">
           <ArticleCard
             href="/komponenty/karticka"
             src="/images/co-je-cards/10-principov-idsk.svg"
@@ -148,7 +133,7 @@ const TabVarianty = () => (
             description="Možnosti podpory a kontaktné miesta pre používateľov."
           />
         </div>
-      </div>
+      </ExampleBlock>
     </SectionBlock>
   </div>
 );

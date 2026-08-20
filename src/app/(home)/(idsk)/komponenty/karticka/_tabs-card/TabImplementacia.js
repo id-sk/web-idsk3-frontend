@@ -8,6 +8,7 @@ import {
   Text,
   Ul,
   Ol,
+  StepItem,
   ExtLink,
   CodeBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
@@ -91,12 +92,8 @@ const TabImplementacia = () => {
             </li>
           </Ul>
 
-          <div className="mt-8 space-y-8">
-            <div>
-              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
-                Stiahnite a zahrňte zdroje
-              </strong>
-
+          <Ol className="mt-8">
+            <StepItem title="Stiahnite a zahrňte zdroje">
               <Text className="mb-4">
                 Stiahnite si najnovšie kompilované a minifikované verzie
                 štýlov a assetov. Skopírujte celý priečinok{' '}
@@ -118,13 +115,9 @@ const TabImplementacia = () => {
                   └── frontend.min.css.map
                 `}
               />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
-                Prepojte štýly
-              </strong>
-
+            <StepItem title="Prepojte štýly" className="mt-6">
               <Text className="mb-4">
                 Do elementu <code className={codeClass}>&lt;head&gt;</code>{' '}
                 vložte odkaz na minifikovaný CSS súbor.
@@ -155,13 +148,9 @@ const TabImplementacia = () => {
                   </html>
                 `}
               />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="mb-2 block text-sm sm:text-base md:text-[19px]">
-                Skopírujte HTML kód
-              </strong>
-
+            <StepItem title="Skopírujte HTML kód" className="mt-6">
               <Text className="mb-4">
                 Zo stránky dokumentácie prevezmite HTML kód komponentu{' '}
                 <ExtLink href="https://komponenty.idsk3.gov.sk/components/card">
@@ -184,7 +173,7 @@ const TabImplementacia = () => {
                     <div class="idsk-card__content">
                       <div class="idsk-card__heading">
                         <h3>
-                          <a
+                          
                             href="/zakladne-informacie"
                             class="govuk-link"
                           >
@@ -224,19 +213,15 @@ const TabImplementacia = () => {
                 obrázok obsahovo dôležitý, opíšte jeho význam stručným
                 alternatívnym textom.
               </Text>
-            </div>
-          </div>
+            </StepItem>
+          </Ol>
         </div>
 
         <div>
           <H3>2. Pokročilá integrácia (NPM + SCSS)</H3>
 
           <Ol>
-            <li>
-              <strong className="mb-2 mt-5 block">
-                Nainštalujte balík
-              </strong>
-
+            <StepItem title="Nainštalujte balík">
               Pre inštaláciu cez NPM spustite:
 
               <CodeBlock
@@ -246,24 +231,16 @@ const TabImplementacia = () => {
                   npm i @id-sk/frontend@3.0.0-beta.0-hotfix
                 `}
               />
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="mb-2 block">
-                Pridajte Nunjucks alebo HTML
-              </strong>
-
+            <StepItem title="Pridajte Nunjucks alebo HTML" className="mt-6">
               Do pripraveného súboru s príponou{' '}
               <code className={codeClass}>.html</code> alebo{' '}
               <code className={codeClass}>.njk</code> vložte markup kartičky,
               ktorý je uvedený vyššie.
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="mb-2 block font-semibold">
-                Importujte štýly
-              </strong>
-
+            <StepItem title="Importujte štýly" className="mt-6">
               Pre import individuálneho komponentu kartičky pridajte do Sass
               súboru:
 
@@ -273,7 +250,7 @@ const TabImplementacia = () => {
                   @import "node_modules/@id-sk/frontend/idsk/components/card/card";
                 `}
               />
-            </li>
+            </StepItem>
           </Ol>
         </div>
       </SectionBlock>

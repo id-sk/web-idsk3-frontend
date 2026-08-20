@@ -9,28 +9,24 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie poľa na nahratie súboru">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-cv"
-            title="Nahrajte životopis"
-            hint="Spresnite požiadavku na nahrávaný súbor."
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={<>Podporované formáty: <span className="font-bold">JPG, PNG, DOC, DOCX, PDF</span></>}
-            maxSizeText={<>Maximálna veľkosť súboru: <span className="font-bold">15 MB</span></>}
-            buttonText="Vyberte súbory"
-            required
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-cv"
+          title="Nahrajte životopis"
+          hint="Spresnite požiadavku na nahrávaný súbor."
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={<>Podporované formáty: <span className="font-bold">JPG, PNG, DOC, DOCX, PDF</span></>}
+          maxSizeText={<>Maximálna veľkosť súboru: <span className="font-bold">15 MB</span></>}
+          buttonText="Vyberte súbory"
+          required
+        />
+      </ExampleBlock>
 
       <Text className="mb-8">
         Pole na nahratie súboru použite vtedy, keď používateľ potrebuje dodať

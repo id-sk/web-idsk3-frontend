@@ -5,13 +5,8 @@ import TextInputCustom from '@/app/(home)/_components/inputs/textInputCustom';
 import {
   SectionBlock,
   H3,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const ExampleFrame = ({ children }) => (
-  <div className="mb-8 mt-4 flex flex-col items-center gap-6 border-2 border-dashed border-[#757575] rounded-[10px] py-10">
-    {children}
-  </div>
-);
 
 const ExampleInputWrapper = ({ children }) => (
   <div className="w-full max-w-[400px] px-4">
@@ -24,7 +19,7 @@ const TabVarianty = () => (
     <SectionBlock titleString="Varianty a stavy">
       <H3>1. Variant povinného a nepovinného textového poľa</H3>
 
-      <ExampleFrame>
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none px-0">
         <ExampleInputWrapper>
           <TextInputCustom
             id="input-priklad-povinne"
@@ -46,11 +41,11 @@ const TabVarianty = () => (
             fullWidth
           />
         </ExampleInputWrapper>
-      </ExampleFrame>
+      </ExampleBlock>
 
       <H3>2. Variant chybového a neaktívneho textového poľa</H3>
 
-      <ExampleFrame>
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none px-0">
         <ExampleInputWrapper>
           <TextInputCustom
             id="input-priklad-chyba"
@@ -75,11 +70,11 @@ const TabVarianty = () => (
             fullWidth
           />
         </ExampleInputWrapper>
-      </ExampleFrame>
+      </ExampleBlock>
 
       <H3>3. Varianty textového poľa s podnadpisom, placeholderom a popisom</H3>
 
-      <ExampleFrame>
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none px-0">
         <ExampleInputWrapper>
           <TextInputCustom
             id="input-priklad-podnadpis"
@@ -115,11 +110,11 @@ const TabVarianty = () => (
             fullWidth
           />
         </ExampleInputWrapper>
-      </ExampleFrame>
+      </ExampleBlock>
 
       <H3>4. Varianty veľkostí textového poľa</H3>
 
-      <ExampleFrame>
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none px-0">
         <ExampleInputWrapper>
           <TextInputCustom
             id="input-priklad-velky"
@@ -152,7 +147,7 @@ const TabVarianty = () => (
             fullWidth
           />
         </ExampleInputWrapper>
-      </ExampleFrame>
+      </ExampleBlock>
     </SectionBlock>
   </div>
 );

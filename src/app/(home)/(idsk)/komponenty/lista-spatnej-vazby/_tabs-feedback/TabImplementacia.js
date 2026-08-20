@@ -8,6 +8,7 @@ import {
   Text,
   Ul,
   Ol,
+  StepItem,
   ExtLink,
   CodeBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
@@ -56,7 +57,7 @@ const TabImplementacia = () => {
       </SectionBlock>
 
       <SectionBlock titleString="Možnosti implementácie">
-        <div className="mt-4 mb-8">
+        <div className="mt-4">
           <H3>1. Statická HTML implementácia</H3>
 
           <Text className="mb-4">
@@ -67,12 +68,8 @@ const TabImplementacia = () => {
             samostatný live región.
           </Text>
 
-          <div className="space-y-8 mt-8">
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Stiahnite a zahrňte zdroje
-              </strong>
-
+          <Ol className="mt-8">
+            <StepItem title="Stiahnite a zahrňte zdroje">
               <Text className="mb-4">
                 Skopírujte potrebné súbory a assety do projektu. Štruktúra môže
                 vyzerať napríklad takto:
@@ -93,13 +90,9 @@ project/
 └── frontend.min.js.map
                 `}
               />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Prepojte štýly a skripty
-              </strong>
-
+            <StepItem title="Prepojte štýly a skripty" className="mt-6">
               <Text className="mb-4">
                 Do časti <code className={codeClass}>head</code> vložte
                 minifikovaný CSS súbor. Na koniec{' '}
@@ -126,13 +119,9 @@ project/
 </html>
                 `}
               />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Prístupný HTML základ
-              </strong>
-
+            <StepItem title="Prístupný HTML základ" className="mt-6">
               <Text className="mb-4">
                 Pri vlastnej implementácii dodržte zoskupenie otázky a odpovedí
                 pomocou <code className={codeClass}>fieldset</code> a{' '}
@@ -172,17 +161,15 @@ project/
 </section>
                 `}
               />
-            </div>
-          </div>
+            </StepItem>
+          </Ol>
         </div>
 
-        <div className="mt-12 mb-8">
+        <div>
           <H3>2. Pokročilá integrácia (NPM + SCSS + JS)</H3>
 
           <Ol>
-            <li>
-              <strong className="block mb-2">Nainštalujte balík</strong>
-
+            <StepItem title="Nainštalujte balík">
               <Text>Pre inštaláciu cez NPM spustite:</Text>
 
               <CodeBlock
@@ -192,21 +179,16 @@ npm install nunjucks --save
 npm i @id-sk/frontend@3.0.0-beta.0-hotfix
                 `}
               />
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="block mb-2">Pridajte komponent</strong>
+            <StepItem title="Pridajte komponent" className="mt-6">
               V projekte použite vlastný komponent{' '}
               <code className={codeClass}>FeedbackBarCustom</code>, ktorý
               zabezpečuje prístupné zoskupenie otázky, tlačidiel a live
               regiónu.
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="font-semibold block mb-2">
-                Importujte štýly
-              </strong>
-
+            <StepItem title="Importujte štýly" className="mt-6">
               <Text>
                 Ak používate pôvodné ID-SK štýly, import individuálneho
                 komponentu vyzerá takto:
@@ -218,7 +200,7 @@ npm i @id-sk/frontend@3.0.0-beta.0-hotfix
 @import "node_modules/@id-sk/frontend/idsk/components/feedback-bar/feedback-bar";
                 `}
               />
-            </li>
+            </StepItem>
           </Ol>
         </div>
       </SectionBlock>

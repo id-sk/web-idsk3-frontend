@@ -8,10 +8,9 @@ import {
   SectionBlock,
   H3,
   Text,
+  Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 transition-all duration-300';
 
 const TabVarianty = () => {
   const mockSidebarData = [];
@@ -19,6 +18,22 @@ const TabVarianty = () => {
   return (
     <div className="animate-fade-in text-black w-full min-w-0">
       <SectionBlock titleString="Varianty a stavy">
+        <Text className="mb-2">
+          Hlavička pre elektronické služby má dva základné varianty, ktoré sa
+          líšia prítomnosťou hlavnej navigácie:
+        </Text>
+
+        <Ul className="mb-8">
+          <li>
+            <strong>Hlavička s navigáciou</strong> – vhodná pri rozsiahlejšej
+            informačnej architektúre elektronickej služby.
+          </li>
+          <li>
+            <strong>Hlavička bez navigácie</strong> – vhodná pri jednoduchej
+            elektronickej službe bez rozsiahlej informačnej architektúry.
+          </li>
+        </Ul>
+
         <H3>1. Hlavička s navigáciou</H3>
 
         <Text className="mb-8">
@@ -27,25 +42,21 @@ const TabVarianty = () => {
           častiach aplikácie.
         </Text>
 
-        <div className={exampleWrapperClass}>
-          <div className="w-full max-w-[800px] py-7 my-6 px-4 relative min-h-[250px] h-auto">
-            <Navbar sidebarData={mockSidebarData} />
-          </div>
-        </div>
+        <ExampleBlock innerClassName="max-w-[800px]">
+          <Navbar sidebarData={mockSidebarData} />
+        </ExampleBlock>
 
         <H3>2. Hlavička bez navigácie</H3>
 
         <Text className="mb-8">
-          Použite pri jednoduchej elektronickej službe bez rozsiahlej informačnej
-          architektúry. V takom prípade hlavička stále obsahuje základnú
-          identitu služby a akčný panel, ale nezobrazuje hlavné menu.
+          Použite pri jednoduchej elektronickej službe bez rozsiahlej
+          informačnej architektúry. V takom prípade hlavička stále obsahuje
+          základnú identitu služby a akčný panel, ale nezobrazuje hlavné menu.
         </Text>
 
-        <div className={exampleWrapperClass}>
-          <div className="w-full max-w-[800px] py-7 my-6 px-4 relative min-h-[250px] h-auto">
-            <Navbar hideNavigation={true} />
-          </div>
-        </div>
+        <ExampleBlock innerClassName="max-w-[800px]">
+          <Navbar hideNavigation={true} />
+        </ExampleBlock>
       </SectionBlock>
     </div>
   );

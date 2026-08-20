@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import SelectDropdownCustom from '@/app/(home)/_components/select/selectCustom';
-import { SectionBlock, H3, Text } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import { SectionBlock, H3, Text, ExampleBlock } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const basicOptions = [
   { value: 'sk', label: 'Slovensko' },
@@ -20,14 +20,6 @@ const optionsWithDisabled = [
   { value: 'pl', label: 'Poľsko (nedostupné)', disabled: true },
 ];
 
-const ExampleBox = ({ children }) => (
-  <div className="flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
-    <div className="w-full max-w-[400px] py-7 my-6 px-4">
-      {children}
-    </div>
-  </div>
-);
-
 const TabVariantyStavy = () => {
   const [controlledValue, setControlledValue] = useState('');
 
@@ -41,7 +33,7 @@ const TabVariantyStavy = () => {
         </Text>
 
         <H3>1. Základný stav</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-default"
             name="select-default"
@@ -50,10 +42,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>2. Povinné pole</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-required"
             name="select-required"
@@ -63,10 +55,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>3. Nepovinné pole</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-optional"
             name="select-optional"
@@ -76,10 +68,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>4. Pole s pomocným textom</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-hint"
             name="select-hint"
@@ -90,10 +82,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>5. Chybový stav</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-error"
             name="select-error"
@@ -105,10 +97,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>6. Chybový stav s pomocným textom</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-error-hint"
             name="select-error-hint"
@@ -121,10 +113,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>7. Neaktívny stav</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-disabled"
             name="select-disabled"
@@ -135,10 +127,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>8. Vybraná hodnota</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-selected"
             name="select-selected"
@@ -149,10 +141,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>9. Malý variant</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-small"
             name="select-small"
@@ -163,10 +155,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>10. Vybraná hodnota v malom variante</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-small-selected"
             name="select-small-selected"
@@ -178,10 +170,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={basicOptions}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>11. Zoznam s neaktívnou položkou</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-disabled-option"
             name="select-disabled-option"
@@ -191,10 +183,10 @@ const TabVariantyStavy = () => {
             fullWidth
             options={optionsWithDisabled}
           />
-        </ExampleBox>
+        </ExampleBlock>
 
         <H3>12. Riadený stav</H3>
-        <ExampleBox>
+        <ExampleBlock className="mt-4 py-0" innerClassName="max-w-[400px] py-7 my-6">
           <SelectDropdownCustom
             id="select-controlled"
             name="select-controlled"
@@ -210,7 +202,7 @@ const TabVariantyStavy = () => {
           <p className="mt-4 text-[16px] leading-[24px] text-[#757575]">
             Vybraná hodnota: <strong>{controlledValue || '(žiadna)'}</strong>
           </p>
-        </ExampleBox>
+        </ExampleBlock>
       </SectionBlock>
     </div>
   );

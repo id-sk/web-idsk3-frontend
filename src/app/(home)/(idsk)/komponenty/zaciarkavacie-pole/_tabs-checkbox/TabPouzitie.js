@@ -1,24 +1,24 @@
 import React from 'react';
 import Checkbox from '@/app/(home)/_components/inputs/checkboxCustom';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
-import { SectionBlock, Text, Ul } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import { SectionBlock, Text, Ul, ExampleBlock } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const TabPouzitie = () => (
     <div className="animate-fade-in text-black w-full min-w-0">
         
         <SectionBlock titleString="Použitie začiarkavacieho poľa">
             
-            {/* Ukážka na bodkovanom pozadí */}
-            <div className="flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
-                <div className="w-full max-w-[400px] py-7 my-6 px-4">
-                    <Checkbox 
-                        inputSize='large'
-                        name="checkbox"
-                        label="Príklad začiarkavacieho poľa"
-                        fullWidth={true}
-                    />
-                </div>
-            </div>
+            <ExampleBlock
+                className="mt-4 py-0"
+                innerClassName="max-w-[400px] py-7 my-6"
+            >
+                <Checkbox 
+                    inputSize='large'
+                    name="checkbox"
+                    label="Príklad začiarkavacieho poľa"
+                    fullWidth={true}
+                />
+            </ExampleBlock>
 
             <Text className="mb-4">
                 Začiarkavacie pole je interaktívny komponent, ktorý slúži na získanie súhlasu alebo potvrdenie výberu v používateľskom rozhraní. Komponent je využívaný prevažne s popisom, ktorý definuje funkcionalitu komponentu.

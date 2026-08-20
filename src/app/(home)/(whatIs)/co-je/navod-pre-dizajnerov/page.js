@@ -50,7 +50,7 @@ export default function DesignersPage() {
           }
         >
           Figma knižnica IDSK
-          <span className="sr-only"> (otvorí sa v novom okne)</span>
+          <span className="sr-only"> (otvorí sa na novej karte)</span>
         </ButtonCustom>
       </div>
 

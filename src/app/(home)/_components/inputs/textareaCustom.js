@@ -19,43 +19,6 @@ const WarningIcon = ({ className = '' }) => (
   </svg>
 );
 
-const formatRemainingCharacters = (remaining) => {
-  if (remaining === 1) {
-    return 'Zostáva 1 znak.';
-  }
-
-  if (remaining >= 2 && remaining <= 4) {
-    return `Zostávajú ${remaining} znaky.`;
-  }
-
-  return `Zostáva ${remaining} znakov.`;
-};
-
-const getCounterAnnouncement = (
-  previousRemaining,
-  nextRemaining,
-  maxLength
-) => {
-  const thresholds = [50, 20, 10, 0].filter(
-    (threshold) => threshold < maxLength
-  );
-
-  const crossedThreshold = thresholds.some(
-    (threshold) =>
-      previousRemaining > threshold && nextRemaining <= threshold
-  );
-
-  if (!crossedThreshold) {
-    return '';
-  }
-
-  if (nextRemaining <= 0) {
-    return `Dosiahli ste maximálny počet ${maxLength} znakov.`;
-  }
-
-  return formatRemainingCharacters(nextRemaining);
-};
-
 const TextareaCustom = forwardRef(
   (
     {
@@ -100,7 +63,6 @@ const TextareaCustom = forwardRef(
     const [internalCount, setInternalCount] = useState(
       () => String(defaultValue ?? '').length
     );
-    const [counterAnnouncement, setCounterAnnouncement] = useState('');
 
     const charCount =
       value !== undefined ? String(value ?? '').length : internalCount;
@@ -114,30 +76,9 @@ const TextareaCustom = forwardRef(
     );
 
     const handleChange = (event) => {
-      const nextCount = event.target.value.length;
-
-      if (maxLength !== undefined) {
-        const previousRemaining = Math.max(0, maxLength - charCount);
-        const nextRemaining = Math.max(0, maxLength - nextCount);
-        const announcement = getCounterAnnouncement(
-          previousRemaining,
-          nextRemaining,
-          maxLength
-        );
-
-        if (announcement) {
-          setCounterAnnouncement(announcement);
-        } else if (nextRemaining > previousRemaining) {
-          // Po mazaní status vyčistíme, aby sa rovnaký prah mohol
-          // pri ďalšom prekročení oznámiť znova.
-          setCounterAnnouncement('');
-        }
-      }
-
       if (value === undefined) {
-        setInternalCount(nextCount);
+        setInternalCount(event.target.value.length);
       }
-
       onChange?.(event);
     };
 
@@ -164,7 +105,10 @@ const TextareaCustom = forwardRef(
                   *
                 </span>
               ) : (
-                <span aria-hidden="true" className="ml-1 text-[16px] font-normal leading-6 text-[#757575]">
+                <span
+                  aria-hidden="true"
+                  className="ml-1 text-[16px] font-normal leading-6 text-[#757575]"
+                >
                   {optionalText}
                 </span>
               )}
@@ -226,6 +170,7 @@ const TextareaCustom = forwardRef(
             </span>
           )}
 
+          {/* Vizuálne počítadlo pre bežných používateľov */}
           {maxLength !== undefined && (
             <span
               aria-hidden="true"
@@ -236,15 +181,11 @@ const TextareaCustom = forwardRef(
           )}
         </div>
 
+        {/* Informácia pre asistenčné technológie (čítače obrazovky) prepojená cez aria-describedby */}
         {maxLength !== undefined && (
-          <>
-            <span id={counterLimitId} className="sr-only">
-              Maximálne {maxLength} znakov
-            </span>
-            <span className="sr-only" role="status" aria-atomic="true">
-              {counterAnnouncement}
-            </span>
-          </>
+          <span id={counterLimitId} className="sr-only">
+            {`Zadaných ${charCount} z maximálne ${maxLength} znakov`}
+          </span>
         )}
 
         {(description || caption || hasError) && (

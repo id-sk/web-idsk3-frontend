@@ -71,7 +71,7 @@ const Checkbox = forwardRef(
       >
         <label
           htmlFor={checkboxId}
-          className={`relative flex items-start group ${
+          className={`relative flex items-center group ${
             disabled ? 'cursor-not-allowed' : 'cursor-pointer'
           }`}
         >

@@ -13,7 +13,6 @@
   overflow-wrap: anywhere;
 }
 
-/* Formátovanie zoznamov prichádzajúcich z CMS (Čisté CSS) */
 .p-text ul, 
 .p-text ol { 
   list-style-position: outside; 
@@ -29,14 +28,13 @@
 .p-text ul { list-style-type: disc; }
 .p-text ol { list-style-type: decimal; }
 
-/* Formátovanie inline prvkov z CMS (Čisté CSS) */
 .p-text a { 
-  color: #126DFF; /* IDSK my-blue */
+  color: #126DFF; 
   text-decoration: underline; 
 }
 
 .p-text a:hover { 
-  color: #0B4199; /* IDSK regal-blue (hover stav) */
+  color: #0B4199; 
 }
 
 .p-text blockquote { 

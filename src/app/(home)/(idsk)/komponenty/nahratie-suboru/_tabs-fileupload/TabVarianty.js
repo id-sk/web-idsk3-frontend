@@ -8,10 +8,8 @@ import {
   SectionBlock,
   H3,
   Text,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const formatsDescription = (
   <>
@@ -37,18 +35,16 @@ const TabVarianty = () => (
         maximálnu veľkosť súboru a tlačidlo na výber súboru.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-basic"
-            title="Nahrajte životopis"
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-basic"
+          title="Nahrajte životopis"
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+        />
+      </ExampleBlock>
 
       <H3>2. Stav nahrávania</H3>
 
@@ -57,27 +53,25 @@ const TabVarianty = () => (
         Progress bar je natívny HTML prvok <code>progress</code>.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-progress"
-            title="Nahrajte prílohu"
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-            initialFiles={[
-              {
-                id: 'uploading-file',
-                name: 'potvrdenie-o-prijme.pdf',
-                size: 248000,
-                status: 'uploading',
-                progress: 65,
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-progress"
+          title="Nahrajte prílohu"
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+          initialFiles={[
+            {
+              id: 'uploading-file',
+              name: 'potvrdenie-o-prijme.pdf',
+              size: 248000,
+              status: 'uploading',
+              progress: 65,
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>3. Úspešne nahratý súbor</H3>
 
@@ -86,26 +80,24 @@ const TabVarianty = () => (
         na odstránenie súboru s prístupným názvom.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-success"
-            title="Nahrajte dokument"
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-            initialFiles={[
-              {
-                id: 'success-file',
-                name: 'potvrdenie-o-prijme.pdf',
-                size: 312000,
-                status: 'success',
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-success"
+          title="Nahrajte dokument"
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+          initialFiles={[
+            {
+              id: 'success-file',
+              name: 'potvrdenie-o-prijme.pdf',
+              size: 312000,
+              status: 'success',
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>4. Chybový stav</H3>
 
@@ -114,28 +106,26 @@ const TabVarianty = () => (
         textové vysvetlenie chyby.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-error"
-            title="Nahrajte prílohu"
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-            initialFiles={[
-              {
-                id: 'failed-file',
-                name: 'archiv-dokumentov.zip',
-                size: 820000,
-                status: 'error',
-                errorMessage:
-                  'Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF.',
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-error"
+          title="Nahrajte prílohu"
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+          initialFiles={[
+            {
+              id: 'failed-file',
+              name: 'archiv-dokumentov.zip',
+              size: 820000,
+              status: 'error',
+              errorMessage:
+                'Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF.',
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>5. Povinné pole s chybou</H3>
 
@@ -144,20 +134,18 @@ const TabVarianty = () => (
         prepojené s poľom pomocou <code>aria-describedby</code>.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-required-error"
-            title="Nahrajte životopis"
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-            required
-            errorMessage="Životopis je povinný. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF."
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-required-error"
+          title="Nahrajte životopis"
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+          required
+          errorMessage="Životopis je povinný. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF."
+        />
+      </ExampleBlock>
 
       <H3>6. Neaktívny stav</H3>
 
@@ -165,20 +153,18 @@ const TabVarianty = () => (
         Neaktívny komponent nepovoľuje kliknutie, presunutie súboru ani zameranie file inputu.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-drag-disabled"
-            title="Nahrajte životopis"
-            hint="Momentálne nie je možné nahrať súbor."
-            subtitle="Nahrajte súbor alebo ho sem presuňte."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbory"
-            disabled
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-drag-disabled"
+          title="Nahrajte životopis"
+          hint="Momentálne nie je možné nahrať súbor."
+          subtitle="Nahrajte súbor alebo ho sem presuňte."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbory"
+          disabled
+        />
+      </ExampleBlock>
 
       <H3>7. Variant bez drag and dropu</H3>
 
@@ -187,20 +173,18 @@ const TabVarianty = () => (
         Je vhodný pre jednoduchšie formuláre.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-no-drag"
-            title="Nahrajte životopis"
-            hint="Nahrajte jeden súbor so životopisom."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbor"
-            enableDragAndDrop={false}
-            required
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-no-drag"
+          title="Nahrajte životopis"
+          hint="Nahrajte jeden súbor so životopisom."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbor"
+          enableDragAndDrop={false}
+          required
+        />
+      </ExampleBlock>
       
       <H3>8. Variant bez drag and dropu – úspešne vybraný súbor</H3>
 
@@ -209,27 +193,25 @@ const TabVarianty = () => (
         veľkosťou a možnosťou odstránenia.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-no-drag-success"
-            title="Nahrajte dokument"
-            hint="Nahrajte jeden dokument."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbor"
-            enableDragAndDrop={false}
-            initialFiles={[
-              {
-                id: 'no-drag-success-file',
-                name: 'potvrdenie-o-prijme.pdf',
-                size: 312000,
-                status: 'success',
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-no-drag-success"
+          title="Nahrajte dokument"
+          hint="Nahrajte jeden dokument."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbor"
+          enableDragAndDrop={false}
+          initialFiles={[
+            {
+              id: 'no-drag-success-file',
+              name: 'potvrdenie-o-prijme.pdf',
+              size: 312000,
+              status: 'success',
+            },
+          ]}
+        />
+      </ExampleBlock>
       
       <H3>9. Variant bez drag and dropu – chybový stav</H3>
 
@@ -238,29 +220,27 @@ const TabVarianty = () => (
         môže súbor odstrániť.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-no-drag-error"
-            title="Nahrajte prílohu"
-            hint="Nahrajte jeden súbor ako prílohu."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbor"
-            enableDragAndDrop={false}
-            initialFiles={[
-              {
-                id: 'no-drag-error-file',
-                name: 'archiv-dokumentov.zip',
-                size: 820000,
-                status: 'error',
-                errorMessage:
-                  'Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF.',
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-no-drag-error"
+          title="Nahrajte prílohu"
+          hint="Nahrajte jeden súbor ako prílohu."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbor"
+          enableDragAndDrop={false}
+          initialFiles={[
+            {
+              id: 'no-drag-error-file',
+              name: 'archiv-dokumentov.zip',
+              size: 820000,
+              status: 'error',
+              errorMessage:
+                'Nepodarilo sa nahrať súbor. Nahrajte súbor vo formáte JPG, PNG, DOC, DOCX alebo PDF.',
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>10. Variant bez drag and dropu – neaktívny stav</H3>
 
@@ -268,20 +248,18 @@ const TabVarianty = () => (
         V neaktívnom stave nie je možné otvoriť systémový dialóg na výber súboru.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <FileUploadCustom
-            id="file-upload-no-drag-disabled"
-            title="Nahrajte životopis"
-            hint="Momentálne nie je možné nahrať súbor."
-            formatsText={formatsDescription}
-            maxSizeText={maxSizeDescription}
-            buttonText="Vyberte súbor"
-            enableDragAndDrop={false}
-            disabled
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <FileUploadCustom
+          id="file-upload-no-drag-disabled"
+          title="Nahrajte životopis"
+          hint="Momentálne nie je možné nahrať súbor."
+          formatsText={formatsDescription}
+          maxSizeText={maxSizeDescription}
+          buttonText="Vyberte súbor"
+          enableDragAndDrop={false}
+          disabled
+        />
+      </ExampleBlock>
 
     </SectionBlock>
   </div>

@@ -10,6 +10,12 @@ const SidebarLink = ({ href, children }) => {
   const pathname = usePathname();
   const isActive = href === pathname;
 
+  const handleClick = (e) => {
+    if (e.currentTarget instanceof HTMLElement) {
+      e.currentTarget.blur();
+    }
+  }
+
   return (
     <li 
       className={cx(
@@ -24,6 +30,7 @@ const SidebarLink = ({ href, children }) => {
     >
       <Link
         href={href}
+        onClick={handleClick}
         aria-current={isActive ? 'page' : undefined}
         className={cx(
           'block py-2 pl-[16px] pr-3 tracking-wide select-none outline-none',

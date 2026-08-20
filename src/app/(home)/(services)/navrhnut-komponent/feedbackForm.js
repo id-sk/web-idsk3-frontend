@@ -151,7 +151,7 @@ const getValidationMessage = (fieldName, values) => {
     case 'suhlas':
       return values.suhlas
         ? ''
-        : 'Potvrďte správnosť uvedených údajov.';
+        : 'Je potrebné začiarknuť začiarkavacie pole.';
     default:
       return '';
   }
@@ -581,7 +581,6 @@ export default function FeedbackForm() {
             id={ids.successHeading}
             ref={successHeadingRef}
             tabIndex={-1}
-            role="status" 
             className="mt-6 text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]"
           >
             Ďakujeme, váš zámer sme úspešne prijali.
@@ -731,7 +730,7 @@ export default function FeedbackForm() {
           "
         >
           Metodickým usmernením MIRRI SR č. 051024/2026/OKPSPI (PDF, 694 kB)
-          <span className="sr-only">, otvorí sa v novom okne</span>
+          <span className="sr-only">, otvorí sa na novej karte</span>
         </a>
       </p>
 
@@ -934,7 +933,7 @@ export default function FeedbackForm() {
                 "
               >
                 Zoznam komponentov IDSK
-                <span className="sr-only">, otvorí sa v novom okne</span>
+                <span className="sr-only">, otvorí sa na novej karte</span>
               </a>
             </div>
           </div>

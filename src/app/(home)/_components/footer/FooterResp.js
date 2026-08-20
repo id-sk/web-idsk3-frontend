@@ -58,7 +58,7 @@ const FooterResp = () => {
             height={66}
           />
 
-          <span className="sr-only"> (otvorí sa v novom okne)</span>
+          <span className="sr-only"> (otvorí sa na novej karte)</span>
         </a>
 
       </div>

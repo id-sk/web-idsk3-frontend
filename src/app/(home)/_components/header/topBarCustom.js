@@ -109,7 +109,7 @@ const TopBarCustom = ({
                   className="text-white underline hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#FFF] focus:outline-offset-2 rounded-[5px]"
                 >
                   {officialWebsiteLinkLabel}
-                  <span className="sr-only"> (otvorí sa v novom okne)</span>
+                  <span className="sr-only"> (otvorí sa na novej karte)</span>
                 </a>
               </p>
             </div>
