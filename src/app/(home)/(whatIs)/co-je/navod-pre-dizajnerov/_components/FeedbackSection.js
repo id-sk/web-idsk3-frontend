@@ -30,7 +30,7 @@ export default function FeedbackSection({ index }) {
         </li>
         <li>
           Ak knižnicu začínate používať, hľadáte odpovede alebo sa chcete
-          zapojiť do jej rozvoja ako dizajnér či developer, kontaktujte nás.
+          zapojiť do jej rozvoja ako dizajnér či vývojár, kontaktujte nás.
         </li>
       </Ul>
     </SectionBlock>

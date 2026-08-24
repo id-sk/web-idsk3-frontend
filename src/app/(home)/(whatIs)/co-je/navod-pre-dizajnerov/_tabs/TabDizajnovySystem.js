@@ -18,7 +18,7 @@ export default function TabDizajnovySystem() {
         <div className="flex flex-col gap-8">
           
           <div className="flex flex-col gap-2">
-            <H3>1. Základy (Foundations)</H3>
+            <H3>1. Základy (<span lang="en">Foundations</span>)</H3>
             <Text>Určujú vizuálny a interakčný jazyk systému. Obsahujú:</Text>
             <Ul>
               <li>farby a kontrast,</li>
@@ -75,7 +75,7 @@ export default function TabDizajnovySystem() {
             <H3>6. Kód a implementácia</H3>
             <Text>Umožňujú používať komponenty priamo. Zahŕňajú:</Text>
             <Ul>
-              <li>Frontend knižnicu (napr. SCSS alebo JavaScript),</li>
+              <li><span lang="en">Frontend</span> knižnicu (napr. SCSS alebo JavaScript),</li>
               <li>dokumentáciu,</li>
               <li>pravidlá pomenovania,</li>
               <li>príklady implementácie.</li>
@@ -92,7 +92,7 @@ export default function TabDizajnovySystem() {
         <ul className="flex flex-col gap-2 text-sm sm:text-base tracking-wide leading-relaxed text-black">
           <li><strong>Navrhnite</strong> – Použite existujúce komponenty a vzory vo Figme.</li>
           <li><strong>Prototypujte</strong> – Otestujte návrh s používateľmi a overte prístupnosť.</li>
-          <li><strong>Implementujte</strong> – Použite frontend knižnicu IDSK vo svojom projekte.</li>
+          <li><strong>Implementujte</strong> – Použite <span lang="en">frontend</span> knižnicu IDSK vo svojom projekte.</li>
           <li><strong>Testujte</strong> – Otestujte vizuálnu konzistenciu a funkčnosť komponentov.</li>
           <li><strong>Zdieľajte</strong> – Ak vznikne nová potreba, navrhnite jej doplnenie do systému.</li>
         </ul>

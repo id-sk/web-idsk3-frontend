@@ -23,29 +23,26 @@ const TypographyPage = () => {
             </h2>
             
             <section className="flex flex-col md:flex-row gap-8 md:gap-20 items-start w-full mb-16">
-                {/* Názov fontu */}
                 <div className="flex flex-col min-w-[240px]">
-                    <span className="text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight mb-2">Source Sans Pro</span>
-                    <p className="text-sm sm:text-base tracking-wide text-neutral-500">Font family</p>
+                    <span lang="en" className="text-3xl sm:text-4xl md:text-5xl font-black text-black leading-tight mb-2">Source Sans Pro</span>
+                    <p lang="en" className="text-sm sm:text-base tracking-wide text-neutral-500">Font family</p>
                 </div>
 
                 <div className="flex flex-wrap gap-8 sm:gap-12">
                     <div className="flex flex-col items-start">
                         <span className="text-4xl sm:text-5xl font-black text-black leading-tight mb-2">Aa</span>
-                        <p className="text-sm sm:text-base tracking-wide text-neutral-500">Black</p>
+                        <p lang="en" className="text-sm sm:text-base tracking-wide text-neutral-500">Black</p>
                     </div>
                     <div className="flex flex-col items-start">
                         <span className="text-4xl sm:text-5xl font-bold text-black leading-tight mb-2">Aa</span>
-                        <p className="text-sm sm:text-base tracking-wide text-neutral-500">Bold</p>
+                        <p lang="en" className="text-sm sm:text-base tracking-wide text-neutral-500">Bold</p>
                     </div>
                     <div className="flex flex-col items-start">
                         <span className="text-4xl sm:text-5xl font-normal text-black leading-tight mb-2">Aa</span>
-                        <p className="text-sm sm:text-base tracking-wide text-neutral-500">Regular</p>
+                        <p lang="en" className="text-sm sm:text-base tracking-wide text-neutral-500">Regular</p>
                     </div>
                 </div>
             </section>
-
-            {/* Vykreslenie tabuliek pomocou nášho nového komponentu */}
             <TypographySection title="Nadpisy" items={headlineData} />
             <TypographySection title="Podnadpisy" items={subtitleData} />
             <TypographySection title="Hlavný text" items={bodyData} />
