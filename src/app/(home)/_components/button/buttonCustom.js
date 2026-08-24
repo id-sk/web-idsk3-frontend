@@ -75,7 +75,7 @@ const ButtonCustom = forwardRef(({
 
   const baseClasses = `
     inline-flex items-center justify-center font-bold tracking-wide
-    p-[12px] rounded-[5px] gap-[10px] transition-all duration-100 outline-none
+    p-[12px] rounded-[5px] gap-[10px] outline-none
     focus:outline focus:outline-[3px] focus:outline-[#d96e00] focus:outline-offset-2
     disabled:cursor-not-allowed
   `;

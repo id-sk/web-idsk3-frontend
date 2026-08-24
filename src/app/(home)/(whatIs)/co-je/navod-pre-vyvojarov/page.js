@@ -23,7 +23,7 @@ export default function DeveloperPage() {
         href="https://github.com/id-sk/id-sk-frontend" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 mt-8 mb-8 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md transition-all duration-200 outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
+        className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 mt-8 mb-8 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
       >
         <span>GitHub knižnica IDSK</span>
         <span className="sr-only"> (otvorí sa na novej karte)</span>

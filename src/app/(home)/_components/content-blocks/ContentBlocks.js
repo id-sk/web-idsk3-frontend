@@ -121,7 +121,6 @@ export const ExtLink = ({
     rel="noopener noreferrer"
     className={`
       text-[#0B4199] underline underline-offset-3
-      transition-all duration-100
       hover:text-[#126DFF] hover:decoration-[length:3px]
       ${className}
     `}

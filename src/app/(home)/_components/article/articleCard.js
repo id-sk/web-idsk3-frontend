@@ -98,7 +98,6 @@ const ArticleCard = ({
     <article
         className={cx(
           'relative flex h-full w-full overflow-hidden rounded-[10px] border-2 border-[#BDBDBD] bg-white tracking-wide',
-          'transition-all duration-200',
           'group-hover:ring-[4px] group-hover:ring-[#757575]',
           'group-focus:outline group-focus:outline-[3px] group-focus:outline-[#D96E00] group-focus:outline-offset-2',
           isHorizontal

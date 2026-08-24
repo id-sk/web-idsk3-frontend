@@ -19,7 +19,7 @@ const SidebarLink = ({ href, children }) => {
   return (
     <li 
       className={cx(
-        'mb-[7px] rounded-lg transition-all duration-150',
+        'mb-[7px] rounded-lg transition-colors duration-150',
         'hover:ring-[4px] hover:ring-[#757575]',
         'focus-within:outline focus-within:outline-[3px] focus-within:outline-custom-orange focus-within:outline-offset-2',
         

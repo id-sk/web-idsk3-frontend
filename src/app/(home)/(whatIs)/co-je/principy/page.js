@@ -50,29 +50,23 @@ const principlesData = [
   }
 ];
 
-// --- HLAVNÝ KOMPONENT ---
 
 export default function PrincipyPage() {
   return (
     <div className="flex flex-col my-8 max-w-[1120px] px-4 sm:px-0">
       
-      {/* Čistý H1 bez zbytočného <header> obalu */}
       <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px] mb-8">
         10 princípov vytvárania služieb podľa IDSK
       </h1>
       
-      {/* Vizuálny "main" blok zmenený na bezpečný <div> */}
       <div>
-        {/* --- NAVIGÁCIA (Zoznam rýchlych odkazov) --- */}
         <nav aria-label="Rýchle odkazy" className="mb-12">
-          {/* Používame náš globálny komponent Ol pre dokonalú typografiu */}
           <Ol>
             {principlesData.map((item, index) => (
               <li key={index}>
-                {/* Odkaz generujeme z celého názvu, aby presne sedel s IDčka v SectionBlock */}
                 <a 
                   href={`#${generateId(item.title)}`} 
-                  className="text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px] transition-all duration-100"
+                  className="text-[#0B4199] underline underline-offset-3 hover:text-[#126DFF] hover:decoration-[length:3px]"
                 >
                   {item.shortLabel}
                 </a>
@@ -81,7 +75,6 @@ export default function PrincipyPage() {
           </Ol>
         </nav>
 
-        {/* --- SEKCIE PRINCÍPOV --- */}
         <SectionBlock titleString={principlesData[0].title}>
           <Text>
             Dizajn služby začína identifikáciou potrieb používateľov. Ak neviete,
