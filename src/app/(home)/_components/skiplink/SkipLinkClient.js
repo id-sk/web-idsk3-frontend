@@ -8,7 +8,7 @@ export default function SkipLinkClient() {
       href="#main-content"
       onClick={handleSkip}
       className="
-        fixed left-4 top-0 z-[100]
+        fixed left-4 top-4 z-[100]
         -translate-y-[150%]
         rounded bg-[#EFF5FE] px-4 py-3
         font-bold text-[#212121] underline
@@ -16,7 +16,7 @@ export default function SkipLinkClient() {
         hover:text-[#0B4199]
         hover:decoration-[3px]
         hover:underline-offset-2
-        focus:translate-y-4
+        focus:translate-y-0
         focus-visible:outline
         focus-visible:outline-[3px]
         focus-visible:outline-offset-2
