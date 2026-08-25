@@ -23,10 +23,10 @@ export default function DeveloperPage() {
         href="https://github.com/id-sk/id-sk-frontend" 
         target="_blank" 
         rel="noopener noreferrer"
-        className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 mt-8 mb-8 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md transition-all duration-200 outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
+        className="inline-flex items-center justify-center gap-2 self-start px-5 py-3 mt-8 mb-8 text-base font-bold tracking-wide leading-6 text-center text-white bg-blue-600 rounded-md outline-none hover:shadow-none hover:ring-[4px] hover:ring-[#757575] active:bg-[#072c66]"
       >
         <span>GitHub knižnica IDSK</span>
-        <span className="sr-only"> (otvorí sa v novom okne)</span>
+        <span className="sr-only"> (otvorí sa na novej karte)</span>
         <svg className="w-6 h-6 shrink-0" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
         </svg>
@@ -56,7 +56,7 @@ export default function DeveloperPage() {
 
       <SectionBlock titleString="2. Inštalácia IDSK z dist">
         <Text>
-          Môžete si tiež stiahnuť <ExtLink href="https://github.com/id-sk/idsk3-frontend/tree/main/dist">skompilované a minifikované prvky (CSS, Javascript)</ExtLink> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
+          Môžete si tiež stiahnuť <ExtLink href="https://github.com/id-sk/idsk3-frontend/tree/main/dist">skompilované a minifikované prvky (CSS, <span lang="en">Javascript</span>)</ExtLink> z GitHub. Po inštalácii budete môcť vo vašej službe používať kód z dizajn systému ID-SK.
         </Text>
 
         <H3>Obmedzenia</H3>
@@ -65,7 +65,7 @@ export default function DeveloperPage() {
         </Text>
 
         <Ul>
-          <li>selektívne zahrnúť CSS alebo JavaScript pre jednotlivé komponenty</li>
+          <li>selektívne zahrnúť CSS alebo <span lang="en">Javascript</span> pre jednotlivé komponenty</li>
           <li>zostaviť si vlastné štýly alebo komponenty na základe palety alebo typografických či medzerových kombinácií.</li>
           <li>prispôsobiť zostavu (napríklad prepísať farby alebo povoliť globálne štýly)</li>
           <li>Použiť komponenty z Nunjucks šablón.</li>
@@ -93,7 +93,7 @@ export default function DeveloperPage() {
       <SectionBlock titleString="Kroky k inštalácii">
         <H3>1. Stiahnite si zdroje</H3>
         <Text>
-          Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov, JavaScript a assetov:
+          Stiahnite si najnovšie kompilované a minifikované verzie šablón štýlov,<span lang="en">Javascript</span> a assetov:
         </Text>
         <Ul>
           <li><ExtLink href="https://github.com/id-sk/idsk3-frontend/tree/main/dist/%40id-sk">CSS a JS</ExtLink></li>
@@ -102,7 +102,7 @@ export default function DeveloperPage() {
 
         <H3>2. Zahrňte zdroje</H3>
         <Text>
-          Skopírujte celý priečinok assets do rootu vašej služby. Podľa nižšie uvedeného príkladu pridajte súbory CSS a JavaScript do šablóny HTML.
+          Skopírujte celý priečinok assets do rootu vašej služby. Podľa nižšie uvedeného príkladu pridajte súbory CSS a <span lang="en">Javascript</span> do šablóny HTML.
         </Text>
         
         {/* Tu používame náš nový, čistý komponent pre kód */}

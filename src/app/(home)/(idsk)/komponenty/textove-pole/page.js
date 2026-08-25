@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-inputtext/TabPristupnost';
 import TabImplementacia from './_tabs-inputtext/TabImplementacia';
 
 export const metadata = {
-  title: 'Textové pole | Komponenty IDSK',
+  title: 'Textové pole | IDSK',
   description: 'Dokumentácia komponentu Textové pole (Input type=text), jeho varianty, prístupnosť a implementácia.',
 };
 

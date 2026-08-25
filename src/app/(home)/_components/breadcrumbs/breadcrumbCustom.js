@@ -121,7 +121,7 @@ const BreadcrumbCustom = ({
                 <a
                   href={item.href}
                   aria-label={item.isHome && item.homeVariant === 'icon' ? item.label : undefined}
-                  className="min-w-0 text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 focus:rounded-[5px]"
+                  className="min-w-0 text-[#212121] underline hover:text-[#0B4199] hover:decoration-[3px] focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 focus:rounded-[5px] focus:z-10"
                 >
                   {item.isHome && item.homeVariant === 'icon' ? (
                     <HomeIcon className="h-4 w-4 shrink-0 text-[#212121] hover:text-[#0B4199]" />

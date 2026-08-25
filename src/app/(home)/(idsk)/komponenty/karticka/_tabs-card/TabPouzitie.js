@@ -9,25 +9,21 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie kartičky">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[500px] px-4">
-          <ArticleCard
-            href="/komponenty/karticka"
-            src="/images/co-je-cards/10-principov-idsk.svg"
-            alt=""
-            title="Základné informácie"
-            description="Stručný prehľad základných povinností pre fyzické a právnické osoby pri podávaní daňového priznania."
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[500px]">
+        <ArticleCard
+          href="/komponenty/karticka"
+          src="/images/co-je-cards/10-principov-idsk.svg"
+          alt=""
+          title="Základné informácie"
+          description="Stručný prehľad základných povinností pre fyzické a právnické osoby pri podávaní daňového priznania."
+        />
+      </ExampleBlock>
 
       <Text className="mb-8">
         Kartička je komponent obsahujúci stručný popis, prípadne tag, dátum

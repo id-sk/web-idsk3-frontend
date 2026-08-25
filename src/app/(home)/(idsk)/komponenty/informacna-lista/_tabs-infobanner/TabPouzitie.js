@@ -8,28 +8,24 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie informačnej lišty">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Príklad komponentu informačná lišta"
-            ariaLabel="Príklad komponentu informačná lišta"
-            type="banner"
-            variant="information"
-            hideCloseButton={true}
-          >
-            Informačná lišta upozorňuje používateľa na dôležitú informáciu,
-            ktorú by si mal všimnúť.
-          </InformationBanner>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Príklad komponentu informačná lišta"
+          ariaLabel="Príklad komponentu informačná lišta"
+          type="banner"
+          variant="information"
+          hideCloseButton={true}
+        >
+          Informačná lišta upozorňuje používateľa na dôležitú informáciu,
+          ktorú by si mal všimnúť.
+        </InformationBanner>
+      </ExampleBlock>
 
       <Text className="mb-8">
         Informačná lišta sa používa v situáciách, keď je potrebné informovať

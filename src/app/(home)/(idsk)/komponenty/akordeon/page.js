@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs/TabPristupnost';
 import TabImplementacia from './_tabs/TabImplementacia';
 
 export const metadata = {
-  title: 'Akordeón | Komponenty IDSK',
+  title: 'Akordeón | IDSK',
   description: 'Dokumentácia komponentu Akordeón, jeho varianty, prístupnosť a implementácia.',
 };
 

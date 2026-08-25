@@ -2,7 +2,7 @@
 
 import React from 'react';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
-import { SectionBlock, Text, Ul } from '@/app/(home)/_components/content-blocks/ContentBlocks';
+import { SectionBlock, Text, Ul, ExampleBlock } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 import SelectDropdownCustom from '@/app/(home)/_components/select/selectCustom';
 
 const TabPouzitie = () => (
@@ -10,24 +10,25 @@ const TabPouzitie = () => (
         
         <SectionBlock titleString="Použitie rozbaľovacieho poľa">
             
-            <div className="flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4">
-                <div className="w-full max-w-[400px] py-7 my-6 px-4">
-                    <SelectDropdownCustom
-                        id="select-priklad"
-                        name="vyber"
-                        label="Vyberte možnosť"
-                        hint="Vyberte jednu z dostupných možností."
-                        placeholder="Vyberte možnosť"
-                        mandatory
-                        fullWidth
-                        options={[
-                            { value: 'moznost-1', label: 'Možnosť 1' },
-                            { value: 'moznost-2', label: 'Možnosť 2' },
-                            { value: 'moznost-3', label: 'Možnosť 3' },
-                        ]}
-                        />
-                </div>
-            </div>
+            <ExampleBlock
+                className="mt-4 py-0"
+                innerClassName="max-w-[400px] py-7 my-6"
+            >
+                <SelectDropdownCustom
+                    id="select-priklad"
+                    name="vyber"
+                    label="Vyberte možnosť"
+                    hint="Vyberte jednu z dostupných možností."
+                    placeholder="Vyberte možnosť"
+                    mandatory
+                    fullWidth
+                    options={[
+                        { value: 'moznost-1', label: 'Možnosť 1' },
+                        { value: 'moznost-2', label: 'Možnosť 2' },
+                        { value: 'moznost-3', label: 'Možnosť 3' },
+                    ]}
+                    />
+            </ExampleBlock>
 
             <Text className="mb-8">
                 Rozbaľovacie pole (select) slúži na výber jednej hodnoty zo zoznamu možností v rámci formulára. Používateľ po kliknutí otvorí zoznam a vyberie požadovanú položku; následne pole zobrazí vybranú hodnotu v zatvorenom stave. Select je vhodný najmä v situáciách, keď potrebujete šetriť priestor alebo keď zoznam obsahuje viacero možností. Funguje aj bez JavaScriptu, čo z neho robí spoľahlivý natívny formulárový prvok.

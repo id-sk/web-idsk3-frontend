@@ -39,9 +39,9 @@ export default function TabNavodPreNedizajnerov() {
         <H4>Pridanie knižnice IDSK 3 do súboru vo Figme</H4>
         <Ol>
           <li>Otvorte svoj súbor vo Figme.</li>
-          <li>V ľavom navigačnom paneli kliknite na <strong>Assets</strong>.</li>
-          <li>V paneli Assets kliknite na ikonu knižnice (ikonka knižky). Otvorí sa okno Manage libraries.</li>
-          <li>Do vyhľadávacieho poľa zadajte <strong>IDSK 3 (MIRRI SR)</strong> a kliknite na <strong>Add to file</strong>.</li>
+          <li>V ľavom navigačnom paneli kliknite na <strong><span lang="en">Assets</span></strong>.</li>
+          <li>V paneli <span lang="en">Assets</span> kliknite na ikonu knižnice (ikonka knižky). Otvorí sa okno <span lang="en">Manage libraries</span>.</li>
+          <li>Do vyhľadávacieho poľa zadajte <strong>IDSK 3 (MIRRI SR)</strong> a kliknite na <strong><span lang="en">Add to file</span></strong>.</li>
         </Ol>
         <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm">
           <Image src="/images/designers/nedizajneri1.png" width={1100} height={400} alt="Ako nájsť knižnicu" className="w-full h-auto md:h-[400px] object-cover" />
@@ -60,7 +60,7 @@ export default function TabNavodPreNedizajnerov() {
             title="Pozor" 
             hideCloseButton={true}
           >
-            Nesťahujte knižnicu z Figma Community formou duplikácie súboru, pokiaľ to nie je nutné. Vytvorí sa tým iba lokálna kópia súboru a stratí sa prepojenie na centrálnu knižnicu. Komponenty sa vám potom nebudú automaticky aktualizovať.
+            Nesťahujte knižnicu z <span lang="en">Figma Community</span> formou duplikácie súboru, pokiaľ to nie je nutné. Vytvorí sa tým iba lokálna kópia súboru a stratí sa prepojenie na centrálnu knižnicu. Komponenty sa vám potom nebudú automaticky aktualizovať.
         </InformationBanner>
         
         <H3>Obsah knižnice</H3>
@@ -75,9 +75,9 @@ export default function TabNavodPreNedizajnerov() {
       <section className="flex flex-col gap-4">
         <H3>Vyhľadávanie a pridanie komponentov na plátno</H3>
         <Ol>
-          <li>V ľavom navigačnom paneli <strong>Assets</strong> vyhľadajte požadovaný komponent. Môžete použiť aj vyhľadávacie pole.</li>
+          <li>V ľavom navigačnom paneli <strong><span lang="en">Assets</span></strong> vyhľadajte požadovaný komponent. Môžete použiť aj vyhľadávacie pole.</li>
           <li>Komponenty vo Figme majú fialové ohraničenie a fialovú ikonu. Komponent je hlavná verzia prvku. Z nej vznikajú ďalšie prvky, tzv. inštancie.</li>
-          <li>Kliknite na komponent a potiahnite ho na plátno (drag and drop).</li>
+          <li>Kliknite na komponent a potiahnite ho na plátno (<span lang="en">drag and drop</span>).</li>
           <li>Komponent sa zobrazí na plátne a môžete s ním ďalej pracovať.</li>
         </Ol>
       </section>
@@ -115,7 +115,7 @@ export default function TabNavodPreNedizajnerov() {
             <H4> Čomu sa vyhnúť:</H4>
             <Ul>
               <li>
-                Nepoužívajte možnosť <strong>Detach instance</strong>. Komponent sa tým
+                Nepoužívajte možnosť <strong><span lang="en">Detach instance</span></strong>. Komponent sa tým
                 odpojí od zdrojovej knižnice a prestane sa aktualizovať.
               </li>
               <li>
@@ -135,9 +135,9 @@ export default function TabNavodPreNedizajnerov() {
         <H3>Oprava chýb</H3>
         <Text>Ak pri úprave komponentu urobíte chybu, použite jeden z týchto krokov:</Text>
         <Ul>
-          <li>Kliknite pravým tlačidlom myši na komponent a vyberte <strong>Reset all changes</strong> (alebo Reset instance). Komponent sa vráti do pôvodného stavu z knižnice.</li>
+          <li>Kliknite pravým tlačidlom myši na komponent a vyberte <strong> <span lang="en">Reset all changes</span></strong> (alebo <span lang="en">Reset instance</span>). Komponent sa vráti do pôvodného stavu z knižnice.</li>
           <li>Použite klávesovú skratku <strong>Cmd + Z</strong> (MacOS) alebo <strong>Ctrl + Z</strong> (Windows) pre krok späť.</li>
-          <li>Ak problém pretrváva a komponent je nenávratne rozbitý, odstráňte ho z plátna a jednoducho vložte nový z knižnice v paneli Assets.</li>
+          <li>Ak problém pretrváva a komponent je nenávratne rozbitý, odstráňte ho z plátna a jednoducho vložte nový z knižnice v paneli <span lang="en">Assets</span>.</li>
         </Ul>
       </section>
 

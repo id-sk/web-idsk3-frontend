@@ -69,7 +69,6 @@ const SelectDropdownCustom = forwardRef(
       [
         hint ? hintId : null,
         caption && !hasError ? captionId : null,
-        hasError && errorMsg ? errorId : null,
       ]
         .filter(Boolean)
         .join(' ') || undefined;

@@ -64,7 +64,7 @@ const FileUploadDropzone = ({
           htmlFor={inputId}
           {...dragHandlers}
           className={cx(
-            'group block rounded-md border-[2px] border-dashed px-[20px] py-[30px] text-center transition-all duration-150',
+            'group block rounded-md border-[2px] border-dashed px-[20px] py-[30px] text-center',
             disabled ? 'cursor-not-allowed border-[#BDBDBD] bg-[#F5F5F5] text-[#757575]' : hasUploadError ? 'cursor-pointer border-[#C3112B] bg-white text-[#0B4199] hover:bg-[#EFF5FE] hover:ring-[4px] hover:ring-[#757575] peer-focus:bg-[#EFF5FE] peer-focus:outline peer-focus:outline-[3px] peer-focus:outline-[#D96E00] peer-focus:outline-offset-[2px]' : 'cursor-pointer border-[#757575] bg-white text-[#0B4199] hover:bg-[#EFF5FE] hover:ring-[4px] hover:ring-[#757575] peer-focus:bg-[#EFF5FE] peer-focus:outline peer-focus:outline-[3px] peer-focus:outline-[#D96E00] peer-focus:outline-offset-[2px]',
             'peer-disabled:cursor-not-allowed peer-disabled:opacity-60',
             isDragging && !disabled && 'bg-[#EFF5FE] ring-[4px] ring-[#757575]'
@@ -78,7 +78,7 @@ const FileUploadDropzone = ({
             <p id={maxSizeId}>{maxSizeText}</p>
           </div>
 
-          <span className={cx('file-upload-pseudo-button mt-6 inline-flex items-center justify-center rounded-[5px] border-[2px] px-5 py-3 font-bold transition-colors duration-150', disabled ? 'border-[#BDBDBD] bg-[#F5F5F5] text-[#757575]' : 'border-[#0B4199] bg-white text-[#0B4199] group-hover:bg-[#0B4199] group-hover:text-white')}>
+          <span className={cx('file-upload-pseudo-button mt-6 inline-flex items-center justify-center rounded-[5px] border-[2px] px-5 py-3 font-bold', disabled ? 'border-[#BDBDBD] bg-[#F5F5F5] text-[#757575]' : 'border-[#0B4199] bg-white text-[#0B4199] group-hover:bg-[#0B4199] group-hover:text-white')}>
             <svg aria-hidden="true" className="mr-2 h-5 w-5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" focusable="false"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 16V4m0 0-5 5m5-5 5 5M5 20h14"/></svg>
             <span>{buttonText}</span><span className="sr-only"> pre pole {title}</span>
           </span>

@@ -39,7 +39,7 @@ const ColorCard = ({ name, hex, rgb }) => {
           aria-label={`Skopírovať HEX kód ${hex} pre farbu ${name}`}
           className="
             focus-outline-orange absolute inset-0 h-full w-full cursor-pointer
-            rounded-none rounded-t-[9px] transition-all duration-100
+            rounded-none rounded-t-[9px]
             hover:ring-[4px] hover:ring-[#757575]
           "
           style={{ backgroundColor: hex }}
@@ -47,7 +47,7 @@ const ColorCard = ({ name, hex, rgb }) => {
           <div
             className={`
               pointer-events-none absolute inset-0 flex items-center justify-center
-              rounded-none rounded-t-[9px] transition-all duration-200
+              rounded-none rounded-t-[9px]
               ${
                 copied
                   ? 'bg-black/20 opacity-100'

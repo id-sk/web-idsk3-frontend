@@ -25,7 +25,7 @@ export default function TabAkoZacat() {
             </div>
           </li>
           <li>
-            <strong>Komponenty</strong> vyberte v ľavom navigačnom paneli vo Figme. V hornej časti otvorte sekciu Assets, kde nájdete zoznam komponentov. Vyberte komponent a začnite navrhovať rozhranie.
+            <strong>Komponenty</strong> vyberte v ľavom navigačnom paneli vo Figme. V hornej časti otvorte sekciu <span lang="en">Assets</span>, kde nájdete zoznam komponentov. Vyberte komponent a začnite navrhovať rozhranie.
             <div className="overflow-hidden rounded-lg border border-gray-200 shadow-sm mt-4">
               <Image src="/images/designers/ako_zacat_figma2.png" width={1100} height={500} alt="Ako pracovať s ľavým bočným panelom" className="w-full h-auto md:h-[500px] object-cover" />
             </div>

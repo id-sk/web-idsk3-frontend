@@ -5,18 +5,16 @@ import TextareaCustom from '@/app/(home)/_components/inputs/textareaCustom';
 import {
   SectionBlock,
   H3,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabVarianty = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Varianty a stavy">
       <H3>1. Variant povinného a nepovinného viacriadkového textového poľa</H3>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[610px] px-4">
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-povinne"
             name="priklad-povinne"
@@ -27,7 +25,7 @@ const TabVarianty = () => (
           />
         </div>
 
-        <div className="w-full max-w-[610px] px-4">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-nepovinne"
             name="priklad-nepovinne"
@@ -37,12 +35,12 @@ const TabVarianty = () => (
             maxLength={1000}
           />
         </div>
-      </div>
+      </ExampleBlock>
 
       <H3>2. Variant chybového a neaktívneho viacriadkového textového poľa</H3>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[610px] px-4">
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-chyba"
             name="priklad-chyba"
@@ -56,7 +54,7 @@ const TabVarianty = () => (
           />
         </div>
 
-        <div className="w-full max-w-[610px] px-4">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-disabled"
             name="priklad-disabled"
@@ -67,12 +65,12 @@ const TabVarianty = () => (
             maxLength={1000}
           />
         </div>
-      </div>
+      </ExampleBlock>
 
       <H3>3. Varianty viacriadkového textového poľa s podnadpisom a placeholderom</H3>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[610px] px-4">
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-podnadpis"
             name="priklad-podnadpis"
@@ -84,7 +82,7 @@ const TabVarianty = () => (
           />
         </div>
 
-        <div className="w-full max-w-[610px] px-4">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-placeholder"
             name="priklad-placeholder"
@@ -95,12 +93,12 @@ const TabVarianty = () => (
             maxLength={1000}
           />
         </div>
-      </div>
+      </ExampleBlock>
 
       <H3>4. Variant viacriadkového textového poľa s popisným textom</H3>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[610px] px-4">
+      <ExampleBlock className="mt-4" innerClassName="flex flex-col items-center gap-6 max-w-none">
+        <div className="w-full max-w-[610px]">
           <TextareaCustom
             id="textarea-priklad-popis"
             name="priklad-popis"
@@ -111,7 +109,7 @@ const TabVarianty = () => (
             maxLength={1000}
           />
         </div>
-      </div>
+      </ExampleBlock>
     </SectionBlock>
   </div>
 );

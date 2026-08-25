@@ -9,25 +9,21 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie lišty spätnej väzby">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[800px] px-4">
-           <FeedbackBarCustom
-            question="Našli ste na tejto stránke to, čo ste hľadali?"
-            showReportButton
-            reportText="Oznámte chybu"
-            onReport={() => {
-            }}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[800px]">
+        <FeedbackBarCustom
+          question="Našli ste na tejto stránke to, čo ste hľadali?"
+          showReportButton
+          reportText="Oznámte chybu"
+          onReport={() => {
+          }}
+        />
+      </ExampleBlock>
 
       <Text className="mb-8">
         Komponent lišta spätnej väzby slúži primárne na získanie jednoduchej

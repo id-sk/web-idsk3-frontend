@@ -8,6 +8,7 @@ import {
   Text,
   Ul,
   Ol,
+  StepItem,
   ExtLink,
   CodeBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
@@ -154,9 +155,7 @@ const TabImplementacia = () => {
           <H3>2. Pokročilá integrácia (NPM + SCSS + JavaScript)</H3>
 
           <Ol>
-            <li>
-              <strong className="mb-2 mt-5 block">Nainštalujte balík</strong>
-
+            <StepItem title="Nainštalujte balík">
               Pre inštaláciu cez NPM spustite:
 
               <CodeBlock
@@ -166,22 +165,14 @@ const TabImplementacia = () => {
                   npm i @id-sk/frontend@3.0.0-beta.0-hotfix
                 `}
               />
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="mb-2 block">
-                Pridajte Nunjucks alebo HTML
-              </strong>
-
+            <StepItem title="Pridajte Nunjucks alebo HTML" className="mt-6">
               Do pripraveného súboru vložte markup komponentu. Skontrolujte, že
               odkazy v zozname smerujú na existujúce formulárové polia.
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="mb-2 block font-semibold">
-                Importujte štýly
-              </strong>
-
+            <StepItem title="Importujte štýly" className="mt-6">
               Pre import individuálneho komponentu pridajte do Sass súboru:
 
               <CodeBlock
@@ -190,13 +181,9 @@ const TabImplementacia = () => {
                   @import "node_modules/@id-sk/frontend/idsk/components/error-summary/error-summary";
                 `}
               />
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="mb-2 block font-semibold">
-                Importujte JavaScript
-              </strong>
-
+            <StepItem title="Importujte JavaScript" className="mt-6">
               Komponent používa atribút{' '}
               <code className={codeClass}>
                 data-module=&quot;govuk-error-summary&quot;
@@ -214,7 +201,7 @@ const TabImplementacia = () => {
                   createAll(ErrorSummary);
                 `}
               />
-            </li>
+            </StepItem>
           </Ol>
         </div>
       </SectionBlock>

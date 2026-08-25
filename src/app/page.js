@@ -16,7 +16,6 @@ const ArrowRightIcon = ({ className = '' }) => (
 export default function HomePage() {
   return (
     <>
-      {/* Úvodná predstavenie dizajnového systému */}
       <main>
         <section className="w-full bg-white pt-16 pb-10">
           <div className="page-container flex max-md:flex-col gap-5">
@@ -38,7 +37,7 @@ export default function HomePage() {
                   variant="primary"
                   status="basic"
                   size="large"
-                  aria-label="Figma IDSK 3.1.0 (otvorí sa v novom okne)"
+                  aria-label="Figma IDSK 3.1.0 (otvorí sa na novej karte)"
                   iconRight={
                     <svg 
                       className="w-5 h-5 shrink-0" 
@@ -109,7 +108,7 @@ export default function HomePage() {
                     variant="secondary"
                     status="basic"
                     size="large"
-                    aria-label="Poslať zámer (otvorí sa v novom okne)"
+                    aria-label="Poslať zámer (otvorí sa na novej karte)"
                     iconRight={
                       <svg 
                         xmlns="http://www.w3.org/2000/svg" 

@@ -27,7 +27,7 @@ export default function TabNavodPreDizajnerov() {
       <section className="flex flex-col gap-4">
         <H3>Prehliadanie knižnice</H3>
         <Ul>
-          <li>V ľavom navigačnom paneli nájdete sekciu <strong>Pages (Stránky)</strong>. Obsahuje skupiny komponentov a štýlov.</li>
+          <li>V ľavom navigačnom paneli nájdete sekciu <strong><span lang="en">Pages</span> (Stránky)</strong>. Obsahuje skupiny komponentov a štýlov.</li>
           <li>Každá stránka združuje prvky podľa typu alebo účelu, napríklad tlačidlá, formuláre, ikony a pod.</li>
           <li>Medzi stránkami sa prepínajte kliknutím.</li>
           <li>Knižnicu môžete prehliadať aj posúvaním zvislého posuvníka v ľavom navigačnom paneli.</li>
@@ -57,7 +57,7 @@ export default function TabNavodPreDizajnerov() {
         <H3>Posúvanie po plátne</H3>
         <Ul>
           <li>Po plátne sa posúvajte kolieskom myši alebo touchpadom.</li>
-          <li>Približovanie a vzďaľovanie ovládajte kombináciou <strong>Ctr + koliesko myši</strong> (Windows) alebo <strong>Cmd + trackpad</strong> (MacOS).</li>
+          <li>Približovanie a vzďaľovanie ovládajte kombináciou <strong>Ctrl + koliesko myši</strong> (Windows) alebo <strong>Cmd + <span lang="en">trackpad</span></strong> (MacOS).</li>
           <li>Na horizontálne posúvanie použite kombináciu <strong>Shift + koliesko myši</strong>.</li>
         </Ul>
       </section>
@@ -65,7 +65,7 @@ export default function TabNavodPreDizajnerov() {
       <section className="flex flex-col gap-4">
         <H3>Vyhľadávanie komponentov</H3>
         <Ul>
-          <li>Na ľavej strane, pod zoznamom stránok (Pages), nájdete vyhľadávacie pole. Pomocou skratky <strong>Ctrl/Cmd + F</strong> vyhľadáte komponent podľa názvu alebo časti názvu.</li>
+          <li>Na ľavej strane, pod zoznamom stránok (<span lang="en">Pages</span>), nájdete vyhľadávacie pole. Pomocou skratky <strong>Ctrl/Cmd + F</strong> vyhľadáte komponent podľa názvu alebo časti názvu.</li>
           <li>Vyhľadávanie prehľadá všetky stránky a zvýrazní nájdené komponenty.</li>
           <li>Vo Figme majú komponenty fialové ohraničenie a fialovú ikonu. Komponent je hlavná verzia prvku, z nej vznikajú ďalšie prvky, tzv. inštancie.</li>
         </Ul>

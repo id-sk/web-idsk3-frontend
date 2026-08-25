@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-fileupload/TabPristupnost';
 import TabImplementacia from './_tabs-fileupload/TabImplementacia';
 
 export const metadata = {
-  title: 'Pole na nahratie súboru | Komponenty IDSK',
+  title: 'Pole na nahratie súboru | IDSK',
   description:
     'Dokumentácia komponentu Pole na nahratie súboru, jeho použitie, varianty, prístupnosť a implementácia.',
 };

@@ -16,11 +16,11 @@ export default function MetodikaPage() {
       </h1>
       
       <p className="text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black mb-6">
-        Elektronické služby štátu by mali byť pripravované metodikou <span lang="en">user-centered dizajnu (UCD)</span>, aby sa zabezpečila zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa – občana.
+        Elektronické služby štátu by mali byť pripravované metodikou <span lang="en">user-centered design (UCD)</span>, aby sa zabezpečila zmysluplnosť a použiteľnosť služieb zo strany koncového používateľa – občana.
       </p>
       
       <Text className="!mb-4">
-        Na dodržanie user-centered prístupu je nutné rozdeliť prípravnú fázu projektu do 4 fáz:
+        Na dodržanie <span lang="en">“user-centered”</span> prístupu je nutné rozdeliť prípravnú fázu projektu do 4 fáz:
       </Text>
       
       <Ol>
@@ -72,7 +72,7 @@ export default function MetodikaPage() {
 
       <SectionBlock titleString="Forma výstupov plynúcich z metodiky UCD">
         <Text>
-          V nasledujúcej časti uvádzame odporúčanú formu výstupov, ktoré sú dodávané počas realizácie projektu so zaimplementovanou metodikou User-centered dizajnu.
+          V nasledujúcej časti uvádzame odporúčanú formu výstupov, ktoré sú dodávané počas realizácie projektu so zaimplementovanou metodikou <span lang="en">“user-centered”</span> dizajnu.
         </Text>
 
         <H3>Report zákazníckeho výskumu</H3>
@@ -82,7 +82,7 @@ export default function MetodikaPage() {
         <Ul>
           <li>Metóda výskumu poznatkov,</li>
           <li>Kľúčové požiadavky zákazníkov na prínos systému,</li>
-          <li>Zákaznícke cesty (customer journeys) (nie je nutné),</li>
+          <li>Zákaznícke cesty (<span lang="en">customer journeys</span>) (nie je nutné),</li>
           <li>Zákaznícke persóny (nie je nutné).</li>
         </Ul>
 
@@ -91,7 +91,7 @@ export default function MetodikaPage() {
         <Ul>
           <li>Použitú metodológiu,</li>
           <li>Scenár výskumu,</li>
-          <li>Screener – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
+          <li><span lang="en">Screener</span> – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
           <li>Priebeh oslovovania a naplnenie screeneru,</li>
           <li>Dátum vykonania výskumu.</li>
         </Ul>
@@ -105,7 +105,7 @@ export default function MetodikaPage() {
           <li>Konkrétnych návrhov riešení požiadavky v používateľskom rozhraní a ich prioritizácie.</li>
         </Ul>
 
-        <H4>Zákaznícke cesty (customer journeys)</H4>
+        <H4>Zákaznícke cesty (<span lang="en">customer journeys</span>)</H4>
         <Text className="!mb-2">
           Ide o diagram, ktorý mapuje spôsob používania systému skutočnými zákazníkmi na základe ich doterajších skúseností. Diagram spravidla obsahuje na osi X fázy procesu a na osi Y nasledujúce poznatky pre každú fázu:
         </Text>
@@ -126,9 +126,9 @@ export default function MetodikaPage() {
           Sú predstaviteľmi cieľových skupín používateľského rozhrania a agregujú typické správanie skupiny používateľov. Pre každú cieľovú skupinu by mali byť vytvorené 1-3 persóny.
         </Text>
 
-        <H3>Mapa stránky a/alebo “user flow” (cesty zákazníka)</H3>
+        <H3>Mapa stránky a/alebo <span lang="en">“user flow”</span> (cesty zákazníka)</H3>
         <Text>
-          Oba prístupy (mapa stránky aj “user flow”) môžu byť využité spolu alebo samostatne. Mapa stránky sa používa na popis stromových štruktúr aplikácií alebo webových sídiel. “User flow” (cesty zákazníka) opisuje lineárnu štruktúru aplikácie alebo webového sídla.
+          Oba prístupy (mapa stránky aj <span lang="en">“user flow”</span>) môžu byť využité spolu alebo samostatne. Mapa stránky sa používa na popis stromových štruktúr aplikácií alebo webových sídiel. <span lang="en">“User flow”</span> (cesty zákazníka) opisuje lineárnu štruktúru aplikácie alebo webového sídla.
         </Text>
 
         <H3>Prototyp</H3>
@@ -143,8 +143,8 @@ export default function MetodikaPage() {
         <Ul>
           <li>Sprioritizovaný zoznam identifikovaných problémov použiteľnosti podľa frekvencie a závažnosti,</li>
           <li>scenár testovania,</li>
-          <li>screener – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
-          <li>priebeh oslovovania a naplnenie screeneru,</li>
+          <li><span lang="en">Screener</span> – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
+          <li>priebeh oslovovania a naplnenie <span lang="en">screener</span>,</li>
           <li>dátum vykonania výskumu,</li>
           <li>popis metodiky testovania.</li>
         </Ul>
@@ -165,7 +165,7 @@ export default function MetodikaPage() {
           </li>
           <li>výsledok merania SUS skóre,</li>
           <li>scenár testovania,</li>
-          <li>screener – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
+          <li><span lang="en">Screener</span> – zoznam špecifických kľúčových charakteristík oslovených používateľov pre daný výskum,</li>
           <li>priebeh oslovovania a naplnenie screeneru,</li>
           <li>dátum vykonania výskumu,</li>
           <li>popis metodiky testovania.</li>

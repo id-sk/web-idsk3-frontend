@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-breadcrumbs/TabPristupnost';
 import TabImplementacia from './_tabs-breadcrumbs/TabImplementacia';
 
 export const metadata = {
-  title: 'Omrvinková navigácia | Komponenty IDSK',
+  title: 'Omrvinková navigácia | IDSK',
   description:
     'Dokumentácia komponentu Omrvinková navigácia (Breadcrumbs), jeho použitie, varianty, prístupnosť a implementácia.',
 };

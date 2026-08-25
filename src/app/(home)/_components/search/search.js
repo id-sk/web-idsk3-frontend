@@ -152,7 +152,6 @@ const Search = ({ pageDetails = [] }) => {
       <div
         className="
           relative flex w-full items-stretch rounded-[5px] border-2 border-[#0b4199] bg-white
-          transition-all duration-100
           hover:ring-[4px] hover:ring-[#757575]
           focus-within:outline focus-within:outline-[3px] focus-within:outline-[#d96e00] focus-within:outline-offset-2
         "

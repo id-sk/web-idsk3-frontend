@@ -45,6 +45,26 @@
 @tailwind utilities;
 
 /* ==========================================================================
+   GLOBÁLNY FOCUS – zámerne MIMO @layer, aby vyhral nad nevrstveným IDSK CSS
+   ========================================================================== */
+
+  :where(
+    .focusable, .idsk-focusable, a, button, input, select, textarea,
+    summary, [tabindex]:not([tabindex="-1"])
+  ):focus {
+    outline: none;
+  }
+
+  :where(
+    .focusable, .idsk-focusable, a, button, input, select, textarea,
+    summary, [tabindex]:not([tabindex="-1"])
+  ):focus-visible {
+    outline: 3px solid var(--app-focus-color);
+    outline-offset: 2px;
+    border-radius: 0.25rem;
+  }
+
+/* ==========================================================================
    4. BASE VRSTVA
    ========================================================================== */
 
@@ -223,26 +243,6 @@
      Globálny prístupný focus
      ======================================================================== */
 
-  :where(
-    .focusable,
-    .idsk-focusable,
-    a,
-    button,
-    input,
-    select,
-    textarea,
-    summary,
-    [tabindex]:not([tabindex="-1"])
-  ):focus-visible {
-    outline: 3px solid var(--app-focus-color);
-    outline-offset: 2px;
-    border-radius: 0.25rem;
-    z-index: 10;
-  }
-
-  /*
-   * V režime Windows High Contrast použije systémovú focus farbu.
-   */
   @media (forced-colors: active) {
     :where(
       .focusable,
@@ -254,9 +254,30 @@
       textarea,
       summary,
       [tabindex]:not([tabindex="-1"])
-    ):focus-visible {
-      outline-color: Highlight;
+    ):focus {
+      outline: none;
     }
+
+    :where(
+      .focusable,
+      .idsk-focusable,
+      a,
+      button,
+      input,
+      select,
+      textarea,
+      summary,
+      [tabindex]:not([tabindex="-1"])
+    ):focus-visible {
+      outline: 3px solid var(--app-focus-color) !important;
+      outline-offset: 2px !important;
+      border-radius: 0.25rem;
+      z-index: 10;
+    }
+  }
+  main:focus {
+    outline: none !important;
+    box-shadow: none !important;
   }
 
   /* ========================================================================

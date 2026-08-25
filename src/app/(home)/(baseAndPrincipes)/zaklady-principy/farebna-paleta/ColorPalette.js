@@ -3,8 +3,6 @@
 import React from 'react';
 import ColorGrid from '@/app/(home)/_components/palette/ColorGrid';
 import { primaryColors, secondaryColors, neutralColors, extendedPrimaryColors, alertColors, textColors, slovakColors } from "@/constants/data";
-
-// Importujeme naše spoločné stavebné bloky
 import { Text, SectionBlock } from '@/app/(home)/_components/content-blocks/ContentBlocks';
 
 const ColorPalette = () => {

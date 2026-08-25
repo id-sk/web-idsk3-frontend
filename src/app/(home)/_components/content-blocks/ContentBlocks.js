@@ -121,7 +121,6 @@ export const ExtLink = ({
     rel="noopener noreferrer"
     className={`
       text-[#0B4199] underline underline-offset-3
-      transition-all duration-100
       hover:text-[#126DFF] hover:decoration-[length:3px]
       ${className}
     `}
@@ -129,7 +128,7 @@ export const ExtLink = ({
     {children}
     <span className="sr-only">
       {' '}
-      (otvorí sa v novom okne)
+      (otvorí sa na novej karte)
     </span>
   </a>
 );
@@ -209,4 +208,11 @@ export const ExampleBlock = ({
       {children}
     </div>
   </div>
+);
+
+export const StepItem = ({ title, children, className = '' }) => (
+  <li className={className}>
+    <H4>{title}</H4>
+    {children}
+  </li>
 );

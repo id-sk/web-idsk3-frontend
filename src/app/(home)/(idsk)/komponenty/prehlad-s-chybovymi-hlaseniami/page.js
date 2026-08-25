@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-errorsummary/TabPristupnost';
 import TabImplementacia from './_tabs-errorsummary/TabImplementacia';
 
 export const metadata = {
-  title: 'Prehľad s chybovými hláseniami | Komponenty IDSK',
+  title: 'Prehľad s chybovými hláseniami | IDSK',
   description:
     'Dokumentácia komponentu Prehľad s chybovými hláseniami, jeho použitie, varianty, prístupnosť a implementácia.',
 };

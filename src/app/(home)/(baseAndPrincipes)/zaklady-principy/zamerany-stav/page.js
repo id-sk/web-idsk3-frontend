@@ -26,7 +26,7 @@ const FocusPage = () => {
       
       <header>
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
-          Zameranie klávesnicou (Focus)
+          Zameranie klávesnicou (<span lang="en">Focus</span>)
         </h1>
       </header>
 

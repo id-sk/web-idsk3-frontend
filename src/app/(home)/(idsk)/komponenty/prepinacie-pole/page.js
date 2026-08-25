@@ -13,7 +13,7 @@ import TabPristupnost from './_tabs-radio/TabPristupnost';
 import TabImplementacia from './_tabs-radio/TabImplementacia';
 
 export const metadata = {
-  title: 'Prepínacie pole | Komponenty IDSK',
+  title: 'Prepínacie pole | IDSK',
   description:
     'Dokumentácia komponentu Prepínacie pole (Radio Button), jeho použitie, varianty, prístupnosť a implementácia.',
 };

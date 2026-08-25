@@ -8,10 +8,8 @@ import {
   SectionBlock,
   H3,
   Text,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabVarianty = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
@@ -23,22 +21,20 @@ const TabVarianty = () => (
         Aktuálna stránka nie je klikateľná a má byť označená ako aktuálna.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <BreadcrumbCustom
-            items={[
-              {
-                href: '/komponenty',
-                label: 'Komponenty',
-              },
-              {
-                label: 'Omrvinková navigácia',
-                current: true,
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <BreadcrumbCustom
+          items={[
+            {
+              href: '/komponenty',
+              label: 'Komponenty',
+            },
+            {
+              label: 'Omrvinková navigácia',
+              current: true,
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>2. Základný stav s ikonkou</H3>
 
@@ -46,23 +42,21 @@ const TabVarianty = () => (
         Základný stav s ikonkou namiesto Domov.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <BreadcrumbCustom
-            homeVariant="icon"
-            items={[
-              {
-                href: '/komponenty',
-                label: 'Komponenty',
-              },
-              {
-                label: 'Omrvinková navigácia',
-                current: true,
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <BreadcrumbCustom
+          homeVariant="icon"
+          items={[
+            {
+              href: '/komponenty',
+              label: 'Komponenty',
+            },
+            {
+              label: 'Omrvinková navigácia',
+              current: true,
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>3. Viacúrovňová omrvinková navigácia</H3>
 
@@ -71,30 +65,28 @@ const TabVarianty = () => (
         po konkrétnejšiu stránku. Nepoužívajte príliš dlhé názvy položiek.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <BreadcrumbCustom
-            items={[
-              {
-                href: '#',
-                label: 'Domov',
-              },
-              {
-                href: '#',
-                label: 'Komponenty',
-              },
-              {
-                href: '#',
-                label: 'Navigácia',
-              },
-              {
-                label: 'Omrvinková navigácia',
-                current: true,
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <BreadcrumbCustom
+          items={[
+            {
+              href: '#',
+              label: 'Domov',
+            },
+            {
+              href: '#',
+              label: 'Komponenty',
+            },
+            {
+              href: '#',
+              label: 'Navigácia',
+            },
+            {
+              label: 'Omrvinková navigácia',
+              current: true,
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>4. Dlhšia navigácia</H3>
 
@@ -103,34 +95,32 @@ const TabVarianty = () => (
         bez straty čitateľnosti a bez prekrytia položiek.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <BreadcrumbCustom
-            items={[
-              {
-                href: '#',
-                label: 'Úvod',
-              },
-              {
-                href: '#',
-                label: 'Služby',
-              },
-              {
-                href: '#',
-                label: 'Podnikanie',
-              },
-              {
-                href: '#',
-                label: 'Registre',
-              },
-              {
-                label: 'Omrvinková navigácia',
-                current: true,
-              },
-            ]}
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <BreadcrumbCustom
+          items={[
+            {
+              href: '#',
+              label: 'Úvod',
+            },
+            {
+              href: '#',
+              label: 'Služby',
+            },
+            {
+              href: '#',
+              label: 'Podnikanie',
+            },
+            {
+              href: '#',
+              label: 'Registre',
+            },
+            {
+              label: 'Omrvinková navigácia',
+              current: true,
+            },
+          ]}
+        />
+      </ExampleBlock>
 
       <H3>5. Mobilné zobrazenie</H3>
 
@@ -140,27 +130,25 @@ const TabVarianty = () => (
         kontext a mal dostupnú cestu na vyššiu úroveň.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[360px] px-4">
-          <BreadcrumbCustom
-            items={[
-              {
-                href: '/',
-                label: 'Úvod',
-              },
-              {
-                href: '/komponenty',
-                label: 'Komponenty',
-              },
-              {
-                label: 'Omrvinková navigácia',
-                current: true,
-              },
-            ]}
-            collapseOnMobile
-          />
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[360px]">
+        <BreadcrumbCustom
+          items={[
+            {
+              href: '/',
+              label: 'Úvod',
+            },
+            {
+              href: '/komponenty',
+              label: 'Komponenty',
+            },
+            {
+              label: 'Omrvinková navigácia',
+              current: true,
+            },
+          ]}
+          collapseOnMobile
+        />
+      </ExampleBlock>
     </SectionBlock>
   </div>
 );

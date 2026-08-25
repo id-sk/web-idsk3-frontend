@@ -10,10 +10,8 @@ import {
   Text,
   Ul,
   H3,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex justify-center border-2 border-dashed border-[#757575] rounded-[10px] mb-8 transition-all duration-300';
 
 const TabPouzitie = () => {
   const mockSidebarData = [];
@@ -21,11 +19,9 @@ const TabPouzitie = () => {
   return (
     <div className="animate-fade-in text-black w-full min-w-0">
       <SectionBlock titleString="Použitie hlavičky">
-        <div className={exampleWrapperClass}>
-          <div className="w-full max-w-[800px] py-7 my-6 px-4 relative min-h-[250px] h-auto">
-            <Navbar sidebarData={mockSidebarData} />
-          </div>
-        </div>
+        <ExampleBlock innerClassName="max-w-[800px]">
+          <Navbar sidebarData={mockSidebarData} />
+        </ExampleBlock>
 
         <Text className="mb-8">
           Hlavička pomáha používateľovi navigovať sa k obsahu webovej aplikácie.

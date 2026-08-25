@@ -5,16 +5,12 @@ import React from 'react';
 import InformationBanner from '@/app/(home)/_components/information-banner/informationBannerCustom';
 import ButtonCustom from '@/app/(home)/_components/button/buttonCustom';
 
-
-
 import {
   SectionBlock,
   H3,
   Text,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabVarianty = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
@@ -38,22 +34,20 @@ const TabVarianty = () => (
         alebo doplnkovej informácie.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Príklad komponentu informačná lišta"
-            ariaLabel="Oznam"
-            type="banner"
-            variant="information"
-            hideCloseButton={true}
-          >
-            <p>
-              Pre rýchlejšie vybavenie žiadosti odporúčame priložiť doklad o
-              ukončení štúdia.
-            </p>
-          </InformationBanner>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Príklad komponentu informačná lišta"
+          ariaLabel="Oznam"
+          type="banner"
+          variant="information"
+          hideCloseButton={true}
+        >
+          <p>
+            Pre rýchlejšie vybavenie žiadosti odporúčame priložiť doklad o
+            ukončení štúdia.
+          </p>
+        </InformationBanner>
+      </ExampleBlock>
 
       <H3>2. Varovný typ</H3>
 
@@ -62,22 +56,20 @@ const TabVarianty = () => (
         informáciách, ktoré môžu používateľovi brániť v dokončení akcie.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Príklad komponentu varovná lišta"
-            ariaLabel="Chyba"
-            type="banner"
-            variant="alert"
-            hideCloseButton={true}
-          >
-            <p>
-              Žiadosť nie je možné odoslať, pretože chýbajú povinné údaje.
-              Skontrolujte formulár a doplňte chýbajúce informácie.
-            </p>
-          </InformationBanner>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Príklad komponentu varovná lišta"
+          ariaLabel="Chyba"
+          type="banner"
+          variant="alert"
+          hideCloseButton={true}
+        >
+          <p>
+            Žiadosť nie je možné odoslať, pretože chýbajú povinné údaje.
+            Skontrolujte formulár a doplňte chýbajúce informácie.
+          </p>
+        </InformationBanner>
+      </ExampleBlock>
 
       <H3>3. Upozorňovací typ</H3>
 
@@ -86,22 +78,20 @@ const TabVarianty = () => (
         kde informácia môže ovplyvniť výber alebo ďalší postup používateľa.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Príklad komponentu upozorňovacia lišta"
-            ariaLabel="Upozornenie"
-            type="banner"
-            variant="warning"
-            hideCloseButton={true}
-          >
-            <p>
-              Ak prílohy nenahráte v tejto žiadosti, bude potrebné ich doložiť
-              dodatočne elektronicky alebo osobne.
-            </p>
-          </InformationBanner>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Príklad komponentu upozorňovacia lišta"
+          ariaLabel="Upozornenie"
+          type="banner"
+          variant="warning"
+          hideCloseButton={true}
+        >
+          <p>
+            Ak prílohy nenahráte v tejto žiadosti, bude potrebné ich doložiť
+            dodatočne elektronicky alebo osobne.
+          </p>
+        </InformationBanner>
+      </ExampleBlock>
 
       <H3>4. Úspešný typ</H3>
 
@@ -110,21 +100,19 @@ const TabVarianty = () => (
         správnosť kroku.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Príklad komponentu úspešná lišta"
-            ariaLabel="Úspech"
-            type="banner"
-            variant="success"
-            hideCloseButton={true}
-          >
-            <p>
-              Formulár bol úspešne uložený. Vypĺňanie môžete dokončiť neskôr.
-            </p>
-          </InformationBanner>
-        </div>
-      </div>
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Príklad komponentu úspešná lišta"
+          ariaLabel="Úspech"
+          type="banner"
+          variant="success"
+          hideCloseButton={true}
+        >
+          <p>
+            Formulár bol úspešne uložený. Vypĺňanie môžete dokončiť neskôr.
+          </p>
+        </InformationBanner>
+      </ExampleBlock>
 
       <H3>5. Informačná lišta s tlačidlom</H3>
 
@@ -132,31 +120,29 @@ const TabVarianty = () => (
         Informačná lišta môže využívať aj tlačidlo ktoré umožní používateľovi vykonať požadovanú akciu.
       </Text>
 
-      <div className={exampleWrapperClass}>
-        <div className="flex flex-col gap-6 w-full max-w-[600px] px-4">
-          <InformationBanner
-            title="Dôležitá informácia"
-            ariaLabel="Dôležitá informácia"
-            type="banner"
-            variant="information"
-            hideCloseButton={true}
-            actionButton={
-            <ButtonCustom
-              href="/kontakt"
-              variant="tertiary"
-              status="basic"
-              size="medium"
-            >
-              Akcia
-            </ButtonCustom>
-            }
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <InformationBanner
+          title="Dôležitá informácia"
+          ariaLabel="Dôležitá informácia"
+          type="banner"
+          variant="information"
+          hideCloseButton={true}
+          actionButton={
+          <ButtonCustom
+            href="/kontakt"
+            variant="tertiary"
+            status="basic"
+            size="medium"
           >
-            <p>
-              Služba bude dočasne nedostupná v sobotu od 22:00 do 23:30.
-            </p>
-          </InformationBanner>
-        </div>
-      </div>
+            Akcia
+          </ButtonCustom>
+          }
+        >
+          <p>
+            Služba bude dočasne nedostupná v sobotu od 22:00 do 23:30.
+          </p>
+        </InformationBanner>
+      </ExampleBlock>
     </SectionBlock>
   </div>
 );

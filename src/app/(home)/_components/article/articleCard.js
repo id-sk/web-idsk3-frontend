@@ -3,22 +3,19 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { parseSkDate } from '@/utils/date';
 
 const cx = (...classes) => classes.filter(Boolean).join(' ');
 
 const formatDisplayDate = (date) => {
   if (!date) return null;
 
-  if (typeof date === 'string') {
-    return date;
-  }
-
   try {
     return new Intl.DateTimeFormat('sk-SK', {
       day: 'numeric',
       month: 'numeric',
       year: 'numeric',
-    }).format(new Date(date));
+    }).format(date);
   } catch {
     return String(date);
   }
@@ -28,15 +25,16 @@ const formatMachineDate = (date) => {
   if (!date) return undefined;
 
   try {
-    return new Date(date).toISOString().split('T')[0];
+    return date.toISOString().split('T')[0];
   } catch {
     return undefined;
   }
 };
 
 const CardMeta = ({ date, tags = [] }) => {
-  const displayDate = formatDisplayDate(date);
-  const machineDate = formatMachineDate(date);
+  const parsedDate = parseSkDate(date);
+  const displayDate = formatDisplayDate(parsedDate);
+  const machineDate = formatMachineDate(parsedDate);
   const hasTags = tags.length > 0;
 
   if (!displayDate && !hasTags) return null;
@@ -98,9 +96,8 @@ const ArticleCard = ({
     <article
         className={cx(
           'relative flex h-full w-full overflow-hidden rounded-[10px] border-2 border-[#BDBDBD] bg-white tracking-wide',
-          'transition-all duration-200',
           'group-hover:ring-[4px] group-hover:ring-[#757575]',
-          'group-focus:outline group-focus:outline-[3px] group-focus:outline-[#D96E00] group-focus:outline-offset-2',
+          'group-focus-visible:outline group-focus-visible:outline-[3px] group-focus-visible:outline-[#D96E00] group-focus-visible:outline-offset-2',
           isHorizontal
             ? 'flex-col md:flex-row'
             : 'flex-col',
@@ -177,6 +174,7 @@ const ArticleCard = ({
       href={href}
       className={cx(
         'group block h-full max-w-[1060px] rounded-[10px] outline-none',
+        'focus-visible:outline-none'
       )}
     >
       {cardContent}

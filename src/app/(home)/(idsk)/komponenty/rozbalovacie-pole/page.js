@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-select/TabPristupnost';
 import TabImplementacia from './_tabs-select/TabImplementacia';
 
 export const metadata = {
-  title: 'Rozbaľovacie pole | Komponenty IDSK',
+  title: 'Rozbaľovacie pole | IDSK',
   description: 'Dokumentácia komponentu Rozbaľovacie pole (Select), jeho varianty, prístupnosť a implementácia.',
 };
 

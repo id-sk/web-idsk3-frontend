@@ -23,7 +23,7 @@ const NotificationButtonCustom = ({
       className={cx(
         'relative inline-flex min-w-[41px] cursor-pointer items-center justify-center rounded-[5px] px-3 py-2 text-[#0B4199]',
         'hover:ring-[4px] hover:ring-[#757575]',
-        'focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2',
+        'focus:outline focus:outline-[3px] focus:outline-[#D96E00] focus:outline-offset-2 focus:z-10',
         'active:bg-[#EFF5FE]',
         className
       )}

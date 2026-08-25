@@ -8,6 +8,7 @@ import {
   Text,
   Ul,
   Ol,
+  StepItem,
   ExtLink,
   CodeBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
@@ -57,7 +58,7 @@ const TabImplementacia = () => {
       </SectionBlock>
 
       <SectionBlock titleString="Možnosti implementácie">
-        <div className="mt-4 mb-8">
+        <div className="mt-4">
           <H3>1. Statická HTML implementácia (HTML + minifikované súbory)</H3>
 
           <Text className="mb-4">
@@ -82,12 +83,8 @@ const TabImplementacia = () => {
             <li>použiť dynamické komponenty z Nunjucks šablón.</li>
           </Ul>
 
-          <div className="space-y-8 mt-8">
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Stiahnite a zahrňte zdroje
-              </strong>
-
+          <Ol className="mt-8">
+            <StepItem title="Stiahnite a zahrňte zdroje">
               <Text className="mb-4">
                 Stiahnite si najnovšie kompilované a minifikované verzie šablón
                 štýlov, JavaScript a assetov. Skopírujte celý{' '}
@@ -109,13 +106,9 @@ const TabImplementacia = () => {
                     ├── frontend.min.css.map
                     └── frontend.min.js.map`}
               />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Prepojte štýly a skripty
-              </strong>
-
+            <StepItem title="Prepojte štýly a skripty" className="mt-6">
               <Text className="mb-4">
                 Do časti <code className={codeClass}>head</code> vložte
                 minifikované CSS. Na záver{' '}
@@ -141,13 +134,9 @@ const TabImplementacia = () => {
                                 </body>
                             </html>`}
                         />
-            </div>
+            </StepItem>
 
-            <div>
-              <strong className="block mb-2 text-sm sm:text-base md:text-lg">
-                ➜ Skopírujte HTML kód
-              </strong>
-
+            <StepItem title="Skopírujte HTML kód" className="mt-6">
               <Text className="mb-4">
                 Zo stránky dokumentácie stiahnite HTML kód komponentu{' '}
                 <ExtLink href="https://komponenty.idsk3.gov.sk/components/footer">
@@ -205,16 +194,15 @@ const TabImplementacia = () => {
                             </div>
                         </footer>`}
                 />
-            </div>
-          </div>
+            </StepItem>
+          </Ol>
         </div>
 
-        <div className="mt-12 mb-8">
+        <div>
           <H3>2. Pokročilá integrácia (NPM + SCSS + JS)</H3>
 
           <Ol>
-            <li>
-              <strong className="block mb-2">Nainštalujte balík</strong>
+            <StepItem title="Nainštalujte balík">
               Pre inštaláciu cez NPM spustite:
 
               <CodeBlock
@@ -222,16 +210,14 @@ const TabImplementacia = () => {
                 codeString={`npm install nunjucks --save
                             npm i @id-sk/frontend@3.0.0-beta.0-hotfix`}
               />
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="block mb-2">Pridajte Nunjucks alebo HTML</strong>
+            <StepItem title="Pridajte Nunjucks alebo HTML" className="mt-6">
               Do pripraveného súboru vložte markup komponentu alebo použite
               zodpovedajúce Nunjucks makro, ak ho máte v projekte dostupné.
-            </li>
+            </StepItem>
 
-            <li className="mt-6">
-              <strong className="font-semibold block mb-2">Importujte štýly</strong>
+            <StepItem title="Importujte štýly" className="mt-6">
               Pre import individuálneho ID-SK komponentu päta do svojho Sass
               súboru pridajte:
 
@@ -239,7 +225,7 @@ const TabImplementacia = () => {
                 language="scss"
                 codeString={`@import "node_modules/@id-sk/frontend/idsk/components/footer/footer";`}
               />
-            </li>
+            </StepItem>
           </Ol>
         </div>
       </SectionBlock>

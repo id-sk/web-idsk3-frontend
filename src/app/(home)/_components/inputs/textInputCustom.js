@@ -62,7 +62,6 @@ const TextInputCustom = forwardRef(
       externalDescribedBy,
       subtitleId,
       descriptionId,
-      hasError ? errorId : undefined
     );
 
     const sizeClasses = {
@@ -94,7 +93,7 @@ const TextInputCustom = forwardRef(
                   *
                 </span>
               ) : (
-                <span aria-hidden="true" className="ml-1 text-[16px] font-normal leading-6 text-[#757575]">
+                <span className="ml-1 text-[16px] font-normal leading-6 text-[#757575]">
                   {optionalText}
                 </span>
               )}
@@ -129,6 +128,7 @@ const TextInputCustom = forwardRef(
             placeholder={placeholder}
             aria-invalid={hasError ? 'true' : undefined}
             aria-describedby={describedBy}
+            aria-errormessage={hasError ? errorId : undefined}
             className={cx(
               'w-full rounded-[5px] border-2 bg-white text-[#212121] outline-none transition-colors',
               sizeClasses[inputSize] || sizeClasses.large,
@@ -165,7 +165,6 @@ const TextInputCustom = forwardRef(
               </span>
             )}
 
-            {/* Chybová hláška správne neobsahuje role="alert" */}
             {hasError && errorMsg && (
               <span
                 id={errorId}

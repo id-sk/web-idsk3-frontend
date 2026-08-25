@@ -88,7 +88,7 @@ export const Signpost = ({
       )}
 
       {isExternal && (
-        <span className="sr-only"> Otvorí sa v novom okne.</span>
+        <span className="sr-only"> Otvorí sa na novej karte.</span>
       )}
     </>
   );

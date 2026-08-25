@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Spracúvanie súborov cookies | IDSK',
+  title: 'Spracovanie súborov cookies | IDSK',
   description: 'Informácie pre dotknutú osobu pri získaní osobných údajov a o spracúvaní súborov cookies na webe idsk.gov.sk.',
 };
 
@@ -13,7 +13,7 @@ export default function SuboryCookies() {
       <div className="mx-auto flex w-full max-w-[1120px] flex-col px-4 py-8 sm:px-8 min-[1160px]:px-4">
         
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-black text-black leading-tight md:leading-[55px]">
-          Spracúvanie súborov cookies na webovej stránke idsk.gov.sk
+          Spracúvanie súborov <span lang="en">cookies</span> na webovej stránke idsk.gov.sk
         </h1>
         
         <p className="mt-8 mb-4 text-lg sm:text-xl font-bold tracking-wide leading-tight sm:leading-8 text-black">
@@ -34,19 +34,19 @@ export default function SuboryCookies() {
         </SectionBlock>
 
         <SectionBlock titleString="3. Názov spracúvania">
-          <Text>Spracúvanie cookies na webovej stránke <ExtLink href="https://idsk.gov.sk">idsk.gov.sk</ExtLink>.</Text>
+          <Text>Spracúvanie <span lang="en">cookies</span> na webovej stránke <ExtLink href="https://idsk.gov.sk">idsk.gov.sk</ExtLink>.</Text>
         </SectionBlock>
 
         <SectionBlock titleString="4. Čo sú to cookies?">
           <Text>Aby sme Vám mohli poskytnúť prístup k tejto webovej stránke a k službám prispôsobeným Vašim potrebám, potrebujeme poznať a uchovávať informácie o tom, akým spôsobom používate túto webovú stránku.</Text>
-          <Text>To dosiahneme pomocou malých textových súborov, tzv. cookies...</Text>
-          <Text>MIRRI SR aktuálne spracúva iba vlastné cookies, nie cookies tretích strán.</Text>
+          <Text>To dosiahneme pomocou malých textových súborov, tzv. <span lang="en">cookies</span>...</Text>
+          <Text>MIRRI SR aktuálne spracúva iba vlastné <span lang="en">cookies</span>, nie <span lang="en">cookies</span> tretích strán.</Text>
         </SectionBlock>
 
         <SectionBlock titleString="5. Rozsah spracúvaných osobných údajov">
           <Text>
-            Z pohľadu GDPR sú niektoré cookies zároveň považované za osobné údaje...
-            <strong className="block mt-2">Ministerstvo aktuálne spracúva len nevyhnutné cookies.</strong>
+            Z pohľadu GDPR sú niektoré <span lang="en">cookies</span> zároveň považované za osobné údaje...
+            <strong className="block mt-2">Ministerstvo aktuálne spracúva len nevyhnutné <span lang="en">cookies</span>.</strong>
           </Text>
           <InformationBanner
               title="Ilustračný príklad spracúvania cookies"
@@ -55,7 +55,7 @@ export default function SuboryCookies() {
               hideCloseButton={true}
           >
             <ul className="mt-4 space-y-2 text-sm sm:text-base tracking-wide text-black">
-              <li>NÁZOV COOKIES: TS#</li>
+              <li>NÁZOV <span lang="en">COOKIES</span>: TS#</li>
               <li>DOBA UCHOVÁVANIA: Po skončení relácie sa neuchováva.</li>
               <li>ÚČEL SPRACÚVANIA: Zvyšuje bezpečnosť webovej stránky.</li>
             </ul>
@@ -72,12 +72,12 @@ export default function SuboryCookies() {
 
         <SectionBlock titleString="8. Účel spracúvania osobných údajov">
           <Text>Účelom spracúvania osobných údajov je poskytovať používateľom webovej stránky služby informačnej spoločnosti, zabezpečiť plynulú a bezpečnú prevádzku webovej stránky, zlepšovať používateľskú skúsenosť a zlepšovať spôsob, ako zacieliť na vhodné publikum.</Text>
-          <Text>Účelom spracúvania nevyhnutných cookies je umožniť používateľom to, aby mohli túto webovú stránku prezerať a využívať jej funkcie. Tieto súbory cookies neukladajú žiadne informácie o používateľoch, ktoré by sa dali použiť na marketing alebo na zapamätanie si, čo si používatelia na internete pozerali.</Text>
+          <Text>Účelom spracúvania nevyhnutných <span lang="en">cookies</span> je umožniť používateľom to, aby mohli túto webovú stránku prezerať a využívať jej funkcie. Tieto súbory cookies neukladajú žiadne informácie o používateľoch, ktoré by sa dali použiť na marketing alebo na zapamätanie si, čo si používatelia na internete pozerali.</Text>
         </SectionBlock>
 
         <SectionBlock titleString="9. Právny základ spracúvania">
           <Text>
-            Právnym základom pre spracúvanie nevyhnutných cookies je <strong>zákonná povinnosť prevádzkovateľa</strong> v zmysle čl. 6 ods. 1 písm. c) GDPR: <em>„spracúvanie je nevyhnutné na splnenie zákonnej povinnosti prevádzkovateľa“</em>. Zákonná povinnosť vyplýva ministerstvu zo zákona č. 452/2021 Z. z. o elektronických komunikáciách v znení neskorších predpisov.
+            Právnym základom pre spracúvanie nevyhnutných <span lang="en">cookies</span> je <strong>zákonná povinnosť prevádzkovateľa</strong> v zmysle čl. 6 ods. 1 písm. c) GDPR: <em>„spracúvanie je nevyhnutné na splnenie zákonnej povinnosti prevádzkovateľa“</em>. Zákonná povinnosť vyplýva ministerstvu zo zákona č. 452/2021 Z. z. o elektronických komunikáciách v znení neskorších predpisov.
           </Text>
         </SectionBlock>
 
@@ -94,7 +94,7 @@ export default function SuboryCookies() {
         </SectionBlock>
 
         <SectionBlock titleString="13. Doba uchovávania osobných údajov">
-          <Text>Cookies sú ukladané od momentu získania do momentu, keď používateľ ukončí reláciu a zavrie webovú stránku. Všetky cookies sa po skončení relácie trvalo odstránia.</Text>
+          <Text><span lang="en">Cookies</span> sú ukladané od momentu získania do momentu, keď používateľ ukončí reláciu a zavrie webovú stránku. Všetky <span lang="en">cookies</span> sa po skončení relácie trvalo odstránia.</Text>
         </SectionBlock>
 
         <SectionBlock titleString="14. Prenos osobných údajov do tretej krajiny">
@@ -133,7 +133,7 @@ export default function SuboryCookies() {
 
         <SectionBlock titleString="19. Odvolanie súhlasu so spracúvaním osobných údajov">
           <Text>
-            Dotknutá osoba je oprávnená kedykoľvek svoj súhlas so spracúvaním osobných údajov odvolať: Ak chcete odstrániť súbory cookies uložené vo Vašich zariadeniach, môžete to urobiť pomocou nastavení Vášho webového prehliadača. Obvykle je potrebné kliknúť na tlačidlo „Nastavenia“ a následne na tlačidlo „Súbory cookies a povolenia lokality“/„Ochrana súkromia a zabezpečenie“ a následne „Súbory cookies“.
+            Dotknutá osoba je oprávnená kedykoľvek svoj súhlas so spracúvaním osobných údajov odvolať: Ak chcete odstrániť súbory <span lang="en">cookies</span> uložené vo Vašich zariadeniach, môžete to urobiť pomocou nastavení Vášho webového prehliadača. Obvykle je potrebné kliknúť na tlačidlo „Nastavenia“ a následne na tlačidlo „Súbory <span lang="en">cookies</span> a povolenia lokality“/„Ochrana súkromia a zabezpečenie“ a následne „Súbory <span lang="en">cookies</span>“.
           </Text>
         </SectionBlock>
         

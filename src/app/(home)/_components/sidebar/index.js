@@ -10,10 +10,16 @@ const SidebarLink = ({ href, children }) => {
   const pathname = usePathname();
   const isActive = href === pathname;
 
+  const handleClick = (e) => {
+    if (e.currentTarget instanceof HTMLElement) {
+      e.currentTarget.blur();
+    }
+  }
+
   return (
     <li 
       className={cx(
-        'mb-[7px] rounded-lg transition-all duration-150',
+        'mb-[7px] rounded-lg transition-colors duration-150',
         'hover:ring-[4px] hover:ring-[#757575]',
         'focus-within:outline focus-within:outline-[3px] focus-within:outline-custom-orange focus-within:outline-offset-2',
         
@@ -24,6 +30,7 @@ const SidebarLink = ({ href, children }) => {
     >
       <Link
         href={href}
+        onClick={handleClick}
         aria-current={isActive ? 'page' : undefined}
         className={cx(
           'block py-2 pl-[16px] pr-3 tracking-wide select-none outline-none',

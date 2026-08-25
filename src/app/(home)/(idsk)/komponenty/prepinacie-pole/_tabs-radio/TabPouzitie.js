@@ -11,38 +11,34 @@ import {
   SectionBlock,
   Text,
   Ul,
+  ExampleBlock,
 } from '@/app/(home)/_components/content-blocks/ContentBlocks';
-
-const exampleWrapperClass =
-  'flex flex-col items-center gap-6 py-10 border-2 border-dashed border-[#757575] rounded-[10px] mb-8 mt-4';
 
 const TabPouzitie = () => (
   <div className="animate-fade-in text-black w-full min-w-0">
     <SectionBlock titleString="Použitie prepínacieho poľa">
-      <div className={exampleWrapperClass}>
-        <div className="w-full max-w-[600px] px-4">
-          <RadioButtonGroup
-            legend="Ako vás máme kontaktovať?"
-            name="kontakt"
-            hint="Vyberte len jednu možnosť"
-            mandatory={true}
-          >
-            <RadioButton value="email" label="E-mail" />
+      <ExampleBlock className="mt-4" innerClassName="max-w-[600px]">
+        <RadioButtonGroup
+          legend="Ako vás máme kontaktovať?"
+          name="kontakt"
+          hint="Vyberte len jednu možnosť"
+          mandatory={true}
+        >
+          <RadioButton value="email" label="E-mail" />
 
-            <RadioButton
-              value="sms"
-              label="Textová správa (SMS)"
-              disabled={true}
-            />
+          <RadioButton
+            value="sms"
+            label="Textová správa (SMS)"
+            disabled={true}
+          />
 
-            <RadioButton
-              value="telefon"
-              label="Telefón"
-              hint="Zavoláme vám v pracovných dňoch od 8:00 do 16:00."
-            />
-          </RadioButtonGroup>
-        </div>
-      </div>
+          <RadioButton
+            value="telefon"
+            label="Telefón"
+            hint="Zavoláme vám v pracovných dňoch od 8:00 do 16:00."
+          />
+        </RadioButtonGroup>
+      </ExampleBlock>
 
       <Text className="mb-8">
         Komponent prepínacie pole umožňuje používateľom vybrať iba jednu z

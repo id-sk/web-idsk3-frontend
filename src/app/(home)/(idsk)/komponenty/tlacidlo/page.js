@@ -8,7 +8,7 @@ import TabPristupnost from './_tabs-button/TabPristupnost';
 import TabImplementacia from './_tabs-button/TabImplementacia';
 
 export const metadata = {
-  title: 'Tlačidlo | Komponenty IDSK',
+  title: 'Tlačidlo | IDSK',
   description: 'Dokumentácia komponentu Tlačidlo (Button), jeho varianty, prístupnosť a implementácia.',
 };
 
