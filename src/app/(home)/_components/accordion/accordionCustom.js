@@ -34,11 +34,12 @@ export const CustomAccordion = ({
           aria-controls={contentId}
           onClick={() => setIsOpen(prev => !prev)} 
           className={`
-            relative flex flex-col w-full text-left bg-[#F5F5F5] px-6 py-4 outline-none
+            relative flex flex-col w-full text-left bg-[#F5F5F5] px-6 py-4
+            outline-none focus-visible:outline-none
             transition-shadow duration-200
             ${isOpen ? 'rounded-t-lg' : 'rounded-lg'}
             hover:shadow-[0_0_0_4px_#757575] hover:z-30
-            focus:ring-[3px] focus:ring-[#D96E00] focus:ring-offset-[2px] focus-visible:z-30
+            focus-visible:ring-[3px] focus-visible:ring-[#D96E00] focus-visible:ring-offset-[2px] focus-visible:z-30
             ${isDemoHover ? 'shadow-[0_0_0_4px_#757575] z-30' : ''}
             ${isDemoFocus ? 'ring-[3px] ring-[#D96E00] ring-offset-[2px] z-30' : ''}
           `}

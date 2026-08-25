@@ -85,7 +85,6 @@
    Custom Sidebar Components Fixes
    ========================================================================== */
 
-/* Bočné menu: odkazy bez podčiarknutia vo všetkých stavoch */
 .idsk-sidebar-nav a,
 .idsk-sidebar-nav a:link,
 .idsk-sidebar-nav a:visited,
@@ -101,8 +100,6 @@
     background-image: none !important;
 }
 
-/* Neutralizácia globálneho IDSK focusu na <a>,
-   keďže focus stav riešime cez focus-within na <li> */
 .idsk-sidebar-nav a,
 .idsk-sidebar-nav a:focus,
 .idsk-sidebar-nav a:focus-visible {

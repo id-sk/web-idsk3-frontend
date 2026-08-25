@@ -82,8 +82,9 @@ const ErrorSummaryCustom = forwardRef(
                         text-[#0B4199] underline decoration-[1px]
                         underline-offset-3 transition-colors duration-100
                         hover:text-[#126DFF] hover:decoration-[2px]
-                        hover:underline-offset-3 focus:text-[#126DFF] focus-visible:ring-[3px]
-                        focus-visible:ring-[#d96e00] focus-visible:ring-offset-2
+                        hover:underline-offset-3 focus:text-[#126DFF]
+                        outline-none focus-visible:outline-none
+                        focus-visible:ring-[3px] focus-visible:ring-[#d96e00] focus-visible:ring-offset-2
                       "
                       onClick={(event) => handleErrorClick(event, error)}
                     >
