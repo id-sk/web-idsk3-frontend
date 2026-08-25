@@ -77,7 +77,7 @@ const HeaderMenuItemCustom = ({
 const triggerClasses = cx(
   'relative flex h-12 cursor-pointer flex-col items-start bg-transparent p-0 text-left no-underline',
   'focus:outline-none',
-  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2',
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2 focus:z-10',
   className
 );
 
@@ -94,7 +94,7 @@ const dropdownItemClass = cx(
   'hover:bg-[#F5F5F5] hover:underline hover:decoration-2 hover:underline-offset-2',
   'focus:outline-none',
   'focus-visible:underline focus-visible:decoration-2 focus-visible:underline-offset-2',
-  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2'
+  'focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-[#D96E00] focus-visible:outline-offset-2  focus:z-10'
 );
 
   if (variant === 'dropdown') {
