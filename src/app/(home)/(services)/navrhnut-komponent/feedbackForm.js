@@ -707,13 +707,13 @@ export default function FeedbackForm() {
     <main className="mx-auto my-8 w-full max-w-[1120px] px-4">
       <h1
         id={ids.heading}
-        className="text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]"
+        className="max-w-[740px] text-2xl font-black leading-tight text-black sm:text-3xl md:text-4xl md:leading-[55px]"
       >
         Zámer vytvorenia nového komponentu alebo úpravy existujúceho
         komponentu
       </h1>
 
-      <p className="mt-6 max-w-[935px] text-[19px] leading-7 tracking-wide text-[#212121]">
+      <p className="mt-6 max-w-[740px] text-[19px] leading-7 tracking-wide text-[#212121]">
         Tento formulár slúži orgánom riadenia na zasielanie zámerov na
         vytvorenie nového alebo úpravu existujúceho komponentu dizajnového
         manuálu. Proces prebieha v súlade s{' '}

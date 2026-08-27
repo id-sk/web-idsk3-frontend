@@ -216,3 +216,20 @@ export const StepItem = ({ title, children, className = '' }) => (
     {children}
   </li>
 );
+
+export const MailLink = ({
+  href,
+  children,
+  className = '',
+}) => (
+  <a
+    href={href}
+    className={`
+      text-[#0B4199] underline underline-offset-3
+      hover:text-[#126DFF] hover:decoration-[length:3px]
+      ${className}
+    `}
+  >
+    {children}
+  </a>
+);

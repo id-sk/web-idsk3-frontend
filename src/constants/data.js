@@ -7,7 +7,7 @@ export const baseData = [
   /* { href: "zaklady-principy/ikony", src: "/images/zaklady-principy-cards/Ikony.svg", title: "Ikony", description: "Súbor vizuálnych symbolov používateľského rozhrania.", alt: ""}, */
   { href: "zaklady-principy/tiene", src: "/images/zaklady-principy-cards/Tiene.svg", title: "Tiene", description: "Typy tieňov a ich použitie na vizuálne rozlíšenie obsahu.", alt: "" },
   { href: "zaklady-principy/medzery", src: "/images/zaklady-principy-cards/Medzery.svg", title: "Medzery", description: "Medzery a ich rozmery.", alt: "" },
-  { href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""},
+  /*{ href: "zaklady-principy/rozlozenie-stranky", src: "/images/zaklady-principy-cards/Grid.svg", title: "Rozloženie stránky", description: "Pravidlá rozloženia stránky do jedného alebo viacerých stĺpcov.", alt: ""},*/
   { href: "zaklady-principy/zamerany-stav", src: "/images/focus/karticka.svg", title: "Zameranie klávesnicou", description: "Pravidlá a vizuálne štýly pre zameranie prvkov pomocou klávesnice, zabezpečujúce prístupnosť a spĺňajúce štandardy WCAG 2.1.", alt: ""}
 ];
 
