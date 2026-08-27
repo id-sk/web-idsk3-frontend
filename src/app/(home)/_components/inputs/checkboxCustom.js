@@ -61,6 +61,7 @@ const Checkbox = forwardRef(
       ? 'h-[24px] w-[24px]'
       : 'h-[40px] w-[40px]';
     const iconSizeClass = isSmall ? 'h-3 w-3' : 'h-5 w-5';
+    const boxOffsetClass = isSmall ? 'mt-[2px]' : '-mt-[6px]';
     const textOffsetClass = isSmall ? 'ml-[36px]' : 'ml-[52px]';
 
     return (
@@ -71,7 +72,7 @@ const Checkbox = forwardRef(
       >
         <label
           htmlFor={checkboxId}
-          className={`relative flex items-center group ${
+          className={`relative flex items-start group ${
             disabled ? 'cursor-not-allowed' : 'cursor-pointer'
           }`}
         >
@@ -93,7 +94,7 @@ const Checkbox = forwardRef(
             className={`
               custom-checkbox-box
               flex shrink-0 items-center justify-center rounded-[5px] border-2
-              bg-white ${boxSizeClass}
+              bg-white ${boxSizeClass} ${boxOffsetClass}
               peer-focus-visible:outline peer-focus-visible:outline-[3px]
               peer-focus-visible:outline-[#d96e00]
               peer-focus-visible:outline-offset-2

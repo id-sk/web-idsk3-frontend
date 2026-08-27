@@ -56,6 +56,7 @@ const FooterResp = () => {
             alt="Ministerstvo investícií, regionálneho rozvoja a informatizácie SR, domovská stránka"
             width={290}
             height={66}
+            className="md:ml-[20px]"
           />
 
           <span className="sr-only"> (otvorí sa na novej karte)</span>

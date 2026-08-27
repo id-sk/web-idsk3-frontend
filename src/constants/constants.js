@@ -118,10 +118,10 @@ export const basicRoutes = [
         "name": "Medzery",
         "link": "/zaklady-principy/medzery"
     },
-    {
+    /*{
         "name": "Rozloženie stránky",
         "link": "/zaklady-principy/rozlozenie-stranky"
-    },
+    },*/
     {
         "name": "Zameraný stav (Focus)",
         "link": "/zaklady-principy/zamerany-stav"

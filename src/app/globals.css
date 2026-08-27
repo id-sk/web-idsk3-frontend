@@ -452,3 +452,9 @@
   .idsk-anchor-card, img { break-inside: avoid-page; }
   ::-webkit-scrollbar { display: none; }
 }
+
+@media (forced-colors: active) {
+  .language-picker-trigger:hover {
+    --tw-ring-color: Highlight;
+  }
+}

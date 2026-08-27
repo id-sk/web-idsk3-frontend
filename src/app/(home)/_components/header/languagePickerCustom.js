@@ -215,6 +215,7 @@ const LanguagePickerCustom = ({
         }}
         onKeyDown={handleTriggerKeyDown}
         className={cx(
+          'language-picker-trigger',
           'my-[1px] inline-flex min-h-10 items-center gap-1.5 rounded-[5px] px-2 py-2 text-[16px] font-bold leading-6 underline',
           'focus:outline focus:outline-[3px] focus:outline-[#FFF] focus:outline-offset-2',
           'hover:ring-[4px] hover:ring-white',
