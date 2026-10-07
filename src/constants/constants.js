@@ -76,6 +76,10 @@ export const pageRoutes = [
         "link": "/komponenty/textove-pole-viacriadkove"
     },
     {
+        "name": "Vysvetlivka",
+        "link": "/komponenty/tooltip"
+    },
+    {
         "name": "Tlačidlo",
         "link": "/komponenty/tlacidlo"
     },
