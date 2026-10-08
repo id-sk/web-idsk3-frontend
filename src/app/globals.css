@@ -48,21 +48,23 @@
    GLOBÁLNY FOCUS – zámerne MIMO @layer, aby vyhral nad nevrstveným IDSK CSS
    ========================================================================== */
 
+  /* Pridané :not(.custom-focus) */
   :where(
-    .focusable, .idsk-focusable, a, button, input, select, textarea,
-    summary, [tabindex]:not([tabindex="-1"])
-  ):focus {
-    outline: none;
-  }
+      .focusable, .idsk-focusable, a, button, input, select, textarea,
+      summary, [tabindex]:not([tabindex="-1"])
+    ):not(.custom-focus):focus {
+      outline: none;
+    }
 
-  :where(
-    .focusable, .idsk-focusable, a, button, input, select, textarea,
-    summary, [tabindex]:not([tabindex="-1"])
-  ):focus-visible {
-    outline: 3px solid var(--app-focus-color);
-    outline-offset: 2px;
-    border-radius: 0.25rem;
-  }
+    /* Pridané :not(.custom-focus) */
+    :where(
+      .focusable, .idsk-focusable, a, button, input, select, textarea,
+      summary, [tabindex]:not([tabindex="-1"])
+    ):not(.custom-focus):focus-visible {
+      outline: 3px solid var(--app-focus-color);
+      outline-offset: 2px;
+      border-radius: 0.25rem;
+    }
 
 /* ==========================================================================
    4. BASE VRSTVA
@@ -86,13 +88,13 @@
 
   html {
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-family: var(--app-font-sans);
   }
 
   body {
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: clip;
     font-family: inherit;
   }
 
@@ -254,7 +256,7 @@
       textarea,
       summary,
       [tabindex]:not([tabindex="-1"])
-    ):focus {
+    ):not(.custom-focus):focus {
       outline: none;
     }
 
@@ -268,7 +270,7 @@
       textarea,
       summary,
       [tabindex]:not([tabindex="-1"])
-    ):focus-visible {
+    ):not(.custom-focus):focus-visible {
       outline: 3px solid var(--app-focus-color) !important;
       outline-offset: 2px !important;
       border-radius: 0.25rem;

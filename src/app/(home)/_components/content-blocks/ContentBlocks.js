@@ -13,24 +13,26 @@ export const generateId = (text) => {
 };
 
 export const SectionBlock = ({
+  id,
   titleString,
   titleNode,
   index,
   children,
 }) => {
   const baseId = titleString ? generateId(titleString) : 'section';
-  const sectionId =
-    index !== undefined ? `${baseId}-${index}` : baseId;
+  const generatedId = index !== undefined ? `${baseId}-${index}` : baseId;
+  const sectionId = id ?? generatedId;
 
   return (
     <section
       aria-labelledby={sectionId}
-      className="mt-4 flex scroll-mt-24 flex-col gap-3"
+      className="mt-4 flex flex-col gap-3"
     >
       <h2
         id={sectionId}
         className="
-          mb-1 text-xl font-bold leading-[26px] tracking-normal text-black
+          mb-1 scroll-mt-24 text-xl font-bold leading-[26px] tracking-normal text-black
+          focus:outline-none
           sm:text-2xl sm:leading-[35px]
         "
       >

@@ -16,9 +16,8 @@ const HeaderCustom = ({
     <header
       data-idsk="header"
       className={cx(
-        'w-full font-source-sans-pro shadow-[0_4px_12px_rgba(26,26,26,0.12)]',
+        'relative z-40 w-full font-source-sans-pro shadow-[0_4px_12px_rgba(26,26,26,0.12)]',
         transparent ? 'bg-transparent' : 'bg-white',
-        sticky && 'sticky top-0 z-40',
         !hasNavigation && '[&_.idsk-website-nav]:hidden',
         className
       )}

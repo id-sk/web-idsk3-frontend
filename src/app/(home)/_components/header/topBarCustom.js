@@ -45,7 +45,7 @@ const TopBarCustom = ({
     <div
       data-idsk="top-bar"
       className={cx(
-        'relative z-[100] flex w-full flex-col items-center bg-[#003078] text-white',
+        'relative z-[90] flex w-full flex-col items-center bg-[#003078] text-white',
         className
       )}
       {...props}
