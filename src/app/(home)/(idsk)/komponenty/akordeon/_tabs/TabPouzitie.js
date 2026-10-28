@@ -68,10 +68,10 @@ const TabPouzitie = () => (
                         </h3>
                         {/* Tu používam čisté HTML tagy namiesto <Ul>, pretože InformationBanner má špecificky menšie písmo (text-sm), aby to pekne sedelo vo vnútri bannera */}
                         <ul className="list-disc pl-5 space-y-3 text-sm tracking-wide leading-relaxed text-black mb-8 mt-4">
-                            <li>Použva sa keď máte viacero súvisiacich sekcií (min. 2, max 10).</li>
-                            <li>Použva sa keď obsah v jednotlivých sekciách je rovnocenný a nezávislý.</li>
-                            <li>Použva sa keď potrebujete rozdeliť obsah do logických sekcií (napr. FAQ, návody, inštrukcie).</li>
-                            <li>Použva sa keď máte obsah, ktorý sa pravidelne opakuje alebo je známy.</li>
+                            <li>Používa sa keď máte viacero súvisiacich sekcií (min. 2, max 10).</li>
+                            <li>Používa sa keď obsah v jednotlivých sekciách je rovnocenný a nezávislý.</li>
+                            <li>Používa sa keď potrebujete rozdeliť obsah do logických sekcií (napr. FAQ, návody, inštrukcie).</li>
+                            <li>Používa sa keď máte obsah, ktorý sa pravidelne opakuje alebo je známy.</li>
                         </ul>
                     </InformationBanner>
                 </div>
